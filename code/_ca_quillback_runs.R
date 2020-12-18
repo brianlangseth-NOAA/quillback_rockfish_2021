@@ -9,7 +9,9 @@ model.0 = "0_0_init_model"
 base.0 = SS_output(file.path(wd, model.0),covar=TRUE)
 SS_plots(base.0)
 
-##Include recdevs
+###############
+#RecDevs
+###############
 ##Take init model and add rec devs. Extend early back to start of catch. Main at start of comps. 
 model.1.1 = "0_1_0_recdevs"
 base.1.1 = SS_output(file.path(wd, model.1.1),covar=TRUE)
@@ -22,7 +24,9 @@ base.1.2 = SS_output(file.path(wd, model.1.2),covar=TRUE)
 SS_plots(base.1.2)
 
 
+###############
 ##Doing data weighting
+###############
 ##Starting with francis weighting with the 1980s recdev version
 SS_tune_comps(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\models\\ca\\0_1_1_recdevs_adjearly", write = FALSE)
 #adjusting only for 1 iteration
@@ -33,3 +37,12 @@ SS_plots(base.2.1)
 model.2.2 = "0_2_dw_MI"
 base.2.2 = SS_output(file.path(wd, model.2.2),covar=TRUE)
 SS_plots(base.2.2)
+
+##Calculating Dirichlet multinomial options
+##Starting with the adjearly recdev version 
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\0_2_dw_DM_input\\just model files")
+#Using inputN as sample size for commercial comps
+model.2.3 = "0_2_dw_DM_input"
+base.2.3 = SS_output(file.path(wd, model.2.3),covar=TRUE)
+SS_plots(base.2.3)

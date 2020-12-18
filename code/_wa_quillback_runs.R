@@ -9,6 +9,9 @@ model = "0_0_init_model"
 base = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base)
 
+###############
+#RecDevs
+###############
 model = "0_0_init_model_recFirst"
 base.1 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1)
@@ -33,7 +36,9 @@ base.1.3 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1.3)
 
 
+###############
 ##Doing data weighting
+###############
 ##Starting with francis weighting with the 1980s recdev version
 SS_tune_comps(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\models\\wa\\0_1_recdevs_1980", write = FALSE)
 #adjusting only for 1 iteration
@@ -46,6 +51,13 @@ model = "0_2_dw_MI"
 base.2.2 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.2.2)
 
+
+#################################################################################
+################################################################
+#### The below models were trying to get the model not to display a warnings of 
+#"The covariance matrix may not be positive definite" which I thought meant the hessian wasnt either
+#Im keeping these though these are not relevant. 
+##################################################################
 
 ##Even with recdevs and data weighting the Hessian may not be positive definite
 ##Starting with the 1980s recdev version
@@ -85,3 +97,19 @@ model = "0_3_5_fixHession_cleanComps"
 base.3.5 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.3.5)
 
+#################################################################################
+
+
+##Calculating Dirichlet multinomial options
+##Starting with the 1980s recdev version 
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\0_2_dw_DM_samples\\just model files")
+#Using number of fish as sample size for commercial comps
+model = "0_2_dw_DM_samples"
+base.2.3 = SS_output(file.path(wd, model),covar=FALSE)
+SS_plots(base.2.3)
+
+#Using inputN as sample size for commercial comps
+model = "0_2_dw_DM_input"
+base.2.3.2 = SS_output(file.path(wd, model),covar=FALSE)
+SS_plots(base.2.3.2)
