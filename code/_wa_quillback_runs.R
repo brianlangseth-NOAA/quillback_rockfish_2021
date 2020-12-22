@@ -113,3 +113,65 @@ SS_plots(base.2.3)
 model = "0_2_dw_DM_input"
 base.2.3.2 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.2.3.2)
+
+
+####################
+#R0 profiling - use profiling code.R
+#Set selectivity estimation to be phase 1, add 2020 rec catch
+####################
+
+model = "0_4_R0profiling"
+base.4 = SS_output(file.path(wd, model),covar=FALSE)
+SS_plots(base.4)
+
+
+#####################
+#Cleaning up models
+#Starting with the 1980s recdev version (0_1_2)
+#1. Set 2020 catch to be average of last three years for rec and comm
+#2. Reset forecast catches to average of last three years of rec
+#3. Set R0 init and prior lower
+#####################
+model = "1_0_0_recdevs"
+base.100 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.100)
+
+#Add separate commerical selectivity
+model = "1_0_1_recdevs_comSelex"
+base.101 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.101)
+
+#Remove early comps for rec
+#Starting with 101 model
+#Remove fits to four years: 1981-1983, 1987
+model = "1_0_1b_reduceComps"
+base.101b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.101b)
+
+#Block rec selectivity starting in 2002
+#2002 used as this was where the pattern of comp shifted (not entirely due to sample size)
+#set block upper limit (parm1) to 55cm since early estimates bumping up against this
+#Starting with 101 model
+model = "1_0_2_blockSelex_2002"
+base.102 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.102)
+
+#Remove fits to four years: 1981-1983, 1987
+#Starting with 102 model
+model = "1_0_2b_reduceComps_2002"
+base.102b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.102b)
+
+#Adjust selectivity blocking to be 1999
+#Reason is that comps for 1995-1998 were most consistent with earlier peak in selectivity
+#Starting with 102 model
+model = "1_0_2_blockSelex_1999"
+base.102_1999 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.102_1999)
+
+#Remove fits to four years: 1981-1983, 1987
+#Starting with 102_1999 model
+model = "1_0_2b_reduceComps_1999"
+base.102b_1999 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.102b_1999)
+

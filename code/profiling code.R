@@ -8,11 +8,11 @@
 library(nwfscDiag)
 
 #######################################################################################################
-# South of Pt. Conception
+# Washington 
 #######################################################################################################
 
-mydir = "C:/Assessments/2021/copper_rockfish_2021/models/ca_s_pt_c"
-base_name = "7.1_data_rec_len_add_trawl"
+mydir = "C:/Users/Brian.Langseth/Desktop/wa"
+base_name = "0_4_R0profiling"
 
 get = get_settings_profile( parameters =  c("SR_LN(R0)"),
                             low =  c(-1.5),
@@ -25,10 +25,11 @@ model_settings = get_settings(settings = list(base_name = base_name,
                                               run = c("profile"),
                                               profile_details = get ))
 
-run_diagnostics(mydir = mydir, model_settings = model_settings)
+profile_output = run_diagnostics(mydir = mydir, model_settings = model_settings)
 
-pngfun(wd = file.path(mydir, paste0(base_name, "_profile_SR_LN(R0)")), 
-       file = "R0_profile_ca_s_pt_c.png",
+#Plot the results
+pngfun(wd = file.path(mydir, paste0(base_name)), 
+       file = "R0_profile_wa.png",
        w = 7, h = 12)
 par(mfrow=c(3,1))
 SSplotProfile(summaryoutput = profile_output$profilesummary, 
@@ -57,6 +58,11 @@ PinerPlot (summaryoutput = profile_output$profilesummary,
            legendloc = "topright", 
            ymax = 10)
 dev.off()
+
+
+
+
+
 
 
 #######################################################################################################
