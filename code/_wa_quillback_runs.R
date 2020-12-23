@@ -119,10 +119,7 @@ SS_plots(base.2.3.2)
 #R0 profiling - use profiling code.R
 #Set selectivity estimation to be phase 1, add 2020 rec catch
 ####################
-
 model = "0_4_R0profiling"
-base.4 = SS_output(file.path(wd, model),covar=FALSE)
-SS_plots(base.4)
 
 
 #####################
