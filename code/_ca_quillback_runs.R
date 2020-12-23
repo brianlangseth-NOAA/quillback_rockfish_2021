@@ -74,3 +74,10 @@ SS_plots(base.1.1.0)
 model.1.0.1 = "1_0_0_R0profiling"
 
 
+####################
+#Use forth length for rec comps
+####################
+##Start with updated recdevs (1_0_0)
+model.2.0.0 = "2_0_0_LNGTH"
+base.2.0.0 = SS_output(file.path(wd, model.2.0.0),covar=TRUE)
+SS_plots(base.2.0.0)
