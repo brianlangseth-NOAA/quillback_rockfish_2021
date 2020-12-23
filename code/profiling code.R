@@ -13,6 +13,12 @@ library(nwfscDiag)
 
 mydir = "C:/Users/Brian.Langseth/Desktop/wa"
 base_name = "0_4_R0profiling"
+base_name = "1_0_1_comSelex_R0profile"
+
+mydir = "C:/Users/Brian.Langseth/Desktop/or"
+base_name = "1_0_recdevs_R0profile"
+
+
 
 get = get_settings_profile( parameters =  c("SR_LN(R0)"),
                             low =  c(-1.5),
@@ -25,39 +31,42 @@ model_settings = get_settings(settings = list(base_name = base_name,
                                               run = c("profile"),
                                               profile_details = get ))
 
-profile_output = run_diagnostics(mydir = mydir, model_settings = model_settings)
-
-#Plot the results
-pngfun(wd = file.path(mydir, paste0(base_name)), 
-       file = "R0_profile_wa.png",
-       w = 7, h = 12)
-par(mfrow=c(3,1))
-SSplotProfile(summaryoutput = profile_output$profilesummary, 
-              main = "Changes in total likelihood", 
-              profile.string = "R0", 
-              profile.label = "R0", 
-              ymax = 40)
-abline(h = 1.92, lty = 2, col='red')
+run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-           plot = TRUE, print = FALSE, component = "Length_like",
-           main = "Length-composition likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 20)
 
-PinerPlot (summaryoutput = profile_output$profilesummary, 
-           plot = TRUE, print = FALSE, component = "Surv_like",
-           main = "Survey likelihoods", 
-           profile.string = "R0", 
-           profile.label = "R0",
-           ylab = "Change in -log-likelihood", 
-           legendloc = "topright", 
-           ymax = 10)
-dev.off()
+
+# #Plot the results
+# pngfun(wd = file.path(mydir, paste0(base_name)), 
+#        file = "R0_profile_wa.png",
+#        w = 7, h = 12)
+# par(mfrow=c(3,1))
+# SSplotProfile(summaryoutput = profile_output$profilesummary, 
+#               main = "Changes in total likelihood", 
+#               profile.string = "R0", 
+#               profile.label = "R0", 
+#               ymax = 40)
+# abline(h = 1.92, lty = 2, col='red')
+# 
+# 
+# PinerPlot (summaryoutput = profile_output$profilesummary, 
+#            plot = TRUE, print = FALSE, component = "Length_like",
+#            main = "Length-composition likelihoods", 
+#            profile.string = "R0", 
+#            profile.label = "R0",
+#            ylab = "Change in -log-likelihood", 
+#            legendloc = "topright", 
+#            ymax = 20)
+# 
+# PinerPlot (summaryoutput = profile_output$profilesummary, 
+#            plot = TRUE, print = FALSE, component = "Surv_like",
+#            main = "Survey likelihoods", 
+#            profile.string = "R0", 
+#            profile.label = "R0",
+#            ylab = "Change in -log-likelihood", 
+#            legendloc = "topright", 
+#            ymax = 10)
+# dev.off()
 
 
 
