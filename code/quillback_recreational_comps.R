@@ -41,7 +41,7 @@ ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == 882601
 #npc = unique(ca_mrfss[!ca_mrfss$CNTY %in% spc, "CNTY"]) 
 ca_mrfss$STATE_NAME = "CA"
 ca_mrfss_data = rename_mrfss(data = ca_mrfss,
-                             len_col = "T_LEN",
+                             len_col = "LNGTH",
                              #area_grouping = list(spc, npc), 
                              #area_names = c("south_pt_concep", "north_pt_concep"), 
                              #area_column_name = "CNTY", 
