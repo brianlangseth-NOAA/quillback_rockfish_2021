@@ -15,28 +15,12 @@ library(nwfscSurvey)
 library(PacFIN.Utilities)
 library(ggplot2)
 
-species = "squarespot"
-species = "quillback"
-
-if(species == "quillback"){
-  dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish"
-  pacfin_abbr = "QLBK"
-  hkl_name = "Quillback Rockfish"
-  recfin_name = "QUILLBACK ROCKFISH"
-  or_rec_name = "Quillback"
-  ca_mrfss_code = 8826010120
-}
-if(species == "squarespot"){
-  dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Squarespot_Rockfish"
-  pacfin_abbr = "SQRS"
-  hkl_name = "Squarespot Rockfish"
-  recfin_name = "SQUARESPOT ROCKFISH"
-  or_rec_name = "Squarespot"
-  ca_mrfss_code = 8826010148
-}
-
-
-
+dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish"
+pacfin_abbr = "QLBK"
+hkl_name = "Quillback Rockfish"
+recfin_name = "QUILLBACK ROCKFISH"
+or_rec_name = "Quillback"
+ca_mrfss_code = 8826010120
 
 ############################################################################################
 #	Load Data
@@ -77,55 +61,49 @@ table(ca_recfin_data$State,ca_recfin_data$State_Areas)
 table(ca_recfin_data$SPECIES_NAME,useNA="always")
 
 
-if(species == "quillback"){
-#Washignton
-  # According to Theresa WA lengths are all FL
-  wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_",species,".csv")), header = T, na.strings = "-"))
-  wa_recfin_data =rename_recfin(data = wa_recfin,
-                                area_grouping = list(c("WASHINGTON")),
-                                area_names = c("WA"),
-                                area_column_name = "STATE_NAME",
-                                mode_grouping = list( c("C", "B"), c("\\?", "^$")), #\\? matches to "?" and "^$" matches to ""
-                                mode_names = c("boat", "unknown"),
-                                mode_column_name = "boat_mode_code"  )
-  table(wa_recfin_data$boat_mode_code,wa_recfin_data$Fleet)
-  table(wa_recfin_data$STATE_NAME,wa_recfin_data$State_Areas)
-  table(wa_recfin_data$SPECIES_NAME,useNA="always")
-#Oregon
-  or_recfin_age = read.csv(file.path(dir,"data","RecFIN Sample Data",paste0(or_rec_name,"_RecFIN_BIO-AGE_2005- 2006,2008.csv")), header = T, na.strings = "-")
-  or_recfin_len = read.csv(file.path(dir,"data","RecFIN Sample Data",paste0(or_rec_name,"_RecFIN_BIO-LW_2001-2020.csv")), header = T, na.strings = "-")
-  table(or_recfin_len$Source.Code) #Fish with Source.Code in the length file are in age file in coded as "ORA", but a lot not in the age file are coded as ORA in the length file because they have unaged otoliths
-  #Set instances with weight == 0 to NA
-  or_recfin_len[which(or_recfin_len$Agency.Weight==0),"Agency.Weight"]=NA
-  or_recfin_len_data = rename_recfin(data = or_recfin_len, 
-                                     area_column_name = "State.Name",
-                                     area_grouping = list("Oregon"), 
-                                     area_names = "OR",
-                                     mode_grouping = list(c("BEACH/BANK", "MAN-MADE/JETTY"), c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS"), "NOT KNOWN"),
-                                     mode_names = c("shore", "boat", "unknown"),
-                                     mode_column_name = "RecFIN.Mode.Name" )
-  table(or_recfin_len_data$RecFIN.Mode.Name,or_recfin_len_data$Fleet)
-  table(or_recfin_len_data$State.Name,or_recfin_len_data$State_Areas)
-  table(or_recfin_len_data$Species.Name,useNA="always")
-  
-  or_recfin_age_data = rename_recfin(data = or_recfin_age, 
-                                     area_grouping = list("ODFW"), 
-                                     area_names = c("OR"), 
-                                     area_column_name = "SAMPLING_AGENCY_NAME",
-                                     mode_grouping = list( c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS")),
-                                     mode_names = c("boat"),
-                                     mode_column_name = "RECFIN_MODE_NAME",
-                                     or_ages = TRUE)
-  table(or_recfin_age_data$RECFIN_MODE_NAME,or_recfin_age_data$Fleet)
-  table(or_recfin_age_data$SAMPLING_AGENCY_NAME,or_recfin_age_data$State_Areas)
-  table(or_recfin_age_data$RECFIN_SPECIES_NAME,useNA="always")
-}
 
-if(species == "squarespot") { 
-  wa_recfin_data = NULL 
-  or_recfin_len_data = NULL
-  or_recfin_age_data = NULL
-}
+#Washignton
+# According to Theresa WA lengths are all FL
+wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_quillbak.csv")), header = T, na.strings = "-"))
+wa_recfin_data =rename_recfin(data = wa_recfin,
+                              area_grouping = list(c("WASHINGTON")),
+                              area_names = c("WA"),
+                              area_column_name = "STATE_NAME",
+                              mode_grouping = list( c("C", "B"), c("\\?", "^$")), #\\? matches to "?" and "^$" matches to ""
+                              mode_names = c("boat", "unknown"),
+                              mode_column_name = "boat_mode_code"  )
+table(wa_recfin_data$boat_mode_code,wa_recfin_data$Fleet)
+table(wa_recfin_data$STATE_NAME,wa_recfin_data$State_Areas)
+table(wa_recfin_data$SPECIES_NAME,useNA="always")
+#Oregon
+or_recfin_age = read.csv(file.path(dir,"data","RecFIN Sample Data",paste0(or_rec_name,"_RecFIN_BIO-AGE_2005- 2006,2008.csv")), header = T, na.strings = "-")
+or_recfin_len = read.csv(file.path(dir,"data","RecFIN Sample Data",paste0(or_rec_name,"_RecFIN_BIO-LW_2001-2020.csv")), header = T, na.strings = "-")
+table(or_recfin_len$Source.Code) #Fish with Source.Code in the length file are in age file in coded as "ORA", but a lot not in the age file are coded as ORA in the length file because they have unaged otoliths
+#Set instances with weight == 0 to NA
+or_recfin_len[which(or_recfin_len$Agency.Weight==0),"Agency.Weight"]=NA
+or_recfin_len_data = rename_recfin(data = or_recfin_len, 
+                                   area_column_name = "State.Name",
+                                   area_grouping = list("Oregon"), 
+                                   area_names = "OR",
+                                   mode_grouping = list(c("BEACH/BANK", "MAN-MADE/JETTY"), c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS"), "NOT KNOWN"),
+                                   mode_names = c("shore", "boat", "unknown"),
+                                   mode_column_name = "RecFIN.Mode.Name" )
+table(or_recfin_len_data$RecFIN.Mode.Name,or_recfin_len_data$Fleet)
+table(or_recfin_len_data$State.Name,or_recfin_len_data$State_Areas)
+table(or_recfin_len_data$Species.Name,useNA="always")
+
+or_recfin_age_data = rename_recfin(data = or_recfin_age, 
+                                   area_grouping = list("ODFW"), 
+                                   area_names = c("OR"), 
+                                   area_column_name = "SAMPLING_AGENCY_NAME",
+                                   mode_grouping = list( c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS")),
+                                   mode_names = c("boat"),
+                                   mode_column_name = "RECFIN_MODE_NAME",
+                                   or_ages = TRUE)
+table(or_recfin_age_data$RECFIN_MODE_NAME,or_recfin_age_data$Fleet)
+table(or_recfin_age_data$SAMPLING_AGENCY_NAME,or_recfin_age_data$State_Areas)
+table(or_recfin_age_data$RECFIN_SPECIES_NAME,useNA="always")
+
 
 #Combine recfin files into one file (include only length file for oregon)
 rec_fields = c("Year","Lat","Lon","State","State_Areas","Areas","Depth","Sex","Length","Weight","Age","Fleet","Data_Type","Source")
@@ -133,13 +111,9 @@ recfin_len_data = rbind(wa_recfin_data[,which(names(wa_recfin_data) %in% rec_fie
 
 
 # ##Research - CONTINUE
-# if(species == "quillback"){
-#   wa_research = read.csv(paste0("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Sample Data/wa_research_bds_",species,".csv"),header=T)
-#   
-# }
-# if(species == "squarespot") { wa_research = NULL }
 # 
-# 
+# wa_research = read.csv(paste0("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Sample Data/wa_research_bds_quillback.csv"),header=T)
+
 
 ##MRFSS
 #California
@@ -161,24 +135,22 @@ table(ca_mrfss_data$DIST,ca_mrfss_data$State_Areas)
 table(ca_mrfss_data$MODE_FX,ca_mrfss_data$Fleet)
 
 #Oregon
-if(species == "quillback"){
-  or_mrfss = read.csv(file.path(dir, "data", "RecFIN Sample Data", paste0(or_rec_name,"_MRFSS BIO_1980-2003.csv")),header=T)
-  plot(or_mrfss$Total.Length-or_mrfss$Length,col=as.factor(or_mrfss$Total.Length_Flag)) #No biased difference betweeen fork length (length) and total
-  table(or_mrfss$Length_Flag) #A lot more fork lengths
-  
-  or_mrfss$STATE_NAME = "OR"
-  or_mrfss_data = rename_mrfss(data = or_mrfss,
-                               len_col = "Length",
-                               len_divide = 10,
-                               area_grouping = list(441), 
-                               area_names = c("OR"),
-                               area_column_name = "ORBS_SPP_Code", # This is essentially a cheat
-                               mode_grouping = list(c(1,2), c(6, 7)),
-                               mode_names = c("shore", "boat"),
-                               mode_column_name = "MRFSS_MODE_FX" )
-  table(or_mrfss_data$MRFSS_MODE_FX,or_mrfss_data$Fleet)
-}
-if(species == "squarespot") { or_mrfss_data = NULL }
+or_mrfss = read.csv(file.path(dir, "data", "RecFIN Sample Data", paste0(or_rec_name,"_MRFSS BIO_1980-2003.csv")),header=T)
+plot(or_mrfss$Total.Length-or_mrfss$Length,col=as.factor(or_mrfss$Total.Length_Flag)) #No biased difference betweeen fork length (length) and total
+table(or_mrfss$Length_Flag) #A lot more fork lengths
+
+or_mrfss$STATE_NAME = "OR"
+or_mrfss_data = rename_mrfss(data = or_mrfss,
+                             len_col = "Length",
+                             len_divide = 10,
+                             area_grouping = list(441), 
+                             area_names = c("OR"),
+                             area_column_name = "ORBS_SPP_Code", # This is essentially a cheat
+                             mode_grouping = list(c(1,2), c(6, 7)),
+                             mode_names = c("shore", "boat"),
+                             mode_column_name = "MRFSS_MODE_FX" )
+table(or_mrfss_data$MRFSS_MODE_FX,or_mrfss_data$Fleet)
+
 
 #Combine mrfss files into one file
 recfin_mrfss_data = rbind(or_mrfss_data[,which(names(or_mrfss_data) %in% rec_fields)], ca_mrfss_data[,which(names(ca_mrfss_data) %in% rec_fields)])
@@ -348,5 +320,5 @@ data_hist(dir = file.path(dir, "data", "output biology", "plots"),
 ############################################################################################
 #Additional plotting for data workshop
 ############################################################################################
-if(species == "quillback") source(file.path(dir, "code", "data_workshop_plotting_quillback.R"))
+source(file.path(dir, "code", "data_workshop_plotting_quillback.R"))
 
