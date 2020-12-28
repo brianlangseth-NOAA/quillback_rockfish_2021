@@ -10,7 +10,7 @@
 
 #library(dataModerate2021)
 devtools::load_all("U:/Stock assessments/dataModerate_2021")
-source("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\code\\clean_quillback_biodata.R")
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\clean_quillback_biodata.R")
 library(nwfscSurvey)
 library(PacFIN.Utilities)
 library(ggplot2)
@@ -64,7 +64,7 @@ table(ca_recfin_data$SPECIES_NAME,useNA="always")
 
 #Washignton
 # According to Theresa WA lengths are all FL
-wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_quillbak.csv")), header = T, na.strings = "-"))
+wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_quillback.csv")), header = T, na.strings = "-"))
 wa_recfin_data =rename_recfin(data = wa_recfin,
                               area_grouping = list(c("WASHINGTON")),
                               area_names = c("WA"),
@@ -150,7 +150,6 @@ or_mrfss_data = rename_mrfss(data = or_mrfss,
                              mode_names = c("shore", "boat"),
                              mode_column_name = "MRFSS_MODE_FX" )
 table(or_mrfss_data$MRFSS_MODE_FX,or_mrfss_data$Fleet)
-
 
 #Combine mrfss files into one file
 recfin_mrfss_data = rbind(or_mrfss_data[,which(names(or_mrfss_data) %in% rec_fields)], ca_mrfss_data[,which(names(ca_mrfss_data) %in% rec_fields)])
@@ -322,3 +321,45 @@ data_hist(dir = file.path(dir, "data", "output biology", "plots"),
 ############################################################################################
 source(file.path(dir, "code", "data_workshop_plotting_quillback.R"))
 
+
+
+###########################################
+#Special Projects Plots
+###########################################
+##Oregon Special Projects Data
+comSP = read.csv("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Data_From_States\\or\\special_projects\\Quillback_commerical SP data.csv", header=TRUE)
+recSP = read.csv("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Data_From_States\\or\\special_projects\\Quillback_recreational SP data.csv", header=TRUE)
+#Rename fields for recreational
+recSP$Year = recSP$YYYY
+recSP$Lat = recSP$Lon = recSP$Areas = recSP$Depth = recSP$Age = recSP$Data_Type = NA
+recSP$State = recSP$State_Areas = "OR"
+recSP$Length = recSP$SampleLength/10 #convert to cm
+recSP$Weight = recSP$SampleWeight #already in kg
+recSP$Fleet = "rec"
+recSP$Source = "Special"
+#Rename fields for commercial
+comSP$Year = comSP$SAMPLE_YEAR
+comSP$Lat = comSP$Lon = comSP$Areas = comSP$Depth = comSP$Data_Type = NA
+comSP$State = comSP$State_Areas = "OR"
+comSP$Sex = comSP$SEX_CODE
+comSP$Length = comSP$FISH_LENGTH/10 #convert to cm
+comSP$Weight = comSP$FISH_WEIGHT/1000 #convert to kg
+comSP$Age = comSP$FINAL_FISH_AGE_IN_YEARS
+comSP$Fleet = "com"
+comSP$Source = "Special"
+#Combine rec and comm special projects
+sp_data = rbind(comSP[,c("Year","Lat","Lon","Areas","Depth","Age","Data_Type","State_Areas","State","Sex","Length","Weight","Fleet","Source")],
+                recSP[,c("Year","Lat","Lon","Areas","Depth","Age","Data_Type","State_Areas","State","Sex","Length","Weight","Fleet","Source")])
+#unid'd fish are without weight so remove
+sp_data = sp_data[sp_data$Sex%in%c("F","M"),]
+
+##Length-weight
+lw_ests_sp <- estimate_length_weight(data = sp_data, grouping = "all")
+length_weight_plot(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Data_From_States\\or\\special_projects\\quillback plots", 
+                   splits = NA, data = sp_data, nm_append = NULL, ests = lw_ests_sp, plots = 1:2)
+##Length-age
+la_ests_sp <- estimate_length_age(data = sp_data, grouping = "all")
+length_age_plot(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Data_From_States\\or\\special_projects\\quillback plots", 
+                splits = NA, data = sp_data, nm_append = NULL, ests = la_ests_sp, plots = 1:2)
+
+sp_data2=sp_data[-c(134,146),]
