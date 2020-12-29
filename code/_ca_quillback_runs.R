@@ -2,6 +2,7 @@
 
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
 
 wd = "C:/Users/Brian.Langseth/Desktop/ca"
 
@@ -59,6 +60,9 @@ model.1.0.0 = "1_0_0_recdevs"
 base.1.0.0 = SS_output(file.path(wd, model.1.0.0),covar=TRUE)
 SS_plots(base.1.0.0)
 
+#Comparing catch and recruitment
+compare_catch_rec(base.1.0.0, plots = "all", offset = 6) #Catch and recruitment dont quite align
+
 ##Smooth catch time series with 7year moving average
 #Starting with the recdevs version (1_0_0)
 #Calcs for adjusting catches in "Calcs_smoothCatch.xls"
@@ -66,6 +70,8 @@ model.1.1.0 = "1_1_0_smoothCatch"
 base.1.1.0 = SS_output(file.path(wd, model.1.1.0),covar=TRUE)
 SS_plots(base.1.1.0)
 
+#Comparing catch and recruitment
+compare_catch_rec(base.1.1.0, plots = "all", offset = 8) #Catch and recruitment dont quite align
 
 ####################
 #R0 profiling - use profiling code.R
@@ -75,7 +81,7 @@ model.1.0.1 = "1_0_0_R0profiling"
 
 
 ####################
-#Use forth length for rec comps
+#Use fork length for rec comps
 ####################
 ##Start with updated recdevs (1_0_0)
 model.2.0.0 = "2_0_0_LNGTH"
