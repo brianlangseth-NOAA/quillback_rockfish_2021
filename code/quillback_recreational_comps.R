@@ -160,7 +160,7 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
 #Washington age comps
 afs = UnexpandedAFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
                        datA = wa, ageBins = 5:70,
-                       sex = 0,  partition = 0, fleet = 1, month = 1) #Fleet is 1 for WA
+                       sex = 0,  partition = 0, fleet = 1, month = 1, ageErr = 1) #Fleet is 1 for WA
 file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=5-70.csv"), 
             to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Age_comp_Sex_0_bin=5-70.csv")) 
 
@@ -192,7 +192,7 @@ out_orage$Sex = "U" #UnexpandedAFs.fn will only do comps for Unsexed fish if sex
 
 afs = UnexpandedAFs.fn(dir = file.path(dir, "data"),  #puts into "forSS" folder in this location
                        datA = out_orage, ageBins = 5:40,
-                       sex = 0, partition = 0, fleet = 2, month = 1)
+                       sex = 0, partition = 0, fleet = 2, month = 1, ageErr = 1)
 file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=5-40.csv"), 
             to= file.path(dir, "data", "forSS", "or_rec_notExpanded_Age_comp_Sex_0_bin=5-40.csv")) 
 
