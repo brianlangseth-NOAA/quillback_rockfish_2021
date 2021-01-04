@@ -103,13 +103,17 @@ Pdata$Final_Sample_Size <- capValues(Pdata$Expansion_Factor_1_L * Pdata$Expansio
 
 # Set up lengths bins based on length sizes for all comps
 myLbins = c(seq(10, 50, 2))
+myAbins = c(seq(5,40,1))
 
 Lcomps = getComps(Pdata, defaults = c("fishyr", "fleet", "stratification"), Comps = "LEN")
+Acomps = getComps(Pdata, defaults = c("fishyr", "fleet", "stratification"), Comps = "AGE")
 
 masterLcomps = Lcomps
+masterAcomps = Acomps
 
 #Even if using a one-sex model, need to do this step. Otherwise writeComps ignores unsexed fish 
 Lcomps = doSexRatio(Lcomps, findRatio = TRUE)
+Acomps = doSexRatio(Acomps, findRatio = TRUE)
 
 writeComps(inComps = Lcomps, 
 		   fname = file.path(dir, "forSS", "Lcomps.QLBK.Nov.2020.csv"), 
@@ -117,6 +121,15 @@ writeComps(inComps = Lcomps,
 		   partition = 0, 
 		   sum1 = TRUE,
 		   digits = 4)
+
+writeComps(inComps = Acomps,
+           fname = file.path(dir, "forSS", "Acomps.QLBK.Jan.2021.csv"), 
+           abins = myAbins, 
+           partition = 0, 
+           sum1 = TRUE,
+           digits = 4)
+
+
 
 ##############################################################################################################
 # Format and rewrite
@@ -154,6 +167,27 @@ wa_comps$fleet = 2
 #write.csv(ca_comps, file = file.path(dir, "forSS","CA_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
 #write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
 #write.csv(wa_comps, file = file.path(dir, "forSS","WA_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
+
+
+##############
+# Oregon age comps - Only state with commercial ages
+##############
+out = read.csv(file.path(dir, "forSS", "Acomps.QLBK.Jan.2021.csv"), skip = 3, header = TRUE)
+start = which(as.character(out[,1]) %in% c(" Sexes combined ")) + 2
+end   = which(as.character(out[,1]) %in% c(" Females then males ")) -1 #nrow(out)
+cut_out = out[start:end,]
+
+cut_out$fleetnum = 1
+cut_out$month = 1
+
+ind = which(colnames(cut_out) %in% "L.1"):which(colnames(cut_out) %in% "L39") #If have 2 sex model then go to L50.1
+format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition, 
+               cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
+colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
+format = format[format$fishyr != 2021, ]
+
+or_comps = format[format$strat == "O.ALL", -1]
+#write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Acomps_unsexed_5_40_formatted.csv"), row.names = FALSE)
 
 
 #########################################################################################

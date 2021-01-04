@@ -62,7 +62,6 @@ wa_recfin_data =rename_recfin(data = wa_recfin,
 wa_recfin_data$Source = "RecFIN_MRFSS"
 
 #Oregon
-#Dont read in the age data just the length (otherwise aged lengths would be double counted)
 or_recfin_len = read.csv(file.path(dir,"data","RecFIN Sample Data","Quillback_RecFIN_BIO-LW_2001-2020.csv"), header = T, na.strings = "-")
 or_recfin_len_data = rename_recfin(data = or_recfin_len, 
                                    area_column_name = "State.Name",
@@ -84,10 +83,23 @@ or_mrfss_data = rename_mrfss(data = or_mrfss,
                              mode_names = c("rec_shore", "rec_boat"),
                              mode_column_name = "MRFSS_MODE_FX" )
 
+#Read the age data for age comps
+or_recfin_age = read.csv(file.path(dir,"data","RecFIN Sample Data","Quillback_RecFIN_BIO-AGE_2005- 2006,2008.csv"), header = T, na.strings = "-")
+or_recfin_age_data = rename_recfin(data = or_recfin_age, 
+                                   area_grouping = list("ODFW"), 
+                                   area_names = c("OR"), 
+                                   area_column_name = "SAMPLING_AGENCY_NAME",
+                                   mode_grouping = list( c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS")),
+                                   mode_names = c("boat"),
+                                   mode_column_name = "RECFIN_MODE_NAME",
+                                   or_ages = TRUE)
+
+
 
 ############################################################################################
 # Put all the data into one list
 ############################################################################################
+#Dont read in the oregon age data just the length (otherwise aged lengths would be double counted)
 input = list()
 input[[1]] = ca_recfin_data
 input[[2]] = ca_mrfss_data
@@ -132,7 +144,7 @@ out = out[out$Data_Type %in% c("RETAINED", NA), ]
 wa = out[which(out$State == "WA"), ]
 wa$Length_cm = wa$Length
 
-wa$Sex = "U" #UnexplandedLFs.fn will only do comps for Unsexed fish in sex = 0 and ignore male and female. So assign all as U
+wa$Sex = "U" #UnexpandedLFs.fn and UnexpandedAFs.fn will only do comps for Unsexed fish in sex = 0 and ignore male and female. So assign all as U
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
                        datL = wa, lgthBins = len_bin,
@@ -145,6 +157,15 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
     main = "WA Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
 
+#Washington age comps
+afs = UnexpandedAFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
+                       datA = wa, ageBins = 5:70,
+                       sex = 0,  partition = 0, fleet = 1, month = 1) #Fleet is 1 for WA
+file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=5-70.csv"), 
+            to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Age_comp_Sex_0_bin=5-70.csv")) 
+
+
+
 ############################################################################################
 #	Oregon recreational length data file
 ############################################################################################
@@ -152,7 +173,7 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
 or = out[which(out$State == "OR"), ]
 or$Length_cm = or$Length
 
-or$Sex = "U" #UnexplandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
+or$Sex = "U" #UnexpandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"),  #puts into "forSS" folder in this location
                        datL = or, lgthBins = len_bin,
@@ -165,6 +186,18 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
     main = "OR Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
 
+#Oregon age comps 
+out_orage = create_data_frame(data_list = list(or_recfin_age_data))
+out_orage$Sex = "U" #UnexpandedAFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
+
+afs = UnexpandedAFs.fn(dir = file.path(dir, "data"),  #puts into "forSS" folder in this location
+                       datA = out_orage, ageBins = 5:40,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=5-40.csv"), 
+            to= file.path(dir, "data", "forSS", "or_rec_notExpanded_Age_comp_Sex_0_bin=5-40.csv")) 
+
+
+
 ############################################################################################
 #	California recreational length data file
 ############################################################################################
@@ -172,7 +205,7 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
 ca = out[which(out$State == "CA"), ]
 ca$Length_cm = ca$Length
 
-ca$Sex = "U" #UnexplandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
+ca$Sex = "U" #UnexpandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
                        datL = ca, lgthBins = len_bin,
