@@ -2,6 +2,16 @@
 
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
+
+#Function to return model summary statistics
+#total NLL, # estimate parameters, R0, depletion
+sum_model <- function(model){
+  return(c("NLL" = round(model$likelihoods_used[1,"values"],2),
+              "n_parm" = round(model$N_estimated_parameters,0),
+              "R0" = round(model$estimated_non_dev_parameters[1,"Value"],2),
+              "depl" = round(model$current_depletion,2)))
+  }
 
 wd = "C:/Users/Brian.Langseth/Desktop/wa"
 
@@ -16,7 +26,6 @@ model = "0_0_init_model_recFirst"
 base.1 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1)
 
-wd = "C:/Users/Brian.Langseth/Desktop/wa"
 model = "0_1_0_recdevs"
 base.1.1 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1.1)
@@ -34,6 +43,15 @@ SS_plots(base.1.2)
 model = "0_1_2_recdevs_1980"
 base.1.3 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1.3)
+
+
+modelnames <- c("recdevs", "1960", "1980")
+mysummary  <- SSsummarize(list(base.1.1, base.1.2, base.1.3))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "0_recdevs_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
 
 ###############
@@ -105,7 +123,7 @@ SS_plots(base.3.5)
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
                              dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\0_2_dw_DM_samples\\just model files")
 #Using number of fish as sample size for commercial comps
-model = "0_2_dw_DM_samples"
+model = "0_2_dw_DM_fish"
 base.2.3 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.2.3)
 
@@ -114,6 +132,14 @@ model = "0_2_dw_DM_input"
 base.2.3.2 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.2.3.2)
 
+
+modelnames <- c("francis", "MI", "DM_fish", "DM_input")
+mysummary  <- SSsummarize(list(base.2.1, base.2.2, base.2.3, base.2.3.2))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "1_dataweighting_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
 ####################
 #R0 profiling - use profiling code.R
@@ -134,7 +160,7 @@ base.100 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.100)
 
 #Add separate commerical selectivity
-model = "1_0_1_recdevs_comSelex"
+model = "1_0_1_comSelex"
 base.101 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.101)
 
@@ -171,4 +197,146 @@ SS_plots(base.102_1999)
 model = "1_0_2b_reduceComps_1999"
 base.102b_1999 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.102b_1999)
+
+#Comparing catch and recruitment
+compare_catch_rec(base.102b_1999, plots = "all", offset = 5) #Recruitment seems to align with large catches
+
+#Estimate for dome shaped selectivity for rec fleet
+#Starting with 101 model
+model = "1_0_3_recdome"
+base.103 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.103)
+
+
+#Comparing runs
+modelnames <- c("recdevs", "comSelex", "noearlyrec", "block2002", "block02_noearlyrec", "block1999", "block99_noearlyrec", "recdome")
+mysummary  <- SSsummarize(list(base.100, base.101, base.101b, base.102, base.102b, base.102_1999, base.102b_1999, base.103))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "2_selex_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+#There are tradeoffs between R0 and the first recruitment devs around 1995
+#Dome shaped rec selectivity seems to aplify rec devs
+
+
+
+
+#####################
+#Cleaning up models selectivity and recruitment devs
+#####################
+
+#Starting with the commercial selectivity model (101)
+#1. Follow handbook guidance on setting selectivity for parm1 = mode; and parms 3, 4; set priors to inits)
+#for both commercial and recreational
+model = "1_1_1_updateSelex"
+base.111 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.111)
+
+base.111$sigma_R_info #Could increase to 0.9
+bias111 = SS_fitbiasramp(base.111)
+bias111
+
+sum_model(base.111)
+#NLL n_parm     R0   depl 
+#674.77  80.00   1.57   0.19
+
+#Starting with 111 model
+#Set main recdevs at start of time series
+model = "1_1_2_set_recdevs_early"
+base.112 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.112)
+sum_model(base.112)
+#NLL n_parm     R0   depl 
+#674.34  80.00   1.59   0.22
+
+
+#Starting with 111 model
+#Reset bias adj parms to recommended values from 111
+model = "1_1_3_biasadj"
+base.113 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.113)
+
+base.113$sigma_R_info #Could increase to 0.9 (same as 111 model)
+bias113 = SS_fitbiasramp(base.113)
+bias113 #no changes from recommended
+
+#Change sigmaR to recommended value (0.9). Fix. 
+#Starting with 111 model
+model = "1_1_4_sigmaRfix"
+base.114 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.114)
+
+base.114$sigma_R_info
+bias114 = SS_fitbiasramp(base.114)
+bias114 
+
+#Estimate sigmaR. Set phase to 2, where recdevs are estimated
+#Increase max value to 1.2
+#Starting with 111 model
+model = "1_1_5_sigmaRest"
+base.115 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.115)
+#Estimation pushes it to the bound. 1.2 is HIGH. 
+
+#Make recommeded bias adj from sigmaR = 0.9 (model 114)
+#Start with model 114 and change bias ramps as recommended
+model = "1_1_6_sigmaRfix_biasadj"
+base.116 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.116)
+
+base.116$sigma_R_info
+bias116 = SS_fitbiasramp(base.116)
+bias116 
+
+#Reset bias adjustment 
+#Start with model 116
+model = "1_1_6_sigmaRfix_biasadj2"
+base.116b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.116b)
+
+base.116b$sigma_R_info
+bias116b = SS_fitbiasramp(base.116b)
+bias116b 
+#Bias ramp goes back and forth as to when it starts
+
+#Reset bias adjustment again 
+#Start with model 116_adj2
+model = "1_1_6_sigmaRfix_biasadj3"
+base.116c = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.116c)
+sum_model(base.116c)
+#NLL n_parm     R0   depl 
+#658.07  80.00   1.46   0.11
+
+base.116c$sigma_R_info
+bias116c = SS_fitbiasramp(base.116c)
+bias116c 
+##Model wants to increase sigmaR and decrease R0. Bias adjust varies but affect little. Main
+#effect on model scale is adjusting sigmaR
+
+#Remove early rec devs 
+#Start with model 116_adj3
+model = "1_1_7_no_early_recdevs"
+base.117 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.117)
+sum_model(base.117) 
+#NLL n_parm     R0   depl 
+#658.34  58.00   1.49   0.12 
+
+#Comparing runs
+modelnames <- c("base", "early_mainrecdev", "reset_bias", "sigmaR09", "sigmaRest", "sigma09_bias", "sigma09_bias_iter", "no early recdevs")
+mysummary  <- SSsummarize(list(base.111, base.112 , base.113, base.114, base.115, base.116, base.116c, base.117 ))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "3_rec_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#There are tradeoffs between R0 and sigmaR (more variability, smaller R0)
+#Seems like the early recdevs contribute to uncertainty around R0
+
+
+###
+
 
