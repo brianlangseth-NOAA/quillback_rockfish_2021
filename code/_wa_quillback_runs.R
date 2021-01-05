@@ -262,6 +262,10 @@ base.113$sigma_R_info #Could increase to 0.9 (same as 111 model)
 bias113 = SS_fitbiasramp(base.113)
 bias113 #no changes from recommended
 
+sum_model(base.113)
+#NLL n_parm     R0   depl 
+#676.70  80.00   1.56   0.20
+
 #Change sigmaR to recommended value (0.9). Fix. 
 #Starting with 111 model
 model = "1_1_4_sigmaRfix"
@@ -271,6 +275,10 @@ SS_plots(base.114)
 base.114$sigma_R_info
 bias114 = SS_fitbiasramp(base.114)
 bias114 
+
+sum_model(base.114)
+#NLL n_parm     R0   depl 
+#658.38  80.00   1.47   0.11 
 
 #Estimate sigmaR. Set phase to 2, where recdevs are estimated
 #Increase max value to 1.2
@@ -317,13 +325,23 @@ bias116c
 #effect on model scale is adjusting sigmaR
 
 #Remove early rec devs 
-#Start with model 116_adj3
+#Start with model 116_adj3 (116c)
 model = "1_1_7_no_early_recdevs"
 base.117 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.117)
 sum_model(base.117) 
 #NLL n_parm     R0   depl 
 #658.34  58.00   1.49   0.12 
+
+#Comparing runs - does iterating bias ramp affect things?
+modelnames <- c("sigmaR09", "sigma09_bias", "sigma09_bias_iter1", "sigma09_bias_iter2")
+mysummary  <- SSsummarize(list(base.114, base.116, base.116b, base.116c))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "3_rec_biasramp",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
 
 #Comparing runs
 modelnames <- c("base", "early_mainrecdev", "reset_bias", "sigmaR09", "sigmaRest", "sigma09_bias", "sigma09_bias_iter", "no early recdevs")
@@ -337,6 +355,45 @@ SSplotComparisons(mysummary,
 #Seems like the early recdevs contribute to uncertainty around R0
 
 
-###
+#####################
+#Continue exploring data changes
+#####################
+#Add ages
+#Start with model 114
+model = "2_0_0_ages"
+base.200 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.200)
+sum_model(base.200)
+#NLL n_parm     R0   depl
+#930.67  80.00   2.00   0.59 
+
+#Set sigmaR back to 0.6
+#Start with model 2000
+model = "2_0_1_ages_sigmaR06"
+base.201 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.201)
+sum_model(base.201)
+#NLL n_parm     R0   depl 
+#946.10  80.00   1.96   0.55 
+
+#Add data weighting - just Francis at the moment
+SS_tune_comps(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\models\\wa\\2_0_0_ages", write = FALSE)
+#Starting with model 200
+model = "2_1_0_ages_francis"
+base.210 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.210)
+sum_model(base.210)
+#NLL n_parm     R0   depl 
+#138.41  80.00   3.59   0.77
+
+
+modelnames <- c("no ages", "age0.9", "age0.6", "age_0.9Francis")
+mysummary  <- SSsummarize(list(base.114, base.200, base.201, base.210))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "4_ages_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
 
 

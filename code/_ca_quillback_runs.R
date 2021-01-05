@@ -73,6 +73,15 @@ SS_plots(base.1.1.0)
 #Comparing catch and recruitment
 compare_catch_rec(base.1.1.0, plots = "all", offset = 8) #Catch and recruitment dont quite align
 
+#Comparing runs
+modelnames <- c("raw catch", "smooth catch")
+mysummary  <- SSsummarize(list(base.1.0.0, base.1.1.0))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "1_catch_smoother_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd),
+                  pdf = TRUE)
+
 ####################
 #R0 profiling - use profiling code.R
 #Set selectivity estimation to be phase 1
