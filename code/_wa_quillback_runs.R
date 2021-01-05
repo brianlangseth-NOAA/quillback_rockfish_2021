@@ -15,6 +15,12 @@ sum_model <- function(model){
 
 wd = "C:/Users/Brian.Langseth/Desktop/wa"
 
+
+
+##########################################################################################
+#                         Initial explorations
+##########################################################################################
+
 model = "0_0_init_model"
 base = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base)
@@ -54,9 +60,10 @@ SSplotComparisons(mysummary,
                   pdf = TRUE)
 
 
-###############
-##Doing data weighting
-###############
+##########################################################################################
+#                         Data weighting
+##########################################################################################
+
 ##Starting with francis weighting with the 1980s recdev version
 SS_tune_comps(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\models\\wa\\0_1_recdevs_1980", write = FALSE)
 #adjusting only for 1 iteration
@@ -148,8 +155,10 @@ SSplotComparisons(mysummary,
 model = "0_4_R0profiling"
 
 
-#####################
-#Cleaning up models
+##########################################################################################
+#                         Cleaning up models
+#                         Selex and some recruitment
+##########################################################################################
 #Starting with the 1980s recdev version (0_1_2)
 #1. Set 2020 catch to be average of last three years for rec and comm
 #2. Reset forecast catches to average of last three years of rec
@@ -223,9 +232,10 @@ SSplotComparisons(mysummary,
 
 
 
-#####################
-#Cleaning up models selectivity and recruitment devs
-#####################
+##########################################################################################
+#                         More cleaning up models
+#                         Recdevs and recruitment bias
+##########################################################################################
 
 #Starting with the commercial selectivity model (101)
 #1. Follow handbook guidance on setting selectivity for parm1 = mode; and parms 3, 4; set priors to inits)
@@ -233,11 +243,9 @@ SSplotComparisons(mysummary,
 model = "1_1_1_updateSelex"
 base.111 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.111)
-
 base.111$sigma_R_info #Could increase to 0.9
 bias111 = SS_fitbiasramp(base.111)
 bias111
-
 sum_model(base.111)
 #NLL n_parm     R0   depl 
 #674.77  80.00   1.57   0.19
@@ -257,11 +265,9 @@ sum_model(base.112)
 model = "1_1_3_biasadj"
 base.113 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.113)
-
 base.113$sigma_R_info #Could increase to 0.9 (same as 111 model)
 bias113 = SS_fitbiasramp(base.113)
 bias113 #no changes from recommended
-
 sum_model(base.113)
 #NLL n_parm     R0   depl 
 #676.70  80.00   1.56   0.20
@@ -271,11 +277,9 @@ sum_model(base.113)
 model = "1_1_4_sigmaRfix"
 base.114 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.114)
-
 base.114$sigma_R_info
 bias114 = SS_fitbiasramp(base.114)
 bias114 
-
 sum_model(base.114)
 #NLL n_parm     R0   depl 
 #658.38  80.00   1.47   0.11 
@@ -293,7 +297,6 @@ SS_plots(base.115)
 model = "1_1_6_sigmaRfix_biasadj"
 base.116 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.116)
-
 base.116$sigma_R_info
 bias116 = SS_fitbiasramp(base.116)
 bias116 
@@ -303,7 +306,6 @@ bias116
 model = "1_1_6_sigmaRfix_biasadj2"
 base.116b = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.116b)
-
 base.116b$sigma_R_info
 bias116b = SS_fitbiasramp(base.116b)
 bias116b 
@@ -317,7 +319,6 @@ SS_plots(base.116c)
 sum_model(base.116c)
 #NLL n_parm     R0   depl 
 #658.07  80.00   1.46   0.11
-
 base.116c$sigma_R_info
 bias116c = SS_fitbiasramp(base.116c)
 bias116c 
@@ -333,7 +334,7 @@ sum_model(base.117)
 #NLL n_parm     R0   depl 
 #658.34  58.00   1.49   0.12 
 
-#Comparing runs - does iterating bias ramp affect things?
+#Comparing runs - does iterating bias ramp affect things? --- NO
 modelnames <- c("sigmaR09", "sigma09_bias", "sigma09_bias_iter1", "sigma09_bias_iter2")
 mysummary  <- SSsummarize(list(base.114, base.116, base.116b, base.116c))
 SSplotComparisons(mysummary, 
@@ -355,9 +356,11 @@ SSplotComparisons(mysummary,
 #Seems like the early recdevs contribute to uncertainty around R0
 
 
-#####################
-#Continue exploring data changes
-#####################
+
+##########################################################################################
+#                         Adding ages
+##########################################################################################
+
 #Add ages
 #Start with model 114
 model = "2_0_0_ages"
@@ -394,6 +397,11 @@ SSplotComparisons(mysummary,
                   legendlabels = modelnames, 
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
+
+
+##########################################################################################
+#                         Adding ages
+##########################################################################################
 
 
 
