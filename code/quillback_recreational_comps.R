@@ -156,6 +156,13 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
     dat = lfs$comps, ylim=c(0, max(len_bin)+4), 
     main = "WA Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
+#Washington length comps 10-56
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
+                       datL = wa, lgthBins = seq(10,56,2),
+                       sex = 0,  partition = 0, fleet = 1, month = 1) #Fleet is 1 for WA
+file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-56.csv"), 
+            to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Length_comp_Sex_0_bin=10-56.csv")) 
+
 
 #Washington age comps
 afs = UnexpandedAFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
