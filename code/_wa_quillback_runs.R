@@ -249,9 +249,10 @@ bias111
 sum_model(base.111)
 #NLL n_parm     R0   depl 
 #674.77  80.00   1.57   0.19
+compare_catch_rec(base.111, plots=2, offset = 4, type = "devs")
 
-#Starting with 111 model
 #Set main recdevs at start of time series
+#Starting with 111 model
 model = "1_1_2_set_recdevs_early"
 base.112 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.112)
@@ -259,9 +260,8 @@ sum_model(base.112)
 #NLL n_parm     R0   depl 
 #674.34  80.00   1.59   0.22
 
-
-#Starting with 111 model
 #Reset bias adj parms to recommended values from 111
+#Starting with 111 model
 model = "1_1_3_biasadj"
 base.113 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.113)
@@ -283,6 +283,7 @@ bias114
 sum_model(base.114)
 #NLL n_parm     R0   depl 
 #658.38  80.00   1.47   0.11 
+compare_catch_rec(base.114, plots="all", offset = 5, type = "devs")
 
 #Estimate sigmaR. Set phase to 2, where recdevs are estimated
 #Increase max value to 1.2
@@ -400,8 +401,69 @@ SSplotComparisons(mysummary,
 
 
 ##########################################################################################
-#                         Adding ages
+#                         Continuing to explore selex and recdevs
 ##########################################################################################
+#Adjust main dev start to 1989 and early dev start to 1980
+#Starting with model 111
+model = "3_0_0_devs1989"
+base.300 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.300)
+#Seems reasonable as this is when main devs start to be informative (due to rec comps being informative starting in '95)
+
+#Remove early devs
+#Starting with model 300
+model = "3_0_1_noearlydevs"
+base.301 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.301)
+#Slight early recruitment differences but no real large change.
+#Bias adj patterns starts low. Prob best to allow flex in early comp - So add early recs
+
+#Remove early rec comps (1981-83, 1987)
+#Starting with model 300
+model = "3_1_0_noearlyReccomps"
+base.310 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.310)
+#These have very little effect.  
+
+#Remove early comm devs too (all but 2002, 2006, 2014)
+#Starting with model 310
+model = "3_1_1_noSparsecomps"
+base.311 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.311)
+#These have very little effect. Gradients better with all com comps. Keep them in. 
+
+#Estimate more selex params (all)
+#Starting with model 300
+model = "3_2_0_estSelex_all"
+base.320 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.320)
+sum_model(base.320)
+#NLL n_parm     R0   depl 
+#615.14  66.00   1.75   0.62 
+
+#Estimate more selex params (only 1-4)
+#Starting with model 300
+model = "3_2_1_estSelex_14"
+base.321 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.321)
+sum_model(base.321)
+#NLL n_parm     R0   depl 
+#676.41  62.00   1.52   0.13 
+
+#Estimate more selex params (only 1-4 but all in same phase for rec
+#Starting with model 300
+model = "3_2_2_estSelex_14phase"
+base.322 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.322)
+sum_model(base.322)
+#NLL n_parm     R0   depl 
+#676.19  62.00   1.51   0.13
+#Dome selectivity matters, otherwise flex fitting does affect much
+
+
+
+#Compare runs
+
 
 
 
