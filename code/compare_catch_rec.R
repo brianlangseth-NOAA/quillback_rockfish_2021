@@ -1,15 +1,18 @@
 #############
 #'Function to compare catches with recruitment
+#'Output is up to two figures showing comparison or comparison lagged by specified number of years
+#'Can plot iether total number of age 0 recruits, or recruitment devs.
 #'
 #' @param model SS_output from r4ss
-#' @param plots Which plots to output (options: all, 1-2)
+#' @param plots Which plots to output (options: all, 1 (no offset plot), 2 (offset plot))
 #' @param offset Time lag (number of years) from catch after recruitment (default is 0)
+#' @param type Either recdevs (default) or total recruits ("recruits")
 #' 
 #' @author Brian Langseth
 #' @export
 ##############
 
-compare_catch_rec <- function(model, plots, offset = 0){
+compare_catch_rec <- function(model, plots, offset = 0, type = "devs"){
   
   start_yr <- model$startyr
   end_yr <- model$endyr
@@ -18,8 +21,11 @@ compare_catch_rec <- function(model, plots, offset = 0){
   sum_catch <- aggregate(Obs ~ Yr, data = model$catch, FUN=sum) #1916-2020
   catch_yr <- sum_catch[which(sum_catch$Yr %in% c(start_yr:end_yr)), "Obs"]
   
+  rec <- model$recruit[which(model$recruit$Yr %in% c(start_yr:end_yr)), "dev"] 
   #Extract predicted recruitment
-  rec <- model$recruit[which(model$recruit$Yr %in% c(start_yr:end_yr)), "pred_recr"] 
+  if(type == "recruits"){
+    rec <- model$recruit[which(model$recruit$Yr %in% c(start_yr:end_yr)), "pred_recr"] 
+  }
   
   if(plots == "all" || plots == 1) {
     #Plot 1: Plot catch and recruitment time series
