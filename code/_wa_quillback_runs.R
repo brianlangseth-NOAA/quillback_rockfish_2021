@@ -344,7 +344,6 @@ SSplotComparisons(mysummary,
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
 
-
 #Comparing runs
 modelnames <- c("base", "early_mainrecdev", "reset_bias", "sigmaR09", "sigmaRest", "sigma09_bias", "sigma09_bias_iter", "no early recdevs")
 mysummary  <- SSsummarize(list(base.111, base.112 , base.113, base.114, base.115, base.116, base.116c, base.117 ))
@@ -458,11 +457,99 @@ SS_plots(base.322)
 sum_model(base.322)
 #NLL n_parm     R0   depl 
 #676.19  62.00   1.51   0.13
-#Dome selectivity matters, otherwise flex fitting does affect much
+#Dome selectivity matters, otherwise flexible fitting does not affect much
 
 
+#Block selectivity
+#Starting with model 300
+model = "3_3_0_blockSelex1999"
+base.330 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.330)
+
+#Block selectivity
+#Starting with model 330
+model = "3_3_1_domelater"
+base.331 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.331)
+#dome shaped seles from 1999 on doesnt change much. Thus domed selx prior to 1999 is what affects model
+
+#No recdevs 
+#Starting with model 300
+model = "3_4_0_norecdevs"
+base.340 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.340)
+sum_model(base.340)
+#NLL  n_parm      R0    depl 
+#1294.20    5.00    1.95    0.29 
 
 #Compare runs
+modelnames <- c("maindevs89", "maindevs89_noearly", "noearlyrecComps", "noSparseComps", "flexSelex_all", "flexSelex_14", "blockSelex", "recentDome", "norecdevs")
+mysummary  <- SSsummarize(list(base.300, base.301, base.310, base.311, base.320, base.321, base.330, base.331, base.340))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "6_Rec_Selex_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+
+##########################################################################################
+#                         More changes to data
+#                      Add ages, increase comp bins
+##########################################################################################
+#Apply 7 yr moving average to smooth catches with sigmaR 0.6
+#Start with model 111
+model = "4_0_0_smoothCatch06"
+base.400 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.400)
+
+#Apply 7 yr moving average to smooth catches with sigmaR 0.9
+#Start with model 400
+model = "4_0_1_smoothCatch09"
+base.401 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.401)
+
+#Compare runs for smoothing catch
+#Are recdevs following catch? Is it more prominent with sigmaR = 0.6 or 0.9
+modelnames <- c("sigma06", "sigma09", "smoothCatch06", "smoothCatch09")
+mysummary  <- SSsummarize(list(base.111, base.114, base.400, base.401))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "5_smoothCatch_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#Recruitment for 0.6 an 0.9 runs are versy similar, and similar to when catch
+#is smoothed. Recruitment may be timed similarly to catch, but magnitude is
+#unaffected. 
+
+#Explore larger bins size for comps (10-56) and increase bounds for p1
+#Start with model 111
+model = "4_1_0_largerBins"
+base.410 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.410)
+#Very little difference, as expected
+
+
+##########################################################################################
+#                         Data weighting
+##########################################################################################
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\3_0_0_devs1989", write = FALSE)
+#Starting from 300
+#Francis
+model = "5_0_0_dw_francis"
+base.500 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.500)
+
+#McAllister-Ianelli
+model = "5_0_1_dw_mi"
+base.501 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.510)
+
+#Dirichlet Multinomial - report and comp report copied from model 300
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\5_0_2_dw_dm\\just model files")
+model = "5_0_2_dw_dm"
+base.520 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.520)
 
 
 
