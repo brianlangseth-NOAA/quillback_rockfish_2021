@@ -128,7 +128,7 @@ SS_plots(base.3.5)
 ##Calculating Dirichlet multinomial options
 ##Starting with the 1980s recdev version 
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
-                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\0_2_dw_DM_samples\\just model files")
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\0_2_dw_DM_fish\\just model files")
 #Using number of fish as sample size for commercial comps
 model = "0_2_dw_DM_fish"
 base.2.3 = SS_output(file.path(wd, model),covar=FALSE)
@@ -533,24 +533,55 @@ SS_plots(base.410)
 #                         Data weighting
 ##########################################################################################
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\3_0_0_devs1989", write = FALSE)
-#Starting from 300
+#Starting from model 300
 #Francis
 model = "5_0_0_dw_francis"
 base.500 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.500)
+#Francis adj
+#1 0.1922
+#2 0.3888
 
 #McAllister-Ianelli
 model = "5_0_1_dw_mi"
 base.501 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.510)
+SS_plots(base.501)
+#MI adj
+#1 0.0736
+#2 0.1574
 
 #Dirichlet Multinomial - report and comp report copied from model 300
+#Starting from model 300 but use InputN for sample size
+#This sets up the DM option within the .ctl and .dat files
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
                              dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\5_0_2_dw_dm\\just model files")
 model = "5_0_2_dw_dm"
-base.520 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.520)
+base.502 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.502)
+base.502$Dirichlet_Multinomial_pars
+#DM theta theta/(1+theta)
+#1  1.07  0.518  
+#2  59.4  0.985
 
+#Starting from model 300 but keep Nsamples for sample size
+#This sets up the DM option within the .ctl and .dat files
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\5_0_3_dw_dm_samples\\just model files")
+model = "5_0_3_dw_dm_samples"
+base.503 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.503)
+base.503$Dirichlet_Multinomial_pars
+#DM theta theta/(1+theta)
+#1  1.07  0.517  
+#2  59.4  0.983
+#Functionally no different when weighting by samples versus inputN as commercial comps matter little
 
-
+#Compare runs
+modelnames <- c("maindevs89", "norecdevs", "Francis", "MI", "DM")
+mysummary  <- SSsummarize(list(base.300, base.340, base.500, base.501, base.502))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "7_dataWeighting_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
