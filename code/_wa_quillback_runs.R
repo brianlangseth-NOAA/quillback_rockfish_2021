@@ -37,18 +37,18 @@ base.1.1 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1.1)
 
 ##Extending recdevs further into past
-#Makes no difference - ignore
 model = "0_1_1_recdevs_longearly"
 base.1.2 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1.2)
+#Makes no difference - ignore
 
 ##Starting recdevs when data become available 1980 to reduce # of parameters
-##Do so since longer recdevs aren't that variable. 
-#Very similar to starting recdevs in 1960.
-#Probably best to go with this one. 
 model = "0_1_2_recdevs_1980"
 base.1.3 = SS_output(file.path(wd, model),covar=FALSE)
 SS_plots(base.1.3)
+#Do so since longer recdevs aren't that variable. 
+#Very similar to starting recdevs in 1960.
+#Probably best to go with this one. 
 
 
 modelnames <- c("recdevs", "1960", "1980")
@@ -215,7 +215,8 @@ compare_catch_rec(base.102b_1999, plots = "all", offset = 5) #Recruitment seems 
 model = "1_0_3_recdome"
 base.103 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.103)
-
+#Minimal effect because length of peak isn't also estimated. Below, when that is estimated 
+#there is a larger effect
 
 #Comparing runs
 modelnames <- c("recdevs", "comSelex", "noearlyrec", "block2002", "block02_noearlyrec", "block1999", "block99_noearlyrec", "recdome")
@@ -323,7 +324,7 @@ sum_model(base.116c)
 base.116c$sigma_R_info
 bias116c = SS_fitbiasramp(base.116c)
 bias116c 
-##Model wants to increase sigmaR and decrease R0. Bias adjust varies but affect little. Main
+##Model wants to increase sigmaR and decrease R0. Bias adjust varies but effect little. Main
 #effect on model scale is adjusting sigmaR
 
 #Remove early rec devs 
@@ -398,6 +399,10 @@ SSplotComparisons(mysummary,
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
 
+#This all blows up when downweigthing. Exclude due to not being in TORS. 
+#Probaly would need to explore more if included.
+#Limited inforamtion here other than affecting early recdevs
+
 
 ##########################################################################################
 #                         Continuing to explore selex and recdevs
@@ -471,7 +476,14 @@ SS_plots(base.330)
 model = "3_3_1_domelater"
 base.331 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.331)
-#dome shaped seles from 1999 on doesnt change much. Thus domed selx prior to 1999 is what affects model
+#dome shaped selex from 1999 on doesnt change model much. Issue is not due to just estimating p6 (if all parms
+#estimated effect is similar). Reason this doesnt affect results but model 320 does is that including
+#early period moves the later dome leftward and increasing early rec devs (compared to when estimating two 
+#separate domes)
+
+model = "test"
+base.331test = SS_output(file.path(wd, "3_3_1_domelater", model),covar=TRUE)
+SS_plots(base.331test)
 
 #No recdevs 
 #Starting with model 300
@@ -481,6 +493,9 @@ SS_plots(base.340)
 sum_model(base.340)
 #NLL  n_parm      R0    depl 
 #1294.20    5.00    1.95    0.29 
+#Scale doesn't change too much though depletion is less (higher value). 
+#Pop declines over longer time (missing on gains due to positive recdevs) and
+#doesn't decline at end (missing on loses due to negative recdevs). 
 
 #Compare runs
 modelnames <- c("maindevs89", "maindevs89_noearly", "noearlyrecComps", "noSparseComps", "flexSelex_all", "flexSelex_14", "blockSelex", "recentDome", "norecdevs")
@@ -584,4 +599,21 @@ SSplotComparisons(mysummary,
                   legendlabels = modelnames, 
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
+
+
+##########################################################################################
+#                         Final explorations
+##########################################################################################
+
+#Patterns very similar to copper. Increased mean length later in time period along with lack 
+#of small fish in comps and small catches suggest recruitment failures. Mean length pattern and
+#biomass pattern similar. 
+#Recdev patterns are high early to caputre present of smaller fish in comps, but then runs
+#negative to capture lack of small fish in comps.
+#If block after 1999, comps better fit, but missing band of larger fish. If block 2010, able 
+#to capture. No evidence for these blocks however. 
+#When include recdevs, selectivity shifts rightward. Blocking selex results in leftward estimates early
+
+
+
 
