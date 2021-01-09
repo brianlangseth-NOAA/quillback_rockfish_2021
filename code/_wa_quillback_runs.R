@@ -9,7 +9,7 @@ source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.
 sum_model <- function(model){
   return(c("NLL" = round(model$likelihoods_used[1,"values"],2),
               "n_parm" = round(model$N_estimated_parameters,0),
-              "R0" = round(model$estimated_non_dev_parameters[1,"Value"],2),
+              "R0" = round(model$estimated_non_dev_parameters["SR_LN(R0)","Value"],2),
               "depl" = round(model$current_depletion,2)))
   }
 
@@ -413,6 +413,9 @@ model = "3_0_0_devs1989"
 base.300 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.300)
 #Seems reasonable as this is when main devs start to be informative (due to rec comps being informative starting in '95)
+sum_model(base.300)
+#NLL n_parm     R0   depl 
+#676.41  58.00   1.52   0.13 
 
 #Remove early devs
 #Starting with model 300
@@ -481,9 +484,14 @@ SS_plots(base.331)
 #early period moves the later dome leftward and increasing early rec devs (compared to when estimating two 
 #separate domes)
 
-model = "test"
-base.331test = SS_output(file.path(wd, "3_3_1_domelater", model),covar=TRUE)
-SS_plots(base.331test)
+#Add a third block in 2010 and beyond (to capture peaks currently missing)
+#Starting with model 330
+model = "3_3_2_blockSelex1999_2010"
+base.332 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.332)
+#Slight rightward movement, but devs dont look much better and no known reason to 
+#apply added block. Moving second block to start in 2014 didnt really improve devs 
+#pattern either and many bounds on parameters were reached. 
 
 #No recdevs 
 #Starting with model 300
@@ -494,8 +502,9 @@ sum_model(base.340)
 #NLL  n_parm      R0    depl 
 #1294.20    5.00    1.95    0.29 
 #Scale doesn't change too much though depletion is less (higher value). 
-#Pop declines over longer time (missing on gains due to positive recdevs) and
-#doesn't decline at end (missing on loses due to negative recdevs). 
+#Pop declines over longer time (missing on gains from positive recdevs) and
+#doesn't decline at end (missing on loses from negative recdevs). 
+#R0 is higher (probably to compensate for lost peaks in recdevs) and selex moves left. 
 
 #Compare runs
 modelnames <- c("maindevs89", "maindevs89_noearly", "noearlyrecComps", "noSparseComps", "flexSelex_all", "flexSelex_14", "blockSelex", "recentDome", "norecdevs")
@@ -509,13 +518,14 @@ SSplotComparisons(mysummary,
 
 ##########################################################################################
 #                         More changes to data
-#                      Add ages, increase comp bins
+#                      Add ages, increase comp bins, estimate linf
 ##########################################################################################
 #Apply 7 yr moving average to smooth catches with sigmaR 0.6
 #Start with model 111
 model = "4_0_0_smoothCatch06"
 base.400 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.400)
+compare_catch_rec(base.400, plots=2, offset = 4, type = "devs")
 
 #Apply 7 yr moving average to smooth catches with sigmaR 0.9
 #Start with model 400
@@ -536,12 +546,49 @@ SSplotComparisons(mysummary,
 #is smoothed. Recruitment may be timed similarly to catch, but magnitude is
 #unaffected. 
 
+
 #Explore larger bins size for comps (10-56) and increase bounds for p1
 #Start with model 111
 model = "4_1_0_largerBins"
 base.410 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.410)
 #Very little difference, as expected
+
+#Explore effect of catch on recdevs
+#Fix selectivity parms to estimated values from model 111, remove comps, est recdevs
+#Start with model 111
+model = "4_2_0_noLengthData"
+base.420 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.420)
+
+#Estimate length at Amax
+#Start with model 300
+model = "4_3_0_estLinf"
+base.430 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.430)
+#42.69 compared to fixed value of 44  but big difference in depletion
+sum_model(base.430)
+#NLL n_parm     R0   depl 
+#664.20  59.00   1.61   0.45 
+
+#Estimate length at Amax
+#Start with model 300
+model = "4_3_1_LAmax999"
+base.431 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.431)
+sum_model(base.431)
+#NLL n_parm     R0   depl 
+#670.49  58.00   1.54   0.22
+#Depletion is higher and R0 is too. 
+#Compare runs for smoothing catch
+#Are recdevs following catch? Is it more prominent with sigmaR = 0.6 or 0.9
+modelnames <- c("base", "estLinf", "LAmax999")
+mysummary  <- SSsummarize(list(base.300, base.430, base.431))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "5b_Linf_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
 
 ##########################################################################################
@@ -606,13 +653,40 @@ SSplotComparisons(mysummary,
 ##########################################################################################
 
 #Patterns very similar to copper. Increased mean length later in time period along with lack 
-#of small fish in comps and small catches suggest recruitment failures. Mean length pattern and
-#biomass pattern similar. 
-#Recdev patterns are high early to caputre present of smaller fish in comps, but then runs
+#of small fish in comps and small catches suggest recent recruitment failures. Mean length pattern and
+#biomass pattern similar to copper. 
+#Recdev patterns are high early to caputre presence of smaller fish in comps, but then runs
 #negative to capture lack of small fish in comps.
-#If block after 1999, comps better fit, but missing band of larger fish. If block 2010, able 
-#to capture. No evidence for these blocks however. 
+#If block after 1999, comps better fit, but still missing band of larger fish. If block 2010, same. 
+#No evidence for these blocks however. 
 #When include recdevs, selectivity shifts rightward. Blocking selex results in leftward estimates early
+#When estimate Linf, although estimate is 1.5 cm lower, depletion changes greatly due to different recdevs
+#and higher R0 estimate. 
+
+#Elect to not do recdevs. Reasons are limited data, very high selex curve (no recdevs brings it down), 
+#prominent patterns in devs (positive rec devs early followed by low). A general lack of selection of 
+#small fish in later comps (or more selection of smaller fish earlier), suggesting perhaps a sampling
+#issue, and large peaks in bias adj pattern and 0 max bias adj. Also, is this stock that depleted.
+#Note that recdevs do track mean length and it could be possibly stock is that depleted since they are 
+#susceptible so need to include as sensitivity. 
+
+#Base model
+#Starting from model 300 but exclude recdevs and set LAmax to be Linf
+model = "6_0_base"
+base.600 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.600)
+
+#Include recdevs
+#Starting from model 600 but set bound for selex p1 to 55
+#Run once and make suggested bias adjustments (1980, 1998, 2014, 2032, max_bias to 0)
+model = "6_1_recdevs"
+base.601 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.601)
+SS_fitbiasramp(base.601, verbose=TRUE) 
+
+
+
+
 
 
 
