@@ -676,6 +676,9 @@ model = "6_0_base"
 base.600 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.600)
 
+#R0 profile - use profiling code.R
+#Start with model 600 but set rec parm 2's phase to phase 1
+
 #Include recdevs
 #Starting from model 600 but set bound for selex p1 to 55
 #Run once and make suggested bias adjustments (1980, 1998, 2014, 2032, max_bias to 0)
@@ -683,6 +686,27 @@ model = "6_1_recdevs"
 base.601 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.601)
 SS_fitbiasramp(base.601, verbose=TRUE) 
+
+#Data weighting 
+#Starting with model 600
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\6_0_base", write = FALSE)
+model = "6_2_1_dw_francis"
+base.621 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.621)
+
+model = "6_2_2_dw_MI"
+base.622 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.622)
+
+#Use InputN for sample size
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\6_2_3_dw_DM\\just model files")
+model = "6_2_3_dw_DM"
+base.623 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.623)
+
+
+
 
 
 

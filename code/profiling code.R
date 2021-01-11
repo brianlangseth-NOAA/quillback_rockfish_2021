@@ -12,11 +12,73 @@ library(nwfscDiag)
 #######################################################################################################
 
 mydir = "C:/Users/Brian.Langseth/Desktop/wa"
+
+#####################
+#Exploration runs
+####################
 base_name = "0_4_R0profiling"
 base_name = "1_0_1_comSelex_R0profile"
 
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+                            low =  c(-1.5),
+                            high = c(1.5),
+                            step_size = c(0.2),
+                            param_space = c('relative'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile"),
+                                              profile_details = get ))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+####################
+#Proposed base run
+####################
+base_name = "6_0_1_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -1.0, 40),
+                            high = c(0.09, 0.99,  2, 48),
+                            step_size = c(0.005, 0.10, 0.25, 1),
+                            param_space = c('real', 'real', 'relative', 'real'))
+
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+#Linf base run doesn't converge so rerun manually
+
+
+#######################################################################################################
+# Oregon
+#####################################################################################################
+
 mydir = "C:/Users/Brian.Langseth/Desktop/or"
 base_name = "1_0_recdevs_R0profile"
+
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+                            low =  c(-1.5),
+                            high = c(1.5),
+                            step_size = c(0.2),
+                            param_space = c('relative'))
+
+
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile"),
+                                              profile_details = get ))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+
+#######################################################################################################
+# California
+#####################################################################################################
 
 mydir = "C:/Users/Brian.Langseth/Desktop/ca"
 base_name = "1_0_0_recdevs_R0profile"
@@ -26,6 +88,7 @@ get = get_settings_profile( parameters =  c("SR_LN(R0)"),
                             high = c(1.5),
                             step_size = c(0.2),
                             param_space = c('relative'))
+
 
 
 model_settings = get_settings(settings = list(base_name = base_name,
