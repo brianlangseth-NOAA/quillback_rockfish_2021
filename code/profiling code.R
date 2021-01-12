@@ -50,7 +50,12 @@ model_settings = get_settings(settings = list(base_name = base_name,
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
-#Linf base run doesn't converge so rerun manually
+#Linf base run doesn't converge so rerun the base run manually, replace base results as appropriately numbered files
+#in profile results and run the following code
+load(paste0(mydir,"/6_0_1_baseR0profile_profile_L_at_Amax_Fem_GP_1","/L_at_Amax_Fem_GP_1", "_profile_output.Rdata"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:10)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/6_0_1_baseR0profile_profile_L_at_Amax_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
 
 
 #######################################################################################################
