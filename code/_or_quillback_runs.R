@@ -5,10 +5,14 @@ library(r4ss)
 
 wd = "C:/Users/Brian.Langseth/Desktop/or"
 
-
 model.0 = "0_0_init_model"
 base.0 = SS_output(file.path(wd, model.0),covar=TRUE)
 SS_plots(base.0)
+
+
+##########################################################################################
+#                         Initial explorations
+##########################################################################################
 
 ###############
 #RecDevs
@@ -65,4 +69,19 @@ SS_plots(base.1.0)
 model.1.1 = "1_1_blockSelex_2000"
 base.1.1 = SS_output(file.path(wd, model.1.1),covar=TRUE)
 SS_plots(base.1.1)
+
+
+#####################
+#More cleaning up models
+#Starting with model 110
+#1. Follow handbook guidance on setting selectivity for parm1 = mode; and parms 3, 4; set priors to inits)
+#for both commercial and recreational
+#2. Set length at Amax to reflect Linf (set to 999)
+#3. Include age comps but set lambda to 0
+#4. Set prior type for steepness to be beta (2)
+#####################
+
+model.2.0 = "1_1_blockSelex_2000"
+base.2.0 = SS_output(file.path(wd, model.1.1),covar=TRUE)
+SS_plots(base.2.0)
 

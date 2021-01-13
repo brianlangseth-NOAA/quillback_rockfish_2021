@@ -571,7 +571,7 @@ sum_model(base.430)
 #NLL n_parm     R0   depl 
 #664.20  59.00   1.61   0.45 
 
-#Estimate length at Amax
+#Set length at Amax to reflect Linf
 #Start with model 300
 model = "4_3_1_LAmax999"
 base.431 = SS_output(file.path(wd, model),covar=TRUE)
