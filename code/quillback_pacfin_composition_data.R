@@ -79,6 +79,7 @@ Pdata$fleet = "ALL"
 
 Pdata$stratification = paste(Pdata$SOURCE_AGID, Pdata$fleet, sep=".")
 
+PdataAge = Pdata #set up for age comps later
 
 #################################################################################
 # Length comp expansions
@@ -103,17 +104,13 @@ Pdata$Final_Sample_Size <- capValues(Pdata$Expansion_Factor_1_L * Pdata$Expansio
 
 # Set up lengths bins based on length sizes for all comps
 myLbins = c(seq(10, 50, 2))
-myAbins = c(seq(5,40,1))
 
 Lcomps = getComps(Pdata, defaults = c("fishyr", "fleet", "stratification"), Comps = "LEN")
-Acomps = getComps(Pdata, defaults = c("fishyr", "fleet", "stratification"), Comps = "AGE")
 
 masterLcomps = Lcomps
-masterAcomps = Acomps
 
 #Even if using a one-sex model, need to do this step. Otherwise writeComps ignores unsexed fish 
 Lcomps = doSexRatio(Lcomps, findRatio = TRUE)
-Acomps = doSexRatio(Acomps, findRatio = TRUE)
 
 writeComps(inComps = Lcomps, 
 		   fname = file.path(dir, "forSS", "Lcomps.QLBK.Nov.2020.csv"), 
@@ -122,13 +119,42 @@ writeComps(inComps = Lcomps,
 		   sum1 = TRUE,
 		   digits = 4)
 
+
+#################################################################################
+# Age comp expansions - which are only for Oregon
+#################################################################################
+
+Adata =  getExpansion_1(Pdata = PdataAge[PdataAge$age!=-1,], #need to remove records without ages 
+                        maxExp = 0.95,
+                        Exp_WA = TRUE, 
+                        Indiv_Wgts = TRUE,
+                        plot = FALSE,
+                        fa = combineda, fb = combinedb, ma = combineda, mb = combinedb, ua = combineda, ub = combinedb)
+
+
+# The convert input will change the catch from external file into pounds
+Adata = getExpansion_2(Pdata = Adata, 
+                       Catch = catch.file[,c("Year","O.ALL")], 
+                       Units = "MT",
+                       maxExp = 0.80)
+
+Adata$Final_Sample_Size <- capValues(Adata$Expansion_Factor_1_L * Adata$Expansion_Factor_2, maxVal = 0.80)
+
+# Set up lengths bins based on length sizes for all comps
+myAbins = c(seq(5,40,1))
+
+Acomps = getComps(Adata, defaults = c("fishyr", "fleet", "stratification"), Comps = "AGE")
+
+masterAcomps = Acomps
+
+#Acomps = doSexRatio(Acomps, findRatio = TRUE) #Dont need to do this step since have no unsexed aged fish
+
 writeComps(inComps = Acomps,
            fname = file.path(dir, "forSS", "Acomps.QLBK.Jan.2021.csv"), 
            abins = myAbins, 
            partition = 0, 
            sum1 = TRUE,
            digits = 4)
-
 
 
 ##############################################################################################################
@@ -177,13 +203,17 @@ start = which(as.character(out[,1]) %in% c(" Sexes combined ")) + 2
 end   = which(as.character(out[,1]) %in% c(" Females then males ")) -1 #nrow(out)
 cut_out = out[start:end,]
 
+cut_out$ageerr = 1
+cut_out$Lbin_lo = -1
+cut_out$Lbin_hi = -1
 cut_out$fleetnum = 1
 cut_out$month = 1
 
-ind = which(colnames(cut_out) %in% "L.1"):which(colnames(cut_out) %in% "L39") #If have 2 sex model then go to L50.1
-format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition, 
+ind = which(colnames(cut_out) %in% "A5"):which(colnames(cut_out) %in% "A40") #If have 2 sex model then go to A40.1
+format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition,
+               cut_out$ageerr, cut_out$Lbin_lo, cut_out$Lbin_hi,
                cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
-colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
+colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "ageerr", "Lbin_lo", "Lbin_hi", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
 format = format[format$fishyr != 2021, ]
 
 or_comps = format[format$strat == "O.ALL", -1]
@@ -192,6 +222,7 @@ or_comps = format[format$strat == "O.ALL", -1]
 
 #########################################################################################
 # Calculate the number of trips (tows), and the number of fish
+# Only for lengths
 #########################################################################################
 temp = Pdata[!is.na(Pdata$lengthcm) & Pdata$SAMPLE_YEAR < 2021,]
 
