@@ -77,11 +77,12 @@ SS_plots(base.1.1)
 #1. Follow handbook guidance on setting selectivity for parm1 = mode; and parms 3, 4; set priors to inits)
 #for both commercial and recreational
 #2. Set length at Amax to reflect Linf (set to 999)
-#3. Include age comps but set lambda to 0
-#4. Set prior type for steepness to be beta (2)
+#3. Set prior type for steepness to be beta (2)
+#4. Include age comps but set lambdas to 0
+#5. Set # age bins to 36, and age bins 5-40
 #####################
 
-model.2.0 = "1_1_blockSelex_2000"
+model.2.0 = "2_0_0_improvements"
 base.2.0 = SS_output(file.path(wd, model.1.1),covar=TRUE)
 SS_plots(base.2.0)
 
