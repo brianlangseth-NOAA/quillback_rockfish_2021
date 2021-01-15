@@ -195,7 +195,6 @@ input[[6]] = or_recfin_age_data
 input[[7]] = recfin_mrfss_data
 
 
-
 ############################################################################################
 #	Create data frame with all the input data
 ############################################################################################
@@ -363,3 +362,37 @@ length_age_plot(dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\D
                 splits = NA, data = sp_data, nm_append = NULL, ests = la_ests_sp, plots = 1:2)
 
 sp_data2=sp_data[-c(134,146),]
+
+
+############################################################################################
+#Testing wehther bimodal comps for oregon are from different gears
+############################################################################################
+#Year by commercial fleet shows rec signal in both - not being caused by a switch in fleet
+ggplot(input[[4]][input[[4]]$State=="OR",], aes(Length, fill = Fleet, color = Fleet)) +
+  facet_wrap(facets = c("Year")) +
+  geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5) +
+  scale_y_continuous(limits = c(0, 0.25))
+#Year by commercial gears is a little harder since could distinguish by trawl and hkl.
+#Trawl is of larger fish, yet hkl is primary gear and shows rec signal
+ggplot(input[[4]][input[[4]]$State == "OR" & input[[4]]$geargroup %in% c("HKL", "TWL"),], aes(Length, fill = geargroup, color = geargroup)) +
+ facet_wrap(facets = c("Year")) +
+ geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5) +
+ scale_y_continuous(limits = c(0, 0.4))
+#HKL is lgl and ohl - both show rec signal
+ggplot(input[[4]][input[[4]]$State == "OR" & input[[4]]$GRID %in% c("LGL", "OHL"),], aes(Length, fill = GRID, color = GRID)) +
+ facet_wrap(facets = c("Year")) +
+ geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5) +
+ scale_y_continuous(limits = c(0, 0.4)) 
+
+#Not informative for mrfss years
+ggplot(or_mrfss_data[or_mrfss_data$Mode_FX_Name %in% c("charter", "private boat"),], aes(Length, fill = Mode_FX_Name, color = Mode_FX_Name)) +
+  facet_wrap(facets = c("Year")) +
+ geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5) +
+ scale_y_continuous(limits = c(0,0.25))
+#RecFIN types all capture rec signal
+ggplot(or_recfin_len_data, aes(Length, fill = RecFIN.Mode.Name, color = RecFIN.Mode.Name)) +
+ facet_wrap(facets = c("Year")) +
+ geom_density(alpha = 0.4, lwd = 0.8, adjust = 0.5) +
+ scale_y_continuous(limits = c(0, 0.25))
+
+
