@@ -2,6 +2,7 @@
 
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
 
 wd = "C:/Users/Brian.Langseth/Desktop/or"
 
@@ -71,18 +72,167 @@ base.1.1 = SS_output(file.path(wd, model.1.1),covar=TRUE)
 SS_plots(base.1.1)
 
 
+##########################################################################################
+#                         Clean up initiation options
+##########################################################################################
+
 #####################
-#More cleaning up models
 #Starting with model 110
 #1. Follow handbook guidance on setting selectivity for parm1 = mode; and parms 3, 4; set priors to inits)
 #for both commercial and recreational
 #2. Set length at Amax to reflect Linf (set to 999)
 #3. Set prior type for steepness to be beta (2)
 #4. Include age comps but set lambdas to 0
-#5. Set # age bins to 36, and age bins 5-40
+#5. Set age bins to 36, and age bins 5-40
 #####################
 
-model.2.0 = "2_0_0_improvements"
-base.2.0 = SS_output(file.path(wd, model.1.1),covar=TRUE)
-SS_plots(base.2.0)
+model = "2_0_0_improvements"
+base.200 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.200)
+#Doesnt match comm age comps well but does for rec. Large spike in biomass after 2000 seems unusual
 
+#Remove early recdevs
+#Start from model 200
+model = "2_0_1_noearlydevs"
+base.201 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.201)
+
+#Keep some early recdevs (start at 1950)
+#Start from model 200
+model = "2_0_2_earlydevs1950"
+base.202 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.202)
+#Go with this one for future directions (and include bias adj)
+
+#Set bias adj
+#Start from model 202
+SS_fitbiasramp(base.202, verbose = TRUE)
+model = "2_0_3_biasadj"
+base.203 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.203)
+#Bias adj parameters dont change very much from what I changed them to 
+
+#Remove recdevs
+#Start from model 200
+model = "2_0_4_norecdevs"
+base.204 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.204)
+#Miss large recruitments <2000s but match most thereafter. Wonder whether commercial comps are pushing that
+#or likely to support the large catch since commercial selectivity changes leftward the most
+
+#Remove comm comps
+#Start from model 200 and fix comm selex at estimated parameters
+model = "2_0_5_noComComps"
+base.205 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.205)
+#Comm comps do provide signal for higher recruitments for 1995 and 1999 peaks but also for 2012 peak (though
+#that one could be due to higher biomass at the time)
+
+
+modelnames <- c("Initial", "noEarlyDevs", "earlyDevs1950", "biasAdj", "noRecDevs", "noComComps")
+mysummary  <- SSsummarize(list(base.200, base.201, base.202, base.203, base.204, base.205))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "1_rec_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+##########################################################################################
+#                         Selex options
+##########################################################################################
+#Add third block for rec to limit residuals starting 2010 
+#Start from model 203
+model = "2_1_0_thirdSelexBlock"
+base.210 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.210)
+#No effect on residuals nor recdevs. Dont do. 
+
+#Estimate selectivity of parameters 1-4 for rec, comm, and the block
+#Start from model 203
+model = "2_1_1_selexEst14"
+base.211 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.211)
+
+#Estimate selectivity of parameters 1-6 for rec, comm, and the block
+#Start from model 203
+model = "2_1_2_selexEstAll"
+base.212 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.212)
+#Population blows up but fits to comps are really good. Interesting, the rec block (early time)
+#estimates asymptotic. Recdevs look similar, difference is in biomass. 
+
+#Estimate selectivity of parameters 1,3,6 for rec
+#Start from model 203
+model = "2_1_3_domeRec"
+base.213 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.213)
+#Estimates a dome, and increases biomass but have very similar recdev pattern. 
+#Not a noticeable effect on comps. Dome is at too high of a size to have a meaningful impact
+#When estimate all (model 212) then length at peak is smaller so dome occurs earlier and has
+#an effect
+
+#Estimate selectivity of parameters 1,3,6 for comm
+#Start from model 213
+model = "2_1_4_domeCom"
+base.214 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.214)
+#Estimates a dome, and increases biomass (but less than the dome for rec) 
+#but have very similar recdev pattern. Not a noticeable effect on comps.
+#Dome is at too high of a size to have a meaningful impact
+#When estimate all (model 212) then length at peak is smaller so dome occurs earlier and has
+#an effect
+
+#Estimate selectivity of parameters 1,3,6 for the block
+#Start from model 213
+model = "2_1_5_domeBlock"
+base.215 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.215)
+#Although the model is flexible to estimate dome shape in the block it estimates
+#asymptotic. Thus this model is functionally the same as the base
+
+#Remove selectivity block, just for comparison. There is good reason to have a block
+#Start from model 203
+model = "2_1_6_noBlock"
+base.216 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.216)
+#Shifts selectivity leftward. Has a larger recruitment in 95 to draw biomass up. 
+#Some differences in residuals however nothing drastic. Still no reason to include
+
+modelnames <- c("base", "3blocks00_10", "selex14", "selexAll", "domeRec", "domeCom", "domeBlock", "noBlock")
+mysummary  <- SSsummarize(list(base.203, base.210, base.211, base.212, base.213, base.214, base.215, base.216))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "2_selex_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+#Could explore effect of allowing size of peak change and dome would have more of an effect. 
+#However without good evidence for dome, not currently doing. 
+
+
+##########################################################################################
+#                         Figure out what is driving recruit years
+##########################################################################################
+
+#####################
+#Selex? - Based on previous exploration its not selectivity
+#####################
+
+#####################
+#Catch
+#####################
+#Apply smoother to catch
+compare_catch_rec(base.203, plots = 2, offset = 0) #Recruitment seems to align with large catches
+#Start with model 203
+model = "2_2_0_smoothCatch"
+base.220 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.220)
+#No real effect on recdevs. Catch does not appear to be driver of recdevs 
+
+#####################
+#Comps
+#####################
+#Start with model 203 - iterative remove comps
+model = "2_3_0_[ENTER YEAR HERE]"
+base.230 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.230)
