@@ -5,6 +5,12 @@ library(r4ss)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
 
 wd = "C:/Users/Brian.Langseth/Desktop/or"
+sum_model <- function(model){
+  return(c("NLL" = round(model$likelihoods_used[1,"values"],2),
+           "n_parm" = round(model$N_estimated_parameters,0),
+           "R0" = round(model$estimated_non_dev_parameters["SR_LN(R0)","Value"],2),
+           "depl" = round(model$current_depletion,2)))
+}
 
 model.0 = "0_0_init_model"
 base.0 = SS_output(file.path(wd, model.0),covar=TRUE)
@@ -128,9 +134,17 @@ SS_plots(base.205)
 #Comm comps do provide signal for higher recruitments for 1995 and 1999 peaks but also for 2012 peak (though
 #that one could be due to higher biomass at the time)
 
+#Change sigmar to 0.9 which is around what is suggested for model 203
+#Start with model 203
+base.203$sigma_R_info
+model = "2_0_6_sigmar09"
+base.206 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.206)
+#Bigger recent recruitments, lower NLL for rec and for comps
 
-modelnames <- c("Initial", "noEarlyDevs", "earlyDevs1950", "biasAdj", "noRecDevs", "noComComps")
-mysummary  <- SSsummarize(list(base.200, base.201, base.202, base.203, base.204, base.205))
+
+modelnames <- c("Initial", "noEarlyDevs", "earlyDevs1950", "biasAdj", "noRecDevs", "noComComps", "sigmaR0.9")
+mysummary  <- SSsummarize(list(base.200, base.201, base.202, base.203, base.204, base.205, base.206))
 SSplotComparisons(mysummary, 
                   filenameprefix = "1_rec_",
                   legendlabels = modelnames, 
@@ -206,16 +220,49 @@ SSplotComparisons(mysummary,
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
 
-#Could explore effect of allowing size of peak change and dome would have more of an effect. 
-#However without good evidence for dome, not currently doing. 
+#Could explore effect of allowing size of peak to change and dome would have more of an effect. 
+#However without good evidence for dome, not currently doing.
 
+##############
+#Further Selex: allow estimation more flexibility
+##############
+
+#Fix estimates of selex 2 and 4 at estimates from model 211
+#Set inits of selex 1 and 3 at estimates from model 211, then reestimate 1 and 3
+#Start from model 211
+model = "2_1_1_1_selexEst13again"
+base.2111 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.2111)
+
+#Estimate selex parameters 1-4, and 6
+#Start from model 212
+model = "2_1_2_1_selexEst146"
+base.2121 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.2121)
+
+#Fix estimates of selex 2 and 4 at estimates from model 2121, then reestimate 1, 3, and 6
+#Start from model 2121
+model = "2_1_2_2_selexEst136again"
+base.2122 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.2122)
+
+modelnames <- c("base", "selex14", "selexAll", "selex14_13", "selex146", "selex146_136")
+mysummary  <- SSsummarize(list(base.203, base.211, base.212, base.2111, base.2121, base.2122))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "2_selex_reest_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#Reestimation does nothing. Can estimate all at once. Estimating p5 does change recruits slightly, but 
+#otherwise biomass trends are nearly identical when estimating 1-4 and 6. Thus, if wish to do dome,
+#estimate 1-4 and 6, if wish not to do dome, estimate 1-4. 
 
 ##########################################################################################
 #                         Figure out what is driving recruit years
 ##########################################################################################
 
 #####################
-#Selex? - Based on previous exploration its not selectivity
+#Selex? - Based on previous exploration (models 21X) its not selectivity
 #####################
 
 #####################
@@ -230,9 +277,41 @@ SS_plots(base.220)
 #No real effect on recdevs. Catch does not appear to be driver of recdevs 
 
 #####################
+#Ages
+#####################
+#Fit to ages
+#Start with model 203
+model = "2_2_1_fitages"
+base.221 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.221)
+#Biomass is lower near end, due to period of lower recdevs. 2012 peak still obvious. 
+#Recdevs with ages appear more smooth compared to just lengths. 
+#Bias ramp is changed, and fits to ages are pretty good
+
+#Include bias adj in the fit to ages
+SS_fitbiasramp(base.221, verbose = TRUE)
+#Start with model 221
+model = "2_2_1_fitages_biasadj"
+base.221b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.221b)
+#Biomass lowers a bit. Otherwise this is a reasonable model if we could do ages
+
+
+#####################
 #Comps
 #####################
-#Start with model 203 - iterative remove comps
-model = "2_3_0_[ENTER YEAR HERE]"
-base.230 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.230)
+#Iterative remove some comps blocks
+#Start with model 203
+model = "2_2_2_remove1720" #Remove 2017-2020 comps
+base.222 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.222)
+#These years of comps drive the 2012 rec spike. Need to ensure these aren't due to changes in gear
+#Looked across comm gears (lgl/hkl - trawl) and rec types (boat - private) and gear does not seem to be 
+#driving these. All evidence points to clear recruitment signals
+
+#Start with model 203
+model = "2_2_2_remove9900" #Remove 1999-2000 comps
+base.222b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.222b)
+#Though these years have mass at smaller sizes enough information is in out years to inform recdevs
+
