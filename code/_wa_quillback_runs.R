@@ -677,15 +677,15 @@ base.600 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.600)
 
 #R0 profile - use profiling code.R
-#Start with model 600 but set rec parm 2's phase to phase 1
+#Start with model 600 but set rec parm 1's phase to phase 1
 
 #Include recdevs
 #Starting from model 600 but set bound for selex p1 to 55
 #Run once and make suggested bias adjustments (1980, 1998, 2014, 2032, max_bias to 0)
 model = "6_1_recdevs"
-base.601 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.601)
-SS_fitbiasramp(base.601, verbose=TRUE) 
+base.610 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.610)
+SS_fitbiasramp(base.610, verbose=TRUE) 
 
 #Data weighting 
 #Starting with model 600
@@ -705,6 +705,20 @@ model = "6_2_3_dw_DM"
 base.623 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.623)
 
+#Use number of samples for sample size
+#Starting from moeel 623
+model = "6_2_4_dw_DM_fish"
+base.624 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.624)
+
+#Compare runs
+modelnames <- c("base", "recdevs", "Francis", "MI", "DM", "DM fish")
+mysummary  <- SSsummarize(list(base.600, base.610, base.621, base.622, base.623, base.624))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "8_baseComparisons_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
 
 

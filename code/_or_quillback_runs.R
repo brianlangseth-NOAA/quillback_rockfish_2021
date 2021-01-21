@@ -4,13 +4,14 @@
 library(r4ss)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
 
-wd = "C:/Users/Brian.Langseth/Desktop/or"
 sum_model <- function(model){
   return(c("NLL" = round(model$likelihoods_used[1,"values"],2),
            "n_parm" = round(model$N_estimated_parameters,0),
            "R0" = round(model$estimated_non_dev_parameters["SR_LN(R0)","Value"],2),
            "depl" = round(model$current_depletion,2)))
 }
+
+wd = "C:/Users/Brian.Langseth/Desktop/or"
 
 model.0 = "0_0_init_model"
 base.0 = SS_output(file.path(wd, model.0),covar=TRUE)
@@ -134,6 +135,13 @@ SS_plots(base.205)
 #Comm comps do provide signal for higher recruitments for 1995 and 1999 peaks but also for 2012 peak (though
 #that one could be due to higher biomass at the time)
 
+#Remove rec comps to see if signal all in rec
+#Start from model 200 and fix rec selex at estimated parameters for both blocks
+model = "2_0_5b_noRecComps"
+base.205b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.205b)
+#Com comps also have signal for recruitment but rec has more information
+
 #Change sigmar to 0.9 which is around what is suggested for model 203
 #Start with model 203
 base.203$sigma_R_info
@@ -141,10 +149,11 @@ model = "2_0_6_sigmar09"
 base.206 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.206)
 #Bigger recent recruitments, lower NLL for rec and for comps
+base.206$likelihoods_by_fleet
 
 
-modelnames <- c("Initial", "noEarlyDevs", "earlyDevs1950", "biasAdj", "noRecDevs", "noComComps", "sigmaR0.9")
-mysummary  <- SSsummarize(list(base.200, base.201, base.202, base.203, base.204, base.205, base.206))
+modelnames <- c("Initial", "noEarlyDevs", "earlyDevs1950", "biasAdj", "noRecDevs", "noComComps", "noRecComps", "sigmaR0.9")
+mysummary  <- SSsummarize(list(base.200, base.201, base.202, base.203, base.204, base.205, base.205b, base.206))
 SSplotComparisons(mysummary, 
                   filenameprefix = "1_rec_",
                   legendlabels = modelnames, 
@@ -314,4 +323,32 @@ model = "2_2_2_remove9900" #Remove 1999-2000 comps
 base.222b = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.222b)
 #Though these years have mass at smaller sizes enough information is in out years to inform recdevs
+
+
+#Compare runs
+modelnames <- c("base", "fitages", "noRecDevs", "no2017-2020")
+mysummary  <- SSsummarize(list(base.203, base.221b, base.204, base.222))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "3_explore_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+
+##########################################################################################
+#                         Base model set up
+##########################################################################################
+
+###
+#Base model
+###
+#copy model 2111
+model = 3_0_base
+
+
+#R0 profile - use profiling code.R
+#Start with model 300 but set rec parm 1's phase to phase 1
+
+
+
 

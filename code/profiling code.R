@@ -79,6 +79,23 @@ model_settings = get_settings(settings = list(base_name = base_name,
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
+####################
+#Proposed base run
+####################
+base_name = "3_0_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -1, 40),
+                            high = c(0.09, 0.99,  1, 48),
+                            step_size = c(0.005, 0.10, 0.25, 1),
+                            param_space = c('real', 'real', 'relative', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 
 
 #######################################################################################################
@@ -101,6 +118,24 @@ model_settings = get_settings(settings = list(base_name = base_name,
                                               profile_details = get ))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+####################
+#Proposed base run
+####################
+base_name = "4_0_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
+                            low =  c(0.03, 0.40, -1, 41),
+                            high = c(0.09, 0.99,  1, 48),
+                            step_size = c(0.005, 0.10, 0.25, 1),
+                            param_space = c('real', 'real', 'relative', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 
 
 ###########The following scripts are from Chantel's script. Right now Im not using.##############################
