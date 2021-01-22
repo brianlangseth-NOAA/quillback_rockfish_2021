@@ -343,12 +343,53 @@ SSplotComparisons(mysummary,
 #Base model
 ###
 #copy model 2111
-model = 3_0_base
+model = "3_0_base"
+base.300 = SS_output(file.path(wd, model),covar=TRUE)
 
 
 #R0 profile - use profiling code.R
 #Start with model 300 but set rec parm 1's phase to phase 1
 
+#Data weighting
+#Start with model 300
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\3_0_base", write = FALSE, option = "none")
+model = "3_1_1_dw_francis"
+base.311 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.311)
+#Francis commercial = 0.15
+#Francis recreational = 0.22
 
+model = "3_1_2_dw_MI"
+base.312 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.312)
+#MI commercial = 0.176
+#MI recreational = 0.027
+
+#InputN as sample size - Copy model 311, comment out weights, copy over compreport and report from model 300,
+#set inputN for comm, and run this line
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\3_1_3_dw_DM\\just model files")
+model = "3_1_3_dw_DM_inputN"
+base.313 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.313)
+#Theta/(1+theta) commercial = 0.968 (theta = 30)
+#Theta/(1+theta) recreational = 0.525 (theta = 1.11)
+
+#Original sample size
+#Start from model 313
+model = "3_1_4_dw_DM_fish"
+base.314 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.314)
+#Theta/(1+theta) commercial = 0.638 (theta = 1.76)
+#Theta/(1+theta) recreational = 0.522 (theta = 1.09)
+
+#Compare runs
+modelnames <- c("base", "francis", "MI", "DM - input", "DM - fish")
+mysummary  <- SSsummarize(list(base.300, base.311, base.312, base.313, base.314))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "4_dataweighting_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
 

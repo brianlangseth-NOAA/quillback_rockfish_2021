@@ -297,4 +297,36 @@ SS_plots(base.400)
 #R0 profile - use profiling code.R
 #Start with model 600 but set rec parm 1's phase to phase 1
 
+#Data weighting
+#Start with model 400
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\4_0_base", write = FALSE, option = "none")
+model = "4_1_1_dw_francis"
+base.411 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.411)
 
+model = "4_1_2_dw_MI"
+base.412 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.412)
+
+#InputN as sample size - Copy model 411, comment out weights, copy over compreport and report from model 400,
+#set inputN for comm, and run this line
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\4_1_3_dw_DM_inputN\\just model files")
+model = "4_1_3_dw_DM_inputN"
+base.413 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.413)
+
+#Original sample size
+#Start from model 413
+model = "4_1_4_dw_DM_fish"
+base.414 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.414)
+
+#Compare runs
+modelnames <- c("base", "francis", "MI", "DM - input", "DM - fish")
+mysummary  <- SSsummarize(list(base.400, base.411, base.412, base.413, base.414))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "4_dataweighting_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
