@@ -556,10 +556,27 @@ SS_plots(base.410)
 
 #Explore effect of catch on recdevs
 #Fix selectivity parms to estimated values from model 111, remove comps, est recdevs
-#Start with model 111
-model = "4_2_0_noLengthData"
-base.420 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.420)
+#Start with model 111 - comment out all comps except one year
+#Did this three times: 2006 com, 2020 rec, 1995 rec
+model = "4_2_0_noLengthData_com2006"
+base.420.c06 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.420.c06)
+model = "4_2_0_noLengthData_rec2020"
+base.420.r20 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.420.r20)
+model = "4_2_0_noLengthData_rec1995"
+base.420.r95 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.420.r95)
+#Compare runs
+modelnames <- c("withComps","com2006", "rec2020", "rec1995")
+mysummary  <- SSsummarize(list(base.111, base.420.c06, base.420.r20, base.420.r95))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "420_fixSelex_estRecdevs_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#Catch does not appear to be driving recdevs. Either they are flat or influenced by the year of comps
+#I kept in (which was required for recedevs to be estimated). 
 
 #Estimate length at Amax
 #Start with model 300
