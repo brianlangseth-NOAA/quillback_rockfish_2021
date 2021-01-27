@@ -739,10 +739,71 @@ SSplotComparisons(mysummary,
 
 
 
+#################################################
+#Test for understanding why recdevs selex changes when recdevs turned on
+###################################################
+
+#Test for understanding why recdevs selex changes when recdevs turned on
+#Starting with model 600 - fix selex to be the values of model 610
+model = "6_0_test_fixselex at recdev"
+base.601 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.601)
+
+#Test for understanding why recdevs selex changes when recdevs turned on
+#Starting with model 610 - fix selex to be the values of model 600
+model = "6_1_test_fixselex at base"
+base.611 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.611)
+
+
+#Compare runs
+modelnames <- c("base", "recdevs", "base-selex@rec", "recdevs-selex@base")
+mysummary  <- SSsummarize(list(base.600, base.610, base.601, base.611))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "8_baseTestComparisons_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+#Explore effect of using catch in numbers
+#Start with model 600 but switch catch to be weight instead of numbers
+model = "6_0_test_catchWeight"
+base.602 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.602)
+
+#Start with model 610 but switch catch to be weight instead of numbers
+model = "6_1_test_catchWeight"
+base.612 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.612)
+#The change in selex occurs whether numbers or weight is entered for catch
+
+##
+#Exclude recent recdevs since likely aren't being informed anyway
+#Age at 50% selectivity is around 9, so remove last 7 years 
+#Start with model 610
+model = "6_1_test_norecentDevs"
+base.613 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.613)
+#The change in selex occurs whether numbers or weight is entered for catch
 
 
 
+##########################################################################################
+#                         Small additions to base models
+##########################################################################################
 
+#Read ages
+#Starting with model 600 - add ghost ages, set beta prior to 2
+model = "7_0_ages"
+base.700 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.700)
 
+#Read ages
+#Starting with model 610 - add ghost ages, set beta prior to 2
+model = "7_1_ages"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.710)
 
-
+#When recdevs are included the age distribution is poorly fit whereas when recdevs are not included
+#the age comps are reasonable. The 1990 and 1994 recruitment spikes wash out all other ages
+#Suggests some evidence that recdevs are probably overly high
