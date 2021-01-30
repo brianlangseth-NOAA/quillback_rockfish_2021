@@ -358,6 +358,9 @@ base.311 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.311)
 #Francis commercial = 0.15
 #Francis recreational = 0.22
+#A second iteration does not change things greatly
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\3_1_1_dw_francis", write = FALSE, option = "none")
+
 
 model = "3_1_2_dw_MI"
 base.312 = SS_output(file.path(wd, model),covar=TRUE)
@@ -391,5 +394,137 @@ SSplotComparisons(mysummary,
                   legendlabels = modelnames, 
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
+#The downweighting of comps really removed information from the recent recruitment event in 
+#2012, impacting terminal year depeletion. MI greatly downweights, which I find hard to believe
+#given the data. Francis and DM are comparable. Go with francis with a DM sensitivity
+
+##########################################################################################
+#       Explore dome shaped, block, and excluding data in early block
+##########################################################################################
+
+#How much of an effect does the early data have on model output
+
+#Remove pre-block length data and remove block
+#Starting with model 300
+model = "3_0_1_test_nopre99comps"
+base.301 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.301)
+
+#Remove block but keep all data
+#Starting with model 300
+model = "3_0_2_test_noblock"
+base.302 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.302)
 
 
+#How much of an effect does dome selex for rec in recent period have on model output
+
+#Estimate recent dome shaped selex for rec 
+#Starting with model 300
+#Est parms 1-4,6; Fix parms 2, 4 at estimates; Reest 1, 3, 6
+model = "3_0_3_test_recdome"
+base.303 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.303)
+#Do not reset the initial values for parms 1, 3, and 6. If I do, I hit a local minimum
+#and my estimates aren't reestimated. Model where I keep the inits as originals produces
+#different estimates, and has better NLL. I had done this incorrectly earlier. 
+
+
+#Estimate dome shaped selex for rec without a block
+#Starting with model 302
+#Est parms 1-4,6; Fix parms 2, 4 at estimates; Reest 1, 3, 6
+model = "3_0_4_test_noblock_dome"
+base.304 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.304)
+
+
+
+#Compare exploration runs
+modelnames <- c("base: block_asymp", "noBlock_noPre00Comps", "noBlock", "block_recDome", "noBlock_recDome")
+mysummary  <- SSsummarize(list(base.300, base.301, base.302, base.303, base.304))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "5_base_explore_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+
+#Add rec ramp from 1970 (at 0) to catches in first year
+#Starting with model 311
+model = "3_2_0_base"
+base.320 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.320)
+#Slightly more depletion
+
+#Estimate all 1-4 parms and then rest 1 and 3
+model = "3_2_1_selex14_reest"
+base.321 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.321)
+#Parms are the same
+
+#Redo bias adj
+SS_fitbiasramp(base.321, verbose = TRUE)
+model = "3_2_2_biasadj"
+base.322 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.322)
+#Really doesn't affect things
+
+
+##########################################################################################
+#       New base from which to explore earlier steps with
+##########################################################################################
+
+#Copy model 322
+model = "4_0_base"
+base.400 = SS_output(file.path(wd, model),covar=TRUE)
+sum_model(base.400)
+
+##########################################################################################
+#       Explore dome shaped, block, and excluding data in early block
+##########################################################################################
+
+#How much of an effect does the early data have on model output
+
+#Remove pre-block length data and remove block
+#Starting with model 400
+model = "4_0_1_test_nopre99comps"
+base.401 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.401)
+
+#Remove block but keep all data
+#Starting with model 400
+model = "4_0_2_test_noblock"
+base.402 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.402)
+sum_model(base.402)
+
+
+#How much of an effect does dome selex for rec in recent period have on model output
+
+#Estimate recent dome shaped selex for rec 
+#Starting with model 400
+#Est parms 1-4,6; Fix parms 2, 4 at estimates; Reest 1, 3, 6
+model = "4_0_3_test_recdome"
+base.403 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.403)
+sum_model(base.403)
+#Doesnt matter if reset the initial values for parms 1, 3, and 6 (though dont). Previously did.
+
+
+#Estimate dome shaped selex for rec without a block
+#Starting with model 402
+#Est parms 1-4,6; Fix parms 2, 4 at estimates; Reest 1, 3, 6
+model = "4_0_4_test_noblock_dome"
+base.404 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.404)
+sum_model(base.404)
+
+#Compare exploration runs
+modelnames <- c("base: block_asymp", "noPre00Comps", "noBlock", "block_recDomeRecent", "noBlock_recDome")
+mysummary  <- SSsummarize(list(base.400, base.401, base.402, base.403, base.404))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "6_base_dw_explore_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#Pretty minimal effects for all of these. Dome shaped results in biggest change. 

@@ -785,6 +785,10 @@ model = "6_1_test_norecentDevs"
 base.613 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.613)
 #The change in selex occurs whether numbers or weight is entered for catch
+#Removing more years (say last 17 years) effects things. Recdevs balance early
+#and there are more positive than when all devs are read. The fact this matters
+#is a bit concerning, though not surprising, making me more comfortable not
+#including recdevs.
 
 
 
@@ -794,13 +798,13 @@ SS_plots(base.613)
 
 #Read ages
 #Starting with model 600 - add ghost ages, set beta prior to 2
-model = "7_0_ages"
+model = "7_0_base_ages"
 base.700 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.700)
 
 #Read ages
 #Starting with model 610 - add ghost ages, set beta prior to 2
-model = "7_1_ages"
+model = "7_1_recdev_ages"
 base.710 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.710)
 
