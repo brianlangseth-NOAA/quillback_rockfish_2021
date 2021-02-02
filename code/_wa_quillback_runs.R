@@ -666,7 +666,7 @@ SSplotComparisons(mysummary,
 
 
 ##########################################################################################
-#                         Final explorations
+#                        Initial Final explorations
 ##########################################################################################
 
 #Patterns very similar to copper. Increased mean length later in time period along with lack 
@@ -791,6 +791,66 @@ SS_plots(base.613)
 #including recdevs.
 
 
+##########################################################################################
+#     Test of what happens when comparing data weighting before remove recdevs versus after remove recdevs
+##########################################################################################
+
+#Data weighting from recdev model
+#Starting with model 610
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\6_1_recdevs", write = FALSE)
+model = "6_1_1_recdevs_dw_francis"
+base.611 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.611)
+#Now turn recdevs off
+model = "6_1_1b_norecdevs"
+base.611b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.611b)
+
+
+model = "6_1_2_recdevs_dw_MI"
+base.612 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.612)
+#Now turn recdevs off
+model = "6_1_2b_norecdevs"
+base.612b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.612b)
+
+
+#Use Nsamples for sample size
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\6_1_3_recdevs_dw_DM_fish\\just model files")
+model = "6_1_3_recdevs_dw_DM_fish"
+base.613 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.613)
+#Now turn recdevs off
+model = "6_1_3b_norecdevs"
+base.613b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.613b)
+
+
+#Compare runs
+modelnames <- c("recdevs", "rFrancs", "rMI", "rDM fish")
+mysummary  <- SSsummarize(list(base.610, base.611, base.612, base.613))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "9_dwrecdevs_Comparisons_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+
+#Compare runs - compare data-weigthing model without devs to dataweighting recdevs model and removing recdevs
+modelnames <- c("nodevs_nodw","nodevs_Francis", "nodevs_MI", "nodevs_DM fish", 
+                "Francis_nodevs", "MI_nodevs", "DM fish_nodevs")
+mysummary  <- SSsummarize(list(base.600,base.621, base.622, base.624,
+                               base.611b, base.612b, base.613b))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "10_dw_rec_Comparisons_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#Basically, the order in weight you data weight or add/remove recdevs doesn't really matter (it did though for Francis slightly)
+
+
 
 ##########################################################################################
 #                         Small additions to base models
@@ -809,5 +869,44 @@ base.710 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.710)
 
 #When recdevs are included the age distribution is poorly fit whereas when recdevs are not included
-#the age comps are reasonable. The 1990 and 1994 recruitment spikes wash out all other ages
+#the age comps are more reasonable. The 1990 and 1994 recruitment spikes wash out all other ages
 #Suggests some evidence that recdevs are probably overly high
+
+
+##########################################################################################
+#                         Final base model construction
+##########################################################################################
+
+#Start with francis dataweighted model with recdevs. Logic is that data weighting should be an
+#early step, done before removing recdevs. 
+
+#Base model
+#Starting with model 611b
+#Add ages. Set beta prior to 2. Reapply data weighting; estimate selex parms 1-4, reest selex 1,3 
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\6_1_1b_norecdevs", write = FALSE)
+model = "8_0_base"
+base.800 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.800)
+
+#See if early years of rec data influence the data weighting greatly....They dont for francis, a little more for MI
+model = "8_0_1_noearlyrecyears"
+base.801 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.801)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\8_0_1_noearlyrecyears", write = FALSE)
+
+#Add recdevs as a sensitivity
+#Starting with model 800
+#Set bias adj based on what is suggested
+model = "8_1_recdevs"
+base.810 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.810)
+
+#Compare runs - compare data-weigthing model without devs to dataweighting recdevs model and removing recdevs
+modelnames <- c("base-dw","base-nodw", "recdevs-dw", "recdevs-nodw")
+mysummary  <- SSsummarize(list(base.800,base.600, base.810, base.610))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "11_base_Comparisons_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
