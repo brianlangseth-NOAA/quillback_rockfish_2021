@@ -4,7 +4,9 @@
 #https://github.com/chantelwetzel-noaa/copper_rockfish_2021/tree/master/write_up/sa4ss_guide
 ##
 
-remotes::install_github("nwfsc-assess/sa4ss")
+#remotes::install_github("nwfsc-assess/sa4ss")
+#remotes::install_github("r4ss/r4ss", ref = "development")
+library(r4ss)
 library(sa4ss)
 
 setwd("U:/Stock assessments/quillback_rockfish_2021/write_up/or")
@@ -23,6 +25,11 @@ sa4ss::draft(authors = c("Brian J. Langseth",
 
 #Read in model, asign whether to creat plots function. Currently also generates tables
 ##NOT CURRENTLY WORKING - need to follow up
-sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/3_0_base", create_plots = FALSE)
+sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/3_0_base", 
+                  create_plots = FALSE, 
+                  #save_loc = file.path(getwd(), "tex_tables"),
+                  verbose = TRUE)
+
+
 
 bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())

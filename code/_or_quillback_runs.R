@@ -1,6 +1,6 @@
 # Quillback Oregon Model Runs
 
-#devtools::install_github("r4ss/r4ss")
+#remotes::install_github("r4ss/r4ss")
 library(r4ss)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
 
