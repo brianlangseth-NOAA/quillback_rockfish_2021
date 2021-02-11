@@ -9,12 +9,14 @@
 library(r4ss)
 library(sa4ss)
 
-setwd("U:/Stock assessments/quillback_rockfish_2021/write_up/or")
-setwd("C:/Users/Brian.Langseth/Desktop/or/write_up")
+##--------------------------------OREGON-----------------------------------##
+
+setwd("C:/Users/Brian.Langseth/Desktop/or/write_up_or")
 
 #Set up default document sections. May need to delete a few
 sa4ss::draft(authors = c("Brian J. Langseth",
                          "Chantel R. Wetzel",
+                         "Jason M. Cope",
                          "Alison D. Whitman"),
              species = "Quillback Rockfish",
              latin = "Sebastes maliger",
@@ -23,13 +25,26 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              create_dir = FALSE,
              edit = FALSE)
 
-#Read in model, asign whether to creat plots function. Currently also generates tables
-##NOT CURRENTLY WORKING - need to follow up
-sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/3_0_base", 
+#Read in model, assign whether to create plots function. Currently also generates tables
+sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/4_0_base", 
                   create_plots = FALSE, 
-                  #save_loc = file.path(getwd(), "tex_tables"),
+                  html = FALSE,
+                  save_loc = file.path(getwd(), "tex_tables"),
                   verbose = TRUE)
 
 
+# # Create tex files from the executive summary tables
+# sa4ss::es_table_tex(dir = mod_loc, 
+#                     save_loc = file.path(getwd(), "tex_tables"), 
+#                     csv_name = "table_labels.csv")
+# 
+# # Read and create tex files for tables listed in "table" folder in the doc
+# sa4ss::es_table_tex(dir = file.path(getwd(), 'tables'), 
+#                     save_loc = file.path(getwd(), "tex_tables"), 
+#                     csv_name = "all_tables.csv")
 
+# Render call
+if(file.exists("_main.Rmd")){
+  file.remove("_main.Rmd")
+}
 bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
