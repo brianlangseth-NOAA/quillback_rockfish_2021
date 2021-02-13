@@ -1,31 +1,23 @@
 # Introduction
 
-## Basic Information
-
-This assessment reports the status of `r spp` (*`r spp_latin`*) off the `r coast` Coast using data through `r endyr`. `r Spp` is a medium- to large-sized nearshore rockfish found from California to the Gulf of Alaska [@loveetal_2002]. Off the U.S. West Coast `r spp` are primarily located north of central California, with rare observations south of Point Conception. 
-
-
-## Life History
-
-`r Spp` are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat [@loveetal_2002]. The diets of `r spp` consist primarily of crustaceans, mollusks, and fish [@lea_biological_1999; @bizzarro_diet_2017-1]. The body coloring or `r spp` varies across the coast with northern fish often exhibiting dark brown to olive  with southern fish exhibiting yellow to olive-pink variations in color [@miller_guide_1972] which initially led to them being designated as two separate species (*S. caurinus* and *S. vexillaris*). 
-
-Limited studies have been performed looking for genetic variation in `r spp` across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of `r spp` [@Seeb_geneflow_1998; @Stout_et_al_2001], however [@Seeb_geneflow_1998] did not find significant differentiation in populations of `r spp` between Washington and Alaska when Puget Sound samples were excluded. Significant population sub-division along the U.S. West Coast has been detected for the similar, and more well-studied copper rockfish (*Sebastes caurinus*), indicating limited oceanographic exchange among geographically proximate locations [@Seeb_geneflow_1998; @buonaccorsi_population_2002; @johansson_influence_2008]. High site-fidelity [@HannahandRankin_rockfish_site_fidelity_2011] and relatively small home ranges [@Tolimierietal_rockfish_home_range_2009] for `r spp` would suggest similar patterns of isolation-by-distance as found for other rockfish.
-
-Talk about sexual dimorphism not very present. 
-
-`r Spp` are a long-lived rockfish and estimated to live at least 90 years [@love_milton_probably_1996], with estimates from Canadian waters as high as 95 years [@YamanakaandLacko_2001]. `r Spp` was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis [@cope_approach_2011].  
-
-
-
-
-## Ecosystem Considerations
-Replace text.
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'1_intro_life_history_fishery_info.Rmd')
+read_child(filein)
+```
 
 ## Historical and Current Fishery Information
-Replace text.
+
+Off the coast of Oregon State `r spp` is primarily caught in by both commercial and recreational fisheries. The landings from the commercial fishery were minimal until the mid-1980s. Currently, `r spp` is landed as part of both the live and dead commercial fishery off the coast of Oregon. The recreational fishery off the coast of Oregon begun in 1979 and removals from the recreational fleet has increased across time. 
+
+The stock off the Oregon coast was assessed as a separate stock from other populations off the West Coast based on fairly sedentary nature of `r spp` which likely limits flow of fish between California and Washington. The substrate of the southern Washington coast is typically sandy bottom, which creates a natural separation between the Oregon and Washington populations. Additionally, the exploitation history and magnitude of removals off the Oregon coast has been dramatically lower than removals off the California coast.    
+
 
 ## Summary of Management History and Performance
-Replace text.
 
-## Foreign Fisheries
-Replace text.
+```{r, echo=FALSE, results='asis'}
+general_wd = "C:/Assessments/2021/copper_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd,'1_intro_management.Rmd')
+read_child(filein)
+```
+The OFL and ACLs for `r spp` North of 40$^\circ$ 10' Lat. N. management area, the state/specific ACL allocation (49 percent for Oregon, Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.
