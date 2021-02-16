@@ -2,10 +2,9 @@
 
 ### Commercial Fishery
 
-State description of recreational removal data --- To be provided by Ali. 
+Commercial landings data from 1892 to 2020 were provided by the Oregon Department of Fish and Wildlife (ODFW). State description of recreational removal data --- To be provided by Ali. 
 
-
-The input catches in the model represent total removals: landings plus discards.  Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards were allocated to state and area based on the total observed landings observed by WCGOP. The historical commercial discard mortality used to adjust the landings data to account for total removals was calculated based on the average coastwide discard rates from WCGOP of 4.4 percent. 
+The input catches in the model represent total removals: landings plus discards.  Therefore, discards were calculated and added to the landings data provided by ODFW. Discard totals for the commercial fleet from 2002-2019 were calculated based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards from the GEMM were allocated to state based on the ratio of total observed landings by state and combined across gears (fixed and trawl) to total observed landings coastwide, as observed by WCGOP. Discards for the commercial fleet from 1990-2001 were calculated as a proportion of the landings, where the proportion equaled the average discard rates from fixed-gear only from 2002-2019 and was 5.7 percent. Discards from 1990-2001 were calculated using fixed-gear observations because trawl landings were high in the 2000s but low in the 1990s. Discards prior to 1990 were assumed to be zero.  
 
 The commercial removals of `r spp` were relatively small prior to 1961, the first year the removals were greater than 0.50 mt (Figure \ref{fig:catch}). Since 2000, the commercial removals on average are approximately one third of the total removals.
 
