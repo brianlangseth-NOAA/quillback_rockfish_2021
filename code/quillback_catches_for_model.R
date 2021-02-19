@@ -20,7 +20,7 @@ dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 #---------------------------------------------------------------------------------------------------------------#
 #################################################################################################################
 # Washington - 1958-2019 Total removals in numbers
-wa_rec = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish//data//RecFIN Catch//Quillback Sport Catch WA.csv")
+wa_rec = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish//data//RecFIN Catch//Quillback Sport Catch WA_with2020.csv")
 wa_rec$Total_Removal_N = round(wa_rec$Total_Removal_N,0)
 wa_rec = wa_rec[-1,] #remove first year, which is 0
 
@@ -178,7 +178,7 @@ all_com[all_com$Year %in% c(1981:1983),"ca"] = mean(c(all_com[all_com$Year %in% 
 #For washington only take average for years where both discard and catch data were available
 #For Oregon, use the gear specific ratio for fixed gears (since high trawl catches and discard
 #in 2000s but very little in 1990s), and apply only back to 1990 per Ali. 
-source("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/code/quillback_discard_exploration.R")
+source("U:/Stock assessments/quillback_rockfish_2021/code/quillback_discard_exploration.R")
 ca_com_discard_rate = 1 + mean(dead[dead$Year %in% c(2002:2018), "ca"] / 
   (dead[dead$Year %in% c(2002:2018), "ca"] + all_com[all_com$Year %in% c(2002:2018),"ca"]))
 #or_com_discard_rate = 1 + mean(dead[dead$Year %in% c(2002:2018), "or"] / #Rate from all gears
