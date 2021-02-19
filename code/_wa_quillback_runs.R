@@ -874,7 +874,7 @@ SS_plots(base.710)
 
 
 ##########################################################################################
-#                         Final base model construction
+#                         Continue base model construction
 ##########################################################################################
 
 #Start with francis dataweighted model with recdevs. Logic is that data weighting should be an
@@ -909,4 +909,20 @@ SSplotComparisons(mysummary,
                   legendlabels = modelnames, 
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
+
+
+##########################################################################################
+#                         More base model construction with updated data
+##########################################################################################
+
+#Add updated data and new Life history data to model
+#1. New L-A relationship based on WCGBTS data
+#2. Udpated 2020 data (still need commercial data)
+
+#Starting with model 800
+model = "9_0_base"
+base.900 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.900)
+
+
 
