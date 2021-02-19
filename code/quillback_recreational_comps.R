@@ -34,8 +34,9 @@ ca_recfin_data = rename_recfin(data = ca_recfin,
                                mode_column_name = "RecFIN.Mode.Name" )
 ca_recfin_data$Source = "RecFIN_MRFSS"
 
-ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
-ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == 8826010120, ]
+#ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
+ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003_Final_UPDATED.csv")
+ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == 8826010120 & ca_mrfss_full$YEAR < 2004, ]
 #ca_mrfss = ca_mrfss[!is.na(ca_mrfss$CNTY), ] # remove records without a county
 #spc = c(59, 73, 37, 111, 83)
 #npc = unique(ca_mrfss[!ca_mrfss$CNTY %in% spc, "CNTY"]) 
@@ -51,7 +52,8 @@ ca_mrfss_data = rename_mrfss(data = ca_mrfss,
 
 #Washignton
 # According to Theresa WA lengths are all FL
-wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_",species,".csv")), header = T, na.strings = "-"))
+#wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_",species,".csv")), header = T, na.strings = "-"))
+wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_",species,"_with2020.csv")), header = T, na.strings = "-"))
 wa_recfin_data =rename_recfin(data = wa_recfin,
                               area_grouping = list(c("WASHINGTON")),
                               area_names = c("WA"),
