@@ -19,13 +19,13 @@ dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 # Load the recreational data
 #---------------------------------------------------------------------------------------------------------------#
 #################################################################################################################
-# Washington - 1958-2019 Total removals in numbers
+# Washington - 1958-2020 Total removals in numbers
 wa_rec = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish//data//RecFIN Catch//Quillback Sport Catch WA_with2020.csv")
 wa_rec$Total_Removal_N = round(wa_rec$Total_Removal_N,0)
 wa_rec = wa_rec[-1,] #remove first year, which is 0
 
 #Oregon - 1979-2020 Landings 1979-2000, Total removals 2001-2020
-or_rec = read.csv(file.path(dir, "RecFIN Catch","Quillback_FINAL RECREATIONAL LANDINGS_1979 - 2020_byMode.csv"), header = TRUE)
+or_rec = read.csv(file.path(dir, "RecFIN Catch","Quillback_FINAL RECREATIONAL LANDINGS_1979 - 2020_byMode_UPDATED.csv"), header = TRUE)
 
 #California - 2005-2020 Total removals
 ca_rec = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_catch_all_2005-2019_crfs.csv")
@@ -109,10 +109,10 @@ wa_com_hist_agg = aggregate(SpeciesPounds ~ Year, data = wa_com_hist, FUN=sum)
 wa_com_hist_agg$SpeciesMT =  wa_com_hist_agg$SpeciesPounds / 2204.62262
 
 # Oregon - 1892-2020 Landings metric tons
-or_com_data = read.csv(file.path(dir, "PacFin Catch", "Quillback_FINAL COMMERCIAL LANDINGS_1892 - 2020_byGear.csv"))
+or_com_data = read.csv(file.path(dir, "PacFin Catch", "Quillback_FINAL COMMERCIAL LANDINGS_1892 - 2020_byGear_UPDATED.csv"))
 
 # California - 1916-1968 Landings (from EJ based on Ralston reconstruction) metric tons
-ca_com_hist1 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1916_1968_ej.csv"))
+ca_com_hist1 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1916_1968_ej_UPDATED_CAlandingsCaughtORWA.csv"))
 # California - 1968-1980 Landings lbs
 ca_com_hist2 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1969_1980_ej.csv"))
 
