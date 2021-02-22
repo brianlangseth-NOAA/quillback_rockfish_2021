@@ -30,6 +30,8 @@ or_rec = read.csv(file.path(dir, "RecFIN Catch","Quillback_FINAL RECREATIONAL LA
 #California - 2005-2020 Total removals
 ca_rec = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_catch_all_2005-2019_crfs.csv")
 ca_rec = ca_rec[ca_rec$Species.Name == "QUILLBACK ROCKFISH", ]
+#Update with 2020 data
+ca_rec_2020 = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Catch/RecFIN_Quillback_CTE001-California-2020.csv")
 
 #California MRFSS years - 1980-2004  Total removals
 # 1980 should be replaced with value from historical reconstruction
@@ -56,6 +58,8 @@ ca_rec_hist$QLBKmt = ca_rec_hist$QLBKmt_North + ca_rec_hist$QLBKmt_South
 # RecFIN years
 ca_rec_table = aggregate(Total.Mortality.MT ~ RecFIN.Year, data = ca_rec, FUN = sum)
 names(ca_rec_table) = c("Year","tot_mort_mt")
+ca_rec_table_2020 = aggregate(SUM_TOTAL_MORTALITY_MT ~ RECFIN_YEAR, data = ca_rec_2020, FUN = sum)
+names(ca_rec_table_2020) = c("Year","tot_mort_mt")
 
 # MRFSS Years
 ca_mrfss_table = aggregate(WGT_AB1 ~ YEAR_, data = ca_rec_early, FUN = sum, drop = FALSE, na.rm = TRUE)
@@ -76,6 +80,7 @@ rec_all_table$WA_mort_num1000s = merge(rec_all_table, wa_rec, by = "Year", all =
 rec_all_table$OR_mort_mt = merge(rec_all_table, or_rec[,c("Year","Total")], by = "Year", all = TRUE)$Total
 #California recent and early
 rec_all_table$CA_mort_mt = round(merge(rec_all_table, rbind(ca_mrfss_table[,c("Year","tot_mort_mt")], ca_rec_table[,c("Year","tot_mort_mt")]), by = "Year", all = TRUE)$tot_mort_mt,3)
+rec_all_table[rec_all_table$Year == 2020, "CA_mort_mt"] = ca_rec_table_2020$tot_mort_mt
 #California hist with discards added
 ca_rec_hist_tmp = merge(rec_all_table, ca_rec_hist[,c("Year","QLBKmt")], by = "Year", all = TRUE)[,c("Year","QLBKmt")]
 rec_all_table[!is.na(ca_rec_hist_tmp$QLBKmt),]$CA_mort_mt = round(ca_rec_hist_tmp[!is.na(ca_rec_hist_tmp$QLBKmt),]$QLBKmt * ca_rec_hist_discard_rate, 3)
