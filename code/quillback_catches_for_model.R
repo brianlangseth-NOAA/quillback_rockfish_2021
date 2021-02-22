@@ -106,6 +106,9 @@ rec_all_table[is.na(rec_all_table)] = 0
 load(file.path(dir, "PacFIN Catch", "QLBK.CompFT.20.Aug.2020.RData"))
 com = QLBK.CompFT.20.Aug.2020
 rm(QLBK.CompFT.20.Aug.2020)
+load(file.path(dir, "PacFIN Catch", "QLBK.CompFT.21.Feb.2021.RData"))
+com_2020 = data
+rm(data)
 
 # Washington historical - These add URCK onto Pacfin estimates, only valid up through 2016
 wa_com_hist = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/wa/Coastal Commercial Rockfish_WithRelaxedBorrowingRules.csv")
@@ -139,6 +142,10 @@ com_table = data.frame(year = sort(unique(tmp$year)),
 #Ignore omitted years from pacfin (1981-1983) for washington
 #Calculate missing years from pacfin (1981-1983) for california below
 #Output catch table for use in calculating comps
+tmp_2020 = aggregate(com_2020$ROUND_WEIGHT_MTONS, list(year = com_2020$LANDING_YEAR, area = com_2020$AGENCY_CODE), FUN = sum, drop = FALSE, na.rm = TRUE)
+com_table[com_table$year == 2020, c("ca","or","wa")] = c(tmp_2020[tmp_2020$area %in% "C" & tmp_2020$year %in% 2020, "x"],
+                                       tmp_2020[tmp_2020$area %in% "O" & tmp_2020$year %in% 2020, "x"],
+                                       tmp_2020[tmp_2020$area %in% "W" & tmp_2020$year %in% 2020, "x"])
 #write.csv(com_table,file = file.path(dir,"output catch","pacfin_catch_by_area.csv"), row.names = FALSE)
 
 
