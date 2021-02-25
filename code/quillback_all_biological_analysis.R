@@ -11,6 +11,7 @@
 #library(dataModerate2021)
 devtools::load_all("U:/Stock assessments/dataModerate_2021")
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\clean_quillback_biodata.R")
+devtools::install_github("nwfsc-assess/PacFIN.Utilities")
 library(nwfscSurvey)
 library(PacFIN.Utilities)
 library(ggplot2)
@@ -26,24 +27,44 @@ ca_mrfss_code = 8826010120
 #	Load Data
 ############################################################################################
 
-##PacFIN
-load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020.RData")))
-pacfin 	 = eval(as.name(paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020")))
+# ##PacFIN
+# ##Using old version of PacFIN utilites - PacFIN.Utilities_0.0.1.0001
+# devtools::load_all("U:/Stock assessments/PacFIN.Utilities")
+# load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020.RData")))
+# pacfin 	 = eval(as.name(paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020")))
+# south_ca = c("DNA","HNM","LGB","NWB","OBV","OLA","OSD","OXN","SB","SD","SP","TRM","VEN","WLM")
+# or = c("AST","BDN","BRK","DPO","FLR","GLD","NEW","ORF","PCC","SRV","TLL","WIN","COS")
+# north_ca = c("ALB","ALM","ARE","AVL","BDG","BKL","BOL","BRG","CRS","CRZ","ERK",
+#              "FLN","MNT","MOS","MRO","OAK","OCA","OCM","OCN","ODN","OHB","OMD","OSF","OSL","OSM","OWC","PRN","RCH","RYS","SF","SLT","TML","TRN")
+# wa = unique(pacfin$PCID)[!(unique(pacfin$PCID)) %in% c(south_ca, north_ca, or)]
+# pacfin_data = rename_pacfin(data = pacfin,
+#                        area_grouping = list(south_ca, north_ca, or, wa),
+#                        area_names = c("south_pt_concep", "north_pt_concep", "OR", "WA"),
+#                        fleet_grouping = list("A", c("R", "U")),
+#                        fleet_names = c("com_alive", "com_dead_unknown"),
+#                        fleet_column_name = "COND")
+# table(pacfin_data$COND,pacfin_data$Fleet) #checks
+# table(pacfin_data$State_Areas,pacfin_data$state) #checks
+# table(pacfin_data$SPID,useNA="always")
+
+##Updating with the newest data pull (includes 2020 data) - PacFIN.Utilities_0.0.1.9999
+#For 2020 data
+load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.23.Feb.2021.RData")))
+pacfin = bds.pacfin
+#Set fish in WA area 4a but in state area 29 (which are included in assessments) to a PSMFC area that isn't removed
+#Fish numbers provided by Kristen Hinton on 2/24/21
+pacfin[pacfin$SAMPLE_NUMBER %in% c(20174101180002, 20184101180001, 20184101180002, 20184101180003), "PSMFC_CATCH_AREA_CODE"] = "wa29"
 south_ca = c("DNA","HNM","LGB","NWB","OBV","OLA","OSD","OXN","SB","SD","SP","TRM","VEN","WLM")
 or = c("AST","BDN","BRK","DPO","FLR","GLD","NEW","ORF","PCC","SRV","TLL","WIN","COS")
 north_ca = c("ALB","ALM","ARE","AVL","BDG","BKL","BOL","BRG","CRS","CRZ","ERK",
              "FLN","MNT","MOS","MRO","OAK","OCA","OCM","OCN","ODN","OHB","OMD","OSF","OSL","OSM","OWC","PRN","RCH","RYS","SF","SLT","TML","TRN")
-wa = unique(pacfin$PCID)[!(unique(pacfin$PCID)) %in% c(south_ca, north_ca, or)]
-pacfin_data = rename_pacfin(data = pacfin,
-                       area_grouping = list(south_ca, north_ca, or, wa),
-                       area_names = c("south_pt_concep", "north_pt_concep", "OR", "WA"),
-                       fleet_grouping = list("A", c("R", "U")), 
-                       fleet_names = c("com_alive", "com_dead_unknown"), 
-                       fleet_column_name = "COND")
-table(pacfin_data$COND,pacfin_data$Fleet) #checks
-table(pacfin_data$State_Areas,pacfin_data$state) #checks
-table(pacfin_data$SPID,useNA="always")
-
+wa = unique(pacfin$PACFIN_PORT_CODE)[!(unique(pacfin$PACFIN_PORT_CODE)) %in% c(south_ca, north_ca, or)]
+pacfin_data = rename_pacfin_newVersion(data = pacfin,
+                                 area_grouping = list(south_ca, north_ca, or, wa),
+                                 area_names = c("south_pt_concep", "north_pt_concep", "OR", "WA"),
+                                 fleet_grouping = list("A", c("R", "U")), 
+                                 fleet_names = c("com_alive", "com_dead_unknown"), 
+                                 fleet_column_name = "COND")
 
 ##RecFIN
 #California

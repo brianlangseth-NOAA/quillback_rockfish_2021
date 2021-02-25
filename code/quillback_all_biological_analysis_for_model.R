@@ -11,6 +11,7 @@
 #library(dataModerate2021)
 devtools::load_all("U:/Stock assessments/dataModerate_2021")
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\clean_quillback_biodata.R")
+#devtools::install_github("nwfsc-assess/PacFIN.Utilities")
 library(nwfscSurvey)
 library(PacFIN.Utilities)
 library(ggplot2)
@@ -26,24 +27,43 @@ ca_mrfss_code = 8826010120
 #	Load Data
 ############################################################################################
 
-##PacFIN
-load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020.RData")))
-pacfin 	 = eval(as.name(paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020")))
+# ##PacFIN
+# load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020.RData")))
+# pacfin 	 = eval(as.name(paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020")))
+# south_ca = c("DNA","HNM","LGB","NWB","OBV","OLA","OSD","OXN","SB","SD","SP","TRM","VEN","WLM")
+# or = c("AST","BDN","BRK","DPO","FLR","GLD","NEW","ORF","PCC","SRV","TLL","WIN","COS")
+# north_ca = c("ALB","ALM","ARE","AVL","BDG","BKL","BOL","BRG","CRS","CRZ","ERK",
+#              "FLN","MNT","MOS","MRO","OAK","OCA","OCM","OCN","ODN","OHB","OMD","OSF","OSL","OSM","OWC","PRN","RCH","RYS","SF","SLT","TML","TRN")
+# wa = unique(pacfin$PCID)[!(unique(pacfin$PCID)) %in% c(south_ca, north_ca, or)]
+# pacfin_data = rename_pacfin(data = pacfin,
+#                        area_grouping = list(south_ca, north_ca, or, wa),
+#                        area_names = c("south_pt_concep", "north_pt_concep", "OR", "WA"),
+#                        fleet_grouping = list("A", c("R", "U")), 
+#                        fleet_names = c("com_alive", "com_dead_unknown"), 
+#                        fleet_column_name = "COND")
+# table(pacfin_data$COND,pacfin_data$Fleet) #checks
+# table(pacfin_data$State_Areas,pacfin_data$state) #checks
+# table(pacfin_data$SPID,useNA="always")
+
+
+##Updating with the newest data pull (includes 2020 data) - PacFIN.Utilities_0.0.1.9999
+#For 2020 data
+load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.23.Feb.2021.RData")))
+pacfin = bds.pacfin
+#Set fish in WA area 4a but in state area 29 (which are included in assessments) to a PSMFC area that isn't removed
+#Fish numbers provided by Kristen Hinton on 2/24/21
+pacfin[pacfin$SAMPLE_NUMBER %in% c(20174101180002, 20184101180001, 20184101180002, 20184101180003), "PSMFC_CATCH_AREA_CODE"] = "wa29"
 south_ca = c("DNA","HNM","LGB","NWB","OBV","OLA","OSD","OXN","SB","SD","SP","TRM","VEN","WLM")
 or = c("AST","BDN","BRK","DPO","FLR","GLD","NEW","ORF","PCC","SRV","TLL","WIN","COS")
 north_ca = c("ALB","ALM","ARE","AVL","BDG","BKL","BOL","BRG","CRS","CRZ","ERK",
              "FLN","MNT","MOS","MRO","OAK","OCA","OCM","OCN","ODN","OHB","OMD","OSF","OSL","OSM","OWC","PRN","RCH","RYS","SF","SLT","TML","TRN")
-wa = unique(pacfin$PCID)[!(unique(pacfin$PCID)) %in% c(south_ca, north_ca, or)]
-pacfin_data = rename_pacfin(data = pacfin,
-                       area_grouping = list(south_ca, north_ca, or, wa),
-                       area_names = c("south_pt_concep", "north_pt_concep", "OR", "WA"),
-                       fleet_grouping = list("A", c("R", "U")), 
-                       fleet_names = c("com_alive", "com_dead_unknown"), 
-                       fleet_column_name = "COND")
-table(pacfin_data$COND,pacfin_data$Fleet) #checks
-table(pacfin_data$State_Areas,pacfin_data$state) #checks
-table(pacfin_data$SPID,useNA="always")
-
+wa = unique(pacfin$PACFIN_PORT_CODE)[!(unique(pacfin$PACFIN_PORT_CODE)) %in% c(south_ca, north_ca, or)]
+pacfin_data = rename_pacfin_newVersion(data = pacfin,
+                                  area_grouping = list(south_ca, north_ca, or, wa),
+                                  area_names = c("south_pt_concep", "north_pt_concep", "OR", "WA"),
+                                  fleet_grouping = list("A", c("R", "U")), 
+                                  fleet_names = c("com_alive", "com_dead_unknown"), 
+                                  fleet_column_name = "COND")
 
 ##RecFIN
 #California
@@ -235,42 +255,42 @@ table(out[!is.na(out$Weight),"Source"],out[!is.na(out$Weight),"State_Areas"])
 lw_ests <- estimate_length_weight(data = out, grouping = "all")
 length_weight_plot(dir = file.path(dir, "data", "output biology"), splits = NA, data = out, nm_append = NULL, ests = lw_ests, plots = 1:4)
 
-#Plot lw relationship with literature values
-#Remove recfin and mrfss due to use of imputted weights/lengths
-out_lw = out[out$Source %in% c("PacFIN","NWFSC_WCGBTS","Triennial"),]
-lw_ests_lw <- estimate_length_weight(data = out_lw, grouping = "all")
-pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = "Length_Weight_by_Sex_SurveyPacFIN.png", w = 7, h = 7, pt = 12)
-plot(out_lw[out_lw$Sex == "F", "Length"], out_lw[out_lw$Sex == "F", "Weight"], 
-  xlab = "Length (cm)", ylab = "Weight (kg)", main = "", 
-  ylim = c(0, max(out_lw$Weight, na.rm = TRUE)), xlim = c(0, max(out_lw$Length, na.rm = TRUE)), 
-  pch = 16, col = alpha("red", 0.20)) 
-points(out_lw[out_lw$Sex == "M", "Length"], out_lw[out_lw$Sex == "M", "Weight"], pch = 16, col = alpha("blue", 0.20))
-lens = 1:max(out_lw$Length,na.rm = TRUE)
-lines(lens, lw_ests_lw$all_F[1] * lens ^ lw_ests_lw$all_F[2], col = "red", lwd = 2, lty = 1)
-lines(lens, lw_ests_lw$all_M[1] * lens ^ lw_ests_lw$all_M[2], col = "blue", lwd = 2, lty = 2)
-#Canadian estimates (COSEWIC et al. 2009) in TL
-lines(lens, 1.15e-5 * lens ^ 3.144, col = "red", lwd = 2, lty = 3)
-lines(lens, 1.3e-5 * lens ^ 3.107, col = "blue", lwd = 2, lty = 3)
-#PSMFC 1999 in TL
-lines(lens, (0.02555 * lens ^ 2.93)/1000, col = "cyan", lwd = 2, lty = 1)
-#Washington et al. 1978 (this must be off) in TL
-lines(lens, (3.05e-6 * (lens*10) ^ 2.92)/1000, col = "red", lwd = 2, lty = 3)
-lines(lens, (4.97e-6 * (lens*10) ^ 2.83)/1000, col = "blue", lwd = 2, lty = 3)
-#Moultan 1977 in TL (Washington)
-lines(lens, (1.26e-5 * (lens*10) ^ 3.064)/1000, col = "magenta", lwd = 2, lty = 1)
-#Love  in TL (unknown)
-lines(lens, (0.1 * lens ^ 2.5)/1000, col = "grey", lwd = 2, lty = 1)
-#Barker 1979 in TL (Washington)
-lines(lens, (1.2e-5 * (lens*10) ^ 3.07)/1000, col = "green", lwd = 2, lty = 1)
-leg = c(paste0("F: a = ", signif(lw_ests_lw$all_F[1], digits = 3)," b = ", round(lw_ests_lw$all_F[2], 2)),
-        paste0("M: a = ", signif(lw_ests_lw$all_M[1], digits = 3)," b = ", round(lw_ests_lw$all_M[2], 2)),
-        "F: a = 1.15e-5, b = 3.144", "M: a = 1.3e-5, b = 3.107",
-        "PSMFC: 2.56e-5, b = 2.93",
-        "Moultan 1977","Love: a = 1e-4, b = 2.5","Barker 1979")
-legend("topleft", bty = 'n', legend = leg, lty = c(1,2,3,3,1,1,1,1), col = c("red","blue","red","blue","cyan","magenta","grey","green"), lwd = 2)
-dev.off() 
+# #Plot lw relationship with literature values
+# #Remove recfin and mrfss due to use of imputted weights/lengths - This was original approach, but Ive since removed calculated values above. 
+# out_lw = out[out$Source %in% c("PacFIN","NWFSC_WCGBTS","Triennial"),]
+# lw_ests_lw <- estimate_length_weight(data = out_lw, grouping = "all")
+# pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = "Length_Weight_by_Sex_SurveyPacFIN.png", w = 7, h = 7, pt = 12)
+# plot(out_lw[out_lw$Sex == "F", "Length"], out_lw[out_lw$Sex == "F", "Weight"], 
+#   xlab = "Length (cm)", ylab = "Weight (kg)", main = "", 
+#   ylim = c(0, max(out_lw$Weight, na.rm = TRUE)), xlim = c(0, max(out_lw$Length, na.rm = TRUE)), 
+#   pch = 16, col = alpha("red", 0.20)) 
+# points(out_lw[out_lw$Sex == "M", "Length"], out_lw[out_lw$Sex == "M", "Weight"], pch = 16, col = alpha("blue", 0.20))
+# lens = 1:max(out_lw$Length,na.rm = TRUE)
+# lines(lens, lw_ests_lw$all_F[1] * lens ^ lw_ests_lw$all_F[2], col = "red", lwd = 2, lty = 1)
+# lines(lens, lw_ests_lw$all_M[1] * lens ^ lw_ests_lw$all_M[2], col = "blue", lwd = 2, lty = 2)
+# #Canadian estimates (COSEWIC et al. 2009) in TL
+# lines(lens, 1.15e-5 * lens ^ 3.144, col = "red", lwd = 2, lty = 3)
+# lines(lens, 1.3e-5 * lens ^ 3.107, col = "blue", lwd = 2, lty = 3)
+# #PSMFC 1999 in TL
+# lines(lens, (0.02555 * lens ^ 2.93)/1000, col = "cyan", lwd = 2, lty = 1)
+# #Washington et al. 1978 (this must be off) in TL
+# lines(lens, (3.05e-6 * (lens*10) ^ 2.92)/1000, col = "red", lwd = 2, lty = 3)
+# lines(lens, (4.97e-6 * (lens*10) ^ 2.83)/1000, col = "blue", lwd = 2, lty = 3)
+# #Moultan 1977 in TL (Washington)
+# lines(lens, (1.26e-5 * (lens*10) ^ 3.064)/1000, col = "magenta", lwd = 2, lty = 1)
+# #Love  in TL (unknown)
+# lines(lens, (0.1 * lens ^ 2.5)/1000, col = "grey", lwd = 2, lty = 1)
+# #Barker 1979 in TL (Washington)
+# lines(lens, (1.2e-5 * (lens*10) ^ 3.07)/1000, col = "green", lwd = 2, lty = 1)
+# leg = c(paste0("F: a = ", signif(lw_ests_lw$all_F[1], digits = 3)," b = ", round(lw_ests_lw$all_F[2], 2)),
+#         paste0("M: a = ", signif(lw_ests_lw$all_M[1], digits = 3)," b = ", round(lw_ests_lw$all_M[2], 2)),
+#         "F: a = 1.15e-5, b = 3.144", "M: a = 1.3e-5, b = 3.107",
+#         "PSMFC: 2.56e-5, b = 2.93",
+#         "Moultan 1977","Love: a = 1e-4, b = 2.5","Barker 1979")
+# legend("topleft", bty = 'n', legend = leg, lty = c(1,2,3,3,1,1,1,1), col = c("red","blue","red","blue","cyan","magenta","grey","green"), lwd = 2)
+# dev.off() 
 
-#Now with all data (mrfss data has imputted weight and length removed already)
+#Now with all data (mrfss data has imputted weight and length removed above already) - this is the values from lw_ests above
 out_lw = out[out$Source %in% c("PacFIN","NWFSC_WCGBTS","Triennial","RecFIN","RecFIN_MRFSS"),]
 lw_ests_lw <- estimate_length_weight(data = out_lw, grouping = "all")
 pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = "Length_Weight_by_Sex_AllSources.png", w = 7, h = 7, pt = 12)
