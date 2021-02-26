@@ -77,7 +77,7 @@ writeComps(inComps = Lcomps,
 # Age comp expansions - which are only for Oregon and Washington
 #################################################################################
 
-Adata =  getExpansion_1(Pdata = PdataAge,  
+Adata =  getExpansion_1(Pdata = PdataAge[!is.na(PdataAge$age),],  #need to remove samples without ages otherwise Ntows is all messed up
                         fa = fa, fb = fb, ma = ma, mb = mb, ua = ua, ub = ub)
 
 Adata = getExpansion_2(Pdata = Adata, 
@@ -111,23 +111,22 @@ writeComps(inComps = Acomps,
 #########################################################################################
 # California, Oregon, & Washington - use the sexes combined in the model
 #########################################################################################
-out = read.csv(file.path(dir, "forSS", "Lcomps.QLBK.Nov.2020.csv"), skip = 3, header = TRUE)
-start = which(as.character(out[,1]) %in% c(" Sexes combined ")) + 2
-end   = which(as.character(out[,1]) %in% c(" Females then males ")) -1 #nrow(out)
+out = read.csv(file.path(dir, "forSS", "Lcomps.QLBK.Feb.2021.csv"), skip = 3, header = TRUE)
+start = which(as.character(out[,1]) %in% c(" Usexed only ")) + 2
+end   = nrow(out)
 cut_out = out[start:end,]
 
 cut_out$fleetnum = 1
 cut_out$month = 1
 
 ind = which(colnames(cut_out) %in% "L10"):which(colnames(cut_out) %in% "L50") #If have 2 sex model then go to L50.1
-format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition, 
+format = cbind(cut_out$fleet, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition, 
 			   cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
-colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
-format = format[format$fishyr != 2021, ]
+colnames(format) = c("state", "fishyr", "month", "fleet", "sex", "part", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
 
-ca_comps = format[format$strat == "C.ALL", -1]
-or_comps = format[format$strat == "O.ALL", -1]
-wa_comps = format[format$strat == "W.ALL", -1]
+ca_comps = format[format$state == "CA", -1]
+or_comps = format[format$state == "OR", -1]
+wa_comps = format[format$state == "WA", -1]
 wa_comps$fleet = 2
 #write.csv(ca_comps, file = file.path(dir, "forSS","CA_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
 #write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
@@ -135,11 +134,11 @@ wa_comps$fleet = 2
 
 
 ##############
-# Oregon age comps - Only state with commercial ages
+# Oregon and Washingon age comps - Only states with commercial ages
 ##############
-out = read.csv(file.path(dir, "forSS", "Acomps.QLBK.Jan.2021.csv"), skip = 3, header = TRUE)
-start = which(as.character(out[,1]) %in% c(" Sexes combined ")) + 2
-end   = which(as.character(out[,1]) %in% c(" Females then males ")) -1 #nrow(out)
+out = read.csv(file.path(dir, "forSS", "Acomps.QLBK.Feb.2021.csv"), skip = 3, header = TRUE)
+start = which(as.character(out[,1]) %in% c(" Usexed only ")) + 2
+end   = nrow(out)
 cut_out = out[start:end,]
 
 cut_out$ageerr = 1
@@ -149,21 +148,23 @@ cut_out$fleetnum = 1
 cut_out$month = 1
 
 ind = which(colnames(cut_out) %in% "A5"):which(colnames(cut_out) %in% "A40") #If have 2 sex model then go to A40.1
-format = cbind(cut_out$stratification, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition,
+format = cbind(cut_out$fleet, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition,
                cut_out$ageerr, cut_out$Lbin_lo, cut_out$Lbin_hi,
                cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
-colnames(format) = c("strat", "fishyr", "month", "fleet", "sex", "part", "ageerr", "Lbin_lo", "Lbin_hi", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
+colnames(format) = c("state", "fishyr", "month", "fleet", "sex", "part", "ageerr", "Lbin_lo", "Lbin_hi", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
 format = format[format$fishyr != 2021, ]
 
-or_comps = format[format$strat == "O.ALL", -1]
+or_comps = format[format$state == "OR", -1]
+wa_comps = format[format$state == "WA", -1]
 #write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Acomps_unsexed_5_40_formatted.csv"), row.names = FALSE)
+#write.csv(wa_comps, file = file.path(dir, "forSS","WA_com_Acomps_unsexed_5_40_formatted.csv"), row.names = FALSE)
 
 
 #########################################################################################
 # Calculate the number of trips (tows), and the number of fish
 # Only for lengths
 #########################################################################################
-temp = Pdata[!is.na(Pdata$lengthcm) & Pdata$SAMPLE_YEAR < 2021,]
+temp = Pdata_exp[!is.na(Pdata_exp$lengthcm) & Pdata_exp$SAMPLE_YEAR < 2021,]
 
 Nfish = table(temp$SAMPLE_YEAR, temp$SEX, temp$stratification)
 
@@ -179,15 +180,15 @@ for(y in 1:length(yy)){
 colnames(Ntows) = aa
 rownames(Ntows) = yy
 
-keep = Ntows[,"W.ALL"] != 0
-wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"W.ALL"], Nfish[keep,,"W.ALL"])
-keep = Ntows[,"O.ALL"] != 0
-or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"O.ALL"], Nfish[keep,,"O.ALL"])
-keep = Ntows[,"C.ALL"] != 0
-ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"C.ALL"], Nfish[keep,,"C.ALL"])
+keep = Ntows[,"WA"] != 0
+wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"WA"], Nfish[keep,,"WA"])
+keep = Ntows[,"OR"] != 0
+or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"OR"], Nfish[keep,,"OR"])
+keep = Ntows[,"CA"] != 0
+ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"CA"], Nfish[keep,,"CA"])
 
 colnames(wa_samps) = colnames(or_samps) = colnames(ca_samps) = 
-  c("Year", "N_Trips", "N_Fish_Females", "N_Fish_Males", "N_Fish_Unsexed")
+  c("Year", "N_Trips", "N_Fish_Unsexed")
 
 #write.csv(wa_samps, file = file.path(dir, "forSS","WA_Samples.csv"), row.names = FALSE)
 #write.csv(or_samps, file = file.path(dir, "forSS","OR_Samples.csv"), row.names = FALSE)

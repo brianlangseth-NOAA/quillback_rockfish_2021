@@ -916,8 +916,17 @@ SSplotComparisons(mysummary,
 ##########################################################################################
 
 #Add updated data and new Life history data to model
-#1. New L-A relationship based on WCGBTS data
-#2. Udpated 2020 data (still need commercial data)
+#1. New L-A relationship based on WCGBTS data and new PacFIN age samples
+#2. New L-W relationship based on including rec (excluding imputted weight and length) and new data
+#3. Udpated 2020 data
+  #a. Recreational catch
+  #b. Commercial catch
+  #c. Commercial comps (all years)
+  #d. 
+
+
+#Still need to rec comps, com comps, and com catch
+
 
 #Starting with model 800
 model = "9_0_base"
