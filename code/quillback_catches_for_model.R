@@ -3,6 +3,8 @@
 # 	Purpose: Output Quillback Rockfish Landings 
 #           into form for use in SS
 #
+# This script includes the updates to data during Feb 2021 
+#
 #			  by Brian Langseth 
 #
 ##############################################################################################################
@@ -25,7 +27,7 @@ wa_rec$Total_Removal_N = round(wa_rec$Total_Removal_N,0)
 wa_rec = wa_rec[-1,] #remove first year, which is 0
 
 #Oregon - 1979-2020 Landings 1979-2000, Total removals 2001-2020
-or_rec = read.csv(file.path(dir, "RecFIN Catch","Quillback_FINAL RECREATIONAL LANDINGS_1979 - 2020_byMode_UPDATED.csv"), header = TRUE)
+or_rec = read.csv(file.path(dir, "RecFIN Catch","Quillback_FINAL RECREATIONAL LANDINGS_1979 - 2020_byMode_Feb2021.csv"), header = TRUE)
 
 #California - 2005-2020 Total removals
 ca_rec = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_catch_all_2005-2019_crfs.csv")
@@ -93,7 +95,7 @@ rec_all_table[is.na(rec_all_table)] = 0
 
 #Output final recreational catch time series
 #write.csv(rec_all_table, file = file.path("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data", 
-#"output catch", "recreational_catch_by_area_model.csv"), row.names = FALSE)
+#"output catch", "recreational_catch_by_area_model_Feb2021.csv"), row.names = FALSE)
 
 
 
@@ -117,10 +119,10 @@ wa_com_hist_agg = aggregate(SpeciesPounds ~ Year, data = wa_com_hist, FUN=sum)
 wa_com_hist_agg$SpeciesMT =  wa_com_hist_agg$SpeciesPounds / 2204.62262
 
 # Oregon - 1892-2020 Landings metric tons
-or_com_data = read.csv(file.path(dir, "PacFin Catch", "Quillback_FINAL COMMERCIAL LANDINGS_1892 - 2020_byGear_UPDATED.csv"))
+or_com_data = read.csv(file.path(dir, "PacFin Catch", "Quillback_FINAL COMMERCIAL LANDINGS_1892 - 2020_byGear_Feb2021.csv"))
 
 # California - 1916-1968 Landings (from EJ based on Ralston reconstruction) metric tons
-ca_com_hist1 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1916_1968_ej_UPDATED_CAlandingsCaughtORWA.csv"))
+ca_com_hist1 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1916_1968_ej_Feb2021_CAlandingsCaughtORWA.csv"))
 # California - 1968-1980 Landings lbs
 ca_com_hist2 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1969_1980_ej.csv"))
 
@@ -215,7 +217,7 @@ all_com_mort[is.na(all_com_mort)] = 0
 
 #Output final commercial catch time series
 #write.csv(all_com_mort, file = file.path("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data", 
-#                                         "output catch", "commercial_catch_by_area_model.csv"), row.names = FALSE)
+#                                         "output catch", "commercial_catch_by_area_model_Feb2021.csv"), row.names = FALSE)
 
 
 #################################################################################################################
@@ -226,8 +228,10 @@ california_catch_ss = rbind(cbind(all_com_mort[all_com_mort$Year >= 1916, "Year"
                         cbind(rec_all_table$Year, 1, 2, rec_all_table$CA_mort_mt, 0.05))
 colnames(california_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
+#For oregon apply linear interpolation to be 0 in 1970 for rec catch
+interp71to78 = (rec_all_table[rec_all_table$Year == 1979, "OR_mort_mt"] / (1979-1970)) * (1:(1978-1970))
 oregon_catch_ss = rbind(cbind(all_com_mort[all_com_mort$Year >= 1892, "Year"], 1, 1, all_com_mort[all_com_mort$Year >= 1892, "or"], 0.05),
-                         cbind(rec_all_table[rec_all_table$Year >= 1979, "Year"], 1, 2, rec_all_table[rec_all_table$Year >= 1979, "OR_mort_mt"], 0.05))
+                         cbind(c(1971:1978, rec_all_table[rec_all_table$Year >= 1979, "Year"]), 1, 2, c(interp71to78, rec_all_table[rec_all_table$Year >= 1979, "OR_mort_mt"]), 0.05))
 colnames(oregon_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 
 #For washington rec is fleet 1, commercial is fleet 2
@@ -238,7 +242,7 @@ colnames(washington_catch_ss) = c("Year", "Season", "Fleet", "Catch", "SE")
 #Reset dir since sourcing the discard file changed it
 dir = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data"
 dir.create(file.path(dir, "forSS"))
-write.csv(california_catch_ss, file = file.path(dir, "forSS", "ca_catches_for_ss.csv"), row.names = FALSE)
-write.csv(oregon_catch_ss, file = file.path(dir, "forSS", "oregon_catches_for_ss.csv"), row.names = FALSE)
-write.csv(washington_catch_ss, file = file.path(dir, "forSS", "washington_catches_for_ss.csv"), row.names = FALSE)
+#write.csv(california_catch_ss, file = file.path(dir, "forSS", "ca_catches_for_ss_Feb2021.csv"), row.names = FALSE)
+#write.csv(oregon_catch_ss, file = file.path(dir, "forSS", "oregon_catches_for_ss_Feb2021.csv"), row.names = FALSE)
+#write.csv(washington_catch_ss, file = file.path(dir, "forSS", "washington_catches_for_ss_Feb2021.csv"), row.names = FALSE)
 
