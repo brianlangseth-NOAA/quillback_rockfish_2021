@@ -88,7 +88,7 @@ Adata = getExpansion_2(Pdata = Adata,
 Adata$Final_Sample_Size <- capValues(Adata$Expansion_Factor_1_L * Adata$Expansion_Factor_2, maxVal = 0.80)
 
 # Set up lengths bins based on length sizes for all comps
-myAbins = c(seq(5,40,1)) #New max size is 49 (but only three greater than 40)
+myAbins = c(seq(5,70,1)) #Need to set to 70 to match Washington commercial samples. Reduce to 40 for Oregon below
 
 # Since quillback is a single sex model I am going to change all fish to be unsexed.
 Adata$SEX = "U"
@@ -128,9 +128,9 @@ ca_comps = format[format$state == "CA", -1]
 or_comps = format[format$state == "OR", -1]
 wa_comps = format[format$state == "WA", -1]
 wa_comps$fleet = 2
-#write.csv(ca_comps, file = file.path(dir, "forSS","CA_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
-#write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
-#write.csv(wa_comps, file = file.path(dir, "forSS","WA_com_Lcomps_unsexed_10_50_formatted.csv"), row.names = FALSE)
+#write.csv(ca_comps, file = file.path(dir, "forSS","CA_com_Lcomps_unsexed_10_50_formatted_Feb2021.csv"), row.names = FALSE)
+#write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Lcomps_unsexed_10_50_formatted_Feb2021.csv"), row.names = FALSE)
+#write.csv(wa_comps, file = file.path(dir, "forSS","WA_com_Lcomps_unsexed_10_50_formatted_Feb2021.csv"), row.names = FALSE)
 
 
 ##############
@@ -147,17 +147,18 @@ cut_out$Lbin_hi = -1
 cut_out$fleetnum = 1
 cut_out$month = 1
 
-ind = which(colnames(cut_out) %in% "A5"):which(colnames(cut_out) %in% "A40") #If have 2 sex model then go to A40.1
+ind = which(colnames(cut_out) %in% "A5"):which(colnames(cut_out) %in% "A70") #If have 2 sex model then go to A70.1
 format = cbind(cut_out$fleet, cut_out$fishyr, cut_out$month, cut_out$fleetnum, cut_out$sex, cut_out$partition,
                cut_out$ageerr, cut_out$Lbin_lo, cut_out$Lbin_hi,
                cut_out$Ntows, cut_out$Nsamps, cut_out$InputN, cut_out[,ind])
 colnames(format) = c("state", "fishyr", "month", "fleet", "sex", "part", "ageerr", "Lbin_lo", "Lbin_hi", "Ntows", "Nsamps", "InputN", colnames(cut_out[ind]))
 format = format[format$fishyr != 2021, ]
 
-or_comps = format[format$state == "OR", -1]
+or_comps = format[format$state == "OR", 2:which(colnames(format) %in% "A40")]
 wa_comps = format[format$state == "WA", -1]
-#write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Acomps_unsexed_5_40_formatted.csv"), row.names = FALSE)
-#write.csv(wa_comps, file = file.path(dir, "forSS","WA_com_Acomps_unsexed_5_40_formatted.csv"), row.names = FALSE)
+wa_comps$fleet = 2
+#write.csv(or_comps, file = file.path(dir, "forSS","OR_com_Acomps_unsexed_5_40_formatted_Feb2021.csv"), row.names = FALSE)
+#write.csv(wa_comps, file = file.path(dir, "forSS","WA_com_Acomps_unsexed_5_70_formatted_Feb2021.csv"), row.names = FALSE)
 
 
 #########################################################################################
@@ -190,7 +191,7 @@ ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"CA"], Nfish[keep,,"CA"])
 colnames(wa_samps) = colnames(or_samps) = colnames(ca_samps) = 
   c("Year", "N_Trips", "N_Fish_Unsexed")
 
-#write.csv(wa_samps, file = file.path(dir, "forSS","WA_Samples.csv"), row.names = FALSE)
-#write.csv(or_samps, file = file.path(dir, "forSS","OR_Samples.csv"), row.names = FALSE)
-#write.csv(ca_samps, file = file.path(dir, "forSS","CA_Samples.csv"), row.names = FALSE)
+#write.csv(wa_samps, file = file.path(dir, "forSS","WA_Samples_Feb2021.csv"), row.names = FALSE)
+#write.csv(or_samps, file = file.path(dir, "forSS","OR_Samples_Feb2021.csv"), row.names = FALSE)
+#write.csv(ca_samps, file = file.path(dir, "forSS","CA_Samples_Feb2021.csv"), row.names = FALSE)
 
