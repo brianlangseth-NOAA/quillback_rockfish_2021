@@ -1,7 +1,7 @@
 ############################################################################################
 #	Recreational data-processing for quillback rockfish
 #
-#				November, 2020
+#	For data updates from Feb 2021
 #
 #				 Chantel Wetzel, Brian Langseth
 ############################################################################################
@@ -23,16 +23,19 @@ len_bin = seq(10, 50, 2)
 ############################################################################################
 ##RecFIN and MRFSS
 #California
-ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_lengths_2004_2020_updated.csv", header=T, na.strings = "-"))
-ca_recfin = ca_recfin[ca_recfin$SPECIES_NAME == "QUILLBACK ROCKFISH", ]
-ca_recfin_data = rename_recfin(data = ca_recfin,
-                               #area_grouping = list(c("CHANNEL", "SOUTH"), c("BAY AREA", "WINE", "CENTRAL", "REDWOOD", "NOT KNOWN")),
-                               #area_names = c("south_pt_concep", "north_pt_concep"),
-                               #area_column_name = "RECFIN_PORT_NAME",
-                               mode_grouping = list(c("BEACH/BANK", "MAN-MADE/JETTY"), c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS", "NOT KNOWN")),
-                               mode_names = c("rec_shore", "rec_boat"),
-                               mode_column_name = "RecFIN.Mode.Name" )
+#ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_lengths_2004_2020_updated.csv", header=T, na.strings = "-"))
+#ca_recfin = ca_recfin[ca_recfin$SPECIES_NAME == "QUILLBACK ROCKFISH", ]
+ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Sample Data/Quillback_revised_CRFS_NoRegion_2004-2020_Feb2021.csv", header=T, na.strings = "-"))
+table(ca_recfin$AGENCY_WATER_AREA_NAME) #There are no Mexcio fish here
+ca_recfin_dataNEW = rename_recfin(data = ca_recfinNEW,
+                                  #area_grouping = list(c("CHANNEL", "SOUTH"), c("BAY AREA", "WINE", "CENTRAL", "REDWOOD", "NOT KNOWN")),
+                                  #area_names = c("south_pt_concep", "north_pt_concep"),
+                                  #area_column_name = "RECFIN_PORT_NAME",
+                                  mode_grouping = list(c("BEACH/BANK", "MAN-MADE/JETTY"), c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS", "NOT KNOWN")),
+                                  mode_names = c("rec_shore", "rec_boat"),
+                                  mode_column_name = "RECFIN_MODE_NAME" )
 ca_recfin_data$Source = "RecFIN_MRFSS"
+
 
 #ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
 ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003_Final_UPDATED.csv")
@@ -152,11 +155,11 @@ lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder i
                        datL = wa, lgthBins = len_bin,
                        sex = 0,  partition = 0, fleet = 1, month = 1) #Fleet is 1 for WA
 file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-50.csv"), 
-			to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Length_comp_Sex_0_bin=10-50.csv")) 
+			to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Length_comp_Sex_0_bin=10-50_Feb2021.csv")) 
 
 PlotFreqData.fn(dir = file.path(dir, "data", "forSS"), 
     dat = lfs$comps, ylim=c(0, max(len_bin)+4), 
-    main = "WA Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+    main = "WA Recreational - Unsexed_Feb2021", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
 #Washington length comps 10-56
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
@@ -171,12 +174,12 @@ afs = UnexpandedAFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder i
                        datA = wa, ageBins = 5:70,
                        sex = 0,  partition = 0, fleet = 1, month = 1, ageErr = 1) #Fleet is 1 for WA
 file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_Sex_0_bin=5-70.csv"), 
-            to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Age_comp_Sex_0_bin=5-70.csv")) 
+            to= file.path(dir, "data", "forSS", "wa_rec_notExpanded_Age_comp_Sex_0_bin=5-70_Feb2021.csv")) 
 
 
 
 ############################################################################################
-#	Oregon recreational length data file
+#	Oregon recreational length data file - No new data in Feb2021 update
 ############################################################################################
 
 or = out[which(out$State == "OR"), ]
@@ -221,11 +224,11 @@ lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder i
                        sex = 0, partition = 0, fleet = 2, month = 1)
 
 file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-50.csv"), 
-			to= file.path(dir, "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50.csv")) 
+			to= file.path(dir, "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_Feb2021.csv")) 
 
 PlotFreqData.fn(dir = file.path(dir, "data", "forSS"), 
     dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 
-    main = "CA Recreational - Unsexed", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+    main = "CA Recreational - Unsexed_Feb2021", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
 
 
