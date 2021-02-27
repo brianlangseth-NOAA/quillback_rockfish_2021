@@ -528,3 +528,22 @@ SSplotComparisons(mysummary,
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
 #Pretty minimal effects for all of these. Dome shaped results in biggest change. 
+
+
+##########################################################################################
+#                         More base model construction with updated data
+##########################################################################################
+
+#Add updated data and new Life history data to model
+#1. New L-A relationship based on WCGBTS data and new PacFIN age samples
+#2. New L-W relationship based on including rec (excluding imputted weight and length) and new data
+#3. Udpated 2020 data
+  #a. Recreational catch (2020 and all years - shore and estuary)
+  #b. Commercial catch
+  #c. Commercial comps (2020 and all years) - Change to using InputN from Nsamples
+  #d. Update ghost ages using new format (ages dont actually change) - Change to using InputN from Nsamples
+
+#Starting with model 400
+model = "5_0_base"
+base.500 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.500)

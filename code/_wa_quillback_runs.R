@@ -920,12 +920,14 @@ SSplotComparisons(mysummary,
 #2. New L-W relationship based on including rec (excluding imputted weight and length) and new data
 #3. Udpated 2020 data
   #a. Recreational catch
-  #b. Commercial catch
-  #c. Commercial comps (all years)
-  #d. 
+  #b. Recreational comps (just 2020)
+  #c. Commercial catch
+  #d. Commercial comps (2020 and all years) - Change to using InputN from Nsamples
+  #e. Add new commercial age ghost ages
+
+#Yet to add tribal commercial comps
 
 
-#Still need to rec comps, com comps, and com catch
 
 
 #Starting with model 800
