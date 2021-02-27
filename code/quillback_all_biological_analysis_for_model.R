@@ -3,9 +3,11 @@
 #for length, age, and weight. Also to output
 #tables for number of data entries
 #
+#Uses updated data for 2020 (and other years) in Feb 2021
+#
 #Author: Brian Langseth, Chantel Wetzel
 #
-#Updated: 2/19/2020
+#Updated: 2/26/2020
 #########################################
 
 #library(dataModerate2021)
@@ -27,7 +29,7 @@ ca_mrfss_code = 8826010120
 #	Load Data
 ############################################################################################
 
-# ##PacFIN
+##PacFIN
 # load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020.RData")))
 # pacfin 	 = eval(as.name(paste0("PacFIN.",pacfin_abbr,".bds.13.Aug.2020")))
 # south_ca = c("DNA","HNM","LGB","NWB","OBV","OLA","OSD","OXN","SB","SD","SP","TRM","VEN","WLM")
@@ -45,8 +47,7 @@ ca_mrfss_code = 8826010120
 # table(pacfin_data$State_Areas,pacfin_data$state) #checks
 # table(pacfin_data$SPID,useNA="always")
 
-
-##Updating with the newest data pull (includes 2020 data) - PacFIN.Utilities_0.0.1.9999
+#Updating with the newest data pull (includes 2020 data) - PacFIN.Utilities_0.0.1.9999
 #For 2020 data
 load(file.path(dir, "data", "PacFIN BDS", paste0("PacFIN.",pacfin_abbr,".bds.23.Feb.2021.RData")))
 pacfin = bds.pacfin
@@ -65,24 +66,28 @@ pacfin_data = rename_pacfin_newVersion(data = pacfin,
                                   fleet_names = c("com_alive", "com_dead_unknown"), 
                                   fleet_column_name = "COND")
 
+
 ##RecFIN
 #California
-ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_lengths_2004_2020_updated.csv", header=T, na.strings = "-"))
-ca_recfin = ca_recfin[ca_recfin$SPECIES_NAME == recfin_name, ]
+#ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_rec_lengths_2004_2020_updated.csv", header=T, na.strings = "-"))
+#ca_recfin = ca_recfin[ca_recfin$SPECIES_NAME == recfin_name, ]
+ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Sample Data/Quillback_revised_CRFS_NoRegion_2004-2020_Feb2021.csv", header=T, na.strings = "-"))
+table(ca_recfin$AGENCY_WATER_AREA_NAME) #There are no Mexcio fish here
 ca_recfin_data = rename_recfin(data = ca_recfin,
                                area_grouping = list(c("CHANNEL", "SOUTH"), c("BAY AREA", "WINE", "CENTRAL", "REDWOOD", "NOT KNOWN")),
                                area_names = c("south_pt_concep", "north_pt_concep"),
                                area_column_name = "RECFIN_PORT_NAME",
                                mode_grouping = list(c("BEACH/BANK", "MAN-MADE/JETTY"), c("PARTY/CHARTER BOATS", "PRIVATE/RENTAL BOATS"), "NOT KNOWN"),
                                mode_names = c("shore", "boat", "unknown"),
-                               mode_column_name = "RecFIN.Mode.Name" )
-table(ca_recfin_data$RecFIN.Mode.Name,ca_recfin_data$Fleet)
+                               #mode_column_name = "RecFIN.Mode.Name" )
+                               mode_column_name = "RECFIN_MODE_NAME" )
+#table(ca_recfin_data$RecFIN.Mode.Name,ca_recfin_data$Fleet)
+table(ca_recfin_data$RECFIN_MODE_NAME,ca_recfin_data$Fleet)
 table(ca_recfin_data$State,ca_recfin_data$State_Areas)
 table(ca_recfin_data$SPECIES_NAME,useNA="always")
 
 
-
-#Washignton
+#Washington
 # According to Theresa WA lengths are all FL
 wa_recfin = rename_wa_recfin(read.csv(file.path(dir,"data","RecFIN Sample Data",paste0("wa_rec_bds_quillback_with2020.csv")), header = T, na.strings = "-"))
 wa_recfin_data =rename_recfin(data = wa_recfin,
@@ -95,6 +100,8 @@ wa_recfin_data =rename_recfin(data = wa_recfin,
 table(wa_recfin_data$boat_mode_code,wa_recfin_data$Fleet)
 table(wa_recfin_data$STATE_NAME,wa_recfin_data$State_Areas)
 table(wa_recfin_data$SPECIES_NAME,useNA="always")
+
+
 #Oregon
 or_recfin_age = read.csv(file.path(dir,"data","RecFIN Sample Data",paste0(or_rec_name,"_RecFIN_BIO-AGE_2005- 2006,2008.csv")), header = T, na.strings = "-")
 or_recfin_len = read.csv(file.path(dir,"data","RecFIN Sample Data",paste0(or_rec_name,"_RecFIN_BIO-LW_2001-2020.csv")), header = T, na.strings = "-")
@@ -135,11 +142,11 @@ recfin_len_data = rbind(wa_recfin_data[,which(names(wa_recfin_data) %in% rec_fie
 # wa_research = read.csv(paste0("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Sample Data/wa_research_bds_quillback.csv"),header=T)
 
 
+
 ##MRFSS
 #California
 #ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
-#ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003_Final_UPDATED.csv")
-ca_mrfss_full = read.csv("C:/Users/Brian.Langseth/Desktop/ca_type3.csv")
+ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003_Final_UPDATED.csv")
 ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == ca_mrfss_code & ca_mrfss_full$YEAR < 2004, ] #Remove the 2004 data from the new MFRSS data
 #ca_mrfss = ca_mrfss[!is.na(ca_mrfss$CNTY), ]
 #spc = c(59, 73, 37, 111, 83)
@@ -154,7 +161,7 @@ ca_mrfss[which(sapply(ca_mrfss$WGT, function(x) nchar(sub('.*\\.', '', x))) > 2)
 ca_mrfss[which(sapply(ca_mrfss$WGT, function(x) nchar(sub('.*\\.', '', x))) <= 2), "WGT_FLAG_ALT"] = "measured"
 
 ca_mrfss_data = rename_mrfss(data = ca_mrfss,
-                             len_col = "LNGTH", #Previously used T_LEN
+                             len_col = "LNGTH",
                              #area_grouping = list(spc, npc), 
                              #area_names = c("south_pt_concep", "north_pt_concep"), 
                              #area_column_name = "CNTY", 
@@ -241,7 +248,7 @@ out = clean_quillback_biodata(dir = file.path(dir,"data","output biology","plots
 #	Summarize all of the input data
 ############################################################################################
 out_sum = summarize_data(dir = file.path(dir,"data","output biology","plots"), data = out)
-write.csv(out_sum$area_fleet_source_year, file = file.path(dir, "data", "output biology", "sample_by_source_area_year.csv"))
+write.csv(out_sum$area_fleet_source_year, file = file.path(dir, "data", "output biology", "sample_by_source_area_year_Feb2021.csv"))
 
 table(out$Source,out$State_Areas)
 table(out[!is.na(out$Age),"Source"],out[!is.na(out$Age),"State_Areas"])
