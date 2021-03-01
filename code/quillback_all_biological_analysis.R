@@ -138,9 +138,8 @@ recfin_len_data = rbind(wa_recfin_data[,which(names(wa_recfin_data) %in% rec_fie
 
 ##MRFSS
 #California
-#ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
-ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003_Final_UPDATED.csv")
-ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == ca_mrfss_code & ca_mrfss_full$YEAR < 2004, ] #Remove the 2004 data from the new MFRSS data
+ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
+ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == ca_mrfss_code, ]
 ca_mrfss = ca_mrfss[!is.na(ca_mrfss$CNTY), ] # remove records without a county
 spc = c(59, 73, 37, 111, 83)
 npc = unique(ca_mrfss[!ca_mrfss$CNTY %in% spc, "CNTY"]) 
@@ -188,7 +187,6 @@ sub_hkl = hkl[hkl$common_name == hkl_name, ]
 
 ##Combo Survey
 load(file.path(dir, "data", "Trawl Survey Bio", "Bio_All_NWFSC.Combo_2020-07-30.rda"))
-load(file.path(dir, "data", "Trawl Survey Bio", "Bio_All_NWFSC.Combo_2021-02-16.rda"))
 combo = Data
 rm(Data)
 combo_data <- rename_survey_data(data = combo,
@@ -288,7 +286,7 @@ dev.off()
 out_age = out
 out_age[out_age$State == "ORage", "State"] = "OR"
 out_age[out_age$Source == "RecFIN_ORage", "Source"] = "RecFIN"
-la_ests <- estimate_length_age(data = out_age[-c(142,143),], grouping = "all")
+la_ests <- estimate_length_age(data = out_age, grouping = "all")
 length_age_plot(dir = file.path(dir, "data", "output biology"), splits = NA, data = out_age, nm_append = NULL, ests = la_ests, plots = 1:4)
 
 
@@ -341,7 +339,7 @@ data_hist(dir = file.path(dir, "data", "output biology", "plots"),
 ############################################################################################
 #Additional plotting for data workshop
 ############################################################################################
-source(file.path("U:/Stock assessments/quillback_rockfish_2021", "code", "data_workshop_plotting_quillback.R"))
+source(file.path(dir, "code", "data_workshop_plotting_quillback.R"))
 
 
 
