@@ -27,7 +27,7 @@ len_bin = seq(10, 50, 2)
 #ca_recfin = ca_recfin[ca_recfin$SPECIES_NAME == "QUILLBACK ROCKFISH", ]
 ca_recfin = rename_budrick_recfin(read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/RecFIN Sample Data/Quillback_revised_CRFS_NoRegion_2004-2020_Feb2021.csv", header=T, na.strings = "-"))
 table(ca_recfin$AGENCY_WATER_AREA_NAME) #There are no Mexcio fish here
-ca_recfin_dataNEW = rename_recfin(data = ca_recfinNEW,
+ca_recfin_data = rename_recfin(data = ca_recfin,
                                   #area_grouping = list(c("CHANNEL", "SOUTH"), c("BAY AREA", "WINE", "CENTRAL", "REDWOOD", "NOT KNOWN")),
                                   #area_names = c("south_pt_concep", "north_pt_concep"),
                                   #area_column_name = "RECFIN_PORT_NAME",
