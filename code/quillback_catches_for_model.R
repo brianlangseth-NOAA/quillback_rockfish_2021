@@ -134,6 +134,9 @@ ca_com_hist2 = read.csv(file.path(dir, "PacFin Catch", "ca_hist_commercial_1969_
 
 #PacFin-----------------------------------
 com$round_mt = com$CATCH.LBS / 2204.62262
+#remove research catches
+com = com[!com$REMOVAL_TYPE %in% c("R"), ]
+com_2020 = com_2020[!com_2020$REMOVAL_TYPE_CODE %in% c("R"), ]
 
 #Calculate catch by area
 tmp = aggregate(com$round_mt, list(year = com$YEAR, area = com$AGID), FUN = sum, drop = FALSE)
@@ -148,7 +151,7 @@ tmp_2020 = aggregate(com_2020$ROUND_WEIGHT_MTONS, list(year = com_2020$LANDING_Y
 com_table[com_table$year == 2020, c("ca","or","wa")] = c(tmp_2020[tmp_2020$area %in% "C" & tmp_2020$year %in% 2020, "x"],
                                        tmp_2020[tmp_2020$area %in% "O" & tmp_2020$year %in% 2020, "x"],
                                        tmp_2020[tmp_2020$area %in% "W" & tmp_2020$year %in% 2020, "x"])
-#write.csv(com_table,file = file.path(dir,"output catch","pacfin_catch_by_area.csv"), row.names = FALSE)
+#write.csv(com_table,file = file.path(dir,"output catch","pacfin_catch_by_area_Feb2021.csv"), row.names = FALSE)
 
 
 #Washington---------------------------------

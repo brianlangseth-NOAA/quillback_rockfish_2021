@@ -30,7 +30,7 @@ fa = ma = ua = 1.963e-5
 fb = mb = ub = 3.016
 
 # Read in the PacFIN catch data to based expansion on
-catch.file = read.csv(file.path(dir, "output catch", "pacfin_catch_by_area.csv"))
+catch.file = read.csv(file.path(dir, "output catch", "pacfin_catch_by_area_Feb2021.csv"))
 colnames(catch.file) = c("Year", "CA", "OR", "WA")
 
 # Clean up length data
