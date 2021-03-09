@@ -921,11 +921,11 @@ SSplotComparisons(mysummary,
 #3. Udpated 2020 data
   #a. Recreational catch
   #b. Recreational comps (just 2020)
-  #c. Commercial catch
+  #c. Commercial catch  - Remove research removals
   #d. Commercial comps (2020 and all years) - Change to using InputN from Nsamples
   #e. Add new commercial age ghost ages
 
-#Yet to add tribal commercial comps
+#Yet to add tribal commercial comps and catch
 
 
 

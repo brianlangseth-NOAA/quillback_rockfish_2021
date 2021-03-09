@@ -5,7 +5,9 @@ library(r4ss)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
 
 sum_model <- function(model){
-  return(c("NLL" = round(model$likelihoods_used[1,"values"],2),
+  return(c("NLL_Tot" = round(model$likelihoods_used[1,"values"],2),
+           "NLL_Com" = round(model$likelihoods_by_fleet[6,"OR_Commercial"],2),
+           "NLL_Rec" = round(model$likelihoods_by_fleet[6,"OR_Recreational"],2),
            "n_parm" = round(model$N_estimated_parameters,0),
            "R0" = round(model$estimated_non_dev_parameters["SR_LN(R0)","Value"],2),
            "depl" = round(model$current_depletion,2)))
@@ -535,15 +537,88 @@ SSplotComparisons(mysummary,
 ##########################################################################################
 
 #Add updated data and new Life history data to model
-#1. New L-A relationship based on WCGBTS data and new PacFIN age samples
+#1. New L-A relationship based on WCGBTS data and new PacFIN age samples (with correct A1 and L1 values)
 #2. New L-W relationship based on including rec (excluding imputted weight and length) and new data
 #3. Udpated 2020 data
   #a. Recreational catch (2020 and all years - shore and estuary)
   #b. Commercial catch
   #c. Commercial comps (2020 and all years) - Change to using InputN from Nsamples
   #d. Update ghost ages using new format (ages dont actually change) - Change to using InputN from Nsamples
+#4. Reset prior selex values to initial prior values
+#5. Set selex for rec to dome-shaped 
+#6. Set forecast to match 2020 catch levels
+#7. Redo data weighting
+#Process for adjusting inputs: run initial0, adjust data weighting (initial1), fix selex parms 2 and 4 and re-estimate 1, 3, 6 (initial2), redo bias adj (initial3))
 
-#Starting with model 400
-model = "5_0_base"
+#Starting with model 400 - make changes as described above - Had to readjust bias adj a second time
+model = "5_0_0_base"
 base.500 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.500)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\5_0_0_base", write = FALSE, option = "none") #for first initial pass
+
+#Explore removal of early time block
+#Starting with model 500 initial0
+model = "5_0_1_noblock"
+base.501 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.501)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\5_0_1_noblock", write = FALSE, option = "none") #for first initial pass
+
+#Explore asymptotic selex
+#Starting with model 500  initial0
+model = "5_0_2_nodome"
+base.502 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.502)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\5_0_2_nodome", write = FALSE, option = "none") #for first initial pass
+
+#Explore effects of previous l-a curve 
+#Starting with model 500 - just changing l-a curve to old version
+model = "5_0_3_oldLA"
+base.503 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.503)
+
+#Explore effects of previous l-a curve 
+#Starting with model 503 - adjusting data weigthing and parm est
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\5_0_3_oldLA", write = FALSE, option = "none") #for first initial pass
+model = "5_0_3b_oldLA"
+base.503b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.503b)
+
+#Explore effects of new l-a curve on previous base
+#Starting with model 400 - just changing l-a curve to new version (with correct A1 and L1 values)
+model = "4_0_5_newLA"
+base.405 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.405)
+
+
+#Compare exploration runs
+modelnames <- c("base: block_dome", "noBlock", "noDome", "base: oldLA", "base: oldLA reest", "model400: block-asymp","model400: newLA")
+mysummary  <- SSsummarize(list(base.500, base.501, base.502, base.503, base.503b, base.400, base.405))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "7_base_explore_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+#Comparing likelihood fits
+temp = sapply(list(base.500,base.501,base.502,base.503,base.503b), FUN = sum_model)
+colnames(temp) = c("base", "noBlock", "noDome", "OldLA", "OldLA-reest")
+t(temp)
+#The noBlock model has lower NLL and fewer parameters, however the data weighting values are different, hence not comparable. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -330,3 +330,42 @@ SSplotComparisons(mysummary,
                   legendlabels = modelnames, 
                   plotdir = file.path(wd, "plots"),
                   pdf = TRUE)
+
+
+##########################################################################################
+#                         More base model construction with updated data
+##########################################################################################
+
+#1. Start model with Francis weighting sensitivity from previously unweighted base
+
+#Add updated data and new Life history data to model
+#2. New L-A relationship based on WCGBTS data and new PacFIN age samples (with right A1 and L1)
+#3. New L-W relationship based on including rec (excluding imputted weight and length) and new data
+#4. Udpated 2020 data
+  #a. Recreational catch (2020)
+  #b. Commercial catch (all years) - Remove research removals
+  #c. Commercial comps (all years) - Change to using InputN from Nsamples
+  #d. Recreational comps (all years) - No samples for 2020
+#5. Reset prior selex values to initial prior values (model 300)
+#6. Set forecast to match 2020 catch levels
+#7. Redo data weighting
+#Process for adjusting inputs: run initial0, adjust data weighting (initial1), fix selex parms 2 and 4 and re-estimate 1, 3 (initial2), redo bias adj (initial3))
+
+#Starting with model 411
+model = "5_0_0_base"
+base.500 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.500)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_0_0_base", write = FALSE, option = "none") #for first initial pass
+
+#Replace with MI weighting
+#Starting with model 500 - initial1. Reset dataweights, and reest selex parms 1,3
+model = "5_0_1_MI"
+base.501 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.501)
+
+#Check effect of new growth - used oldLA relationship (with right A1 and L1)
+#Starting with model 500
+model = "5_0_2_oldLA"
+base.502 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.502)
+#Effect is to have more depletion
