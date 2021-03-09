@@ -275,13 +275,13 @@ load(file.path(dir, "PacFIN Catch", "QLBK.CompFT.20.Aug.2020.RData"))
 com = QLBK.CompFT.20.Aug.2020
 rm(QLBK.CompFT.20.Aug.2020)
 
-# Compare with updated 2020 data and structure from Kelli. Is the same
-load(file.path(dir, "PacFIN Catch", "QLBK.CompFT.21.Feb.2021.RData"))
-com_new = data
-#Compare new and old pulls
-cbind("new" = table(com_new$LANDING_YEAR), "old" = table(com$YEAR)) #Records: 2021 for old is value from 1984
-merge(aggregate(LANDED_WEIGHT_MTONS ~ LANDING_YEAR, data = com_new, FUN = sum, na.rm = TRUE), 
-      aggregate(LANDED_WEIGHT_MTONS ~ YEAR, data = com, FUN = sum, na.rm = TRUE), by.x = "LANDING_YEAR", by.y = "YEAR")
+# # Compare with updated 2020 data and structure from Kelli. Is the same
+# load(file.path(dir, "PacFIN Catch", "QLBK.CompFT.21.Feb.2021.RData"))
+# com_new = data
+# #Compare new and old pulls
+# cbind("new" = table(com_new$LANDING_YEAR), "old" = table(com$YEAR)) #Records: 2021 for old is value from 1984
+# merge(aggregate(LANDED_WEIGHT_MTONS ~ LANDING_YEAR, data = com_new, FUN = sum, na.rm = TRUE), 
+#       aggregate(LANDED_WEIGHT_MTONS ~ YEAR, data = com, FUN = sum, na.rm = TRUE), by.x = "LANDING_YEAR", by.y = "YEAR")
 
 # Oregon Catches - metric tons
 or_com_data = read.csv(file.path(dir, "PacFin Catch", "Quillback_FINAL COMMERCIAL LANDINGS_1892 - 2020_byGear.csv"))
