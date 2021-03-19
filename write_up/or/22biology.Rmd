@@ -1,35 +1,45 @@
 ## Biological Data
 
+### Natural Mortality
 
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'data_m.Rmd')
-read_child(filein)
-```
+Hamel [-@hamel_method_2015] developed a method for combining meta-analytic approaches relating $M$ to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior on $M$. In that same issue of *ICES Journal of Marine Science*, Then et al. [-@then_evaluating_2015-1] provided an updated data set of estimates of $M$ and related life history parameters across a large number of fish species from which to develop an $M$ estimator for fish species in general. They concluded by recommending $M$ estimates be based on maximum age alone, based on an updated Hoenig non-linear least squares estimator $M=4.899A^{-0.916}_{max}$. The approach of basing $M$ priors on maximum age alone was one that was already being used for West Coast rockfish assessments. However, in fitting the alternative model forms relating $M$ to $A_{\text{max}}$, Then et al. [-@then_evaluating_2015-1] did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of $M$ to $A_{\text{max}}$. Therefore, it would be reasonable to fit all models under a log transformation. This was not done. Re-evaluating the data used in Then et al. [-@then_evaluating_2015-1] by fitting the one-parameter $A_{\text{max}}$ model under a log-log transformation (such that the slope is forced to be -1 in the transformed space Hamel [-@hamel_method_2015]), the point estimate for $M$ is:
 
-### Length-Weight Relationship
+\begin{centering}
 
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'data_length_weight.Rmd')
-read_child(filein)
-```
+$M=\frac{5.4}{A_{\text{max}}}$
 
-### Growth (Length-at-Age)
+\end{centering}
 
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'data_length_age.Rmd')
-read_child(filein)
-```
+The above is also the median of the prior, if estimating. The prior is defined as a log normal distribution with mean $ln(5.4/A_{\text{max}})$ and SE = 0.438. Using a maximum age of `r model$accuage`, the point estimate and median of the prior for $M$ is 0.06 per year.
+
+The maximum age was selected based on available age data from all coastwide data sources and literature values for the U.S. West Coast.  The oldest aged `r spp` was 70 years with two observations off the coast of Washington in 1999.  The maximum age in the model was set at `r model$accuage` years.  This selection was based on literature examining the longevity of  `r spp` [@love_milton_probably_1996] and as used in [@Cailliet_2001]. Ages for `r spp` of 95 have been found, but these were from Canadian waters so were not used.  
+
 
 ### Maturation and Fecundity
+Maturity-at-length esetimates were based on the work of Hannah and Blume [-@Quillback_maturity_2011] which estimated the 50% size-at-maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm and slope of `r round(model$MGparmAdj$Mat_slope_Fem_GP_1[1], 2)` off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}).  
 
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'data_fecund_mat.Rmd')
-read_child(filein)
-```
+The fecundity-at-length was based on research by Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for `r spp` was estimated equal to `r format(model$MGparmAdj$Eggs_scalar_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Eggs_exp_len_Fem[1],2)`^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
+
 
 ### Sex Ratio
+Given the generally sparse data available for `r spp`, the similarities in growth and length-weight relationships (described below), and evidence from the literature of limited sexual dimporhism in length for `r spp` [@LenarzandEcheverria_dimorphism_1991], models were combined across sex. Consequently the sex ratio was assumed to be 1:1. There was limited sex specific observations by length or age for all biological data sources (Figures \ref{fig:len-sex-ratio} and \ref{fig:age-sex-ratio}).
 
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'data_sex_ratio.Rmd')
-read_child(filein)
-```
+
+### Length-Weight Relationship
+The length-weight relationship for `r spp` was estimated outside the model using all coastwide biological data collected from fishery-independent and fishery-dependnt data sources (Figure \ref{fig:len-weight-survey}). Only measured weight or length values were used; any values with more than two decimal places were assumed cacluated from another measurement and were excluded. This only occurred for a small () percentage of MRFSS-era recreational samples. The estimated length-weight relationship for `r spp` was `r format(model$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Wtlen_2_Fem[1],2)`^ where $L$ is length in cm (Figures \ref{fig:len-weight}).
+
+
+### Growth (Length-at-Age)
+The length-at-age relationship for `r spp` was estimated outside the model using data collected from fishery-dependent sources off the coast of Oregon and Washington collected between 1998-2019, and a coastwide fishery-independent source (WCGBT Survey) collected between X-X (Table \ref{tab:len-at-age-samps}).  Age data was generally sparase for `r spp` from any one source. The fishery-dependent data had limited observations of young fish less than 5 years of age, and the fishery-independent data had limited observations of old fish greater than 40 years of age. Growth parameters for `r spp` were estimated at the following values:
+
+\begin{centering}
+
+$L_{\infty}$ = `r round(model$MGparmAdj$L_at_Amax_Fem_GP_1[1], 1)` cm; $k$ = `r round(model$MGparmAdj$VonBert_K_Fem_GP_1[1], 3)`
+
+\end{centering}
+
+These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}.  
+  
+  
+### Ageing Precision and Bias
+Ages were not fit in the model. 

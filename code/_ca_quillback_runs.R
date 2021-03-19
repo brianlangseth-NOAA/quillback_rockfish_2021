@@ -6,6 +6,14 @@ source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.
 
 wd = "C:/Users/Brian.Langseth/Desktop/ca"
 
+sum_model <- function(model){
+  return(c("NLL_Tot" = round(model$likelihoods_used[1,"values"],2),
+           "NLL_Com" = round(model$likelihoods_by_fleet[6,"CA_Commercial"],2),
+           "NLL_Rec" = round(model$likelihoods_by_fleet[6,"CA_Recreational"],2),
+           "n_parm" = round(model$N_estimated_parameters,0),
+           "R0" = round(model$estimated_non_dev_parameters["SR_LN(R0)","Value"],2),
+           "depl" = round(model$current_depletion,2)))
+}
 
 ##########################################################################################
 #                         Initial explorations
@@ -356,6 +364,7 @@ model = "5_0_0_base"
 base.500 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.500)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_0_0_base", write = FALSE, option = "none") #for first initial pass
+sum_model(base.500)
 
 #Replace with MI weighting
 #Starting with model 500 - initial1. Reset dataweights, and reest selex parms 1,3
@@ -369,3 +378,304 @@ model = "5_0_2_oldLA"
 base.502 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.502)
 #Effect is to have more depletion
+
+#Add selex blocks for rec and comm
+#Starting with model 500 - run (initial 0) - reset dataweighting
+model = "5_0_3_blocks"
+base.503 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.503)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_0_3_blocks", write = FALSE, option = "none") #for first initial pass
+#Comm appears to be more needing of it, rec difference is very small
+#Originally placed at 2004 for both, but comm appears to be more so at 2006 based on fit and residuals, but not with mean leangth
+#Rec NLL is lower but fits appear better without block. Thus set only for comm. Ultimately would suggest 2010 based on residual patter
+#and fit and mean length though its very speculative. 
+
+#No recdevs
+#Starting with model 500 - run (initial 0) - reset dataweighting
+model = "5_0_4_norecdevs"
+base.504 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.504)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_0_4_norecdevs", write = FALSE, option = "none") #for first initial pass
+
+#Effect of changing to NInput from Nsamples for commercial
+#Starting with model 500 - reset dataweighting twice
+model = "5_0_5_nsamples"
+base.505 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.505)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_0_5_nsamples", write = FALSE, option = "none") #for first initial pass
+
+#No dataweighting applied 
+#Starting with model 500
+model = "5_0_6_noDW"
+base.506 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.506)
+
+#Remove large rec catch in 1991 
+#Starting with model 500
+model = "5_0_7_noBigCatch"
+base.507 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.507)
+#No real effect
+
+#Add dome shaped for rec 
+#Starting with model 500 - minimal effect if just estimated parm 6 so try with reest parms 2 and 4 (initial1) - minimal effect
+model = "5_0_8_domeRec"
+base.508 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.508)
+sum_model(base.508) #Minimal effect
+
+#Add dome shaped for rec 
+#Starting with model 500 - minimal effect if just estimated parm 6 so try with reest parms 2 and 4 (initial1) - minimal effect
+model = "5_0_9_domeCom"
+base.509 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.509)
+sum_model(base.508) #Minimal effect
+
+#Add dome shaped for rec 
+#Starting with model 500  
+model = "5_0_10_Linf42"
+base.5010 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.5010)
+
+
+#Compare differences from last base
+modelnames <- c("oldBase-noDW", "oldBase-DW", "newBase", "newBase-oldLA", "newBase-Nsamples", "newBase-noDW")
+mysummary  <- SSsummarize(list(base.400, base.411, base.500, base.502, base.505, base.506))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "5b_differences_from_last_base_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#A combination of data weighting and the new growth curve put model in more depletion state.  
+
+
+#Compare runs
+modelnames <- c("francis", "MI", "blocks", "norecdev", "noDW", "recDome", "comDome")
+mysummary  <- SSsummarize(list(base.500, base.501, base.503, base.504, base.506, base.508, base.509))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "5_base_exploration_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+#Main story is that the model goes to the same place regardless of common decisions. Evidence to point to current setup
+
+
+################
+#Ongoing exploration with base. MI model (501)
+################
+
+#Adjust bias adj to match recent (2000+) pattern
+#Starting with model 501  
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_0_1_MI", write = FALSE, option = "none") #for first initial pass
+model = "5_1_0_biasAdj"
+base.510 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.510)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_1_0_biasAdj", write = FALSE, option = "none") #for first initial pass
+
+#Remove comps with N <= 5 (see if this affects estimated) - Does affect dataweighting so redid weighting
+#Starting with model 501  
+model = "5_1_1_noSmallSamps"
+base.511 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.511)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_1_1_noSmallSamps", write = FALSE, option = "none") #for first initial pass
+
+#Remove comps with N < 10 (see if this affects estimated) - Does affect dataweighting so redid weighting
+#Starting with model 501  
+model = "5_1_2_noSmallSamps10"
+base.512 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.512)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_1_2_noSmallSamps10", write = FALSE, option = "none") #for first initial pass
+
+#Estimate Linf
+#Starting with model 501 - change prior and SD on L2 (set normal and arbitrarily SD to 5 to have wide variability)  
+model = "5_1_3_estLinf"
+base.513 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.513)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_1_3_estLinf", write = FALSE, option = "none") #for first initial pass
+sum_model(base.513)
+
+#Estimate Linf and K
+#Starting with model 513 
+model = "5_1_4_estLinfK"
+base.514 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.514)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_1_4_estLinfK", write = FALSE, option = "none") #for first initial pass
+
+#Estimate Linf and L1
+#Starting with model 513 
+model = "5_1_5_estLinfKL1"
+base.515 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.515)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\5_1_5_estLinfKL1", write = FALSE, option = "none") #for first initial pass
+
+#Compare runs
+modelnames <- c("MI", "adjBias", "noSmallSamp5", "noSmallSamp10", "estLinf", "estLinfK", "estLinfKL1")
+mysummary  <- SSsummarize(list(base.501, base.510, base.511, base.512, base.513, base.514, base.515))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "5_1_base_exploration_",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
+
+#Testing effects of changing weights, but keeping relative ratio the same
+#Starting with model 501
+
+#Decreasing both weights three-fold
+model = "5_2_0_testDWsmall"
+base.520 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.520)
+
+#Increasing both weights three-fold
+model = "5_2_1_testDWlarge"
+base.521 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.521)
+
+#Francis: decreasing both weights three-fold 
+model = "5_2_2_testDWlarge_Francis"
+base.522 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.522)
+
+#Francis: increasing both weights three-fold 
+model = "5_2_3_testDWsmall_Francis"
+base.523 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.523)
+
+#Francis: no change. To compare with increase and decrease
+model = "5_2_4_testDW_Francis"
+base.524 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.524)
+
+#Take home is that the absolute value does matter, maybe not so much for overall trajectory,
+#but it can adjust scale, and recdevs.
+
+
+
+##########################################################################################
+#                         Updating base
+##########################################################################################
+
+#Start with model 5_1_0 and
+#1. remove first three years of commercial comps (which have Ninput of 1)
+
+#Starting with model 510
+model = "6_0_0_base"
+base.600 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.600)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_0_base", write = FALSE, option = "none") #for first initial pass
+
+
+#################
+#Exploring reason for variance of recdevs being more than sigmaR (bias adj plots showing many eaerly years with higher se than sigmaR)
+#################
+#Increase sigmaR to recommended value
+#Starting with model 600
+base.600$sigma_R_info #set to 0.9
+model = "6_0_1_sigmaR09"
+base.601 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.601)
+base.601$sigma_R_info #set to 0.9
+#Wants to push sigmaR even higher to 1.2. Also setting to 0.9 doesnt resolve poorly informed recdevs before 2000 (still have variance above sigmaR^2)
+#And overall biomass trajectory is the same
+
+#Set doRecDev option (line 110 in .ctl) to 2 (so devs dont have to sum to 1)
+model = "6_0_2_option2"
+base.602 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.602)
+sum(base.602$recruit[base.602$recruit$era=="Main",]$dev, na.rm=T)
+#Biomass pattern is similar and issue of early years of recdev with high variance is not fixed. Selex and R0 do change, and probably are reasons for some change in trajectory
+
+#Fix R0 and redo model 602.
+#Fix R0 at estimate from model 600, set parm1 selex for rec and comm to phase 1
+model = "6_0_2_1_option2fix"
+base.6021 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6021)
+sum(base.6021$recruit[base.6021$recruit$era=="Main",]$dev, na.rm=T)
+#Zero recdev line moves up, causing period of lower recdevs to be less low, so population trajectory tics up in later years. 
+#Issue with variance of recdevs does is not fixed however. 
+
+#Cut out early recdevs. Start main devs in 1996
+model = "6_0_3_latedevs96"
+base.603 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.603)
+#Allows less negative recruitments in recent period so population bumps up a bit. R0 changes slightly. Pattern still there in early devs. 
+
+#Cut out early recdevs. Start main devs in 1999
+model = "6_0_3_1_latedevs99"
+base.6031 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6031)
+
+
+#Adjust growth to be tigheter (lower CV). Set to 0.01 for low and high ages
+model = "6_0_4_0_LACV01"
+base.6040 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6040)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_4_0_LACV01", write = FALSE, option = "none") #for first initial pass
+#This resolves the bias adjust variance issue. Obviously doesn't fit well 
+
+#Adjust growth to be tigheter (lower CV). Set to 0.05 for low and high ages
+model = "6_0_4_1_LACV_05"
+base.6041 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6041)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_4_1_LACV05", write = FALSE, option = "none") #for first initial pass
+#Fits are better though some bias adjust issues persist. 
+
+#Adjust growth to be tigheter for young (lower CV). Set to 0.01 for young ages only
+model = "6_0_4_2_LACVyoung01"
+base.6042 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6042)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_4_2_LACVyoung01", write = FALSE, option = "none") #for first initial pass
+#Bias adjust issues persist
+
+#Adjust growth to be tigheter for old (lower CV). Set to 0.01 for high ages only
+model = "6_0_4_3_LACVold01"
+base.6043 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6043)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_4_3_LACVold01", write = FALSE, option = "none") #for first initial pass
+#Bias adjust issues are much better (recdev variance < sigmaR) suggesting varibility at older size is contirubting to uncertainty. BIomass trajectory is fairly similar
+#May need to readjust dataweighting
+
+#Adjust CV patterns to be based on CV by age, set low to 1 and high to 20
+model = "6_0_4_4_CVfunc1"
+base.6044 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6044)
+
+#Adjusting steepness does not change bias adjust issue. to see if that affects bias adj
+model = "6_0_5_0_lowerH"
+base.6050 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6050)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_5_0_lowerH", write = FALSE, option = "none") #for first initial pass
+#Bias adjust issues are much better (recdev variance < sigmaR) suggesting varibility at older size is contirubting to uncertainty. BIomass trajectory is fairly similar
+
+#Adjust steepness to see if that affects bias adj
+model = "6_0_5_1_higherH"
+base.6051 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.6051)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_4_3_LACVold01", write = FALSE, option = "none") #for first initial pass
+#Bias adjust issues are much better (recdev variance < sigmaR) suggesting varibility at older size is contirubting to uncertainty. BIomass trajectory is fairly similar
+
+#Reduce high catch years - took spikes and made between the year before and year after for rec and comm
+model = "6_0_6_lowerCatch"
+base.606 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.606)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_0_6_lowerCatch", write = FALSE, option = "none") #for first initial pass
+#Affects scale, but not pattern of population. Doesn't fix recdev variance issue
+
+#Remove recdevs
+model = "6_1_0_norecdevs"
+base.610 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.610)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\6_1_0_norecdevs", write = FALSE, option = "none") #for first initial pass
+
+#Adjust CV for high to be low (1%) when estimating Linf and K. Start from model 514
+model = "6_0_7_estLinfK_lowCV"
+base.607 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.607)
+
+#Can set cormin and cormax in SS_output to see what parms are correlated and which are not
+#The early recdevs, first 7 years of main recdevs, 2003, late devs
+model = "6_0_0_base"
+base.600 = SS_output(file.path(wd, model),covar=TRUE, cormax = 0.7, cormin = 0.05, printlowcor = 50)
+#Our main devs between 1985 to 2017 are correlated, there isn't one (other than 2003) thats uninformed
+
+
+

@@ -25,10 +25,10 @@ knitr::knit_hooks$set(plot = function(x,options) {
 
 load("00opts.Rdata")
 
-spp = 'copper rockfish'
-Spp = 'Copper rockfish'
-
-data_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/data/biology/plots"
+spp = "quillback rockfish"
+Spp = "Quillback rockfish"
+spp_latin = "Sebastes maliger"
+ofl_perc = 0.584 
 
 if(file.exists("00mod.Rdata")){
   load("00mod.Rdata")

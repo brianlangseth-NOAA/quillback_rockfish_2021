@@ -58,6 +58,24 @@ profilesummary <- r4ss::SSsummarize(profilemodels)
 profile_plot(paste0(mydir,"/6_0_1_baseR0profile_profile_L_at_Amax_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
 
 
+####################
+#Proposed base run 9_0
+####################
+base_name = "9_0_0_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -1, 40, 0.10),
+                            high = c(0.09, 0.99,  2, 48, 0.25),
+                            step_size = c(0.005, 0.10, 0.25, 1, 0.01),
+                            param_space = c('real', 'real', 'relative', 'real', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+model_settings$jitter_fraction = 0.1
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 #######################################################################################################
 # Oregon
 #####################################################################################################
@@ -96,6 +114,24 @@ model_settings = get_settings(settings = list(base_name = base_name,
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
+####################
+#Proposed base run
+####################
+base_name = "5_0_0_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -1, 40, 0.1),
+                            high = c(0.09, 0.99,  1, 48, 0.25),
+                            step_size = c(0.005, 0.10, 0.25, 1, 0.01),
+                            param_space = c('real', 'real', 'relative', 'real', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+model_settings$jitter_fraction = 0.1
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 
 
 #######################################################################################################
@@ -120,7 +156,7 @@ model_settings = get_settings(settings = list(base_name = base_name,
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 ####################
-#Proposed base run
+#Proposed base run 4_0
 ####################
 base_name = "4_0_baseR0profile"
 
@@ -135,6 +171,51 @@ model_settings = get_settings(settings = list(base_name = base_name,
                                               profile_details = get ))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+####################
+#Proposed base run 5_0
+####################
+base_name = "5_0_1_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1"),
+                            low =  c(0.03, 0.40, -1, 40),
+                            high = c(0.09, 0.99,  1, 47),
+                            step_size = c(0.005, 0.10, 0.25, 1),
+                            param_space = c('real', 'real', 'relative', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+####################
+#Proposed base run 6_0
+####################
+base_name = "6_0_0_baseR0profile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.40, -1, 40, 0.10),
+                            high = c(0.09, 0.99,  1, 47, 0.25),
+                            step_size = c(0.005, 0.10, 0.25, 1, 0.01),
+                            param_space = c('real', 'real', 'relative', 'real', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+model_settings$jitter_fraction = 0.1
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+##
+#Long retro
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("retro")))
+model_settings$retro_yrs = ((-1):(-25))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 
 
 

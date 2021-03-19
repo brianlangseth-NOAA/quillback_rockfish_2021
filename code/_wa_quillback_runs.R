@@ -916,24 +916,21 @@ SSplotComparisons(mysummary,
 ##########################################################################################
 
 #Add updated data and new Life history data to model
-#1. New L-A relationship based on WCGBTS data and new PacFIN age samples
+#1. New L-A relationship based on WCGBTS data and new PacFIN age samples (with right A1 and L1)
 #2. New L-W relationship based on including rec (excluding imputted weight and length) and new data
 #3. Udpated 2020 data
   #a. Recreational catch
   #b. Recreational comps (just 2020)
-  #c. Commercial catch  - Remove research removals
-  #d. Commercial comps (2020 and all years) - Change to using InputN from Nsamples
+  #c. Commercial catch  - Remove research removals - Add 2020 tribal
+  #d. Commercial comps (2020 and all years) - Change to using InputN from Nsamples - No comps for 2020 (didn't sample)
   #e. Add new commercial age ghost ages
 
-#Yet to add tribal commercial comps and catch
-
-
-
-
 #Starting with model 800
-model = "9_0_base"
+model = "9_0_0_base"
 base.900 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.900)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\9_0_0_base", write = FALSE, option = "none") #for first initial pass
+
 
 
 

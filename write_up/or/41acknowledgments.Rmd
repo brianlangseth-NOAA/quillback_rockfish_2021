@@ -1,6 +1,2 @@
 # Acknowledgments
-
-```{r, echo=FALSE, results='asis'}
-filein = file.path(general_wd,'acknowledgements.Rmd')
-read_child(filein)
-```
+Here are all the mad props!

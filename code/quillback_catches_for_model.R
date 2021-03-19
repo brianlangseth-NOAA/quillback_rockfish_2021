@@ -151,6 +151,9 @@ tmp_2020 = aggregate(com_2020$ROUND_WEIGHT_MTONS, list(year = com_2020$LANDING_Y
 com_table[com_table$year == 2020, c("ca","or","wa")] = c(tmp_2020[tmp_2020$area %in% "C" & tmp_2020$year %in% 2020, "x"],
                                        tmp_2020[tmp_2020$area %in% "O" & tmp_2020$year %in% 2020, "x"],
                                        tmp_2020[tmp_2020$area %in% "W" & tmp_2020$year %in% 2020, "x"])
+#Add in 2020 WA catches, which didn't have tribal entry yet. Used 2017-2019 percentage of nearshore rockfish 
+#that is assumed to be of quillback (94% based on 2017-2019 species comps). This is calculated at WA_COMM_2020_tickets.xls
+com_table[nrow(com_table),"wa"] = 0.113416144
 #write.csv(com_table,file = file.path(dir,"output catch","pacfin_catch_by_area_Feb2021.csv"), row.names = FALSE)
 
 
