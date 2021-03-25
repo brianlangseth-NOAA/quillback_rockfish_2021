@@ -244,6 +244,24 @@ out_unclean = create_data_frame(data_list = input)
 ############################################################################################
 out = clean_quillback_biodata(dir = file.path(dir,"data","output biology","plots"), data = out_unclean)
 
+###############################################################
+# Create length-age sample table
+###############################################################
+tmp = out[which(!is.na(out$Age)), ]
+tmp$source_state = paste0(tmp$State, "_", tmp$Source)
+n = table(tmp$Year, tmp$source_state)
+colnames(n)[which(colnames(n)=="ORage_RecFIN_ORage")] = "OR_RecFIN"
+write.csv(n, file = file.path(dir, "data", "forSS", "len_at_age_data.csv"))
+
+###############################################################
+# Create length-width sample table
+###############################################################
+tmp = out[which(!is.na(out$Weight)), ]
+tmp$source_state = paste0(tmp$State, "_", tmp$Source)
+n = table(tmp$Year, tmp$source_state)
+write.csv(n, file = file.path(dir, "data", "forSS", "len_at_weight_data.csv"))
+
+
 ############################################################################################
 #	Summarize all of the input data
 ############################################################################################
