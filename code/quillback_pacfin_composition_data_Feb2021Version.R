@@ -60,6 +60,8 @@ Pdata_exp$Final_Sample_Size <- capValues(Pdata_exp$Expansion_Factor_1_L * Pdata_
 # Set up lengths bins based on length sizes for all comps
 myLbins = c(seq(10, 50, 2))
 
+calcSamplesL() #run function (at end) to report and save sample sizes by sex
+
 # Since quillback is a single sex model I am going to change all fish to be unsexed.
 Pdata_exp$SEX = "U"
 
@@ -89,6 +91,8 @@ Adata$Final_Sample_Size <- capValues(Adata$Expansion_Factor_1_L * Adata$Expansio
 
 # Set up lengths bins based on length sizes for all comps
 myAbins = c(seq(5,70,1)) #Need to set to 70 to match Washington commercial samples. Reduce to 40 for Oregon below
+
+calcSamplesA() #run function (at end) to report and save sample sizes by sex
 
 # Since quillback is a single sex model I am going to change all fish to be unsexed.
 Adata$SEX = "U"
@@ -163,35 +167,72 @@ wa_comps$fleet = 2
 
 #########################################################################################
 # Calculate the number of trips (tows), and the number of fish
-# Only for lengths
 #########################################################################################
-temp = Pdata_exp[!is.na(Pdata_exp$lengthcm) & Pdata_exp$SAMPLE_YEAR < 2021,]
-
-Nfish = table(temp$SAMPLE_YEAR, temp$SEX, temp$stratification)
-
-aa = unique(temp$stratification)
-yy = sort(unique(temp$SAMPLE_YEAR))
-Ntows = matrix(0, length(yy), length(aa))
-for(y in 1:length(yy)){
-  for(a in 1:length(aa)){
-    ind = which(temp$SAMPLE_YEAR == yy[y] & temp$stratification == aa[a])
-    if(length(ind) > 0) {Ntows[y, a] = length(unique(temp$SAMPLE_NO[ind])) }
+#For lengths
+calcSamplesL = function(){
+  temp = Pdata_exp[!is.na(Pdata_exp$lengthcm) & Pdata_exp$SAMPLE_YEAR < 2021,]
+  
+  Nfish = table(temp$SAMPLE_YEAR, temp$SEX, temp$stratification)
+  
+  aa = unique(temp$stratification)
+  yy = sort(unique(temp$SAMPLE_YEAR))
+  Ntows = matrix(0, length(yy), length(aa))
+  for(y in 1:length(yy)){
+    for(a in 1:length(aa)){
+      ind = which(temp$SAMPLE_YEAR == yy[y] & temp$stratification == aa[a])
+      if(length(ind) > 0) {Ntows[y, a] = length(unique(temp$SAMPLE_NO[ind])) }
+    }
   }
+  colnames(Ntows) = aa
+  rownames(Ntows) = yy
+  
+  keep = Ntows[,"WA"] != 0
+  wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"WA"], Nfish[keep,,"WA"])
+  keep = Ntows[,"OR"] != 0
+  or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"OR"], Nfish[keep,,"OR"])
+  keep = Ntows[,"CA"] != 0
+  ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"CA"], Nfish[keep,,"CA"])
+  
+  #If do with sexes include use top, if use once sexes are assigned "U" use the bottom.
+  colnames(wa_samps) = colnames(or_samps) = colnames(ca_samps) = 
+    c("Year", "N_Trips", "N_Fish_Female", "N_Fish_Male", "N_Fish_Unsexed")
+  #colnames(wa_samps) = colnames(or_samps) = colnames(ca_samps) = 
+  #  c("Year", "N_Trips", "N_Fish_Unsexed")
+  
+  write.csv(wa_samps, file = file.path(dir, "forSS","WA_Samples_Feb2021.csv"), row.names = FALSE)
+  write.csv(or_samps, file = file.path(dir, "forSS","OR_Samples_Feb2021.csv"), row.names = FALSE)
+  write.csv(ca_samps, file = file.path(dir, "forSS","CA_Samples_Feb2021.csv"), row.names = FALSE)
 }
-colnames(Ntows) = aa
-rownames(Ntows) = yy
 
-keep = Ntows[,"WA"] != 0
-wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"WA"], Nfish[keep,,"WA"])
-keep = Ntows[,"OR"] != 0
-or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"OR"], Nfish[keep,,"OR"])
-keep = Ntows[,"CA"] != 0
-ca_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"CA"], Nfish[keep,,"CA"])
-
-colnames(wa_samps) = colnames(or_samps) = colnames(ca_samps) = 
-  c("Year", "N_Trips", "N_Fish_Unsexed")
-
-#write.csv(wa_samps, file = file.path(dir, "forSS","WA_Samples_Feb2021.csv"), row.names = FALSE)
-#write.csv(or_samps, file = file.path(dir, "forSS","OR_Samples_Feb2021.csv"), row.names = FALSE)
-#write.csv(ca_samps, file = file.path(dir, "forSS","CA_Samples_Feb2021.csv"), row.names = FALSE)
-
+#For ages
+calcSamplesA = function(){
+  temp = Adata[!is.na(Adata$age) & Adata$SAMPLE_YEAR < 2021,]
+  
+  Nfish = table(temp$SAMPLE_YEAR, temp$SEX, temp$stratification)
+  
+  aa = unique(temp$stratification)
+  yy = sort(unique(temp$SAMPLE_YEAR))
+  Ntows = matrix(0, length(yy), length(aa))
+  for(y in 1:length(yy)){
+    for(a in 1:length(aa)){
+      ind = which(temp$SAMPLE_YEAR == yy[y] & temp$stratification == aa[a])
+      if(length(ind) > 0) {Ntows[y, a] = length(unique(temp$SAMPLE_NO[ind])) }
+    }
+  }
+  colnames(Ntows) = aa
+  rownames(Ntows) = yy
+  
+  keep = Ntows[,"WA"] != 0
+  wa_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"WA"], Nfish[keep,,"WA"])
+  keep = Ntows[,"OR"] != 0
+  or_samps = cbind(rownames(Ntows)[keep], Ntows[keep,"OR"], Nfish[keep,,"OR"])
+  
+  #If do with sexes include use top, if use once sexes are assigned "U" use the bottom.
+  colnames(wa_samps) = colnames(or_samps) =  
+    c("Year", "N_Trips", "N_Fish_Female", "N_Fish_Male")
+  #colnames(wa_samps) = colnames(or_samps) = 
+  #  c("Year", "N_Trips", "N_Fish_Unsexed")
+  
+  write.csv(wa_samps, file = file.path(dir, "forSS","WA_age_Samples_Feb2021.csv"), row.names = FALSE)
+  write.csv(or_samps, file = file.path(dir, "forSS","OR_age_Samples_Feb2021.csv"), row.names = FALSE)
+}

@@ -149,6 +149,18 @@ out = out[out$Data_Type %in% c("RETAINED", NA), ]
 wa = out[which(out$State == "WA"), ]
 wa$Length_cm = wa$Length
 
+# create a table of the samples available by year
+wa$Trawl_id = 1:nrow(wa)
+GetN.fn(dir = file.path(dir, "data"), dat = wa, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "forSS", "wa_rec_samples.csv"), row.names = FALSE)
+
+GetN.fn(dir = file.path(dir, "data"), dat = wa, type = "age", species = 'others')
+n = read.csv(file.path(dir, "data", "forSS", "age_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "forSS", "wa_rec_age_samples.csv"), row.names = FALSE)
+
 wa$Sex = "U" #UnexpandedLFs.fn and UnexpandedAFs.fn will only do comps for Unsexed fish in sex = 0 and ignore male and female. So assign all as U
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
@@ -185,6 +197,13 @@ file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_
 or = out[which(out$State == "OR"), ]
 or$Length_cm = or$Length
 
+# create a table of the samples available by year
+or$Trawl_id = 1:nrow(or)
+GetN.fn(dir = file.path(dir, "data"), dat = or, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "forSS", "or_rec_samples.csv"), row.names = FALSE)
+
 or$Sex = "U" #UnexpandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
 
 lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"),  #puts into "forSS" folder in this location
@@ -200,6 +219,17 @@ PlotFreqData.fn(dir = file.path(dir, "data", "forSS"),
 
 #Oregon age comps 
 out_orage = create_data_frame(data_list = list(or_recfin_age_data))
+
+# create a table of the samples available by year
+out_orage$Trawl_id = 1:nrow(out_orage)
+GetN.fn(dir = file.path(dir, "data"), dat = out_orage, type = "age", species = 'others')
+n = read.csv(file.path(dir, "data", "forSS", "age_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "forSS", "or_rec_age_samples.csv"), row.names = FALSE)
+if(file.exists(file.path(dir, "data", "forSS", "age_SampleSize.csv"))){ #Remove age sample size file
+    file.remove(file.path(dir, "data", "forSS", "age_SampleSize.csv"))
+}
+
 out_orage$Sex = "U" #UnexpandedAFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
 
 afs = UnexpandedAFs.fn(dir = file.path(dir, "data"),  #puts into "forSS" folder in this location
@@ -216,6 +246,17 @@ file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Age_comp_
 
 ca = out[which(out$State == "CA"), ]
 ca$Length_cm = ca$Length
+
+# create a table of the samples available by year
+ca$Trawl_id = 1:nrow(ca)
+GetN.fn(dir = file.path(dir, "data"), dat = ca, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "forSS", "ca_rec_samples.csv"), row.names = FALSE)
+#Remove length sample size file which was overwritten for each state
+if(file.exists(file.path(dir, "data", "forSS", "length_SampleSize.csv"))){
+    file.remove(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
+}
 
 ca$Sex = "U" #UnexpandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
 
