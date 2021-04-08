@@ -5,9 +5,11 @@
 <!-- ***************    Catches      *********************** --> 
 <!-- ======================================================= -->
 
-<!-- \input{C:/Assessments/2021/copper_rockfish_2021/write_up/or/tex_tables/Catches_All_Years.tex} -->
+<!-- tab:catch -->
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/Catches_All_Years.tex}
 
 \newpage
+
 
 ```{r, results = 'asis'}
 yrs = hist = 2011:2020
@@ -22,12 +24,12 @@ total.catch <- round(apply(catch, 1, sum),2)
 
 man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv")
 man = man[man$Year %in% yrs, ]
-out = cbind(man, round(man$ACL * ofl_perc, 2), total.catch)
+out = cbind(round(man,2), round(man$ACL * 0.584, 2), total.catch)
 
 col_names = c("Year", "OFL", "ACL", "OR ACL", "OR Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for north nearshore, the ACL allocated to Oregon, and the total removals.",
+             caption = "The OFL and ACL for the Minor Nearshore Rockfish North complex, the ACL allocated to Oregon, and the total removals.",
              label = "ofl",
              align = 'l',
              col_names = col_names)
@@ -35,11 +37,180 @@ table_format(x = out,
 
 ```
 
+\newpage
+
+
+<!-- ======================================================= -->
+<!-- ***************       Data      *********************** --> 
+<!-- ======================================================= -->
+
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_Samples_Feb2021.tex}
+
+\newpage
+
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_samples.tex}
+
+\newpage
+
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/len_at_age_data.tex}
+
+\newpage
+
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/len_at_weight_data.tex}
+
+\newpage
+
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_age_samples.tex}
+
+\newpage
+
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_age_Samples_Feb2021.tex}
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ***************    Biology      *********************** --> 
+<!-- ======================================================= -->
+
+```{r, results='asis'}
+
+growth = model$endgrowth[model$endgrowth$Sex == 1, ]
+out = growth[, c("Age_Beg", "Len_Beg", "Wt_Beg", "Len_Mat", "Mat*Fecund")]
+out$Len_Mat[out$Len_Mat > 0.99] = 1
+rownames(out) = NULL
+col_names = c('Age', 'Length (cm)', 'Weight (kg)', 'Maturity', 'Spawning Output')
+
+table_format(x = out[1:50,],
+             caption = "Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.",
+             label = "growth-tab",
+             digits = c(0, 2, 2, 2, 2),
+             align = 'l',
+             col_names = col_names,
+             longtable = TRUE) 
+
+```
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ***************  Data Weights   *********************** --> 
+<!-- ======================================================= -->
+
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'data_weights.csv'))
+
+col_names = c('Method',
+        'Commercial Lengths',
+              'Recreational Lengths')
+table_format(x = tab,
+             caption = "Data weights applied by each alternative data weighting methods. The Dirichlet Multinomial weight is theta/(1+theta)",
+             label = "dw",
+             align = 'l',
+             col_names = col_names)
+```
+
+<!-- ======================================================= -->
+<!-- ***********   Model Parameters     ******************** --> 
+<!-- ======================================================= -->
+
+
+```{r, results = 'asis'}
+
+mod_params = model$parameters[-c(grep('Impl',model$parameters$Label),
+							     grep('Fore',model$parameters$Label)),
+                                (names(model$parameters) %in%
+                                c("Num","Label","Value","Phase","Min",
+                                  "Max","Status","Parm_StDev",
+                                  "Pr_type","Prior","Pr_SD"))] 
+
+test = mod_params[which(mod_params$Label == "Wtlen_1_Fem_GP_1"),'Value']
+mod_params[,'Value'] = round(as.numeric(mod_params[,'Value']),3)                                 
+
+# Combine bounds into one column
+mod_params$Min = paste('(', mod_params$Min, ', ', mod_params$Max, ')', sep='')
+
+# Combine prior info to one column
+mod_params$PR_type = ifelse(mod_params$Pr_type == 'No_prior' , 'None', paste(mod_params$Pr_type,' (', mod_params$Prior,  ', ', mod_params$Pr_SD, ')', sep = ''))
+
+# Set long value to scientific notation
+mod_params[mod_params$Label == "Wtlen_1_Fem",3] = format(mod_params[mod_params$Label == "Wtlen_1_Fem",3], scientific = TRUE)
+mod_params[mod_params$Label == "Eggs_scalar_Fem",3] = format(as.numeric(mod_params[mod_params$Label == "Eggs_scalar_Fem",3]), scientific = TRUE)
+mod_params[mod_params$Label == "L_at_Amax_Fem_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "L_at_Amax_Fem_GP_1",3]), 4)
+mod_params[mod_params$Label == "VonBert_K_Fem_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "VonBert_K_Fem_GP_1",3]), 3)
+mod_params[mod_params$Label == "CV_old_Fem_GP_1",3] = round(as.numeric(mod_params[mod_params$Label == "CV_old_Fem_GP_1",3]), 3)
+
+# Remove the max, prior and prior sd columns
+drops = c('Max', 'Prior', 'Pr_type', 'Pr_SD', 'Num')
+mod_params = mod_params[, !(names(mod_params) %in% drops)]
+rownames(mod_params) = c()
+mod_params[,"Label"] = gsub("\\_", " ", mod_params[,"Label"])
+mod_params[,"PR_type"] = gsub("\\_", " ", mod_params[,"PR_type"])
+
+#Reformat so can show a value for alpha in length-weight relationship
+mod_params[,"Value"] = format(mod_params$Value, digits = 2)
+mod_params[which(mod_params$Label == "Wtlen 1 Fem GP 1"), "Value"] = test
+
+# Add column names
+col_names = c('Parameter',
+                         'Value',
+                         'Phase',
+                         'Bounds',
+                         'Status',
+                         'SD',
+                         'Prior (Exp.Val, SD)')
+
+table_format(x = mod_params,
+             caption = "List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD).",
+             label = "params",
+             align = 'l',
+             col_names = col_names,
+             longtable = TRUE,
+             font_size = 9,
+             landscape = TRUE,
+             custom_width = TRUE,
+             col_to_adjust = c(1,7), 
+             width = c("6cm", "4cm"))                         
+
+```
+<!-- ======================================================= -->
+<!-- ***********    Like Contributions  ******************** --> 
+<!-- ======================================================= -->
+
+<!-- tab:likes -->
+\include{tex_tables/likelihoods.tex}
+
+
+<!-- ======================================================= -->
+<!-- ***********       Time Series      ******************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/TimeSeries.tex}
+
+\newpage
+
+<!-- ======================================================= -->
+<!-- ****************     Sensitivities      *************** --> 
+<!-- ======================================================= -->
+
+<!-- tab:sensitivities -->
+\include{tex_tables/sensitivities.tex}
+
+\newpage
+
+
+
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 
-<!-- \input{C:/Assessments/2021/copper_rockfish_2021/write_up/or/tex_tables/e_ReferencePoints_ES.tex} -->
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/e_ReferencePoints_ES.tex}
 
 \newpage
 
@@ -51,16 +222,16 @@ man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/
 out = cbind(tab$Year,
             c(man[man$Year %in% c(2021, 2022), "OFL"], rep("-",10)),
             c(man[man$Year %in% c(2021, 2022), "ACL"], rep("-",10)),
-            c(round(man[man$Year %in% c(2021, 2022), "ACL"] * ofl_perc,2), rep("-", 10)),
+            c(round(man[man$Year %in% c(2021, 2022), "ACL"] * 0.584,2), rep("-", 10)),
             c(rep("-",2), round(tab[3:12,2], 2)),
             c(rep("-",2), round(tab[3:12,3],2)),
             c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
-              'OFL',
-              'ACL',
-              "ACL-OR",
+              'Adopted OFL',
+              'Adopted ACL',
+              "Adopted ACL-OR",
               "OFL", 
               "ABC", 
               "Buffer",
