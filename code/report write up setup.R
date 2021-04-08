@@ -11,9 +11,9 @@ library(sa4ss)
 
 ##--------------------------------OREGON-----------------------------------##
 
-setwd("C:/Users/Brian.Langseth/Desktop/or/write_up_or")
+setwd("C:/Users/Brian.Langseth/Desktop/or/write_up")
 
-#Set up default document sections. May need to delete a few
+#Do once: Set up default document sections. May need to delete a few
 sa4ss::draft(authors = c("Brian J. Langseth",
                          "Chantel R. Wetzel",
                          "Jason M. Cope",
@@ -26,22 +26,24 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              edit = FALSE)
 
 #Read in model, assign whether to create plots function. Currently also generates tables
-sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/4_0_base", 
+sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base", 
                   create_plots = FALSE, 
                   html = FALSE,
                   save_loc = file.path(getwd(), "tex_tables"),
                   verbose = TRUE)
 
 
-# # Create tex files from the executive summary tables
-# sa4ss::es_table_tex(dir = mod_loc, 
-#                     save_loc = file.path(getwd(), "tex_tables"), 
-#                     csv_name = "table_labels.csv")
-# 
-# # Read and create tex files for tables listed in "table" folder in the doc
-# sa4ss::es_table_tex(dir = file.path(getwd(), 'tables'), 
-#                     save_loc = file.path(getwd(), "tex_tables"), 
-#                     csv_name = "all_tables.csv")
+# Create tex files from the executive summary tables (may need to rename allcatches table (Catches_All_Years.csv) as catch)
+base.710 = SS_output("C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",covar=TRUE)
+SSexecutivesummary(replist = base.710, format = FALSE) #create table_labels.csv
+sa4ss::es_table_tex(dir = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",
+                    save_loc = file.path(getwd(), "tex_tables"),
+                    csv_name = "table_labels.csv")
+
+# Read and create tex files for tables listed in "table" folder in the doc
+sa4ss::es_table_tex(dir = file.path(getwd(), 'tables'),
+                    save_loc = file.path(getwd(), "tex_tables"),
+                    csv_name = "all_tables.csv")
 
 # Render call
 if(file.exists("_main.Rmd")){

@@ -133,6 +133,47 @@ model_settings$jitter_fraction = 0.1
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
+####################
+#Proposed base run
+####################
+base_name = "7_0_0_baseProfile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -1, 40, 0.1),
+                            high = c(0.09, 0.99,  1, 48, 0.25),
+                            step_size = c(0.005, 0.10, 0.2, 1, 0.015),
+                            param_space = c('real', 'real', 'relative', 'real', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+model_settings$jitter_fraction = 0.1
+model_settings$prior_like = 1
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+#Previous runs were not converged
+
+
+####################
+#Proposed base run
+####################
+base_name = "7_1_0_baseProfile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -1, 40, 0.1),
+                            high = c(0.09, 0.99,  1, 48, 0.25),
+                            step_size = c(0.005, 0.10, 0.2, 1, 0.015),
+                            param_space = c('real', 'real', 'relative', 'real', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("jitter", "profile", "retro"),
+                                              profile_details = get ))
+
+model_settings$jitter_fraction = 0.1
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
 
 #######################################################################################################
 # California

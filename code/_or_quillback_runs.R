@@ -606,16 +606,286 @@ t(temp)
 #The noBlock model has lower NLL and fewer parameters, however the data weighting values are different, hence not comparable. 
 
 
+##########################################################################################
+#                         More base model construction with updated data
+##########################################################################################
+
+#Starting with model 501 
+
+#Make final tweeks 
+#1. Set ghost fleet for first year of commercial comp (low sample size)
+#2. Exclude age data in dat, and reset lambda in ctl
+#3. Reset prior selex paramters to original (model 200), and reset inits of estimated parms to priors (this has no effect)
+
+#Initial0 is run with changing and generating weightings, initial1 is using those to determine bias adj. After that estimate bias adjust 
+model = "6_0_0_base"
+base.600 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.600)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\6_0_0_base", write = FALSE, option = "none") #for first initial pass
+SSunavailableSpawningOutput(base.600, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
 
 
+#Remove comp data with less than 12 inputN or fish
+#Start with model 600, initial1 (changed bias adjust on base after doing these runs)
+model = "6_0_1_sparseComps"
+base.601 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.601)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\6_0_1_sparseComps", write = FALSE, option = "none") #for first initial pass
+#This results in less information in early period and thus recdevs for 1992ish have high variability
+#Some intermediate steps showed recdevs with limited variability, though final one had more. 
+#The trajectory is higher, primarily due to a lower dome. Otherwsie very similar. 
+#Choose to keep the comp data as is for model 600 (just very small sample size). 
+
+#Remove all pre1999 rec comps, ala copper rockfish
+#Start with model 600, initial1 (changed bias adjust on base after doing these runs)
+model = "6_0_2_nopre1999rec"
+base.602 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.602)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\6_0_2_nopre1999rec", write = FALSE, option = "none") #for first initial pass
+#This significantly reduces the variability in recdevs prior to 1999. This suggests to me the comps during this 
+#year are not informative with each other, or with the significantly more information from later years of comps. 
+#Overall population trajectory is very similar to 601, since domeshaped is lower 
+
+#Add block for commercial with dome for both periods - look to see if fit to aggregate is better
+#Use 2000 (no early dome and slight late dome and fits to the 2000 comp), 2005 (no early dome estimated - strong late dome), 2015 (no early or late dome estimated)
+#Start with model 600, initial1 (changed bias adjust on base after doing these runs)
+model = "6_0_3_comBlock"
+base.603 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.603)
+#There is some improvement in fits to aggregated (mostly fitting right peak better) but not enough to warrant 
+#speculative changes in selex. Futhermore, using later domes cause dome-shaped not to be esitmated. The 2015 block
+#does improve individual year fits to bimodal peaks, again not enough to warrant change. 
+
+#Set up block (dome) for rec fleet at 2000 to see if affects fits. Allow dome. Chose 2000 because sample size increases
+#and mean length variability becomes tight. Fits are slightly better. Dome in early period very slight so model wants
+#asymptotic in early period. Slight differences in scale and amount of 2010 biomass peak. Overall not much of a change. 
+#Recdevs behave better though. Ultimately dont use since have no good reason to start in a specific year. Remove pre2000 comps is comparable
+#Start with model 600, initial1 (changed bias adjust on base after doing these runs)
+model = "6_0_4_recBlock"
+base.604 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.604)
+
+#Compare exploration runs
+modelnames <- c("600", "sparse", "noPre1999", "comBlockDome05", "recBlock00")
+mysummary  <- SSsummarize(list(base.600, base.601, base.602, base.603, base.604))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "8_base_explore_comps",
+                  legendlabels = modelnames, 
+                  plotdir = file.path(wd, "plots"),
+                  pdf = TRUE)
 
 
+##########################################################################################
+#                         Pre assessment workshop base model
+##########################################################################################
+
+#Starting from model 600 (with recdev bias adj included)
+
+#1. Adjust steepness prior SD to 0.158 (was 0.09)
+#2. Adjust forecast projection values to pstar values PEPtools::get_buffer (same as copper) 
+#3. Change control rule format in forecast from f(SSB) on F to f(SSB) on catch
+#4. Adjust forecast catch. Previously the value from 2020. Now, take the Oregon percentage 
+#of the North ACL (58.4% of 5.73 for 2021 and 5.74 for 2022) apportioned to commercial and recreational
+#based on the average percentage of catch for each from 2017-2020
+#5. Change max age to 95 years, adjust natural mortality accordingly
+
+model = "7_0_0_base"
+base.700 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.700)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\7_0_0_base", write = FALSE, option = "none") #for first initial pass
+SSunavailableSpawningOutput(base.700, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
+
+#Based on the jitter from model 700, my base model is not at the minimum NLL. Need to readjust. 
+#Use par file for base run from NatM profile (run 7), and change starter to read it in as init values 
+model = "7_0_1_base_parfile"
+base.701 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.701)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\7_0_1_base_parfile", write = FALSE, option = "none") #for first initial pass
+#This model has extreme recdev estimates that push the population higher. Results suggest reweighting is needed. 
+#Decide to reweight with keeping par file and naming old ones _initial0.
+#Reset bias adjust (name previous version initial1) and then again (initial2)
+
+#Reweight model 701 (model 701 version is initial0) and use ctl file inits. Update bias adj to reflect model provided estimate (rename previous version initial1). 
+model = "7_0_2_base_reweight"
+base.702 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.702)
+#Model 702 and model 701 (with reweighting and applying inits from the par file) have the same likelihood. Thus either should work. 
+#Bias correction varies slightly, and with the par file version doesn't change, but with the reweighting version, convergence is less precise
+#and the bias correction suggestion changes slightly
+
+#Use initial2 from model 702 as a new base. Seems to match pattern well and have low gradient
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\7_1_0_base", write = FALSE, option = "none")
+SS_plots(base.710)
+SSunavailableSpawningOutput(base.710, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
 
 
+##############################################
+#       Sensitivities - Starting with model 710
+##############################################
+#No recruitment deviations
+model = "7_1_1_norec"
+base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.711)
+
+#Data weighting using McAllister-Ianelli
+model = "7_1_2_dw_MI"
+base.712 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.712)
+
+#Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 710
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\7_1_3_dw_DM\\just model files")
+model = "7_1_3_dw_DM"
+base.713 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.713)
+
+#Estimate L infinity
+model = "7_1_4_estlinf"
+base.714 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.714)
+
+#Estimate L infinity and K
+model = "7_1_5_estlinfK"
+base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.715)
+
+#Estimate CV at L2
+model = "7_1_6_estL2CV"
+base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.716)
+
+#Estimate natural mortality
+model = "7_1_7_estM"
+base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.717)
+
+#Remove early recreational comps (before 2001)
+model = "7_1_8_noEarlyRec"
+base.718 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.718)
+
+#Use asymptotic selectivity for recreational fleet
+model = "7_1_9_recAsym"
+base.719 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.719)
+
+#Use dome shaped selectivity for commercial fleet
+model = "7_1_10_comDome"
+base.7110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7110)
+
+#Set block for early recreational comps data (block ending in 2000)
+#Allowed dome shaped for block
+model = "7_1_11_recBlock"
+base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7111)
 
 
+#Compare sensitivities
+sens_names <- c("Base mode",              #0
+                "No rec devs",            #1
+                "DW MI",                  #2
+                "DW DM",                  #3
+                "Est Linf",               #4
+                "Est Linf, K",            #5
+                "Est Old CV",             #6
+                "Est M",                  #7
+                "No early rec comps",     #8
+                "Rec asymp. selex.",      #9
+                "Com dome-shaped selex.", #10
+                "Rec block selex.")       #11
+sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111))
 
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_sensitivities_"),
+                  subplot = 2, 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_sensitivities_"),
+                  subplot = c(4,10), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottom", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_sensitivities_"),
+                  subplot = 12, 
+                  print = TRUE, 
+                  pdf = FALSE)
 
+# Create a Table of Results
+n = length(sens_names)
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Forecast_Recruitment",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_priors",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2020", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2020", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]) )  
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                  "Length Likelihood",
+                  "Recruitment Likelihood",
+                  "Forecast Recruitment Likelihood",
+                  "Parameter Priors Likelihood",
+                  "Parameter Bounds Likelihood",
+                  "log(R0)",
+                  "SB Virgin",
+                  "SB 2020",
+                  "Fraction Unfished 2020",
+                  "Total Yield at SPR 50",
+                  "Steepness",
+                  "Natural Mortality",
+                  "Length at Amin",
+                  "Length at Amax",
+                  "Von Bert. k",
+                  "CV young",
+                  "CV old")
+
+write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_sensitivities.csv")))
+
+t = table_format(x = sens_table,
+                 caption = 'Sensitivities relative to the base model.',
+                 label = 'sensitivities',
+                 longtable = TRUE,
+                 font_size = 9,
+                 digits = 3,
+                 landscape = TRUE,
+                 col_names = sens_names)
+
+kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/sensitivities.tex"))
 
 
 
