@@ -22,11 +22,6 @@
 \RequirePackage{pdflscape}
 
 % fonts
-\RequirePackage{microtype}
-\RequirePackage[scaled=0.92]{helvet}
-\RequirePackage{palatino,mathpazo}
-\RequirePackage[scaled=1.02]{inconsolata}
-\RequirePackage[T1]{fontenc}
 
 % spacing
 \setlength{\parskip}{3pt}
@@ -37,9 +32,7 @@
 \RequirePackage{float}
 
 % links - dark blue
-% hyperxmp replaces \usepackage[a-2a]{pdfx} to add xmp metadata in pdf
 % hyperxmp works with hyperref and must be loaded before it
-\usepackage{hyperxmp}
 \RequirePackage[hyphens]{url}
 \RequirePackage[pagebackref]{hyperref}
 \PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
@@ -361,6 +354,7 @@
 \newacronym{s-ccfrp}{CCFRP}{California Collaborative Fisheries Research Program}
 \newacronym{s-tri}{Triennial Survey}{\glsentrytext{afsc}/\glsentrytext{nwfsc} West Coast Triennial Shelf Survey}
 \newacronym{s-wcgbt}{WCGBTS}{\glsentrytext{nwfsc} West Coast Groundfish Bottom Trawl Survey}
+\newacronym{s-hkl}{Hook and Line Survey}{\glsentrytext{nwfsc} Hook and Line Survey}
 \newacronym{safe}{SAFE}{Stock Assessment and Fishery Evaluation}
 \newacronym{sefsc}{SEFSC}{Southeast Fisheries Science Center}
 \newacronym{sfa}{SFA}{Sustainable Fisheries Act of 1996}
