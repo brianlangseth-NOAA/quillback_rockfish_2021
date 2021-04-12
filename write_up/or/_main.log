@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (TeX Live 2021/W32TeX)  (format=lualatex 2021.4.4)  7 APR 2021 16:30
+This is LuaHBTeX, Version 1.13.1 (TeX Live 2021/W32TeX)  (format=lualatex 2021.4.8)  12 APR 2021 14:12
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1540,7 +1540,14 @@ LaTeX Warning: Label `tab:params' multiply defined.
 
 LaTeX Warning: Label `tab:params' multiply defined.
 
-(./tex_tables/likelihoods.aux) (./tex_tables/sensitivities.aux))
+(./tex_tables/likelihoods.aux) (./tex_tables/sensitivities.aux)
+
+LaTeX Warning: Label `tab:table-3' multiply defined.
+
+
+LaTeX Warning: Label `fig:fig-4' multiply defined.
+
+)
 \openout1 = _main.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
@@ -2050,50 +2057,32 @@ ap/pdftex.map}] [2
 \openout6 = _main.toc
 [4] (./_main.lof [5
 
-])
+] [6])
 \tf@lof=\write7
 
 \openout7 = _main.lof
-(./_main.lot [6])
+(./_main.lot [7])
 \tf@lot=\write8
 
 \openout8 = _main.lot
-[7]
+[8]
 warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 [1
 
 
-]
+] [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
-e 188.
-[1]
-Package marginnote Info: Using workaround for absolute page number on input lin
-e 266.
+e 252.
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [1
+9] [20] [21] [22
 
-LaTeX Warning: Reference `tab:catch' on page 2 undefined on input line 277.
+] [23] [24] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/Catches_All
+_Years.tex [25
 
-[2] [3]
-
-LaTeX Warning: Reference `tab:catch' on page 4 undefined on input line 404.
-
-[4] [5] [6]
-
-LaTeX Warning: Reference `tab:catch' on page 7 undefined on input line 529.
-
-[7]
-
-LaTeX Warning: Reference `Unresolved-Problems-and-Major-Uncertainties' on page 
-8 undefined on input line 573.
-
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22
-
-] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/Catches_All_Years.tex
-[23
-
-] [24]) [25] [26] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_Sa
-mples_Feb2021.tex) [27] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables
-/or_rec_samples.tex) [28] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tabl
-es/len_at_age_data.tex) [29] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_t
+] [26]) [27] [28] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_Sa
+mples_Feb2021.tex) [29] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables
+/or_rec_samples.tex) [30] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tabl
+es/len_at_age_data.tex) [31] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_t
 ables/len_at_weight_data.tex
 Overfull \hbox (7.89546pt too wide) in paragraph at lines 7--7
  \TU/lmr/m/n/10 NWFSC 
@@ -2244,15 +2233,15 @@ Overfull \hbox (38.18887pt too wide) in alignment at lines 39--47
  [][][][][][][][][][][] 
  []
 
-) [30] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_age_sampl
-es.tex) [31]
+) [32] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_age_sampl
+es.tex) [33]
 (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_age_Samples_Feb2021.
-tex) [32] [33] [34] [35] [36
+tex) [34] [35] [36] [37] [38
 
 
-] [37] [38] [39]
+] [39] [40] [41]
 \openout2 = tex_tables/likelihoods.aux
- (./tex_tables/likelihoods.tex) [40
+ (./tex_tables/likelihoods.tex) [42
 
 
 ] (c:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/TimeSeries.tex
@@ -2315,7 +2304,7 @@ Overfull \hbox (7.39053pt too wide) in alignment at lines 79--99
  [][][][][][][][][] 
  []
 
-[41
+[43
 
 
 ]
@@ -2328,7 +2317,7 @@ Overfull \hbox (7.39053pt too wide) in alignment at lines 119--139
  [][][][][][][][][] 
  []
 
-[42]
+[44]
 Overfull \hbox (7.39053pt too wide) in alignment at lines 139--159
  [][][][][][][][][] 
  []
@@ -2338,7 +2327,7 @@ Overfull \hbox (7.39053pt too wide) in alignment at lines 159--160
  [][][][][][][][][] 
  []
 
-[43]) [44]
+[45]) [46]
 \openout2 = tex_tables/sensitivities.aux
  (./tex_tables/sensitivities.tex
 Overfull \hbox (1.33475pt too wide) in paragraph at lines 8--8
@@ -2485,7 +2474,7 @@ Overfull \hbox (19.86247pt too wide) in alignment at lines 19--38
  [][][][][][][][][][][][][] 
  []
 
-[45
+[47
 
 
 
@@ -2521,127 +2510,127 @@ Overfull \hbox (41.71796pt too wide) in alignment at lines 39--39
  [][][][] 
  []
 
-) [46
+) [48
 
 
 
 ]
-Overfull \hbox (1.76178pt too wide) in paragraph at lines 1627--1627
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1731--1731
 []|\TU/lmr/m/n/10 Adopted 
  []
 
 
-Overfull \hbox (1.76178pt too wide) in paragraph at lines 1627--1627
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1731--1731
 []|\TU/lmr/m/n/10 Adopted 
  []
 
 
-Overfull \hbox (1.76178pt too wide) in paragraph at lines 1627--1627
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1731--1731
 []|\TU/lmr/m/n/10 Adopted 
  []
 
 
-Overfull \hbox (7.39053pt too wide) in alignment at lines 1624--1629
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1728--1733
  [][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.76178pt too wide) in paragraph at lines 1632--1632
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1736--1736
 []|\TU/lmr/m/n/10 Adopted 
  []
 
 
-Overfull \hbox (1.76178pt too wide) in paragraph at lines 1632--1632
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1736--1736
 []|\TU/lmr/m/n/10 Adopted 
  []
 
 
-Overfull \hbox (1.76178pt too wide) in paragraph at lines 1632--1632
+Overfull \hbox (1.76178pt too wide) in paragraph at lines 1736--1736
 []|\TU/lmr/m/n/10 Adopted 
  []
 
 
-Overfull \hbox (7.39053pt too wide) in alignment at lines 1629--1634
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1733--1738
  [][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.39053pt too wide) in alignment at lines 1634--1636
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1738--1740
  [][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.39053pt too wide) in alignment at lines 1636--1638
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1740--1742
  [][][][][][][][][] 
  []
 
 
-Overfull \hbox (7.21196pt too wide) in paragraph at lines 1640--1640
+Overfull \hbox (7.21196pt too wide) in paragraph at lines 1744--1744
 []|\TU/lmr/m/n/10 5.7371276|  
  []
 
 
-Overfull \hbox (7.39053pt too wide) in alignment at lines 1638--1651
+Overfull \hbox (7.39053pt too wide) in alignment at lines 1742--1755
  [][][][][][][][][] 
  []
 
-[47]
+[49]
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/catch2 landings stacked.pn
-g, id=966, 469.755pt x 361.35pt>
+g, id=1067, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/catch2 landings stack
 ed.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/catch2 landings stacke
 d.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ca
-tch2 landings stacked.png  used on input line 1671.
+tch2 landings stacked.png  used on input line 1775.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/data_plot.png, id=968, 469
-.755pt x 361.35pt>
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/data_plot.png, id=1069, 46
+9.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/data_plot.png Graphic
  file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/data_plot.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/da
-ta_plot.png  used on input line 1681.
+ta_plot.png  used on input line 1785.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt1mkt0_pa
-ge2.png, id=970, 469.755pt x 361.35pt>
+ge2.png, id=1071, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt1mk
 t0_page2.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt1mkt
 0_page2.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lendat_bubflt1mkt0_page2.png  used on input line 1691.
+mp_lendat_bubflt1mkt0_page2.png  used on input line 1795.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_weighting
-_TA1.8_OR_Commercial.png, id=972, 469.755pt x 361.35pt>
+_TA1.8_OR_Commercial.png, id=1073, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_weig
 hting_TA1.8_OR_Commercial.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_weigh
 ting_TA1.8_OR_Commercial.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lendat_data_weighting_TA1.8_OR_Commercial.png  used on input line 1701.
+mp_lendat_data_weighting_TA1.8_OR_Commercial.png  used on input line 1805.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt2mkt0_pa
-ge3.png, id=974, 469.755pt x 361.35pt>
+ge3.png, id=1075, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt2mk
 t0_page3.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt2mkt
 0_page3.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lendat_bubflt2mkt0_page3.png  used on input line 1711.
+mp_lendat_bubflt2mkt0_page3.png  used on input line 1815.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_weighting
-_TA1.8_OR_Recreational.png, id=976, 469.755pt x 361.35pt>
+_TA1.8_OR_Recreational.png, id=1077, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_weig
 hting_TA1.8_OR_Recreational.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_weigh
 ting_TA1.8_OR_Recreational.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lendat_data_weighting_TA1.8_OR_Recreational.png  used on input line 1721.
+mp_lendat_data_weighting_TA1.8_OR_Recreational.png  used on input line 1825.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rock
-fish/data/output biology/plots/Length_Weight_by_Source.png, id=978, 505.89pt x 
-505.89pt>
+fish/data/output biology/plots/Length_Weight_by_Source.png, id=1079, 505.89pt x
+ 505.89pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 _Rockfish/data/output biology/plots/Length_Weight_by_Source.png Graphic file (t
 ype png)
@@ -2649,20 +2638,20 @@ ype png)
 Rockfish/data/output biology/plots/Length_Weight_by_Source.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
 rate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Source.
-png  used on input line 1731.
+png  used on input line 1835.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio5_weightatsize.png, id=
-980, 469.755pt x 361.35pt>
+1081, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio5_weightatsize.png
  Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio5_weightatsize.png>
 
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bi
-o5_weightatsize.png  used on input line 1741.
+o5_weightatsize.png  used on input line 1845.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rock
-fish/data/output biology/plots/Length_Age_by_Sex.png, id=982, 505.89pt x 505.89
-pt>
+fish/data/output biology/plots/Length_Age_by_Sex.png, id=1083, 505.89pt x 505.8
+9pt>
 File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 _Rockfish/data/output biology/plots/Length_Age_by_Sex.png Graphic file (type pn
 g)
@@ -2670,266 +2659,266 @@ g)
 Rockfish/data/output biology/plots/Length_Age_by_Sex.png>
 Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
 rate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex.png  u
-sed on input line 1751.
+sed on input line 1855.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
-<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio1_sizeatage.png, id=984
-, 469.755pt x 361.35pt>
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio1_sizeatage.png, id=108
+5, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio1_sizeatage.png Gr
 aphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio1_sizeatage.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bi
-o1_sizeatage.png  used on input line 1761.
+o1_sizeatage.png  used on input line 1865.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio6_maturity.png, id=986,
- 469.755pt x 361.35pt>
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio6_maturity.png, id=1087
+, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio6_maturity.png Gra
 phic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio6_maturity.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bi
-o6_maturity.png  used on input line 1771.
+o6_maturity.png  used on input line 1875.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio9_fecundity_len.png, id
-=988, 469.755pt x 361.35pt>
+=1089, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio9_fecundity_len.pn
 g Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bio9_fecundity_len.png
 >
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/bi
-o9_fecundity_len.png  used on input line 1781.
+o9_fecundity_len.png  used on input line 1885.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/sel01_multiple_fleets_leng
-th1.png, id=990, 469.755pt x 361.35pt>
+th1.png, id=1091, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/sel01_multiple_fleets
 _length1.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/sel01_multiple_fleets_
 length1.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/se
-l01_multiple_fleets_length1.png  used on input line 1791.
+l01_multiple_fleets_length1.png  used on input line 1895.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts11_Age-0_recruits_(1000s
-)_with_95_asymptotic_intervals.png, id=992, 469.755pt x 361.35pt>
+)_with_95_asymptotic_intervals.png, id=1093, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts11_Age-0_recruits_(
 1000s)_with_95_asymptotic_intervals.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts11_Age-0_recruits_(1
 000s)_with_95_asymptotic_intervals.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts
 11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png  used on input line 
-1801.
+1905.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recdevs2_withbars.png, id=
-994, 469.755pt x 361.35pt>
+1095, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recdevs2_withbars.png
  Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recdevs2_withbars.png>
 
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/re
-cdevs2_withbars.png  used on input line 1811.
+cdevs2_withbars.png  used on input line 1915.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recruit_fit_bias_adjust.pn
-g, id=996, 469.755pt x 361.35pt>
+g, id=1097, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recruit_fit_bias_adju
 st.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recruit_fit_bias_adjus
 t.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/re
-cruit_fit_bias_adjust.png  used on input line 1821.
+cruit_fit_bias_adjust.png  used on input line 1925.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt1mkt0
-_page2.png, id=998, 469.755pt x 361.35pt>
+_page2.png, id=1099, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt
 1mkt0_page2.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt1
 mkt0_page2.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lenfit_residsflt1mkt0_page2.png  used on input line 1831.
+mp_lenfit_residsflt1mkt0_page2.png  used on input line 1935.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weighting
-_TA1.8_OR_Commercial.png, id=1000, 469.755pt x 361.35pt>
+_TA1.8_OR_Commercial.png, id=1101, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weig
 hting_TA1.8_OR_Commercial.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weigh
 ting_TA1.8_OR_Commercial.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lenfit_data_weighting_TA1.8_OR_Commercial.png  used on input line 1841.
+mp_lenfit_data_weighting_TA1.8_OR_Commercial.png  used on input line 1945.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt2mkt0
-_page3.png, id=1002, 469.755pt x 361.35pt>
+_page3.png, id=1103, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt
 2mkt0_page3.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt2
 mkt0_page3.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lenfit_residsflt2mkt0_page3.png  used on input line 1851.
+mp_lenfit_residsflt2mkt0_page3.png  used on input line 1955.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weighting
-_TA1.8_OR_Recreational.png, id=1004, 469.755pt x 361.35pt>
+_TA1.8_OR_Recreational.png, id=1105, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weig
 hting_TA1.8_OR_Recreational.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weigh
 ting_TA1.8_OR_Recreational.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lenfit_data_weighting_TA1.8_OR_Recreational.png  used on input line 1861.
+mp_lenfit_data_weighting_TA1.8_OR_Recreational.png  used on input line 1965.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit__aggregated_ac
-ross_time.png, id=1006, 469.755pt x 361.35pt>
+ross_time.png, id=1107, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit__aggregat
 ed_across_time.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit__aggregate
 d_across_time.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
-mp_lenfit__aggregated_across_time.png  used on input line 1871.
+mp_lenfit__aggregated_across_time.png  used on input line 1975.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts7_Spawning_output_with_9
-5_asymptotic_intervals_intervals.png, id=1008, 469.755pt x 361.35pt>
+5_asymptotic_intervals_intervals.png, id=1109, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts7_Spawning_output_w
 ith_95_asymptotic_intervals_intervals.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts7_Spawning_output_wi
 th_95_asymptotic_intervals_intervals.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts
 7_Spawning_output_with_95_asymptotic_intervals_intervals.png  used on input lin
-e 1881.
+e 1985.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts1_Total_biomass_(mt).png
-, id=1010, 469.755pt x 361.35pt>
+, id=1111, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts1_Total_biomass_(mt
 ).png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts1_Total_biomass_(mt)
 .png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts
-1_Total_biomass_(mt).png  used on input line 1891.
+1_Total_biomass_(mt).png  used on input line 1995.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts9_Relative_spawning_outp
-ut_intervals.png, id=1012, 469.755pt x 361.35pt>
+ut_intervals.png, id=1113, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts9_Relative_spawning
 _output_intervals.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts9_Relative_spawning_
 output_intervals.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts
-9_Relative_spawning_output_intervals.png  used on input line 1901.
+9_Relative_spawning_output_intervals.png  used on input line 2005.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/UnavailableSpawningOutput.
-png, id=1014, 469.755pt x 361.35pt>
+png, id=1115, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/UnavailableSpawningOu
 tput.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/UnavailableSpawningOut
 put.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/Un
-availableSpawningOutput.png  used on input line 1911.
+availableSpawningOutput.png  used on input line 2015.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SR_curve.png, id=1016, 469
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SR_curve.png, id=1117, 469
 .755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SR_curve.png Graphic 
 file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SR_curve.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SR
-_curve.png  used on input line 1921.
+_curve.png  used on input line 2025.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SPR2_minusSPRseries.png, i
-d=1018, 469.755pt x 361.35pt>
+d=1119, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SPR2_minusSPRseries.p
 ng Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SPR2_minusSPRseries.pn
 g>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SP
-R2_minusSPRseries.png  used on input line 1931.
+R2_minusSPRseries.png  used on input line 2035.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/yield2_yield_curve_with_re
-fpoints.png, id=1020, 469.755pt x 361.35pt>
+fpoints.png, id=1121, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/yield2_yield_curve_wi
 th_refpoints.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/yield2_yield_curve_wit
 h_refpoints.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/yi
-eld2_yield_curve_with_refpoints.png  used on input line 1941.
+eld2_yield_curve_with_refpoints.png  used on input line 2045.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_compar
-e2_spawnbio_uncertainty.png, id=1022, 469.755pt x 361.35pt>
+e2_spawnbio_uncertainty.png, id=1123, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_c
 ompare2_spawnbio_uncertainty.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_co
 mpare2_spawnbio_uncertainty.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.
-710_sensitivities_compare2_spawnbio_uncertainty.png  used on input line 1951.
+710_sensitivities_compare2_spawnbio_uncertainty.png  used on input line 2055.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_compar
-e4_Bratio_uncertainty.png, id=1024, 469.755pt x 361.35pt>
+e4_Bratio_uncertainty.png, id=1125, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_c
 ompare4_Bratio_uncertainty.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_co
 mpare4_Bratio_uncertainty.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.
-710_sensitivities_compare4_Bratio_uncertainty.png  used on input line 1961.
+710_sensitivities_compare4_Bratio_uncertainty.png  used on input line 2065.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/piner_p
-anel_SR_LN(R0).png, id=1026, 505.89pt x 505.89pt>
+anel_SR_LN(R0).png, id=1127, 505.89pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/pi
 ner_panel_SR_LN(R0).png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/pin
 er_panel_SR_LN(R0).png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
-rofile_SR_LN(R0)/piner_panel_SR_LN(R0).png  used on input line 1971.
+rofile_SR_LN(R0)/piner_panel_SR_LN(R0).png  used on input line 2075.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR_LN(R
-0)_trajectories_compare1_spawnbio.png, id=1028, 469.755pt x 361.35pt>
+0)_trajectories_compare1_spawnbio.png, id=1129, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR
 _LN(R0)_trajectories_compare1_spawnbio.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR_
 LN(R0)_trajectories_compare1_spawnbio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png  used on input li
-ne 1981.
+ne 2085.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR_LN(R
-0)_trajectories_compare3_Bratio.png, id=1030, 469.755pt x 361.35pt>
+0)_trajectories_compare3_Bratio.png, id=1131, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR
 _LN(R0)_trajectories_compare3_Bratio.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR_
 LN(R0)_trajectories_compare3_Bratio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png  used on input line
- 1991.
+ 2095.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/piner
-_panel_SR_BH_steep.png, id=1032, 505.89pt x 505.89pt>
+_panel_SR_BH_steep.png, id=1133, 505.89pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/
 piner_panel_SR_BH_steep.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/p
 iner_panel_SR_BH_steep.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
-rofile_SR_BH_steep/piner_panel_SR_BH_steep.png  used on input line 2001.
+rofile_SR_BH_steep/piner_panel_SR_BH_steep.png  used on input line 2105.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/SR_BH
-_steep_trajectories_compare1_spawnbio.png, id=1034, 469.755pt x 361.35pt>
+_steep_trajectories_compare1_spawnbio.png, id=1135, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/
 SR_BH_steep_trajectories_compare1_spawnbio.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/S
 R_BH_steep_trajectories_compare1_spawnbio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png  used on inpu
-t line 2011.
+t line 2115.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/SR_BH
-_steep_trajectories_compare3_Bratio.png, id=1036, 469.755pt x 361.35pt>
+_steep_trajectories_compare3_Bratio.png, id=1137, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/
 SR_BH_steep_trajectories_compare3_Bratio.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/S
 R_BH_steep_trajectories_compare3_Bratio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png  used on input 
-line 2021.
+line 2125.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1
-/piner_panel_NatM_p_1_Fem_GP_1.png, id=1038, 505.89pt x 505.89pt>
+/piner_panel_NatM_p_1_Fem_GP_1.png, id=1139, 505.89pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem
 _GP_1/piner_panel_NatM_p_1_Fem_GP_1.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem_
 GP_1/piner_panel_NatM_p_1_Fem_GP_1.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png  used on input line 
-2031.
+2135.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1
-/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png, id=1040, 469.755pt x 361
+/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png, id=1141, 469.755pt x 361
 .35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem
 _GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file (type p
@@ -2938,10 +2927,10 @@ ng)
 GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png  
-used on input line 2041.
+used on input line 2145.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1
-/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png, id=1042, 469.755pt x 361.3
+/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png, id=1143, 469.755pt x 361.3
 5pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_1_Fem
 _GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (type png
@@ -2950,20 +2939,20 @@ _GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (type png
 GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png  us
-ed on input line 2051.
+ed on input line 2155.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_
-1/piner_panel_L_at_Amax_Fem_GP_1.png, id=1044, 505.89pt x 505.89pt>
+1/piner_panel_L_at_Amax_Fem_GP_1.png, id=1145, 505.89pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fe
 m_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem
 _GP_1/piner_panel_L_at_Amax_Fem_GP_1.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png  used on input lin
-e 2061.
+e 2165.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_
-1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png, id=1046, 469.755pt x 3
+1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png, id=1147, 469.755pt x 3
 61.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fe
 m_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file (type
@@ -2972,10 +2961,10 @@ m_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file (type
 _GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png
-  used on input line 2071.
+  used on input line 2175.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_
-1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png, id=1048, 469.755pt x 361
+1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png, id=1149, 469.755pt x 361
 .35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fe
 m_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (type p
@@ -2984,20 +2973,20 @@ ng)
 _GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png  
-used on input line 2081.
+used on input line 2185.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_
-1/piner_panel_VonBert_K_Fem_GP_1.png, id=1050, 505.89pt x 505.89pt>
+1/piner_panel_VonBert_K_Fem_GP_1.png, id=1151, 505.89pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fe
 m_GP_1/piner_panel_VonBert_K_Fem_GP_1.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem
 _GP_1/piner_panel_VonBert_K_Fem_GP_1.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png  used on input lin
-e 2091.
+e 2195.
 (luatex.def)             Requested size: 398.34415pt x 398.34415pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_
-1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png, id=1052, 469.755pt x 3
+1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png, id=1153, 469.755pt x 3
 61.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fe
 m_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file (type
@@ -3006,10 +2995,10 @@ m_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png Graphic file (type
 _GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png
-  used on input line 2101.
+  used on input line 2205.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_
-1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png, id=1054, 469.755pt x 361
+1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png, id=1155, 469.755pt x 361
 .35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fe
 m_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png Graphic file (type p
@@ -3018,152 +3007,340 @@ ng)
 _GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_p
 rofile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png  
-used on input line 2111.
+used on input line 2215.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare2_spawnbio_u
-ncertainty.png, id=1056, 469.755pt x 361.35pt>
+ncertainty.png, id=1157, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare2_spawn
 bio_uncertainty.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare2_spawnb
 io_uncertainty.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_r
-etro/compare2_spawnbio_uncertainty.png  used on input line 2121.
+etro/compare2_spawnbio_uncertainty.png  used on input line 2225.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare4_Bratio_unc
-ertainty.png, id=1058, 469.755pt x 361.35pt>
+ertainty.png, id=1159, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare4_Brati
 o_uncertainty.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare4_Bratio
 _uncertainty.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_r
-etro/compare4_Bratio_uncertainty.png  used on input line 2131.
+etro/compare4_Bratio_uncertainty.png  used on input line 2235.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
-[48
+[50
 
 <c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/catch2 landings stacked.png
->] [49<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/data_plot.png>] [50<c
+>] [51<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/data_plot.png>] [52<c
 :/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_bubflt1mkt0_page2
-.png>] [51<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_
-weighting_TA1.8_OR_Commercial.png>] [52<c:/Users/Brian.Langseth/Desktop/or/7_1_0
-_base/plots/comp_lendat_bubflt2mkt0_page3.png>] [53<c:/Users/Brian.Langseth/Desk
+.png>] [53<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lendat_data_
+weighting_TA1.8_OR_Commercial.png>] [54<c:/Users/Brian.Langseth/Desktop/or/7_1_0
+_base/plots/comp_lendat_bubflt2mkt0_page3.png>] [55<c:/Users/Brian.Langseth/Desk
 top/or/7_1_0_base/plots/comp_lendat_data_weighting_TA1.8_OR_Recreational.png>] 
-[54<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Ro
-ckfish/data/output biology/plots/Length_Weight_by_Source.png>] [55<c:/Users/Bria
-n.Langseth/Desktop/or/7_1_0_base/plots/bio5_weightatsize.png>] [56<//nwcfile/FRA
+[56<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Ro
+ckfish/data/output biology/plots/Length_Weight_by_Source.png>] [57<c:/Users/Bria
+n.Langseth/Desktop/or/7_1_0_base/plots/bio5_weightatsize.png>] [58<//nwcfile/FRA
 M/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/outpu
-t biology/plots/Length_Age_by_Sex.png>] [57<c:/Users/Brian.Langseth/Desktop/or/7
-_1_0_base/plots/bio1_sizeatage.png>] [58<c:/Users/Brian.Langseth/Desktop/or/7_1_
-0_base/plots/bio6_maturity.png>] [59<c:/Users/Brian.Langseth/Desktop/or/7_1_0_ba
-se/plots/bio9_fecundity_len.png>] [60<c:/Users/Brian.Langseth/Desktop/or/7_1_0_b
-ase/plots/sel01_multiple_fleets_length1.png>] [61<c:/Users/Brian.Langseth/Deskto
+t biology/plots/Length_Age_by_Sex.png>] [59<c:/Users/Brian.Langseth/Desktop/or/7
+_1_0_base/plots/bio1_sizeatage.png>] [60<c:/Users/Brian.Langseth/Desktop/or/7_1_
+0_base/plots/bio6_maturity.png>] [61<c:/Users/Brian.Langseth/Desktop/or/7_1_0_ba
+se/plots/bio9_fecundity_len.png>] [62<c:/Users/Brian.Langseth/Desktop/or/7_1_0_b
+ase/plots/sel01_multiple_fleets_length1.png>] [63<c:/Users/Brian.Langseth/Deskto
 p/or/7_1_0_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.p
-ng>] [62<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recdevs2_withbars.p
-ng>] [63<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recruit_fit_bias_ad
-just.png>] [64<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_r
-esidsflt1mkt0_page2.png>] [65<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plot
-s/comp_lenfit_data_weighting_TA1.8_OR_Commercial.png>] [66<c:/Users/Brian.Langse
-th/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt2mkt0_page3.png>] [67<c:/Use
+ng>] [64<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recdevs2_withbars.p
+ng>] [65<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/recruit_fit_bias_ad
+just.png>] [66<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_r
+esidsflt1mkt0_page2.png>] [67<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plot
+s/comp_lenfit_data_weighting_TA1.8_OR_Commercial.png>] [68<c:/Users/Brian.Langse
+th/Desktop/or/7_1_0_base/plots/comp_lenfit_residsflt2mkt0_page3.png>] [69<c:/Use
 rs/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_data_weighting_TA1.8_O
-R_Recreational.png>] [68<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/com
-p_lenfit__aggregated_across_time.png>] [69<c:/Users/Brian.Langseth/Desktop/or/7_
+R_Recreational.png>] [70<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/com
+p_lenfit__aggregated_across_time.png>] [71<c:/Users/Brian.Langseth/Desktop/or/7_
 1_0_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png>]
-[70<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts1_Total_biomass_(mt).p
-ng>] [71<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts9_Relative_spawni
-ng_output_intervals.png>] [72<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plot
-s/UnavailableSpawningOutput.png>] [73<c:/Users/Brian.Langseth/Desktop/or/7_1_0_b
-ase/plots/SR_curve.png>] [74<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots
-/SPR2_minusSPRseries.png>] [75<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plo
-ts/yield2_yield_curve_with_refpoints.png>] [76<c:/Users/Brian.Langseth/Desktop/o
-r/sensitivities/base.710_sensitivities_compare2_spawnbio_uncertainty.png>] [77<c
+[72<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts1_Total_biomass_(mt).p
+ng>] [73<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/ts9_Relative_spawni
+ng_output_intervals.png>] [74<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plot
+s/UnavailableSpawningOutput.png>] [75<c:/Users/Brian.Langseth/Desktop/or/7_1_0_b
+ase/plots/SR_curve.png>] [76<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots
+/SPR2_minusSPRseries.png>] [77<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plo
+ts/yield2_yield_curve_with_refpoints.png>] [78<c:/Users/Brian.Langseth/Desktop/o
+r/sensitivities/base.710_sensitivities_compare2_spawnbio_uncertainty.png>] [79<c
 :/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_compare4_
-Bratio_uncertainty.png>] [78<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfil
-e_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png>] [79<c:/Users/Brian.Langseth/Desk
+Bratio_uncertainty.png>] [80<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfil
+e_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png>] [81<c:/Users/Brian.Langseth/Desk
 top/or/7_1_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawn
-bio.png>] [80<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN
-(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png>] [81<c:/Users/Brian.Langseth/De
+bio.png>] [82<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_LN
+(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png>] [83<c:/Users/Brian.Langseth/De
 sktop/or/7_1_0_baseProfile_profile_SR_BH_steep/piner_panel_SR_BH_steep.png>] [8
-2<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/SR_BH
-_steep_trajectories_compare1_spawnbio.png>] [83<c:/Users/Brian.Langseth/Desktop/
+4<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_SR_BH_steep/SR_BH
+_steep_trajectories_compare1_spawnbio.png>] [85<c:/Users/Brian.Langseth/Desktop/
 or/7_1_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Brati
-o.png>] [84<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_
-1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png>] [85<c:/Users/Brian.Langseth/Deskt
+o.png>] [86<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_NatM_p_
+1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png>] [87<c:/Users/Brian.Langseth/Deskt
 op/or/7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories
-_compare1_spawnbio.png>] [86<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfil
-e_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png>] [87<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png>] [88<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png>] [89<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png>] [90<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png>] [91<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png>] [92<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png>] [93<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare2_spawnbio_uncertainty.png>] [94<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare4_Bratio_uncertainty.png>] 
+_compare1_spawnbio.png>] [88<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfil
+e_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png>] [89<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png>] [90<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png>] [91<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png>] [92<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png>] [93<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png>] [94<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png>] [95<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare2_spawnbio_uncertainty.png>] [96<c:/Users/Brian.Langseth/Desktop/or/7_1_0_baseProfile_retro/compare4_Bratio_uncertainty.png>]
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_page1
+.png, id=1397, 469.755pt x 361.35pt>
+File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_
+page1.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_p
+age1.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
+mp_lenfit_flt1mkt0_page1.png  used on input line 2263.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_page2
+.png, id=1399, 469.755pt x 361.35pt>
+File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_
+page2.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_p
+age2.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
+mp_lenfit_flt1mkt0_page2.png  used on input line 2273.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_page1
+.png, id=1401, 469.755pt x 361.35pt>
+File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_
+page1.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_p
+age1.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
+mp_lenfit_flt2mkt0_page1.png  used on input line 2283.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_page2
+.png, id=1403, 469.755pt x 361.35pt>
+File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_
+page2.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_p
+age2.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
+mp_lenfit_flt2mkt0_page2.png  used on input line 2293.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+<C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_page3
+.png, id=1405, 469.755pt x 361.35pt>
+File: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_
+page3.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_p
+age3.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/co
+mp_lenfit_flt2mkt0_page3.png  used on input line 2303.
+(luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+[97
+
+<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_page1.
+png>] [98<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mk
+t0_page2.png>] [99<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenf
+it_flt2mkt0_page1.png>] [100<c:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots
+/comp_lenfit_flt2mkt0_page2.png>] [101<c:/Users/Brian.Langseth/Desktop/or/7_1_0_
+base/plots/comp_lenfit_flt2mkt0_page3.png>]
+Overfull \hbox (11.01129pt too wide) in alignment at lines 2334--2339
+ [][][][] 
+ []
+
+
+Overfull \hbox (11.01129pt too wide) in alignment at lines 2339--2344
+ [][][][] 
+ []
+
+
+Overfull \hbox (11.01129pt too wide) in alignment at lines 2344--2346
+ [][][][] 
+ []
+
+
+Overfull \hbox (11.01129pt too wide) in alignment at lines 2346--2348
+ [][][][] 
+ []
+
+
+Overfull \hbox (11.01129pt too wide) in alignment at lines 2348--2363
+ [][][][] 
+ []
+
+[102
+
+] [103]
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2414
+[]|\TU/lmr/m/n/10 141.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2414
+[]|\TU/lmr/m/n/10 167.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2414
+[]|\TU/lmr/m/n/10 112.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2414
+[]|\TU/lmr/m/n/10 103.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2414
+[]|\TU/lmr/m/n/10 116.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2414
+[]|\TU/lmr/m/n/10 108.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2414--2415
+[]|\TU/lmr/m/n/10 940.000|  
+ []
+
+
+Overfull \hbox (3.67162pt too wide) in paragraph at lines 2416--2417
+[]|\TU/lmr/m/n/10 136.000|  
+ []
+
+[104
+
+
+]
+<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfis
+h/write_up/or/fig_1_marine_hkl.png, id=1458, 469.4265pt x 234.549pt>
+File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_ro
+ckfish/write_up/or/fig_1_marine_hkl.png Graphic file (type png)
+<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
+kfish/write_up/or/fig_1_marine_hkl.png>
+Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
+rate_2021/copper_rockfish/write_up/or/fig_1_marine_hkl.png  used on input line 
+2427.
+(luatex.def)             Requested size: 398.34825pt x 199.03474pt.
+[105
+
+<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish
+/write_up/or/fig_1_marine_hkl.png>]
+<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfis
+h/write_up/or/fig_2_cpue_val.png, id=1468, 469.4265pt x 234.549pt>
+File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_ro
+ckfish/write_up/or/fig_2_cpue_val.png Graphic file (type png)
+<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
+kfish/write_up/or/fig_2_cpue_val.png>
+Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
+rate_2021/copper_rockfish/write_up/or/fig_2_cpue_val.png  used on input line 25
+03.
+(luatex.def)             Requested size: 398.34825pt x 199.03474pt.
+<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfis
+h/write_up/or/fig_3_cpue.png, id=1470, 469.4265pt x 234.549pt>
+File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_ro
+ckfish/write_up/or/fig_3_cpue.png Graphic file (type png)
+<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
+kfish/write_up/or/fig_3_cpue.png>
+Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
+rate_2021/copper_rockfish/write_up/or/fig_3_cpue.png  used on input line 2513.
+(luatex.def)             Requested size: 398.34825pt x 199.03474pt.
+[106<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
+fish/write_up/or/fig_2_cpue_val.png>]
+<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfis
+h/write_up/or/fig_4_redfish_cpue.png, id=1477, 469.4265pt x 234.549pt>
+File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_ro
+ckfish/write_up/or/fig_4_redfish_cpue.png Graphic file (type png)
+<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
+kfish/write_up/or/fig_4_redfish_cpue.png>
+Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
+rate_2021/copper_rockfish/write_up/or/fig_4_redfish_cpue.png  used on input lin
+e 2529.
+(luatex.def)             Requested size: 398.34825pt x 199.03474pt.
+[107<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
+fish/write_up/or/fig_3_cpue.png><//nwcfile/FRAM/Assessments/CurrentAssessments/D
+ataModerate_2021/copper_rockfish/write_up/or/fig_4_redfish_cpue.png>]
+<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfis
+h/write_up/or/fig_5_relative_cpue.png, id=1484, 469.4265pt x 234.549pt>
+File: //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_ro
+ckfish/write_up/or/fig_5_relative_cpue.png Graphic file (type png)
+<use //nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_roc
+kfish/write_up/or/fig_5_relative_cpue.png>
+Package luatex.def Info: //nwcfile/FRAM/Assessments/CurrentAssessments/DataMode
+rate_2021/copper_rockfish/write_up/or/fig_5_relative_cpue.png  used on input li
+ne 2545.
+(luatex.def)             Requested size: 398.34825pt x 199.03474pt.
+
 AED: lastpage setting LastPage
-(./_main.aux (./tex_tables/likelihoods.aux) (./tex_tables/sensitivities.aux))
-
-LaTeX Warning: There were undefined references.
-
+[108<//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rock
+fish/write_up/or/fig_5_relative_cpue.png>] (./_main.aux (./tex_tables/likelihoo
+ds.aux) (./tex_tables/sensitivities.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
-=====>318 0 R
-=====>853 0 R
-=====>868 0 R
-=====>897 0 R
-=====>897 0 R
-=====>907 0 R
-=====>912 0 R
-=====>912 0 R
-=====>912 0 R
-=====>959 0 R
-=====>967 0 R
+=====>365 0 R
+=====>891 0 R
+=====>891 0 R
+=====>955 0 R
 =====>969 0 R
-=====>971 0 R
-=====>973 0 R
-=====>975 0 R
-=====>977 0 R
-=====>979 0 R
-=====>981 0 R
-=====>983 0 R
-=====>985 0 R
-=====>987 0 R
-=====>989 0 R
-=====>991 0 R
-=====>993 0 R
-=====>995 0 R
-=====>997 0 R
 =====>999 0 R
-=====>1001 0 R
-=====>1003 0 R
-=====>1005 0 R
-=====>1007 0 R
-=====>1009 0 R
-=====>1011 0 R
+=====>999 0 R
+=====>1008 0 R
 =====>1013 0 R
-=====>1015 0 R
-=====>1017 0 R
-=====>1019 0 R
-=====>1021 0 R
-=====>1023 0 R
-=====>1025 0 R
-=====>1027 0 R
-=====>1029 0 R
-=====>1031 0 R
-=====>1033 0 R
-=====>1035 0 R
-=====>1037 0 R
-=====>1039 0 R
-=====>1041 0 R
-=====>1043 0 R
-=====>1045 0 R
-=====>1047 0 R
-=====>1049 0 R
-=====>1051 0 R
-=====>1053 0 R
-=====>1055 0 R
-=====>1057 0 R)
+=====>1013 0 R
+=====>1013 0 R
+=====>1060 0 R
+=====>1068 0 R
+=====>1070 0 R
+=====>1072 0 R
+=====>1074 0 R
+=====>1076 0 R
+=====>1078 0 R
+=====>1080 0 R
+=====>1082 0 R
+=====>1084 0 R
+=====>1086 0 R
+=====>1088 0 R
+=====>1090 0 R
+=====>1092 0 R
+=====>1094 0 R
+=====>1096 0 R
+=====>1098 0 R
+=====>1100 0 R
+=====>1102 0 R
+=====>1104 0 R
+=====>1106 0 R
+=====>1108 0 R
+=====>1110 0 R
+=====>1112 0 R
+=====>1114 0 R
+=====>1116 0 R
+=====>1118 0 R
+=====>1120 0 R
+=====>1122 0 R
+=====>1124 0 R
+=====>1126 0 R
+=====>1128 0 R
+=====>1130 0 R
+=====>1132 0 R
+=====>1134 0 R
+=====>1136 0 R
+=====>1138 0 R
+=====>1140 0 R
+=====>1142 0 R
+=====>1144 0 R
+=====>1146 0 R
+=====>1148 0 R
+=====>1150 0 R
+=====>1152 0 R
+=====>1154 0 R
+=====>1156 0 R
+=====>1158 0 R
+=====>1398 0 R
+=====>1400 0 R
+=====>1402 0 R
+=====>1404 0 R
+=====>1452 0 R)
 
 Here is how much of LuaTeX's memory you used:
- 50170 strings out of 478531
- 244190,1977958 words of node,token memory allocated
- 1054 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 82 attribute, 77 gl
-ue_spec, 41 attribute_list, 5 write, 1 close, 30 pdf_action nodes
-   avail lists: 1:62,2:11020,3:2077,4:209,5:511,6:1006,7:14042,8:2814,9:6668,10:
-25,11:628,12:1
- 67500 multiletter control sequences out of 65536+600000
+ 50492 strings out of 478531
+ 244191,2373549 words of node,token memory allocated
+ 1134 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 dir, 2 glue, 4 kern, 3 glyph, 98 attribute, 77 gl
+ue_spec, 47 attribute_list, 5 write, 1 close, 36 pdf_action nodes
+   avail lists: 1:55,2:11020,3:2077,4:209,5:581,6:1006,7:14042,8:3109,9:6697,10:
+27,11:598,12:1
+ 67697 multiletter control sequences out of 65536+600000
  76 fonts using 15693595 bytes
  128i,12n,146p,3087b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
 
@@ -3185,9 +3362,9 @@ r.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype
 X/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Brian.Langs
 eth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regula
 r.otf>
-Output written on _main.pdf (102 pages, 125440510 bytes).
+Output written on _main.pdf (117 pages, 158439085 bytes).
 
-PDF statistics: 1528 PDF objects out of 1728 (max. 8388607)
- 298 named destinations out of 1000 (max. 131072)
- 2008 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1746 PDF objects out of 2073 (max. 8388607)
+ 363 named destinations out of 1000 (max. 131072)
+ 2203 words of extra memory for PDF output out of 10000 (max. 100000000)
 

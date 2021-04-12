@@ -91,29 +91,29 @@ _These materials do not constitute a formal publication and are for information 
 
 ## Basic Information
 
-This assessment reports the status of quillback rockfish (*Sebastes maliger*) off the U.S. West Coast using data through 2020. 
+This assessment reports the status of quillback rockfish (*Sebastes maliger*) off the Oregon coast using data through 2020. 
 
-The stock off the Oregon coast was assessed as a separate stock from other populations off the U.S. West Coast based on the fairly sedentary nature of quillback rockfish which likely limits flow of fish to California and Washington [@HannahandRankin_rockfish_site_fidelity_2011; @Tolimierietal_rockfish_home_range_2009]. The substrate of the southern Washington coast is typically sandy bottom, which creates a natural separation between the Oregon and Washington populations. Additionally, the exploitation history and magnitude of removals off the Oregon coast differ from those in Washington and California.    
+The stock off the Oregon coast was assessed as a separate stock from other populations off the U.S. West Coast based on the fairly sedentary nature of quillback rockfish which likely limits flow of fish to California and Washington [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009]. The substrate of the southern Washington coast is typically sandy bottom, which creates a natural separation between the Oregon and Washington populations. Additionally, the exploitation history and magnitude of removals off the Oregon coast differ from those in Washington and California.    
 
 
 ## Life History
 
 Quillback rockfish are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska [@loveetal_2002]. Off the U.S. West Coast quillback rockfish are primarily located north of central California, with rare observations south of Point Conception. 'r Spp' have historically been a part of both commercial and recreational fisheries throughout their range. 
 
-Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat [@loveetal_2002]. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans, and fish [@Murie_1995]. The body coloring or adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches [@loveetal_2002]. As their name suggests, quillback rockfish have long dorsal fin spines.
+Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat [@loveetal_2002]. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans, and fish [@Murie_diet_1995]. The body coloring or adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches [@loveetal_2002]. As their name suggests, quillback rockfish have long dorsal fin spines.
 
-Limited studies have been performed looking for genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish [@Seeb_geneflow_1998; @Stout_et_al_2001], however [@Seeb_geneflow_1998] did not find significant differentiation in populations of quillback rockfish between Washington and Alaska when Puget Sound samples were excluded. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (*Sebastes caurinus*), indicating limited oceanographic exchange among geographically proximate locations [@Seeb_geneflow_1998; @buonaccorsi_population_2002; @johansson_influence_2008]. High site-fidelity [@HannahandRankin_rockfish_site_fidelity_2011] and relatively small home ranges [@Tolimierietal_rockfish_home_range_2009] for quillback rockfish suggests similar patterns of isolation-by-distance as found for other rockfish.
+Limited studies have been performed looking at genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish [@seeb_gene_1998; @Stoutetal_DPS_2001], however [@seeb_gene_1998] did not find significant differentiation in populations of quillback rockfish between Washington and Alaska when Puget Sound samples were excluded. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (*Sebastes caurinus*), indicating limited oceanographic exchange among geographically proximate locations [@seeb_gene_1998; @buonaccorsi_population_2002; @johansson_influence_2008]. High site-fidelity [@HannahandRankin_rockfish_site_fidelity_2011] and relatively small home ranges [@tolimieri_home_2009] for quillback rockfish suggests similar patterns of isolation-by-distance as found for other rockfish.
 
-Quillback rockfish are a long-lived rockfish estimated to live up to 95 years [@loveetal_2002; @YamanakaandLacko_2001]. Quillback rockfish was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis [@cope_approach_2011].  
+Quillback rockfish are a long-lived rockfish estimated to live up to 95 years [@loveetal_2002; @YamanakaandLacko_rockfish_2001]. Quillback rockfish was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis [@cope_approach_2011].  
 
 ## Ecosystem Considerations
 
-Replace text if want to / have to include
+[Replace text if want to / have to include]
 
 
 ## Historical and Current Fishery Information
 
-Quillback rockfish off the coast of Oregon are primarily caught in both the commercial and recreational fisheries (Table \ref{tab:catch} and Figure \ref{fig:catch}). The landings from the commercial fishery extend back to 1892 and other than an increase in the late 1930s through the 1940s, were minimal until the late-1960s. Currently, quillback rockfish is one of several rockfish species targeted by a nearshore, primarily live-fish fixed gear fishery centered on Oregon’s southern coast. Following the development of the nearshore commercial fishery in the late 1990s, ODFW implemented a state-permitted limited access fishery that regulated fleet size, period landing limits and established harvest guidelines [@Rodomskyetal_2020). Quillback rockfish is one of 11 species in the Other Nearshore Rockfish category managed under a single state harvest guideline. Within this management category, China, quillback and copper rockfish are the three primary species landed. Landings from the recreational fishery off the coast of Oregon began in 1979 and removals from the recreational fleet have increased across time and now represent the majority of landings for quillback rockfish off the coast of Oregon. Recreational landings were large in the year that data were first available, and were expected to be minimal prior to the 1970s. Consequently a linear ramp in recreational landings was applied from 1970 to 1979.
+Quillback rockfish off the coast of Oregon are primarily caught in both the commercial and recreational fisheries (Table \ref{tab:catch} and Figure \ref{fig:catch}). The landings from the commercial fishery extend back to 1892 and other than an increase in the late 1930s through the 1940s, were minimal until the late-1960s. Currently, quillback rockfish is one of several rockfish species targeted by a nearshore, primarily live-fish fixed-gear fishery centered on Oregon's southern coast. Following the development of the nearshore commercial fishery in the late 1990s, ODFW implemented a state-permitted limited access fishery that regulated fleet size, period landing limits, and established harvest guidelines [@rodomsky_2019_2020]. Quillback rockfish is one of 11 species in the Other Nearshore Rockfish category managed under a single state harvest guideline. Within this management category, China, quillback, and copper rockfish are the three primary species landed. Landings from the recreational fishery off the coast of Oregon began in 1979 and removals from the recreational fleet have increased across time and now represent the majority of landings for quillback rockfish off the coast of Oregon. Recreational landings were large in the year that data were first available, and were expected to be minimal prior to the 1970s. Consequently a linear ramp in recreational landings was applied from 1970 to 1979.
 
 
 ## Summary of Management History and Performance
@@ -137,11 +137,13 @@ The following types and sources of data were used in this assessment. Fishery ca
 
 A description of each data type is provided below, with timing of catch and composition data used in the base model shown in (Figure \ref{fig:data-plot}).
 
+[are commercial data really from PacFIN or should I be more precise? Similarly, are recreational data really from RecFIN or should I say ORBS and MRFSS?]
+
 <!--chapter:end:20data.Rmd-->
 
 ## Fishery-Dependent Data
 
-[Covid impacts??]
+[Covid impacts?? Might we want to list what data wasnt available in 2020? Maybe at end of section instead of in front.]
 
 ### Commercial Fishery
 
@@ -149,9 +151,9 @@ A description of each data type is provided below, with timing of catch and comp
 
 Historical commercial landings from 1892 to 1986 were provided by ODFW (Karnowski et al. 2014).  Historical landings were consistent but minimal (< 1 mt in all years except 1943) until the mid-1960s, at which point landings increased to a high of 3.5 mt in 1978. Primary gear types during this historical period included longline and troll gears. However, ODFW commercial samplers suggest that these troll landings were primarily landed on hook and line gear, but not separated by gear type on the fish tickets (pers. comm. M. Freeman, ODFW). 
 
-Landings from 1987 – 1999 were compiled from a combination of PacFIN, the central repository for West coast commercial landings (extracted on 10/13/2020), and a separate ODFW reconstruction that delineated species-specific landings in the unspecified categories on PacFIN (e.g. URCK and POP1, ODFW 2017). Quillback rockfish landings from this reconstruction were substituted for the URCK and POP1 landings available from PacFIN, and added to PacFIN landings from other categories for a complete time series during this time period. Commercial landings from 2000 – 2020 are available on PacFIN (extracted on 10/13/2020 and 02/18/2021). Quillback rockfish is one of several rockfish species targeted by a nearshore, primarily live-fish fixed gear fishery centered on Oregon’s southern coast. Quillback rockfish are landed primarily with hook and line gear, but a substantial portion are also landed with bottom longline gear as well. On average, 94.2% of quillback rockfish landings are from these two gear types (2000 – 2020). In the most recent years, longline landings have eclipsed hook and line landings. Landings from all other gear types, including fish pot and trawl, are minimal relative to jig and longline gears and sporadic. Commercial landings for quillback rockfish increased from the mid-1960s to 1974 and have since fluctuated between approximately 0.4 and 4.5 mt annually. From 2003 to 2020, landings have averaged 1.6 mt annually, and represent approximately one third of the total removals. Commercial landings were aggregated across gear types into a single fleet in the base model. 
+Landings from 1987 – 1999 were compiled from a combination of PacFIN, which is the central repository for West coast commercial landings (extracted on 10/13/2020), and a separate ODFW reconstruction that delineated species-specific landings in the unspecified categories on PacFIN (e.g. URCK and POP1, ODFW 2017). Quillback rockfish landings from this reconstruction were substituted for the URCK and POP1 landings available from PacFIN, and added to PacFIN landings from other categories for a complete time series during this time period. Commercial landings from 2000 – 2020 are available on PacFIN (extracted on 10/13/2020 and 02/18/2021). Quillback rockfish is one of several rockfish species targeted by a nearshore, primarily live-fish fixed gear-fishery centered on Oregon’s southern coast. Quillback rockfish are landed primarily with hook and line gear, but a substantial portion are also landed with bottom longline gear as well. Overall, 94.2% of quillback rockfish landings are from these two gear types (2000 – 2020). In the most recent years, longline landings have eclipsed hook and line landings. Landings from all other gear types, including fish pot and trawl, are minimal relative to jig and longline gears and sporadic. Commercial landings for quillback rockfish increased from the mid-1960s to 1974 and have since fluctuated between approximately 0.4 and 4.5 mt annually. From 2003 to 2020, landings have averaged 1.6 mt annually, and represent approximately one third of the total removals. Commercial landings were aggregated across gear types into a single fleet for the base model. 
 
-The input catches in the model represent total removals: landings plus discards (Table \ref{tab:catch} and Figure \ref{fig:catch}). Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards in trawl and fixed gears were allocated by state and area based on the total observed landings observed by WCGOP. Discards were added to landings to obtain total removals for 2002-2019. Total removals prior to 2002, and for 2020 where no WCGOP data were yet available, were calculated based on the average coastwide discard rates of fixed gears from WCGOP of 5.7 percent. A fixed gear discard rate was used to better match the historical fleet as trawl catches and therefore discards were higher in the 2000s and lower previously.  
+The input catches in the model represent total removals: landings plus discards (Table \ref{tab:catch} and Figure \ref{fig:catch}). Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards in trawl and fixed gears were allocated by state and area based on the total observed landings observed by WCGOP. Discards were added to landings to obtain total removals for 2002-2019. Total removals prior to 2002, and for 2020 where no WCGOP data were yet available, were calculated based on the average discard rates of fixed gears from WCGOP for Oregon (5.7 percent). A fixed gear discard rate was used to better match the historical fleet as trawl catches and therefore discards were higher in the 2000s but lower before the 2000s.  
 
 #### Length Compositions
 
@@ -161,7 +163,7 @@ The distribution of the lengths in the commercial data ranged between 21 - 54 cm
 
 The length observations in 1998 were not used in the base model due to very low (4) annual sample size. These data were used in the model as a 'ghost' fleet, not fit by the model but implied fits reflected in diagnostic plots. The implied fit to these data from the base model are shown in Appendix B 
 
-[need to cite reference here].    
+[need to cite reference for Appendix B here].    
 
 The input sample sizes for the commercial length data were calculated via the Stewart method (Ian Stewart, personal communication) which incorporate the number of trips and fish by year:
 
@@ -173,15 +175,16 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 \end{centering}
 
+[Do I need to describe that these were expnaded comps - or is that implicit in our choice of sample size?]
+
 
 ### Recreational Fishery
-
 
 #### Landings
 
 _Historic Ocean Boat Landings (1979 – 2000)_
 
-Recently, the Oregon Department of Fish and Wildlife (ODFW) undertook an effort to comprehensively reconstruct all marine fish recreational ocean boat landings prior to 2001 (pers. comm. A. Whitman, ODFW). Reconstructed catch estimates from the Oregon Recreational Boat Survey (ORBS) improve upon estimates from the federal Marine Recreational Fisheries Statistical Survey (MRFSS), which have known biases related to effort estimation and sampling [@VanVoorheesetal_2000] that resulted in catch estimates considered implausible by ODFW. However, the ORBS sample estimates are known to lack the comprehensive spatial and temporal coverage of MRFSS. Addressing this coverage issue is a major part of this reconstruction. In general, the base data and methodology for these reconstructed estimates are consistent with recent assessments for other nearshore species [@Dicketal_2016; @Dicketal_2018; @Haltuchetal_2018; @Copeetal_2019]. 
+Recently, the Oregon Department of Fish and Wildlife (ODFW) undertook an effort to comprehensively reconstruct all marine fish recreational ocean boat landings prior to 2001 (pers. comm. A. Whitman, ODFW). Reconstructed catch estimates from the Oregon Recreational Boat Survey (ORBS) improve upon estimates from the federal Marine Recreational Fisheries Statistical Survey (MRFSS), which have known biases related to effort estimation and sampling [@van_voorhees_evaluation_2000] that resulted in catch estimates considered implausible by ODFW. However, the ORBS sample estimates are known to lack the comprehensive spatial and temporal coverage of MRFSS. Addressing this coverage issue is a major part of this reconstruction. In general, the base data and methodology for these reconstructed estimates are consistent with recent assessments for other nearshore species [@dick_china_2016; @dick_bluedeacon_2018; @haltuch_lingcod_2018; @cope_cabezon_2019]. 
 
 Prior to 2001, ORBS monitored marine species in both multi-species categories, such as rockfish, flatfish, and other miscellaneous fishes, and as individual species, such as lingcod or halibut. For this comprehensive reconstruction, four species categories were selected to reconstruct, including rockfish, lingcod, flatfish and miscellaneous, which constitute the bulk of the managed marine fish species. Quillback rockfish are a component of the rockfish species category. 
 
@@ -195,7 +198,7 @@ Recreational landings for ocean boat modes from 2001 – 2020 are available from
 
 _Shore and Estuary Landings (1979 – 2020)_
 
-ODFW provided reconstructed estimates of shore and estuary landings for quillback rockfish from 1979 – 2020, using methodology similar to recent assessments [@Bergeretal_2015, @Dicketal_2018, @Copeetal_2019]. Data sources include MRFSS and the Oregon Shore and Estuary Boat Survey (SEBS). Numbers of fish were provided by MRFSS from 1980 – 1989 and 1993 – June 2003, and by SEBS from July 2003 – June 2005. An annual mode-specific average weight was applied to numbers of quillback rockfish from 1980 – 1989 and 1993 – 2005. Separate weights were calculated for shore and estuary boat modes, and excluded extreme outliers and imputed values. This reconstruction also applied two scaling factors to remove bias towards freshwater sampling and underestimation of estuary boats, as detailed in [@Dicketal_2018]. To estimate quillback rockfish landings from July – December 2005, an expansion was developed using the three year average of the ratio between the first six months of the year and the total annual landings from MRFSS and SEBS landings from 2002 - 2004. Separate expansions were developed for shore mode and estuary boat modes. A three year average (1980 - 1982) was used to estimate shore and estuary boat landings for 1979.  
+ODFW provided reconstructed estimates of shore and estuary landings for quillback rockfish from 1979 – 2020, using methodology similar to recent assessments [@berger_kelpgreenling_2015, @dick_bluedeacon_2018, @cope_cabezon_2019]. Data sources include MRFSS and the Oregon Shore and Estuary Boat Survey (SEBS). Numbers of fish were provided by MRFSS from 1980 – 1989 and 1993 – June 2003, and by SEBS from July 2003 – June 2005. An annual mode-specific average weight was applied to numbers of quillback rockfish from 1980 – 1989 and 1993 – 2005. Separate weights were calculated for shore and estuary boat modes, and excluded extreme outliers and imputed values. This reconstruction also applied two scaling factors to remove bias towards freshwater sampling and underestimation of estuary boats, as detailed in [@dick_bluedeacon_2018]. To estimate quillback rockfish landings from July – December 2005, an expansion was developed using the three year average of the ratio between the first six months of the year and the total annual landings from MRFSS and SEBS landings from 2002 - 2004. Separate expansions were developed for shore mode and estuary boat modes. A three year average (1980 - 1982) was used to estimate shore and estuary boat landings for 1979.  
 
 The ODFW does not currently sample shore and estuary boat fishing trips, and so a 10 year average landing (1996 – 2005; 0.024 mt/year) was used to estimate shore and estuary boat landings during 2006 – 2020. Shore and estuary boat landings for quillback rockfish were sporadic. Shore and estuary boat landings averaged 0.07 mt annually from 1980 – 2003.
 
@@ -213,23 +216,23 @@ The input sample sizes for the recreational length data were calculated equal to
 
 ## Fishery-Independent Data
 
-No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Oregon coast to include abundance indices for this assessment. The WCGBTS, and historically the Triennial survey, collect data off the Oregon Coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Biological data from the WCGBTS surveys were used in external calculations of biological parameters. No ages or weights for 'r spp' were available from the Triennial survey. 
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Oregon coast to include abundance indices for this assessment. The WCGBTS, and historically the Triennial survey, collect data off the Oregon coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 102) and Triennial Survey (n = 5) off Oregon were not included in the model. Biological data from the WCGBTS survey was used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for 'r spp' were available from the Triennial survey. 
 
-Oregon has a number of state-specific small-scale fishery-independent surveys considered by ODFW to have adequate samples of quillback rockfish. These include....Given these surveys are not commonly incorporated into West Coat groundfish assessments, and are not explicitly conducted as a state-wide estimate of relative or absolute abundance, we do not include the data in the model for quillback rockfish. However, we do compare estimates from these surveys to the our assessment model in Section \ref{Unresolved-Problems-and-Major-Uncertainties}. 
+Oregon has a number of state-specific small-scale fishery-independent surveys considered by ODFW to have adequate samples of quillback rockfish. These include....
+
+[need to add to this section]
+
+Given these surveys are not commonly incorporated into West Coat groundfish assessments, and are not explicitly conducted as a state-wide estimate of relative or absolute abundance, we do not include the data in the model for quillback rockfish. However, we do compare estimates from these surveys to the our assessment model in Section \ref{unresolved-problems-and-major-uncertainties}.
+
+[Update reference to section]
 
 <!--chapter:end:21s-.Rmd-->
-
-### \acrlong{s-wcgbt}
-
-Information from the West Coast Groundfish Bottom Trawl Survey (WCGBTS) was used to calculate biological parameters including growth and weight-at-length relationships. An index of abundance was not calculated due to small sample size, and consequently, length composition data from the WCGBTS was not included in the model. 
-
-The WCGBTS is based on a random-grid design; covering the coastal waters from a depth of 55 - 1,280 m [@bradburn_2003_2011]. This design generally uses four industry-chartered vessels per year assigned to a roughly equal number of randomly selected grid cells and divided into two 'passes' of the coast. Two vessels fish from north to south during each pass between late May to early October. This design therefore incorporates both vessel-to-vessel differences in catchability, as well as variance associated with selecting a relatively small number (approximately 700) of possible cells from a very large set of possible cells spread from the Mexican to the Canadian borders.
-
-<!--chapter:end:21s-wcgbts.Rmd-->
 
 ## Biological Data
 
 This assessment modeled quillback rockfish as a single sex. Data available were generally sparse, growth and length-weight relationships were similar across sexes, and the literature provided limited evidence of sexual dimorphism in length [@LenarzandEcheverria_dimorphism_1991]. The sections below therefore describe combined male and female biological data. 
+
+[Do I need to provide more evidence justifying the choice to combine genders? For example, gender specific plots of W-L or L-A, sex ratios by age or length?]
 
 ### Natural Mortality
 
@@ -243,39 +246,44 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 The above is also the median of the prior suggested by Hamel [-@hamel_method_2015]. The prior is defined as a log normal distribution with parameters $\mu = ln(5.4/A_{\text{max}})$ and $\sigma = 0.438$. Using a maximum age of 95 years, the point estimate and median of the prior for $M$ is 0.057 per year.
 
-The maximum age was selected based on literature values for the U.S. West Coast examining the longevity of quillback rockfish [@loveetal_2002; @Palssonetal_1999; @Yamanaka_and_Lacko_2001]. The oldest aged quillback rockfish among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
+The maximum age was selected based on literature values for the U.S. West Coast examining the longevity of quillback rockfish [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. The oldest aged quillback rockfish among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
 
 
 ### Maturation and Fecundity
-Maturity-at-length estimates were based on the work of Hannah and Blume [-@Quillback_maturity_2011] which estimated the 50% size-at-maturity of 29.2 cm and slope of -0.8 off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which range 26-32 cm (see Jason's life history matrix).  
+Maturity-at-length estimates were based on the work of Hannah and Blume [-@HannahandBlume_maturity_2011] which estimated the 50% size-at-maturity of 29.2 cm and slope of -0.8 off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which range 26-32 cm [@Echeverria_maturity_1987; @Rosenthaletal_maturity_1982].  
 
-The fecundity-at-length was based on research by Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for quillback rockfish was estimated equal to 3.93e-07$L$^3.7^ in millions of eggs where $L$ is fork length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
+The fecundity-at-length was based on research by Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for quillback rockfish was estimated equal to 3.93e-07$L$^3.7^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
+
+
+### Length-Weight Relationship
+The length-weight relationship for quillback rockfish was estimated outside the model using available coastwide biological data collected from fishery-independent and fishery-dependent data sources (Figure \ref{fig:len-weight-survey}). Sources included the WCGBTS, and recreational and commercial samples from all states (Table \ref{tab:len-at-weight-samps}). Weights from special projects samples taken from the recreational and commercial fleets (n = 241) were not included. Only measured weight or length values were used; any values with more than two decimal places were assumed to be calculated from another measurement and were excluded. This occurred for 32 percent of lengths and 20 percent of the weights in the MRFSS-era recreational samples. The estimated length-weight relationship for quillback rockfish was 1.963e-05$L$^3.02^ where $L$ is fork length in cm (Figures \ref{fig:len-weight}).
+
+
+### Growth (Length-at-Age)
+The length-at-age relationship for quillback rockfish was estimated outside the model using data collected from fishery-dependent sources off the coast of Oregon and Washington collected between 1998-2019, and from a single coastwide fishery-independent sources (WCGBT Survey) collected between 2005-2019 (Table \ref{tab:len-at-age-samps}). Ages from special projects samples taken from the commercial fleet (n = 30) were not included. Age data was generally sparase for quillback rockfish from any one source. The fishery-dependent data had limited observations of young fish less than 5 years of age, but had observations of fish up to 73 years of age, and the fishery-independent data had limited observations of old fish greater than 40 years of age, but had observations of fish as young as one year of age. Growth parameters for quillback rockfish were estimated at the following values:
+
+\begin{centering}
+
+$L_{\infty}$ = 43.04 cm; $k$ = 0.199; $t0$ = -0.067 cm  
+
+\end{centering}
+
+These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}. The estimate of $L_{\infty}$ is comparable to literature values, while the estimate of $k$ is on the higher side of literature values which vary from 0.06 - 0.19 [@YamanakaandLacko_rockfish_2001; @Palssonetal_2009; @Westetal_2014].
+
+Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-age, and spawning output (the product of fecundity and maturity) assumed in the base model.
+
+[Is it typical not to include t0? Its not an SS parameter but it does affect the estimate of L1. Should I instead include L1?]
+[Should I state here that this is a higher K than other studies, and high for the longevity of the species]
 
 
 ### Sex Ratio
 Given the base model was of combined sexes, the sex ratio was assumed to be 1:1.
 
-[Plot sex ratios by length and age - possibly???]
-
-
-### Length-Weight Relationship
-The length-weight relationship for quillback rockfish was estimated outside the model using available coastwide biological data collected from fishery-independent and fishery-dependent data sources (Figure \ref{fig:len-weight-survey}). Sources included the WCGBT and Triennial Surveys, and recreational and commercial samples from all states. Only measured weight or length values were used; any values with more than two decimal places were assumed to be calculated from another measurement and were excluded. This occurred for 32 percent of lengths and 20 percent of the weights in the MRFSS-era recreational samples. The estimated length-weight relationship for quillback rockfish was 1.963e-05$L$^3.02^ where $L$ is fork length in cm (Figures \ref{fig:len-weight}).
-
-
-### Growth (Length-at-Age)
-The length-at-age relationship for quillback rockfish was estimated outside the model using data collected from fishery-dependent sources off the coast of Oregon and Washington collected between 1998-2019, and from a single coastwide fishery-independent sources (WCGBT Survey) collected between 2005-2019 (Table \ref{tab:len-at-age-samps}).  Age data was generally sparase for quillback rockfish from any one source. The fishery-dependent data had limited observations of young fish less than 5 years of age, but had observations of fish up to 73 years of age, and the fishery-independent data had limited observations of old fish greater than 40 years of age, but had observations of fish as young as one year of age. Growth parameters for quillback rockfish were estimated at the following values:
-
-\begin{centering}
-
-$L_{\infty}$ = 43 cm; $k$ = 0.199
-
-\end{centering}
-
-These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}.  
-  
   
 ### Ageing Precision and Bias
 Ages were not fit in the model. 
+
+[Just remove this section?]
 
 <!--chapter:end:22biology.Rmd-->
 
@@ -345,14 +353,14 @@ The large recruitment pulses in the 1990s show up in the composition data for th
 
 ### Fits to the Data
 
-Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for the commercial and recreational fleets. The Person residuals for the commercial fishery have no discernible pattern of misfit to the length data across cohorts but show areas of misfit over time (Figure \ref{fig:com-pearson}). The residuals show that the peak of the composition is being underfit for many years. These years have lower sample size, and for years with high sample size such as 2000, 2002, and 2017, compositions are being fit well. The largest residuals were observed in 1999 or when missing small spikes of small fish in the compositions (2009, 2017, 2020) (see [Appendix A](#append_a) for details). The mean lengths observed by the commercial fishery were variable by year but with generally consistent confidence intervals across years and showed an increase in mean length followed by a period of stability and then decline (Figure \ref{fig:com-mean-len-fit}). 
+Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for the commercial and recreational fleets. The Pearson residuals for the commercial fishery have no discernible pattern of misfit to the length data across cohorts but show areas of misfit over time (Figure \ref{fig:com-pearson}). The residuals show that the peak of the composition is being underfit for many years. These years have lower sample size, and for years with high sample size such as 2000, 2002, and 2017, compositions are being fit well. The largest residuals were observed in 1999 or when missing small spikes of small fish in the compositions (2009, 2017, 2020) (see [Appendix A](#append_a) for details). The mean lengths observed by the commercial fishery were variable by year but with generally consistent confidence intervals across years and showed an increase in mean length followed by a period of stability and then decline (Figure \ref{fig:com-mean-len-fit}). 
 
-The Pearson residuals for the recreational length data were variable by year and have no discernible pattern of misfit to the length data (Figure \ref{fig:rec-pearson}). A period of positive residuals from 2005-2014 show that the peak of the composition is being underfit, however looking at the fits suggest overall good fit (see [Appendix A](#append_a) for details). The residual patterns for 2017-2020, which are the largest residuals outside misfit of very high and very low lengths in low sample size years (before 1990), show the model has difficulty fitting the bimodal patterns in these years, which are not unexpected. Throughout the mid-2000s the mean length increases to a larger size (around 40 cm in 2015) with a substantial decrease in variation of the observed lengths compared to pre-2000 lengths (Figure \ref{fig:rec-mean-len-fit}). The mean length was highly variable in 2015 due to low sample size (Table \ref{tab:len-samps}) 
+The Pearson residuals for the recreational length data were variable by year and have no discernible pattern of misfit to the length data (Figure \ref{fig:rec-pearson}). A period of positive residuals from 2005-2014 show that the peak of the composition is being underfit, however looking at the fits suggest overall good fit (see [Appendix A](#append_a) for details). The residual patterns for 2017-2020, which are the largest residuals outside misfits to very high and very low lengths in low sample size years (before 1990), show the model has difficulty fitting the bimodal patterns in these years, which are not unexpected. Throughout the mid-2000s the mean length increases to a larger size (around 40 cm in 2015) with a substantial decrease in variation of the observed lengths compared to pre-2000 lengths (Figure \ref{fig:rec-mean-len-fit}). The mean length was highly variable in 2015 due to low sample size (Table \ref{tab:len-samps}) 
 
 Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}. The model fits the aggregated lengths for the recreational fleet well. The fit to the commercial fleet is poorer. Both fleets show similar ranges of sizes caught and an aggregated peak around 40 cm. The commercial fleet shows proportionally less catch of intermediate size fish between 30-40 cm compared to the recreational fleet. The model overfits the proportion of intermediate fish in the commercial fishery and underestimates the proprotion of fish selected at their peak. Additional explorations with selectivity blocks for the commercial fleet did not greatly improve the aggregate fit. 
 
-[The poor fit to the commerical aggregate lengths was further explored by applying selectivity blocks to the commercial fleet, but fits to the aggregate fits generally remained unchanged. The differences on overall model results were small, and with lack of clear evidence for blocks within the commercial fleet, and added complexity with applying blocks, we chose to not include in the base model]
-[explain the pattern from comercial gear does not appear to be due to differences in gear - its common across most gears]
+[Is more explaination of the poor fits to commercail needed?]
+[Can include but I dont think its necessary - The poor fit to the commerical aggregate lengths was further explored by applying selectivity blocks to the commercial fleet, but fits to the aggregate fits generally remained unchanged. The differences on overall model results were small, and with lack of clear evidence for blocks within the commercial fleet, and added complexity with applying blocks, we chose to not include in the base model. The pattern in aggregate lengths was also not due to differences in gear as the bimodal pattern was common across gears]
 
 ### Population Trajectory
 
@@ -428,18 +436,33 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
   
 \end{enumerate}
 
+[Should I better describe why each sensitivity is being done - or is this adequate?]
+
 Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}, respectively.
 
 The largest change from the base model resulted when recruitment was fixed to be deterministic, and when selectivity for the recreational fleet was set to be asymptotic. Assuming deterministic recruitment resulted in a higher stock scale, and different biomass trajectory, but a comparable stock status relative to the base model. Assuming asymptotic selectivity for the recreational fleet resulted in a reduction in the scale and status of the stock, such that biomass in 2020 relative to unfished biomass was close to the threshold of 25 percent. 
 
-Four additional sensitivities either had changes in stock scale of greater than 10 percent from the base model or had stock status between the target and threshold ratio values. Estimating $L_{\infty}$ and $L_{\infty}$ and $k$ resulted in similarly low stock scale compared to the sensitivity with asymptotic selectivity for the recreational fleet. Estimating $L_{\infty}$ resulted in a more pessimistic view of stock status compared to the base, with biomass in 2020 relative to unfished biomass estimated between the threshold and target ratios. Data weighting with the McAllister-Ianelli (MI) approach also resulted in biomass in 2020 relative to unfished biomass being between the threshold and target ratios, however the scale was similar to the base model. Estimating variation in length for older fish resulted in an increased stock scale, but similar stock status as the base model. 
+Four additional sensitivities either had changes in stock scale of greater than 10 percent from the base model or had stock status between the management precautionary zone (between the target and threshold ratio values). Estimating $L_{\infty}$ and $L_{\infty}$ and $k$ resulted in similarly low stock scale compared to the sensitivity with asymptotic selectivity for the recreational fleet. Estimating $L_{\infty}$ resulted in a more pessimistic view of stock status compared to the base, with biomass in 2020 relative to unfished biomass estimated between the threshold and target ratios. Data weighting with the McAllister-Ianelli (MI) approach also resulted in biomass in 2020 relative to unfished biomass being between the threshold and target ratios, however the scale was similar to the base model. Estimating variation in length for older fish resulted in an increased stock scale, but similar stock status as the base model. 
 
-Data weighting with the Dirichlet-Multinomial, estimating natural mortality, excluding early recreational length comps or fitting them with a different selectivity curve, and allowing dome-shaped selectivity for the commercial fleet were similar to the base model.
+Data weighting with the Dirichlet-Multinomial, estimating natural mortality, excluding early recreational length comps or fitting them with a different selectivity curve, and allowing dome-shaped selectivity for the commercial fleet produced similar results as the base model.
 
 
 ### Unresolved Problems and Major Uncertainties
 
-There were four primary uncertainties in the model given current data availability and model assumptions. First, selectivity form for the recreational fleet was a major source of uncertainty, not only affecting the scale of the population but also resulting in relative stock size near the lower edge of the management precautionary zone. Second, the magnitude of recruitment deviations was a source of uncertainty. Strong recruitment pulses in 1993, 1995, 1999, and 2012 were often estimated during model exploration with some years being stronger in some runs compared to others. Recruitment deviations in other years during the 1990s were typically variable, and sometimes greatly so as shown in (Figure \ref{fig:rec-devs}). These were likely due to limited samples and variable length within the samples in the recreational length comps. This variation influences the magnitude of the increase in biomass in the late 1990s and  2000s as well as the magnitude of the decrease in the 2010s. Omitting recruitment deviations altogether changes the scale of the model as well. The magnitude of recruitment was also affected by the data weighting values, which is the third uncertainty. Data weighting using McAllister-Ianelli reduced the amount of information coming from the recreational fleet, affecting the magnitude of recruitment, and resulting in a more pessimistic stock status. Francis and the Dirichlet-Multimonial weighting resulting in similar results. The final uncertainty is estimates of growth. The fixed value for k for quillback rockfish is higher than other published studies, which are typically nearer 0.1, and result in a high $k$/$M$ ratio. Profiles for $L_{\infty}$ and $k$ suggest estimating these parameters is feasible, and result in estimates of $k$ nearer literature values. Ultimately, we decided to keep the fixed values in the base model given the relatively large number of young fish in the surveys, however estimating growth parameters has a more pessimistic outlook on stock scale and status.  
+There were four primary uncertainties in the model given current data availability and model assumptions. 
+\begin{enumerate}
+
+  \item First, selectivity form for the recreational fleet was a major source of uncertainty, not only affecting the scale of the population but also resulting in relative stock size near the lower edge of the management precautionary zone. 
+  
+  \item Second, the magnitude of recruitment deviations was a source of uncertainty. Strong recruitment pulses in 1993, 1995, 1999, and 2012 were often estimated during model exploration with some years being stronger in some runs compared to others. Recruitment deviations in other years during the 1990s were typically variable, and sometimes greatly so as shown in (Figure \ref{fig:rec-devs}). These were likely due to limited samples and variable length in the recreational length compositions. This variation influences the magnitude of the increase in biomass in the late 1990s and  2000s as well as the magnitude of the decrease in the 2010s. Omitting recruitment deviations altogether changes the scale of the model as well. 
+  
+  \item The magnitude of recruitment was also affected by the data weighting values, which is the third uncertainty. Data weighting using McAllister-Ianelli reduced the amount of information coming from the recreational fleet, affecting the magnitude of recruitment, and resulting in a more pessimistic stock status. Francis and the Dirichlet-Multimonial weighting resulted in similar results. 
+  
+  \item The final uncertainty is estimates of growth. The fixed value for k for quillback rockfish is higher than other published studies, which are typically nearer 0.1, and result in a high $k$/$M$ ratio. Profiles for $L_{\infty}$ and $k$ suggest estimating these parameters is feasible, and result in estimates of $k$ nearer literature values. Ultimately, we decided to keep the fixed values in the base model given the relatively large number of young fish in the surveys, however estimating growth parameters has a more pessimistic outlook on stock scale and status compared to the base model.  
+  
+\end{enumerate}
+
+[These are often the major uncertainties. Growth is more my own opinion and doesnt really have as large of an affect on results as the others do. Thoughts on these?]
 
 
 <!--chapter:end:34diagnostics.Rmd-->
@@ -467,26 +490,22 @@ The ability to estimate additional process and biological parameters for quillba
 
 	\item Improved understanding of where recreational fishing is commonly occuring (areas and depths) and the range of sizes available by depth would be beneficial to better inform the selectivity form.  
 	
-	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional evidence in the data showing such patterns in recruitment would provide additional support for model estimates.  
-	
-	\item The presence of quillback rockfish in standard fishery-independent surveys was too sparse to include as indices of abundance. Fishery-independnt surveys specific to quillback rockfish would help with understanding population trends. 
+	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates.  
 	
 \end{itemize}
+
 
 ## Comparisons with state-based fishery-independent surveys 
 
 Fishery-independent surveys along the Oregon coast have been conducted by the ODFW. 
 
-[more info on Oregon surveys - maybe put in a different section - update reference earlier]
+[maybe put in a different section?]
+[more info on Oregon surveys, need to update reference earlier]
 
 <!--chapter:end:40management.Rmd-->
 
 # Acknowledgments
-Many people were instrumental in the successful completion of this assessment and their contribution is greatly appreciated. We are very grateful to all the agers at WDFW, ODFW, and the CAP lab for their hard work reading numerous otoliths and availability to answer questions when needed. Jason Jannot and Kayleigh Sommers assisted with data from the WCGOP and entertained our many questions. We would like to acknowledge our survey team and their dedication to improving the assessments we do. Peter Frey and John Harms were incredibly helpful in facilitating the understanding of the STAT team as to why and when each of our assessments either encounter or do not quillback rockfish along the coast.
-
-Melissa Head provided an area specific maturity estimate for quillback rockfish and provided insight in the complex biological processes that govern maturity processes.
-
-All of the data moderate assessments this year were greatly benefited by the numerous individuals who took the time to participate in the pre-assessment data webinar. Gerry Richter, Merit McCrea, Louis Zimm, Bill James, and Daniel Platt were provided insight to the data and the complexities of the commercial and recreational fisheries off the West Coast of the U.S. which were essential in the production of all of the quillback rockfish assessments conducted this year.
+Many people were instrumental in the successful completion of this assessment and their contribution is greatly appreciated. We are very grateful to all the agers at WDFW, ODFW, and the CAP lab for their hard work reading numerous otoliths and availability to answer questions when needed. Jason Jannot and Kayleigh Sommers assisted with data from the WCGOP and entertained our many questions. We would like to acknowledge the data team and their dedication to improving the assessments we do. John Harms, Brenda Erwin, and Jason Edwards were incredibly helpful in understanding the available data and resolving questions about its interpretation and use. All of the data moderate assessments this year were greatly benefited by the numerous individuals who took the time to participate in the pre-assessment data webinar. Gerry Richter, Merit McCrea, Louis Zimm, Bill James, and Daniel Platt were provided insight to the data and the complexities of the commercial and recreational fisheries off the West Coast of the U.S. which were essential in the production of all of the quillback rockfish assessments conducted this year.
 
 <!--chapter:end:41acknowledgments.Rmd-->
 
@@ -691,9 +710,9 @@ Method & Commercial Lengths & Recreational Lengths\\
 \endfoot
 \bottomrule
 \endlastfoot
-Francis & 0.288179 & 0.197477\\
-McAllister-Ianelli & 0.455021 & 0.023712\\
-Dirichlet Multinomial & 1.000000 & 1.000000\\*
+Francis & 0.2881790 & 0.1974770\\
+McAllister-Ianelli & 0.4550210 & 0.0237120\\
+Dirichlet Multinomial & 0.9801535 & 0.5145631\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -1148,4 +1167,186 @@ fishery selectivity and with steepness fixed at 0.72."}
 \newpage
 
 <!--chapter:end:53figures.Rmd-->
+
+\clearpage
+
+# Appendix 
+
+## Detailed Fit to Length Composition Data 
+
+
+
+![Length comps, whole catch, OR_Commercial (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, OR_Commercial (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.."}
+
+![Length comps, whole catch, OR_Commercial (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="Length comps, whole catch, OR_Commercial (plot 2 of 2)."}
+
+![Length comps, whole catch, OR_Recreational (plot 1 of 3).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..\label{fig:comp_lenfit_flt2mkt0_page1}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, OR_Recreational (plot 1 of 3).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.."}
+
+![Length comps, whole catch, OR_Recreational (plot 2 of 3).\label{fig:comp_lenfit_flt2mkt0_page2}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_page2.png){width=100% height=100% alt="Length comps, whole catch, OR_Recreational (plot 2 of 3)."}
+
+![Length comps, whole catch, OR_Recreational (plot 3 of 3).\label{fig:comp_lenfit_flt2mkt0_page3}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/comp_lenfit_flt2mkt0_page3.png){width=100% height=100% alt="Length comps, whole catch, OR_Recreational (plot 3 of 3)."}
+
+\clearpage
+
+
+## ODFW Marine Reserve Hook and Line Survey
+
+One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey.  This data source to date has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of this data source and the available data for quillback rockfish.
+
+The Marine Reserve Program in the ODFW has routinely monitored state marine reserves (MR) and associated comparison areas (CA) since 2011.  Data from the hook and line survey from 2011 - 2019 are presented in this summary.  Surveys in 2011 and 2012 only visited a single site, Redfish Rocks.  Surveys from 2013 – 2019 include reserves and comparison areas from four sites: Redfish Rocks, Cape Falcon, Cape Perpetua and Cascade Head.  Each of these four sites has a marine reserve and one to three comparison areas.  Comparison areas are specifically selected for each marine reserve to be similar in location, habitat and depth to the reserve but are subject to fishing pressure.  Not all sites are sampled in each year, due to both the gradual implementation of the reserve network and the available staff to execute surveys.  Sites and areas sampled that are included in this dataset are below.  
+
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{5.75cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{1.25cm}}
+\caption{(\#tab:table-1)Sites and areas sampled by the Mrine Reserve Program hook and line survey.}\\
+\toprule
+Site & Area & Years Sampled & Total Samples\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:table-1)Sites and areas sampled by the Mrine Reserve Program hook and line survey. \textit{(continued)}}\\
+\toprule
+Site & Area & Years Sampled & Total Samples\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Redfish Rocks & Humbug CA & 2011 – 2019 & 8\\
+Redfish Rocks & Redfish Rocks MR & 2011 – 2019 & 8\\
+Redfish Rocks & Orford Reef CA & 2014, 2015, 2017, 2019 & 4\\
+Cape Falcon & CA Adjacent to Cape Falcon MR & 2014, 2015, 2017, 2019 & 4\\
+Cape Falcon & Cape Falcon MR & 2014, 2015, 2017, 2019 & 4\\
+Cape Falcon & Cape Meares CA & 2014, 2015, 2017, 2019 & 4\\
+Cape Falcon & Three Arch Rocks CA & 2014, 2015, 2017, 2019 & 4\\
+Cape Perpetua & CA Outside Cape Perpetua MR & 2016, 2018 & 2\\
+Cape Perpetua & Cape Perpetua MR & 2013, 2014, 2017, 2018 & 4\\
+Cape Perpetua & Postage Stamp CA & 2013, 2014, 2017, 2018 & 4\\
+Cascade Head & Cape Foulweather CA & 2015, 2016, 2018 & 3\\
+Cascade Head & Cascade Head MR & 2013 - 2016, 2018 & 5\\
+Cascade Head & Cavalier CA & 2013, 2015, 2016, 2018 & 4\\
+Cascade Head & Schooner Creek CA & 2013 - 2016, 2018 & 5\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are executed in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
+
+
+A 500 meter square grid overlaid on the area defines the sampling units or cells. Cells are randomly selected within a marine reserve or comparison area for each sampling event.  Three replicate drifts are executed in each cell. The specific location of the drifts within the cell is selected by the captain. Over time, cells without appropriate habitat for the focus species, mainly groundfish, have been removed from the selection procedures, and those presented in this dataset include only those that are currently "active".  The number of cells visited in a day can vary slightly and range from three to five.  Data are aggregated to the cell-day level.
+
+### Copper Rockfish Summary   
+
+Of the 940 total-cell days at 14 areas, 97 (10.3 percent) of those had positive quillback rockfish catches with a total of 136 observations across all years and sites. The number of quillback rockfish caught ranged from 1 to 6 fish in a cell-day. 
+
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}>{\raggedright\arraybackslash}p{1cm}}
+\caption{(\#tab:table-2)Summary of number of catch cell days and positive observations of copper rockfish.}\\
+\toprule
+ & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 & Total\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:table-2)Summary of number of catch cell days and positive observations of copper rockfish. \textit{(continued)}}\\
+\toprule
+ & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 & Total\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Number of Positive Catch Cell-Days & 1.000 & 0 & 10.000 & 20.000 & 9.000 & 17.000 & 9.000 & 19.000 & 12.000 & 97.000\\
+Total Cell-Days & 44.000 & 52 & 97.000 & 141.000 & 167.000 & 112.000 & 103.000 & 116.000 & 108.000 & 940.000\\
+Proportion of Positives & 0.023 & 0 & 0.103 & 0.142 & 0.054 & 0.152 & 0.087 & 0.164 & 0.111 & 0.103\\
+Total Number of Copper Caught & 1.000 & 0 & 14.000 & 31.000 & 12.000 & 31.000 & 11.000 & 22.000 & 14.000 & 136.000\\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\endgroup{}
+
+
+![Frequency of positive copper rockfish catches between 2011 - 2019.\label{fig:pos-hkl}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/fig_1_marine_hkl.png){width=100% height=100% alt="Frequency of positive copper rockfish catches between 2011 - 2019."}
+
+Areas  differ in both geographic location and the level of fishing pressure experienced or allowed. Staff from the Marine Reserves Program suggested that the treatment (reserve vs. comparison area) may not be a delineating factor for the catch of of some species (e.g., cabezon) due to the recent implementation of the reserves.  It was suggested that data could be aggregated to the site level, functioning at the level of a reef complex, to examine patterns at different locations along the coast.  However, this may not be possible with the sample size available at some sites.
+
+Observations of quillback rockfish were varied across sample sites and years.  The number of observations of quillback rockfish was highest at Cape Perpetua (N = 50), followed by Cascade Head (N = 46) and Redfish Rocks (N = 35) respectively.  
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.83cm}>{\raggedright\arraybackslash}p{1.83cm}>{\raggedright\arraybackslash}p{1.83cm}>{\raggedright\arraybackslash}p{1.83cm}>{\raggedright\arraybackslash}p{1.83cm}}
+\caption{(\#tab:table-3)SSummary of sampling effort by year and site combined with the positive observations of copper rockfish.}\\
+\toprule
+Site & Year & Number of Positive Catch Cell Days & Total Cell Days & Proportion of Positives & Total Number of Copper Rockfish Caught\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:table-3)SSummary of sampling effort by year and site combined with the positive observations of copper rockfish. \textit{(continued)}}\\
+\toprule
+Site & Year & Number of Positive Catch Cell Days & Total Cell Days & Proportion of Positives & Total Number of Copper Rockfish Caught\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Cape Falcon & 2014 & 0 & 18 & 0.000 & 0\\
+ & 2015 & 0 & 51 & 0.000 & 0\\
+ & 2017 & 0 & 47 & 0.000 & 0\\
+ & 2019 & 5 & 42 & 0.119 & 5\\
+ & Total & 5 & 158 & 0.032 & 5\\
+Cape Perpetua & 2013 & 4 & 34 & 0.118 & 6\\
+ & 2014 & 10 & 34 & 0.294 & 19\\
+ & 2016 & 8 & 42 & 0.190 & 17\\
+ & 2018 & 6 & 41 & 0.146 & 8\\
+ & Total & 28 & 151 & 0.185 & 50\\
+Cascade Head & 2013 & 3 & 35 & 0.086 & 5\\
+ & 2014 & 7 & 43 & 0.163 & 9\\
+ & 2015 & 4 & 59 & 0.068 & 4\\
+ & 2016 & 9 & 63 & 0.143 & 14\\
+ & 2018 & 13 & 75 & 0.173 & 14\\
+ & Total & 36 & 275 & 0.131 & 46\\
+Redfish Rocks & 2011 & 1 & 44 & 0.023 & 1\\
+ & 2012 & 0 & 52 & 0.000 & 0\\
+ & 2013 & 3 & 28 & 0.107 & 3\\
+ & 2014 & 3 & 46 & 0.065 & 3\\
+ & 2015 & 5 & 57 & 0.088 & 8\\
+ & 2016 & 0 & 7 & 0.000 & 0\\
+ & 2017 & 9 & 56 & 0.161 & 11\\
+ & 2019 & 7 & 66 & 0.106 & 9\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+
+Catch-per-unit-effort (CPUE) was calculated by the number of fish per angler hour. The number of anglers and hooks are standardized for each survey. Angler hours have been adjusted for non-fishing time (i.e., travel time, etc.).
+
+
+![Copper rockfish CPUE calculated based on positive values only.\label{fig:fig-2}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/fig_2_cpue_val.png){width=100% height=100% alt="Copper rockfish CPUE calculated based on positive values only."}
+
+
+![Copper rockfish CPUE calculated based on all values.\label{fig:fig-3}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/fig_3_cpue.png){width=100% height=100% alt="Copper rockfish CPUE calculated based on all values."}
+
+Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of quillback rockfish encounters, there are probably not enough data to move forward with a timeseries at a coastwide level.  However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE at this site shows an increasing trend since 2011 for quillback rockfish.
+
+
+
+![Copper rockfish CPUE calculated at Redfish Rocks based on postive values only.\label{fig:fig-4}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/fig_4_redfish_cpue.png){width=100% height=100% alt="Copper rockfish CPUE calculated at Redfish Rocks based on postive values only."}
+
+Quillback rockfish appear to have an increasing trend from 2011 – 2019, with the last four years of surveys above the long-term mean. 
+
+
+
+![Copper rockfish relative CPUE across all sample sites.\label{fig:fig-4}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/copper_rockfish/write_up/or/fig_5_relative_cpue.png){width=100% height=100% alt="Copper rockfish relative CPUE across all sample sites."}
+
+### Video Lander Population Estimate
+
+
+### ROV minimum population estimate 
+
+<!--chapter:end:54appendix.Rmd-->
 
