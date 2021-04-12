@@ -165,6 +165,7 @@ get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", 
                             step_size = c(0.005, 0.10, 0.2, 1, 0.015),
                             param_space = c('real', 'real', 'relative', 'real', 'real'))
 
+
 model_settings = get_settings(settings = list(base_name = base_name,
                                               run = c("jitter", "profile", "retro"),
                                               profile_details = get ))
@@ -172,6 +173,29 @@ model_settings = get_settings(settings = list(base_name = base_name,
 model_settings$jitter_fraction = 0.1
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+#There are a number of seemingly non-converged runs in the profiles. Rerun manually. 
+#replace base results as appropriately numbered files in profile results and run code below
+#1. M at base value (copy over report from baseProfile model)
+load(paste0(mydir,"/7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1","/NatM_p_1_Fem_GP_1", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(6:1,7:14)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+#2. R0 at 1.6. Run in new folder. Copy and replace report file
+load(paste0(mydir,"/7_1_0_baseProfile_profile_SR_LN(R0)","/SR_LN(R0)", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:11)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/7_1_0_baseProfile_profile_SR_LN(R0)"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+#3. H at 0.5 and at 0.99 (since settings dont include 0.99). Run in new folder. Copy and replace report file
+load(paste0(mydir,"/7_1_0_baseProfile_profile_SR_BH_steep","/SR_BH_steep", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:8)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/7_1_0_baseProfile_profile_SR_BH_steep"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+#4. Redo K at 0.18. Run in new folder. Have to use par file as inits. Copy and replace report file. 
+#Doesnt improve. 
+
+
+
 
 
 

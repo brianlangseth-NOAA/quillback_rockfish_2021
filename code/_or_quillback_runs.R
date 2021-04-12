@@ -721,6 +721,15 @@ SS_plots(base.710)
 SSunavailableSpawningOutput(base.710, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
 
 
+#Test out slight change in maturity to reflect fork length
+#From Echeverria nad Lenarz (1984) in Love et al. (2002) the conversion from 
+#Total to Fork is FL = 9.075 + TL * 0.965 (with lengths in mm). Thus 29.23 TL L50 is 29.11 FL L50.
+model = "7_1_1_matFL"
+base.711mat = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.711mat)
+#Gives same results, not exactly but pretty close. 
+
+
 ##############################################
 #       Sensitivities - Starting with model 710
 ##############################################
@@ -736,10 +745,13 @@ SS_plots(base.712)
 
 #Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 710
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
-                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\7_1_3_dw_DM\\just model files")
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\sensitivities\\7_1_3_dw_DM\\just model files")
 model = "7_1_3_dw_DM"
 base.713 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.713)
+base.713$Length_Comp_Fit_Summary
+#Theta/(1+theta) commercial = 0.9801535 (theta = 49.38680)
+#Theta/(1+theta) recreational = 0.5145631 (theta = 1.06223)
 
 #Estimate L infinity
 model = "7_1_4_estlinf"
@@ -784,18 +796,7 @@ SS_plots(base.7111)
 
 
 #Compare sensitivities
-sens_names <- c("Base mode",              #0
-                "No rec devs",            #1
-                "DW MI",                  #2
-                "DW DM",                  #3
-                "Est Linf",               #4
-                "Est Linf, K",            #5
-                "Est Old CV",             #6
-                "Est M",                  #7
-                "No early rec comps",     #8
-                "Rec asymp. selex.",      #9
-                "Com dome-shaped selex.", #10
-                "Rec block selex.")       #11
+sens_names <- c("Base mode","No rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
 sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111))
 
 #Plot each individually for control over legend location
