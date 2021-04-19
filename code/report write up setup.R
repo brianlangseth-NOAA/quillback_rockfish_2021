@@ -50,3 +50,49 @@ if(file.exists("_main.Rmd")){
   file.remove("_main.Rmd")
 }
 bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
+
+
+
+##--------------------------------WASHINGTON-----------------------------------##
+
+setwd("C:/Users/Brian.Langseth/Desktop/wa/write_up")
+
+#Do once: Set up default document sections. May need to delete a few
+sa4ss::draft(authors = c("Brian J. Langseth",
+                         "Chantel R. Wetzel",
+                         "Jason M. Cope",
+                         "Tien-Shui Tsou",
+                         "Lisa K. Hillier"),
+             species = "Quillback Rockfish",
+             latin = "Sebastes maliger",
+             coast = "Washington US West",
+             type = c("sa"),
+             create_dir = FALSE,
+             edit = FALSE)
+
+#Read in model, assign whether to create plots function. Currently also generates tables
+sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base", 
+                  create_plots = FALSE, 
+                  html = FALSE,
+                  save_loc = file.path(getwd(), "tex_tables"),
+                  verbose = TRUE)
+
+
+# Create tex files from the executive summary tables (may need to rename allcatches table (Catches_All_Years.csv) as catch)
+base.1000 = SS_output("C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base", covar=TRUE)
+SSexecutivesummary(replist = base.1000, format = FALSE) #create table_labels.csv
+sa4ss::es_table_tex(dir = "C:/Users/Brian.Langseth/Desktop/wa/9_0_0_base",
+                    save_loc = file.path(getwd(), "tex_tables"),
+                    csv_name = "table_labels.csv")
+
+# Read and create tex files for tables listed in "table" folder in the doc
+sa4ss::es_table_tex(dir = file.path(getwd(), 'tables'),
+                    save_loc = file.path(getwd(), "tex_tables"),
+                    csv_name = "all_tables.csv")
+
+# Render call
+if(file.exists("_main.Rmd")){
+  file.remove("_main.Rmd")
+}
+bookdown::render_book("00a.Rmd", clean = FALSE, output_dir = getwd())
+

@@ -932,5 +932,239 @@ SS_plots(base.900)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\9_0_0_base", write = FALSE, option = "none") #for first initial pass
 
 
+##########################################################################################
+#                         Pre assessment workshop base model
+##########################################################################################
+
+#Starting with model 900
+
+#1. Exclude age data in dat, and reset lambda in ctl
+#2. Adjust steepness prior SD to 0.158 (was 0.09)
+#3. Change max age to 95 years, adjust natural mortality accordingly (0.057)
+#4. Adjust forecast projection values to pstar values PEPtools::get_buffer (same as copper) 
+#5. Change control rule format in forecast from f(SSB) on F to f(SSB) on catch
+#6. Adjust forecast catch. Previously the value from 2020. Now, take the Washington percentage 
+#of the North ACL (12.9% of 5.73 for 2021 and 5.74 for 2022) apportioned to commercial and recreational
+#based on the average percentage of catch for each from 2018-2020. Because rec catch is in numbers,
+#take the catch in biomass from model 900 for averaging. 
+catchbio = base.900$catch[,c("Yr","Fleet","Obs","kill_num","kill_bio")]
+rec_perc = catchbio[catchbio$Yr %in% c(2018:2020) & catchbio$Fleet == 1,"kill_bio"]/aggregate(kill_bio~Yr,catchbio[catchbio$Yr %in% c(2018:2020),],FUN=sum)$kill_bio
+mean(rec_perc) #97.5%
+#But, need to enter the forecast value in numbers. 
+source("https://raw.githubusercontent.com/nwfsc-assess/PEPtools/master/R/solve_numbers.R")
+solve_numbers(mod_dir = file.path(wd, "10_0_0_base", "just model files","forecasting"), fore_yrs = 2021:2022, 
+              fleet_abc = c(0.7207, 0.7219), fleet = 1)
+
+model = "10_0_0_base"
+base.1000 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1000)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_0_base", write = FALSE, option = "none") #for first initial pass
+
+#Full base version of included recdevs
+#Starting with model 1011 (below), update data weighting, and bias adj as needed
+#Set end of bias adj to 2020
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\sensitivities\\10_1_1_recDevs", write = FALSE, option = "none") #for first initial pass
+model = "10_0_1_recDevs_fullchanges"
+base.1001 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1001)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_1_recDevs_fullchanges", write = FALSE, option = "none") #for first initial pass
+#Still some weighting issues after three iterations but I feel like the general outcome is not going to change much. 
+#Little information gained from including recdevs. 
+
+#Removing early rec length samples (those in the 1980s) but keeping recdevs
+model = "10_0_2_recDevs_noearlyRec"
+base.1002 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1002)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_2_recDevs_noearlyRec", write = FALSE, option = "none") #for first initial pass
+
+#Selex is large compared to copper. Check if selex parms 2 and 4 influence selectivity values.
+model = "10_0_3_4parmSelex"
+base.1003 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1003)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_3_4parmSelex", write = FALSE, option = "none") #for first initial pass
+#No effect
+
+##############################################
+#       Sensitivities - Starting with model 1000
+##############################################
+#Include recruitment deviations
+model = "10_1_1_recDevs"
+base.1011 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1011)
+
+#Data weighting using McAllister-Ianelli
+model = "10_1_2_dw_MI"
+base.1012 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+SS_plots(base.1012)
+
+#Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 1000
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\sensitivities\\10_1_3_dw_DM\\just model files")
+model = "10_1_3_dw_DM"
+base.1013 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1013)
+base.1013$Length_Comp_Fit_Summary
+#Theta/(1+theta) commercial = 0.9836962 (theta = 60.335400)
+#Theta/(1+theta) recreational = 0.1717789 (theta = 0.207407)
+
+#Estimate L infinity
+model = "10_1_4_estlinf"
+base.1014 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1014)
+
+#Estimate L infinity and K
+model = "10_1_5_estlinfK"
+base.1015 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1015)
+#Results are not right. R0 explodes.
+
+#Estimate L infinity and K
+model = "10_1_5_estK"
+base.1015b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1015b)
+#Results are not right. R0 explodes.
+
+#Estimate CV at L2
+model = "10_1_6_estL2CV"
+base.1016 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1016)
+
+#Estimate natural mortality
+model = "10_1_7_estM"
+base.1017 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1017)
+#Selex ests are off. They reach upper bounds. Reset bounds on max selex to be 50.
+#With bounds at 50, max selex reaches bounds but estimate of M is lower. 
+#There is a tradeoff between M and selex. 
+
+#Remove early recreational comps (the 80s)
+model = "10_1_8_noEarlyRec"
+base.1018 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1018)
+
+#Dont fit to commercial comps, but mirror rec comps. Include com comps as ghost fleet
+model = "10_1_9_mirrorCom"
+base.1019 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1019)
+
+#Use dome shaped selectivity selectivity for recreational fleet
+model = "10_1_10_recDome"
+base.10110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.10110)
+
+#Use dome shaped selectivity for commercial fleet
+model = "10_1_11_comDome"
+base.10111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.10111)
+
+#Set block for early recreational comps data (block ending in 1999)
+#Allowed dome shaped for block
+model = "10_1_12_recBlock99"
+base.10112 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.10112)
+
+
+#Compare sensitivities
+sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1016, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+#Linf,K and K runs are unreasonable - exclude for now
+sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+# #L2 CV run is very high, but not unreasonable - exclude for now
+# sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
+# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+# #Linf run is very uncertain - exclude for now
+# #These are model runs for the "subset" plots
+#sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
+#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topright", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.1000_sensitivities_"),
+                  subplot = c(2,4,10), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topright", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.1000_sensitivities_"),
+                  subplot = c(1,3,9), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottom", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.1000_sensitivities_"),
+                  subplot = 12, 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+# Create a Table of Results
+n = length(sens_names)
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Forecast_Recruitment",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_priors",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2020", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2020", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]) )  
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                         "Length Likelihood",
+                         "Recruitment Likelihood",
+                         "Forecast Recruitment Likelihood",
+                         "Parameter Priors Likelihood",
+                         "Parameter Bounds Likelihood",
+                         "log(R0)",
+                         "SB Virgin",
+                         "SB 2020",
+                         "Fraction Unfished 2020",
+                         "Total Yield at SPR 50",
+                         "Steepness",
+                         "Natural Mortality",
+                         "Length at Amin",
+                         "Length at Amax",
+                         "Von Bert. k",
+                         "CV young",
+                         "CV old")
+
+write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.1000_sensitivities.csv")))
+
+t = table_format(x = sens_table,
+                 caption = 'Sensitivities relative to the base model.',
+                 label = 'sensitivities',
+                 longtable = TRUE,
+                 font_size = 9,
+                 digits = 3,
+                 landscape = TRUE,
+                 col_names = sens_names)
+
+kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/sensitivities.tex"))
 
 

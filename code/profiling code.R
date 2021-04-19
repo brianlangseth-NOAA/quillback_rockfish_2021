@@ -76,6 +76,50 @@ model_settings$jitter_fraction = 0.1
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
+
+####################
+#Proposed base run 10_0
+####################
+base_name = "10_0_0_baseProfile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.30, -0.5, 40, 0.15),
+                            high = c(0.09, 0.99,  2, 46, 0.25),
+                            step_size = c(0.01, 0.10, 0.25, 0.5, 0.01),
+                            param_space = c('real', 'real', 'relative', 'real', 'real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+
+model_settings$jitter_fraction = 0.1 #also tried 0.25
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+
+
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+                            low =  c(-0.5),
+                            high = c(2),
+                            step_size = c(0.25),
+                            param_space = c('relative'))
+get = get_settings_profile( parameters =  c("SR_BH_steep"),
+                            low =  c(0.3),
+                            high = c(0.9),
+                            step_size = c(0.1),
+                            param_space = c('real'))
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile"),
+                                              profile_details = get ))
+model_settings$extras = NULL #remove the no hessian option
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+
+
+
 #######################################################################################################
 # Oregon
 #####################################################################################################
