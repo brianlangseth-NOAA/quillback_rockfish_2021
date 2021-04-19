@@ -34,9 +34,7 @@ There were `r tail(model$parameters$Active_Cnt,1)` estimated parameters in the b
 
 Fixed parameters in the model were as follows. Steepness was fixed at `r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`, and natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)`, as described above in Section \ref{priors}. Growth, maturity-at-length, and length-at-weight were fixed as described above in Section \ref{biological-data}. The standard deviation of recruitment deviates was fixed at `r round(model$parameters[model$parameters$Label == "SR_sigmaR","Value"],2)`. Sensitivity analyses and likelihood profiles were performed for steepness, natural mortality, length at maximum size, and vonBertalanffy growth coefficient. 
 
-Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure [sampson]
-
-[Ali provide justification for dome shape for the rec fleet]
+Dome-shaped selectivity was explored for all fleets within the model. Older and larger `r spp` may be found in deeper waters and may move into areas that limit their availability to fishing gear as they mature. Dome shaped selectivity can also occur under heterogeneous fishing pressure across space by fleets [@Waterhouseetal_spatialSelex_2014].
 
 The final base model estimated dome-shaped selectivity for the recreational fishery. The selectivty for the commercial fishery was fixed as asymptotic. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. 
 

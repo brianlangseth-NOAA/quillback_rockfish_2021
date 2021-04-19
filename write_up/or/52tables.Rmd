@@ -191,6 +191,7 @@ table_format(x = mod_params,
 <!-- ***********       Time Series      ******************** --> 
 <!-- ======================================================= -->
 
+<!-- tab:timeseries -->
 \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/TimeSeries.tex}
 
 \newpage
