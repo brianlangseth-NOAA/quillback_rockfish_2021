@@ -1,0 +1,2283 @@
+\input{input_accessability.tex}
+\documentclass[11pt,
+  english,
+  a4paper,
+]{article}
+\usepackage{sa4ss}
+\usepackage{amsmath,amssymb,array}
+\usepackage{booktabs}
+
+% From tagged-template.latex
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\hypersetup{
+  pdftitle={Status of Quillback Rockfish (Sebastes maliger) along the Washington US West coast in 2021},
+  pdflang={en},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{english}
+\else
+  \usepackage[shorthands=off,main=english]{babel}
+\fi
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+\date{}
+\newcommand{\trTitle}{Status of Quillback Rockfish (\emph{Sebastes maliger}) along the Washington US West coast in 2021}
+\newcommand{\trYear}{2021}
+\newcommand{\trMonth}{April}
+\newcommand{\trAuthsLong}{true}
+\newcommand{\trAuthsBack}{Langseth, B.J., C.R. Wetzel, J.M. Cope, T.-. Tsou, L.K. Hillier}
+\newcommand{\trCitation}{
+\begin{hangparas}{1em}{1}
+\trAuthsBack{}. \trYear{}. \trTitle{}. Pacific Fisheries Management Council, Portland, Oregon. \pageref{LastPage}{}\,p.
+\end{hangparas}}
+
+\AtBeginDocument{\tagstructbegin{tag=Document}}
+\AtEndDocument{\tagstructend}
+\pretocmd{\maketitle}{\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}}{}{}
+\apptocmd{\maketitle}{\tagmcend\tagstructend}{}{}
+
+\begin{document}
+
+%%%%% Frontmatter %%%%%
+
+% Footnote symbols in front matter
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\small
+\thispagestyle{empty}
+\pagenumbering{roman}
+\noindent
+\begin{center}
+\title{Status of Quillback Rockfish (\emph{Sebastes maliger}) along the Washington US West coast in 2021}
+% \textnormal{\MakeTextUppercase{\trTitle{}}}
+\vspace{1.5cm}
+{\Large\textbf\newline{Status of Quillback Rockfish (\emph{Sebastes maliger}) along the Washington US West coast in 2021}}
+\vfill
+by\\
+Brian J. Langseth\textsuperscript{1}\\
+Chantel R. Wetzel\textsuperscript{1}\\
+Jason M. Cope\textsuperscript{1}\\
+Tien-Shui Tsou\textsuperscript{2}\\
+Lisa K. Hillier\textsuperscript{2}\vfill
+\textsuperscript{1}Northwest Fisheries Science Center, U.S. Department of Commerce, National Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725 Montlake Boulevard East, Seattle, Washington 98112\\
+\textsuperscript{2}Washington Department of Fish and Wildlife, 600 Capital Way North, Olympia, Washington 98501\vfill
+\trMonth{} \trYear{}
+\end{center}
+\clearpage
+
+% Fourth page: Colophon
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\copyright{} Pacific Fisheries Management Council, \trYear{}\\
+\end{center}
+\par
+\bigskip
+\noindent
+Correct citation for this publication:
+\bigskip
+\par
+\trCitation{}
+\clearpage
+
+% Add TOC to pdf bookmarks (clickable pdf)
+\pdfbookmark[1]{\contentsname}{toc}
+
+% Table of contents page, lists of figures and tables
+\tableofcontents\clearpage
+\listoffigures \listoftables \clearpage
+\label{TRlastRoman}
+\clearpage
+
+% Table of contents
+\newpage
+\thispagestyle{empty} % to remove page number
+
+% Settings for the main document
+\pagenumbering{arabic}  % Regular page numbers
+\pagestyle{plain}  % No page number on first page of main document, use 'empty'
+\renewcommand*{\thefootnote}{\arabic{footnote}}  % Back to numeric footnotes
+\setcounter{footnote}{0}  % And start at 1
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%\pagestyle{fancy}\fancyhead[c]{Draft: Do not cite or circulate}
+
+\newcommand{\lt}{\ensuremath <}
+\newcommand{\gt}{\ensuremath >}
+
+%Define cslreferences environment, required by pandoc 2.8
+%https://github.com/rstudio/rmarkdown/issues/1649
+
+\pagebreak
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\renewcommand{\thetable}{\roman{table}}
+\renewcommand{\thefigure}{\roman{figure}}
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{executive-summary}{%
+\section*{Executive Summary}\label{executive-summary}}
+\addcontentsline{toc}{section}{Executive Summary}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{stock}{%
+\subsection*{Stock}\label{stock}}
+\addcontentsline{toc}{subsection}{Stock}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+This assessment reports the status of quillback rockfish (\emph{Sebastes maliger}) off the Washington US West coast using data through xxxx.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{landings}{%
+\subsection*{Landings}\label{landings}}
+\addcontentsline{toc}{subsection}{Landings}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{data-and-assessment}{%
+\subsection*{Data and Assessment}\label{data-and-assessment}}
+\addcontentsline{toc}{subsection}{Data and Assessment}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{stock-biomass}{%
+\subsection*{Stock Biomass}\label{stock-biomass}}
+\addcontentsline{toc}{subsection}{Stock Biomass}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{recruitment}{%
+\subsection*{Recruitment}\label{recruitment}}
+\addcontentsline{toc}{subsection}{Recruitment}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{exploitation-status}{%
+\subsection*{Exploitation Status}\label{exploitation-status}}
+\addcontentsline{toc}{subsection}{Exploitation Status}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{reference-points}{%
+\subsection*{Reference Points}\label{reference-points}}
+\addcontentsline{toc}{subsection}{Reference Points}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{management-performance}{%
+\subsection*{Management Performance}\label{management-performance}}
+\addcontentsline{toc}{subsection}{Management Performance}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{unresolved-problems-and-major-uncertainties}{%
+\subsection*{Unresolved Problems and Major Uncertainties}\label{unresolved-problems-and-major-uncertainties}}
+\addcontentsline{toc}{subsection}{Unresolved Problems and Major Uncertainties}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{decision-table}{%
+\subsection*{Decision Table}\label{decision-table}}
+\addcontentsline{toc}{subsection}{Decision Table}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{research-and-data-needs}{%
+\subsection*{Research and Data Needs}\label{research-and-data-needs}}
+\addcontentsline{toc}{subsection}{Research and Data Needs}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Replace text.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\pagebreak
+\setlength{\parskip}{5mm plus1mm minus1mm}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{basic-information}{%
+\subsection{Basic Information}\label{basic-information}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+This assessment reports the status of quillback rockfish (\emph{Sebastes maliger}) off the Washington coast using data through 2020.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The stock off the Washington coast was assessed as a separate stock from other populations off the U.S. West Coast based on two factors. First, the fairly sedentary nature of quillback rockfish likely limits flow of fish to Oregon {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Hannah and Rankin 2011; Tolimieri et al. 2009)\leavevmode\tagmcend\tagstructend}. Additionally, the primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as quillback rockfish associate with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate. Second, the exploitation history and magnitude of removals off the Washington coast differ from those in Oregon and California.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{life-history}{%
+\subsection{Life History}\label{life-history}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002)\leavevmode\tagmcend\tagstructend}. Off the U.S. West Coast quillback rockfish are primarily located north of central California, with rare observations south of Point Conception. `r Spp' have historically been a part of both commercial and recreational fisheries throughout their range.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002)\leavevmode\tagmcend\tagstructend}. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans, and fish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Murie 1995)\leavevmode\tagmcend\tagstructend}. The body coloring or adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002)\leavevmode\tagmcend\tagstructend}. As their name suggests, quillback rockfish have long dorsal fin spines.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Limited studies have been performed looking at genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Seeb 1998; Stout et al. 2001)\leavevmode\tagmcend\tagstructend}, however {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Seeb 1998)\leavevmode\tagmcend\tagstructend} did not find significant differentiation in populations of quillback rockfish between Washington and Alaska when Puget Sound samples were excluded. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (\emph{Sebastes caurinus}), indicating limited oceanographic exchange among geographically proximate locations {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Seeb 1998; Buonaccorsi et al. 2002; Johansson et al. 2008)\leavevmode\tagmcend\tagstructend}. High site-fidelity {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Hannah and Rankin 2011)\leavevmode\tagmcend\tagstructend} and relatively small home ranges {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Tolimieri et al. 2009)\leavevmode\tagmcend\tagstructend} for quillback rockfish suggests similar patterns of isolation-by-distance as found for other rockfish.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish are a long-lived rockfish estimated to live up to 95 years {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002; Yamanako and Lacko 2001)\leavevmode\tagmcend\tagstructend}. Quillback rockfish was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Cope et al. 2011)\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{ecosystem-considerations}{%
+\subsection{Ecosystem Considerations}\label{ecosystem-considerations}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Replace text if want to / have to include{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{historical-and-current-fishery-information}{%
+\subsection{Historical and Current Fishery Information}\label{historical-and-current-fishery-information}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Off the Washington coast Quillback rockfish is primarily caught in the recreational fishery but in general is not targeted by either commercial or recreational fleets (Table \ref{tab:catch} and Figure \ref{fig:catch}). Recreational landings of quillback rockfish were provided by the WDFW and were available from 1958 to present with a linear interpolation applied where data are missing. Recreational harvest is focused in the central and northern regions in areas of rocky habitat. Although populations are considered to be widespread in the nearshore marine environment, abundance may be limited along the southern coast which consists primarily of soft and sandy substrate.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Commercial landings data are available from WDFW historical reconstruction prior to 1981 and from PacFIN from 1981 through 2020. Washington closed state waters to commercial fixed gears in 1995 and to trawling in 1999 and the depths preferred by quillback rockfish are predominantly found within state waters. In response to the development of the live-fish fishery in California and Oregon, Washington took preemptive action in 1999 to prevent the fishery from developing by prohibiting the landing of live-fish. There are four treaty tribes of the Washington coast that continue to fish under separate commercial rules and are not subject to the state water closure that occasionally land small amounts of quillback rockfish. Quillback rockfish are usually landed in the Nearshore Rockfish group, a mixed-species market category. Species composition samples were taken from sampled landings and proportions of quillback rockfish reported in the Nearshore market category are estimated by port, quarter, gear, and year. In 2020, COVID-19 closures of tribal lands prevented samplers from accessing all commercial catch, so an average proportion of quillback rockfish in 2017 - 2019 was applied to all associated tribal landings.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{summary-of-management-history-and-performance}{%
+\subsection{Summary of Management History and Performance}\label{summary-of-management-history-and-performance}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish is managed by the Pacific Fishery Management Council (PFMC) as a part of the Nearshore Rockfish North and Nearshore Rockfish South complexes. The North and South complexes are split at N. 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' Lat. N. off the U.S. West Coast. Each complex is managed based on a complex-level overfishing limit (OFL) and annual catch limit (ACL). The OFL and ACL values for the complexes are determined by summing the species specific OFLs and ACLs managed within each complex. Removals for species within each Nearshore complex are managed and tracked against the complex total OFL and ACL, rather than on a species by species basis.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish was most recently assessed in 2010 using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide OFLs ({\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Dick and MacCall 2010)\leavevmode\tagmcend\tagstructend}). The coastwide OFL was then apportioned to each management area based on the proportion of historical catches North and South of 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' Latitude. DB-SRA does not assess overfished status, but assuming that current depletion was at the management target on average (e.g.~40\%), the 2010 assessment found that quillback rockfish had a 52\% chance of experiencing overfishing, in that recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The current OFL and ACLs for quillback rockfish North of 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' Lat. N., the state/specific ACL allocation (58.4\% for Washington; Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{foreign-fisheries}{%
+\subsection{Foreign Fisheries}\label{foreign-fisheries}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish are harvested commercially and recreationally in Puget Sound under the Puget Sound Groundfish Management Plan, co-managed by the WDFW and the Treaty Tribes of Washington. Quillback rockfish are caught along with many other rockfish species. Landings in Puget Sound of all rockfish were high in the 1980s and 1990s but have since decreased in the 2000s ({\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Palsson et al. 2009)\leavevmode\tagmcend\tagstructend}). Current commercial landings of quillback rockfish in Puget Sound are minimal. Recreational landings of quillback rockfish are approximately 15 percent of rockfish landings and averaged around 5000 pounds annually from 2004-2007 {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Palsson et al. 2009)\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish are also harvested commercially and recreationally in Canada under DFOs groundfish hook and line fishery management in aggregate with other rockfish species. The total commercial catch limit for this aggregate group is 161 t in 2005/2006 and the recreational fishery is managed by bag limits ({\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(COSEWIC 2009)\leavevmode\tagmcend\tagstructend}). The status of quillback rockfish in Canada is threatened ({\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(COSEWIC 2009)\leavevmode\tagmcend\tagstructend}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{data}{%
+\section{Data}\label{data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The following types and sources of data were used in this assessment. Fishery catch and composition data were specific to Washington, however biological data were estimated coastwide and included Oregon, Washington, and California sources.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=L}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \tagstructbegin{tag=LI}\tagstructbegin{tag=LBody}\tagmcbegin{tag=P}
+
+  Commercial landings, and length, weight, and age data obtained from PacFIN and the Washington Department of Fish and Wildlife (WDFW). Age compositions were not fit in the model.
+
+  \tagmcend\tagstructend\tagstructend
+\item
+  \tagstructbegin{tag=LI}\tagstructbegin{tag=LBody}\tagmcbegin{tag=P}
+
+  Estimates of commercial discard length frequencies and fraction discarded in the fishery obtained from the West Coast Groundfish Observer Program (WCGOP).
+
+  \tagmcend\tagstructend\tagstructend
+\item
+  \tagstructbegin{tag=LI}\tagstructbegin{tag=LBody}\tagmcbegin{tag=P}
+
+  Recreational landings, discards, and length, weight, and age data obtained from RecFIN and the WDFW. Age compositions were not fit in the model.
+
+  \tagmcend\tagstructend\tagstructend
+\item
+  \tagstructbegin{tag=LI}\tagstructbegin{tag=LBody}\tagmcbegin{tag=P}
+
+  Fishery independent biological data (length, weight, and age) from the NWFSC WCGBTS survey.
+
+  \tagmcend\tagstructend\tagstructend
+\item
+  \tagstructbegin{tag=LI}\tagstructbegin{tag=LBody}\tagmcbegin{tag=P}
+
+  Estimates of fecundity, maturity, and mortality from various sources.
+
+  \tagmcend\tagstructend\tagstructend
+\end{enumerate}
+
+\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A description of each data type is provided below, with timing of catch and composition data used in the base model shown in (Figure \ref{fig:data-plot}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}are commercial data really from PacFIN or should I be more precise? Similarly, are recreational data really from RecFIN or should I say ORBS and MRFSS?{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{fishery-dependent-data}{%
+\subsection{Fishery-Dependent Data}\label{fishery-dependent-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{commercial-data}{%
+\subsubsection{Commercial Data}\label{commercial-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H4}\tagmcbegin{tag=H4}
+
+\hypertarget{landings-1}{%
+\paragraph{Landings}\label{landings-1}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Commercial landings of quillback rockfish in Washington were provided directly by Washington Department of Fish and Wildlife (WDFW) for years ranging from 1889 to 2014 and compiled from PacFIN for years from 2015 to 2020. Only eight of the years before 1973 have non-zero landings, and all are less than 0.04 mt. Consequently, we exclude landings before 1973 for this assessment. There is limited commercial fishery removals of quillback rockfish off the Washington coast and not all years have commercial landings. The highest annual landing was 2.20 mt in 1973 with only three other years exceeding 1 mt of harvest (1989, 1990, and 2000). Washington closed state waters to commercial fixed gears in 1995 and to trawling in 1999. Quillback rockfish are occasionally encountered as bycatch in other commercial fisheries and there are four treaty tribes off the Washington coast that fish under separate commercial rules and are not subject to the state water closures. quillback rockfish is landed as part of the mixed nearshore rockfish market category and species composition data are applied. In 2020, access to Neah Bay was closed for commercial fisheries sampling due to the Covid-19 pandemic, so an average proportion for quillback rockfish composition data taken from 2017-2019 was applied to the nearshore rockfish market category for the Neah Bay Port group in 2020.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The input catches in the model represent total removals: landings plus discards (Table \ref{tab:catch} and Figure \ref{fig:catch}). Discards totals for the commercial fleet for years between 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards were allocated by state and area based on the total observed landings observed by WCGOP. Discards were added to landings in years where landings were non-zero to obtain total removals for 2002-2019. Total removals prior to 2002, and for 2020 where no WCGOP data were yet available, were calculated based on the average discard rates from WCGOP for years within both landings and discards for Washington (8.3 percent).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H4}\tagmcbegin{tag=H4}
+
+\hypertarget{length-compositions}{%
+\paragraph{Length Compositions}\label{length-compositions}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Available length data collected from commercial fisheries from 1980-2019 was extracted from PacFIN for Washington quillback rockfish (Table \ref{tab:com-len-samps}, extracted 2/23/2021). No commercial length samples were collected in 2020 due to sampling restrictions caused by the Covid-19 pandemic. There are very few length samples of quillback rockfish from commercial fisheries in Washington. The largest number of length samples (n = 106) occurs for 2006, while every other year had fewer than 20 samples.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The distribution of the lengths in the commercial data was variable and ranged between 20 - 50 cm (the maximum length data bin size, Figure \ref{fig:com-len-data}). Given the high number of samples in 2006 compared to other years, the aggregate lengths were very similar to the length data for 2006 (Figure \ref{fig:wa-len-agg})). The mean size observed by the commercial fishery was variable within and across years (Figure \ref{fig:mean-com-len-data}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The input sample sizes for the commercial length data were calculated via the Stewart method (Ian Stewart, personal communication) which incorporate the number of trips and fish by year:
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{centering}
+
+Input effN = $N_{\text{trips}} + 0.138 * N_{\text{fish}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $<$ 44
+
+Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is $\geq$ 44
+
+\end{centering}
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Despite the variability in commercial lengths due to small samples size, the model was able to estimate selectivity for the commercial fleet, and therefore commercial length were kept for the base model. A sensitivity setting the selectivity of the commercial fleet to mirror that of the recreational fleet was applied (see Section \ref{sensitivity-analyses} for details).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{recreational-sport-data}{%
+\subsubsection{Recreational / Sport Data}\label{recreational-sport-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H4}\tagmcbegin{tag=H4}
+
+\hypertarget{landings-2}{%
+\paragraph{Landings}\label{landings-2}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The first year of recreational removals in the model was 1958 and are the primary source of fishing mortality for quillback rockfish (Table \ref{tab:catch} and Figure \ref{fig:catch}). Removals were specified in numbers of fish (1,000s) and were converted to metric tons internally to the model (Table \ref{tab:nums-mt}). Annual retained catch (in numbers) from the Washington recreational fishery from 1975 to 1990 were provided from WDFW published historical information. Retained catch for years prior to 1975 were calculated based on a linear interpolation for missing data back to 1958. Recreational data from 1990 through 2020 are from WDFW's Ocean Sampling Program (OSP) and the Puget Sound baseline (PSB) sampling program. Discard estimates are available from 2002 through 2020 from the OSP and PSB program. Prior to 2002 discard estimates are based on a linear regression of discard to retained catch. Throughout the time series a discard mortality rate was applied by harvest depth if information was available. An overall discard mortality of 31\% was applied to quillback rockfish if harvest depth was unknown. Mortality rates by depth have been reviewed and approved by the PFMC Science and Statistical Committee. The sum of retained and dead released quillback rockfish made up the total removal (in numbers) from the recreational fishery. The recreational removals generally increased over-time, spiked in 1990 to an all time high, declined until the mid 2010s and and have since steadied to around 1,500 fish per year, excluding 2019.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Why 1958 as end year of catch?{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H4}\tagmcbegin{tag=H4}
+
+\hypertarget{length-compositions-1}{%
+\paragraph{Length Compositions}\label{length-compositions-1}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Length compositions for the recreational fleet were available in 1981, 1982, 1983, 1987, and then each year from 1995 - 2020 (Table \ref{tab:len-samps}). Sample sizes were minimal in years before 1995. The distribution of lengths of quillback rockfish observed by the recreational fleet ranged between 20 - 50 cm (the maximum length data bin size, Figure \ref{fig:rec-len-data}). The mean length observed by year had limited variation since 1995 ranging between 35 - 40 cm and increasing slightly over time (Figure \ref{fig:mean-rec-len-data}). Mean length in years prior to 1995, which had small sample sizes, was highly variable.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The input sample sizes for the recreational length data were calculated equal to the number of length samples available by year.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{fishery-independent-data}{%
+\subsection{Fishery-Independent Data}\label{fishery-independent-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS, and historically the Triennial survey, collect data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey was used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{biological-data}{%
+\subsection{Biological Data}\label{biological-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+This assessment modeled quillback rockfish as a single sex. Data available were generally sparse, growth and length-weight relationships were similar across sexes, and the literature provided limited evidence of sexual dimorphism in length {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Lenarz and Echeverria 1991)\leavevmode\tagmcend\tagstructend}. The sections below therefore describe combined male and female biological data.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Do I need to provide more evidence justifying the choice to combine genders? For example, gender specific plots of W-L or L-A, sex ratios by age or length?{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{natural-mortality}{%
+\subsubsection{Natural Mortality}\label{natural-mortality}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Hamel {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend} developed a method for combining meta-analytic approaches relating instantaneous natural mortliaty rate ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}) to other life-history parameters such as longevity, size, growth rate, and reproductive effort to provide a prior on {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}. Then et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend} provided an updated data set of estimates of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} and related life history parameters across a large number of fish species from which to develop an {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} estimator for fish species in general. They concluded by recommending {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} estimates be based on maximum age alone, based on an updated Hoenig non-linear least-squares estimator {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M=4.899A^{-0.916}_{max}\)\leavevmode\tagmcend\tagstructend}. The approach of basing {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} priors on maximum age alone was one that was already being used for West Coast rockfish assessments. However, in fitting the alternative model forms relating {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} to {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(A_{\text{max}}\)\leavevmode\tagmcend\tagstructend}, Then et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend} did not consistently apply their transformation. In particular, in real space, one would expect substantial heteroscedasticity in both the observation and process error associated with the observed relationship of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} to {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(A_{\text{max}}\)\leavevmode\tagmcend\tagstructend}. Therefore, it would be reasonable to fit all models under a log transformation. This was not done. Re-evaluating the data used in Then et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend} by fitting the one-parameter {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(A_{\text{max}}\)\leavevmode\tagmcend\tagstructend} model under a log-log transformation (such that the slope is forced to be -1 in the transformed space Hamel {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend}), the point estimate for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} is:
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{centering}
+
+$M=\frac{5.4}{A_{\text{max}}}$
+
+\end{centering}
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The above is also the median of the prior suggested by Hamel {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend}. The prior is defined as a log normal distribution with parameters {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\mu = ln(5.4/A_{\text{max}})\)\leavevmode\tagmcend\tagstructend} and {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma = 0.438\)\leavevmode\tagmcend\tagstructend}. Using a maximum age of 90 years, the point estimate and median of the prior for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} is 0.057 per year.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The maximum age was selected based on literature values for the U.S. West Coast examining the longevity of quillback rockfish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002; Palsson et al. 2009; Yamanako and Lacko 2001)\leavevmode\tagmcend\tagstructend}. The oldest aged quillback rockfish among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{maturation-and-fecundity}{%
+\subsubsection{Maturation and Fecundity}\label{maturation-and-fecundity}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Maturity-at-length estimates were based on the work of Hannah and Blume {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2014)\leavevmode\tagmcend\tagstructend} which estimated the 50\% size-at-maturity of 29.2 cm and slope of -0.8 off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50\% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which range 26-32 cm {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Echeverria 1987; Rosenthal et al. 1982)\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The fecundity-at-length was based on research by Dick et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2017)\leavevmode\tagmcend\tagstructend}. The fecundity relationship for quillback rockfish was estimated equal to 3.93e-07{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L\)\leavevmode\tagmcend\tagstructend}\textsuperscript{3.7} in millions of eggs where {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L\)\leavevmode\tagmcend\tagstructend} is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{length-weight-relationship}{%
+\subsubsection{Length-Weight Relationship}\label{length-weight-relationship}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The length-weight relationship for quillback rockfish was estimated outside the model using available coastwide biological data collected from fishery-independent and fishery-dependent data sources (Figure \ref{fig:len-weight-survey}). Sources included the WCGBTS, and recreational and commercial samples from all states (Table \ref{tab:len-at-weight-samps}). Weights from Oregon special projects samples taken from the Oregon recreational and commercial fleets (n = 241) were not included. Only measured weight or length values were used; any values with more than two decimal places were assumed to be calculated from another measurement and were excluded. This occurred for 32 percent of lengths and 20 percent of the weights in the MRFSS-era recreational samples. The estimated length-weight relationship for quillback rockfish was 1.963e-05{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L\)\leavevmode\tagmcend\tagstructend}\textsuperscript{3.02} where {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L\)\leavevmode\tagmcend\tagstructend} is fork length in cm (Figures \ref{fig:len-weight}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{growth-length-at-age}{%
+\subsubsection{Growth (Length-at-Age)}\label{growth-length-at-age}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The length-at-age relationship for quillback rockfish was estimated outside the model using data collected from fishery-dependent sources off the coast of Oregon and Washington collected between 1998-2019, and from a single coastwide fishery-independent sources (WCGBT Survey) collected between 2005-2019 (Table \ref{tab:len-at-age-samps}). Ages from Oregon special projects samples taken from the Oregon commercial fleet (n = 30) were not included. Age data was generally sparase for quillback rockfish from any one source. The fishery-dependent data had limited observations of young fish less than 5 years of age, but had observations of fish up to 73 years of age, and the fishery-independent data had limited observations of old fish greater than 40 years of age, but had observations of fish as young as one year of age. Growth parameters for quillback rockfish were estimated at the following values:
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{centering}
+
+$L_{\infty}$ = 43.04 cm; $k$ = 0.199; $t0$ = -0.067 cm  
+
+\end{centering}
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}. The estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} is comparable to literature values, while the estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} is on the higher side of literature values which vary from 0.06 - 0.19 {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Yamanako and Lacko 2001; Palsson et al. 2009; West, Helser, and O'Neill 2014)\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-age, and spawning output (the product of fecundity and maturity) assumed in the base model.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Is it typical not to include t0? Its not an SS parameter but it does affect the estimate of L1. Should I instead include L1?{]} {[}Should I state here that this is a higher K than other studies, and high for the longevity of the species{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{sex-ratio}{%
+\subsubsection{Sex Ratio}\label{sex-ratio}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Given the base model was of combined sexes, the sex ratio was assumed to be 1:1.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{ageing-precision-and-bias}{%
+\subsubsection{Ageing Precision and Bias}\label{ageing-precision-and-bias}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Ages were not fit in the model.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Just remove this section?{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{assessment-model}{%
+\section{Assessment Model}\label{assessment-model}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{summary-of-previous-assessments}{%
+\subsection{Summary of Previous Assessments}\label{summary-of-previous-assessments}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish was last assessed in 2010 ({\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Dick and MacCall 2010)\leavevmode\tagmcend\tagstructend}). The stock was assessed using Depletion-Based Stock Reduction Analysis (DB-SRA) which is a data-limited approach that incorporates catch data with priors on select parameters including natural mortality, the ratio of fishing mortality at maximum sustainable yield to natural mortality, current depletion, and the depletion at maximum sustainable yield to estimate overfishing status, but not overfished status. Quillback rockfish was assessed as a single coastwide stock to generate an overall OFL that was then apportioned to each management area based on the proportion of historical catches North and South of 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' Lat. N.. Assuming that current depletion was at the management target on average (e.g.~40\%), the 2010 assessment found that quillback rockfish had a 52\% chance of experiencing overfishing coastwide.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{bridging-analysis}{%
+\subsubsection{Bridging Analysis}\label{bridging-analysis}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A direct bridging analysis was not conducted because the previous assessment was structured as a single coastwide model. The previous assessment also used DB-SRA, which uses different assumptions and data than the model used for this assessment, making a bridging analysis intractable.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{model-structure-and-assumptions}{%
+\subsection{Model Structure and Assumptions}\label{model-structure-and-assumptions}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Washington US West coast quillback rockfish was assessed using a one-sex model with life history parameters combined across sexes. The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in 1958. Selectivity for the commercial and recreational fleets was specified to be asymptotic using the six-parameter double normal parameterization within Stock Synthesis. The ascending width and beginning size of maximum selectivity parameters were estimated. Annual recruitment deviations were not estimated within the base model.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{modeling-platform-and-structure}{%
+\subsubsection{Modeling Platform and Structure}\label{modeling-platform-and-structure}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Stock Synthesis (SS) version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version 1.41.0, along with R version 4.0.2 were used to investigate and plot model fits. The NWFSC developed R packages nwfscSurvey\_2.0 and PacFIN.Utilities\_0.0.2.0000 were used for synthesis and processing of data for use in Stock Synthesis.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{priors}{%
+\subsubsection{Priors}\label{priors}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Priors were used with fixed parameter values for natural mortality and steepness in the base model. The prior distribution for natural mortality was based on the Hamel {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2015)\leavevmode\tagmcend\tagstructend} meta-analytic approach with an assumed maximum age of 90 years. The prior assumed a lognormal distribution for natural mortality with a median of 0.057 and a standard deviation of 0.48.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The prior for steepness assumed a beta distribution with mean of 0.72 and standard deviation of 0.158. The prior parameters are based on the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA) which was reviewed and endorsed by the Scientific and Statistical Committee (SSC) in 2017. However, this approach was subsequently rejected for future analysis in 2019 when the new meta-analysis resulted in a mean value of approximately 0.95. In the absence of a new method for generating a prior for steepness the default approach reverts to the previously endorsed method, the 2017 value.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{data-weighting}{%
+\subsubsection{Data Weighting}\label{data-weighting}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Length composition data for the comercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-data}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The base model was weighted using the ``Francis method'', which was based on equation TA1.8 in Francis {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2011)\leavevmode\tagmcend\tagstructend}. This formulation looks at the mean length or age and the variance of the mean to determine if across years, the variability is explained by the model. If the variability around the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in weighting using McAllister-Ianelli Harmonic Mean Weighting (McAllister et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(1997)\leavevmode\tagmcend\tagstructend}) and the Dirichlet Multinomial Weighting (Thorson et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2017)\leavevmode\tagmcend\tagstructend}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{estimated-and-fixed-parameters}{%
+\subsubsection{Estimated and Fixed Parameters}\label{estimated-and-fixed-parameters}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+There were 5 estimated parameters in the base model. These included one parameter for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}, and 4 parameters for selectivity (Table \ref{tab:params}). Selectivity in the recreational and commercial fleets was fixed to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model. Older quillback rockfish are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure {[}sampson{]}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Fixed parameters in the model were as follows. Steepness was fixed at 0.72, and natural mortality was fixed at 0.057, as described above in Section \ref{priors}. Recruitment was deterministic, following the value of recruitment from the recruitment function. Growth, maturity-at-length, and length-at-weight were fixed as described above in Section \ref{biological-data}. Sensitivity analyses and likelihood profiles were performed for steepness, natural mortality, length at maximum size, and vonBertalanffy growth coefficient.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{model-selection-and-evaluation}{%
+\subsection{Model Selection and Evaluation}\label{model-selection-and-evaluation}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The base assessment model for quillback rockfish was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of quillback rockfish off the Washington US West coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{base-model-results}{%
+\subsection{Base Model Results}\label{base-model-results}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The base model parameter estimates along with approximate asymptotic standard errors are shown in Table \ref{tab:params} and the likelihood components are shown in Table \ref{tab:likes}. Estimates of derived reference points and approximate 95 percent asymptotic confidence intervals are shown in Table \ref{tab:referenceES}. Estimates of stock size and status over time are shown in Table \ref{tab:timeseries}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{parameter-estimates}{%
+\subsubsection{Parameter Estimates}\label{parameter-estimates}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Estimated parameter values are provided in Table \ref{tab:params}. The {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend} was estimated at 2. The selectivity curves for the commercial and recreational fleet are shown in Figure \ref{fig:selex}. Selectivity was fixed to be asymptotic with a peak in maximum selectivity for the commercial fleet starting at cm and a peak in maximum sleectivity for the recreational fleet starting at 44.1. Sensitivities to the selectivity shape and potential exclusion of sparse years of length data for both the commercial and recreational fleets were explored (see below in the {\tagstructbegin{tag=Link}\tagmcbegin{tag=Link}\protect\hyperlink{sensitivity-analyses}{Sensitivity Analyses}\leavevmode\tagmcend\tagstructend} section).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Recruitment discussion??{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{fits-to-the-data}{%
+\subsubsection{Fits to the Data}\label{fits-to-the-data}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for the commercial and recreational fleets. The Pearson residuals for the commercial fishery are generally uninformative given the sparseness of the commercial length data (Figure \ref{fig:com-pearson}). Input sample size was largest in 2006, and then in 2014 and 2019, and the model fit length data in these years relatively well (see {\tagstructbegin{tag=Link}\tagmcbegin{tag=Link}\protect\hyperlink{append_a}{Appendix A}\leavevmode\tagmcend\tagstructend} for details). The mean lengths observed by the commercial fishery are highly variable by year however mean length in the most well sampled years (2006, 2014, and 2019) are well fit (Figure \ref{fig:com-mean-len-fit}). A sensitivity fixing the selectivity of the commercial fleet to mirror that of the recreational selectivity was performed and presented in the {\tagstructbegin{tag=Link}\tagmcbegin{tag=Link}\protect\hyperlink{sensitivity-analyses}{Sensitivity Analyses}\leavevmode\tagmcend\tagstructend} section below.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The Pearson residuals for the recreational fishery show a pattern of greater observations that start around 1995 and appear to move through the length data by year, possibly indicating a strong or multiple strong recruitments entering the population (Figure \ref{fig:rec-pearson}) as length data start to be available. The base model did not estimate annual recruitment deviations due to recruitment deviations being generally uninformative which would have allowed the model to better fit these data. The assessment of quillback rockfish off the Oregon coast which did include annual recruitment deviations estimated strong recruitment in 1993 and 1995 indicating that oceanographic forces that drive recruitment success or failure may be shared across Oregon and Washington. However, the length data for Washington suggest little recruitment over the last two decades, contrary to the quillback rockfish assessment off the Oregon coast. The mean lengths across years starting in 1995 show increasing size in the population ranging roughly between 33 to 40 cm by year that the model overfits in the early years and underfits in recent years (Figure \ref{fig:rec-mean-len-fit}). Detailed fits to the length data by year are provided in {\tagstructbegin{tag=Link}\tagmcbegin{tag=Link}\protect\hyperlink{append_a}{Appendix A}\leavevmode\tagmcend\tagstructend}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}. There are a few things that stand out when examining the aggregated length composition data. First, the estimated fits to the data match the general shape of the aggregated lengths as well as the observed ranges of lengths. Both fleets show a similar aggregated peak around 40 cm, yet the recreational fleet shows proportionally more smaller fish than the commercial fleet. Second, the model expects a higher proportion of the largest fish relative to the data. This may indicate that the true selectivity of the recreational fleet may have some level of reduced selectivity for the largest fish (dome-shaped). Sensitivities examining dome-shaped and estimating annual recruitment deviations were performed and presented in the {\tagstructbegin{tag=Link}\tagmcbegin{tag=Link}\protect\hyperlink{sensitivity-analyses}{Sensitivity Analyses}\leavevmode\tagmcend\tagstructend} section below.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{population-trajectory}{%
+\subsubsection{Population Trajectory}\label{population-trajectory}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The predicted spawning output from the base model generally showed a steady decline over the early part of the time series with the spawning output stabilizing around 2010 and increasing in recent years. The total biomass shows a similar slow decline and then recent increase across the modeled years (Figure \ref{fig:tot-bio}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The 2020 spawning output relative to unfished equilibrium spawning output is just under the target of 40 percent of unfished spawning output (0.39, Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is large ranging between approximately 10 - 70 percent of unfished equilibrium spawning output. The standard deviation of the log of the spawning output in 2020 is 0.58.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The stock-recruit curve resulting from a value of steepness fixed at is shown in Figure \ref{fig:bh-curve}. The estimated annual recruitment is shown in Figure \ref{fig:recruits}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{reference-points-1}{%
+\subsubsection{Reference Points}\label{reference-points-1}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). Sustainable total yields were 2.86 mt when using an {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(SPR_{50\%}\)\leavevmode\tagmcend\tagstructend} reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(SB_{40\%}\)\leavevmode\tagmcend\tagstructend}) was 7.67 millions of eggs.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The 2020 spawning output relative to unfished equilibrium spawning output is below the target of 40 percent but above the threshold of 25 percent of unfished spawning output in 2020 ((0 percent, Figure \ref{fig:depl}). The fishing intensity, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(1-SPR\)\leavevmode\tagmcend\tagstructend}, was above the harvest rate limit ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(SPR_{50\%}\)\leavevmode\tagmcend\tagstructend}) from 1987 - 2012, and has been above and below the harvest rate limit in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{model-diagnostics}{%
+\subsection{Model Diagnostics}\label{model-diagnostics}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Describe all diagnostics
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{convergence}{%
+\subsubsection{Convergence}\label{convergence}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates and adjusting phases of the estimated parameters to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 19 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. Through the jittering done as explained, likelihood profiles, and alternative phasing, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability throughout initial model attempts and all explorations resulted in a positive-definite Hessian.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}need to do alternative phasing{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{likelihood-profiles}{%
+\subsubsection{Likelihood Profiles}\label{likelihood-profiles}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Likelihood profiles were conducted for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}, steepness, natural mortality, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend}, and growth coefficient ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend}) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+In regards to values of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}, values from approximately 1.8 to 4 were supported with the negative log-likelihood minimized at approximately a log({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}) of 2 (Figure \ref{fig:r0-profile}). This suggests the data contain limited information on the scale of the population. Increasing the {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}, relative to the value estimated results in an increase in stock scale (Figure \ref{fig:r0-ssb}) and status (Figure \ref{fig:r0-depl}). Similar to results for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend} results from the profile on steepness suggest the data have limited information on the value of steepness. Any value of steepness was supported based on change in log-likelihood, with the lowest negative log-likelihood occurring near the value for the base model of 0.72 (Figure \ref{fig:h-profile}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}need to finish below - really odd profile{]} {[}Assuming higher or lower steepness values had little impact on the recent unfished and spawning output estimated for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}).{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The negative log-likelihood profile across natural mortality supported the largest values in the profile near twice the fixed value of 0.057 (Figure \ref{fig:m-profile}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}need to finish below{]} {[}The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) and resulted in a wide range of stock statuses (Figures \ref{fig:m-depl}) from below, within, and above the management precautionary zone (between 0.25 - 0.40).{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A profile across a range of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} values was also conducted and values from approximately 40 to 44 cm were supported with a minimum around 41 cm (Figure \ref{fig:linf-profile}). The value of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} in the model was fixed at 43.04.The stock scale and status is quite variable across alternative {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} values where assuming lower values resulted in sharp increases in stock scale (Figure \ref{fig:linf-ssb}) and status (Figure \ref{fig:linf-depl}).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The negative log-likelihood profile across values of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} supported all values within the profile but was minimized at lower values of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} (Figure \ref{fig:k-profile}). The {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} value for fish in the model was fixed at 0.199. The stock scale (Figure \ref{fig:k-ssb}) and status (Figure \ref{fig:k-depl}) increased under lower {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} values but the chang was small compared to changes caused by other parameters.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{retrospective-analysis}{%
+\subsubsection{Retrospective Analysis}\label{retrospective-analysis}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A five-year retrospective analysis was conducted by running the model using data up to 2015, 2016, 2017, 2018, and 2019. The estimated spawning output was consistent with the base model when recent year's data were removed up until 4 and 5 years of data were removed (Figures \ref{fig:retro-ssb} and \ref{fig:retro-depl}). Remove 4 and 5 years of data resulted in a downward shift in stock scale and status.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{sensitivity-analyses}{%
+\subsubsection{Sensitivity Analyses}\label{sensitivity-analyses}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A number of sensitivity analyses were conducted. Sensitivities were conducted as a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{enumerate}
+   
+  \item Estimate annual recruitment deviations. 
+
+  \item Data weighting according to the McAllister-Ianelli method (MI DW) using the weighting values shown in Table \ref{tab:dw}. 
+  
+  \item Data weighting according to the Dirichlet Multinomial method (DM DW) where the estimated parameters are shown in Table \ref{tab:dw}. 
+
+  \item Estimate $L_{\infty}$.
+
+  \item Estimate the coefficient of variation in length of older fishes.
+
+  \item Estimate natural mortality ($M$).
+  
+  \item Exclude composition data prior to 1995 for the recreational fleet.
+  
+  \item Exclude fitting to commercial length data. Set the selectivity of the commercial fleet to equal that of the recreational fleet.
+  
+  \item Fix recreational selectivity form to be dome-shaped. 
+  
+  \item Fix commercial selectivity form to be dome-shaped.
+
+  \item Estimate a recreational selectivity block from 1958-1999, and 2000-2020.   
+  
+\end{enumerate}
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A sensitivity run estimating {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} was also performed but not shown here due to the model failing to estimate a reasonable biomass scale (near the upper bound of log({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}) of 20).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}. There was high uncertainty in estimates of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend} for the sensitivities estimating {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} and the coefficient of variation in length of older fishes and therefore plots were made without these two sensitivites and are shown in Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The two sensitivities that had the largest impact relative to the base model were the ones that estimated {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} and the coefficient of variation in length of older fishes (Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}). These two sensitivities estimated log(R0) 50 and 75 percent larger than the base model despite a change in {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} of 2 cm (from 43.04), and change in the coefficient of variation in length of older fishes to around 7 percent (from 10 percent).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The next two sensitivities that had the largest impact on biomass scale relative to the base model were the sensitivities exploring data weighting using the DM Method, which resulted in a larger biomass scale than the base model, and the sensitivity estimating natural mortality, which resulted in a smaller biomass scale than the base model (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). Despite the differences in scale, both sensitivites resulted in higher stock status than the base model.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The sensitivity estimating annual recruitment deviations resulted in a lower biomass scale, and level of depletion such that spawning ouput in 2020 was below the threshold of 25 percent of unfished spawning output (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). The estimates or recruitment deviations had a period of above-average recruitment from 1987 to 2003, then switched to a period of low recruitment (Figure \ref{fig:sens-recdev}). The recruitment deviation estimates were likely being driven by smaller lengths observed in the recreational fleet in the mid 1990s, but mostly by a lack of smaller fish being caught since 2000 (Figure \ref{fig:mean-rec-len-data}). Furthermore, the variability of the recruitment deviations up to around 2005 were higher than the assumed variability in recruitment (0.6), suggesting the increased recruitments were not well informed by the data. The pattern of recruitment deviations estimated seemed extreme for the Washington model but the general pattern showed some coherence with the recruitment deviations estimated in the separate Oregon model. The Oregon base model estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s. This may potentially suggest that quillback rockfish off the coast of Oregon and Washington experience similar drivers in recruitment, howeer, the Oregon model estimated periods of higher recruitment since 2000 to support increasing catches over time and also to fit pulses of small fish in the length data, whereas the Washington base model estimates lower than average recruitment throughout that time period.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H3}\tagmcbegin{tag=H3}
+
+\hypertarget{unresolved-problems-and-major-uncertainties-1}{%
+\subsubsection{Unresolved Problems and Major Uncertainties}\label{unresolved-problems-and-major-uncertainties-1}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The primary uncertainty for the Washington quillback rockfish model is in the scale of the population. The trajectory of the population is generally consistent across profiles and sensitivities however the scale of the population is poorly informed by data. This is evident in the relatively wide uncertainty in the estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}, leading to uncertainty around spawning biomass and around stock status. Estimating growth parameters, notably {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} and the coefficient of variation in length of older fish affected the population scale greatly. Estimating recruitment deviations also reduced the scale of the population, and also resulted in spawning output relative to unfished equilibrium spawning output falling below the threshold value. Profiles across fixed parameters show support across a wide range of values based on negative log-likelihood and also result in large changes in stock size and status. Consequently, this base model is dependent on many of the assumptions in parameter values.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+More information on the perceived lack of small fish in the recreational fishery would improve understanding if indeed this is due ot recruitment or sampling issues or steady and ongoing changes in the fishery. An increase in smaller fish in 2020 may indicate a recruitment event, however more years of data would be needed to confirm.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{management}{%
+\section{Management}\label{management}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{harvest-projections-and-decision-tables}{%
+\subsection{Harvest Projections and Decision Tables}\label{harvest-projections-and-decision-tables}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(P^*\)\leavevmode\tagmcend\tagstructend} = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (12.9 percent) for Washington provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributes to the total catch.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+{[}Need to add the following?{]} {[}Recreational catches were provided in number, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in number based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.{]}
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The decision table uncertainty axes and catch levels to be determined later.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{evaluation-of-scientific-uncertainty}{%
+\subsection{Evaluation of Scientific Uncertainty}\label{evaluation-of-scientific-uncertainty}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The estimated uncertainty in the base model around the 2021 spawning output is {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} = 0.58 and the uncertainty in the base model around the 2021 OFL is {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} = 0.56. The estimated model uncertainty was less than the category 2 groundfish data moderate assessment default value of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} = 1.0.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{research-and-data-needs-1}{%
+\subsection{Research and Data Needs}\label{research-and-data-needs-1}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The ability to estimate additional process and biological parameters for quillback rockfish was limited by data. Collecting the following data would be beneficial to future assessments of the stock:
+
+\leavevmode\tagmcend\tagstructend\par
+
+\begin{itemize}
+
+    \item Continue collecting length and otolith samples from recreational catches ensuring samples are not missing small fish if they are caught.
+
+    \item Collect length data for the commercial fleet if catches occur.
+    
+    \item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates.  
+
+    \item Evaluate the connectivity of quillback rockfish stock off the coast of Oregon and Washington. 
+
+\end{itemize}
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{acknowledgments}{%
+\section{Acknowledgments}\label{acknowledgments}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{acknowledgments-1}{%
+\section{Acknowledgments}\label{acknowledgments-1}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Many people were instrumental in the successful completion of this assessment and their contribution is greatly appreciated. We are very grateful to all the agers at WDFW, ODFW, and the CAP lab for their hard work reading numerous otoliths and availability to answer questions when needed. Jason Jannot and Kayleigh Sommers assisted with data from the WCGOP and entertained our many questions. We would like to acknowledge the data team and their dedication to improving the assessments we do. John Harms, Brenda Erwin, and Jason Edwards were incredibly helpful in understanding the available data and resolving questions about its interpretation and use. All of the data moderate assessments this year were greatly benefited by the numerous individuals who took the time to participate in the pre-assessment data webinar. Gerry Richter, Merit McCrea, Louis Zimm, Bill James, and Daniel Platt were provided insight to the data and the complexities of the commercial and recreational fisheries off the West Coast of the U.S. which were essential in the production of all of the quillback rockfish assessments conducted this year.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=BibEntry}\tagmcbegin{tag=BibEntry}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-buonaccorsi_population_2002}{}%
+Buonaccorsi, Vincent P, Carol A Kimbrell, Eric A Lynn, and Russell D Vetter. 2002. ``Population Structure of Copper Rockfish (\emph{Sebastes Caurinus}) Reflects Postglacial Colonization and Contemporary Patterns of Larval Dispersal.'' \emph{Canadian Journal of Fisheries and Aquatic Sciences} 59 (8): 1374--84. \url{https://doi.org/10.1139/f02-101}.
+
+\leavevmode\hypertarget{ref-cope_approach_2011}{}%
+Cope, Jason M., John DeVore, E. J. Dick, Kelly Ames, John Budrick, Daniel L. Erickson, Joanna Grebel, et al. 2011. ``An Approach to Defining Stock Complexes for U.S. West Coast Groundfishes Using Vulnerabilities and Ecological Distributions.'' \emph{North American Journal of Fisheries Management} 31 (4): 589--604. \url{https://doi.org/10.1080/02755947.2011.591264}.
+
+\leavevmode\hypertarget{ref-Cosewic_2009}{}%
+COSEWIC. 2009. ``COSEWIC Assessment and Status Report on the Quillback Rockfish (\emph{Sebastes Maliger}) in Canada.'' Committee on the Status of Endangered Wildlife in Canada. Ottawa.
+
+\leavevmode\hypertarget{ref-dick_meta-analysis_2017}{}%
+Dick, E. J., Sabrina Beyer, Marc Mangel, and Stephen Ralston. 2017. ``A Meta-Analysis of Fecundity in Rockfishes (Genus \emph{Sebastes}).'' \emph{Fisheries Research} 187 (March): 73--85. \url{https://doi.org/10.1016/j.fishres.2016.11.009}.
+
+\leavevmode\hypertarget{ref-DickandMacCall_dbsra_2010}{}%
+Dick, E. J., and Alec D. MacCall. 2010. ``Estimates of Sustainable Yield for 50 Data-Poor Stocks in the Pacfici Coast Groundfish Fishery Management Plot.'' NOAA-TM-NMFS-SWFSC-460. NOAA Tech. Memo.
+
+\leavevmode\hypertarget{ref-Echeverria_maturity_1987}{}%
+Echeverria, Tina Wyllie. 1987. ``Thirty-Four Species of California Rockfishes: Maturity and Seasonality of Reproduction.'' \emph{Fishery Bulletin} 85 (2): 229--50.
+
+\leavevmode\hypertarget{ref-francis_data_2011}{}%
+Francis, R. I. C. Chris, and R. Hilborn. 2011. ``Data Weighting in Statistical Fisheries Stock Assessment Models.'' \emph{Canadian Journal of Fisheries and Aquatic Sciences} 68 (6): 1124--38. \url{https://doi.org/10.1139/f2011-025}.
+
+\leavevmode\hypertarget{ref-hamel_method_2015}{}%
+Hamel, Owen S. 2015. ``A Method for Calculating a Meta-Analytical Prior for the Natural Mortality Rate Using Multiple Life History Correlates.'' \emph{ICES Journal of Marine Science: Journal Du Conseil} 72 (1): 62--69. \url{https://doi.org/10.1093/icesjms/fsu131}.
+
+\leavevmode\hypertarget{ref-HannahandBlume_maturity_2011}{}%
+Hannah, Robert W., and Matthew T. O. Blume. 2014. ``Maturity of Female Quillback (\emph{Sebastes Maliger}) and China Rockfish (\emph{S. Nebulosus}) from Oregon Waters Based on Histological Evaluation of Ovaries.'' Information Reports 2011-01. Oregon Department of Fish; Wildlife.
+
+\leavevmode\hypertarget{ref-HannahandRankin_rockfish_site_fidelity_2011}{}%
+Hannah, Robert W., and Polly S. Rankin. 2011. ``Comparative Feeding Ecology of Two Sympatric Rockfish Congeners (\emph{Sebastes Caurinus}) (Copper Rockfish) and (\emph{S. Caurinus}) (Quillback Rockfish).'' \emph{North American Journal of Fisheries Management} 31: 483--94.
+
+\leavevmode\hypertarget{ref-johansson_influence_2008}{}%
+Johansson, M. L., M. A. Banks, K. D. Glunt, H. M. Hassel-Finnegan, and V. P. Buonaccorsi. 2008. ``Influence of Habitat Discontinuity, Geographical Distance, and Oceanography on Fine-Scale Population Genetic Structure of Copper Rockfish ( \emph{Sebastes Caurinus} ).'' \emph{Molecular Ecology} 17 (13): 3051--61. \url{https://doi.org/10.1111/j.1365-294X.2008.03814.x}.
+
+\leavevmode\hypertarget{ref-LenarzandEcheverria_dimorphism_1991}{}%
+Lenarz, William H., and Tina Wyllie Echeverria. 1991. ``Sexual Dimorphism in (\emph{Sebastes}).'' \emph{Marine Biology} 30: 71--80.
+
+\leavevmode\hypertarget{ref-loveetal_2002}{}%
+Love, Milton S., Mary Yoklavich, and Lyman Thorsteinson. 2002. \emph{The Rockfishes of the Northeast Pacific}. Berkley; Los Angeles, California: University of California Press.
+
+\leavevmode\hypertarget{ref-mcallister_bayesian_1997}{}%
+McAllister, M. K., and J. N. Ianelli. 1997. ``Bayesian Stock Assessment Using Catch-Age Data and the Sampling - Importance Resampling Algorithm.'' \emph{Canadian Journal of Fisheries and Aquatic Sciences} 54: 284--300.
+
+\leavevmode\hypertarget{ref-Murie_diet_1995}{}%
+Murie, D. J. 1995. ``Comparative Feeding Ecology of Two Sympatric Rockfish Congeners (\emph{Sebastes Caurinus}) (Copper Rockfish) and (\emph{S. Caurinus}) (Quillback Rockfish).'' \emph{Marine Biology} 124: 341--53.
+
+\leavevmode\hypertarget{ref-Palssonetal_2009}{}%
+Palsson, Wayne A., Tien-Shui Tsou, Greg G. Bargmann, Raymond M. Buckley, Jim E. West, Mary Lou Mills, Wing Cheng, and Robert Pacunski. 2009. ``The Biology and Assessment of Rockfishes in Puget Sound.'' FPT 09-04. Washington Department of Fish; Wildlife.
+
+\leavevmode\hypertarget{ref-Rosenthaletal_maturity_1982}{}%
+Rosenthal, R. J., L. Haldorson, L. J. Field, V. Moran-O'Connell, and M. G. LaRiviere. 1982. \emph{Inshore and Shallow Offshore Bottomfish Resources in the Southeastern Gulf of Alaska}. Alaska Coastal Research. Juneau, Alaska: University of Alaska.
+
+\leavevmode\hypertarget{ref-seeb_gene_1998}{}%
+Seeb, L. W. 1998. ``Gene Flow and Introgression Within and Among Three Species of Rockfishes, Sebastes Auriculatus, \emph{S. Caurinus} and \emph{S. Maliger}.'' \emph{Journal of Heredity} 89 (5): 393--403. \url{https://doi.org/10.1093/jhered/89.5.393}.
+
+\leavevmode\hypertarget{ref-Stoutetal_DPS_2001}{}%
+Stout, Heather A, Bruce B. McCain, Russell D. Vetter, Tonya L. Builder, William H. Lenarz, Lyndal L. Johnson, and Richard D. Methot. 2001. ``Status Review of Copper Rockfish (\emph{Sebastes Caurinus}), Quillback Rockfish (\emph{S. Maliger}), and Brown Rockfish (\emph{S. Auriculatus}) in Puget Sound, Washington.'' NOAA-TM-NMFS-NWFSC-46. NOAA Tech. Memo.
+
+\leavevmode\hypertarget{ref-then_evaluating_2015-1}{}%
+Then, A. Y., J. M. Hoenig, N. G. Hall, and D. A. Hewitt. 2015. ``Evaluating the Predictive Performance of Empirical Estimators of Natural Mortality Rate Using Information on over 200 Fish Species.'' \emph{ICES Journal of Marine Science} 72 (1): 82--92. \url{https://doi.org/10.1093/icesjms/fsu136}.
+
+\leavevmode\hypertarget{ref-thorson_model-based_2017}{}%
+Thorson, James T., Kelli F. Johnson, R. D. Methot, and I. G. Taylor. 2017. ``Model-Based Estimates of Effective Sample Size in Stock Assessment Models Using the Dirichlet-Multinomial Distribution.'' \emph{Fisheries Research} 192: 84--93. \url{https://doi.org/10.1016/j.fishres.2016.06.005}.
+
+\leavevmode\hypertarget{ref-tolimieri_home_2009}{}%
+Tolimieri, N, K Andrews, G Williams, S Katz, and Ps Levin. 2009. ``Home Range Size and Patterns of Space Use by Lingcod, Copper Rockfish and Quillback Rockfish in Relation to Diel and Tidal Cycles.'' \emph{Marine Ecology Progress Series} 380 (April): 229--43. \url{https://doi.org/10.3354/meps07930}.
+
+\leavevmode\hypertarget{ref-Westetal_2014}{}%
+West, James E., Thomas E. Helser, and Sandra M. O'Neill. 2014. ``Variation in Quillback Rockfish (\emph{Sebastes Maliger}) Growth Patterns from Oceanic to Inland Waters of the Salish Sea.'' \emph{Bulletin of Marine Science} 90 (3): 747--61.
+
+\leavevmode\hypertarget{ref-YamanakaandLacko_rockfish_2001}{}%
+Yamanako, K. L., and L. C. Lacko. 2001. ``Inshore Rockfish ((\emph{Sebastes Ruberrimus}), (\emph{S. Maliger}), (\emph{S. Caurinus}), (\emph{S. Melanops}, (\emph{S. Nigrocinctus}), and (\emph{S. Nebulosus})) Stock Assessment for the West Coast of Canada and Recommendations for Management.'' Canadian Science Advisory Secretariat, Research Document 2001/139.
+
+\leavevmode\tagmcend\tagstructend
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+\leavevmode\tagmcend\tagstructend
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/Catches_All_Years.tex}
+
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{c>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
+\caption{\label{tab:nums-mt}Input numbers of fish removals converted to metric tons (mt) within the model.}\\
+\toprule
+Year & Numbers of Fish & Metric Tons\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:nums-mt}Input numbers of fish removals converted to metric tons (mt) within the model. \textit{(continued)}}\\
+\toprule
+Year & Numbers of Fish & Metric Tons\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1957 & 0 & 0.00\\
+1958 & 54 & 0.08\\
+1959 & 168 & 0.26\\
+1960 & 283 & 0.44\\
+1961 & 398 & 0.61\\
+1962 & 513 & 0.79\\
+1963 & 628 & 0.96\\
+1964 & 742 & 1.14\\
+1965 & 857 & 1.31\\
+1966 & 972 & 1.49\\
+1967 & 1088 & 1.67\\
+1968 & 1201 & 1.84\\
+1969 & 1316 & 2.01\\
+1970 & 1431 & 2.19\\
+1971 & 1546 & 2.36\\
+1972 & 1660 & 2.53\\
+1973 & 1775 & 2.70\\
+1974 & 1890 & 2.87\\
+1975 & 2006 & 3.04\\
+1976 & 930 & 1.40\\
+1977 & 1054 & 1.59\\
+1978 & 1103 & 1.66\\
+1979 & 1317 & 1.98\\
+1980 & 1034 & 1.56\\
+1981 & 1385 & 2.08\\
+1982 & 1290 & 1.94\\
+1983 & 1577 & 2.37\\
+1984 & 3225 & 4.83\\
+1985 & 1762 & 2.63\\
+1986 & 2467 & 3.68\\
+1987 & 3340 & 4.97\\
+1988 & 2757 & 4.09\\
+1989 & 5331 & 7.86\\
+1990 & 5629 & 8.24\\
+1991 & 3653 & 5.30\\
+1992 & 3568 & 5.15\\
+1993 & 4499 & 6.45\\
+1994 & 3334 & 4.75\\
+1995 & 3153 & 4.47\\
+1996 & 3403 & 4.80\\
+1997 & 3092 & 4.34\\
+1998 & 3473 & 4.85\\
+1999 & 3372 & 4.68\\
+2000 & 3229 & 4.46\\
+2001 & 2900 & 3.98\\
+2002 & 2441 & 3.34\\
+2003 & 1966 & 2.68\\
+2004 & 2944 & 4.01\\
+2005 & 5229 & 7.10\\
+2006 & 3074 & 4.15\\
+2007 & 3028 & 4.07\\
+2008 & 2799 & 3.75\\
+2009 & 2643 & 3.53\\
+2010 & 1696 & 2.26\\
+2011 & 1710 & 2.29\\
+2012 & 2025 & 2.71\\
+2013 & 1348 & 1.81\\
+2014 & 1443 & 1.94\\
+2015 & 1063 & 1.44\\
+2016 & 1405 & 1.91\\
+2017 & 1265 & 1.72\\
+2018 & 1816 & 2.48\\
+2019 & 2773 & 3.80\\
+2020 & 1429 & 1.96\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\caption{\label{tab:ofl}The OFL and ACL for the Minor Nearshore Rockfish North complex, the ACL allocated to Washington, and the total removals in weight.}\\
+\toprule
+Year & OFL & ACL & WA ACL & WA Removals\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:ofl}The OFL and ACL for the Minor Nearshore Rockfish North complex, the ACL allocated to Washington, and the total removals in weight. \textit{(continued)}}\\
+\toprule
+Year & OFL & ACL & WA ACL & WA Removals\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2011 & 8.70 & 7.26 & 0.94 & 2.29\\
+2012 & 8.70 & 7.26 & 0.94 & 2.71\\
+2013 & 7.37 & 6.15 & 0.79 & 1.81\\
+2014 & 7.37 & 6.15 & 0.79 & 1.98\\
+2015 & 7.37 & 6.15 & 0.79 & 1.44\\
+2016 & 7.37 & 6.15 & 0.79 & 1.91\\
+2017 & 7.37 & 6.15 & 0.79 & 1.77\\
+2018 & 7.37 & 6.15 & 0.79 & 2.48\\
+2019 & 7.37 & 6.15 & 0.79 & 3.86\\
+2020 & 7.37 & 6.15 & 0.79 & 2.08\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/WA_Samples_Feb2021.tex}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/wa_rec_samples.tex}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/len_at_age_data.tex}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/len_at_weight_data.tex}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/wa_rec_age_samples.tex}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/WA_age_Samples_Feb2021.tex}
+
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\caption{\label{tab:growth-tab}Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.}\\
+\toprule
+Age & Length (cm) & Weight (kg) & Maturity & Spawning Output\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:growth-tab}Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50. \textit{(continued)}}\\
+\toprule
+Age & Length (cm) & Weight (kg) & Maturity & Spawning Output\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+0 & 4.00 & 0.00 & 0.00 & 0.00\\
+1 & 8.23 & 0.01 & 0.00 & 0.00\\
+2 & 14.51 & 0.06 & 0.00 & 0.00\\
+3 & 19.66 & 0.16 & 0.00 & 0.00\\
+4 & 23.88 & 0.29 & 0.05 & 0.00\\
+5 & 27.34 & 0.44 & 0.30 & 0.03\\
+6 & 30.17 & 0.59 & 0.60 & 0.09\\
+7 & 32.49 & 0.73 & 0.79 & 0.14\\
+8 & 34.40 & 0.87 & 0.89 & 0.19\\
+9 & 35.96 & 1.00 & 0.94 & 0.23\\
+10 & 37.23 & 1.11 & 0.97 & 0.27\\
+11 & 38.28 & 1.20 & 0.98 & 0.30\\
+12 & 39.14 & 1.29 & 0.98 & 0.32\\
+13 & 39.84 & 1.36 & 0.99 & 0.35\\
+14 & 40.42 & 1.42 & 1.00 & 0.37\\
+15 & 40.89 & 1.47 & 1.00 & 0.38\\
+16 & 41.28 & 1.51 & 1.00 & 0.40\\
+17 & 41.60 & 1.55 & 1.00 & 0.41\\
+18 & 41.86 & 1.58 & 1.00 & 0.42\\
+19 & 42.07 & 1.60 & 1.00 & 0.42\\
+20 & 42.25 & 1.62 & 1.00 & 0.43\\
+21 & 42.39 & 1.64 & 1.00 & 0.44\\
+22 & 42.51 & 1.65 & 1.00 & 0.44\\
+23 & 42.60 & 1.66 & 1.00 & 0.44\\
+24 & 42.68 & 1.67 & 1.00 & 0.45\\
+25 & 42.75 & 1.68 & 1.00 & 0.45\\
+26 & 42.80 & 1.68 & 1.00 & 0.45\\
+27 & 42.84 & 1.69 & 1.00 & 0.45\\
+28 & 42.88 & 1.69 & 1.00 & 0.46\\
+29 & 42.91 & 1.70 & 1.00 & 0.46\\
+30 & 42.93 & 1.70 & 1.00 & 0.46\\
+31 & 42.95 & 1.70 & 1.00 & 0.46\\
+32 & 42.97 & 1.70 & 1.00 & 0.46\\
+33 & 42.98 & 1.71 & 1.00 & 0.46\\
+34 & 42.99 & 1.71 & 1.00 & 0.46\\
+35 & 43.00 & 1.71 & 1.00 & 0.46\\
+36 & 43.01 & 1.71 & 1.00 & 0.46\\
+37 & 43.01 & 1.71 & 1.00 & 0.46\\
+38 & 43.02 & 1.71 & 1.00 & 0.46\\
+39 & 43.02 & 1.71 & 1.00 & 0.46\\
+40 & 43.03 & 1.71 & 1.00 & 0.46\\
+41 & 43.03 & 1.71 & 1.00 & 0.46\\
+42 & 43.03 & 1.71 & 1.00 & 0.46\\
+43 & 43.03 & 1.71 & 1.00 & 0.46\\
+44 & 43.03 & 1.71 & 1.00 & 0.46\\
+45 & 43.03 & 1.71 & 1.00 & 0.46\\
+46 & 43.04 & 1.71 & 1.00 & 0.46\\
+47 & 43.04 & 1.71 & 1.00 & 0.46\\
+48 & 43.04 & 1.71 & 1.00 & 0.46\\
+49 & 43.04 & 1.71 & 1.00 & 0.46\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
+\caption{\label{tab:dw}Data weights applied by each alternative data weighting methods. The Dirichlet Multinomial weight is theta/(1+theta)}\\
+\toprule
+Method & Commercial Lengths & Recreational Lengths\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:dw}Data weights applied by each alternative data weighting methods. The Dirichlet Multinomial weight is theta/(1+theta) \textit{(continued)}}\\
+\toprule
+Method & Commercial Lengths & Recreational Lengths\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+Francis & 0.5728750 & 0.0290410\\
+McAllister-Ianelli & 0.5475580 & 0.0585020\\
+Dirichlet Multinomial & 0.9836962 & 0.1717789\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\begingroup\fontsize{9}{11}\selectfont
+
+\begin{landscape}\begingroup\fontsize{9}{11}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{6cm}lllll>{\raggedright\arraybackslash}p{4cm}}
+\caption{\label{tab:params}List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD).}\\
+\toprule
+Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:params}List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD). \textit{(continued)}}\\
+\toprule
+Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.48)\\
+L at Amin Fem GP 1 & 8.230 & -2 & (0, 10) & NA & NA & None\\
+L at Amax Fem GP 1 & 43.040 & -2 & (25, 60) & NA & NA & None\\
+VonBert K Fem GP 1 & 0.199 & -2 & (0.03, 0.3) & NA & NA & None\\
+CV young Fem GP 1 & 0.100 & -2 & (0.01, 1) & NA & NA & None\\
+CV old Fem GP 1 & 0.100 & -2 & (0.01, 1) & NA & NA & None\\
+Wtlen 1 Fem GP 1 & 1.963e-05 & -9 & (0, 0.1) & NA & NA & None\\
+Wtlen 2 Fem GP 1 & 3.016 & -9 & (2, 4) & NA & NA & None\\
+Mat50% Fem GP 1 & 29.230 & -9 & (10, 60) & NA & NA & None\\
+Mat slope Fem GP 1 & -0.800 & -9 & (-2, 0) & NA & NA & None\\
+Eggs scalar Fem GP 1 & 0.000 & -9 & (-3, 3) & NA & NA & None\\
+Eggs exp len Fem GP 1 & 3.702 & -9 & (0, 6) & NA & NA & None\\
+CohortGrowDev & 1.000 & -9 & (0, 1) & NA & NA & None\\
+FracFemale GP 1 & 0.500 & -9 & (0.01, 0.99) & NA & NA & None\\
+SR LN(R0) & 2.004 & 1 & (1, 20) & OK & 0.220328 & None\\
+SR BH steep & 0.720 & -7 & (0.2, 1) & NA & NA & Full Beta (0.72, 0.158)\\
+SR sigmaR & 0.600 & -99 & (0.15, 0.9) & NA & NA & None\\
+SR regime & 0.000 & -99 & (-2, 2) & NA & NA & None\\
+SR autocorr & 0.000 & -99 & (0, 0) & NA & NA & None\\
+Late RecrDev 2018 & 0.000 & NA & (NA, NA) & NA & NA & dev (NA, NA)\\
+Late RecrDev 2019 & 0.000 & NA & (NA, NA) & NA & NA & dev (NA, NA)\\
+Late RecrDev 2020 & 0.000 & NA & (NA, NA) & NA & NA & dev (NA, NA)\\
+Size DblN peak WA Recreational(1) & 44.073 & 2 & (15, 55) & OK & 3.627810 & None\\
+Size DblN top logit WA Recreational(1) & -1.021 & -2 & (-7, 7) & NA & NA & None\\
+Size DblN ascend se WA Recreational(1) & 4.923 & 3 & (-10, 10) & OK & 0.331510 & None\\
+Size DblN descend se WA Recreational(1) & -0.554 & -4 & (-10, 10) & NA & NA & None\\
+Size DblN start logit WA Recreational(1) & -20.000 & -9 & (-20, 30) & NA & NA & None\\
+Size DblN end logit WA Recreational(1) & 10.000 & -3 & (-10, 10) & NA & NA & None\\
+Size DblN peak WA Commercial(2) & 44.503 & 2 & (15, 55) & OK & 4.218800 & None\\
+Size DblN top logit WA Commercial(2) & -0.206 & -2 & (-7, 7) & NA & NA & None\\
+Size DblN ascend se WA Commercial(2) & 4.356 & 3 & (-10, 10) & OK & 0.663928 & None\\
+Size DblN descend se WA Commercial(2) & -0.069 & -4 & (-10, 10) & NA & NA & None\\
+Size DblN start logit WA Commercial(2) & -20.000 & -9 & (-20, 30) & NA & NA & None\\
+Size DblN end logit WA Commercial(2) & 10.000 & -3 & (-10, 10) & NA & NA & None\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\end{landscape}
+\endgroup{}
+
+\include{tex_tables/likelihoods.tex}
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/TimeSeries.tex}
+
+\newpage
+
+\include{tex_tables/sensitivities.tex}
+
+\newpage
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}>{\raggedright\arraybackslash}p{1.22cm}}
+\caption{\label{tab:project}Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and Washington (WA) ACL for 2021 and 2022 reflect adopted management limits.}\\
+\toprule
+Year & Adopted OFL & Adopted ACL & Adopted ACL-WA & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:project}Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and Washington (WA) ACL for 2021 and 2022 reflect adopted management limits. \textit{(continued)}}\\
+\toprule
+Year & Adopted OFL & Adopted ACL & Adopted ACL-WA & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 7.37 & 5.73386 & 0.74 & - & - & - & 6.64 & 0.39\\
+2022 & 7.3742 & 5.7371276 & 0.74 & - & - & - & 6.91 & 0.40\\
+2023 & - & - & - & 2.67 & 2.33 & 0.875 & 7.18 & 0.42\\
+2024 & - & - & - & 2.7 & 2.33 & 0.865 & 7.25 & 0.42\\
+2025 & - & - & - & 2.73 & 2.34 & 0.857 & 7.33 & 0.43\\
+2026 & - & - & - & 2.75 & 2.34 & 0.849 & 7.40 & 0.43\\
+2027 & - & - & - & 2.78 & 2.34 & 0.841 & 7.46 & 0.43\\
+2028 & - & - & - & 2.8 & 2.33 & 0.833 & 7.53 & 0.44\\
+2029 & - & - & - & 2.83 & 2.33 & 0.826 & 7.59 & 0.44\\
+2030 & - & - & - & 2.85 & 2.33 & 0.818 & 7.65 & 0.45\\
+2031 & - & - & - & 2.87 & 2.33 & 0.81 & 7.72 & 0.45\\
+2032 & - & - & - & 2.9 & 2.33 & 0.803 & 7.78 & 0.45\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\newpage
+
+\clearpage
+
+\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Catches by year for the recreational and commercial fleets in the model}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{figs/catches_wa.png}
+\caption{Catches by year for the recreational and commercial fleets in the model.\label{fig:catch}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Summary of data sources used in the base model.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/data_plot.png}
+\caption{Summary of data sources used in the base model.\label{fig:data-plot}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Length composition data from the commercial fleet.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_bubflt2mkt0.png}
+\caption{Length composition data from the commercial fleet.\label{fig:com-len-data}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Mean length for commercial fleet with 95 percent confidence intervals.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Commercial.png}
+\caption{Mean length for commercial fleet with 95 percent confidence intervals.\label{fig:mean-com-len-data}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Aggregate length composition for the commercial and recreational fleet over all years.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit__aggregated_across_time.png}
+\caption{Aggregate length composition for the commercial and recreational fleet over all years.\label{fig:wa-len-agg}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Length composition data from the recreational fleet.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_bubflt1mkt0_page2.png}
+\caption{Length composition data from the recreational fleet.\label{fig:rec-len-data}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Mean length for recreational fleet with 95 percent confidence intervals.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png}
+\caption{Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-rec-len-data}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Comparison of the length-at-weight data from the individual sources with length and weight data, and with all sources combined..}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Source.png}
+\caption{Comparison of the length-at-weight data from the individual sources with length and weight data, and with all sources combined..\label{fig:len-weight-survey}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Weight-at-length by sex used in the model.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio5_weightatsize.png}
+\caption{Weight-at-length by sex used in the model.\label{fig:len-weight}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Observed sex specific length-at-age coastwide data by data source with the estimated length-at-age curve.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex.png}
+\caption{Observed sex specific length-at-age coastwide data by data source with the estimated length-at-age curve.\label{fig:len-age-data}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Length at age in the beginning of the year in the ending year of the model.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio1_sizeatage.png}
+\caption{Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Maturity as a function of  length.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio6_maturity.png}
+\caption{Maturity as a function of length.\label{fig:maturity}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Fecundity as a function of length.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio9_fecundity_len.png}
+\caption{Fecundity as a function of length.\label{fig:fecundity}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Selectivity at length by fleet.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/sel01_multiple_fleets_length1.png}
+\caption{Selectivity at length by fleet.\label{fig:selex}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Estimated time series of age-0 recruits (1000s).}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png}
+\caption{Estimated time series of age-0 recruits (1000s).\label{fig:recruits}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_residsflt2mkt0.png}
+\caption{Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed \textgreater{} expected) and open bubbles are negative residuals (observed \textless{} expected).\label{fig:com-pearson}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Model estimated mean length (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Commercial.png}
+\caption{Model estimated mean length (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.\label{fig:com-mean-len-fit}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_residsflt1mkt0_page2.png}
+\caption{Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed \textgreater{} expected) and open bubbles are negative residuals (observed \textless{} expected).\label{fig:rec-pearson}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Model estimated mean length (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png}
+\caption{Model estimated mean length (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Aggregated length comps over all years.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit__aggregated_across_time.png}
+\caption{Aggregated length comps over all years.\label{fig:agg-len-fit}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Estimated time series of spawning output.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png}
+\caption{Estimated time series of spawning output.\label{fig:ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Estimated time series of total biomass.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts1_Total_biomass_(mt).png}
+\caption{Estimated time series of total biomass.\label{fig:tot-bio}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Estimated time series of relative spawning output.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts9_Relative_spawning_output_intervals.png}
+\caption{Estimated time series of relative spawning output.\label{fig:depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SR_curve.png}
+\caption{Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.\label{fig:bh-curve}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Estimated 1 - relative spawning ratio (SPR) by year.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR2_minusSPRseries.png}
+\caption{Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Equilibrium yield curve for the base case model. Values are based on the 2020 fishery selectivity and with steepness fixed at 0.72.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/yield2_yield_curve_with_refpoints.png}
+\caption{Equilibrium yield curve for the base case model. Values are based on the 2020 fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in estimated spawning output by sensitivity.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty.png}
+\caption{Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in estimated spawning output by sensitivity. Sensitivities for Linf and CV of older fish are omitted..}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty_subset.png}
+\caption{Change in estimated spawning output by sensitivity. Sensitivities for Linf and CV of older fish are omitted..\label{fig:sens-ssb-subset}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in estimated fraction unfished by sensitivity.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty.png}
+\caption{Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in estimated fraction unfished by sensitivity. Sensitivities for Linf and CV of older fish are omitted..}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty_subset.png}
+\caption{Change in estimated fraction unfished by sensitivity. Sensitivities for Linf and CV of older fish are omitted..\label{fig:sens-depl-subset}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in estimated annual recruitment deviation.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare12_recdevs_uncertainty.png}
+\caption{Change in estimated annual recruitment deviation.\label{fig:sens-recdev}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of log(R0) values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png}
+\caption{Change in the negative log-likelihood across a range of log(R0) values.\label{fig:r0-profile}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of log(R0) values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png}
+\caption{Change in the estimate of spawning output across a range of log(R0) values.\label{fig:r0-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of log(R0) values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png}
+\caption{Change in the estimate of fraction unfished across a range of log(R0) values.\label{fig:r0-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of steepness values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/piner_panel_SR_BH_steep.png}
+\caption{Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of steepness values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png}
+\caption{Change in the estimate of spawning output across a range of steepness values.\label{fig:h-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of steepness values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png}
+\caption{Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of female natural mortality values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png}
+\caption{Change in the negative log-likelihood across a range of female natural mortality values.\label{fig:m-profile}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of female natural mortality values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png}
+\caption{Change in the estimate of spawning output across a range of female natural mortality values.\label{fig:m-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of female natural values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png}
+\caption{Change in the estimate of fraction unfished across a range of female natural values.\label{fig:m-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of female maximum length values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png}
+\caption{Change in the negative log-likelihood across a range of female maximum length values.\label{fig:linf-profile}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of female maximum length values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png}
+\caption{Change in the estimate of spawning output across a range of female maximum length values.\label{fig:linf-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of female maximum length values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png}
+\caption{Change in the estimate of fraction unfished across a range of female maximum length values.\label{fig:linf-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of female k values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png}
+\caption{Change in the negative log-likelihood across a range of female k values.\label{fig:k-profile}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of female k values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png}
+\caption{Change in the estimate of spawning output across a range of female k values.\label{fig:k-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of female k values.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png}
+\caption{Change in the estimate of fraction unfished across a range of female k values.\label{fig:k-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_retro/compare2_spawnbio_uncertainty.png}
+\caption{Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially.\label{fig:retro-ssb}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_retro/compare4_Bratio_uncertainty.png}
+\caption{Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially.\label{fig:retro-depl}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\newpage
+\end{document}

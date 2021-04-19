@@ -1,0 +1,38 @@
+# Introduction
+
+## Basic Information
+
+This assessment reports the status of `r spp` (*`r spp_latin`*) off the `r state` coast using data through `r endyr`. 
+
+The stock off the `r state` coast was assessed as a separate stock from other populations off the U.S. West Coast based on two factors. First, the fairly sedentary nature of `r spp` likely limits flow of fish to Oregon [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009]. Additionally, the primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as `r spp` associate with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate. Second, the exploitation history and magnitude of removals off the `r state` coast differ from those in Oregon and California.    
+
+<!-- Life history -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '1_introduction_basic_life_ecosystem.Rmd')
+read_child(filein)
+```
+
+## Historical and Current Fishery Information
+
+Off the Washington coast `r Spp` is primarily caught in the recreational fishery but in general is not targeted by either commercial or recreational fleets (Table \ref{tab:catch} and Figure \ref{fig:catch}). Recreational landings of `r spp` were provided by the WDFW and were available from 1958 to present with a linear interpolation applied where data are missing. Recreational harvest is focused in the central and northern regions in areas of rocky habitat. Although populations are considered to be widespread in the nearshore marine environment, abundance may be limited along the southern coast which consists primarily of soft and sandy substrate. 
+
+Commercial landings data are available from WDFW historical reconstruction prior to 1981 and from PacFIN from 1981 through 2020. Washington closed state waters to commercial fixed gears in 1995 and to trawling in 1999 and the depths preferred by `r spp` are predominantly found within state waters. In response to the development of the live-fish fishery in California and Oregon, Washington took preemptive action in 1999 to prevent the fishery from developing by prohibiting the landing of live-fish. There are four treaty tribes of the Washington coast that continue to fish under separate commercial rules and are not subject to the state water closure that occasionally land small amounts of `r spp`. `r Spp` are usually landed in the Nearshore Rockfish group, a mixed-species market category. Species composition samples were taken from sampled landings and proportions of `r spp` reported in the Nearshore market category are estimated by port, quarter, gear, and year. In 2020, COVID-19 closures of tribal lands prevented samplers from accessing all commercial catch, so an average proportion of `r spp` in 2017 - 2019 was applied to all associated tribal landings.
+
+
+
+<!-- Summary of Management History and Performance -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '1_introduction_management.Rmd')
+read_child(filein)
+```
+
+## Foreign Fisheries
+
+`r Spp` are harvested commercially and recreationally in Puget Sound under the Puget Sound Groundfish Management Plan, co-managed by the WDFW and the Treaty Tribes of Washington. `r Spp` are caught along with many other rockfish species. Landings in Puget Sound of all rockfish were high in the 1980s and 1990s but have since decreased in the 2000s ([@Palssonetal_2009]). Current commercial landings of `r spp` in Puget Sound are minimal. Recreational landings of `r spp` are approximately 15 percent of rockfish landings and averaged around 5000 pounds annually from 2004-2007 [@Palssonetal_2009]. 
+
+`r Spp` are also harvested commercially and recreationally in Canada under DFOs groundfish hook and line fishery management in aggregate with other rockfish species. The total commercial catch limit for this aggregate group is 161 t in 2005/2006 and the recreational fishery is managed by bag limits ([@Cosewic_2009]). The status of `r spp` in Canada is threatened ([@Cosewic_2009]). 
+

@@ -1,0 +1,6 @@
+# Acknowledgments
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'41_acknowledgments.Rmd')
+read_child(filein)
+```

@@ -1,0 +1,14 @@
+## Life History
+
+`r Spp` are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska [@loveetal_2002]. Off the U.S. West Coast `r spp` are primarily located north of central California, with rare observations south of Point Conception. 'r Spp' have historically been a part of both commercial and recreational fisheries throughout their range. 
+
+`r Spp` are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat [@loveetal_2002]. The diets of `r spp` consist primarily of benthic and pelagic crustaceans, and fish [@Murie_diet_1995]. The body coloring or adult `r spp` is brown with yellow to orange blotching and light-colored dorsal saddle patches [@loveetal_2002]. As their name suggests, `r spp` have long dorsal fin spines.
+
+Limited studies have been performed looking at genetic variation in `r spp` across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of `r spp` [@seeb_gene_1998; @Stoutetal_DPS_2001], however [@seeb_gene_1998] did not find significant differentiation in populations of `r spp` between Washington and Alaska when Puget Sound samples were excluded. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (*Sebastes caurinus*), indicating limited oceanographic exchange among geographically proximate locations [@seeb_gene_1998; @buonaccorsi_population_2002; @johansson_influence_2008]. High site-fidelity [@HannahandRankin_rockfish_site_fidelity_2011] and relatively small home ranges [@tolimieri_home_2009] for `r spp` suggests similar patterns of isolation-by-distance as found for other rockfish.
+
+`r Spp` are a long-lived rockfish estimated to live up to 95 years [@loveetal_2002; @YamanakaandLacko_rockfish_2001]. `r Spp` was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis [@cope_approach_2011].  
+
+## Ecosystem Considerations
+
+[Replace text if want to / have to include]
+
