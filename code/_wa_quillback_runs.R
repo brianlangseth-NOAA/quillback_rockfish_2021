@@ -1018,11 +1018,20 @@ base.1015 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1015)
 #Results are not right. R0 explodes.
 
-#Estimate L infinity and K
+#Estimate just K
 model = "10_1_5_estK"
 base.1015b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1015b)
 #Results are not right. R0 explodes.
+
+#Estimate just K with recdevs
+#Starting from model 1011
+model = "10_1_5_recDevs_estK"
+base.1015c = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1015c)
+#Selex ests are off. They reach upper bounds. Reset bounds on max selex to be 50.
+#With bounds at 50, max selex reaches bounds but estimate of M is lower. 
+#There is a tradeoff between M and selex. 
 
 #Estimate CV at L2
 model = "10_1_6_estL2CV"
@@ -1048,9 +1057,16 @@ base.1019 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1019)
 
 #Use dome shaped selectivity selectivity for recreational fleet
+#Blows up (high R0) so apply with recdevs
 model = "10_1_10_recDome"
 base.10110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.10110)
+
+#Use dome shaped selectivity selectivity for recreational fleet with recdevs
+#Starting from model 1011
+model = "10_1_10b_recDevs_recDome"
+base.10110b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.10110b)
 
 #Use dome shaped selectivity for commercial fleet
 model = "10_1_11_comDome"
@@ -1065,18 +1081,18 @@ SS_plots(base.10112)
 
 
 #Compare sensitivities
-sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
-sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1016, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
-#Linf,K and K runs are unreasonable - exclude for now
-sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
-sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est K, recdevs", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1015c, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
+#Linf,K and K runs are unreasonable, ultimately didn't decide to go with est K with recdevs - exclude for now
+sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
 # #L2 CV run is very high, but not unreasonable - exclude for now
-# sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
-# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+# sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
+# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
 # #Linf run is very uncertain - exclude for now
 # #These are model runs for the "subset" plots
-#sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
-#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1017, base.1018, base.1019, base.10110, base.10111, base.10112))
+#sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
+#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 

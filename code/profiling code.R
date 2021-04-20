@@ -116,6 +116,16 @@ model_settings$extras = NULL #remove the no hessian option
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
+#There are a number of seemingly non-converged runs in the profiles, especially for steepness and M. Rerun manually. 
+#replace base results as appropriately numbered files in profile results and run code below
+#1. M at 0.07, 0.06, the base (for base use the values from the base run), and 0.04
+load(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1","/NatM_p_1_Fem_GP_1", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(3:1,4:8)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+
+#2. Steepness
+
 
 
 
