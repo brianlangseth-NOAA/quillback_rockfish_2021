@@ -740,7 +740,7 @@ SS_plots(base.711)
 
 #Data weighting using McAllister-Ianelli
 model = "7_1_2_dw_MI"
-base.712 = SS_output(file.path(wd, model),covar=TRUE)
+base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 SS_plots(base.712)
 
 #Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 710
@@ -843,8 +843,8 @@ sens_table = rbind(
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
-  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2020", 1:n]),
-  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2020", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
   as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
@@ -865,7 +865,7 @@ rownames(sens_table) = c("Total Likelihood",
                   "log(R0)",
                   "SB Virgin",
                   "SB 2020",
-                  "Fraction Unfished 2020",
+                  "Fraction Unfished 2021",
                   "Total Yield at SPR 50",
                   "Steepness",
                   "Natural Mortality",
