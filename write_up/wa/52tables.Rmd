@@ -100,8 +100,8 @@ out$Len_Mat[out$Len_Mat > 0.99] = 1
 rownames(out) = NULL
 col_names = c('Age', 'Length (cm)', 'Weight (kg)', 'Maturity', 'Spawning Output')
 
-table_format(x = out[1:50,],
-             caption = "Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.",
+table_format(x = out[1:51,],
+             caption = "Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-95 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.",
              label = "growth-tab",
              digits = c(0, 2, 2, 2, 2),
              align = 'l',

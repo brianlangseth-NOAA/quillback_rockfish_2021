@@ -66,6 +66,10 @@ title: Status of Quillback Rockfish (_Sebastes maliger_) along the Washington US
 
 <!--chapter:end:00title.Rmd-->
 
+\vspace{20cm}
+
+_These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited (or reproduced). They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce._
+
 \pagebreak
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -73,44 +77,9 @@ title: Status of Quillback Rockfish (_Sebastes maliger_) along the Washington US
 \renewcommand{\thetable}{\roman{table}}
 \renewcommand{\thefigure}{\roman{figure}}
 
+\setlength\parskip{0.5em plus 0.1em minus 0.2em}
+
 <!--chapter:end:01a.Rmd-->
-
-
-# Executive Summary{-}
-## Stock{-}
-This assessment reports the status of quillback rockfish (_Sebastes maliger_) off the Washington US West coast using data through xxxx.
-
-## Landings{-}
-Replace text.
-
-## Data and Assessment{-}
-Replace text.
-
-## Stock Biomass{-}
-Replace text.
-
-## Recruitment{-}
-Replace text.
-
-## Exploitation Status{-}
-Replace text.
-
-## Reference Points{-}
-Replace text.
-
-## Management Performance{-}
-Replace text.
-
-## Unresolved Problems and Major Uncertainties{-}
-Replace text.
-
-## Decision Table{-}
-Replace text.
-
-## Research and Data Needs{-}
-Replace text.
-
-<!--chapter:end:01executive.Rmd-->
 
 \pagebreak
 \setlength{\parskip}{5mm plus1mm minus1mm}
@@ -363,12 +332,9 @@ The base assessment model for quillback rockfish was developed to balance parsim
 
 The base model parameter estimates along with approximate asymptotic standard errors are shown in Table \ref{tab:params} and the likelihood components are shown in Table \ref{tab:likes}. Estimates of derived reference points and approximate 95 percent asymptotic confidence intervals are shown in Table \ref{tab:referenceES}. Estimates of stock size and status over time are shown in Table \ref{tab:timeseries}. 
 
-
 ### Parameter Estimates
 
 Estimated parameter values are provided in Table \ref{tab:params}. The $R_0$ was estimated at 2. The selectivity curves for the commercial and recreational fleet are shown in Figure \ref{fig:selex}. Selectivity was fixed to be asymptotic with a peak in maximum selectivity for the commercial fleet starting at  cm and a peak in maximum sleectivity for the recreational fleet starting at 44.1. Sensitivities to the selectivity shape and potential exclusion of sparse years of length data for both the commercial and recreational fleets were explored (see below in the [Sensitivity Analyses](#sensitivity-analyses) section). 
-
-[Recruitment discussion??]
 
 ### Fits to the Data
 
@@ -395,7 +361,6 @@ The 2020 spawning output relative to unfished equilibrium spawning output is bel
 <!--chapter:end:33results.Rmd-->
 
 ## Model Diagnostics
-Describe all diagnostics
 
 ### Convergence
 
@@ -413,10 +378,7 @@ Similar to results for $R_0$ results from the profile on steepness suggest the d
 [need to finish below - really odd profile]
 [Assuming higher or lower steepness values had little impact on the recent unfished and spawning output estimated for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}).]
 
-The negative log-likelihood profile across natural mortality supported the largest values in the profile near twice the fixed value of 0.057 (Figure \ref{fig:m-profile}).
-
-[need to finish below] 
-[The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) and resulted in a wide range of stock statuses (Figures \ref{fig:m-depl}) from below, within, and above the management precautionary zone (between 0.25 - 0.40).]
+The negative log-likelihood profile across natural mortality supported the largest values in the profile. The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) but resulted in generally similar stock statuses near to or above the management target (Figures \ref{fig:m-depl}).
 
 A profile across a range of $L_{\infty}$ values was also conducted and values from approximately 40 to 44 cm were supported with a minimum around 41 cm (Figure \ref{fig:linf-profile}). The value of $L_{\infty}$ in the model was fixed at 43.04.The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale (Figure \ref{fig:linf-ssb}) and status (Figure \ref{fig:linf-depl}).
 
@@ -448,7 +410,7 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
   
   \item Exclude fitting to commercial length data. Set the selectivity of the commercial fleet to equal that of the recreational fleet.
   
-  \item Fix recreational selectivity form to be dome-shaped. 
+  \item Fix recreational selectivity form to be dome-shaped while also estimating annual recruitment deviations. 
   
   \item Fix commercial selectivity form to be dome-shaped.
 
@@ -456,13 +418,13 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
   
 \end{enumerate}
 
-A sensitivity run estimating $k$ was also performed but not shown here due to the model failing to estimate a reasonable biomass scale (near the upper bound of log($R_0$) of 20). 
+Sensitivity runs estimating $k$ and estimating a dome-shaped selectivity form for the recreational fishery were also conducted but resulted in the model failing to estimate a reasonable biomass scale (near the upper bound of log($R_0$) of 20). 
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}. There was high uncertainty in estimates of $R_0$ for the sensitivities estimating $L_{\infty}$ and the coefficient of variation in length of older fishes and therefore plots were made without these two sensitivites and are shown in Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}.
 
-The two sensitivities that had the largest impact relative to the base model were the ones that estimated $L_{\infty}$ and the coefficient of variation in length of older fishes (Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}). These two sensitivities estimated log(R0) 50 and 75 percent larger than the base model despite a change in $L_{\infty}$ of 2 cm (from 43.04), and change in the coefficient of variation in length of older fishes to around 7 percent (from 10 percent).
+The two sensitivities that had the largest impact relative to the base model were the ones that estimated $L_{\infty}$ and the coefficient of variation in length of older fishes (Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}). These two sensitivities estimated log(R0) 50 and 75 percent larger than the base model despite estimating a change in $L_{\infty}$ of 2 cm (from 43.04), and change in the coefficient of variation in length of older fishes to around 7 percent (from 10 percent).
 
-The next two sensitivities that had the largest impact on biomass scale relative to the base model were the sensitivities exploring data weighting using the DM Method, which resulted in a larger biomass scale than the base model, and the sensitivity estimating natural mortality, which resulted in a smaller biomass scale than the base model (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). Despite the differences in scale, both sensitivites resulted in higher stock status than the base model. 
+The next two sensitivities that had the largest impact on biomass scale relative to the base model were the sensitivities exploring data weighting using the DM Method, which resulted in a larger biomass scale than the base model, and the sensitivity estimating natural mortality, which resulted in a smaller biomass scale than the base model (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). Despite the differences in scale, both sensitivities resulted in higher stock status than the base model. Estimating natural mortality resulted in a tradeoff with selectivity. When allowing flexibility in $M$, the model estimates a high value than the base case, which results in higher estimates for the peak size in selectivity for both fleets. The estimate of $M$ is therefore limited by the parameter estimates for the peak in selectivity approaching their bounds. 
 
 The sensitivity estimating annual recruitment deviations resulted in a lower biomass scale, and level of depletion such that spawning ouput in 2020 was below the threshold of 25 percent of unfished spawning output (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). The estimates or recruitment deviations had a period of above-average recruitment from 1987 to 2003, then switched to a period of low recruitment (Figure \ref{fig:sens-recdev}). The recruitment deviation estimates were likely being driven by smaller lengths observed in the recreational fleet in the mid 1990s, but mostly by a lack of smaller fish being caught since 2000 (Figure \ref{fig:mean-rec-len-data}). Furthermore, the variability of the recruitment deviations up to around 2005 were higher than the assumed variability in recruitment (0.6), suggesting the increased recruitments were not well informed by the data. The pattern of recruitment deviations estimated seemed extreme for the Washington model but the general pattern showed some coherence with the recruitment deviations estimated in the separate Oregon model. The Oregon base model estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s. This may potentially suggest that quillback rockfish off the coast of Oregon and Washington experience similar drivers in recruitment, howeer, the Oregon model estimated periods of higher recruitment since 2000 to support increasing catches over time and also to fit pulses of small fish in the length data, whereas the Washington base model estimates lower than average recruitment throughout that time period.   
 
@@ -513,8 +475,7 @@ The ability to estimate additional process and biological parameters for quillba
 
 <!--chapter:end:40management.Rmd-->
 
-# Acknowledgments
-
+<!-- Acknowledgments -->
 
 # Acknowledgments
 Many people were instrumental in the successful completion of this assessment and their contribution is greatly appreciated. We are very grateful to all the agers at WDFW, ODFW, and the CAP lab for their hard work reading numerous otoliths and availability to answer questions when needed. Jason Jannot and Kayleigh Sommers assisted with data from the WCGOP and entertained our many questions. We would like to acknowledge the data team and their dedication to improving the assessments we do. John Harms, Brenda Erwin, and Jason Edwards were incredibly helpful in understanding the available data and resolving questions about its interpretation and use. All of the data moderate assessments this year were greatly benefited by the numerous individuals who took the time to participate in the pre-assessment data webinar. Gerry Richter, Merit McCrea, Louis Zimm, Bill James, and Daniel Platt were provided insight to the data and the complexities of the commercial and recreational fisheries off the West Coast of the U.S. which were essential in the production of all of the quillback rockfish assessments conducted this year.
@@ -716,12 +677,12 @@ Year & OFL & ACL & WA ACL & WA Removals\\
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}}
-\caption{(\#tab:growth-tab)Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.}\\
+\caption{(\#tab:growth-tab)Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-95 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.}\\
 \toprule
 Age & Length (cm) & Weight (kg) & Maturity & Spawning Output\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:growth-tab)Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50. \textit{(continued)}}\\
+\caption[]{(\#tab:growth-tab)Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-95 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50. \textit{(continued)}}\\
 \toprule
 Age & Length (cm) & Weight (kg) & Maturity & Spawning Output\\
 \midrule
@@ -779,7 +740,8 @@ Age & Length (cm) & Weight (kg) & Maturity & Spawning Output\\
 46 & 43.04 & 1.71 & 1.00 & 0.46\\
 47 & 43.04 & 1.71 & 1.00 & 0.46\\
 48 & 43.04 & 1.71 & 1.00 & 0.46\\
-49 & 43.04 & 1.71 & 1.00 & 0.46\\*
+49 & 43.04 & 1.71 & 1.00 & 0.46\\
+50 & 43.04 & 1.71 & 1.00 & 0.46\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -984,7 +946,7 @@ Year & Adopted OFL & Adopted ACL & Adopted ACL-WA & OFL & ABC & Buffer & Spawnin
 ![Mean length for commercial fleet with 95 percent confidence intervals.\label{fig:mean-com-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Commercial.png){width=100% height=100% alt="Mean length for commercial fleet with 95 percent confidence intervals."}
 
 
-![Aggregate length composition for the commercial and recreational fleet over all years.\label{fig:wa-len-agg}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregate length composition for the commercial and recreational fleet over all years."}
+![Aggregate length composition for the commercial and recreational fleet over all years.\label{fig:wa-len-agg}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat__aggregated_across_time.png){width=100% height=100% alt="Aggregate length composition for the commercial and recreational fleet over all years."}
 
 <!-- ====================================================================== -->
 <!-- **************** Recreational Length Samples    ********************** --> 
@@ -1216,4 +1178,17 @@ fishery selectivity and with steepness fixed at 0.72."}
 \newpage
 
 <!--chapter:end:53figures.Rmd-->
+
+\clearpage
+# Appendix A. Detailed Fit to Length Composition Data 
+
+
+
+![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.."}
+
+![Length comps, whole catch, WA_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 2 of 2)."}
+
+![Length comps, whole catch, WA_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method..\label{fig:comp_lenfit_flt2mkt0}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt2mkt0.png){width=100% height=100% alt="Length comps, whole catch, WA_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.."}
+
+<!--chapter:end:54appendix.Rmd-->
 
