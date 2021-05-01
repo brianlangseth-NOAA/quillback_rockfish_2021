@@ -336,5 +336,29 @@ model_settings$retro_yrs = ((-1):(-25))
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
+####################
+#Proposed base run 7_1
+####################
+base_name = "7_1_0_baseProfile"
+
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
+                            low =  c(0.03, 0.30, 2.25, 40, 0.1),
+                            high = c(0.09, 0.99,  3.75, 47, 0.25),
+                            step_size = c(0.01, 0.10, 0.25, 1, 0.01),
+                            param_space = c('real', 'real', 'real', 'real', 'real'))
+
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+                            low =  c(0.10),
+                            high = c(0.24),
+                            step_size = c(0.01),
+                            param_space = c('real'))
+
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile", "retro", "jitter"),
+                                              profile_details = get ))
+model_settings$jitter_fraction = 0.25
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 

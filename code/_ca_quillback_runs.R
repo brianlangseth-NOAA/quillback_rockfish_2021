@@ -678,4 +678,218 @@ base.600 = SS_output(file.path(wd, model),covar=TRUE, cormax = 0.7, cormin = 0.0
 #Our main devs between 1985 to 2017 are correlated, there isn't one (other than 2003) thats uninformed
 
 
+##########################################################################################
+#                         Pre assessment workshop base model
+##########################################################################################
+
+#Starting from model 600 (with recdev bias adj included)
+
+#1. Adjust steepness prior SD to 0.158 (was 0.09)
+#2. Adjust forecast projection values to pstar values PEPtools::get_buffer (same as copper) 
+#3. Change control rule format in forecast from f(SSB) on F to f(SSB) on catch
+#4. Adjust forecast catch. Previously the value from 2020. Now, take the California percentage 
+#of the North ACL (28.7% of 5.73 for 2021 and 5.74 for 2022) pluse the south component (4.19 for both 2021 and 2022)
+#and apportioned to commercial and recreational based on the average percentage of catch for each from 2018-2020
+#5. Change max age to 95 years, adjust natural mortality accordingly
+#6. Update prior values for parameters 5 and 6 to -20 and 10, respectively
+
+model = "7_0_0_MI"
+base.700 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.700)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\7_0_0_base", write = FALSE, option = "none") #for first initial pass
+
+#Switch to Francis weighting - Had to iterate twice
+model = "7_0_1_Francis"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.710)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\7_1_0_base", write = FALSE, option = "none") #for first initial pass
+#Francis has slightly more extreme status but also have more dramatic recdevs. Keep with MI
+
+#Copy model 7_0_0
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.710)
+
+##############################################
+#       Sensitivities - Starting with model 710
+##############################################
+#No recruitment deviations
+model = "7_1_1_norec"
+base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.711)
+
+#Data weighting using Francis
+model = "7_1_2_dw_Francis"
+base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+SS_plots(base.712)
+
+#Data weighting using Francis, but iterating multiple times to get value - Use values from final model 701
+model = "7_1_2b_dw_Francis_iter"
+base.712b = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+SS_plots(base.712b)
+
+#Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 710
+DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
+                             dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_3_dw_DM\\just model files")
+model = "7_1_3_dw_DM"
+base.713 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.713)
+base.713$Length_Comp_Fit_Summary
+#Theta/(1+theta) commercial = 0.9819261 (theta = 54.32830)
+#Theta/(1+theta) recreational = 0.5121594 (theta = 1.04985)
+
+#Estimate L infinity
+model = "7_1_4_estlinf"
+base.714 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.714)
+
+#Estimate L infinity and K
+model = "7_1_5_estlinfK"
+base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.715)
+
+#Estimate L infinity and K
+model = "7_1_6_estK"
+base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.716)
+
+#Estimate CV at L2
+model = "7_1_7_estL2CV"
+base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.717)
+
+#Estimate natural mortality
+model = "7_1_8_estM"
+base.718 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.718)
+
+#Remove early recreational comps (before 2004)
+model = "7_1_9_noEarlyRec_pre04"
+base.719 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.719)
+
+#Remove early recreational comps (before 1993)
+model = "7_1_9b_noEarlyRec_pre93"
+base.719b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.719b)
+
+#Use dome shaped selectivity for recreational fleet
+model = "7_1_10_recDome"
+base.7110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7110)
+
+#Use dome shaped selectivity for recreational fleet but only estimate parm6
+model = "7_1_10b_recDome_3parm"
+base.7110b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7110b)
+
+#Use dome shaped selectivity for commercial fleet
+model = "7_1_11_comDome"
+base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7111)
+
+#Use dome shaped selectivity for commercial fleet but only estimate parm6
+model = "7_1_11b_comDome_3parm"
+base.7111b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7111b)
+
+#Set block for early recreational comps data (block ending in 1993)
+#Allowed dome shaped for block
+model = "7_1_12_recBlock93"
+base.7112 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7112)
+
+
+#Compare sensitivities
+sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993")       #11
+sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_sensitivities_"),
+                  subplot = 2, 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_sensitivities_"),
+                  subplot = c(4,10), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottom", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_sensitivities_"),
+                  subplot = 12, 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+# Create a Table of Results
+n = length(sens_names)
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Forecast_Recruitment",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_priors",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]) )  
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                         "Length Likelihood",
+                         "Recruitment Likelihood",
+                         "Forecast Recruitment Likelihood",
+                         "Parameter Priors Likelihood",
+                         "Parameter Bounds Likelihood",
+                         "log(R0)",
+                         "SB Virgin",
+                         "SB 2020",
+                         "Fraction Unfished 2021",
+                         "Total Yield at SPR 50",
+                         "Steepness",
+                         "Natural Mortality",
+                         "Length at Amin",
+                         "Length at Amax",
+                         "Von Bert. k",
+                         "CV young",
+                         "CV old")
+
+write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_sensitivities.csv")))
+
+t = table_format(x = sens_table,
+                 caption = 'Sensitivities relative to the base model.',
+                 label = 'sensitivities',
+                 longtable = TRUE,
+                 font_size = 9,
+                 digits = 3,
+                 landscape = TRUE,
+                 col_names = sens_names)
+
+kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/sensitivities.tex"))
 
