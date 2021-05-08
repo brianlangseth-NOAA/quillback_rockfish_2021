@@ -2,7 +2,7 @@
 
 This assessment modeled `r spp` as a single sex. Data available were generally sparse, growth and length-weight relationships were similar across sexes, and the literature provided limited evidence of sexual dimorphism in length [@LenarzandEcheverria_dimorphism_1991]. The sections below therefore describe combined male and female biological data. 
 
-[Do I need to provide more evidence justifying the choice to combine genders? For example, gender specific plots of W-L or L-A, sex ratios by age or length?]
+[Show plots by sex to support choice of combining genders]
 
 ### Natural Mortality
 
@@ -16,11 +16,11 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 The above is also the median of the prior suggested by Hamel [-@hamel_method_2015]. The prior is defined as a log normal distribution with parameters $\mu = ln(5.4/A_{\text{max}})$ and $\sigma = 0.438$. Using a maximum age of `r model$accuage` years, the point estimate and median of the prior for $M$ is `r model$parameters["NatM_p_1_Fem_GP_1","Value"]` per year.
 
-The maximum age was selected based on literature values for the U.S. West Coast examining the longevity of `r spp` [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. The oldest aged `r spp` among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
+The maximum age of 95 years was selected based on literature values for the U.S. West Coast examining the longevity of `r spp` [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. The oldest aged `r spp` among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
 
 ### Maturation and Fecundity
 
-Maturity-at-length estimates were based on the work of Hannah and Blume [-@HannahandBlume_maturity_2011] which estimated the 50% size-at-maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm and slope of `r round(model$MGparmAdj$Mat_slope_Fem_GP_1[1], 2)` off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50% maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm is consistent with other studies for `r spp`, which range 26-32 cm [@Echeverria_maturity_1987; @Rosenthaletal_maturity_1982].  
+Maturity-at-length estimates were based on the work of Hannah and Blume [-@HannahandBlume_maturity_2011] which estimated the 50% size-at-maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50% maturity of `r round(model$MGparmAdj[,"Mat50%_Fem_GP_1"][1], 1)` cm is consistent with other studies for `r spp`, which provide a range of 26-32 cm [@Echeverria_maturity_1987; @Rosenthaletal_maturity_1982].  
 
 The fecundity-at-length was based on research by Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for `r spp` was estimated equal to `r format(model$MGparmAdj$Eggs_scalar_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Eggs_exp_len_Fem[1],2)`^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
 
@@ -43,7 +43,6 @@ These values were fixed within the base model. The coefficient of variation (CV)
 Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-age, and spawning output (the product of fecundity and maturity) assumed in the base model.
 
 [Is it typical not to include t0? Its not an SS parameter but it does affect the estimate of L1. Should I instead include L1?]
-[Should I state here that this is a higher K than other studies, and high for the longevity of the species]
 
 ### Sex Ratio
 
