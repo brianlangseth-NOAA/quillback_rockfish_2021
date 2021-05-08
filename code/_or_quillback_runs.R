@@ -796,7 +796,7 @@ SS_plots(base.7111)
 
 
 #Compare sensitivities
-sens_names <- c("Base mode","No rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
+sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
 sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111))
 
 #Plot each individually for control over legend location

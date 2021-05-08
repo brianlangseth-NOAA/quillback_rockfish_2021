@@ -984,6 +984,22 @@ SS_plots(base.1003)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_3_4parmSelex", write = FALSE, option = "none") #for first initial pass
 #No effect
 
+#Confine bounds on selex from 55 to 50.
+#Starting from model 1002
+model = "10_0_4_confineSelex50"
+base.1004 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1004)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_4_confineSelex50", write = FALSE, option = "none") #for first initial pass
+#No effect
+
+#Confine bounds on selex from 55 to 43. This is to test is status improves
+#Starting from model 1002
+model = "10_0_5_confineSelex43"
+base.1005 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1005)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_5_confineSelex43", write = FALSE, option = "none") #for first initial pass
+#Status improves. Selex bound is reached, and R0 increases. Should understand why. 
+
 ##############################################
 #       Sensitivities - Starting with model 1000
 ##############################################

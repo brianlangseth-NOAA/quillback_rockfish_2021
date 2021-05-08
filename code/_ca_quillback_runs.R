@@ -705,10 +705,17 @@ SS_plots(base.710)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\7_1_0_base", write = FALSE, option = "none") #for first initial pass
 #Francis has slightly more extreme status but also have more dramatic recdevs. Keep with MI
 
-#Copy model 7_0_0
+#Copy model 7_0_0 
 model = "7_1_0_base"
 base.710 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.710)
+
+#Set early years of commercial comps as ghost instead of outright remove
+model = "7_1_1_base_ghostCom"
+base.711 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.711)
+
+
 
 ##############################################
 #       Sensitivities - Starting with model 710
@@ -799,10 +806,15 @@ model = "7_1_12_recBlock93"
 base.7112 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.7112)
 
+#Remove the extreme catches for rec in 1983, 1993 and com in 1991. Set to midway between previous and following years with real data.
+#Rec 1993 is used to interpolate 1990-1992 so adjusting 1993 affects these years too. 
+model = "7_1_13_noExtremeCatch"
+base.7113 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7113)
 
 #Compare sensitivities
-sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993")       #11
-sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112))
+sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993", "Adjust extreme catches")
+sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112, base.7113))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
