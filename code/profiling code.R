@@ -84,7 +84,7 @@ base_name = "10_0_0_baseProfile"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
                             low =  c(0.03, 0.30, -0.5, 40, 0.15),
-                            high = c(0.09, 0.99,  2, 46, 0.25),
+                            high = c(0.09, 1.0,  2, 46, 0.25),
                             step_size = c(0.01, 0.10, 0.25, 0.5, 0.01),
                             param_space = c('real', 'real', 'relative', 'real', 'real'))
 
@@ -106,7 +106,7 @@ get = get_settings_profile( parameters =  c("SR_LN(R0)"),
                             param_space = c('relative'))
 get = get_settings_profile( parameters =  c("SR_BH_steep"),
                             low =  c(0.3),
-                            high = c(0.9),
+                            high = c(1.0),
                             step_size = c(0.1),
                             param_space = c('real'))
 model_settings = get_settings(settings = list(base_name = base_name,
@@ -124,10 +124,29 @@ profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(3:1
 profilesummary <- r4ss::SSsummarize(profilemodels) 
 profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
 
-#2. Steepness
+#2. Steepness - rerun all runs manually
+load(paste0(mydir,"/10_0_0_baseProfile_profile_SR_BH_steep","/SR_BH_steep", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:9)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_SR_BH_steep"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+#Doesn't update tables - Not sure how to
+get_summary(paste0(mydir,"/10_0_0_baseProfile_profile_SR_BH_steep"), profile_output$para, profile_output$vec, "profile", profilemodels, profilesummary)
 
+#Profile is a little odd. Plot results to look over
+for(i in seq(0.3,1,0.1)){
+  model = paste0("10_0_0_baseProfile_profile_SR_BH_steep_",i)
+  sens_h = SS_output(file.path(mydir, model), covar=TRUE)
+  SS_plots(sens_h)
+}
 
-
+#2. Steepness - rerun all runs manually but set prior_like in the starter file to 0
+load(paste0(mydir,"/10_0_0_baseProfile_profile_SR_BH_steep_noPriorLike/10_0_0_baseProfile_profile_SR_BH_steep","/SR_BH_steep", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:9)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_SR_BH_steep_noPriorLike/10_0_0_baseProfile_profile_SR_BH_steep"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+#Doesn't update tables - Not sure how to
+get_summary(paste0(mydir,"/10_0_0_baseProfile_profile_SR_BH_steep_noPriorLike/10_0_0_baseProfile_profile_SR_BH_steep"), profile_output$para, profile_output$vec, "profile", profilemodels, profilesummary)
+  
 
 
 #######################################################################################################
