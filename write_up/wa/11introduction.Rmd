@@ -4,7 +4,7 @@
 
 This assessment reports the status of `r spp` (*`r spp_latin`*) off the `r state` coast using data through `r endyr`. 
 
-The stock off the `r state` coast was assessed as a separate stock from other populations off the U.S. West Coast based on two factors. First, the fairly sedentary nature of `r spp` likely limits flow of fish to Oregon [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009]. Additionally, the primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as `r spp` associate with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate. Second, the exploitation history and magnitude of removals off the `r state` coast differ from those in Oregon and California.    
+The stock off the `r state` coast was assessed as a separate stock from other populations off the U.S. West Coast based on two factors. First, the fairly sedentary nature of `r spp` [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009] likely limits flow of fish between Washington and Oregon. Additionally, the primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as `r spp` associate with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate. Second, the exploitation history and magnitude of removals off the `r state` coast differ from those in Oregon and California.    
 
 <!-- Life history -->
 
@@ -16,11 +16,9 @@ read_child(filein)
 
 ## Historical and Current Fishery Information
 
-Off the Washington coast `r Spp` is primarily caught in the recreational fishery but in general is not targeted by either commercial or recreational fleets (Table \ref{tab:catch} and Figure \ref{fig:catch}). Recreational landings of `r spp` were provided by the WDFW and were available from 1958 to present with a linear interpolation applied where data are missing. Recreational harvest is focused in the central and northern regions in areas of rocky habitat. Although populations are considered to be widespread in the nearshore marine environment, abundance may be limited along the southern coast which consists primarily of soft and sandy substrate. 
+Off the Washington coast `r Spp` is caught in the recreational fishery but in general is not targeted by either commercial or recreational fleets (Table \ref{tab:catch} and Figure \ref{fig:catch}). Recreational landings of `r spp` were provided by the WDFW and were available from 1958 to present with a linear interpolation applied where data are missing. Recreational harvest is focused in the central and northern regions in areas of rocky habitat. Although populations are considered to be widespread in the nearshore marine environment, abundance may be limited along the southern coast which consists primarily of soft and sandy substrate. 
 
 Commercial landings data are available from WDFW historical reconstruction prior to 1981 and from PacFIN from 1981 through 2020. Washington closed state waters to commercial fixed gears in 1995 and to trawling in 1999 and the depths preferred by `r spp` are predominantly found within state waters. In response to the development of the live-fish fishery in California and Oregon, Washington took preemptive action in 1999 to prevent the fishery from developing by prohibiting the landing of live-fish. There are four treaty tribes of the Washington coast that continue to fish under separate commercial rules and are not subject to the state water closure that occasionally land small amounts of `r spp`. `r Spp` are usually landed in the Nearshore Rockfish group, a mixed-species market category. Species composition samples were taken from sampled landings and proportions of `r spp` reported in the Nearshore market category are estimated by port, quarter, gear, and year. In 2020, COVID-19 closures of tribal lands prevented samplers from accessing all commercial catch, so an average proportion of `r spp` in 2017 - 2019 was applied to all associated tribal landings.
-
-
 
 <!-- Summary of Management History and Performance -->
 

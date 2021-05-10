@@ -11,16 +11,15 @@ Proper convergence was determined by starting the minimization process from disp
 Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, and growth coefficient ($k$) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
 
 In regards to values of $R_0$, values from approximately 1.8 to 4 were supported with the negative log-likelihood minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). This suggests the data contain limited information on the scale of the population. Increasing the $R_0$, relative to the value estimated results in an increase in stock scale (Figure \ref{fig:r0-ssb}) and status (Figure \ref{fig:r0-depl}). 
-Similar to results for $R_0$ results from the profile on steepness suggest the data have limited information on the value of steepness. Any value of steepness was supported based on change in log-likelihood, with the lowest negative log-likelihood occurring near the value for the base model of `r round(model$parameters[model$parameters$Label == "SR_BH_steep",3],2)` (Figure \ref{fig:h-profile}). 
-
-[need to finish below - really odd profile]
-[Assuming higher or lower steepness values had little impact on the recent unfished and spawning output estimated for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}).]
+Similar to results for $R_0$, the profile on steepness suggests the data have limited information on the value of steepness. Value of steepness between 0.3-0.9 were supported based on change in log-likelihood, with the lowest negative log-likelihood occurring near a value of 0.9, which is greater than the value for the base model of `r round(model$parameters[model$parameters$Label == "SR_BH_steep",3],2)` (Figure \ref{fig:h-profile}). Assuming lower steepness values resulted in higher estimates of unfished and recent spawning output (Figure \ref{fig:h-ssb}) and reduced levels of depletion relative to unfished conditions, though relative final stock status was within the management precatuionary zone (0.25 - 0.40 of unfished biomass) across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}).
 
 The negative log-likelihood profile across natural mortality supported the largest values in the profile. The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) but resulted in generally similar stock statuses near to or above the management target (Figures \ref{fig:m-depl}).
 
 A profile across a range of $L_{\infty}$ values was also conducted and values from approximately 40 to 44 cm were supported with a minimum around 41 cm (Figure \ref{fig:linf-profile}). The value of $L_{\infty}$ in the model was fixed at `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]`.The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale (Figure \ref{fig:linf-ssb}) and status (Figure \ref{fig:linf-depl}).
 
 The negative log-likelihood profile across values of $k$ supported all values within the profile but was minimized at lower values of $k$ (Figure \ref{fig:k-profile}). The $k$ value for fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale (Figure \ref{fig:k-ssb}) and status (Figure \ref{fig:k-depl}) increased under lower $k$ values but the chang was small compared to changes caused by other parameters.
+
+[Add a table like the sensitivity one for profiles]
 
 ### Retrospective Analysis
 
@@ -50,7 +49,7 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
   
   \item Fix recreational selectivity form to be dome-shaped while also estimating annual recruitment deviations. 
   
-  \item Fix commercial selectivity form to be dome-shaped.
+  \item Allow commercial selectivity form to be dome-shaped.
 
   \item Estimate a recreational selectivity block from 1958-1999, and 2000-2020.   
   

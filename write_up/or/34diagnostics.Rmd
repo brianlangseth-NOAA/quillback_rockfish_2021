@@ -10,15 +10,15 @@ Proper convergence was determined by starting the minimization process from disp
 
 Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, and growth coefficient ($k$) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
 
-In regards to values of $R_0$, the negative log-likelihood was minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). The recreational data supported lower log($R_0$) values whereas the commercial data supported higher log($R_0$) values. Increasing the $R_0$, relative to the value estimated, results in an a sharp increase in stock scale (Figure \ref{fig:r0-ssb}) and status  and (Figure \ref{fig:r0-depl}). 
+In regards to values of $R_0$, the negative log-likelihood was minimized at approximately a log($R_0$) of `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). The recreational data supported lower log($R_0$) values whereas the commercial data supported higher log($R_0$) values. Increasing the $R_0$, relative to the value estimated, results in an a sharp increase in stock scale (Figure \ref{fig:r0-ssb}) and status  and (Figure \ref{fig:r0-depl}). Estimates of derived quantities across the range of profiled values of log($R_0$) are shown in Table \ref{tab:profile_r0}.
 
-For steepness, values from approximately 0.6 to 0.8 were supported with the lowest negative log-likelihood occurring at the upper bound of 1.0 (Figure \ref{fig:h-profile}). Assuming higher or lower steepness values had little impact on the recent unfished and spawning output estimated for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}).
+For steepness, values from approximately 0.6 to 0.8 were supported with the lowest negative log-likelihood occurring at the upper bound of 1.0 (Figure \ref{fig:h-profile}). Assuming higher or lower steepness values had little impact on the recent unfished and spawning output estimated for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}). Estimates of derived quantities across the range of profiled values of steepness are shown in Table \ref{tab:profile_h}.
 
-The negative log-likelihood profile across natural mortality supported values between 0.045 and 0.09 (the highest value in the profile) which included the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) and resulted in a wide range of stock statuses (Figures \ref{fig:m-depl}) from below, within, and above the management precautionary zone (between 0.25 - 0.40). 
+The negative log-likelihood profile across natural mortality supported values between 0.045 and 0.09 (the highest value in the profile) which included the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` (Figure \ref{fig:m-profile}). The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) and resulted in a wide range of stock statuses (Figures \ref{fig:m-depl}) from below, within, and above the management precautionary zone (between 0.25 - 0.40). Estimates of derived quantities across the range of profiled values of $M$ are shown in Table \ref{tab:profile_m}.
 
-A profile across a range of $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}). The negative log-likelihood was minimized near the fixed value of `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]`. The recreational data supported slightly higher $L_{\infty}$ values whereas the commercial data supported lower $L_{\infty}$ values. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale (Figure \ref{fig:linf-ssb}) and status (Figure \ref{fig:linf-depl}).
+A profile across a range of $L_{\infty}$ values was also conducted (Figure \ref{fig:linf-profile}). The negative log-likelihood was minimized near the fixed value of `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]`. The recreational data supported slightly higher $L_{\infty}$ values whereas the commercial data supported lower $L_{\infty}$ values. The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale (Figure \ref{fig:linf-ssb}) and status (Figure \ref{fig:linf-depl}). Estimates of derived quantities across the range of profiled values of $L_{\infty}$ are shown in Table \ref{tab:profile_linf}.
 
-A profile across a range of $k$ values was also conducted (Figure \ref{fig:k-profile}). The negative log-likelihood showed support for values between 0.135 and 0.21, and was minimized at 0.165 with support from both the recreational and commercial data. The $k$ value for fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale (Figure \ref{fig:k-ssb}) and status (Figure \ref{fig:k-depl}) increased under lower $k$ values.
+A profile across a range of $k$ values was also conducted (Figure \ref{fig:k-profile}). The negative log-likelihood showed support for values between 0.135 and 0.21, and was minimized at 0.165 with support from both the recreational and commercial data. The $k$ value for fish in the model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale (Figure \ref{fig:k-ssb}) and status (Figure \ref{fig:k-depl}) increased under lower $k$ values. Estimates of derived quantities across the range of profiled values of $k$ are shown in Table \ref{tab:profile_k}.
 
 ### Retrospective Analysis
 
@@ -48,13 +48,11 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
 
   \item Fix recreational selectivity form to be asymptotic. 
   
-  \item Fix commercial selectivity form to be dome-shaped.
+  \item Allow commercial selectivity form to be dome-shaped.
 
   \item Estimate recreational selectivity block: 1979-1999 with asymptotic selectivity curve and 2000-2020 with dome-shaped selectivity.   
   
 \end{enumerate}
-
-[Should I better describe why each sensitivity is being done - or is this adequate?]
 
 Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}, respectively.
 
@@ -76,9 +74,7 @@ There were four primary uncertainties in the model given current data availabili
   
   \item The magnitude of recruitment was also affected by the data weighting values, which is the third uncertainty. Data weighting using McAllister-Ianelli reduced the amount of information coming from the recreational fleet, affecting the magnitude of recruitment, and resulting in a more pessimistic stock status. Francis and the Dirichlet-Multimonial weighting resulted in similar results. 
   
-  \item The final uncertainty is estimates of growth. The fixed value for k for `r spp` is higher than other published studies, which are typically nearer 0.1, and result in a high $k$/$M$ ratio. Profiles for $L_{\infty}$ and $k$ suggest estimating these parameters is feasible, and result in estimates of $k$ nearer literature values. Ultimately, we decided to keep the fixed values in the base model given the relatively large number of young fish in the surveys, however estimating growth parameters has a more pessimistic outlook on stock scale and status compared to the base model.  
+  \item The final uncertainty is estimates of growth. The fixed value for k for `r spp` is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is feasible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and $L_{\infty}$ close to the fixed estimate. We decided to keep the fixed values in the base model given the range of plausible $k$ values from the profile included the fixed estimate, and that growth estimates included a fairly large number of young fish from the surveys to inform the esitmate of $k$.  
   
 \end{enumerate}
-
-[These are often the major uncertainties. Growth is more my own opinion and doesnt really have as large of an affect on results as the others do. Thoughts on these?]
 

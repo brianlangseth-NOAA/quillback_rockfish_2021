@@ -1,32 +1,33 @@
 # Assessment Model
 
-## Summary of Previous Assessments 
+<!-- Summary of Previous Assessments and Bridging analysis -->
 
-`r Spp` was last assessed in 2010 ([@DickandMacCall_dbsra_2010]). The stock was assessed using Depletion-Based Stock Reduction Analysis (DB-SRA) which is a data-limited approach that incorporates catch data with priors on select parameters including natural mortality, the ratio of fishing mortality at maximum sustainable yield to natural mortality, current depletion, and the depletion at maximum sustainable yield to estimate overfishing status, but not overfished status. `r Spp` was assessed as a single coastwide stock to generate an overall OFL that was then apportioned to each management area based on the proportion of historical catches North and South of 40$^\circ$ 10' Lat. N.. Assuming that current depletion was at the management target on average (e.g. 40%), the 2010 assessment found that `r spp` had a 52% chance of experiencing overfishing coastwide. 
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '3_model_general.Rmd')
+read_child(filein)
+```
 
-### Bridging Analysis
-
-A direct bridging analysis was not conducted because the previous assessment was structured as a single coastwide model. The previous assessment also used DB-SRA, which uses different assumptions and data than the model used for this assessment, making a bridging analysis intractable.  
 
 ## Model Structure and Assumptions
 
-`r coast` coast `r spp` was assessed using a one-sex model with life history parameters combined across sexes. The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr`. Selectivity for the commercial fleet was specified to be asymptotic using the six-parameter double normal parameterization within Stock Synthesis. The ascending width and beginning size of maximum selectivity parameters were estimated for the commercial fleet. The recreational fleet also used the six-parameter double normal parameterization with the ascending width and beginning size of maximum selectivity parameters estimated, and also was allowed to estimate reduced selectivity for the largest fish (i.e., allowed to be dome-shaped). Annual recruitment deviations were estimated within the base model.
+`r coast` coast `r spp` was assessed using a one-sex model with life history parameters combined across sexes. The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr`. Selectivity for the commercial fleet was specified to be asymptotic using the six-parameter double normal parameterization within Stock Synthesis. The ascending width and beginning size of maximum selectivity parameters were estimated for the commercial fleet. The selectivity for the recreational fleet was also specified using the six-parameter double normal parameterization with the ascending width and beginning size of maximum selectivity parameters estimated, and reduced selectivity for the largest fish was allowed (i.e., allowed to be dome-shaped). Annual recruitment deviations were estimated within the base model.
 
-### Modeling Platform and Structure
+<!-- Modeling Platform and Structure and Priors and Data Weighting -->
 
-Stock Synthesis (SS) version 3.30.16 was used to estimate the parameters in the model. The R package r4ss, version 1.41.0, along with R version 4.0.2 were used to investigate and plot model fits. The NWFSC developed R packages nwfscSurvey_2.0 and PacFIN.Utilities_0.0.2.0000 were used for synthesis and processing of data for use in Stock Synthesis. 
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '3_model_details.Rmd')
+read_child(filein)
+```
 
-### Priors
+<!-- Data Weighting -->
 
-Priors were used with fixed parameter values for natural mortality and steepness in the base model.  The prior distribution for natural mortality was based on the Hamel [-@hamel_method_2015] meta-analytic approach with an assumed maximum age of `r model$accuage` years. The prior assumed a lognormal distribution for natural mortality with a median of `r model$parameters["NatM_p_1_Fem_GP_1","Value"]` and a standard deviation of 0.48. 
-
-The prior for steepness assumed a beta distribution with mean of 0.72 and standard deviation of 0.158. The prior parameters are based on the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA) which was reviewed and endorsed by the Scientific and Statistical Committee (SSC) in 2017. However, this approach was subsequently rejected for future analysis in 2019 when the new meta-analysis resulted in a mean value of approximately 0.95. In the absence of a new method for generating a prior for steepness the default approach reverts to the previously endorsed method, the 2017 value.
-
-### Data Weighting
-
-Length composition data for the comercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-fishery}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.   
-
-The base  model was weighted using the "Francis method", which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and the variance of the mean to determine if across years, the variability is explained by the model. If the variability around the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in weighting using McAllister-Ianelli Harmonic Mean Weighting (McAllister et al. [-@mcallister_bayesian_1997]) and the Dirichlet Multinomial Weighting (Thorson et al. [-@thorson_model-based_2017]).
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '3_data_weighting.Rmd')
+read_child(filein)
+```
 
 ### Estimated and Fixed Parameters
 

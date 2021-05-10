@@ -1,5 +1,5 @@
 ### Data Weighting
 
-Length composition data for the comercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-data}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.   
+Length composition data for the comercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-fishery}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.   
 
 The base  model was weighted using the "Francis method", which was based on equation TA1.8 in Francis [-@francis_data_2011]. This formulation looks at the mean length or age and the variance of the mean to determine if across years, the variability is explained by the model. If the variability around the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in weighting using McAllister-Ianelli Harmonic Mean Weighting (McAllister et al. [-@mcallister_bayesian_1997]) and the Dirichlet Multinomial Weighting (Thorson et al. [-@thorson_model-based_2017]).

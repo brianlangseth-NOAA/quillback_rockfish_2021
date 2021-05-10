@@ -1,14 +1,14 @@
 ## Fishery-Dependent Data
 
-[Covid impacts?? Might we want to list what data wasnt available in 2020? Maybe at end of section instead of in front.]
-
 ### Commercial Fishery
 
 #### Landings
 
 Historical commercial landings from 1892 to 1986 were provided by ODFW (Karnowski et al. 2014).  Historical landings were consistent but minimal (< 1 mt in all years except 1943) until the mid-1960s, at which point landings increased to a high of 3.5 mt in 1978. Primary gear types during this historical period included longline and troll gears. However, ODFW commercial samplers suggest that these troll landings were primarily landed on hook and line gear, but not separated by gear type on the fish tickets (pers. comm. M. Freeman, ODFW). 
 
-Landings from 1987 – 1999 were compiled from a combination of PacFIN, which is the central repository for West coast commercial landings (extracted on 10/13/2020), and a separate ODFW reconstruction that delineated species-specific landings in the unspecified categories on PacFIN (e.g. URCK and POP1, ODFW 2017). `r Spp` landings from this reconstruction were substituted for the URCK and POP1 landings available from PacFIN, and added to PacFIN landings from other categories for a complete time series during this time period. Commercial landings from 2000 – 2020 are available on PacFIN (extracted on 10/13/2020 and 02/18/2021). `r Spp` is one of several rockfish species targeted by a nearshore, primarily live-fish fixed gear-fishery centered on Oregon’s southern coast. `r Spp` are landed primarily with hook and line gear, but a substantial portion are also landed with bottom longline gear as well. Overall, 94.2% of `r spp` landings are from these two gear types (2000 – 2020). In the most recent years, longline landings have eclipsed hook and line landings. Landings from all other gear types, including fish pot and trawl, are minimal relative to jig and longline gears and sporadic. Commercial landings for `r spp` increased from the mid-1960s to 1974 and have since fluctuated between approximately 0.4 and 4.5 mt annually. From 2003 to 2020, landings have averaged 1.6 mt annually, and represent approximately one third of the total removals. Commercial landings were aggregated across gear types into a single fleet for the base model. 
+Landings from 1987 – 1999 were compiled from a combination of PacFIN, which is the central repository for West coast commercial landings (extracted on 10/13/2020), and a separate ODFW reconstruction that delineated species-specific landings in the unspecified categories on PacFIN (e.g. URCK and POP1, ODFW 2017). `r Spp` landings from this reconstruction were substituted for the URCK and POP1 landings available from PacFIN, and added to PacFIN landings from other categories for a complete time series during this time period. Commercial landings from 2000 – 2020 are available on PacFIN (extracted on 10/13/2020 and 02/18/2021). `r Spp` is one of several rockfish species targeted by a nearshore, primarily live-fish fixed gear-fishery centered on Oregon’s southern coast. `r Spp` have been landed primarily with hook and line gear, though a substantial portion have been landed with bottom longline gear as well. Overall, 94.2% of `r spp` landings are from these two gear types (2000 – 2020). In the most recent years, longline landings have eclipsed hook and line landings. Landings from other gear types, including fish pot and trawl, are minimal relative to hook and line and longline gears and are sporadic. Commercial landings for `r spp` increased from the mid-1960s to 1974 and have since fluctuated between approximately 0.4 and 4.5 mt annually. From 2003 to 2020, landings have averaged 1.6 mt annually, and represent approximately one third of the total removals. Commercial landings were aggregated across gear types into a single fleet for the base model. 
+
+[Discuss possible questions about differences in selectivity between the gears]
 
 The input catches in the model represent total removals: landings plus discards (Table \ref{tab:catch} and Figure \ref{fig:catch}). Discards totals for the commercial fleet from 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards in trawl and fixed gears were allocated by state and area based on the total observed landings observed by WCGOP. Discards were added to landings to obtain total removals for 2002-2019. Total removals prior to 2002, and for 2020 where no WCGOP data were yet available, were calculated based on the average discard rates of fixed gears from WCGOP for `r state` (5.7 percent). A fixed gear discard rate was used to better match the historical fleet as trawl catches and therefore discards were higher in the 2000s but lower before the 2000s.  
 
@@ -16,11 +16,9 @@ The input catches in the model represent total removals: landings plus discards 
 
 Commercial `r spp` length samples are available from PacFIN from 1998 – 2020 (Table \ref{tab:com-len-samps}, extracted 2/23/2021). Approximately 44.3% of these samples are females (n = 1,361) and 54.2% are males (n = 1,664). There were 46 unsexed fish. The majority (77.2%) are from the southern Oregon coast, centered in Port Orford (65.3%) and Gold Beach (11.9%), where the majority of permit holders for the commercial nearshore fishery are based and where most of the landings are made. The majority of length samples are from `r spp` landed live (57.4%). Additionally, special projects length samples collected from the commercial fishery are available from PacFIN from 1999 – 2001, 2003 – 2006, 2008, 2010, 2012, 2015, and 2017 – 2019 (n = 210; extracted on 12/11/2020), but were not used due to concerns over non-random sampling.  
 
-The distribution of the lengths in the commercial data ranged between 21 - 54 cm (the maximum length data bin size, Figure \ref{fig:com-len-data}). The mean size observed by the commercial fishery was relatively variable from year to year with the mean length occuring between 35 - 41 cm across both sexes (Figure \ref{fig:mean-com-len-data}) for all but the first two years, where mean length was 27 and 29 cm. 
+The distribution of the lengths in the commercial data ranged between 21 - 54 cm (the maximum length data bin size, Figure \ref{fig:com-len-data}). The mean size observed by the commercial fishery was relatively variable from year to year with the mean length occuring between 35 - 41 cm for all but the first two years, where mean length was 27 and 29 cm (Figure \ref{fig:mean-com-len-data}). 
 
-The length observations in 1998 were not used in the base model due to very low (4) annual sample size. These data were used in the model as a 'ghost' fleet, not fit by the model but implied fits reflected in diagnostic plots. The implied fit to these data from the base model are shown in Appendix B 
-
-[need to cite reference for Appendix B here].    
+The length observations in 1998 were not used in the base model due to very low (four) annual sample size. These data were used in the model as a 'ghost' fleet, not fit by the model but implied fits reflected in diagnostic output. The implied fit to these data from the base model are shown in [Appendix A](#append_a). 
 
 The input sample sizes for the commercial length data were calculated via the Stewart method (Ian Stewart, personal communication) which incorporate the number of trips and fish by year:
 
@@ -32,7 +30,7 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 \end{centering}
 
-[Do I need to describe that these were expnaded comps - or is that implicit in our choice of sample size?]
+[Describe that these were expnaded comps - and describe process]
 
 
 ### Recreational Fishery

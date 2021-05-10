@@ -20,10 +20,18 @@ filein = file.path(general_wd, '3_model_details.Rmd')
 read_child(filein)
 ```
 
+<!-- Data Weighting -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '3_data_weighting.Rmd')
+read_child(filein)
+```
+
 
 ### Estimated and Fixed Parameters
 
-There were `r tail(na.omit(model$parameters$Active_Cnt),1)` estimated parameters in the base model. These included one parameter for $R_0$, and 4 parameters for selectivity (Table \ref{tab:params}). Selectivity in the recreational and commercial fleets was fixed to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure [sampson].   
+There were `r tail(na.omit(model$parameters$Active_Cnt),1)` estimated parameters in the base model. These included one parameter for $R_0$, and 4 parameters for selectivity (Table \ref{tab:params}). Selectivity in the recreational and commercial fleets was specified to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure across space by fleets [@Waterhouseetal_spatialSelex_2014].   
 
 Fixed parameters in the model were as follows. Steepness was fixed at `r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`, and natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)`, as described above in Section \ref{priors}. Recruitment was deterministic, following the value of recruitment from the recruitment function. Growth, maturity-at-length, and length-at-weight were fixed as described above in Section \ref{biological-data}. Sensitivity analyses and likelihood profiles were performed for steepness, natural mortality, length at maximum size, and vonBertalanffy growth coefficient. 
 

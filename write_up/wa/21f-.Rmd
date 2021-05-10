@@ -27,6 +27,8 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 Despite the variability in commercial lengths due to small samples size, the model was able to estimate selectivity for the commercial fleet, and therefore commercial length were kept for the base model. A sensitivity setting the selectivity of the commercial fleet to mirror that of the recreational fleet was applied (see Section \ref{sensitivity-analyses} for details). 
 
+[Describe that these were expnaded comps - and describe process]
+
 ### Recreational / Sport Data
 
 #### Landings

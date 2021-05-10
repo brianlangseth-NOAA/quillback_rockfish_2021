@@ -86,8 +86,8 @@ out$Len_Mat[out$Len_Mat > 0.99] = 1
 rownames(out) = NULL
 col_names = c('Age', 'Length (cm)', 'Weight (kg)', 'Maturity', 'Spawning Output')
 
-table_format(x = out[1:50,],
-             caption = "Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-90 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.",
+table_format(x = out[1:51,],
+             caption = "Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-95 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.",
              label = "growth-tab",
              digits = c(0, 2, 2, 2, 2),
              align = 'l',
@@ -246,3 +246,95 @@ table_format(x = out,
 ```
 
 \newpage
+
+<!-- <!-- ======================================================= -->
+<!-- <!-- ********  Profiles *************** -->
+<!-- <!-- ======================================================= -->
+
+```{r, results = 'asis'}
+#R0 profile
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_SR_LN(R0)", 'profile_SR_LN(R0)_results.csv'))
+#col_names = paste0("R0_",round(tab$parameter_value,2))
+#profile_table = data.frame(t(tab[,4:9]))
+profile_table = tab[3:9]
+col_names = c(colnames(profile_table))
+
+
+table_format(x = profile_table,
+                 caption = "Derived quantities for the profile of values of the logarithm of equilbirum recruitment.",
+                 label = "profile_r0",
+                 align = 'l',
+                 font_size = 9,
+                 digits = 3,
+                 col_names = col_names)
+```
+
+\newpage
+
+<!-- ```{r, results = 'asis'} -->
+<!-- #Steepness profile -->
+<!-- tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_SR_BH_steep", 'profile_SR_BH_steep_results.csv')) -->
+<!-- profile_names = paste0("h_",round(tab$parameter_value,2)) -->
+<!-- profile_table = data.frame(t(tab[,4:9])) -->
+
+<!-- table_format(x = profile_table, -->
+<!--                  caption = 'Derived quantities for the profile of values of steepness', -->
+<!--                  label = 'profile_h', -->
+<!--                  longtable = TRUE, -->
+<!--                  font_size = 9, -->
+<!--                  digits = 3, -->
+<!--                  landscape = TRUE, -->
+<!--                  col_names = profile_names) -->
+<!-- ``` -->
+<!-- \newpage -->
+
+<!-- ```{r, results = 'asis'} -->
+<!-- #M profile -->
+<!-- tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1", 'profile_NatM_p_1_Fem_GP_1_results.csv')) -->
+<!-- profile_names = paste0("M_",round(tab$parameter_value,2)) -->
+<!-- profile_table = data.frame(t(tab[,4:9])) -->
+
+<!-- table_format(x = profile_table, -->
+<!--                  caption = 'Derived quantities for the profile of values of natural mortality', -->
+<!--                  label = 'profile_m', -->
+<!--                  longtable = TRUE, -->
+<!--                  font_size = 9, -->
+<!--                  digits = 3, -->
+<!--                  landscape = TRUE, -->
+<!--                  col_names = profile_names) -->
+<!-- ``` -->
+<!-- \newpage -->
+
+<!-- ```{r, results = 'asis'} -->
+<!-- #Linf profile -->
+<!-- tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1", 'profile_L_at_Amax_Fem_GP_1_results.csv')) -->
+<!-- profile_names = paste0("L_at_Amax_",round(tab$parameter_value,2)) -->
+<!-- profile_table = data.frame(t(tab[,4:9])) -->
+
+<!-- table_format(x = profile_table, -->
+<!--                  caption = 'Derived quantities for the profile of values of length at maximum age', -->
+<!--                  label = 'profile_linf', -->
+<!--                  longtable = TRUE, -->
+<!--                  font_size = 9, -->
+<!--                  digits = 3, -->
+<!--                  landscape = TRUE, -->
+<!--                  col_names = profile_names) -->
+<!-- ``` -->
+<!-- \newpage -->
+
+<!-- ```{r, results = 'asis'} -->
+<!-- #K profile -->
+<!-- tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1", 'profile_VonBert_K_Fem_GP_1_results.csv')) -->
+<!-- profile_names = paste0("R0_",round(tab$parameter_value,2)) -->
+<!-- profile_table = data.frame(t(tab[,4:9])) -->
+
+<!-- t = table_format(x = profile_table, -->
+<!--                  caption = 'Derived quantities for the profile of values of von Bertalannfy growth coefficient', -->
+<!--                  label = 'profile_k', -->
+<!--                  longtable = TRUE, -->
+<!--                  font_size = 9, -->
+<!--                  digits = 3, -->
+<!--                  landscape = TRUE, -->
+<!--                  col_names = profile_names) -->
+<!-- ``` -->
+<!-- \newpage -->

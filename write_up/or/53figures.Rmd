@@ -44,6 +44,7 @@ caption = "Mean length for commercial fleet with 95 percent confidence intervals
 label = 'mean-com-len-data')
 ```
 
+
 <!-- ====================================================================== -->
 <!-- **************** Recreational Length Samples    ********************** --> 
 <!-- ====================================================================== -->
@@ -143,6 +144,10 @@ filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"),
 caption = "Selectivity at length by fleet",
 label = 'selex')
 ```
+
+<!-- ====================================================================== -->
+<!-- *********************    Recruitment            ********************** --> 
+<!-- ====================================================================== -->
 
 ```{r, results = 'asis'}
 add_figure(
