@@ -1,0 +1,34 @@
+# Management 
+
+## Harvest Projections and Decision Tables
+
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) for the southern management area and and the percent allocation (28.7 percent) for `r state` in the northern management area provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 each fleet contributes to the total catch. 
+
+The decision table uncertainty axes and catch levels are to be determined later.
+
+<!-- Evaluation of Scientific Uncertainty -->
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'4_management_uncertainty.Rmd')
+read_child(filein)
+```
+
+## Research and Data Needs
+
+The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
+
+\begin{itemize}
+
+  \item At the time of the assessment due to issues in California data in PacFIN (i.e., condition code) length samples landed live vs. dead from the commercial were unable to be identified. The ability to examine sample sizes and lengths from each type of landings would allow for future assessments to account for the range of commercial fishing behavior.
+  
+  \item Improved understanding of where recreational fishing is commonly occuring (areas and depths) and the range of sizes available by depth would better inform the selectivity form, which currently is the near the shape for maturity.  
+
+	\item Continue collecting length and start collecting otolith samples, which were predominantly from Oregon and Washington waters, from recreational and commercial catches, as well as from surveys, which capture small `r spp`.
+	
+	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates. 
+	
+	\item Catches of quillback were particularly high in a few years for both the recreational and commercial fleet. Better understanding the factors contributing to these high catches as well as potential resolutions, should they be needed, would aid in ensuring catch time series are accurate.  
+	
+\end{itemize}
+
+

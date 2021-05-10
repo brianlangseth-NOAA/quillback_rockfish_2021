@@ -1,0 +1,42 @@
+# Introduction
+
+## Basic Information
+
+This assessment reports the status of `r spp` (*`r spp_latin`*) off the `r state` coast using data through `r endyr`. 
+
+The stock off the `r state` coast was assessed as a separate stock from other populations off the U.S. West Coast based on the fairly sedentary nature of `r spp` [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009] which likely limits flow of fish between California and Oregon. Additionally, the exploitation history and magnitude of removals off the `r state` coast differ from those in Oregon. Although the population of `r spp` in `r state` is assessed statewide, given the range of `r spp` this assessment is primarily of `r spp` north of Point Conception. Catches of `r spp` south of Point Conception were rare, however where available these data were used within this assessment.      
+
+<!-- Life history -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '1_introduction_basic_life_ecosystem.Rmd')
+read_child(filein)
+```
+
+
+## Historical and Current Fishery Information
+
+`r Spp` off the coast of `r state` is caught in both the recreational and commercial fisheries. Recreational removals are the largest source of fishing mortality over time and represent approximately 70 percent of the total removals of `r spp` across all years (Table \ref{tab:catch} and Figure \ref{fig:catch}). The majority of the commerical landings for `r spp` ocurred between 1990 and 2009, and apart from a period in the late 1940s, in 1983, and in the last four years, commercial landings for `r spp` have been minimal. 
+
+Prior to the development of the live-fish market in the 1980s, commercial catch of `r spp` was relatively low and `r spp` were often landed dead for a low ex-vessel price per pound. Most fish were caught using hook and line gear, though some were caught using traps, gill nets and in some instances with trawl gear. Whether from directed effort in the nearshore or as bycatch while targeting other more valuable stocks such as lingcod, catches were below 0.5 mt from 1916 to 1980, with the exception of four years between 1944-1948.
+
+With the development and expansion of the nearshore live-fish fishery during the 1980s and 1990s, new entrants in this open access fishery were drawn by premium ex-vessel price per pound for live fish resulting in over-capitalization of the fishery. Since 2002, the California Department of Fish and Wildlife (CDFW) has managed 19 nearshore species in accordance with Nearshore Fisheries Management Plan [@Wilson-Vandenbergetal_2014]. In 2003, the California Department of Fish and Wildlife implemented a Nearshore Restricted Access Permit system, including requirement of a Deeper Nearshore Fishery Species Permit to retain `r spp`, with the overall goal of reducing the number of participants to a more sustainable level, with permit issuance based on historical landings history by the retrospective qualifying date. The result was a reduction in permits issued from 1,127 in 1999 to 505 in 2003, greatly reducing catch levels. In addition, reduced trip limits, season closures in March and April and depth restrictions ([Appendix B](#append_b)) were implemented to address bycatch of overfished species and associated constraints from their low ACLs.
+ 
+As overfished shelf rockfish have rebuilt, resumed access to deeper depths has been allowed for Nearshore Permit holders as well as open access fisheries. While deeper depth restrictions of 75 fm were implemented in 2019 south of Point Conception where yelloweye rockfish are uncommon, it still constrains depth restrictions north of Point Conception where depth restrictions are 30 to 40 fm since 2015 depending on the management area, as seen in [Appendix B](#append_b). As open access fisheries allowed to retain shelf rockfish species co-occurring with nearshore rockfish species within the open depths, there is growing concern regarding increased encounters by non-permit holders and greater discard mortality from bycatch in deeper depths as discard mortality is 100% in depths greater than 30 fm. This is of particular concern considering increased trip limits for shelf rockfish species in combination with increased depth restrictions allowing access to these species, driving increased participation in the open access fishery exacerbating discard mortality. In addition, sampling rates for observers from the WCGOP on small vessels participating in these fisheries provide limited data to inform bycatch rates. Under National Standard 8, reduction of bycatch is a priority and increased observer rates would improve data on discards as the open access fishery for shelf rockfish expands.
+
+The California recreational fishery in the early part of the 1900s was focused on nearshore waters near ports, but expanded further from port and into deeper depths over time [@Milleretal_2014]. Prior to the rebuilding period for overfished species after the groundfish fishery was declared in 2000, there was access to all depths and year-round seasons for fishing groundfish. Access to deeper depths during this period spread effort over a larger area and filled bag limits with a greater diversity of species on the shelf as well as the nearshore. This resulted in lower catch of nearshore rockfish relative to the period after 2000 when depth restrictions between 20 to 60 fm were put in place in various management area delineations along the state [Appendix B](#append_b), shifting effort onto the nearshore, concomitantly increasing catch of nearshore rockfish including `r spp` (Figure \ref{fig:catch}). After rebuilding of overfished groundfish species other than yelloweye rockfish by 2019, deeper depth restrictions were offered in the Southern Management area south of Point Conception allowing resumed access to shelf rockfish in waters up to 75 fm, though north of Point Conception constraints persist and effort remains focused on the nearshore in 30 to 50 fm depending on the management area [Appendix B](#append_b). As the yelloweye rockfish stock continues to rebuild, incremental increases in access to deeper depths are expected to continue, reducing the focus of effort on nearshore waters where `r spp` is most prevalent.
+
+[John, The recreational catch pattern doesnt quite follow for quillback with what is said "This resulted in lower catch of nearshore rockfish relative to the period after 2000". Catch between 1995 and 2015 is pretty comparable for the rec fleet]
+
+<!-- Summary of Management History and Performance -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '1_introduction_management.Rmd')
+read_child(filein)
+```
+
+## Foreign Fisheries
+
+The southern range for `r spp` ends in California. Foreign fisheries from Mexico are therefore not expected to be significant. 

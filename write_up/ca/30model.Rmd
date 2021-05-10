@@ -1,0 +1,38 @@
+# Assessment Model
+
+<!-- Summary of Previous Assessments and Bridging analysis -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '3_model_general.Rmd')
+read_child(filein)
+```
+
+## Model Structure and Assumptions
+
+`r coast` coast `r spp` was assessed using a one-sex model with life history parameters combined across sexes. The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr`. Selectivity for the commercial and recreational fleets was specified to be asymptotic using the six-parameter double normal parameterization within Stock Synthesis. The ascending width and beginning size of maximum selectivity parameters were estimated. Annual recruitment deviations were not estimated within the base model.
+
+<!-- Modeling Platform and Structure and Priors and Data Weighting -->
+
+```{r, echo=FALSE, results='asis'}
+general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
+filein = file.path(general_wd, '3_model_details.Rmd')
+read_child(filein)
+```
+
+### Data Weighting
+
+Length composition data for the comercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-data}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year. The base model was weighted using the "McAllister-Ianelli method", which is based on equation 2.5 and 2.6 in Appendix 2 of McAllister et al. [-@mcallister_bayesian_1997]). This formulation accounts for a lack of independence in sampled fish by downweighting the number of samples. The amount of downweighting for a data set is calculated as the harmonic mean of the effective sample sizes across years. This method does not account for correlation in the data among years. Sensitivities were performed examining the difference in weighting using equation TA1.8 in Francis [-@francis_data_2011] and the Dirichlet Multinomial Weighting (Thorson et al. [-@thorson_model-based_2017]).
+
+### Estimated and Fixed Parameters
+
+There were `r tail(na.omit(model$parameters$Active_Cnt),1)` estimated parameters in the base model. These included one parameter for $R_0$, 4 parameters for selectivity, 81 recruitment deviations, and 12 forecast recruitment deviations (Table \ref{tab:params}). These included one parameter for $R_0$, and 4 parameters for selectivity (Table \ref{tab:params}). Selectivity in the recreational and commercial fleets was fixed to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model. Older `r spp` are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure across space by fleets [@Waterhouseetal_spatialSelex_2014]. 
+
+Given the depth closures in the recreational fishery off `r state` it was initially assumed that large `r spp` would not be caught in the fishery indicating dome-shaped selectivity. However, lengths at depth of `r spp` from video lander data suggested larger `r spp` occur across depths and are not limited to depths closed to fishing. This information lead to the assumption of asymptotic selectivity for the recreational fleet for the base model.       
+
+Fixed parameters in the model were as follows. Steepness was fixed at `r round(model$parameters[model$parameters$Label == "SR_BH_steep","Value"],2)`, and natural mortality was fixed at `r round(model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"],3)`, as described above in Section \ref{priors}. Growth, maturity-at-length, and length-at-weight were fixed as described above in Section \ref{biological-data}. The standard deviation of recruitment deviates was fixed at `r round(model$parameters[model$parameters$Label == "SR_sigmaR","Value"],2)`. Sensitivity analyses and likelihood profiles were performed for steepness, natural mortality, length at maximum size, and vonBertalanffy growth coefficient. 
+
+## Model Selection and Evaluation
+
+The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the `r coast` coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+

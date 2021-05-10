@@ -113,13 +113,12 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              create_dir = FALSE,
              edit = FALSE)
 
-#Read in model, assign whether to create plots function. Currently also generates tables
+#Read in model, assign whether to create plots function. Currently also generates tables and table_labels.csv
 sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base", 
                   create_plots = FALSE, 
                   html = FALSE,
                   save_loc = file.path(getwd(), "tex_tables"),
                   verbose = TRUE)
-
 
 # Create tex files from the executive summary tables (may need to rename allcatches table (Catches_All_Years.csv) as catch)
 base.710 = SS_output("C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base", covar=TRUE)
