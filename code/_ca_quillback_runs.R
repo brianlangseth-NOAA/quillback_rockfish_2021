@@ -869,7 +869,9 @@ sens_table = rbind(
   as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]) )  
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]) )  
 
 sens_table = as.data.frame(sens_table)
 colnames(sens_table) = sens_names
@@ -890,7 +892,9 @@ rownames(sens_table) = c("Total Likelihood",
                          "Length at Amax",
                          "Von Bert. k",
                          "CV young",
-                         "CV old")
+                         "CV old",
+                         "Peak recreational selex",
+                         "Peak commercial selex")
 
 write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_sensitivities.csv")))
 

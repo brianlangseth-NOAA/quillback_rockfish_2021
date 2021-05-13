@@ -729,6 +729,13 @@ base.711mat = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.711mat)
 #Gives same results, not exactly but pretty close. 
 
+#Alternative phasing
+#just model files_all2 - Set all parameters (expect R0) to phase 2
+#just model files_selex2 - Set all selex parameters to phase 2
+#just model files_selex3 - Set all selex parameters to phase 3
+#just model files_rec2 - Set all rec (early and main devs) parameters to phase 2
+#just model files_rec4 - Set all rec (early and main devs) parameters to phase 4
+
 
 ##############################################
 #       Sensitivities - Starting with model 710
@@ -737,6 +744,14 @@ SS_plots(base.711mat)
 model = "7_1_1_norec"
 base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.711)
+
+#No recruitment deviations and reweighting
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\sensitivities\\7_1_1_norec", write = FALSE, option = "none") #for first initial pass
+model = "7_1_1b_norec_reweight"
+base.711b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.711b)
+#Reweighting doesn't matter
+
 
 #Data weighting using McAllister-Ianelli
 model = "7_1_2_dw_MI"
@@ -852,7 +867,9 @@ sens_table = rbind(
   as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]) )  
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_OR_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_OR_Recreational(2)", 1:n])   )  
 
 sens_table = as.data.frame(sens_table)
 colnames(sens_table) = sens_names
@@ -873,7 +890,9 @@ rownames(sens_table) = c("Total Likelihood",
                   "Length at Amax",
                   "Von Bert. k",
                   "CV young",
-                  "CV old")
+                  "CV old",
+                  "Peak recreational selex",
+                  "Peak commercial selex")
 
 write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_sensitivities.csv")))
 

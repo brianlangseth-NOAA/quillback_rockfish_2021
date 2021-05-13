@@ -8,8 +8,3 @@ Limited studies have evaluated genetic variation in `r spp` across the U.S. West
 
 `r Spp` are a long-lived rockfish estimated to live up to 95 years [@loveetal_2002; @YamanakaandLacko_rockfish_2001]. `r Spp` was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis [@cope_approach_2011].  
 
-
-## Ecosystem Considerations
-
-[Do I have to include this section?]
-

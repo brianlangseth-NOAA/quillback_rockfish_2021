@@ -1000,6 +1000,25 @@ SS_plots(base.1005)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_5_confineSelex43", write = FALSE, option = "none") #for first initial pass
 #Status improves. Selex bound is reached, and R0 increases. Should understand why. 
 
+#Alternative phasing
+#just model files_all2 - Set all parameters (expect R0) to phase 2
+#just model files_recselex4 - Set all rec selex parameters to phase 4 - same
+#just model files_comselex4 - Set all com selex parameters to phase 4 - kicks it into the low rec selex version that has poorer negative log likelihood
+model = "just model files_comselex4"
+base.phase = SS_output(file.path(wd, "10_0_0_basePhasing", model),covar=TRUE)
+SS_plots(base.phase)
+#See if after data weighting this alternative phase model ends up in the original state
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_0_basePhasing\\just model files_comselex4", write = FALSE)
+model = "just model files_comselex4_reweight"
+base.phase.rw = SS_output(file.path(wd, "10_0_0_basePhasing", model),covar=TRUE)
+SS_plots(base.phase.rw)
+#It does not. Now lets if once putting the phases back to the original phase, the model esitmates the same 
+model = "just model files_comselex4_reweight_origphase"
+base.phase.rw.orig = SS_output(file.path(wd, "10_0_0_basePhasing", model),covar=TRUE)
+SS_plots(base.phase.rw.orig)
+#It does. Put as sensitivity
+
+
 ##############################################
 #       Sensitivities - Starting with model 1000
 ##############################################
@@ -1008,10 +1027,18 @@ model = "10_1_1_recDevs"
 base.1011 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1011)
 
+#Include recruitment deviations and reweight. Did multiple times
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\sensitivities\\10_1_1_recDevs", write = FALSE)
+model = "10_1_1b_recDevs_reweight"
+base.1011b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1011b)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\sensitivities\\10_1_1b_recDevs_reweight", write = FALSE)
+
 #Data weighting using McAllister-Ianelli
 model = "10_1_2_dw_MI"
 base.1012 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 SS_plots(base.1012)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\sensitivities\\10_1_2_dw_MI", write = FALSE)
 
 #Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 1000
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
@@ -1090,25 +1117,34 @@ base.10111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.10111)
 
 #Set block for early recreational comps data (block ending in 1999)
-#Allowed dome shaped for block
 model = "10_1_12_recBlock99"
 base.10112 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.10112)
 
+#Set block for early recreational comps data (block ending in 2010)
+model = "10_1_13_recBlock2010"
+base.10113 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.10113)
+
+#Copied the alternative phasing model with com selectivity at phase 4 (model base.phase)
+model = "10_1_14_altphase"
+base.10114 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+
 
 #Compare sensitivities
-sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est K, recdevs", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
-sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1015c, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
+#sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est K, recdevs", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.", "Alt Phase")
+#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1015c, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112, base.10114))
 #Linf,K and K runs are unreasonable, ultimately didn't decide to go with est K with recdevs - exclude for now
-sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
-sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
+#These are the model runs for the non-subset plots
+sens_names <- c("Base mode","Rec devs","Rec devs reweight", "DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.", "Alt Phase")
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112, base.10114))
 # #L2 CV run is very high, but not unreasonable - exclude for now
-# sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
-# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
-# #Linf run is very uncertain - exclude for now
+# sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.", "Alt Phase")
+# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112, base.10114))
+# #Linf run and alternative phasing are very uncertain - exclude for now
 # #These are model runs for the "subset" plots
-#sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.")       #11
-#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
+sens_names <- c("Base mode","Rec devs","Rec devs reweight","DW MI", "DW DM", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.") 
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
@@ -1163,7 +1199,9 @@ sens_table = rbind(
   as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]) )  
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_WA_Recreational(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_WA_Commercial(2)", 1:n])  )  
 
 sens_table = as.data.frame(sens_table)
 colnames(sens_table) = sens_names
@@ -1184,7 +1222,9 @@ rownames(sens_table) = c("Total Likelihood",
                          "Length at Amax",
                          "Von Bert. k",
                          "CV young",
-                         "CV old")
+                         "CV old",
+                         "Peak recreational selex",
+                         "Peak commercial selex")
 
 write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.1000_sensitivities.csv")))
 
