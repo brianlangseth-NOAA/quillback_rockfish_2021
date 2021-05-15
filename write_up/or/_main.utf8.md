@@ -892,7 +892,13 @@ Size DblN end logit OR Recreational(2) & 0.192 & 3 & (-10, 10) & OK & 0.1770950 
 
 \newpage
 
+<!-- ======================================================= -->
+<!-- ****************         SSS            *************** --> 
+<!-- ======================================================= -->
 
+<!-- \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/sss_40.tex} -->
+
+<!-- \newpage -->
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
@@ -939,22 +945,22 @@ Year & Adopted OFL & Adopted ACL & Adopted ACL-OR & OFL & ABC & Buffer & Spawnin
 
 \newpage
 
-<!-- <!-- ======================================================= --> -->
-<!-- <!-- ********  Profiles *************** -->  -->
-<!-- <!-- ======================================================= --> -->
+<!-- ======================================================= -->
+<!-- ********  Profiles *************** -->
+<!-- ======================================================= -->
 
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}>{\raggedright\arraybackslash}p{1.57cm}}
-\caption{(\#tab:profile_r0)Derived quantities for the profile of values of the logarithm of equilbirum recruitment.}\\
+\caption{(\#tab:profile-r0)Derived quantities for the profile of values of the logarithm of equilbirum recruitment.}\\
 \toprule
-parameter_value & likelihood & gradient & SB0 & SBfinal & Deplfinal & Nparsonbounds\\
+parameter value & likelihood & gradient & SB0 & SBfinal & Deplfinal & Nparsonbounds\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:profile_r0)Derived quantities for the profile of values of the logarithm of equilbirum recruitment. \textit{(continued)}}\\
+\caption[]{(\#tab:profile-r0)Derived quantities for the profile of values of the logarithm of equilbirum recruitment. \textit{(continued)}}\\
 \toprule
-parameter_value & likelihood & gradient & SB0 & SBfinal & Deplfinal & Nparsonbounds\\
+parameter value & likelihood & gradient & SB0 & SBfinal & Deplfinal & Nparsonbounds\\
 \midrule
 \endhead
 
@@ -976,7 +982,7 @@ parameter_value & likelihood & gradient & SB0 & SBfinal & Deplfinal & Nparsonbou
 \endgroup{}
 \endgroup{}
 
-\newpage
+<!-- \newpage -->
 
 <!-- ```{r, results = 'asis'} -->
 <!-- #Steepness profile -->

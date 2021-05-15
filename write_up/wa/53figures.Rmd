@@ -365,6 +365,50 @@ caption = "Change in the estimate of fraction unfished across a range of steepne
 label = 'h-depl')
 ```
 
+<!-- h rec selex fixed (parm 1 and 3) -->
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_fixRecSelex_profile_SR_BH_steep"),  "piner_panel_SR_BH_steep.png"),
+caption = "Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed",
+label = 'h-recfix-profile')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_fixRecSelex_profile_SR_BH_steep"),  "SR_BH_steep_trajectories_compare1_spawnbio.png"),
+caption = "Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed",
+label = 'h-recfix-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_fixRecSelex_profile_SR_BH_steep"),  "SR_BH_steep_trajectories_compare3_Bratio.png"),
+caption = "Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed",
+label = 'h-recfix-depl')
+```
+
+<!-- Rec selex -->
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_profile_Size_DblN_peak_WA_Recreational(1)"),  "piner_panel_Size_DblN_peak_WA_Recreational(1).png"),
+caption = "Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery",
+label = 'recselex-profile')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_profile_Size_DblN_peak_WA_Recreational(1)"),  "Size_DblN_peak_WA_Recreational(1)_trajectories_compare1_spawnbio.png"),
+caption = "Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery",
+label = 'recselex-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_profile_Size_DblN_peak_WA_Recreational(1)"),  "Size_DblN_peak_WA_Recreational(1)_trajectories_compare3_Bratio.png"),
+caption = "Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery",
+label = 'recselex-depl')
+```
+
 <!-- M -->
 ```{r, results = 'asis'}
 add_figure(
@@ -431,6 +475,44 @@ caption = "Change in the estimate of fraction unfished across a range of female 
 label = 'k-depl')
 ```
 
+<!-- <!-- ====================================================================== --> -->
+<!-- <!-- ******************       LB-SPR          ***************************** -->  -->
+<!-- <!-- ====================================================================== --> -->
+
+<!-- ```{r, results = 'asis'} -->
+<!-- lbspr = "C:/Assessments/2021/copper_rockfish_2021/models/lbspr" -->
+
+<!-- add_figure( -->
+<!-- filein = file.path(lbspr, "Copper_WA_LBSPR_newVBGF_plots.png"),  -->
+<!-- caption = "LB-SPR yearly estimates of selectivity, the ratio of fishing intensity to natural mortality (F/M), and annual spawner-per-recruit (SPR) values", -->
+<!-- label = 'lbspr') -->
+<!-- ``` -->
+
+
+<!-- ====================================================================== -->
+<!-- ******************         SSS           ***************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, echo=FALSE, results='asis'}
+sss_loc = "L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/WA_quillback_SSS_SSLOprior/plots"
+
+add_figure(
+filein = file.path(sss_loc, "WA_10_0_0_base_Priors.png"), 
+caption = "Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent",
+label = "sss-prior-57")
+```
+
+\newpage
+
+```{r, echo=FALSE, results='asis'}
+add_figure(
+filein = file.path(sss_loc, "WA_10_0_0_base_quants.png"), 
+caption = "Derived quantities from SSS run where fraction unfished was assumed to be 57 percent",
+label = "sss-quant-57")
+```
+
+\newpage
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 

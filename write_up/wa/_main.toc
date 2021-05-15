@@ -2,52 +2,52 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Basic Information}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Life History}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Ecosystem Considerations}{2}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Historical and Current Fishery Information}{2}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Summary of Management History and Performance}{3}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Foreign Fisheries}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.3}Historical and Current Fishery Information}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Summary of Management History and Performance}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Foreign Fisheries}{3}{subsection.1.5}%
 \contentsline {section}{\numberline {2}Data}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Fishery-Dependent Data}{5}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Commercial Data}{5}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1}Fishery-Dependent Data}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Commercial Data}{4}{subsubsection.2.1.1}%
 \contentsline {paragraph}{\numberline {2.1.1.1}Landings}{5}{paragraph.2.1.1.1}%
 \contentsline {paragraph}{\numberline {2.1.1.2}Length Compositions}{5}{paragraph.2.1.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.2}Recreational / Sport Data}{6}{subsubsection.2.1.2}%
 \contentsline {paragraph}{\numberline {2.1.2.1}Landings}{6}{paragraph.2.1.2.1}%
 \contentsline {paragraph}{\numberline {2.1.2.2}Length Compositions}{7}{paragraph.2.1.2.2}%
 \contentsline {subsection}{\numberline {2.2}Fishery-Independent Data}{7}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Biological Data}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Biological Data}{7}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Natural Mortality}{8}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Maturation and Fecundity}{9}{subsubsection.2.3.2}%
 \contentsline {subsubsection}{\numberline {2.3.3}Length-Weight Relationship}{9}{subsubsection.2.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.4}Growth (Length-at-Age)}{9}{subsubsection.2.3.4}%
 \contentsline {subsubsection}{\numberline {2.3.5}Sex Ratio}{10}{subsubsection.2.3.5}%
 \contentsline {subsubsection}{\numberline {2.3.6}Ageing Precision and Bias}{10}{subsubsection.2.3.6}%
-\contentsline {section}{\numberline {3}Assessment Model}{11}{section.3}%
+\contentsline {section}{\numberline {3}Assessment Model}{10}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Summary of Previous Assessments}{11}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Bridging Analysis}{11}{subsubsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.2}Model Structure and Assumptions}{11}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Modeling Platform and Structure}{12}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1}Modeling Platform and Structure}{11}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Priors}{12}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Data Weighting}{12}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}Estimated and Fixed Parameters}{13}{subsubsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.3}Model Selection and Evaluation}{13}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Base Model Results}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Base Model Results}{13}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Parameter Estimates}{14}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Fits to the Data}{14}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Population Trajectory}{15}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Reference Points}{16}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.4}Reference Points}{15}{subsubsection.3.4.4}%
 \contentsline {subsection}{\numberline {3.5}Model Diagnostics}{16}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Convergence}{16}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Likelihood Profiles}{17}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2}Likelihood Profiles}{16}{subsubsection.3.5.2}%
 \contentsline {subsubsection}{\numberline {3.5.3}Retrospective Analysis}{18}{subsubsection.3.5.3}%
 \contentsline {subsubsection}{\numberline {3.5.4}Sensitivity Analyses}{18}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}Unresolved Problems and Major Uncertainties}{20}{subsubsection.3.5.5}%
-\contentsline {section}{\numberline {4}Management}{20}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Harvest Projections and Decision Tables}{20}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Evaluation of Scientific Uncertainty}{21}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Research and Data Needs}{21}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Acknowledgments}{21}{section.5}%
-\contentsline {section}{\numberline {6}References}{23}{section.6}%
-\contentsline {section}{\numberline {7}Tables}{26}{section.7}%
-\contentsline {section}{\numberline {8}Figures}{48}{section.8}%
-\contentsline {section}{\numberline {9}Appendix A. Detailed Fit to Length Composition Data}{96}{section.9}%
+\contentsline {subsubsection}{\numberline {3.5.5}Simple stock synthesis}{20}{subsubsection.3.5.5}%
+\contentsline {subsubsection}{\numberline {3.5.6}Unresolved Problems and Major Uncertainties}{21}{subsubsection.3.5.6}%
+\contentsline {section}{\numberline {4}Management}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Harvest Projections and Decision Tables}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Evaluation of Scientific Uncertainty}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Research and Data Needs}{22}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Acknowledgments}{22}{section.5}%
+\contentsline {section}{\numberline {6}References}{24}{section.6}%
+\contentsline {section}{\numberline {7}Tables}{27}{section.7}%
+\contentsline {section}{\numberline {8}Figures}{49}{section.8}%
+\contentsline {section}{\numberline {9}Appendix A. Detailed Fit to Length Composition Data}{105}{section.9}%

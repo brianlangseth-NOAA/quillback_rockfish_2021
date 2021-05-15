@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "April"
+month: "May"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -98,32 +98,26 @@ _These materials do not constitute a formal publication and are for information 
 
 This assessment reports the status of quillback rockfish (*Sebastes maliger*) off the Washington coast using data through 2020. 
 
-The stock off the Washington coast was assessed as a separate stock from other populations off the U.S. West Coast based on two factors. First, the fairly sedentary nature of quillback rockfish likely limits flow of fish to Oregon [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009]. Additionally, the primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as quillback rockfish associate with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate. Second, the exploitation history and magnitude of removals off the Washington coast differ from those in Oregon and California.    
+The stock off the Washington coast was assessed as a separate stock from other populations off the U.S. West Coast based on two factors. First, the fairly sedentary nature of quillback rockfish [@HannahandRankin_rockfish_site_fidelity_2011; @tolimieri_home_2009] likely limits flow of fish between Washington and Oregon. Additionally, the primary region of recreational fishing off the Washington coast occurs in the central to northern regions. These areas have rocky habitat that rockfish species such as quillback rockfish associate with in comparison to the southern coast of Washington which consists primarily of soft and sandy substrate. Second, the exploitation history and magnitude of removals off the Washington coast differ from those in Oregon and California.    
 
 <!-- Life history -->
 
 
 ## Life History
 
-Quillback rockfish are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska [@loveetal_2002]. Off the U.S. West Coast quillback rockfish are primarily located north of central California, with rare observations south of Point Conception. 'r Spp' have historically been a part of both commercial and recreational fisheries throughout their range. 
+Quillback rockfish are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska [@loveetal_2002]. Off the U.S. West Coastm quillback rockfish are primarily located north of central California, with rare observations south of Point Conception. Quillback rockfish have historically been a part of both commercial and recreational fisheries throughout their range. 
 
-Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat [@loveetal_2002]. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans, and fish [@Murie_diet_1995]. The body coloring or adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches [@loveetal_2002]. As their name suggests, quillback rockfish have long dorsal fin spines.
+Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat [@loveetal_2002]. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans and fish [@Murie_diet_1995]. The body coloring of adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches [@loveetal_2002]. As their name suggests, quillback rockfish have long dorsal fin spines.
 
-Limited studies have been performed looking at genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish [@seeb_gene_1998; @Stoutetal_DPS_2001], however [@seeb_gene_1998] did not find significant differentiation in populations of quillback rockfish between Washington and Alaska when Puget Sound samples were excluded. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (*Sebastes caurinus*), indicating limited oceanographic exchange among geographically proximate locations [@seeb_gene_1998; @buonaccorsi_population_2002; @johansson_influence_2008]. High site-fidelity [@HannahandRankin_rockfish_site_fidelity_2011] and relatively small home ranges [@tolimieri_home_2009] for quillback rockfish suggests similar patterns of isolation-by-distance as found for other rockfish.
+Limited studies have evaluated genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish [@seeb_gene_1998; @Stoutetal_DPS_2001], however [@seeb_gene_1998] did not find significant differentiation in populations of quillback rockfish between coastal Washington and Alaska. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (*Sebastes caurinus*), indicating limited oceanographic exchange among geographically proximate locations [@seeb_gene_1998; @buonaccorsi_population_2002; @johansson_influence_2008]. High site-fidelity [@HannahandRankin_rockfish_site_fidelity_2011] and relatively small home ranges [@tolimieri_home_2009] for quillback rockfish suggests similar patterns of isolation-by-distance as found for other rockfish.
 
 Quillback rockfish are a long-lived rockfish estimated to live up to 95 years [@loveetal_2002; @YamanakaandLacko_rockfish_2001]. Quillback rockfish was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis [@cope_approach_2011].  
 
-## Ecosystem Considerations
-
-[Replace text if want to / have to include]
-
 ## Historical and Current Fishery Information
 
-Off the Washington coast Quillback rockfish is primarily caught in the recreational fishery but in general is not targeted by either commercial or recreational fleets (Table \ref{tab:catch} and Figure \ref{fig:catch}). Recreational landings of quillback rockfish were provided by the WDFW and were available from 1958 to present with a linear interpolation applied where data are missing. Recreational harvest is focused in the central and northern regions in areas of rocky habitat. Although populations are considered to be widespread in the nearshore marine environment, abundance may be limited along the southern coast which consists primarily of soft and sandy substrate. 
+Off the Washington coast Quillback rockfish is caught in the recreational fishery but in general is not targeted by either commercial or recreational fleets (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). Recreational landings of quillback rockfish were provided by the WDFW and were available from 1958 to present with a linear interpolation applied where data are missing. Recreational harvest is focused in the central and northern regions in areas of rocky habitat. Although populations are considered to be widespread in the nearshore marine environment, abundance may be limited along the southern coast which consists primarily of soft and sandy substrate. 
 
 Commercial landings data are available from WDFW historical reconstruction prior to 1981 and from PacFIN from 1981 through 2020. Washington closed state waters to commercial fixed gears in 1995 and to trawling in 1999 and the depths preferred by quillback rockfish are predominantly found within state waters. In response to the development of the live-fish fishery in California and Oregon, Washington took preemptive action in 1999 to prevent the fishery from developing by prohibiting the landing of live-fish. There are four treaty tribes of the Washington coast that continue to fish under separate commercial rules and are not subject to the state water closure that occasionally land small amounts of quillback rockfish. Quillback rockfish are usually landed in the Nearshore Rockfish group, a mixed-species market category. Species composition samples were taken from sampled landings and proportions of quillback rockfish reported in the Nearshore market category are estimated by port, quarter, gear, and year. In 2020, COVID-19 closures of tribal lands prevented samplers from accessing all commercial catch, so an average proportion of quillback rockfish in 2017 - 2019 was applied to all associated tribal landings.
-
-
 
 <!-- Summary of Management History and Performance -->
 
@@ -132,9 +126,9 @@ Commercial landings data are available from WDFW historical reconstruction prior
 
 Quillback rockfish is managed by the Pacific Fishery Management Council (PFMC) as a part of the Nearshore Rockfish North and Nearshore Rockfish South complexes. The North and South complexes are split at N. 40$^\circ$ 10' Lat. N. off the U.S. West Coast. Each complex is managed based on a complex-level overfishing limit (OFL) and annual catch limit (ACL). The OFL and ACL values for the complexes are determined by summing the species specific OFLs and ACLs managed within each complex. Removals for species within each Nearshore complex are managed and tracked against the complex total OFL and ACL, rather than on a species by species basis.
 
-Quillback rockfish was most recently assessed in 2010 using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide OFLs ([@DickandMacCall_dbsra_2010]). The coastwide OFL was then apportioned to each management area based on the proportion of historical catches North and South of 40$^\circ$ 10' Latitude. DB-SRA does not assess overfished status, but assuming that current depletion was at the management target on average (e.g. 40%), the 2010 assessment found that quillback rockfish had a 52% chance of experiencing overfishing, in that recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate. 
+Quillback rockfish was most recently assessed in 2010 using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide OFLs ([@DickandMacCall_dbsra_2010]). The coastwide OFL was then apportioned to each management area based on the proportion of historical catches North and South of 40$^\circ$ 10' Latitude. DB-SRA does not assess overfished status, but rather assumes that current depletion is distributed around the management target (e.g. 40%). The 2010 assessment found there was a 52% chance that quillback rockfish was experiencing overfishing, in that recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate. 
 
-The current OFL and ACLs for quillback rockfish North of 40$^\circ$ 10' Lat. N., the state/specific ACL allocation (58.4% for Washington; Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.
+The current OFL contribution and implied ACL contribution for quillback rockfish North of 40$^\circ$ 10' Lat. N., the state/specific ACL allocation (58.4% for Washington; Groundfish Management Team, pers. comm.), and the total removals are shown in Table \ref{tab:ofl}.
 
 ## Foreign Fisheries
 
@@ -148,15 +142,13 @@ Quillback rockfish are also harvested commercially and recreationally in Canada 
 # Data
 The following types and sources of data were used in this assessment. Fishery catch and composition data were specific to Washington, however biological data were estimated coastwide and included Oregon, Washington, and California sources. 
 
-1. Commercial landings, and length, weight, and age data obtained from PacFIN and the Washington Department of Fish and Wildlife (WDFW). Age compositions were not fit in the model. 
+1. Commercial landings, and length, weight, and age data obtained from PacFIN and the Washington Department of Fish and Wildlife (WDFW). Age compositions were not fit directly in the model, but age data was used to estimate growth which were fixed inputs to the model. 
 2. Estimates of commercial discard length frequencies and fraction discarded in the fishery obtained from the West Coast Groundfish Observer Program (WCGOP).
-3. Recreational landings, discards, and length, weight, and age data obtained from RecFIN and the WDFW. Age compositions were not fit in the model.
+3. Recreational landings, discards, and length, weight, and age data obtained from RecFIN and the WDFW. Age compositions were not fit directly in the model, but age data was used to estimate growth which were fixed inputs to the model. 
 4. Fishery independent biological data (length, weight, and age) from the NWFSC WCGBTS survey.
 5. Estimates of fecundity, maturity, and mortality from various sources.
 
 A description of each data type is provided below, with timing of catch and composition data used in the base model shown in (Figure \ref{fig:data-plot}).
-
-[are commercial data really from PacFIN or should I be more precise? Similarly, are recreational data really from RecFIN or should I say ORBS and MRFSS?]
 
 <!--chapter:end:20data.Rmd-->
 
@@ -168,7 +160,7 @@ A description of each data type is provided below, with timing of catch and comp
 
 Commercial landings of quillback rockfish in Washington were provided directly by Washington Department of Fish and Wildlife (WDFW) for years ranging from 1889 to 2014 and compiled from PacFIN for years from 2015 to 2020. Only eight of the years before 1973 have non-zero landings, and all are less than 0.04 mt. Consequently, we exclude landings before 1973 for this assessment. There is limited commercial fishery removals of quillback rockfish off the Washington coast and not all years have commercial landings. The highest annual landing was 2.20 mt in 1973 with only three other years exceeding 1 mt of harvest (1989, 1990, and 2000). Washington closed state waters to commercial fixed gears in 1995 and to trawling in 1999. Quillback rockfish are occasionally encountered as bycatch in other commercial fisheries and there are four treaty tribes off the Washington coast that fish under separate commercial rules and are not subject to the state water closures. quillback rockfish is landed as part of the mixed nearshore rockfish market category and species composition data are applied. In 2020, access to Neah Bay was closed for commercial fisheries sampling due to the Covid-19 pandemic, so an average proportion for quillback rockfish composition data taken from 2017-2019 was applied to the nearshore rockfish market category for the Neah Bay Port group in 2020.
 
-The input catches in the model represent total removals: landings plus discards (Table \ref{tab:catch} and Figure \ref{fig:catch}).
+The input catches in the model represent total removals: landings plus discards (Table \ref{tab:allcatches} and Figure \ref{fig:catch}).
 Discards totals for the commercial fleet for years between 2002-2019 were determined based on West Coast Groundfish Observer Program (WCGOP) data provided in the Groundfish Expanded Mortality Multiyear (GEMM) product. The total coastwide observed discards were allocated by state and area based on the total observed landings observed by WCGOP. Discards were added to landings in years where landings were non-zero to obtain total removals for 2002-2019. Total removals prior to 2002, and for 2020 where no WCGOP data were yet available, were calculated based on the average discard rates from WCGOP for years within both landings and discards for Washington (8.3 percent).
 
 #### Length Compositions 
@@ -189,11 +181,13 @@ Input effN = $7.06 * N_{\text{trips}}$ if $N_{\text{fish}}/N_{\text{trips}}$ is 
 
 Despite the variability in commercial lengths due to small samples size, the model was able to estimate selectivity for the commercial fleet, and therefore commercial length were kept for the base model. A sensitivity setting the selectivity of the commercial fleet to mirror that of the recreational fleet was applied (see Section \ref{sensitivity-analyses} for details). 
 
+[Describe that these were expnaded comps - and describe process]
+
 ### Recreational / Sport Data
 
 #### Landings
 
-The first year of recreational removals in the model was 1958 and are the primary source of fishing mortality for quillback rockfish (Table \ref{tab:catch} and Figure \ref{fig:catch}). Removals were specified in numbers of fish (1,000s) and were converted to metric tons internally to the model (Table \ref{tab:nums-mt}). Annual retained catch (in numbers) from the Washington recreational fishery from 1975 to 1990 were provided from WDFW published historical information. Retained catch for years prior to 1975 were calculated based on a linear interpolation for missing data back to 1958. Recreational data from 1990 through 2020 are from WDFW’s Ocean Sampling Program (OSP) and the Puget Sound baseline (PSB) sampling program. Discard estimates are available from 2002 through 2020 from the OSP and PSB program. Prior to 2002 discard estimates are based on a linear regression of discard to retained catch. Throughout the time series a discard mortality rate was applied by harvest depth if information was available. An overall discard mortality of 31% was applied to quillback rockfish if harvest depth was unknown. Mortality rates by depth have been reviewed and approved by the PFMC Science and Statistical Committee. The sum of retained and dead released quillback rockfish made up the total removal (in numbers) from the recreational fishery. The recreational removals generally increased over-time, spiked in 1990 to an all time high, declined until the mid 2010s and and have since steadied to around 1,500 fish per year, excluding 2019.
+The first year of recreational removals in the model was 1958 and are the primary source of fishing mortality for quillback rockfish (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). Removals were specified in numbers of fish (1,000s) and were converted to metric tons internally to the model (Table \ref{tab:nums-mt}). Annual retained catch (in numbers) from the Washington recreational fishery from 1975 to 1990 were provided from WDFW published historical information. Retained catch for years prior to 1975 were calculated based on a linear interpolation for missing data back to 1958. Recreational data from 1990 through 2020 are from WDFW’s Ocean Sampling Program (OSP) and the Puget Sound baseline (PSB) sampling program. Discard estimates are available from 2002 through 2020 from the OSP and PSB program. Prior to 2002 discard estimates are based on a linear regression of discard to retained catch. Throughout the time series a discard mortality rate was applied by harvest depth if information was available. An overall discard mortality of 31% was applied to quillback rockfish if harvest depth was unknown. Mortality rates by depth have been reviewed and approved by the PFMC Science and Statistical Committee. The sum of retained and dead released quillback rockfish made up the total removal (in numbers) from the recreational fishery. The recreational removals generally increased over-time, spiked in 1990 to an all time high, declined until the mid 2010s and and have since steadied to around 1,500 fish per year, excluding 2019.
 
 [Why 1958 as end year of catch?]
  
@@ -208,7 +202,7 @@ The input sample sizes for the recreational length data were calculated equal to
 
 ## Fishery-Independent Data
 
-No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS, and historically the Triennial survey, collect data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey was used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey. 
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS, the Hook and Line, and historically the Triennial survey, collect data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. No quillback rockfish were capture in the Hook and Line survey. Given indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 26) and Triennial Survey (n = 1) off Washington were not included in the model. Biological data from the WCGBTS survey was used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey. 
 
 <!--chapter:end:21s-.Rmd-->
 
@@ -218,7 +212,7 @@ No fishery-independent data sources that are commonly incorporated in West Coast
 
 This assessment modeled quillback rockfish as a single sex. Data available were generally sparse, growth and length-weight relationships were similar across sexes, and the literature provided limited evidence of sexual dimorphism in length [@LenarzandEcheverria_dimorphism_1991]. The sections below therefore describe combined male and female biological data. 
 
-[Do I need to provide more evidence justifying the choice to combine genders? For example, gender specific plots of W-L or L-A, sex ratios by age or length?]
+[Show plots by sex to support choice of combining genders]
 
 ### Natural Mortality
 
@@ -232,11 +226,11 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 The above is also the median of the prior suggested by Hamel [-@hamel_method_2015]. The prior is defined as a log normal distribution with parameters $\mu = ln(5.4/A_{\text{max}})$ and $\sigma = 0.438$. Using a maximum age of 90 years, the point estimate and median of the prior for $M$ is 0.057 per year.
 
-The maximum age was selected based on literature values for the U.S. West Coast examining the longevity of quillback rockfish [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. The oldest aged quillback rockfish among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
+The maximum age of 95 years was selected based on literature values for the U.S. West Coast examining the longevity of quillback rockfish [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. The oldest aged quillback rockfish among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
 
 ### Maturation and Fecundity
 
-Maturity-at-length estimates were based on the work of Hannah and Blume [-@HannahandBlume_maturity_2011] which estimated the 50% size-at-maturity of 29.2 cm and slope of -0.8 off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which range 26-32 cm [@Echeverria_maturity_1987; @Rosenthaletal_maturity_1982].  
+Maturity-at-length estimates were based on the work of Hannah and Blume [-@HannahandBlume_maturity_2011] which estimated the 50% size-at-maturity of 29.2 cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which provide a range of 26-32 cm [@Echeverria_maturity_1987; @Rosenthaletal_maturity_1982].  
 
 The fecundity-at-length was based on research by Dick et al. [-@dick_meta-analysis_2017]. The fecundity relationship for quillback rockfish was estimated equal to 3.93e-07$L$^3.7^ in millions of eggs where $L$ is length in cm. Fecundity-at-length is shown in Figure \ref{fig:fecundity}.
 
@@ -259,7 +253,6 @@ These values were fixed within the base model. The coefficient of variation (CV)
 Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-age, and spawning output (the product of fecundity and maturity) assumed in the base model.
 
 [Is it typical not to include t0? Its not an SS parameter but it does affect the estimate of L1. Should I instead include L1?]
-[Should I state here that this is a higher K than other studies, and high for the longevity of the species]
 
 ### Sex Ratio
 
@@ -285,7 +278,7 @@ Quillback rockfish was last assessed in 2010 ([@DickandMacCall_dbsra_2010]). The
 
 ### Bridging Analysis
 
-A direct bridging analysis was not conducted because the previous assessment was structured as a single coastwide model. The previous assessment also used DB-SRA, which uses different assumptions and data than the model used for this assessment, making a bridging analysis intractable.  
+A direct bridging analysis was not conducted because the previous assessment was structured as a single coastwide model. The previous assessment also used DB-SRA, which uses different assumptions and data than the model used for this assessment, making a direct bridging analysis intractable.  
 
 ## Model Structure and Assumptions
 
@@ -304,6 +297,9 @@ Priors were used with fixed parameter values for natural mortality and steepness
 
 The prior for steepness assumed a beta distribution with mean of 0.72 and standard deviation of 0.158. The prior parameters are based on the Thorson-Dorn rockfish prior (commonly used in past West Coast rockfish assessments) conducted by James Thorson (personal communication, NWFSC, NOAA) which was reviewed and endorsed by the Scientific and Statistical Committee (SSC) in 2017. However, this approach was subsequently rejected for future analysis in 2019 when the new meta-analysis resulted in a mean value of approximately 0.95. In the absence of a new method for generating a prior for steepness the default approach reverts to the previously endorsed method, the 2017 value.
 
+<!-- Data Weighting -->
+
+
 ### Data Weighting
 
 Length composition data for the comercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-data}. The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year.   
@@ -313,7 +309,7 @@ The base  model was weighted using the "Francis method", which was based on equa
 
 ### Estimated and Fixed Parameters
 
-There were 5 estimated parameters in the base model. These included one parameter for $R_0$, and 4 parameters for selectivity (Table \ref{tab:params}). Selectivity in the recreational and commercial fleets was fixed to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model. Older quillback rockfish are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure [sampson].   
+There were 5 estimated parameters in the base model. These included one parameter for $R_0$, and 4 parameters for selectivity (Table \ref{tab:params}). Selectivity in the recreational and commercial fleets was specified to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model. Older quillback rockfish are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under hetergenous fishing pressure across space by fleets [@Waterhouseetal_spatialSelex_2014].   
 
 Fixed parameters in the model were as follows. Steepness was fixed at 0.72, and natural mortality was fixed at 0.057, as described above in Section \ref{priors}. Recruitment was deterministic, following the value of recruitment from the recruitment function. Growth, maturity-at-length, and length-at-weight were fixed as described above in Section \ref{biological-data}. Sensitivity analyses and likelihood profiles were performed for steepness, natural mortality, length at maximum size, and vonBertalanffy growth coefficient. 
 
@@ -334,7 +330,7 @@ The base model parameter estimates along with approximate asymptotic standard er
 
 ### Parameter Estimates
 
-Estimated parameter values are provided in Table \ref{tab:params}. The $R_0$ was estimated at 2. The selectivity curves for the commercial and recreational fleet are shown in Figure \ref{fig:selex}. Selectivity was fixed to be asymptotic with a peak in maximum selectivity for the commercial fleet starting at  cm and a peak in maximum sleectivity for the recreational fleet starting at 44.1. Sensitivities to the selectivity shape and potential exclusion of sparse years of length data for both the commercial and recreational fleets were explored (see below in the [Sensitivity Analyses](#sensitivity-analyses) section). 
+Estimated parameter values are provided in Table \ref{tab:params}. The $R_0$ was estimated at 2. The selectivity curves for the commercial and recreational fleet are shown in Figure \ref{fig:selex}. Selectivity was fixed to be asymptotic with a peak in maximum selectivity for the commercial fleet starting at 44.5 cm and a peak in maximum sleectivity for the recreational fleet starting at 44.1. Sensitivities to the selectivity shape and potential exclusion of sparse years of length data for both the commercial and recreational fleets were explored (see below in the [Sensitivity Analyses](#sensitivity-analyses) section). 
 
 ### Fits to the Data
 
@@ -370,19 +366,20 @@ Proper convergence was determined by starting the minimization process from disp
 
 ### Likelihood Profiles
 
-Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, and growth coefficient ($k$) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
+Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, growth coefficient ($k$), and the peak in selectivity for the recreational fleet separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
 
-In regards to values of $R_0$, values from approximately 1.8 to 4 were supported with the negative log-likelihood minimized at approximately a log($R_0$) of 2 (Figure \ref{fig:r0-profile}). This suggests the data contain limited information on the scale of the population. Increasing the $R_0$, relative to the value estimated results in an increase in stock scale (Figure \ref{fig:r0-ssb}) and status (Figure \ref{fig:r0-depl}). 
-Similar to results for $R_0$ results from the profile on steepness suggest the data have limited information on the value of steepness. Any value of steepness was supported based on change in log-likelihood, with the lowest negative log-likelihood occurring near the value for the base model of 0.72 (Figure \ref{fig:h-profile}). 
+In regards to values of ln($R_0$), values from approximately 1.8 to 4 were supported with the negative log-likelihood minimized at the value from the base model of 2 (Figure \ref{fig:r0-profile}). This suggests the data contain information about the minimum scale of the population, but limited information on how large the population could be. Increasing ln($R_0$) relative to the base model results in an increase in stock scale (Figure \ref{fig:r0-ssb}) and status (Figure \ref{fig:r0-depl}). 
 
-[need to finish below - really odd profile]
-[Assuming higher or lower steepness values had little impact on the recent unfished and spawning output estimated for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across steepness values except for the lowest values (0.30 and 0.40) (Figure \ref{fig:h-depl}).]
+Similar to results for $R_0$, the profile on steepness suggests the data have limited information on the value of steepness. Values of steepness between 0.3-1.0 were supported based on change in negative log-likelihood, with the lowest negative log-likelihood occurring near a value of 1.0, which is greater than the value of steepness in the base model of 0.72 (Figure \ref{fig:h-profile}). Assuming lower steepness values resulted in higher estimates of unfished and recent spawning output, particularly for the lowest steepness values (0.3 and 0.4; Figure \ref{fig:h-ssb}), and similar levels of depletion relative to unfished conditions, with the exception of the lower values (0.3 and 0.4; Figure \ref{fig:h-depl}). We explored the reason for different dynamics at low steepness values. As opposed to having convergence issues, we found the models converged on estimates of peak selectivity for the recreational fleet near 33 cm and estimates of log($R_0$) near 3, which are greatly different than the base model estimates. The steepness profile therefore highlights the high uncertainty in the base model around peak selectivity and ln($R_0$) estimates. We further explored the effect of selectivity on the profile for steepness by profiling across steepness values while fixing recreational selectivity to base model estimates. Fixing commercial selectivity had no effect. The resulting profile suggests the likelihood surface is flat across steepness values and the negative log-likelihood is minimized near steepness values of 1.0 (Figure \ref{fig:h-recfix-profile}). Low steepness values resulted in higher unfished spawning output (Figure \ref{fig:h-recfix-ssb}), but without the effect of changes in selectivity, greater depletion compared to the base model (Figure \ref{fig:h-recfix-depl}). 
 
-The negative log-likelihood profile across natural mortality supported the largest values in the profile. The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}) but resulted in generally similar stock statuses near to or above the management target (Figures \ref{fig:m-depl}).
+Given that estimates of peak selectivity are uncertain in the base model, and selectivity estimates can influence most esimates, we profiled across values of peak selectivity for the recreational fleet (Figure \ref{fig:recselex-profile}). The profile on peak selectivity supported all estimates of peak selectivity but that the minimum of the likelihood was found at the base model estimate of 44.07. Lower estimates of peak selectivity resulted in greater estimates of unfished and recent spawning output (Figure \ref{fig:recselex-ssb}) as well as higher estimates of stock status (Figure \ref{fig:recselex-depl}).
 
-A profile across a range of $L_{\infty}$ values was also conducted and values from approximately 40 to 44 cm were supported with a minimum around 41 cm (Figure \ref{fig:linf-profile}). The value of $L_{\infty}$ in the model was fixed at 43.04.The stock scale and status is quite variable across alternative $L_{\infty}$ values where assuming lower values resulted in sharp increases in stock scale (Figure \ref{fig:linf-ssb}) and status (Figure \ref{fig:linf-depl}).
+The negative log-likelihood profile across natural mortality supported the largest values in the profile. The estimated stock trajectories assuming lower or higher natural mortality values impacted the estimated unfished spawning output (Figures \ref{fig:m-ssb}), and resulted in similar stock statuses near to or above the management target (Figures \ref{fig:m-depl}). Low values of $M$ resulted in similar results to low values of steepness, with estimates of peak selectivity near 32 cm, however estimates of log($R_0$) were nearer the estimate from the base model. 
 
-The negative log-likelihood profile across values of $k$ supported all values within the profile but was minimized at lower values of $k$ (Figure \ref{fig:k-profile}). The $k$ value for fish in the model was fixed at 0.199. The stock scale (Figure \ref{fig:k-ssb}) and status (Figure \ref{fig:k-depl}) increased under lower $k$ values but the chang was small compared to changes caused by other parameters.
+A profile across a range of $L_{\infty}$ values was also conducted and values from approximately 40 to 44 cm were supported with a minimum around 41 cm (Figure \ref{fig:linf-profile}). The value of $L_{\infty}$ in the model was fixed at 43.04. The stock scale and status is variable across alternative $L_{\infty}$ values where assuming lower values resulted in large increases in unfished and recent spawning output (Figure \ref{fig:linf-ssb}) and stock status (Figure \ref{fig:linf-depl}).
+
+The negative log-likelihood profile across values of $k$ supported all values within the profile but was minimized at lower values of $k$ (Figure \ref{fig:k-profile}). The value of $k$ in the base model was fixed at 0.199. Lowering the value of $k$ resulted in higher estimates of unfished and recent spawning output (Figure \ref{fig:k-ssb}) and stock status (Figure \ref{fig:k-depl}).
+
 
 ### Retrospective Analysis
 
@@ -408,11 +405,11 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
   
   \item Exclude composition data prior to 1995 for the recreational fleet.
   
-  \item Exclude fitting to commercial length data. Set the selectivity of the commercial fleet to equal that of the recreational fleet.
+  \item Exclude fitting to commercial length data. Set the selectivity of the commercial fleet to mirror that of the recreational fleet.
   
   \item Fix recreational selectivity form to be dome-shaped while also estimating annual recruitment deviations. 
   
-  \item Fix commercial selectivity form to be dome-shaped.
+  \item Allow commercial selectivity form to be dome-shaped.
 
   \item Estimate a recreational selectivity block from 1958-1999, and 2000-2020.   
   
@@ -426,14 +423,34 @@ The two sensitivities that had the largest impact relative to the base model wer
 
 The next two sensitivities that had the largest impact on biomass scale relative to the base model were the sensitivities exploring data weighting using the DM Method, which resulted in a larger biomass scale than the base model, and the sensitivity estimating natural mortality, which resulted in a smaller biomass scale than the base model (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). Despite the differences in scale, both sensitivities resulted in higher stock status than the base model. Estimating natural mortality resulted in a tradeoff with selectivity. When allowing flexibility in $M$, the model estimates a high value than the base case, which results in higher estimates for the peak size in selectivity for both fleets. The estimate of $M$ is therefore limited by the parameter estimates for the peak in selectivity approaching their bounds. 
 
-The sensitivity estimating annual recruitment deviations resulted in a lower biomass scale, and level of depletion such that spawning ouput in 2020 was below the threshold of 25 percent of unfished spawning output (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). The estimates or recruitment deviations had a period of above-average recruitment from 1987 to 2003, then switched to a period of low recruitment (Figure \ref{fig:sens-recdev}). The recruitment deviation estimates were likely being driven by smaller lengths observed in the recreational fleet in the mid 1990s, but mostly by a lack of smaller fish being caught since 2000 (Figure \ref{fig:mean-rec-len-data}). Furthermore, the variability of the recruitment deviations up to around 2005 were higher than the assumed variability in recruitment (0.6), suggesting the increased recruitments were not well informed by the data. The pattern of recruitment deviations estimated seemed extreme for the Washington model but the general pattern showed some coherence with the recruitment deviations estimated in the separate Oregon model. The Oregon base model estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s. This may potentially suggest that quillback rockfish off the coast of Oregon and Washington experience similar drivers in recruitment, howeer, the Oregon model estimated periods of higher recruitment since 2000 to support increasing catches over time and also to fit pulses of small fish in the length data, whereas the Washington base model estimates lower than average recruitment throughout that time period.   
+The sensitivity estimating annual recruitment deviations resulted in a lower biomass scale, and level of depletion such that spawning ouput in 2020 was below the threshold of 25 percent of unfished spawning output (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). The estimates or recruitment deviations had a period of above-average recruitment from 1987 to 2003, then switched to a period of low recruitment (Figure \ref{fig:sens-recdev}). The recruitment deviation estimates were likely being driven by smaller lengths observed in the recreational fleet in the mid 1990s, but mostly by a lack of smaller fish being caught since 2000 (Figure \ref{fig:mean-rec-len-data}). Furthermore, the variability of the recruitment deviations up to around 2005 were higher than the assumed variability in recruitment (0.6), suggesting the increased recruitments were not well informed by the data. The pattern of recruitment deviations estimated seemed extreme for the Washington model but the general pattern showed some coherence with the recruitment deviations estimated in the separate Oregon model. The Oregon base model estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s. This may potentially suggest that quillback rockfish off the coast of Oregon and Washington experience similar drivers in recruitment, howeer, the Oregon model estimated periods of higher recruitment since 2000 to support increasing catches over time and also to fit pulses of small fish in the length data, whereas the Washington base model estimates lower than average recruitment throughout that time period.  
+
+### Simple stock synthesis
+
+A Simple Stock Synthesis (SSS) was run to compare the results from the base model with a simpler modeling approach. SSS samples via Markov Chain Monte Carlo (MCMC) from three key parameter distributions: natural mortality, steepness, and stock status in a specific year. The mean and median of the priors assumed in the base model were used to create sampling distributions for natural mortality and steepness. Stock status was assumed to be 40 percent, based on appoximating the estimate from LBSPR (45 percent) and that from the base model (40 percent). SSS applies parameter draws from each of the three parameters within the model and then estimates an $R0$ value based on the fixed removals and drawn parameters.   
+
+\begin{enumerate}
+
+	\item Current stock status based on the estimate from the base model (SS-CL):
+	\begin{itemize}
+		\item Number of draws = 1000,
+		\item $M$ = lognormal distribution ($\mu$ = 0.06, $\sigma$ = 0.22),
+		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0), and
+		\item Fraction unfished in 2020 = beta($\alpha$ = 0.40, $\beta$ = 0.20)
+	\end{itemize}	  
+d
+\end{enumerate}
+
+The median of unfished spawning output, spawning output 2021, fraction unfished in 2021, the OFL in 2023, and the ABC in 2023 based on the 2021 fraction unfished of 40 percent is shown in in Table \ref{tab:SSS-40}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-40} and \ref{fig:sss-quant-40}. Assuming that the stock was less depleted relative to the base model resulted in higher estimates of the OFL and ABC in 2023, even when the category 3 buffer was applied (buffer = 0.78, based on a P* = 0.45 and \sigma = 2.0).
+
+[how are abc applied? Need to check and confirm this. Probably need to run on own. M should be 0.057 and should be same by sex.]
 
 
 ### Unresolved Problems and Major Uncertainties
 
-The primary uncertainty for the Washington quillback rockfish model is in the scale of the population. The trajectory of the population is generally consistent across profiles and sensitivities however the scale of the population is poorly informed by data. This is evident in the relatively wide uncertainty in the estimate of $R_0$, leading to uncertainty around spawning biomass and around stock status. Estimating growth parameters, notably $L_{\infty}$ and the coefficient of variation in length of older fish affected the population scale greatly. Estimating recruitment deviations also reduced the scale of the population, and also resulted in spawning output relative to unfished equilibrium spawning output falling below the threshold value. Profiles across fixed parameters show support across a wide range of values based on negative log-likelihood and also result in large changes in stock size and status. Consequently, this base model is dependent on many of the assumptions in parameter values. 
+The primary uncertainty for the Washington quillback rockfish model is in the scale of the population. The trajectory of the population is generally consistent across profiles and sensitivities however the scale of the population is poorly informed by data. This is evident in the relatively wide uncertainty in the estimate of log($R_0$), as well as uncertainty in the estimate of the peak of the selectivity curve, leading to uncertainty around spawning biomass and around stock status. Estimating growth parameters, notably $L_{\infty}$ and the coefficient of variation in length of older fish affected the population scale greatly. Estimating recruitment deviations reduced the scale of the population, and also resulted in spawning output relative to unfished equilibrium spawning output falling below the threshold value. Profiles across fixed parameters show support across a wide range of values based on negative log-likelihood and also result in large changes in stock size and status. In particular, profiling across steepness, as well as across natural mortality values revealed that assuming low values for these parameters shifted the peak of selectivity to lower values, and higher estimates of equilibrium recruitment, resulting in high spawning biomass and less depletion. Consequently, this base model is dependent on many of the assumed values for the parameters. 
 
-More information on the perceived lack of small fish in the recreational fishery would improve understanding if indeed this is due ot recruitment or sampling issues or steady and ongoing changes in the fishery. An increase in smaller fish in 2020 may indicate a recruitment event, however more years of data would be needed to confirm. 
+More information on the perceived lack of small fish in the recreational fishery would improve understanding if indeed this is due to recruitment or sampling issues or steady and ongoing changes in the fishery. An increase in smaller fish in 2020 may indicate a recruitment event, however more years of data would be needed to confirm. 
 
 
 <!--chapter:end:34diagnostics.Rmd-->
@@ -442,10 +459,9 @@ More information on the perceived lack of small fish in the recreational fishery
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (12.9 percent) for Washington provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributes to the total catch. 
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (12.9 percent) for Washington provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributes to the total catch. 
 
-[Need to add the following?]
-[Recreational catches were provided in number, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in number based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.]        
+Recreational catches were provided in number, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in number based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.        
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -463,13 +479,11 @@ The ability to estimate additional process and biological parameters for quillba
 
 \begin{itemize}
 
-	\item Continue collecting length and otolith samples from recreational catches ensuring samples are not missing small fish if they are caught.
+	\item Continue collecting length and otolith samples from recreational catches and discards ensuring samples are not missing small fish if they are caught and retained or if they are caught and discarded.  
 
-	\item Collect length data for the commercial fleet if catches occur.
+	\item Continue to collect length data for the commercial fleet if catches occur.
 	
 	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates.  
-
-	\item Evaluate the connectivity of quillback rockfish stock off the coast of Oregon and Washington. 
 
 \end{itemize}
 
@@ -1133,6 +1147,26 @@ fishery selectivity and with steepness fixed at 0.72."}
 
 ![Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of steepness values."}
 
+<!-- h rec selex fixed (parm 1 and 3) -->
+
+![Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed."}
+
+
+![Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed."}
+
+
+![Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed."}
+
+<!-- Rec selex -->
+
+![Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/piner_panel_Size_DblN_peak_WA_Recreational(1).png){width=100% height=100% alt="Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery."}
+
+
+![Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/Size_DblN_peak_WA_Recreational(1)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery."}
+
+
+![Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/Size_DblN_peak_WA_Recreational(1)_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery."}
+
 <!-- M -->
 
 ![Change in the negative log-likelihood across a range of female natural mortality values.\label{fig:m-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of female natural mortality values."}
@@ -1163,6 +1197,21 @@ fishery selectivity and with steepness fixed at 0.72."}
 
 ![Change in the estimate of fraction unfished across a range of female k values.\label{fig:k-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of female k values."}
 
+
+<!-- ====================================================================== -->
+<!-- ******************         SSS           ***************************** --> 
+<!-- ====================================================================== -->
+
+
+
+![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent.\label{fig:sss-prior-40}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/WA_quillback_SSS/plots/WA_10_0_0_base_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent."}
+
+\newpage
+
+
+![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-40}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/WA_quillback_SSS/plots/WA_10_0_0_base_Priors.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 40 percent."}
+
+\newpage
 
 <!-- ====================================================================== -->
 <!-- ******************     Retrospectives    ***************************** --> 

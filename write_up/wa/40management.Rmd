@@ -4,8 +4,7 @@
 
 A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (12.9 percent) for `r state` provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributes to the total catch. 
 
-[Need to add the following?]
-[Recreational catches were provided in number, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in number based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.]        
+Recreational catches were provided in number, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in number based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.        
 
 The decision table uncertainty axes and catch levels to be determined later.
 
@@ -23,12 +22,10 @@ The ability to estimate additional process and biological parameters for `r spp`
 
 \begin{itemize}
 
-	\item Continue collecting length and otolith samples from recreational catches ensuring samples are not missing small fish if they are caught.
+	\item Continue collecting length and otolith samples from recreational catches and discards ensuring samples are not missing small fish if they are caught and retained or if they are caught and discarded.  
 
-	\item Collect length data for the commercial fleet if catches occur.
+	\item Continue to collect length data for the commercial fleet if catches occur.
 	
 	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates.  
-
-	\item Evaluate the connectivity of `r spp` stock off the coast of Oregon and Washington. 
 
 \end{itemize}
