@@ -1,0 +1,36 @@
+# Management 
+
+## Harvest Projections and Decision Tables
+
+A ten year projection of the base model with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted Annual Catch Limits (ACLs) and the percent allocation (58.4 percent) for `r state` provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 each fleet contributes to the total catch. 
+
+The decision table uncertainty axes and catch levels are to be determined later.
+
+<!-- Evaluation of Scientific Uncertainty -->
+
+```{r, echo=FALSE, results='asis'}
+filein = file.path(general_wd,'4_management_uncertainty.Rmd')
+read_child(filein)
+```
+
+# Research and Data Needs
+
+The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
+
+\begin{itemize}
+
+	\item Continue collecting length and otolith samples from recreational and commercial catches, as well as from surveys, which capture small `r spp`.
+
+	\item Improved understanding of where recreational fishing is commonly occuring (areas and depths) and the range of sizes available by depth would be beneficial to better inform the selectivity form.  
+	
+	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates.  
+	
+\end{itemize}
+
+
+## Comparisons with state-based fishery-independent surveys 
+
+Fishery-independent surveys along the Oregon coast have been conducted by the ODFW. 
+
+[maybe put in a different section?]
+[more info on Oregon surveys, need to update reference earlier]

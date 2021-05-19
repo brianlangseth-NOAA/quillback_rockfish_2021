@@ -1,0 +1,78 @@
+## Model Diagnostics
+
+### Convergence
+
+Proper convergence was determined by starting the minimization process from dispersed values of the maximum likelihood estimates and adjusting phases of the estimated parameters to determine if the model found a better minimum. Starting parameters were jittered by 10 percent. This was repeated 100 times with 33 out of 100 runs returned to the base model likelihood. A better, lower negative log-likelihood, model fit was not found. Early exploration runs did reveal some convergence issues that were identified through jittering, and were resolved by updating data weighting values suggested from a run starting with the the initial values set at parameter estimates. Alternative phasing was done over five models by setting phases of all parameters other than ln($R_0$) to 2, setting all selectivity parameters to phase 2 and phase 3, and setting all recruitment deviation parameters to phase 2 and phase 4. No model with lower log-likelihood was found through alternative phasing. Through the jittering done as explained, likelihood profiles, and alternative phasing, we are confident that the base model as presented represents the best fit to the data given the assumptions made. There were no difficulties in inverting the Hessian to obtain estimates of variability throughout initial model attempts and all explorations resulted in a positive-definite Hessian. 
+
+### Likelihood Profiles
+
+Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, and growth coefficient ($k$) values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
+
+In regards to values of $R_0$, the negative log-likelihood was minimized at the base model estimate of ln($R_0$) `r round(log(model$derived_quants[model$derived_quants$Label == "Recr_Virgin",2]),2)` (Figure \ref{fig:r0-profile}). The recreational data supported lower ln($R_0$) values whereas the commercial data supported higher ln($R_0$) values. Increasing $R_0$ relative to the base model value resulted in an increase in unfished and recent spawning output (Figure \ref{fig:r0-ssb}) and increase in stock status (Figure \ref{fig:r0-depl}).
+
+For steepness, values from approximately 0.6 to 0.8 were supported with the lowest negative log-likelihood occurring at the upper bound of 1.0 (Figure \ref{fig:h-profile}). The pattern followed that of the recreational data. The commercial data supported lower estimates of steepness. Assuming higher or lower steepness values had little impact on recent spawning output for all but the lowest values (Figure \ref{fig:h-ssb}). The estimated relative final stock status was above 0.40 of unfished biomass across all but the lowest steepness values (0.30 and 0.40; Figure \ref{fig:h-depl}).
+
+The negative log-likelihood profile across natural mortality supported values between approximately 0.05 and 0.10 which included the fixed value of `r model$parameters[model$parameters$Label == "NatM_p_1_Fem_GP_1","Value"]` and was minimized at a value of 0.07 (Figure \ref{fig:m-profile}). Assuming higher values of natural mortality resulted in generally similar estimates of unfished spawning output but larger estimates of recent spawning output (Figures \ref{fig:m-ssb}). Consequently a wide range of stock status was observed across values for $M$ from below, within, and above the management precautionary zone (between 0.25 - 0.40; Figure \ref{fig:m-depl}). 
+
+The negative log-likelihood profile across values of $L_{\infty}$ showed strong support for values near the fixed value of `r model$parameters[model$parameters$Label == "L_at_Amax_Fem_GP_1","Value"]` (Figure \ref{fig:linf-profile}). The recreational data supported slightly higher $L_{\infty}$ values whereas the commercial data supported slightly lower $L_{\infty}$ values. The stock scale was variable across alternative $L_{\infty}$ values where assuming lower values resulted in lower estimates of unfished spawning output and higher estimates of recent spawning output (Figure \ref{fig:linf-ssb}), resulting in a wide range of stock status estimates (Figure \ref{fig:linf-depl}).
+
+The negative log-likelihood profile over values of $k$ showed support for values between 0.15 and 0.2, and was minimized at 0.165 with support from both the recreational and commercial data (Figure \ref{fig:k-profile}). The $k$ value in the base model was fixed at `r model$parameters[model$parameters$Label == "VonBert_K_Fem_GP_1","Value"]`. The stock scale (Figure \ref{fig:k-ssb}) and status (Figure \ref{fig:k-depl}) increased under lower $k$ values. 
+
+### Retrospective Analysis
+
+A five-year retrospective analysis was conducted by running the model using data up to 2015, 2016, 2017, 2018, and 2019. The estimated spawning output (Figures \ref{fig:retro-ssb}) and stock status (Figure \ref{fig:retro-depl}) declined in comparison with the base model as recent years of data were removed. Removing the first 1-4 years of data resulted in a steady decline is spawning output relative to the base model likely due to reducing the information about the recruitment pulse in 2012 from the lengths comps. The effect of removing the fifth year was inconsistent with other years likely given the limited information in 2016 when retention was prohibited in the Oregon recreational fishery. 
+
+### Sensitivity Analyses
+
+A number of sensitivity analyses were conducted. Sensitivities were conducted as a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion.
+
+\begin{enumerate}
+   
+  \item Deterministic recruitment from the stock recruitment curve. 
+
+  \item Data weighting according to the McAllister-Ianelli method (MI DW) using the weighting values shown in Table \ref{tab:dw}. 
+  
+  \item Data weighting according to the Dirichlet Multinomial method (DM DW) where the estimated parameters are shown in Table \ref{tab:dw}. 
+
+  \item Estimate $L_{\infty}$.
+  
+  \item Estimate $L_{\infty}$ and $k$.
+
+  \item Estimate the coefficient of variation in length of older fishes.
+
+  \item Estimate natural mortality.
+  
+  \item Exclude composition data prior to 2001 for recreational fleets
+
+  \item Fix recreational selectivity form to be asymptotic. 
+  
+  \item Allow commercial selectivity form to be dome-shaped.
+
+  \item Estimate recreational selectivity block: 1979-1999 with asymptotic selectivity curve and 2000-2020 with dome-shaped selectivity.   
+  
+\end{enumerate}
+
+Likelihood values and estimates of key parameters from each sensitivity are available in Table \ref{tab:sensitivities}. Plots of the estimated time-series of spawning biomass and relative spawning biomass are shown in Figures \ref{fig:sens-ssb} and \ref{fig:sens-depl}, respectively.
+
+The largest change from the base model resulted when recruitment was fixed to be deterministic, and when selectivity for the recreational fleet was set to be asymptotic. Assuming deterministic recruitment resulted in a higher stock scale, and different biomass trajectory, but a comparable stock status relative to the base model. Results were similar regardless of whether data weighting was updated. Assuming asymptotic selectivity for the recreational fleet resulted in a reduction in the scale and status of the stock, such that biomass in 2020 relative to unfished biomass was close to the threshold of 25 percent. 
+
+Four additional sensitivities either had changes in stock scale of greater than 10 percent from the base model or had stock status between the management precautionary zone (between the target and threshold ratio values). Estimating $L_{\infty}$ and $L_{\infty}$ and $k$ resulted in similarly low stock scale compared to the sensitivity with asymptotic selectivity for the recreational fleet. Estimating $L_{\infty}$ resulted in a more pessimistic view of stock status compared to the base, with biomass in 2020 relative to unfished biomass estimated between the threshold and target ratios. Data weighting with the McAllister-Ianelli (MI) approach also resulted in biomass in 2020 relative to unfished biomass being between the threshold and target ratios, however the scale was similar to the base model. Estimating variation in length for older fish resulted in an increased stock scale, but similar stock status as the base model. 
+
+Data weighting with the Dirichlet-Multinomial, estimating natural mortality, excluding early recreational length comps or fitting them with a different selectivity curve, and allowing dome-shaped selectivity for the commercial fleet produced similar results as the base model.
+
+
+### Unresolved Problems and Major Uncertainties
+
+There were four primary uncertainties in the model given current data availability and model assumptions. 
+\begin{enumerate}
+
+  \item First, selectivity form for the recreational fleet was a source of uncertainty, not only affecting the scale of the population but also resulting in relative stock size near the lower edge of the management precautionary zone. We assumed dome-shaped selectivity based on discussion with those knowledgeable about the fishery, depth restrictions in the fishery, and believed habits of older and larger fish.
+  
+  \item Second, the magnitude of recruitment deviations was a source of uncertainty. Strong recruitment pulses in 1993, 1995, 1999, and 2012 were often estimated during model exploration with some years being stronger in some runs compared to others. Recruitment deviations in other years during the 1990s were typically variable, and sometimes greatly so as shown in (Figure \ref{fig:rec-devs}). These were likely due to limited samples and variable length in the recreational length compositions. This variation influences the magnitude of the increase in biomass in the late 1990s and  2000s as well as the magnitude of the decrease in the 2010s. Omitting recruitment deviations altogether changes the scale of the model as well. 
+  
+  \item The magnitude of recruitment was also affected by the data weighting values, which is the third uncertainty. Data weighting using McAllister-Ianelli reduced the amount of information coming from the recreational fleet, affecting the magnitude of recruitment, and resulting in a more pessimistic stock status. Francis and the Dirichlet-Multimonial weighting resulted in similar results. 
+  
+  \item The final uncertainty is with estimating growth parameters. The fixed value for k for `r spp` is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is feasible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and $L_{\infty}$ close to the fixed estimate. We decided to keep the fixed values in the base model given the range of plausible $k$ values from the profile included the fixed estimate, and that growth estimates used in the model included a fairly large number of young fish from the surveys to inform the esitmate of $k$.  
+  
+\end{enumerate}
+
