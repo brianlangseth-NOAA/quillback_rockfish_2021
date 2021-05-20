@@ -3,53 +3,59 @@
 ############################################################
 
 library(sa4ss)
-dir = "C:/Users/Brian.Langseth/Desktop/WA_quillback_SSS" #where model files are located
-savedir = "L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/WA_quillback_SSS" #where to save plots
-base = "WA_10_0_0_base"
-dep = 40
-load(file.path(dir, "SSS_out.DMP"))
-load(file.path(dir, "SSSoutput.DMP"))
+dir = "C:/Users/Brian.Langseth/Desktop/WA_SSS" #where model files are located
+dep = 57 #<-----CHANGE THIS BETWEEN 40 and 57
+if(dep ==40) savedir = paste0("L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_40dep_5_18") #where to save plots
+if(dep ==57) savedir = paste0("L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_57dep_5_18") #where to save plots
+if(dep == 40) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_40dep_5_18"), "SSS_out.DMP"))
+if(dep == 57) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_57dep_5_18"), "SSS_out.DMP"))
+#load(file.path(dir, base, "SSSoutput.DMP"))
 out = SSS.out
-reps = SSS.output.list
+#reps = SSS.output.list
 
-ssb = apply(out$SB_series[1:494,], 2, quantile, c(0.025, 0.5, 0.975))
-depl = apply(out$Rel_Stock_status_series[1:494,], 2, quantile, c(0.025, 0.5, 0.975))
-m.f = out$Priors$M_f[1:494]
-m.m = out$Priors$M_m[1:494]
-h   = out$Priors$h[1:494]
-depl.prior = out$Priors$Dep[1:494]
-abc = apply(out$ABC, 2, quantile, c(0.025, 0.50, 0.975))
-ofl = apply(out$OFL, 2, quantile, c(0.025, 0.50, 0.975))
+ssb = apply(out$SB_series, 2, quantile, c(0.025, 0.5, 0.975), na.rm=T) #18 NA values
+colnames(ssb) = 1958:2034
+depl = apply(out$Rel_Stock_status_series, 2, quantile, c(0.025, 0.5, 0.975), na.rm=T)
+colnames(depl) = 1958:2034
+m = out$Priors$M_f #Though its M for female, and males are 0 (males are given same value as females)
+h   = out$Priors$h
+linf = out$Priors$Linf_f
+k = out$Priors$k_f
+depl.prior = out$Priors$Dep
+abc = apply(out$ABC, 2, quantile, c(0.025, 0.50, 0.975), na.rm=T)
+ofl = apply(out$OFL, 2, quantile, c(0.025, 0.50, 0.975), na.rm=T)
 
-png(filename = paste0(file.path(savedir, "plots", paste0(base, "_Priors.png"))), w = 7, h = 7, units = "in", res = 300)
-par(mfrow = c(2,2))
-hist(m.f, xlab = "Natural Mortality (f)", main = "")
-abline(v = median(m.f), col = 'red', lwd = 3)
-hist(m.m, xlab = "Natural Mortality (m)", main = "")
-abline(v = median(m.m), col = 'red', lwd = 3)
+png(filename = paste0(file.path(savedir, "plots", paste0("SSS_",dep, "_Priors.png"))), w = 7, h = 7, units = "in", res = 300)
+par(mfrow = c(3,2))
+hist(m, xlab = "Natural Mortality", main = "")
+abline(v = median(m), col = 'red', lwd = 3)
 hist(h, xlab = "Steepness", main = "")
-abline(v = mean(h), col = 'red', lwd = 3)
+abline(v = median(h), col = 'red', lwd = 3)
+hist(linf, xlab = "Length at Maximum Size", main = "")
+abline(v = median(linf), col = 'red', lwd = 3)
+hist(k, xlab = "von Bertalanffy Growth Coefficient", main = "")
+abline(v = median(k), col = 'red', lwd = 3)
 hist(depl.prior, xlab = "Fraction Unfished", main = "")
-abline(v = mean(depl.prior), col = 'red', lwd = 3)
+abline(v = median(depl.prior), col = 'red', lwd = 3)
 dev.off()
 
-png(filename = paste0(file.path(savedir, "plots", paste0(base, "_quants.png"))), w = 7, h = 7, units = "in", res = 300)
+png(filename = paste0(file.path(savedir, "plots", paste0("SSS_",dep, "_quants.png"))), w = 7, h = 7, units = "in", res = 300)
 par(mfrow = c(2,2))
-plot(colnames(ssb), ssb[2,], ylim = c(0, max(ssb)), type = 'l', lwd = 2, 
+plot(colnames(ssb)[1:64], ssb[2,1:64], ylim = c(0, max(ssb)), type = 'l', lwd = 2, 
 	ylab = "Spawning output", xlab = "Year")
-lines(colnames(ssb), ssb[1,], lty = 2)
-lines(colnames(ssb), ssb[3,], lty = 2)
-plot(colnames(depl), depl[2,], ylim = c(0, 1), type = 'l', lwd = 2,
+lines(colnames(ssb)[1:64], ssb[1,1:64], lty = 2)
+lines(colnames(ssb)[1:64], ssb[3,1:64], lty = 2)
+plot(colnames(depl)[1:64], depl[2,1:64], ylim = c(0, 1), type = 'l', lwd = 2,
 	ylab = "Fraction unfished", xlab = "Year")
-lines(colnames(depl), depl[1,], lty = 2)
-lines(colnames(depl), depl[3,], lty = 2)
+lines(colnames(depl)[1:64], depl[1,1:64], lty = 2)
+lines(colnames(depl)[1:64], depl[3,1:64], lty = 2)
 abline(h = 0.40, lty = 3, col = 'red')
 abline(h = 0.25, lty = 3, col = 'red')
-boxplot(ofl[,1:3], ylab = "OFL (mt)", xlab = "Year")
-boxplot(abc[,1:3], ylab = "ABC (mt)", xlab = "Year")
+boxplot(ofl, ylab = "OFL (mt)", xlab = "Year")
+boxplot(abc, ylab = "ABC (mt)", xlab = "Year")
 dev.off()
 
-final = "2020" #SHOULD BE 2021
+final = "2021"
 fore = "2023"
 df = rbind(
 	 ssb_unfished = c(ssb[2,1], ssb[1,1], ssb[3,1]),
@@ -65,7 +71,7 @@ rownames(df) = c("SSB Unfished", paste("SSB", final),
 
 t = table_format(x = df,
       caption = paste('Derived quantities from SSS based on assuming fraction unfished of', dep, 'percent in', final, "."),
-      label = paste0("SSS_", dep),
+      label = paste0("SSS-", dep),
       longtable = TRUE,
       font_size = 9,
       #digits = 3,
@@ -73,5 +79,4 @@ t = table_format(x = df,
       col_names = col_names,
       format.args = list(big.mark = ','))
 
-kableExtra::save_kable(t,
-file = paste0("C:/Assessments/2021/copper_rockfish_2021/write_up/wa/tex_tables/sss_", dep,".tex"))
+kableExtra::save_kable(t, file = paste0("C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_", dep,".tex"))

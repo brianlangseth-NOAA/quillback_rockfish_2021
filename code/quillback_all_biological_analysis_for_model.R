@@ -65,6 +65,9 @@ pacfin_data = rename_pacfin_newVersion(data = pacfin,
                                   fleet_grouping = list("A", c("R", "U")), 
                                   fleet_names = c("com_alive", "com_dead_unknown"), 
                                   fleet_column_name = "COND")
+#On May 15, when rerunning to finalize plots for report found that PACFIN weight is in grams
+pacfin_data$Weight=pacfin_data$Weight/1000
+
 
 
 ##RecFIN
@@ -248,16 +251,26 @@ out = clean_quillback_biodata(dir = file.path(dir,"data","output biology","plots
 # Create length-age sample table
 ###############################################################
 tmp = out[which(!is.na(out$Age)), ]
-tmp$source_state = paste0(tmp$State, "_", tmp$Source)
+#Rename for report
+tmp$Report <- gsub("NWFSC_", "", tmp$Source)
+tmp$Report <- gsub("PacFIN", "Com", tmp$Source)
+tmp[grepl("RecFIN",tmp$Source),"Report"] = "Rec"
+tmp[tmp$State=="ORage","State"] = "OR"
+tmp$source_state = paste0(tmp$State, "_", tmp$Report)
+###
 n = table(tmp$Year, tmp$source_state)
-colnames(n)[which(colnames(n)=="ORage_RecFIN_ORage")] = "OR_RecFIN"
 write.csv(n, file = file.path(dir, "data", "forSS", "len_at_age_data.csv"))
 
 ###############################################################
-# Create length-width sample table
+# Create length-weight sample table
 ###############################################################
 tmp = out[which(!is.na(out$Weight)), ]
-tmp$source_state = paste0(tmp$State, "_", tmp$Source)
+#Rename for report
+tmp$Report <- gsub("NWFSC_", "", tmp$Source)
+tmp$Report <- gsub("PacFIN", "Com", tmp$Source)
+tmp[grepl("RecFIN",tmp$Source),"Report"] = "Rec"
+tmp$source_state = paste0(tmp$State, "_", tmp$Report)
+###
 n = table(tmp$Year, tmp$source_state)
 write.csv(n, file = file.path(dir, "data", "forSS", "len_at_weight_data.csv"))
 
@@ -279,6 +292,9 @@ table(out[!is.na(out$Weight),"Source"],out[!is.na(out$Weight),"State_Areas"])
 #ORage is not included here because have no weights
 lw_ests <- estimate_length_weight(data = out, grouping = "all")
 length_weight_plot(dir = file.path(dir, "data", "output biology"), splits = NA, data = out, nm_append = NULL, ests = lw_ests, plots = 1:4)
+
+#On May 15 when rerunning to finalize report figures, notices a for all is 1.967e-5. In model have 1.963e-5. 
+#Going to keep as is. 
 
 # #Plot lw relationship with literature values
 # #Remove recfin and mrfss due to use of imputted weights/lengths - This was original approach, but Ive since removed calculated values above. 
@@ -349,6 +365,95 @@ leg = c(paste0("F: a = ", signif(lw_ests_lw$all_F[1], digits = 3)," b = ", round
 legend("topleft", bty = 'n', legend = leg, lty = c(1,2,3,3,1,1,1,1), col = c("red","blue","red","blue","cyan","magenta","grey","green"), lwd = 2)
 dev.off() 
 
+#Update figure from report with sexes separate and combined. Dont show for "U"
+#Plot relationship only for all
+lw_plot_report <- function(data, ests){
+  
+  #Set all recfin_mrfss data to recfin to simplify plot
+  data[data$Source=="RecFIN_MRFSS","Source"] = "RecFIN"
+  
+  remove = NULL
+  # Determine if all data sources have lengths & weights
+  for (s in unique(data$Source)){
+    check_len  <- check <- sum( !is.na( data[data$Source == s, "Length"])) == 0
+    check_wght <- sum( !is.na( data[data$Source == s, "Weight"])) == 0
+    if (check_len | check_wght) {remove <- c(remove, s)}
+  }
+  data <- data[!data$Source %in% remove, ]
+  
+  sources = unique(data$Source)
+  lens = 1:max(data$Length, na.rm = TRUE)
+  
+  ymax = max(data$Weight, na.rm = TRUE)
+  xmax = max(data$Length, na.rm = TRUE)
+  
+  line_col = c("red", 'blue', "grey")
+  sex_col = alpha(line_col, 0.25)
+  
+  file = "Length_Weight_by_Sex_ForReport.png"
+  
+  pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = file, w = 7, h = 7, pt = 12)
+  par(mfrow = c(2,2), mai = c(0.7,0.8,0.5,0.1) )
+  
+  ind = 0; leg = NULL
+  for(s in c("F","M","U")) {
+    ind = ind + 1	
+    if (ind == 1) {
+      plot(data[data$Sex == s, "Length"], data[data$Sex == s, "Weight"], 
+           xlab = "Length (cm)", ylab = "Weight (kg)", main = "All Sources", 
+           ylim = c(0, ymax), xlim = c(0, xmax), pch = 16, col = sex_col[ind]) 
+    }
+    if (ind > 1){
+      points(data[data$Sex == s, "Length"], data[data$Sex == s, "Weight"], pch = 16, col = sex_col[ind])
+    }	
+    
+    if(s != "U"){ #Only plot lines for M, F
+      if (!is.null(ests) & paste0("all_", s)  %in% names(ests)) {
+        lines(lens, ests[paste0("all_", s)][[1]][1] * lens ^ ests[paste0("all_", s)][[1]][2], col = line_col[ind], lwd = 2, lty = ind)
+        leg = c(leg, paste0(s, ": a = ", signif(ests[paste0("all_", s)][[1]][1], digits = 3),  
+                            " b = ", round(ests[paste0("all_", s)][[1]][2], 2) ) )
+        if (length(leg) == 3) {
+          legend("topleft", bty = 'n', legend = leg, lty = 1:3, col = line_col, lwd = 2)
+        }
+      }
+    }
+  } # close sex loop	
+  lines(lens, ests["all"][[1]][1] * lens ^ ests["all"][[1]][2], col = 1, lwd = 2, lty = 1)
+  leg = c(leg, paste0("All", ": a = ", signif(ests["all"][[1]][1], digits = 3),  
+                      " b = ", round(ests["all"][[1]][2], 2) ) )
+  legend("topleft", bty = 'n', legend = leg, lty = c(1,2,1), col = c(1,2,1), lwd = 2)
+  
+  for (a in sources){
+    get = 0
+    leg = NULL
+    for(s in c("F","M","U")){
+      get = get + 1
+      ind = data$Source == a & data$Sex == s
+      if (get == 1) {
+        plot(data$Length[ind], data$Weight[ind], xlab = "Length (cm)", ylab = "Weight (kg)", main = a,
+             ylim = c(0, ymax), xlim = c(0, xmax), pch = 16, col = sex_col[get]) }
+      if (get > 1){
+        points(data$Length[ind], data$Weight[ind], pch = 16, col = sex_col[get]) }	
+      
+      # if(s!="U"){  #Only plot lines for M, F
+      #   if (!is.null(ests) & paste0(a, "_", s)  %in% names(ests)) {
+      #     lines(lens, ests[paste0(a,"_", s)][[1]][1] * lens ^ ests[paste0(a, "_", s)][[1]][2], col = line_col[get], lwd = 2, lty = get)
+      #     leg = c(leg, paste0(s, ": a = ", signif(ests[paste0(a,"_", s)][[1]][1], digits = 3),  
+      #                         " b = ", round(ests[paste0(a,"_", s)][[1]][2], 2) ) )
+      #   }
+      # }
+    } # sex loop
+    # lines(lens, ests[a][[1]][1] * lens ^ ests[a][[1]][2], col = 1, lwd = 2, lty = 1)
+    # leg = c(leg, paste0("All", ": a = ", signif(ests[a][[1]][1], digits = 3),  
+    #                     " b = ", round(ests[a][[1]][2], 2) ) )
+    # legend("topleft", bty = 'n', legend = leg, lty = c(1,2,1), col = c(1,2,1), lwd = 2)
+  } # source loop	
+
+  dev.off()
+  
+}
+lw_plot_report(out,lw_ests)
+
 
 ############################################################################################
 #	Plot length-at-age data by source and year
@@ -361,10 +466,116 @@ out_age[out_age$Source == "RecFIN_ORage", "Source"] = "RecFIN"
 la_ests <- estimate_length_age(data = out_age[-c(142,143),], grouping = "all")
 length_age_plot(dir = file.path(dir, "data", "output biology"), splits = NA, data = out_age, nm_append = NULL, ests = la_ests, plots = 1:4)
 
+#Update figure from report with sexes separate and combined. Dont show for "U"
+la_plot_report = function(data,ests){
+  
+  keep = which(!is.na(data$Age))
+  data = data[keep, ]
+  
+  sources = unique(data$Source)
+  lens = 1:max(data$Length, na.rm = TRUE)
+  
+  xmax = max(data$Age,    na.rm = TRUE)
+  ymax = max(data$Length, na.rm = TRUE)
 
+  line_col = c("red", 'blue')
+  sex_col = alpha(line_col, 0.25)
+  
+  file = "Length_Age_by_Sex_ForReport.png"
+  
+  pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = file, w = 7, h = 7, pt = 12)
+  par(mfrow = c(2, 2), mai = c(0.7,0.8,0.5,0.1))
+  
+  ind = 0; leg = NULL
+  for(s in c("F","M")) {
+    ind = ind + 1	
+    if (ind == 1) {
+      plot(data[data$Sex == s, "Age"], data[data$Sex == s, "Length"], 
+           xlab = "Age", ylab = "Length (cm)", main = "All Sources", xaxs = "i", yaxs = "i",
+           ylim = c(0, ymax), xlim = c(0, xmax), pch = 1, col = sex_col[ind]) 
+    }
+    if (ind > 1){
+      points(data[data$Sex == s, "Age"], data[data$Sex == s, "Length"], pch = 1, col = sex_col[ind])
+    }	
+    
+    if (!is.null(ests) & paste0("all_", s)  %in% names(ests)) {
+      lines(0:ymax, vb_fn(age = 0:ymax, Linf = ests[paste0("all_", s)][[1]][1], L0 = ests[paste0("all_", s)][[1]][2], k = ests[paste0("all_", s)][[1]][3]), 
+            col = line_col[ind], lty = ind, lwd = 2)
+      leg = c(leg, paste0(s, ": Linf = ", round(ests[paste0("all_", s)][[1]][1], 2),  
+                          " L0 = "  , round(ests[paste0("all_", s)][[1]][2], 2),
+                          " k = "   , round(ests[paste0("all_", s)][[1]][3], 3) ) )
 
+    }
+  } # close sex loop	
+  lines(0:ymax, vb_fn(age = 0:ymax, Linf = ests["all"][[1]][1], L0 = ests["all"][[1]][2], k = ests["all"][[1]][3]), 
+        col = 1, lty = 1, lwd = 2)
+  leg = c(leg, paste0("All", ": Linf = ", round(ests["all"][[1]][1], 2),  
+                      " L0 = "  , round(ests["all"][[1]][2], 2),
+                      " k = "   , round(ests["all"][[1]][3], 3) ) )
+  legend("bottomright", bty = 'n', legend = leg, lty = c(1,2,1), col = c(line_col,1), lwd = 2, cex = 0.9)
+  
+  for (a in sources){
+    get = 0
+    leg = NULL
+    for(s in c("F","M")){
+      ind = data$Source == a & data$Sex == s
+      # Only plot  a sex if it is a certain amount
+      if ( length(data[ind, "Sex"]) / dim(data[data$Source == a, ])[1] > 0.10 ) {	
+        get = get + 1
+        
+        if (get == 1) {
+          plot(data$Age[ind], data$Length[ind], xlab = "Age", ylab = "Length (cm)", main = a,
+               xaxs = "i", yaxs = "i", ylim = c(0, ymax), xlim = c(0, xmax), pch = 1, col = sex_col[get]) 
+        }
+        if (get > 1){
+          points(data$Age[ind], data$Length[ind], pch = 1, col = sex_col[get]) 
+        }	
+        
+        # if (!is.null(ests) & paste0(a, "_", s)  %in% names(ests)) {
+        #   lines(0:ymax, vb_fn(age = 0:ymax, Linf = ests[paste0(a,"_", s)][[1]][1], L0 = ests[paste0(a,"_", s)][[1]][2], k = ests[paste0(a,"_", s)][[1]][3]), 
+        #         col = line_col[get], lty = get, lwd = 2)
+        #   leg = c(leg, paste0(s, ": Linf = ", round(ests[paste0(a,"_", s)][[1]][1], 2),  
+        #                       " L0 = " , round(ests[paste0(a,"_", s)][[1]][2], 2),
+        #                       " k = "  , round(ests[paste0(a,"_", s)][[1]][3], 2) ) )
+        # } # line loop
+      } # proportion sex loop
+    } # sex loop
 
+    # lines(0:ymax, vb_fn(age = 0:ymax, Linf = ests[a][[1]][1], L0 = ests[a][[1]][2], k = ests[a][[1]][3]), 
+    #       col = 1, lty = 1, lwd = 2)
+    # leg = c(leg, paste0("All", ": Linf = ", round(ests[a][[1]][1], 2),  
+    #                     " L0 = "  , round(ests[a][[1]][2], 2),
+    #                     " k = "   , round(ests[a][[1]][3], 3) ) )
+    # legend("bottomright", bty = 'n', legend = leg, lty = c(1,2,1), col = c(line_col,1), lwd = 2, cex = 0.9)
 
+  } # source loop	
+  
+  dev.off()
+}
+la_plot_report(out_age[-c(142,143),],la_ests)
+
+###
+#Look at see what estimated LA relationships from models look like
+###
+#Oregon
+pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = "OR_EstK_EstLinf.png", w = 7, h = 7, pt = 12)
+plot(out_age$Age,out_age$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55), col = alpha("black", 0.25))
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
+      col = 1, lty = 1, lwd = 3)
+lines(0:75, vb_fn(age = 0:75, Linf = 43.048, L0 = la_ests["all"][[1]][2], k = 0.139), 
+      col = 2, lty = 2, lwd = 3)
+legend("bottomright",c("External Estimate", "K and Linf estimated within model"), lty=c(1,2), col=c(1,2), bty = "n", lwd = 3)
+dev.off()
+
+#California
+pngfun(wd = file.path(dir, "data", "output biology", "plots"), file = "CA_EstK_EstLinf.png", w = 7, h = 7, pt = 12)
+plot(out_age$Age,out_age$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55), col = alpha("black", 0.25))
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
+     col = 1, lty = 1, lwd = 2)
+lines(0:75, vb_fn(age = 0:75, Linf = 43.018, L0 = la_ests["all"][[1]][2], k = 0.141), 
+      col = 2, lty = 2, lwd = 3)
+legend("bottomright",c("External Estimate", "K and Linf estimated within model"), lty=c(1,2), col=c(1,2), bty = "n", lwd = 3)
+dev.off()
 
 
 

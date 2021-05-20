@@ -84,7 +84,7 @@ base_name = "10_0_0_baseProfile"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
                             low =  c(0.03, 0.30, -0.5, 40, 0.1),
-                            high = c(0.09, 1.0,  2, 45, 0.22),
+                            high = c(0.12, 1.0,  2, 45, 0.22),
                             step_size = c(0.01, 0.10, 0.25, 0.5, 0.02),
                             param_space = c('real', 'real', 'relative', 'real', 'real'))
 
@@ -118,10 +118,13 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 #There are a number of seemingly non-converged runs in the profiles, especially for steepness and M. Rerun manually. 
 #replace base results as appropriately numbered files in profile results and run code below
 #1. M at 0.07, 0.06, the base (for base use the values from the base run), and 0.04
+#Estimates of peak selex for rec fleet were reaching bounds above M = 0.1
 load(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1","/NatM_p_1_Fem_GP_1", "_profile_output.Rdat"))
-profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(3:1,4:8)) #make sure order follows order of parameters from runs
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(3:1,4:11)) #make sure order follows order of parameters from runs
 profilesummary <- r4ss::SSsummarize(profilemodels) 
 profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+get_summary(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), profile_output$para, profile_output$vec, "profile_NatM_p_1_Fem_GP_1", profilemodels, profilesummary)
+
 
 #######################
 #Steepness profile explorations
@@ -337,8 +340,8 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 base_name = "7_1_0_baseProfile"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
-                            low =  c(0.03, 0.30, 1.6, 40, 0.1),
-                            high = c(0.12, 1.0, 3.0, 48, 0.25),
+                            low =  c(0.03, 0.30, 1.6, 40, 0.12),
+                            high = c(0.12, 1.0, 3.0, 48, 0.225),
                             step_size = c(0.01, 0.10, 0.2, 1, 0.015),
                             param_space = c('real', 'real', 'real', 'real', 'real'))
 
@@ -350,6 +353,24 @@ model_settings = get_settings(settings = list(base_name = base_name,
 model_settings$jitter_fraction = 0.1
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+get = get_settings_profile( parameters =  c("SR_BH_steep"),
+                            low =  c(0.11),
+                            high = c(0.23),
+                            step_size = c(0.02),
+                            param_space = c('real'))
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+                            low =  c(0.12),
+                            high = c(0.225),
+                            step_size = c(0.015),
+                            param_space = c('real'))
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile"),
+                                              profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
 
 #There are a number of seemingly non-converged runs in the profiles. Rerun manually. 
 #replace base results as appropriately numbered files in profile results and run code below
@@ -370,25 +391,34 @@ get_summary(paste0(mydir,"/7_1_0_baseProfile_profile_SR_BH_steep"), profile_outp
 
 #4. Redo K at 0.18. Run in new folder. Have to use par file as inits. Copy and replace report file. 
 #Doesnt improve. 
+#Rerun all runs manually (set prior_like in the starter file to 0 - runs are in folder "noPriorLike")
+#Also doesnt work
+load(paste0(mydir,"/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1","/VonBert_K_Fem_GP_1", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:8)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+get_summary(paste0(mydir,"/7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1"), profile_output$para, profile_output$vec, "profile", profilemodels, profilesummary)
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1","SR_BH_steep", "SR_LN(R0)", "VonBert_K_Fem_GP_1"),
-                            low =  c(0.03, 0.3, 1.6, 0.11),
-                            high = c(0.12, 1.0, 3, 0.23),
-                            step_size = c(0.01, 0.1, 0.2, 0.02),
-                            param_space = c('real','real','real','real'))
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1"),
-                            low =  c(0.03),
-                            high = c(0.12),
-                            step_size = c(0.01),
+#Try rerunning the profile with rec selec fixed - 7_1_0_baseProfile_fixRecSelex. K of 0.18 still doesnt line up well
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+                            low =  c(0.12),
+                            high = c(0.225),
+                            step_size = c(0.015),
                             param_space = c('real'))
+model_settings = get_settings(settings = list(base_name = "7_1_0_baseProfile_fixRecSelex",
+                                              run = c("profile"),
+                                              profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
 
-get = get_settings_profile( parameters =  c("SR_BH_steep"),
-                            low =  c(0.11),
-                            high = c(0.23),
-                            step_size = c(0.02),
+
+#Run RO profile on norecdevs model (model 711) to ensure length data inform profile
+#Recreational informs recruitment component
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+                            low =  c(2.4),
+                            high = c(3.0),
+                            step_size = c(0.1),
                             param_space = c('real'))
-
-model_settings = get_settings(settings = list(base_name = base_name,
+model_settings = get_settings(settings = list(base_name = "7_1_1_norecProfile",
                                               run = c("profile"),
                                               profile_details = get ))
 run_diagnostics(mydir = mydir, model_settings = model_settings)
@@ -484,15 +514,9 @@ base_name = "7_1_0_baseProfile"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
                             low =  c(0.03, 0.30, 2.25, 40, 0.1),
-                            high = c(0.09, 0.99,  3.75, 47, 0.25),
+                            high = c(0.12, 1.00,  3.75, 47, 0.25),
                             step_size = c(0.01, 0.10, 0.25, 1, 0.01),
                             param_space = c('real', 'real', 'real', 'real', 'real'))
-
-get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
-                            low =  c(0.10),
-                            high = c(0.24),
-                            step_size = c(0.01),
-                            param_space = c('real'))
 
 
 model_settings = get_settings(settings = list(base_name = base_name,
@@ -500,6 +524,31 @@ model_settings = get_settings(settings = list(base_name = base_name,
                                               profile_details = get ))
 model_settings$jitter_fraction = 0.25
 
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
+                            low =  c(0.10),
+                            high = c(0.24),
+                            step_size = c(0.01),
+                            param_space = c('real'))
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("profile"),
+                                              profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+
+
+#Run RO profile on norecdevs model (model 711) to ensure length data inform profile
+#Recreation fleet informs recruitments most
+get = get_settings_profile( parameters =  c("SR_LN(R0)"),
+                            low =  c(3.1),
+                            high = c(4.0),
+                            step_size = c(0.1),
+                            param_space = c('real'))
+model_settings = get_settings(settings = list(base_name = "7_1_1_norecProfile",
+                                              run = c("profile"),
+                                              profile_details = get ))
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 

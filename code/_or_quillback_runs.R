@@ -729,6 +729,49 @@ base.711mat = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.711mat)
 #Gives same results, not exactly but pretty close. 
 
+#Test is model with estimating all four of the commercial selectivity parameters change knife-edge like pattern
+#Start from model 710
+model = "7_1_2_selex4parm"
+base.712 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.712)
+#Doing so shows those parameters are very uncertain. Best to keep with just two parms
+
+#See what is causing com comp to be bimodal
+#Start from model 710 - remove last four years in com comps
+model = "7_1_3_ghostCom_2017_2020"
+base.713 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.713)
+
+#Start from model 710 - remove last six years in com comps
+model = "7_1_4_ghostCom_2015_2020"
+base.714 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.714)
+
+#Start from model 710 - remove last six years in com comps and 1999
+model = "7_1_5_ghostCom_1999_2015_2020"
+base.715 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.715)
+
+#Start from model 710 - remove last six years in com comps and 1999-2002
+model = "7_1_6_ghostCom_1999_2002_2015_2020"
+base.716 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.716)
+#First 4 years and last 6 years are main factor. 
+
+#Start from model 710 - remove 1999-2002
+model = "7_1_7_ghostCom_1999_2002"
+base.717 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.717)
+
+#Start from model 710 - remove 1999-2002
+model = "7_1_8_ghostCom_1999_2002_2017_2020"
+base.718 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.718)
+#First 4 years and last 6 years are main factor. 
+
+
+
+
 #Alternative phasing
 #just model files_all2 - Set all parameters (expect R0) to phase 2
 #just model files_selex2 - Set all selex parameters to phase 2
@@ -752,11 +795,11 @@ base.711b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.711b)
 #Reweighting doesn't matter
 
-
 #Data weighting using McAllister-Ianelli
 model = "7_1_2_dw_MI"
 base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 SS_plots(base.712)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\sensitivities\\7_1_2_dw_MI", write = FALSE)
 
 #Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 710
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
@@ -809,10 +852,14 @@ model = "7_1_11_recBlock"
 base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.7111)
 
+#Use sensitivity of model 716 - but RENAME as model 7112 for sensitivities
+model = "7_1_6_ghostCom_1999_2002_2015_2020"
+base.7112 = SS_output(file.path(wd, model),covar=TRUE)
+
 
 #Compare sensitivities
-sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.")       #11
-sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111))
+sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.", "No bimodal com. comps")
+sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111, base.7112))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 

@@ -1018,6 +1018,18 @@ base.phase.rw.orig = SS_output(file.path(wd, "10_0_0_basePhasing", model),covar=
 SS_plots(base.phase.rw.orig)
 #It does. Put as sensitivity
 
+#Set maxage to 95 (it was 90) to see if there is a difference
+#Starting from model 1000
+model = "10_1_0_base95"
+base.1010 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1010)
+#No effect - can continue with accumlator age at 90
+
+#Output from SS_LO with variance estimates included
+base.SS_LO = SS_output(file.path("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\models","SSLO"), covar=TRUE)
+SS_plots(base.SS_LO)
+
+
 
 ##############################################
 #       Sensitivities - Starting with model 1000
@@ -1129,6 +1141,8 @@ SS_plots(base.10113)
 #Copied the alternative phasing model with com selectivity at phase 4 (model base.phase)
 model = "10_1_14_altphase"
 base.10114 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+
+
 
 
 #Compare sensitivities

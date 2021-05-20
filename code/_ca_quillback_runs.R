@@ -725,15 +725,25 @@ model = "7_1_1_norec"
 base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.711)
 
+#No recruitment deviations and reweighting
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_1_norec", write = FALSE)
+model = "7_1_1b_norec_reweight"
+base.711b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.711b)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_1b_norec_reweight", write = FALSE)
+#Reweighting doesn't matter
+
 #Data weighting using Francis
 model = "7_1_2_dw_Francis"
 base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 SS_plots(base.712)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_2_dw_Francis", write = FALSE)
 
 #Data weighting using Francis, but iterating multiple times to get value - Use values from final model 701
 model = "7_1_2b_dw_Francis_iter"
 base.712b = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 SS_plots(base.712b)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_2b_dw_Francis_iter", write = FALSE)
 
 #Data weighting using Dirichlet Multinomial - Copy Report, ComReport, Covar, and Warning file from model 710
 DM_parm_info = SS_tune_comps(option = "DM", niters_tuning = 0, write = FALSE,
@@ -754,8 +764,9 @@ SS_plots(base.714)
 model = "7_1_5_estlinfK"
 base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.715)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_5_estlinfK", write = FALSE)
 
-#Estimate L infinity and K
+#Estimate K
 model = "7_1_6_estK"
 base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.716)
@@ -814,7 +825,7 @@ SS_plots(base.7113)
 
 #Compare sensitivities
 sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993", "Adjust extreme catches")
-sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112, base.7113))
+sens_models  <- SSsummarize(list(base.710, base.711, base.712b, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112, base.7113))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
