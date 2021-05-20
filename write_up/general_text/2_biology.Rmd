@@ -1,8 +1,6 @@
 ## Biological Data
 
-This assessment modeled `r spp` as a single sex. Data available were generally sparse, growth and length-weight relationships were similar across sexes, and the literature provided limited evidence of sexual dimorphism in length [@LenarzandEcheverria_dimorphism_1991]. The sections below therefore describe combined male and female biological data. 
-
-[Show plots by sex to support choice of combining genders]
+This assessment modeled `r spp` as a single sex. Growth and length-weight relationships were similar across sexes, and the literature provided limited evidence of sexual dimorphism in length [@LenarzandEcheverria_dimorphism_1991]. The sections below therefore describe combined male and female biological data. 
 
 ### Natural Mortality
 
@@ -14,9 +12,9 @@ $M=\frac{5.4}{A_{\text{max}}}$
 
 \end{centering}
 
-The above is also the median of the prior suggested by Hamel [-@hamel_method_2015]. The prior is defined as a log normal distribution with parameters $\mu = ln(5.4/A_{\text{max}})$ and $\sigma = 0.438$. Using a maximum age of `r model$accuage` years, the point estimate and median of the prior for $M$ is `r model$parameters["NatM_p_1_Fem_GP_1","Value"]` per year.
+The above is also the median of the prior suggested by Hamel [-@hamel_method_2015]. The prior is defined as a log normal distribution with parameters $\mu = ln(5.4/A_{\text{max}})$ and $\sigma = 0.438$. Using a maximum age of 95 years, the point estimate and median of the prior for $M$ is `r model$parameters["NatM_p_1_Fem_GP_1","Value"]` per year.
 
-The maximum age of 95 years was selected based on literature values for the U.S. West Coast examining the longevity of `r spp` [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. The oldest aged `r spp` among available data used in the assessment was 70 years with two observations off the coast of Washington in 1999.   
+The maximum age assumed for calculating natural mortality in the base model was 95 years. The maximum age of 95 years was based on literature values for the U.S. West Coast examining the longevity of female `r spp` [@loveetal_2002; @Palssonetal_2009; @YamanakaandLacko_rockfish_2001]. Yamanaka and Lacko [-@YamanakaandLacko_rockfish_2001] found male longevity to be 76 years. Literature estimates were larger than the oldest aged `r spp` (73, 70, and 69) among data used in this assessment. These ages were from fish caught off the coast of Washington in 1999.
 
 ### Maturation and Fecundity
 
@@ -26,11 +24,11 @@ The fecundity-at-length was based on research by Dick et al. [-@dick_meta-analys
 
 ### Length-Weight Relationship
 
-The length-weight relationship for `r spp` was estimated outside the model using available coastwide biological data collected from fishery-independent and fishery-dependent data sources (Figure \ref{fig:len-weight-survey}). Sources included the WCGBTS, and recreational and commercial samples from all states (Table \ref{tab:len-at-weight-samps}). Weights from Oregon special projects samples taken from the Oregon recreational and commercial fleets (n = 241) were not included. Only measured weight or length values were used; any values with more than two decimal places were assumed to be calculated from another measurement and were excluded. This occurred for 32 percent of lengths and 20 percent of the weights in the MRFSS-era recreational samples. The estimated length-weight relationship for `r spp` was `r format(model$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Wtlen_2_Fem[1],2)`^ where $L$ is fork length in cm (Figures \ref{fig:len-weight}).
+The length-weight relationship for `r spp` was estimated outside the model using available coastwide biological data collected from fishery-independent and fishery-dependent data sources (Figure \ref{fig:len-weight-survey}). Sources included the WCGBTS, and recreational and commercial samples from all states (Table \ref{tab:len-at-weight-samps}). Only measured weight or length values were used; any values with more than two decimal places were assumed to be calculated from another measurement and were excluded. This occurred for 32 percent of lengths and 20 percent of the weights in the MRFSS-era recreational samples. Weights from Oregon special projects samples taken from the Oregon recreational and commercial fleets (n = 241) were not included. The estimated length-weight relationship for `r spp` was `r format(model$MGparmAdj$Wtlen_1_Fem[1], scientific = TRUE)`$L$^`r round(model$MGparmAdj$Wtlen_2_Fem[1],2)`^ where $L$ is fork length in cm (Figures \ref{fig:len-weight}).
 
 ### Growth (Length-at-Age)
 
-The length-at-age relationship for `r spp` was estimated outside the model using data collected from fishery-dependent sources off the coast of Oregon and Washington collected between 1998-2019, and from a single coastwide fishery-independent sources (WCGBT Survey) collected between 2005-2019 (Table \ref{tab:len-at-age-samps}). Ages from Oregon special projects samples taken from the Oregon commercial fleet (n = 30) were not included. Age data was generally sparase for `r spp` from any one source. The fishery-dependent data had limited observations of young fish less than 5 years of age, but had observations of fish up to 73 years of age, and the fishery-independent data had limited observations of old fish greater than 40 years of age, but had observations of fish as young as one year of age. Growth parameters for `r spp` were estimated at the following values:
+The length-at-age relationship for `r spp` was estimated outside the model using data collected from fishery-dependent sources off the coast of Oregon and Washington collected between 1998-2019, and from a single coastwide fishery-independent source (WCGBTS) collected between 2005-2019 (Table \ref{tab:len-at-age-samps}). Ages from Oregon special projects samples taken from the Oregon commercial fleet (n = 30) were not included. Age data were generally sparase for `r spp` from any one source (Figure \ref{fig:len-age-data}). The fishery-dependent data had limited observations of young fish less than 5 years of age, but had observations of fish up to 73 years of age. The fishery-independent data had limited observations of old fish greater than 40 years of age, but had observations of fish as young as one year of age. Growth parameters for `r spp` were estimated at the following values:
 
 \begin{centering}
 
@@ -38,19 +36,7 @@ $L_{\infty}$ = `r round(model$MGparmAdj$L_at_Amax_Fem_GP_1[1], 2)` cm; $k$ = `r 
 
 \end{centering}
 
-These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10 for both sexes. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}. The estimate of $L_{\infty}$ is comparable to literature values, while the estimate of $k$ is on the higher side of literature values which vary from 0.06 - 0.19 [@YamanakaandLacko_rockfish_2001; @Palssonetal_2009; @Westetal_2014].
+These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}. The estimate of $L_{\infty}$ is comparable to literature values, while the estimate of $k$ is on the higher side of literature values which vary from 0.06 - 0.19 [@YamanakaandLacko_rockfish_2001; @Palssonetal_2009; @Westetal_2014].
 
 Table \ref{tab:growth-tab} shows the length-at-age, weight-at-age, maturity-at-age, and spawning output (the product of fecundity and maturity) assumed in the base model.
 
-[Is it typical not to include t0? Its not an SS parameter but it does affect the estimate of L1. Should I instead include L1?]
-
-### Sex Ratio
-
-Given the base model was of combined sexes, the sex ratio was assumed to be 1:1.
-
-  
-### Ageing Precision and Bias
-
-Ages were not fit in the model. 
-
-[Just remove this section?]
