@@ -109,13 +109,18 @@ get = get_settings_profile( parameters =  c("SR_BH_steep"),
                             high = c(1.0),
                             step_size = c(0.1),
                             param_space = c('real'))
+get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
+                            low =  c(0.05),
+                            high = c(0.15),
+                            step_size = c(0.01),
+                            param_space = c('real'))
 model_settings = get_settings(settings = list(base_name = base_name,
                                               run = c("profile"),
                                               profile_details = get ))
 
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
-#There are a number of seemingly non-converged runs in the profiles, especially for steepness and M. Rerun manually. 
+#There are a number of seemingly non-converged runs in the profiles, especially for steepness and M, and for CV at L2. Rerun manually. 
 #replace base results as appropriately numbered files in profile results and run code below
 #1. M at 0.07, 0.06, the base (for base use the values from the base run), and 0.04
 #Estimates of peak selex for rec fleet were reaching bounds above M = 0.1
@@ -339,11 +344,11 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 ####################
 base_name = "7_1_0_baseProfile"
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
-                            low =  c(0.03, 0.30, 1.6, 40, 0.12),
-                            high = c(0.12, 1.0, 3.0, 48, 0.225),
-                            step_size = c(0.01, 0.10, 0.2, 1, 0.015),
-                            param_space = c('real', 'real', 'real', 'real', 'real'))
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1", "CV_old_Fem_GP_1"),
+                            low =  c(0.03, 0.30, 1.6, 40, 0.12, 0.05),
+                            high = c(0.12, 1.0, 3.0, 48, 0.225, 0.15),
+                            step_size = c(0.01, 0.10, 0.2, 1, 0.015, 0.01),
+                            param_space = c('real', 'real', 'real', 'real', 'real', 'real'))
 
 
 model_settings = get_settings(settings = list(base_name = base_name,
@@ -512,11 +517,11 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 ####################
 base_name = "7_1_0_baseProfile"
 
-get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1"),
-                            low =  c(0.03, 0.30, 2.25, 40, 0.1),
-                            high = c(0.12, 1.00,  3.75, 47, 0.25),
-                            step_size = c(0.01, 0.10, 0.25, 1, 0.01),
-                            param_space = c('real', 'real', 'real', 'real', 'real'))
+get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1", "CV_old_Fem_GP_1"),
+                            low =  c(0.03, 0.30, 2.25, 40, 0.1, 0.05),
+                            high = c(0.12, 1.00,  3.75, 47, 0.25, 0.15),
+                            step_size = c(0.01, 0.10, 0.25, 1, 0.01, 0.01),
+                            param_space = c('real', 'real', 'real', 'real', 'real', 'real'))
 
 
 model_settings = get_settings(settings = list(base_name = base_name,
@@ -527,9 +532,9 @@ model_settings$jitter_fraction = 0.25
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
-get = get_settings_profile( parameters =  c("VonBert_K_Fem_GP_1"),
-                            low =  c(0.10),
-                            high = c(0.24),
+get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
+                            low =  c(0.05),
+                            high = c(0.15),
                             step_size = c(0.01),
                             param_space = c('real'))
 model_settings = get_settings(settings = list(base_name = base_name,
