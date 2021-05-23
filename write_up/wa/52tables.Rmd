@@ -10,21 +10,6 @@
 
 \newpage
 
-```{r}
-tab = data.frame(Year = model$catch[model$catch$Fleet == 1, "Yr"],
-                    Numbers = model$catch[model$catch$Fleet == 1, "Obs"] * 1000,
-                    MT = model$catch[model$catch$Fleet == 1, "kill_bio"])
-col_names = c("Year", "Numbers of Fish", "Metric Tons")
-table_format(x = tab,
-      caption = 'Input numbers of fish removals converted to metric tons (mt) within the model.',
-      label = 'nums-mt',
-      longtable = TRUE,
-            digits = c(0, 0, 2),
-      col_names = col_names)
-```
-\newpage
-
-
 ```{r, results = 'asis'}
 yrs = hist = 2011:2020
 nfleets = 2
@@ -50,7 +35,6 @@ table_format(x = out,
 
 
 ```
-
 \newpage
 
 
@@ -63,13 +47,24 @@ table_format(x = out,
 
 \newpage
 
-
-\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/wa_rec_samples.tex}
-
+<!-- Catch table for recreational fleet  -->
+```{r}
+tab = data.frame(Year = model$catch[model$catch$Fleet == 1, "Yr"],
+                    Numbers = model$catch[model$catch$Fleet == 1, "Obs"] * 1000,
+                    MT = model$catch[model$catch$Fleet == 1, "kill_bio"])
+tab = tab[tab$Year>1957,]
+col_names = c("Year", "Numbers of Fish", "Metric Tons")
+table_format(x = tab,
+      caption = 'Input numbers of fish removals converted to metric tons (mt) within the model.',
+      label = 'nums-mt',
+      longtable = TRUE,
+      digits = c(0, 0, 2),
+      col_names = col_names)
+```
 \newpage
 
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/len_at_age_data.tex}
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/wa_rec_samples.tex}
 
 \newpage
 
@@ -79,14 +74,19 @@ table_format(x = out,
 \newpage
 
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/wa_rec_age_samples.tex}
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/len_at_age_data.tex}
 
 \newpage
 
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/WA_age_Samples_Feb2021.tex}
+<!-- \input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/wa_rec_age_samples.tex} -->
 
-\newpage
+<!-- \newpage -->
+
+
+<!-- \input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/WA_age_Samples_Feb2021.tex} -->
+
+<!-- \newpage -->
 
 <!-- ======================================================= -->
 <!-- ***************    Biology      *********************** --> 
@@ -202,6 +202,16 @@ table_format(x = mod_params,
 
 
 <!-- ======================================================= -->
+<!-- ***********    Reference Points  ******************** --> 
+<!-- ======================================================= -->
+
+<!-- tab:referenceES -->
+\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+
+<!-- ======================================================= -->
 <!-- ***********       Time Series      ******************** --> 
 <!-- ======================================================= -->
 
@@ -220,16 +230,20 @@ table_format(x = mod_params,
 \newpage
 
 
+<!-- ======================================================= -->
+<!-- ****************         SSS            *************** --> 
+<!-- ======================================================= -->
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_57.tex}
+
+\input{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_40.tex}
+
+\newpage
+
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
-
-<!-- tab:referenceES -->
-\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/e_ReferencePoints_ES.tex}
-
-\newpage
-
 
 ```{r, results = 'asis'}
 tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
