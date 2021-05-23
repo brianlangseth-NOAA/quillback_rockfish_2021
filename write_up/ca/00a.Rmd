@@ -31,7 +31,7 @@ spp_latin = 'Sebastes maliger'
 state = 'California'
 
 data_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots"
-
+appendix_fig_loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca"
 
 if(file.exists("00mod.Rdata")){
   load("00mod.Rdata")

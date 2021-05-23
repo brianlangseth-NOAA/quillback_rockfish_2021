@@ -178,6 +178,16 @@ table_format(x = mod_params,
 
 
 <!-- ======================================================= -->
+<!-- ***********    Reference Points  ******************** --> 
+<!-- ======================================================= -->
+
+<!-- tab:referenceES -->
+\input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+
+<!-- ======================================================= -->
 <!-- ***********       Time Series      ******************** --> 
 <!-- ======================================================= -->
 
@@ -200,10 +210,6 @@ table_format(x = mod_params,
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
-
-\input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/e_ReferencePoints_ES.tex}
-
-\newpage
 
 ```{r, results = 'asis'}
 tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
@@ -240,3 +246,24 @@ table_format(x = out,
 ```
 
 \newpage
+
+<!-- ======================================================= -->
+<!-- ********  Appendices *************** --> 
+<!-- ======================================================= -->
+
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'ca_rov_table.csv'))
+tab[2,1] = "10-20"
+
+col_names = c('Depth (fm)',
+        'Observed Area (m2)',
+        'Quillback Rockfish Observed',
+        'Quillback Rockfish Density (fish/m2)',
+        'Percent Relative Density')
+
+table_format(x = tab,
+             caption = "Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth.",
+             label = "ca-ROV",
+             align = 'l',
+             col_names = col_names)
+```
