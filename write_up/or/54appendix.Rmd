@@ -1,8 +1,8 @@
 \clearpage
 
-# Appendix 
+# Appendix
 
-## Detailed Fit to Length Composition Data 
+## Appendix A: Detailed Fit to Length Composition Data 
 
 
 ```{r, results='asis'}
@@ -23,7 +23,7 @@ for (a in plot.vec){
 \clearpage
 
 
-## ODFW Marine Reserve Hook and Line Survey
+## Appendix B: ODFW Marine Reserve Hook and Line Survey
 
 One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey. This data source to date has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of this data source and the available data for `r spp`.
 
@@ -58,6 +58,7 @@ table_format(x = data,
              caption = "Summary of number of catch cell days and positive observations of quillback rockfish.",
              label = "table-2",
              align = 'l',
+             digits = 3,
              landscape = TRUE,
              col_names = col_names)
 ```
@@ -117,7 +118,7 @@ caption = "Quillback rockfish CPUE calculated at Redfish Rocks based on postive 
 label = 'fig-4')
 ```
 
-When all sties and all values are included, `r Spp` appear to have a relatively stable trend from 2011 – 2019, with the annual mean CPUE oscillating around the long-term mean. 
+When all sites and all values are included, `r spp` appear to have a relatively stable trend from 2011 – 2019, with the annual mean CPUE oscillating around the long-term mean. 
 
 
 ```{r, results = 'asis'}
@@ -128,7 +129,7 @@ caption = "Quillback rockfish relative CPUE across all sample sites and with all
 label = 'fig-5')
 ```
 
-### Video Lander Population Estimate
+## Appendix C: Video Lander Population Estimate
 
 Oregon Department of Fish and Wildlife (ODFW) provided density estimates and a range of estimated population abundances from underwater video lander data for quillback rockfish (Sebastes maliger). The lander data was collected over nine years by the ODFW and summarized in Rasmuson et al. ([@rasmuson_lander_2020]). This large dataset is made up of ten independent studies carried out in both nearshore rocky reefs coastwide as well as select reef structures offshore of the central coast of Oregon. Underwater video landers are stationary platforms consisting of one to three video cameras. Landers used in deeper water employ advanced lighting systems for optimal viewing of fish and benthic habitat. Ambient light is used in shallow surveys. The variability in detection range by depth is an important factor to consider when deriving fish density from lander data. Therefore, a series of abundance estimates were provided to inform the quillback rockfish assessment.  Methods are summarized below but a more detailed document is available by ODFW upon request.  
 
@@ -137,7 +138,7 @@ Variability in range (and therefore, area viewed) directly influences fish abund
 Abundance estimates for the coastwide survey area are provided for quillback rockfish derived from each of the nine density estimates; five range models, the weighted arithmetic mean, and three weighted geometric mean methods. For quillback rockfish, density estimates ranged from 0.004 ± 0.029 (no. fish / m2 ± SD) from the maximum range method to 0.950 ± 1.366 for the third geometric mean method. The estimated habitat area was 1,840 thousands of km2. Abundance estimates ranged from 7.3 ± 53.5 (millions of fish ± SD) to 1,751 ± 2,519. Estimates of abundance from the five range models produced similar results to the weighted arithmetic mean, ranging from 7.3 ± 53.5 (millions of fish ± SD) for the maximum range to 36.9 ± 247.0 for the minimum range.  These were generally considered more plausible than the results based on the geometric density means. Caveats to this abundance estimate are provided in the detailed document, but include considerations of the use of the lander dataset and the estimation of habitat area.  
 
 
-### ROV minimum population estimate 
+## Appendix D: ROV minimum population estimate 
 
 The ODFW has conducted remotely-operated vehicle (ROV) surveys for nearly 20 years, targeting nearshore rocky reef habitats and associated fish and invertebrate assemblages. Oregon ROV survey methods, analyses, and data were subjected to an SSC methodology review in 2019 and were determined to be suitable for use in west coast stock assessments, subject to assessment authors’ evaluation of suitability for particular stocks and specific data uses. Oregon ROV data were used to estimate a minimum abundance of quillback rockfish within a subset of the total available nearshore habitat, as a reference point for the assessment, though these data are not included directly in the assessment model. A summary of the methodology to develop this estimate follows, and a more detailed document is in development and available upon request by ODFW.  
 

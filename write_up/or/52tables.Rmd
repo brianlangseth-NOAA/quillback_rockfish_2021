@@ -55,15 +55,14 @@ table_format(x = out,
 \newpage
 
 
-\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/len_at_age_data.tex}
-
-\newpage
-
-
 \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/len_at_weight_data.tex}
 
 \newpage
 
+
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/len_at_age_data.tex}
+
+\newpage
 
 \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_age_samples.tex}
 
@@ -188,6 +187,16 @@ table_format(x = mod_params,
 
 
 <!-- ======================================================= -->
+<!-- ***********    Reference Points  ******************** --> 
+<!-- ======================================================= -->
+
+<!-- tab:referenceES -->
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/e_ReferencePoints_ES.tex}
+
+\newpage
+
+
+<!-- ======================================================= -->
 <!-- ***********       Time Series      ******************** --> 
 <!-- ======================================================= -->
 
@@ -195,6 +204,7 @@ table_format(x = mod_params,
 \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/TimeSeries.tex}
 
 \newpage
+
 
 <!-- ======================================================= -->
 <!-- ****************     Sensitivities      *************** --> 
@@ -216,10 +226,6 @@ table_format(x = mod_params,
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
-
-\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/e_ReferencePoints_ES.tex}
-
-\newpage
 
 
 ```{r, results = 'asis'}
@@ -251,100 +257,4 @@ table_format(x = out,
              col_names = col_names)
 ```
 
-\newpage
-
-<!-- ======================================================= -->
-<!-- ********  Profiles *************** -->
-<!-- ======================================================= -->
-
-```{r, results = 'asis'}
-#R0 profile
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_SR_LN(R0)", 'profile_SR_LN(R0)_results.csv'))
-#col_names = paste0("R0_",round(tab$parameter_value,2))
-#profile_table = data.frame(t(tab[,4:9]))
-profile_table = tab[3:9]
-colnames(profile_table)[1] = "parameter value"
-col_names = c(colnames(profile_table))
-
-table_format(x = profile_table,
-             caption = "Derived quantities for the profile of values of the logarithm of equilbirum recruitment.",
-             label = "profile-r0",
-             align = 'l',
-             font_size = 9,
-             digits = 3,
-             col_names = col_names)
-```
-
-\newpage
-
-```{r, results = 'asis'}
-#Steepness profile
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_SR_BH_steep", 'profile_SR_BH_steep_results.csv'))
-#profile_names = paste0("h_",round(tab$parameter_value,2))
-#profile_table = data.frame(t(tab[,4:9]))
-profile_table = tab[3:9]
-colnames(profile_table)[1] = "parameter value"
-col_names = c(colnames(profile_table))
-
-table_format(x = profile_table,
-                 caption = 'Derived quantities for the profile of values of steepness',
-                 label = 'profile-h',
-                 font_size = 9,
-                 digits = 3,
-                 col_names = profile_names)
-```
-\newpage
-
-```{r, results = 'asis'}
-#M profile
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_NatM_p_1_Fem_GP_1", 'profile_NatM_p_1_Fem_GP_1_results.csv'))
-#profile_names = paste0("M_",round(tab$parameter_value,2))
-#profile_table = data.frame(t(tab[,4:9]))
-profile_table = tab[3:9]
-colnames(profile_table)[1] = "parameter value"
-col_names = c(colnames(profile_table))
-
-table_format(x = profile_table,
-                 caption = 'Derived quantities for the profile of values of natural mortality',
-                 label = 'profile-m',
-                 font_size = 9,
-                 digits = 3,
-                 col_names = profile_names)
-```
-\newpage
-
-```{r, results = 'asis'}
-#Linf profile
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_L_at_Amax_Fem_GP_1", 'profile_L_at_Amax_Fem_GP_1_results.csv'))
-#profile_names = paste0("L_at_Amax_",round(tab$parameter_value,2))
-#profile_table = data.frame(t(tab[,4:9]))
-profile_table = tab[3:9]
-colnames(profile_table)[1] = "parameter value"
-col_names = c(colnames(profile_table))
-
-table_format(x = profile_table,
-                 caption = 'Derived quantities for the profile of values of length at maximum age',
-                 label = 'profile-linf',
-                 font_size = 9,
-                 digits = 3,
-                 col_names = profile_names)
-```
-\newpage
-
-```{r, results = 'asis'}
-#K profile
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or", "7_1_0_baseProfile_profile_VonBert_K_Fem_GP_1", 'profile_VonBert_K_Fem_GP_1_results.csv'))
-#profile_names = paste0("R0_",round(tab$parameter_value,2))
-#profile_table = data.frame(t(tab[,4:9]))
-profile_table = tab[3:9]
-colnames(profile_table)[1] = "parameter value"
-col_names = c(colnames(profile_table))
-
-t = table_format(x = profile_table,
-                 caption = 'Derived quantities for the profile of values of von Bertalannfy growth coefficient',
-                 label = 'profile-k',
-                 font_size = 9,
-                 digits = 3,
-                 col_names = profile_names)
-```
 \newpage

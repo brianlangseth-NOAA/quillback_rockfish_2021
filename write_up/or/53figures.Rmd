@@ -67,12 +67,23 @@ label = 'mean-rec-len-data')
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->
 
-
-<!-- =================== -->
-<!-- ==  Possibly revise  == -->
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(data_fig_loc, "Length_Weight_by_Source.png"), 
+filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
+caption = "Maturity as a function of  length",
+label = 'maturity')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
+caption = "Fecundity as a function of length",
+label = 'fecundity')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(data_fig_loc, "Length_Weight_by_Sex_ForReport.png"), 
 caption = "Comparison of the length-at-weight data from the individual sources with length and weight data, and with all sources combined.",
 label = 'len-weight-survey')
 ```	
@@ -84,11 +95,9 @@ caption = "Weight-at-length by sex used in the model",
 label = 'len-weight')
 ```	
 
-<!-- =================== -->
-<!-- ==  Possibly revise  == -->
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(data_fig_loc, "Length_Age_by_Sex.png"), 
+filein = file.path(data_fig_loc, "Length_Age_by_Sex_ForReport.png"), 
 caption = "Observed sex specific length-at-age coastwide data by data source with the estimated length-at-age curve",
 label = 'len-age-data')
 ```	
@@ -100,38 +109,6 @@ filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"),
 caption = "Length at age in the beginning of the year in the ending year of the model",
 label = 'len-age-ss')
 ```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
-caption = "Maturity as a function of  length",
-label = 'maturity')
-```
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
-caption = "Fecundity as a function of length",
-label = 'fecundity')
-```
-
-<!-- =================== -->
-<!-- ==  Need to do the following two  == -->
-
-<!-- ```{r, results = 'asis'} -->
-<!-- add_figure( -->
-<!-- filein = file.path(data_fig_loc, "Length_fraction_female.png"),  -->
-<!-- caption = "Fraction female by length across all available data sources", -->
-<!-- label = 'len-sex-ratio') -->
-<!-- ``` -->
-
-<!-- ```{r, results = 'asis'} -->
-<!-- add_figure( -->
-<!-- filein = file.path(data_fig_loc, "Age_fraction_female.png"),  -->
-<!-- caption = "Fraction female by age across all available data sources", -->
-<!-- label = 'age-sex-ratio') -->
-<!-- ``` -->
 
 
 <!-- ====================================================================== -->
@@ -218,7 +195,7 @@ label = 'agg-len-fit')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png"), 
-caption = "Estimated time series of spawning output",
+caption = "Estimated time series of spawning output (million of eggs)",
 label = 'ssb')
 ```
 
@@ -251,57 +228,6 @@ label = 'bh-curve')
 ```
 
 
-
-<!-- ====================================================================== -->
-<!-- ******************    Reference Points    **************************** --> 
-<!-- ====================================================================== -->
-
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
-caption = "Estimated 1 - relative spawning ratio (SPR) by year",
-label = '1-spr')
-```
-
-```{r, results = 'asis'}
-add_figure(
-filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
-caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
-```
-
-
-<!-- ====================================================================== -->
-<!-- ******************       Sensitivity     ***************************** --> 
-<!-- ====================================================================== -->
-
-```{r, echo=FALSE, results='asis'}
-sens_wd = file.path("C:/Users/Brian.Langseth/Desktop/or", "sensitivities")
-nm = "base.710_sensitivities_compare2_spawnbio_uncertainty.png"
-add_figure(
-filein = file.path(sens_wd, nm),
-caption = "Change in estimated spawning output by sensitivity",
-label = 'sens-ssb')
-```
-
-```{r, echo=FALSE, results='asis'}
-nm = "base.710_sensitivities_compare4_Bratio_uncertainty.png"
-add_figure(
-filein = file.path(sens_wd, nm),
-caption = "Change in estimated fraction unfished by sensitivity",
-label = 'sens-depl')
-```
-
-<!-- ```{r, echo=FALSE, results='asis'} -->
-<!-- nm = "base.710_sensitivities_compare12_recdevs_uncertainty.png") -->
-<!-- add_figure( -->
-<!-- filein = file.path(sens_wd, nm), -->
-<!-- caption = "Change in estimated annual recruitment deviation", -->
-<!-- label = 'sens-recdev') -->
-<!-- ``` -->
-
 <!-- ====================================================================== -->
 <!-- ******************      Likelihoods      ***************************** --> 
 <!-- ====================================================================== -->
@@ -310,21 +236,21 @@ label = 'sens-depl')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_LN(R0)"),  "piner_panel_SR_LN(R0).png"), 
-caption = "Change in the negative log-likelihood across a range of log(R0) values",
+caption = "Change in the negative log-likelihood across a range of ln(R0) values",
 label = 'r0-profile')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_LN(R0)"),  "SR_LN(R0)_trajectories_compare1_spawnbio.png"), 
-caption = "Change in the estimate of spawning output across a range of log(R0) values",
+caption = "Change in the estimate of spawning output across a range of ln(R0) values",
 label = 'r0-ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_LN(R0)"),  "SR_LN(R0)_trajectories_compare3_Bratio.png"), 
-caption = "Change in the estimate of fraction unfished across a range of log(R0) values",
+caption = "Change in the estimate of fraction unfished across a range of ln(R0) values",
 label = 'r0-depl')
 ```
 
@@ -354,21 +280,21 @@ label = 'h-depl')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_NatM_p_1_Fem_GP_1"),  "piner_panel_NatM_p_1_Fem_GP_1.png"), 
-caption = "Change in the negative log-likelihood across a range of female natural mortality values",
+caption = "Change in the negative log-likelihood across a range of natural mortality values",
 label = 'm-profile')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_NatM_p_1_Fem_GP_1"),  "NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
-caption = "Change in the estimate of spawning output across a range of female natural mortality values",
+caption = "Change in the estimate of spawning output across a range of natural mortality values",
 label = 'm-ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_NatM_p_1_Fem_GP_1"),  "NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png"), 
-caption = "Change in the estimate of fraction unfished across a range of female natural values",
+caption = "Change in the estimate of fraction unfished across a range of natural values",
 label = 'm-depl')
 ```
 
@@ -376,21 +302,21 @@ label = 'm-depl')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_L_at_Amax_Fem_GP_1"),  "piner_panel_L_at_Amax_Fem_GP_1.png"), 
-caption = "Change in the negative log-likelihood across a range of female maximum length values",
+caption = "Change in the negative log-likelihood across a range of female length values",
 label = 'linf-profile')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
-caption = "Change in the estimate of spawning output across a range of female maximum length values",
+caption = "Change in the estimate of spawning output across a range of maximum length values",
 label = 'linf-ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png"), 
-caption = "Change in the estimate of fraction unfished across a range of female maximum length values",
+caption = "Change in the estimate of fraction unfished across a range of maximum length values",
 label = 'linf-depl')
 ```
 
@@ -398,22 +324,44 @@ label = 'linf-depl')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_VonBert_K_Fem_GP_1"),  "piner_panel_VonBert_K_Fem_GP_1.png"), 
-caption = "Change in the negative log-likelihood across a range of female k values",
+caption = "Change in the negative log-likelihood across a range of k values",
 label = 'k-profile')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_VonBert_K_Fem_GP_1"),  "VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
-caption = "Change in the estimate of spawning output across a range of female k values",
+caption = "Change in the estimate of spawning output across a range of k values",
 label = 'k-ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_VonBert_K_Fem_GP_1"),  "VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png"), 
-caption = "Change in the estimate of fraction unfished across a range of female k values",
+caption = "Change in the estimate of fraction unfished across a range of k values",
 label = 'k-depl')
+```
+
+<!-- CV-old -->
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_profile_CV_old_Fem_GP_1"),  "piner_panel_CV_old_Fem_GP_1.png"), 
+caption = "Change in the negative log-likelihood across a range of CV at maximum length values",
+label = 'cv2-profile')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_profile_CV_old_Fem_GP_1"),  "CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
+caption = "Change in the estimate of spawning output across a range of CV at maximum length values",
+label = 'cv2-ssb')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_profile_CV_old_Fem_GP_1"),  "CV_old_Fem_GP_1_trajectories_compare3_Bratio.png"), 
+caption = "Change in the estimate of fraction unfished across a range of CV at maximum length values",
+label = 'cv2-depl')
 ```
 
 
@@ -435,5 +383,61 @@ caption = "Change in the estimate of fraction unfished when the most recent 5 ye
 label = 'retro-depl')
 ```
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare11_recdevs.png"),
+caption = "Change in the estimate of annual recruitment deviations when the most recent 5 years of data area removed sequentially",
+label = 'retro-recdev')
+```
+
+<!-- ====================================================================== -->
+<!-- ******************       Sensitivity     ***************************** --> 
+<!-- ====================================================================== -->
+
+```{r, echo=FALSE, results='asis'}
+sens_wd = file.path("C:/Users/Brian.Langseth/Desktop/or", "sensitivities")
+nm = "base.710_sensitivities_compare2_spawnbio_uncertainty.png"
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated spawning output by sensitivity",
+label = 'sens-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = "base.710_sensitivities_compare4_Bratio_uncertainty.png"
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated fraction unfished by sensitivity",
+label = 'sens-depl')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = "base.710_sensitivities_compare12_recdevs_uncertainty.png"
+add_figure(
+filein = file.path(sens_wd, nm),
+caption = "Change in estimated annual recruitment deviation",
+label = 'sens-recdev')
+```
+
+
+<!-- ====================================================================== -->
+<!-- ******************    Reference Points    **************************** --> 
+<!-- ====================================================================== -->
+
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
+caption = "Estimated 1 - relative spawning ratio (SPR) by year",
+label = '1-spr')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
+```
 
 \newpage
