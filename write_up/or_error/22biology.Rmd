@@ -1,6 +1,0 @@
-<!-- Biological Data -->
-```{r, echo=FALSE, results='asis'}
-general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text"
-filein = file.path(general_wd, '2_biology.Rmd')
-read_child(filein)
-```
