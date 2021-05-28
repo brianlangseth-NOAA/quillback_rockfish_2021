@@ -955,10 +955,13 @@ source("https://raw.githubusercontent.com/nwfsc-assess/PEPtools/master/R/solve_n
 solve_numbers(mod_dir = file.path(wd, "10_0_0_base", "just model files","forecasting"), fore_yrs = 2021:2022, 
               fleet_abc = c(0.7207, 0.7219), fleet = 1)
 
+#Note that Im using 0.48 instead of 0.438 for prior sd on M. Its fixed so will have trivial change if any,
+#so just adjust for sensitivity.
 model = "10_0_0_base"
 base.1000 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.1000)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\10_0_0_base", write = FALSE, option = "none") #for first initial pass
+SSplotSPR(base.1000,subplots=4,print=TRUE)
 
 #Full base version of included recdevs
 #Starting with model 1011 (below), update data weighting, and bias adj as needed
@@ -1093,7 +1096,7 @@ model = "10_1_6_estL2CV"
 base.1016 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1016)
 
-#Estimate natural mortality
+#Estimate natural mortality. Use prior sd of 0.438 (keep selex at 55)
 model = "10_1_7_estM"
 base.1017 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1017)
@@ -1110,6 +1113,16 @@ SS_plots(base.1018)
 model = "10_1_9_mirrorCom"
 base.1019 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1019)
+
+#Dont fit to commercial comps, but mirror rec comps. Include com comps as ghost fleet. Include dataweighting for both fleets
+model = "10_1_9b_mirrorCom_weight"
+base.1019b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1019b)
+
+#Dont fit to commercial comps, but mirror rec comps. Keep com comps in. Apply dataweighting
+model = "10_1_9c_mirrorCom_weight_noghost"
+base.1019c = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1019d)
 
 #Use dome shaped selectivity selectivity for recreational fleet
 #Blows up (high R0) so apply with recdevs
@@ -1146,19 +1159,19 @@ base.10114 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 
 
 #Compare sensitivities
-#sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est K, recdevs", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.", "Alt Phase")
-#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1015c, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112, base.10114))
+#sens_names <- c("Base model","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est K, recdevs", "Est Old CV", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex", "Alt Phase")
+#sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1015, base.1015b, base.1015c, base.1016, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112, base.10114))
 #Linf,K and K runs are unreasonable, ultimately didn't decide to go with est K with recdevs - exclude for now
 #These are the model runs for the non-subset plots
-sens_names <- c("Base mode","Rec devs","Rec devs reweight", "DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.", "Alt Phase")
-sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112, base.10114))
+sens_names <- c("Base model","Rec devs","Rec devs reweight", "DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex", "Alt Phase/Alt state")
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112, base.10114))
 # #L2 CV run is very high, but not unreasonable - exclude for now
-# sens_names <- c("Base mode","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.", "Alt Phase")
-# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112, base.10114))
+# sens_names <- c("Base model","Rec devs","DW MI", "DW DM", "Est Linf", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex", "Alt Phase/Alt state")
+# sens_models  <- SSsummarize(list(base.1000, base.1011, base.1012, base.1013, base.1014, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112, base.10114))
 # #Linf run and alternative phasing are very uncertain - exclude for now
 # #These are model runs for the "subset" plots
-sens_names <- c("Base mode","Rec devs","Rec devs reweight","DW MI", "DW DM", "Est M", "No early rec comps", "No com comps", "Rec dome-shaped selex., recdevs", "Com dome-shaped selex.", "Rec block selex.") 
-sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1017, base.1018, base.1019, base.10110b, base.10111, base.10112))
+sens_names <- c("Base model","Rec devs","Rec devs reweight","DW MI", "DW DM", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex") 
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
@@ -1205,7 +1218,7 @@ sens_table = rbind(
   as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
-  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]),
   as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
@@ -1247,7 +1260,7 @@ t = table_format(x = sens_table,
                  label = 'sensitivities',
                  longtable = TRUE,
                  font_size = 9,
-                 digits = 3,
+                 digits = 2,
                  landscape = TRUE,
                  col_names = sens_names)
 

@@ -4,7 +4,7 @@
 
 library(sa4ss)
 dir = "C:/Users/Brian.Langseth/Desktop/WA_SSS" #where model files are located
-dep = 57 #<-----CHANGE THIS BETWEEN 40 and 57
+dep = 40 #<-----CHANGE THIS BETWEEN 40 and 57
 if(dep ==40) savedir = paste0("L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_40dep_5_18") #where to save plots
 if(dep ==57) savedir = paste0("L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_57dep_5_18") #where to save plots
 if(dep == 40) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_40dep_5_18"), "SSS_out.DMP"))
@@ -70,7 +70,7 @@ rownames(df) = c("SSB Unfished", paste("SSB", final),
 				 paste("Fraction Unfished", final), paste("OFL", fore), paste("ABC", fore))
 
 t = table_format(x = df,
-      caption = paste('Derived quantities from SSS based on assuming fraction unfished of', dep, 'percent in', final, "."),
+      caption = paste0('Derived quantities from SSS based on assuming fraction unfished of ', dep, ' percent in ', final, "."),
       label = paste0("SSS-", dep),
       longtable = TRUE,
       font_size = 9,

@@ -706,9 +706,12 @@ SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\7_1_0_base", write 
 #Francis has slightly more extreme status but also have more dramatic recdevs. Keep with MI
 
 #Copy model 7_0_0 
+#Note that Im using 0.48 instead of 0.438 for prior sd on M. Its fixed so will have trivial change if any,
+#so just adjust for sensitivity.
 model = "7_1_0_base"
 base.710 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.710)
+SSplotSPR(base.710,subplots=4,print=TRUE)
 
 #Set early years of commercial comps as ghost instead of outright remove
 model = "7_1_1_base_ghostCom"
@@ -776,7 +779,7 @@ model = "7_1_7_estL2CV"
 base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.717)
 
-#Estimate natural mortality
+#Estimate natural mortality. Use prior sd of 0.438
 model = "7_1_8_estM"
 base.718 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.718)
@@ -823,9 +826,16 @@ model = "7_1_13_noExtremeCatch"
 base.7113 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.7113)
 
+#Remove the extreme catches for rec in 1983, 1993 and com in 1991. Set to average of three years before and three years after
+#with real data. Rec 1993 is used to interpolate 1990-1992 so adjusting 1993 affects these years too. 
+model = "7_1_14_noExtremeCatch_3yravg"
+base.7114 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7114)
+
+
 #Compare sensitivities
 sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993", "Adjust extreme catches")
-sens_models  <- SSsummarize(list(base.710, base.711, base.712b, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112, base.7113))
+sens_models  <- SSsummarize(list(base.710, base.711, base.712b, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112, base.7114))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
@@ -914,7 +924,7 @@ t = table_format(x = sens_table,
                  label = 'sensitivities',
                  longtable = TRUE,
                  font_size = 9,
-                 digits = 3,
+                 digits = 2,
                  landscape = TRUE,
                  col_names = sens_names)
 

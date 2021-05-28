@@ -129,6 +129,8 @@ profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(3:1
 profilesummary <- r4ss::SSsummarize(profilemodels) 
 profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
 get_summary(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), profile_output$para, profile_output$vec, "profile_NatM_p_1_Fem_GP_1", profilemodels, profilesummary)
+#I also ran 0.03 manually and this did not change the pattern.
+
 
 
 #######################
@@ -211,6 +213,28 @@ get_summary(paste0(mydir,"/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1"), profi
   run_diagnostics(mydir = mydir, model_settings = model_settings)
   #Pattern looks the same as when just rec selex is fixed.
 ######################
+  
+#3. CV at L2
+#Fully manual
+load(paste0(mydir,"/10_0_0_baseProfile_profile_CV_old_Fem_GP_1","/CV_old_Fem_GP_1", "_profile_output.Rdat"))
+profilemodels <- r4ss::SSgetoutput(dirvec = profile_output$mydir, keyvec = c(5:1,6:11)) #make sure order follows order of parameters from runs
+profilesummary <- r4ss::SSsummarize(profilemodels) 
+profile_plot(paste0(mydir,"/10_0_0_baseProfile_profile_CV_old_Fem_GP_1"), model_settings, profile_output$rep, profile_output$vec, profile_output$para, profilesummary)
+get_summary(paste0(mydir,"/10_0_0_baseProfile_profile_CV_old_Fem_GP_1"), profile_output$para, profile_output$vec, "profile_CV_old_Fem_GP_1", profilemodels, profilesummary)
+#Results show any value <0.1 results in very high R0 and biomass. However the uncertainty around R0 is REALLY large (CV ~ 50%) 
+
+#Do profile for CV at L2, with fixed recreational selex because pattern above under base appeared to go into alternative states
+get = get_settings_profile( parameters =  c("CV_old_Fem_GP_1"),
+                            low =  c(0.05),
+                            high = c(0.15),
+                            step_size = c(0.01),
+                            param_space = c('real'))
+model_settings = get_settings(settings = list(base_name = "10_0_0_baseProfile_fixRecSelex",
+                                              run = c("profile"),
+                                              profile_details = get ))
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+#This profile shows the effect of fixing selectivity matters.  
+  
 
 #Add profile for selectivity parameters
 #These kick back at the plotting stage, but if run the profile_plot script (from github) manually there is no issue (This plots figures to mydir though)
@@ -257,6 +281,7 @@ rep = profile_output$rep
 vec = profile_output$vec
 para = profile_output$para
 #Commercial is odd so would need to rerun manually to remedy
+
 
 
 

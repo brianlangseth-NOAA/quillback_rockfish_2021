@@ -32,11 +32,11 @@ sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",
                   save_loc = file.path(getwd(), "tex_tables"),
                   verbose = TRUE)
 
+load("00mod.Rdata")
 
-# Create tex files from the executive summary tables (may need to rename allcatches table (Catches_All_Years.csv) as catch)
-base.710 = SS_output("C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",covar=TRUE)
-SSexecutivesummary(replist = base.710, format = FALSE) #create table_labels.csv
-sa4ss::es_table_tex(dir = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",
+# Create tex files from the executive summary tables
+SSexecutivesummary(replist = model, format = FALSE) #create table_labels.csv
+sa4ss::es_table_tex(dir = mod_loc,
                     save_loc = file.path(getwd(), "tex_tables"),
                     csv_name = "table_labels.csv")
 
@@ -77,13 +77,14 @@ sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base",
                   save_loc = file.path(getwd(), "tex_tables"),
                   verbose = TRUE)
 
+load("00mod.Rdata")
 
-# Create tex files from the executive summary tables (may need to rename allcatches table (Catches_All_Years.csv) as catch)
-base.1000 = SS_output("C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base", covar=TRUE)
-SSexecutivesummary(replist = base.1000, format = FALSE) #create table_labels.csv
-sa4ss::es_table_tex(dir = "C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base",
+# Create tex files from the executive summary tables
+SSexecutivesummary(replist = model, format = FALSE) #create table_labels.csv
+sa4ss::es_table_tex(dir = mod_loc,
                     save_loc = file.path(getwd(), "tex_tables"),
                     csv_name = "table_labels.csv")
+
 
 # Read and create tex files for tables listed in "table" folder in the doc
 sa4ss::es_table_tex(dir = file.path(getwd(), 'tables'),
@@ -120,10 +121,11 @@ sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base",
                   save_loc = file.path(getwd(), "tex_tables"),
                   verbose = TRUE)
 
+load("00mod.Rdata")
+
 # Create tex files from the executive summary tables (may need to rename allcatches table (Catches_All_Years.csv) as catch)
-base.710 = SS_output("C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base", covar=TRUE)
-SSexecutivesummary(replist = base.710, format = FALSE) #create table_labels.csv
-sa4ss::es_table_tex(dir = "C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base",
+SSexecutivesummary(replist = model, format = FALSE) #create table_labels.csv
+sa4ss::es_table_tex(dir = mod_loc,
                     save_loc = file.path(getwd(), "tex_tables"),
                     csv_name = "table_labels.csv")
 

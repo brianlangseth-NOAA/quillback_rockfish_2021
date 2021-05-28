@@ -714,11 +714,14 @@ SS_plots(base.702)
 #and the bias correction suggestion changes slightly
 
 #Use initial2 from model 702 as a new base. Seems to match pattern well and have low gradient
+#Note that Im using 0.48 instead of 0.438 for prior sd on M. Its fixed so will have trivial change if any,
+#so just adjust for sensitivity.
 model = "7_1_0_base"
 base.710 = SS_output(file.path(wd, model),covar=TRUE)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\7_1_0_base", write = FALSE, option = "none")
 SS_plots(base.710)
 SSunavailableSpawningOutput(base.710, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
+SSplotSPR(base.710,subplots=4,print=TRUE)
 
 
 #Test out slight change in maturity to reflect fork length
@@ -769,8 +772,26 @@ base.718 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.718)
 #First 4 years and last 6 years are main factor. 
 
+#Start from model 710 - block Com from start-2002, assume asymptotic
+model = "7_1_9_comBlock_2002"
+base.719 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.719)
 
+#Start from model 710 - block Com at 2015-2020, assume asymptotic
+model = "7_1_10_comBlock_2014"
+base.7110 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.7110)
 
+#Start from model 710 - block Com at 2003-2014, assume asymptotic
+model = "7_1_11_comBlock_2003-2014"
+base.7111 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.7111)
+
+#Start from model 710 - block Com from start-1999, assume asymptotic
+model = "7_1_12_comBlock_1999"
+base.7112 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.7112)
+#Results do differ from base, but sample size is small and only for one year
 
 #Alternative phasing
 #just model files_all2 - Set all parameters (expect R0) to phase 2
@@ -816,6 +837,11 @@ model = "7_1_4_estlinf"
 base.714 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.714)
 
+#Estimate K
+model = "7_1_4b_estk"
+base.714b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.714b)
+
 #Estimate L infinity and K
 model = "7_1_5_estlinfK"
 base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
@@ -826,7 +852,7 @@ model = "7_1_6_estL2CV"
 base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.716)
 
-#Estimate natural mortality
+#Estimate natural mortality. Use prior sd of 0.438
 model = "7_1_7_estM"
 base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.717)
@@ -852,14 +878,15 @@ model = "7_1_11_recBlock"
 base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.7111)
 
-#Use sensitivity of model 716 - but RENAME as model 7112 for sensitivities
-model = "7_1_6_ghostCom_1999_2002_2015_2020"
+#Use sensitivity of model 7111 - but RENAME as model 7112 for sensitivities
+model = "7_1_11_comBlock_2003-2014"
 base.7112 = SS_output(file.path(wd, model),covar=TRUE)
+#Results are similar to that of model 716 where com comps in 1999-2002 and 2015-2020 are not fit
 
 
 #Compare sensitivities
-sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.", "No bimodal com. comps")
-sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111, base.7112))
+sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est K", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.", "Com block selex.")
+sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.714b, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111, base.7112))
 
 #Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
@@ -948,7 +975,7 @@ t = table_format(x = sens_table,
                  label = 'sensitivities',
                  longtable = TRUE,
                  font_size = 9,
-                 digits = 3,
+                 digits = 2,
                  landscape = TRUE,
                  col_names = sens_names)
 
