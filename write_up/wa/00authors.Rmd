@@ -25,7 +25,7 @@ author:
     first: L
     middle: K
     family: Hillier
-author_list: Langseth, B.J., C.R. Wetzel, J.M. Cope, T.-. Tsou, L.K. Hillier
+author_list: Langseth, B.J., C.R. Wetzel, J.M. Cope, T.S. Tsou, L.K. Hillier
 affiliation:
   - code: 1
     address: Northwest Fisheries Science Center, U.S. Department of Commerce, National

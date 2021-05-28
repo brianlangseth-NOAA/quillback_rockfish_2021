@@ -1,18 +1,18 @@
 \babel@toc {english}{}
-\contentsline {table}{\numberline {1}{\ignorespaces Catches (mt) by fleet for all years and total catches (mt) summed by year.\relax }}{27}{table.1}%
-\contentsline {table}{\numberline {2}{\ignorespaces The OFL and ACL for the Minor Nearshore Rockfish North complex, the ACL allocated to Washington, and the total removals in weight.\relax }}{29}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Summary of the commercial length samples by number of trips and lengths by sex per year. \relax }}{30}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces Input numbers of fish removals converted to metric tons (mt) within the model.\relax }}{31}{table.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces Summary of the recreational length samples used in the stock assessment.\relax }}{33}{table.5}%
-\contentsline {table}{\numberline {6}{\ignorespaces Summary of the number of samples by year and source used to estimate length-at-weight parameters.\relax }}{34}{table.6}%
-\contentsline {table}{\numberline {7}{\ignorespaces Summary of the number of samples by year and source used to estimate length-at-age parameters.\relax }}{35}{table.7}%
-\contentsline {table}{\numberline {8}{\ignorespaces Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-95 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.\relax }}{36}{table.8}%
-\contentsline {table}{\numberline {9}{\ignorespaces Data weights applied by each alternative data weighting methods. The Dirichlet Multinomial weight is theta/(1+theta)\relax }}{38}{table.9}%
-\contentsline {table}{\numberline {10}{\ignorespaces List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD).\relax }}{39}{table.10}%
-\contentsline {table}{\numberline {11}{\ignorespaces Likelihood components by source.\relax }}{41}{table.11}%
-\contentsline {table}{\numberline {12}{\ignorespaces Summary of reference points and management quantities, including estimates of the 95 percent intervals.\relax }}{42}{table.12}%
-\contentsline {table}{\numberline {13}{\ignorespaces Time series of population estimates from the base model.\relax }}{43}{table.13}%
-\contentsline {table}{\numberline {14}{\ignorespaces Sensitivities relative to the base model.\relax }}{45}{table.14}%
-\contentsline {table}{\numberline {15}{\ignorespaces Derived quantities from SSS based on assuming fraction unfished of 57 percent in 2021 .\relax }}{46}{table.15}%
-\contentsline {table}{\numberline {16}{\ignorespaces Derived quantities from SSS based on assuming fraction unfished of 40 percent in 2021 .\relax }}{46}{table.16}%
-\contentsline {table}{\numberline {17}{\ignorespaces Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and Washington (WA) ACL for 2021 and 2022 reflect adopted management limits.\relax }}{47}{table.17}%
+\contentsline {table}{\numberline {1}{\ignorespaces Catches (mt) as total removals by fleet and summed across fleets for all years.\relax }}{23}{table.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces The OFL and ACL for quillback rockfish within the Minor Nearshore Rockfish North complex, the ACL allocated to Washington, and the total removals in weight.\relax }}{25}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Summary of the commercial length samples by number of trips and lengths by sex per year. \relax }}{26}{table.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces Input numbers of fish removals converted to metric tons (mt) within the model.\relax }}{27}{table.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Summary of the recreational length samples used in the stock assessment.\relax }}{29}{table.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Summary of the number of samples by year and source used to estimate weight-at-length parameters.\relax }}{30}{table.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces Summary of the number of samples by year and source used to estimate length-at-age parameters.\relax }}{31}{table.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces Age, length, weight, maturity, and spawning output by age (product of maturity and fecundity) at the start of the year. Output for ages 51-95 is truncated as these ages have the same length, weight, maturity, and spawning output as at age 50.\relax }}{32}{table.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces Data weights applied by each alternative data weighting methods. The Dirichlet Multinomial weight is theta/(1+theta)\relax }}{34}{table.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces List of parameters used in the base model, including estimated values and standard deviations (SD), bounds (minimum and maximum), estimation phase (negative values not estimated), status (indicates if parameters are near bounds), and prior type information (mean and SD).\relax }}{35}{table.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Likelihood components by source.\relax }}{37}{table.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Summary of reference points and management quantities, including estimates of the 95 percent intervals.\relax }}{38}{table.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces Time series of population estimates from the base model.\relax }}{39}{table.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces Sensitivities relative to the base model.\relax }}{41}{table.14}%
+\contentsline {table}{\numberline {15}{\ignorespaces Derived quantities from SSS based on assuming fraction unfished of 57 percent in 2021 .\relax }}{42}{table.15}%
+\contentsline {table}{\numberline {16}{\ignorespaces Derived quantities from SSS based on assuming fraction unfished of 40 percent in 2021 .\relax }}{42}{table.16}%
+\contentsline {table}{\numberline {17}{\ignorespaces Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and Washington (WA) ACL for 2021 and 2022 reflect adopted management limits.\relax }}{43}{table.17}%

@@ -1,10 +1,10 @@
 # Data
 The following types and sources of data were used in this assessment. Fishery catch and composition data were specific to `r state`, however biological data were estimated coastwide and included Washington, Oregon, and California sources. 
 
-1. Commercial landings, and length, weight, and age data obtained from PacFIN and the ODFW. Age compositions were not fit directly in the model, but age data was used to estimate growth which were fixed inputs to the model. 
+1. Commercial landings, and length, weight, and age data obtained from PacFIN and the ODFW. Age compositions were not fit directly in the model, but age and weight data were used to estimate biological parameters which were fixed inputs to the model.
 2. Estimates of commercial discard length frequencies and fraction discarded in the fishery obtained from the West Coast Groundfish Observer Program (WCGOP).
-3. Recreational landings, discards, and length, weight, and age data obtained from RecFIN and the ODFW. Age compositions were not fit directly in the model, but age data was used to estimate growth which were fixed inputs to the model. 
-4. Fishery independent biological data (length, weight, and age) from the Northwest Fisheries Science Center (NWFSC) West Coast Groundfish Bottom Trawl Survey (WCGBTS).
-5. Estimates of fecundity, maturity, and mortality from various sources.
+3. Recreational landings, discards, and length, weight, and age data obtained from RecFIN and the ODFW. Age compositions were not fit directly in the model, but age and weight data were used to estimate biological parameters which were fixed inputs to the model. 
+4. Fishery independent biological data (length, weight, and age) from the Northwest Fisheries Science Center (NWFSC) West Coast Groundfish Bottom Trawl Survey (WCGBTS). These data were used to estimate biological parameters which were fixed inputs to the model.
+5. Estimates of fecundity, maturity, and natural mortality from various sources.
 
-A description of each data type is provided below, with timing of catch and composition data used in the base model shown in (Figure \ref{fig:data-plot}).
+A description of each data type is provided below, with timing of catch and composition data used in the base model shown in Figure \ref{fig:data-plot}.

@@ -1,5 +1,5 @@
 caption,altcaption,label,filename,loc
 Summary of the recreational length samples used in the stock assessment.,NA,len-samps,ca_rec_samples.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/forSS
-Summary of the number of samples by year and source used to estimate length-at-age parameters.,NA,len-at-age-samps,len_at_age_data.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/forSS
-Summary of the number of samples by year and source used to estimate length-at-weight parameters.,NA,len-at-weight-samps,len_at_weight_data.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/forSS
+"Summary of the number of samples by year from the NWFSC WCGBTS, and the commercial (com) and recreational (rec) fisheries by state used to estimate length-at-age parameters.",NA,len-at-age-samps,len_at_age_data.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/forSS
+"Summary of the number of samples by year from the NWFSC WCGBTS, and the commercial (com) and recreational (rec) fisheries by state used to estimate weight-at-length parameters.",NA,len-at-weight-samps,len_at_weight_data.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/forSS
 Summary of the commercial length samples by number of trips and lengths by sex per year. ,NA,com-len-samps,CA_Samples_Feb2021.csv,//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/forSS

@@ -9,7 +9,7 @@
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
-caption = "Catches by fleet used in the base model",
+caption = "Total removals (mt) by fleet used in the base model",
 label = 'catch')
 ```	
 
@@ -84,21 +84,21 @@ label = 'fecundity')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_Weight_by_Sex_ForReport.png"), 
-caption = "Comparison of the length-at-weight data from the individual sources with length and weight data, and with all sources combined.",
+caption = "Observed sex-specific weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves",
 label = 'len-weight-survey')
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio5_weightatsize.png"), 
-caption = "Weight-at-length by sex used in the model",
+caption = "Weight-at-length relationship used in the model",
 label = 'len-weight')
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_Age_by_Sex_ForReport.png"), 
-caption = "Observed sex specific length-at-age coastwide data by data source with the estimated length-at-age curve",
+caption = "Observed sex-specific length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves",
 label = 'len-age-data')
 ```	
 
@@ -142,7 +142,7 @@ label = 'rec-devs')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "recruit_fit_bias_adjust.png"),
+filein = file.path(mod_loc, "plots", "recruit_fit_bias_adjust_forReport.png"),
 caption = "Recruitment bias adjustment applied in the base model",
 label = 'bias-adj')
 ```
@@ -163,7 +163,7 @@ label = 'com-pearson')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_OR_Commercial.png"), 
-caption = "Model estimated mean length (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes",
+caption = "Model estimated mean length in cm (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes",
 label = 'com-mean-len-fit')
 ```
 
@@ -177,7 +177,7 @@ label = 'rec-pearson')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_OR_Recreational.png"), 
-caption = "Model estimated mean length (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes",
+caption = "Model estimated mean length in cm (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes",
 label = 'rec-mean-len-fit')
 ```
 
@@ -372,22 +372,22 @@ label = 'cv2-depl')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare2_spawnbio_uncertainty.png"), 
-caption = "Change in the estimate of spawning output when the most recent 5 years of data area removed sequentially",
+caption = "Change in the estimate of spawning output when the most recent 5 years of data are removed sequentially",
 label = 'retro-ssb')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare4_Bratio_uncertainty.png"),
-caption = "Change in the estimate of fraction unfished when the most recent 5 years of data area removed sequentially",
+caption = "Change in the estimate of fraction unfished when the most recent 5 years of data are removed sequentially",
 label = 'retro-depl')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare11_recdevs.png"),
-caption = "Change in the estimate of annual recruitment deviations when the most recent 5 years of data area removed sequentially",
-label = 'retro-recdev')
+caption = "Change in the estimate of annual recruitment deviations when the most recent 5 years of dat area removed sequentially",
+label = 'retro-recdevs')
 ```
 
 <!-- ====================================================================== -->
@@ -438,6 +438,13 @@ filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"),
 caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
 fishery selectivity and with steepness fixed at 0.72",
 label = 'yield')
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
+caption = "Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.",
+label = 'phase-plot')
 ```
 
 \newpage

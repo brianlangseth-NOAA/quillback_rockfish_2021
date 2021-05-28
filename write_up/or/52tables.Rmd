@@ -29,7 +29,7 @@ out = cbind(round(man,2), round(man$ACL * 0.584, 2), total.catch)
 col_names = c("Year", "OFL", "ACL", "OR ACL", "OR Removals")
 
 table_format(x = out,
-             caption = "The OFL and ACL for the Minor Nearshore Rockfish North complex, the ACL allocated to Oregon, and the total removals.",
+             caption = "The OFL and ACL for quillback rockfish within the Minor Nearshore Rockfish North complex, the ACL allocated to Oregon, and the total removals.",
              label = "ofl",
              align = 'l',
              col_names = col_names)
@@ -64,14 +64,15 @@ table_format(x = out,
 
 \newpage
 
-\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_age_samples.tex}
 
-\newpage
+<!-- \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_rec_age_samples.tex} -->
+
+<!-- \newpage -->
 
 
-\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_age_Samples_Feb2021.tex}
+<!-- \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/OR_age_Samples_Feb2021.tex} -->
 
-\newpage
+<!-- \newpage -->
 
 <!-- ======================================================= -->
 <!-- ***************    Biology      *********************** --> 
@@ -109,7 +110,7 @@ col_names = c('Method',
         'Commercial Lengths',
               'Recreational Lengths')
 table_format(x = tab,
-             caption = "Data weights applied by each alternative data weighting methods. The Dirichlet Multinomial weight is theta/(1+theta)",
+             caption = "Data weights applied by each alternative data weighting method. The Dirichlet Multinomial weight is theta/(1+theta)",
              label = "dw",
              align = 'l',
              col_names = col_names)
@@ -191,7 +192,34 @@ table_format(x = mod_params,
 <!-- ======================================================= -->
 
 <!-- tab:referenceES -->
-\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/e_ReferencePoints_ES.tex}
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, "tables", "e_ReferencePoints_ES.csv"))
+tab = tab[-13,]
+col_names = c("", "Estimate", "Lower Interval", "Upper Interval")
+
+tab$Estimate = round(suppressWarnings(as.numeric(tab$Estimate)),2)
+tab$Estimate[is.na(tab$Estimate)] = "-"
+
+tab$Lower.Interval = round(suppressWarnings(as.numeric(tab$Lower.Interval)),2)
+tab$Lower.Interval[is.na(tab$Lower.Interval)] = "-"
+
+tab$Upper.Interval = round(suppressWarnings(as.numeric(tab$Upper.Interval)),2)
+tab$Upper.Interval[is.na(tab$Upper.Interval)] = "-"
+
+table_format(x = data.frame(tab),
+                 caption = "Summary of reference points and management quantities, including estimates of
+the 95 percent intervals.",
+                 label = "referenceES",
+                 longtable = TRUE,
+                 col_names = col_names,
+                 align = c('r','c', 'c', 'c'),
+                 row.names = FALSE)
+
+#kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/tex_tables", 
+#                                           paste0("e_ReferencePoints_ES", ".tex")))
+```
+
+<!-- \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/e_ReferencePoints_ES.tex} -->
 
 \newpage
 
@@ -233,25 +261,27 @@ tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
 man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv")
 
 out = cbind(tab$Year,
-            c(man[man$Year %in% c(2021, 2022), "OFL"], rep("-",10)),
-            c(man[man$Year %in% c(2021, 2022), "ACL"], rep("-",10)),
+            c(round(man[man$Year %in% c(2021, 2022), "OFL"],2), rep("-",10)),
+            c(round(man[man$Year %in% c(2021, 2022), "ACL"],2), rep("-",10)),
             c(round(man[man$Year %in% c(2021, 2022), "ACL"] * 0.584,2), rep("-", 10)),
+            c(round(tab[1:2,3],2), rep("-",10)),
             c(rep("-",2), round(tab[3:12,2], 2)),
             c(rep("-",2), round(tab[3:12,3],2)),
             c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
-              'Adopted OFL',
-              'Adopted ACL',
-              "Adopted ACL-OR",
+              'OFL North',
+              'ACL North',
+              "OR ACL North",
+              "Assumed removals",
               "OFL", 
               "ABC", 
               "Buffer",
               "Spawning Output",
               "Fraction Unfished")
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished. The OFL, ACL, and Oregon (OR) ACL for 2021 and 2022 reflect adopted management limits.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.",
              label = "project",
              align = 'l',
              col_names = col_names)

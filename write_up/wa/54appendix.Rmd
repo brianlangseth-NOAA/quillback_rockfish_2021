@@ -1,8 +1,8 @@
 \clearpage
 
-# Appendix 
+# Appendix: 
 
-## Detailed Fit to Length Composition Data 
+## Detailed Fit to Annual Length Composition Data{#append_a}
 
 
 ```{r, results='asis'}
@@ -12,7 +12,7 @@ plot.vec = grep("comp_lenfit_flt", len_fit$label)
 filein = file.path(mod_loc, "plots")
 
 for (a in plot.vec){
-	cap = len_fit$caption[a]
+	cap = sub("[.]$", "", len_fit$caption[a])
 	lab = len_fit$label[a]
 	add_figure(filein = file.path(filein, len_fit$file[a]), 
 			   caption = cap, 

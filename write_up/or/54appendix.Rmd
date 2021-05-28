@@ -12,7 +12,7 @@ plot.vec = c(grep("comp_lenfit_flt", len_fit$label),grep("comp_gstlenfit_flt", l
 filein = file.path(mod_loc, "plots")
 
 for (a in plot.vec){
-	cap = len_fit$caption[a]
+	cap = sub("[.]$", "", len_fit$caption[a])
 	lab = len_fit$label[a]
 	add_figure(filein = file.path(filein, len_fit$file[a]), 
 			   caption = cap, 
@@ -27,7 +27,7 @@ for (a in plot.vec){
 
 One source of information that fell outside the bounds of the current PFMC Groundfish Terms of Reference for Data Moderate assessment is the ODFW Marine Reserve Hook and Line Survey. This data source to date has not been used in any West Coast groundfish stock assessments, but will likely be considered in select future full rockfish assessments (e.g., black rockfish). Given that this is an existing data source that may prove useful for future rockfish assessments, we wanted to provide an overall summary of this data source and the available data for `r spp`.
 
-The Marine Reserve Program in the ODFW has routinely monitored state marine reserves (MR) and associated comparison areas (CA) since 2011. Data from the hook and line survey from 2011 - 2019 are presented in this summary. Surveys in 2011 and 2012 only visited a single site, Redfish Rocks. Surveys from 2013 – 2019 include reserves and comparison areas from four sites: Redfish Rocks, Cape Falcon, Cape Perpetua and Cascade Head. Each of these four sites has a marine reserve and one to three comparison areas. Comparison areas are specifically selected for each marine reserve to be similar in location, habitat and depth to the reserve but are subject to fishing pressure. Not all sites are sampled in each year, due to both the gradual implementation of the reserve network and the available staff to execute surveys. Sites and areas sampled that are included in this dataset are below.  
+The Marine Reserve Program in the ODFW has routinely monitored state marine reserves (MR) and associated comparison areas (CA) since 2011. Data from the hook and line survey from 2011 - 2019 are presented in this summary. Surveys in 2011 and 2012 only visited a single site, Redfish Rocks. Surveys from 2013 – 2019 include reserves and comparison areas from four sites: Redfish Rocks, Cape Falcon, Cape Perpetua and Cascade Head. Each of these four sites has a marine reserve and one to three comparison areas. Comparison areas are specifically selected for each marine reserve to be similar in location, habitat and depth to the reserve but are subject to fishing pressure. Not all sites are sampled in each year, due to both the gradual implementation of the reserve network and the available staff to execute surveys. Sites and areas sampled that are included in this dataset are below (Table \ref{tab:table-1}).  
 
 
 ```{r, results = 'asis'}
@@ -48,7 +48,7 @@ A 500 meter square grid overlaid on the sampling area defines the sample units o
 
 ### Quillback Rockfish Summary   
 
-Of the 940 total-cell days at 14 areas, 164 (17.4 percent) of those had positive `r spp` catches with a total of 291 observations of `r spp` across all years and sites. The number of `r spp` caught ranged from 1 to 10 fish in a cell-day. 
+Of the 940 total-cell days at 14 areas, 164 (17.4 percent) of those had positive `r spp` catches with a total of 291 observations of `r spp` across all years and sites (Table \ref{tab:table-2}). The number of `r spp` caught ranged from 1 to 10 fish in a cell-day. 
 
 ```{r, results = 'asis'}
 data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/OR state surveys/table_2_marine_hkl.csv")
@@ -58,22 +58,17 @@ table_format(x = data,
              caption = "Summary of number of catch cell days and positive observations of quillback rockfish.",
              label = "table-2",
              align = 'l',
-             digits = 3,
-             landscape = TRUE,
-             col_names = col_names)
-```
-
-```{r, results = 'asis'}
-loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/OR state surveys"
-add_figure(
-filein = file.path(loc,  "fig_1_marine_hkl.png"), 
-caption = "Frequency of positive quillback rockfish catches between 2011 - 2019",
-label = 'pos-hkl')
+             digits = 2,
+             custom_width = TRUE,
+             col_to_adjust = 1,
+             width = c('2.2cm'),
+             col_names = col_names,
+             format.args = list(drop0trailing = TRUE))
 ```
 
 Areas  differ in both geographic location and the level of fishing pressure experienced or allowed. Staff from the Marine Reserves Program suggested that the treatment (reserve vs. comparison area) may not be a delineating factor for the catch of some species (e.g., cabezon) due to the recent implementation of the reserves. It was suggested that data could be aggregated to the site level, functioning at the level of a reef complex, to examine patterns at different locations along the coast. However, this may not be possible with the sample size available at some sites.
 
-Observations of `r spp` were varied across sample sites and years. The number of observations of `r spp` was highest at Redfish Rocks (N = 118) and closely followed by Cape Perpetua (N = 108).  
+Observations of `r spp` were varied across sample sites and years. The number of observations of `r spp` was highest at Redfish Rocks (N = 118) and closely followed by Cape Perpetua (N = 108) (Table \ref{tab:table-3}).  
 
 ```{r, results = 'asis'}
 data = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/OR state surveys/table_3_data.csv")
@@ -89,8 +84,7 @@ table_format(x = data,
              col_names = col_names)
 ```
 
-
-Catch-per-unit-effort (CPUE) was calculated by the number of fish per angler hour. The number of anglers and hooks are standardized for each survey. Angler hours have been adjusted for non-fishing time (i.e., travel time, etc.).
+Catch-per-unit-effort (CPUE) was calculated by the number of fish per angler hour (Figures \ref{fig:fig-2} and \ref{fig:fig-3}). The number of anglers and hooks are standardized for each survey. Angler hours have been adjusted for non-fishing time (i.e., travel time, etc.).
 
 ```{r, results = 'asis'}
 loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/OR state surveys"
@@ -108,7 +102,7 @@ caption = "Quillback rockfish CPUE calculated based on all values",
 label = 'fig-3')
 ```
 
-Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of `r spp` encounters, there are probably not enough data to move forward with a timeseries at a coastwide level. However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE based on positive values at this site shows a variable and slightly declining trend from 2011 to 2015 followed by a slightly increasing trend from 2015 to 2020 for `r spp`. This differs from the trajectory from the base model in which shows a decline from 2016 to 2020 (Figure \ref{fig:tot-bio}).
+Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of `r spp` encounters, there are probably not enough data to move forward with a timeseries at a coastwide level. However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE based on positive values at this site shows a variable and slightly declining trend from 2011 to 2015 followed by a slightly increasing trend from 2015 to 2020 for `r spp` (Figures \ref{fig:fig-4}). This differs from the trajectory from the base model, which shows a decline from 2016 to 2020 (Figure \ref{fig:tot-bio}).
 
 ```{r, results = 'asis'}
 loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/OR state surveys"
@@ -118,7 +112,7 @@ caption = "Quillback rockfish CPUE calculated at Redfish Rocks based on postive 
 label = 'fig-4')
 ```
 
-When all sites and all values are included, `r spp` appear to have a relatively stable trend from 2011 – 2019, with the annual mean CPUE oscillating around the long-term mean. 
+When all sites and all values are included, `r spp` appear to have a relatively stable trend from 2011 – 2019, with the annual mean CPUE oscillating around the long-term mean (Figures \ref{fig:fig-5}). 
 
 
 ```{r, results = 'asis'}
@@ -129,14 +123,15 @@ caption = "Quillback rockfish relative CPUE across all sample sites and with all
 label = 'fig-5')
 ```
 
+\clearpage
+
 ## Appendix C: Video Lander Population Estimate
 
-Oregon Department of Fish and Wildlife (ODFW) provided density estimates and a range of estimated population abundances from underwater video lander data for quillback rockfish (Sebastes maliger). The lander data was collected over nine years by the ODFW and summarized in Rasmuson et al. ([@rasmuson_lander_2020]). This large dataset is made up of ten independent studies carried out in both nearshore rocky reefs coastwide as well as select reef structures offshore of the central coast of Oregon. Underwater video landers are stationary platforms consisting of one to three video cameras. Landers used in deeper water employ advanced lighting systems for optimal viewing of fish and benthic habitat. Ambient light is used in shallow surveys. The variability in detection range by depth is an important factor to consider when deriving fish density from lander data. Therefore, a series of abundance estimates were provided to inform the quillback rockfish assessment.  Methods are summarized below but a more detailed document is available by ODFW upon request.  
+Oregon Department of Fish and Wildlife (ODFW) provided density estimates and a range of estimated population abundances from underwater video lander data for `r spp`. The lander data was collected over nine years by the ODFW and summarized in Rasmuson et al. ([@rasmuson_lander_2020]). This large dataset is made up of ten independent studies carried out in both nearshore rocky reefs coastwide as well as select reef structures offshore of the central coast of Oregon. Underwater video landers are stationary platforms consisting of one to three video cameras. Landers used in deeper water employ advanced lighting systems for optimal viewing of fish and benthic habitat. Ambient light is used in shallow surveys. The variability in detection range by depth is an important factor to consider when deriving fish density from lander data. Therefore, a series of abundance estimates were provided to inform the quillback rockfish assessment.  Methods are summarized below but a more detailed document is available by ODFW upon request.  
 
 Variability in range (and therefore, area viewed) directly influences fish abundance; therefore, fish density estimates were calculated using five different estimates of range. These include the average range, the range +/- one standard deviation from the mean, and the maximum and minimum ranges. The area viewed is calculated using both the range and the horizontal field of view. This viewed area was then combined with fish count data to generate fish densities. Count data were provided from Rasmuson et al. (2020). As expected, the viewed range has a large effect on the calculated density of the fish, with larger ranges resulting in a lower density of fish. Since there is no way to know which range model most accurately reflects the true density of fish, multiple range estimates were combined into a single density estimate using a weighted arithmetic mean. Although the arithmetic mean is simpler and more intuitive, the fact that the area viewed increases exponentially suggests a geometric mean may be more appropriate. As an alternative to the arithmetic mean, the geometric mean density was calculated in three different ways to address the zeros in the data. Abundance estimates (numbers of fish) were calculated by multiplying the density estimate by an estimate of the habitat area. Coastwide habitat area was limited to primary or secondary habitat containing hard substrate. The western boundary was defined as the 200 m contour based on the depth of the continental shelf-break. The eastern boundary was based on the shallowest lander observation for each species. Quillback rockfish were not observed on lander video in water <22 m, therefore the 20 m contour was used. It should be noted that while the depth range of the lander surveys conducted by ODFW extends to 212 m, the majority of lander surveys have been conducted in either nearshore rocky reefs or at Stonewall Bank RCA on the central Oregon coast. 
 
-Abundance estimates for the coastwide survey area are provided for quillback rockfish derived from each of the nine density estimates; five range models, the weighted arithmetic mean, and three weighted geometric mean methods. For quillback rockfish, density estimates ranged from 0.004 ± 0.029 (no. fish / m2 ± SD) from the maximum range method to 0.950 ± 1.366 for the third geometric mean method. The estimated habitat area was 1,840 thousands of km2. Abundance estimates ranged from 7.3 ± 53.5 (millions of fish ± SD) to 1,751 ± 2,519. Estimates of abundance from the five range models produced similar results to the weighted arithmetic mean, ranging from 7.3 ± 53.5 (millions of fish ± SD) for the maximum range to 36.9 ± 247.0 for the minimum range.  These were generally considered more plausible than the results based on the geometric density means. Caveats to this abundance estimate are provided in the detailed document, but include considerations of the use of the lander dataset and the estimation of habitat area.  
-
+Abundance estimates for the coastwide survey area are provided for quillback rockfish derived from each of the nine density estimates; five range models, the weighted arithmetic mean, and three weighted geometric mean methods. For quillback rockfish, density estimates ranged from 0.004 ± 0.029 (no. fish / m2 ± SD) from the maximum range method to 0.950 ± 1.366 for the third geometric mean method. The estimated habitat area was 1,840 thousand km2. Abundance estimates ranged from 7.3 ± 53.5 (millions of fish ± SD) to 1,751 ± 2,519. Estimates of abundance from the five range models produced similar results to the weighted arithmetic mean, ranging from 7.3 ± 53.5 (millions of fish ± SD) for the maximum range to 36.9 ± 247.0 for the minimum range. These were generally considered more plausible than the results based on the geometric density means. Caveats to this abundance estimate are provided in the detailed document, but include considerations of the use of the lander dataset and the estimation of habitat area. Abundance esitmates were much greater than the base model estimate for number of fish, which was `r round(rowSums(model$natage[(model$natage$"Beg/Mid"=="B" & model$natage$Era=="TIME"),c(13:108)])[129],1)` (thousands of fish) across all ages, and `r round(rowSums(model$natage[(model$natage$"Beg/Mid"=="B" & model$natage$Era=="TIME"),c(16:108)])[129],1)` (thousands of fish) across ages 3+.  
 
 ## Appendix D: ROV minimum population estimate 
 
@@ -144,4 +139,4 @@ The ODFW has conducted remotely-operated vehicle (ROV) surveys for nearly 20 yea
 
 ROV data from 2010 – 2019 were used for this abundance estimate, reflecting the period during which high-definition cameras were used. Sites were surveyed as funding and personnel allowed, and not all sites were surveyed in each year. Transect-level densities were aggregated by reef, regardless of year surveyed. Most transects were roughly 500m in length. These densities were derived from the rocky habitat portions of these transects only, excluding data from portions of transects over “soft” habitats (mud, sand, gravel). Total abundance (number of individuals) for the survey area was estimated by summing reef-level abundances. Each reef-level abundance was calculated as the weighted mean density of all transects conducted at the site across all years (weighted by the total view area of rock per transect) times the total area of mapped rock at the site within 20 – 70m range.
 
-The total abundance estimate for quillback rockfish for the rock-only transect density expansion is 136,828 +/- 90,971 (SD) individuals. The total area included in this abundance estimate is 134.8 km2, representing an estimated 74.8% of total rocky habitat within 20 – 70m in Oregon waters. A total of 490 transects were included in the calculation of the site-level mean densities. Several regions of potential quillback rockfish habitat along the Oregon coast were not included in this estimate due to a lack of survey data. In the study’s 20 – 70m depth range, the most important of these is the coast south of Port Orford which holds over half of the remaining unsurveyed rocky reef area. Outside the study’s depth range, the most important missing rocky habitats are the shallows between 0 – 20m, which are typically difficult to survey using an ROV, and the expansive deeper (> 70m) portion of Arago Reef. Given these factors, the abundance estimate presented above is likely a minimum population estimate and intended to provide a reference point only for the scale of the population size in a portion of Oregon’s nearshore rocky habitat.
+The total abundance estimate for quillback rockfish for the rock-only transect density expansion is 136,828 +/- 90,971 (SD) individuals. The total area included in this abundance estimate is 134.8 km2, representing an estimated 74.8% of total rocky habitat within 20 – 70m in Oregon waters. A total of 490 transects were included in the calculation of the site-level mean densities. Several regions of potential quillback rockfish habitat along the Oregon coast were not included in this estimate due to a lack of survey data. In the study’s 20 – 70m depth range, the most important of these is the coast south of Port Orford which holds over half of the remaining unsurveyed rocky reef area. Outside the study’s depth range, the most important missing rocky habitats are the shallows between 0 – 20m, which are typically difficult to survey using an ROV, and the expansive deeper (> 70m) portion of Arago Reef. Given these factors, the abundance estimate presented above is likely a minimum population estimate and intended to provide a reference point only for the scale of the population size in a portion of Oregon’s nearshore rocky habitat. Despite this, the minimum esitmate is greater than the base model estimate for number of fish, which was `r round(rowSums(model$natage[(model$natage$"Beg/Mid"=="B" & model$natage$Era=="TIME"),c(13:108)])[129],1)` (thousands of fish) across all ages, and `r round(rowSums(model$natage[(model$natage$"Beg/Mid"=="B" & model$natage$Era=="TIME"),c(16:108)])[129],1)` (thousands of fish) across ages 3+.  

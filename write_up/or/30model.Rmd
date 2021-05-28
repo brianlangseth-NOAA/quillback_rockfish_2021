@@ -37,10 +37,10 @@ Fixed parameters in the model were as follows. Steepness was fixed at `r round(m
 
 Dome-shaped selectivity was explored for all fleets within the model. Older and larger `r spp` may be found in deeper waters and may move into areas that limit their availability to fishing gear as they mature. Dome shaped selectivity can also occur under heterogeneous fishing pressure across space by fleets [@Waterhouseetal_spatialSelex_2014].
 
-The final base model estimated dome-shaped selectivity for the recreational fishery. The selectivty for the commercial fishery was fixed as asymptotic. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. 
+The final base model estimated dome-shaped selectivity for the recreational fishery. The selectivity for the commercial fishery was fixed as asymptotic. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. 
 
 
 ## Model Selection and Evaluation
 
-The base assessment model for `r spp` was developed to balance parsimony and realism, and the goal was to estimate a spawning output trajectory for the population of `r spp` off the `r coast` coast. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
+The base assessment model for `r spp` was developed to balance parsimony and realism, with the goal of estimating a spawning output trajectory for the population of `r spp` off `r state`. The model contains many assumptions to achieve parsimony and uses many different sources of data to estimate reality. A series of investigative model runs were done to achieve the final base model.
 

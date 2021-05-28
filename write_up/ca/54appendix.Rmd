@@ -2,18 +2,51 @@
 
 # Appendix
 
-## Appendix A: California ROV Survey Data Informing Selectivity
+## Appendix A: California ROV Survey Data Informing Selectivity{#append_a}
 
-From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted ROV surveys along the full length of the California coastline inside marine protected areas and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of animals observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of `r spp` biomass (Table \ref{tab:ca-ROV}). 
+From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside marine protected areas and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of `r spp` biomass (Table \ref{tab:ca-ROV}). 
  
 In addition, length frequency distributions by depth were determined from fish observed by the ROV based on visual approximations using the distance between paired lasers. While future efforts to increase the precision of length estimates include using stereo-camera data and programs estimating length from trigonometric calculations, the trends in approximate length distribution with depth still provides useful information. The length frequency distribution by depth is provided in Figure \ref{fig:ca-ROV}. In reviewing both the density by depth and length by depth relative to ontogenetic migration, the patterns may not reflect the smaller fish using shallow rocky reef as juveniles in less than 10 fm, and only reflect the density and composition in deeper depths where ontogenetic migration to deeper depths has already taken place for nearshore species and is not as apparent. 
 
 When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore ([Appendix B](#append_b)) and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. 
 
-The percentage of fish in 5 cm size categories among 10 fm depths bins north of Point Conception did not show clear signs of increasing size with depth in greater than 10 fm in either region or protected vs. reference sites (Figure \ref{fig:ca-ROV-percent}). This may be in part due to the fish having already moved from shallow kelp forest habitat where the ROV cannot operate to the adult depth distribution in greater than 10 fm by the time they are observed. Only in the shallower depth bins is there higher proportion of smaller individuals. This would indicate that selectivity may not be domed shaped as would be considered if the depth restrictions protecting a larger proportion of adult biomass.
+The percentage of fish in 5 cm size categories among 10 fm depths bins north of Point Conception did not show clear signs of increasing size with depth in greater than 10 fm in either region or protected vs. reference sites (Figure \ref{fig:ca-ROV-percent}). This may be in part due to the fish having already moved from shallow kelp forest habitat where the ROV cannot operate to the adult depth distribution in greater than 10 fm by the time they are observed. Only in the shallower depth bins is there higher proportion of smaller individuals. This would indicate that selectivity may not be domed shaped as would be considered if the depth restrictions protected a larger proportion of adult biomass.
 
 
-## Appendix B: Percent Area Closed to Fishing in the RCA, CCA and MPAs over time
+```{r, results = 'asis'}
+tab = read.csv(file.path(mod_loc, 'tables', 'ca_rov_table.csv'))
+tab[2,1] = "10-20"
+
+col_names = c('Depth (fm)',
+        'Observed Area (m2)',
+        'Quillback Rockfish Observed',
+        'Quillback Rockfish Density (fish/m2)',
+        'Percent Relative Density')
+
+table_format(x = tab,
+             caption = "Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth",
+             label = "ca-ROV",
+             align = 'l',
+             col_names = col_names)
+```
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(appendix_fig_loc, "quillback_rov_lengths.png"), 
+caption = "Length frequency distribution of in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below)",
+label = 'ca-ROV')
+```	
+
+```{r, results = 'asis'}
+add_figure(
+filein = file.path(appendix_fig_loc, "quillback_rov_barchart_length.png"), 
+caption = "Percent composition of quillback rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where retention is allowed (above) and in State Marine Reserves where retention is prohibited (below)",
+label = 'ca-ROV-percent')
+```	
+
+\clearpage
+
+## Appendix B: Percent Area Closed to Fishing in the RCA, CCA and MPAs over time {#append_b}
 
 Marine protected areas were instituted at various times from 2003 to 2012 as the area selection process was undertaken on a regional process. The existence of no take MPAs in some of the areas selected prior to expansion of the MPAs to encompass approximately 20-30% of rocky reef habitat in state waters, duration of existence of new areas, degree of effort prior to protection or criteria for selection including productivity of the reef may have contributed to the current patterns in composition and density inside vs. outside MPAs. As biomass accrues inside MPAs, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside the MPAs. 
  
@@ -24,8 +57,9 @@ Table X. Square miles and percentage of rocky reef habitat inhabited by the spec
  
 *RCA approximated using general depth contours from the bathymetry layer.
 
+\clearpage
 
-## Appendix C: Detailed Fit to Length Composition Data 
+## Appendix C: Detailed Fit to Annual Length Composition Data{#append_c}
 
 
 ```{r, results='asis'}
@@ -35,13 +69,14 @@ plot.vec = c(grep("comp_lenfit_flt", len_fit$label),grep("comp_gstlenfit_flt", l
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/7_1_1_base_ghostCom", "plots")
 
 for (a in plot.vec){
-	cap = len_fit$caption[a]
+	cap = sub("[.]$", "", len_fit$caption[a])
 	lab = len_fit$label[a]
 	add_figure(filein = file.path(filein, len_fit$file[a]), 
 			   caption = cap, 
 			   label = lab)
 }
 ```
+
 
 \clearpage
 
