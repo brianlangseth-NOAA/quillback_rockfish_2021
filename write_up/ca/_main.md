@@ -121,7 +121,7 @@ Prior to the development of the live-fish market in the 1980s, commercial catche
 
 With the development and expansion of the nearshore live-fish fishery during the late 1980s and early 1990s, new entrants in this open access fishery were drawn by premium ex-vessel prices for live fish, resulting in over-capitalization of the fishery. Since 2002, the California Department of Fish and Wildlife (CDFW) has managed 19 nearshore species in accordance with Nearshore Fisheries Management Plan [@Wilson-Vandenbergetal_2014]. In 2003, the CDFW implemented a Nearshore Restricted Access Permit system, including a requirement of a Deeper Nearshore Fishery Species Permit to retain quillback rockfish, with the overall goal of reducing the number of participants to a more sustainable level, and with permit issuance based on historical landings history by a retrospective qualifying date. The result was a reduction in permits issued, from 1,127 in 1999 to 505 in 2003, greatly reducing catch levels. In addition, reduced trip limits, seasonal closures in March and April and depth restrictions were implemented to address bycatch of overfished species and associated constraints from these species low ACLs.
  
-As overfished shelf rockfish have rebuilt, resumed access to deeper depths has been allowed for Nearshore Permit holders as well as open access fisheries. While depth restrictions for waters deeper than 75 fm were implemented in 2019 south of Point Conception where yelloweye rockfish are uncommon, access in constrained north of Point Conception where, since 2003, depth restrictions at a range of depths starting between 20 and 40 fm, depending on the management area, have prohibited fishing in deeper waters. 
+As overfished shelf rockfish have rebuilt, resumed access to deeper depths has been allowed for Nearshore Permit holders as well as open access fisheries. While depth restrictions for waters deeper than 75 fm were implemented in 2019 south of Point Conception where yelloweye rockfish are uncommon, access in constrained north of Point Conception where, since 2003, depth restrictions at a range of depths starting between 20 and 40 fm, depending on the management area, have prohibited fishing in deeper waters (see separately provided Regulation History addendum). 
 
 As open access fisheries are allowed to retain shelf rockfish species co-occurring with nearshore rockfish species within the open depths, there is growing concern regarding increased encounters by non-permit holders and greater discard mortality from bycatch in deeper depths given that discard mortality is 100% in depths greater than 30 fm. This is of particular concern given both increased trip limits for shelf rockfish species and less constraining depth restrictions allow increased access to these species, as well as drive increased participation in the open access fishery, and therefore increased total mortality. In addition, coverage rates for observers from the WCGOP on small vessels participating in these fisheries provide limited data to inform bycatch rates. Under National Standard 8, reduction of bycatch is a priority and increased observer coverage rates would improve data on discards as the open access fishery for shelf rockfish expands.
 
@@ -201,7 +201,7 @@ The recreational fishery is the main source of mortality for quillback rockfish 
 
 #### Length Compositions 
 
-Recreational length samples from MRFSS for years 1980 - 2003 and from CRFS for years 2004 - 2020 were obtained from the RecFIN website. Lengths of fish measured by samplers onboard Commercial Passenger Fishing Vessels (CPFV) prior to being released (Type 3d data) were also obtained from 2004 to 2020, however released samples (n = 22) were not used in length compositions for the base model. The number of length observations by year are shown in Table \ref{tab:len-samps}, with the highest number of samples occurring in years since 2004. The distribution of lengths of quillback rockfish observed by the recreational fleet have generally ranged between 20 and 50 cm (the maximum length data bin size) across all available years (Figure \ref{fig:rec-len-data}). Samples in years prior to 1989 generally were more uniformly distributed and had smaller samples sizes than in more recent years. The mean length observed each year was more variable within and among years prior to the mid 1990s, ranging from slightly above 40 cm to slightly below 30 cm (Figure \ref{fig:mean-rec-len-data}). Since 2005, mean length has been less variable across years, between 35 and 40 cm, with less variation within each year as well.
+Recreational length samples from MRFSS for years 1980 - 2003 and from CRFS for years 2004 - 2020 were obtained from the RecFIN website. Lengths of fish measured by samplers onboard Commercial Passenger Fishing Vessels (CPFV) prior to being released (Type 3d data) were also obtained from 2003 to 2020, however released samples (n = 23) were not used in length compositions for the base model. The number of length observations by year are shown in Table \ref{tab:len-samps}, with the highest number of samples occurring in years since 2004. The distribution of lengths of quillback rockfish observed by the recreational fleet have generally ranged between 20 and 50 cm (the maximum length data bin size) across all available years (Figure \ref{fig:rec-len-data}). Samples in years prior to 1989 generally were more uniformly distributed and had smaller samples sizes than in more recent years. The mean length observed each year was more variable within and among years prior to the mid 1990s, ranging from slightly above 40 cm to slightly below 30 cm (Figure \ref{fig:mean-rec-len-data}). Since 2005, mean length has been less variable across years, between 35 and 40 cm, with less variation within each year as well.
 
 The input sample sizes for the recreational length data were set equal to the number of length samples available by year. 
 
@@ -1194,14 +1194,13 @@ fishery selectivity and with steepness fixed at 0.72."}
 
 ## Appendix A: California ROV Survey Data Informing Selectivity{#append_a}
 
-From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside marine protected areas and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of quillback rockfish biomass (Table \ref{tab:ca-ROV}). 
+From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside MPAs and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of quillback rockfish biomass (Table \ref{tab:ca-ROV}). 
  
 In addition, length frequency distributions by depth were determined from fish observed by the ROV based on visual approximations using the distance between paired lasers. While future efforts to increase the precision of length estimates include using stereo-camera data and programs estimating length from trigonometric calculations, the trends in approximate length distribution with depth still provides useful information. The length frequency distribution by depth is provided in Figure \ref{fig:ca-ROV}. In reviewing both the density by depth and length by depth relative to ontogenetic migration, the patterns may not reflect the smaller fish using shallow rocky reef as juveniles in less than 10 fm, and only reflect the density and composition in deeper depths where ontogenetic migration to deeper depths has already taken place for nearshore species and is not as apparent. 
 
-When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore ([Appendix B](#append_b)) and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. 
+When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. The combination of MPAs and RCAs restrict a larger portion of habitat to fishing (see [Appendix B](#append_b) for details). 
 
 The percentage of fish in 5 cm size categories among 10 fm depths bins north of Point Conception did not show clear signs of increasing size with depth in greater than 10 fm in either region or protected vs. reference sites (Figure \ref{fig:ca-ROV-percent}). This may be in part due to the fish having already moved from shallow kelp forest habitat where the ROV cannot operate to the adult depth distribution in greater than 10 fm by the time they are observed. Only in the shallower depth bins is there higher proportion of smaller individuals. This would indicate that selectivity may not be domed shaped as would be considered if the depth restrictions protected a larger proportion of adult biomass.
-
 
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
@@ -1258,16 +1257,54 @@ Total & 401535 & 235 & - & -\\*
 
 \clearpage
 
-## Appendix B: Percent Area Closed to Fishing in the RCA, CCA and MPAs over time {#append_b}
+## Appendix B: Percent Area Closed to Fishing in the RCAs and MPAs over time{#append_b}
 
-Marine protected areas were instituted at various times from 2003 to 2012 as the area selection process was undertaken on a regional process. The existence of no take MPAs in some of the areas selected prior to expansion of the MPAs to encompass approximately 20-30% of rocky reef habitat in state waters, duration of existence of new areas, degree of effort prior to protection or criteria for selection including productivity of the reef may have contributed to the current patterns in composition and density inside vs. outside MPAs. As biomass accrues inside MPAs, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside the MPAs. 
+MPAs were instituted at various times from 2003 to 2012 as the area selection process was undertaken on a regional process. The existence of no take MPAs in some of the areas selected prior to expansion of the MPAs to encompass approximately 20-30% of rocky reef habitat in state waters, duration of existence of new areas, degree of effort prior to protection or criteria for selection including productivity of the reef may have contributed to the current patterns in composition and density inside vs. outside MPAs. As biomass accrues inside MPAs, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside the MPAs. 
  
-The percentage area closed to fishing in MPAs, RCAs and CCAs from 2001 to 2021 are shown for each in Table \ref{tab:ca-mpa}.  The percentage closed to fishing provides a buffer against uncertainty through protection of a portion of the population. The percent area in MPAs prohibiting take by the recreational and commercial fisheries were included in the estimates of area closed to fishing from the first year in which the MPA was in place for a full calendar year. Areas closed to fishing prior to the implementation of the present MPA network were also accounted for. The CCA area accounted for waters around islands where take was allowed for a limited suite of species including nearshore rockfish and lingcod in depths around the islands. The RCAs for commercial and recreational fisheries were based on the deeper of the depth restrictions for the sectors to reflect only areas where take was prohibited for both. Where the RCA lines for the stock in question were not available, depth contours were used to approximate the percent of area closed, denoted by an asterisk.  The presence of each type of closures in each assessment region and year was converted to tables of Boolean fields allowing GIS algorithms estimating the area open and closed to fishing. The distribution and area of rocky reef habitat was determined using the GIS layers rendering the results of the side scanning sonar from the California Seafloor Mapping Project to identify hard bottom at varying levels of resolution from two square meters to ten meters based on the depth surveyed due to cone width of the sonar. The area of rocky reef habitat closed to fishing within the depth distribution of the focal species was converted to a percentage of the total habitat. 
- 
- 
-Table X. Square miles and percentage of rocky reef habitat inhabited by the species of interest in MPAs, RCAs, CCA and total area closed to fishing.
- 
-*RCA approximated using general depth contours from the bathymetry layer.
+The percentage area closed to fishing in MPAs and Rockfish Conservation Areas (RCAs) north of Point Conception from 2001 to 2021 are shown in Table \ref{tab:ca-mpa}. The percentage closed to fishing provides a buffer against uncertainty through protection of a portion of the population. The percent area in MPAs prohibiting take by the recreational and commercial fisheries were included in the estimates of area closed to fishing from the first year in which the MPA was in place for a full calendar year. Areas closed to fishing prior to the implementation of the present MPA network were also accounted for. The RCAs for commercial and recreational fisheries were based on the deeper of the depth restrictions for the sectors to reflect only areas where take was prohibited for both. Where the RCA lines for the stock in question were not available, depth contours were used to approximate the percent of area closed. The presence of each type of closure in each assessment region and year was converted to tables of Boolean fields allowing GIS algorithms estimating the area open and closed to fishing. The distribution and area of rocky reef habitat was determined using the GIS layers rendering the results of the side scanning sonar from the California Seafloor Mapping Project to identify hard bottom at varying levels of resolution from two square meters to ten meters based on the depth surveyed due to cone width of the sonar. The area of rocky reef habitat closed to fishing within the depth distribution of the focal species was converted to a percentage of the total habitat. 
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
+\caption{(\#tab:ca-mpa)Percent of rocky reef habitat protected for quillback and copper rockfish north or Point Conception by MPAs and RCAs, and the total percent habitat open to fishing.}\\
+\toprule
+Year & Percent Habitat Protected by MPA & Percent Habitat Protected by RCA & Percent Habitat Open to Fishing\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:ca-mpa)Percent of rocky reef habitat protected for quillback and copper rockfish north or Point Conception by MPAs and RCAs, and the total percent habitat open to fishing. \textit{(continued)}}\\
+\toprule
+Year & Percent Habitat Protected by MPA & Percent Habitat Protected by RCA & Percent Habitat Open to Fishing\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2001 & 4 & 0 & 96\\
+2002 & 4 & 0 & 96\\
+2003 & 4 & 38 & 59\\
+2004 & 7 & 23 & 70\\
+2005 & 7 & 29 & 64\\
+2006 & 7 & 29 & 64\\
+2007 & 7 & 27 & 66\\
+2008 & 14 & 27 & 59\\
+2009 & 14 & 27 & 59\\
+2010 & 14 & 32 & 54\\
+2011 & 21 & 30 & 49\\
+2012 & 23 & 30 & 47\\
+2013 & 26 & 30 & 44\\
+2014 & 26 & 30 & 44\\
+2015 & 26 & 27 & 47\\
+2016 & 26 & 27 & 47\\
+2017 & 26 & 16 & 58\\
+2018 & 26 & 16 & 58\\
+2019 & 26 & 13 & 61\\
+2020 & 26 & 13 & 61\\
+2021 & 26 & 6 & 68\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
 
 \clearpage
 
