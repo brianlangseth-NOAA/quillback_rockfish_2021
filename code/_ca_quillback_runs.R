@@ -3,6 +3,7 @@
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\Sensi_plot_dover.R")
 
 wd = "C:/Users/Brian.Langseth/Desktop/ca"
 
@@ -832,6 +833,50 @@ model = "7_1_14_noExtremeCatch_3yravg"
 base.7114 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.7114)
 
+##
+#All in one place
+##
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+model = "7_1_1_norec"
+base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_1b_norec_reweight"
+base.711b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_2_dw_Francis"
+base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+model = "7_1_2b_dw_Francis_iter"
+base.712b = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+model = "7_1_3_dw_DM"
+base.713 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_4_estlinf"
+base.714 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_5_estlinfK"
+base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_6_estK"
+base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_7_estL2CV"
+base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_8_estM"
+base.718 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_9_noEarlyRec_pre04"
+base.719 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_9b_noEarlyRec_pre93"
+base.719b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_10_recDome"
+base.7110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_10b_recDome_3parm"
+base.7110b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_11_comDome"
+base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_11b_comDome_3parm"
+base.7111b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_12_recBlock93"
+base.7112 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_13_noExtremeCatch"
+base.7113 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_14_noExtremeCatch_3yravg"
+base.7114 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+
 
 #Compare sensitivities
 sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993", "Adjust extreme catches")
@@ -868,6 +913,47 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   subplot = 12, 
                   print = TRUE, 
                   pdf = FALSE)
+
+##Smaller subset of sensitivities
+sens_names <- c("Base model","No rec devs","Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "Adjust extreme catches")
+sens_models  <- SSsummarize(list(base.710, base.711, base.714, base.715, base.716, base.717, base.718, base.7114))
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topright", 
+                  legendncol = 1,
+                  filenameprefix = paste0("SSC_presentation_base.710_sensitivities_"),
+                  subplot = c(1,3), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+sens_names <- c("Base model","No rec devs","DW Francis", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est Old CV", "Est M", "No pre-2004 rec comps", "No pre-1993 rec comps", "Rec dome selex.", "Com dome selex.", "Rec block selex. 1993", "Adjust extreme catches")
+x  <- SSsummarize(list(base.710, base.711, base.712b, base.713, base.714, base.715, base.716, base.717, base.718, base.719, base.719b, base.7110, base.7111, base.7112, base.7114))
+
+wd_dat <- file.path(paste0(wd,"/sensitivities")) 
+Sensi_plot_dover(model.summaries=x,
+                 dir = wd_dat,
+                 current.year=2021,
+                 mod.names=sens_names, #List the names of the sensitivity runs
+                 likelihood.out = c(0, 1, 0),
+                 Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+                 CI=0.95, #Confidence interval box based on the reference model
+                 TRP.in=0.40, #Target relative abundance value
+                 LRP.in=0.25, #Limit relative abundance value
+                 sensi_xlab="Sensitivity scenarios", #X-axis label
+                 ylims.in=c(-2,2,-2,2,-2,2,-2,2,-2,2,-2,2,-2,2), #Y-axis label
+                 plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+                 sensi.type.breaks=c(2.5, 4.5, 9.5, 14.5), #vertical breaks that can separate out types of sensitivities
+                 anno.x=c(1.5, 3.5, 7.0, 12, 15), # Vertical positioning of the sensitivity types labels
+                 anno.y=c(1.83,1.80,1.85,1.85,1.85), # Horizontal positioning of the sensitivity types labels
+                 anno.lab=c("Recruitment", "Data Weighting", "Parameters", "Selectivity", "Adj. Catches"), #Sensitivity types labels
+                 horizontal = TRUE)
+##########################
 
 # Create a Table of Results
 n = length(sens_names)

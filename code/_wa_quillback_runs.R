@@ -2,7 +2,10 @@
 
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
+library(ggplot)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\Sensi_plot_dover.R")
+
 
 #Function to return model summary statistics
 #total NLL, # estimate parameters, R0, depletion
@@ -1032,6 +1035,21 @@ SS_plots(base.1010)
 base.SS_LO = SS_output(file.path("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\models","SSLO"), covar=TRUE)
 SS_plots(base.SS_LO)
 
+#Explore reason for why DM is so different
+#Copy model 10_0_0 and set weighting for recreational to match that of DM
+model = "10_0_6_francis_with_DM_rec_weights"
+base.1006 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1006)
+
+#Explore reason for why DM is so different
+#Copy model 10_0_0 and set weighting for recreational to match that of DM
+model = "10_0_6b_francis_with_DM_weights"
+base.1006b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1006b)
+#This produces a very similar trajectory to the base. Seems like the estimation
+#of theta parameters changes R0 and selectivity
+
+
 
 
 ##############################################
@@ -1109,6 +1127,13 @@ model = "10_1_8_noEarlyRec"
 base.1018 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.1018)
 
+#Remove early recreational comps (the 80s) and reweight (copy model 1018)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\sensitivities\\10_1_8_noEarlyRec", write = FALSE)
+model = "10_1_8b_noEarlyRec_reweight"
+base.1018b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.1018b)
+#There is no effect here. Reweight value is minimally different
+
 #Dont fit to commercial comps, but mirror rec comps. Include com comps as ghost fleet
 model = "10_1_9_mirrorCom"
 base.1019 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
@@ -1157,6 +1182,54 @@ base.10114 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
 
 
 
+##
+#All in one place
+##
+model = "10_0_0_base"
+base.1000 = SS_output(file.path(wd, model),covar=TRUE)
+model = "10_1_1_recDevs"
+base.1011 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_1b_recDevs_reweight"
+base.1011b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_2_dw_MI"
+base.1012 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+model = "10_1_3_dw_DM"
+base.1013 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_4_estlinf"
+base.1014 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_5_estlinfK"
+base.1015 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_5_estK"
+base.1015b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_5_recDevs_estK"
+base.1015c = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_6_estL2CV"
+base.1016 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_7_estM"
+base.1017 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_8_noEarlyRec"
+base.1018 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_8b_noEarlyRec_reweight"
+base.1018b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_9_mirrorCom"
+base.1019 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_9b_mirrorCom_weight"
+base.1019b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_9c_mirrorCom_weight_noghost"
+base.1019c = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_10_recDome"
+base.10110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_10b_recDevs_recDome"
+base.10110b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_11_comDome"
+base.10111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_12_recBlock99"
+base.10112 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_13_recBlock2010"
+base.10113 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "10_1_14_altphase"
+base.10114 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+
 
 #Compare sensitivities
 #sens_names <- c("Base model","Rec devs","DW MI", "DW DM", "Est Linf", "Est Linf, K", "Est K", "Est K, recdevs", "Est Old CV", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex", "Alt Phase")
@@ -1204,6 +1277,51 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   subplot = 12, 
                   print = TRUE, 
                   pdf = FALSE)
+
+###
+#Select Sensitivities
+###
+sens_names <- c("Base model","Rec devs","Rec devs reweight", "DW DM", "Est Linf", "Est Old CV", "Est M")
+sens_models  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1013, base.1014, base.1016, base.1017))
+
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topright", 
+                  legendncol = 2,
+                  filenameprefix = paste0("SSCpresentation_base.1000_sensitivities_"),
+                  subplot = c(1,3),
+                  col = rich.colors.short(14)[c(1,2,3,5,6,7,8)],
+                  pch = c(1,2,3,5,6,7,8),
+                  print = TRUE, 
+                  pdf = FALSE)
+
+###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+sens_names <- c("Base model","Rec devs","Rec devs reweight", "DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex", "Alt Phase/Alt state")
+x  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112, base.10114))
+
+wd_dat <- file.path(paste0(wd,"/sensitivities")) 
+Sensi_plot_dover(model.summaries=x,
+                 dir = wd_dat,
+                 current.year=2021,
+                 mod.names=sens_names, #List the names of the sensitivity runs
+                 likelihood.out = c(0, 1, 0),
+                 Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+                 CI=0.95, #Confidence interval box based on the reference model
+                 TRP.in=0.40, #Target relative abundance value
+                 LRP.in=0.25, #Limit relative abundance value
+                 sensi_xlab="Sensitivity scenarios", #X-axis label
+                 ylims.in=c(-2,2,-2,2,-2,2,-2,2,-2,2,-2,2,-2,2), #Y-axis label
+                 plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+                 sensi.type.breaks=c(3.5, 5.5, 8.5, 13.5), #vertical breaks that can separate out types of sensitivities
+                 anno.x=c(2.5, 4.5, 7.0, 10.5, 14.5), # Vertical positioning of the sensitivity types labels
+                 anno.y=c(1.83,1.80,1.85,1.85,1.9), # Horizontal positioning of the sensitivity types labels
+                 anno.lab=c("Recruitment", "Data Weighting", "Parameters", "Selectivity", "Phasing"), #Sensitivity types labels
+                 horizontal = TRUE)
+##########################
 
 # Create a Table of Results
 n = length(sens_names)

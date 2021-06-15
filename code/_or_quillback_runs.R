@@ -3,6 +3,7 @@
 #remotes::install_github("r4ss/r4ss")
 library(r4ss)
 source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\compare_catch_rec.R")
+source("U:\\Stock assessments\\quillback_rockfish_2021\\code\\Sensi_plot_dover.R")
 
 sum_model <- function(model){
   return(c("NLL_Tot" = round(model$likelihoods_used[1,"values"],2),
@@ -884,6 +885,40 @@ base.7112 = SS_output(file.path(wd, model),covar=TRUE)
 #Results are similar to that of model 716 where com comps in 1999-2002 and 2015-2020 are not fit
 
 
+##
+#All in one place
+###
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+model = "7_1_1_norec"
+base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_1b_norec_reweight"
+base.711b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_2_dw_MI"
+base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+model = "7_1_3_dw_DM"
+base.713 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_4_estlinf"
+base.714 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_4b_estk"
+base.714b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_5_estlinfK"
+base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_6_estL2CV"
+base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_7_estM"
+base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_8_noEarlyRec"
+base.718 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_9_recAsym"
+base.719 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_10_comDome"
+base.7110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_11_recBlock"
+base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_11_comBlock_2003-2014"
+base.7112 = SS_output(file.path(wd, model),covar=TRUE)
+
 #Compare sensitivities
 sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est K", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.", "Com block selex.")
 sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.714b, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111, base.7112))
@@ -919,6 +954,51 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   subplot = 12, 
                   print = TRUE, 
                   pdf = FALSE)
+
+####
+#Subset
+####
+#Compare sensitivities
+sens_names <- c("Base model","No rec devs", "Rec asymp. selex.")
+sens_models  <- SSsummarize(list(base.710, base.711, base.719))
+
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 1,
+                  filenameprefix = paste0("SSC_presentation_base.710_sensitivities_"),
+                  subplot = c(1,3), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+###################################################################################
+# Jason Style Sensitivity Figure
+###################################################################################
+sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est K", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.", "Com block selex.")
+x  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714, base.714b, base.715, base.716, base.717, base.718, base.719, base.7110, base.7111, base.7112))
+
+wd_dat <- file.path(paste0(wd,"/sensitivities")) 
+Sensi_plot_dover(model.summaries=x,
+                 dir = wd_dat,
+                 current.year=2021,
+                 mod.names=sens_names, #List the names of the sensitivity runs
+                 likelihood.out = c(0, 1, 0),
+                 Sensi.RE.out="Sensi_RE_out.DMP", #Saved file of relative errors
+                 CI=0.95, #Confidence interval box based on the reference model
+                 TRP.in=0.40, #Target relative abundance value
+                 LRP.in=0.25, #Limit relative abundance value
+                 sensi_xlab="Sensitivity scenarios", #X-axis label
+                 ylims.in=c(-2,2,-2,2,-2,2,-2,2,-2,2,-2,2,-2,2), #Y-axis label
+                 plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
+                 sensi.type.breaks=c(2.5, 4.5, 9.5), #vertical breaks that can separate out types of sensitivities
+                 anno.x=c(1.5, 3.5, 7.0, 12), # Vertical positioning of the sensitivity types labels
+                 anno.y=c(1.83,1.80,1.85,1.85), # Horizontal positioning of the sensitivity types labels
+                 anno.lab=c("Recruitment", "Data Weighting", "Parameters", "Selectivity"), #Sensitivity types labels
+                 horizontal = TRUE)
+##########################
 
 # Create a Table of Results
 n = length(sens_names)
