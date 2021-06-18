@@ -577,5 +577,18 @@ lines(0:75, vb_fn(age = 0:75, Linf = 43.018, L0 = la_ests["all"][[1]][2], k = 0.
 legend("bottomright",c("External Estimate", "K and Linf estimated within model"), lty=c(1,2), col=c(1,2), bty = "n", lwd = 3)
 dev.off()
 
+#Combined
+temp = out_age[-c(142,143),]
+pngfun(wd = file.path(dir, "presentations"), file = "Length_at_Age_SSCpresentation.png", w = 7, h = 7, pt = 12)
+plot(temp[temp$Sex == "F",]$Age,temp[temp$Sex == "F",]$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55), col = alpha("red",0.25))
+points(temp[temp$Sex == "M",]$Age,temp[temp$Sex == "M",]$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55), col = alpha("blue",0.25))
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
+      col = 1, lty = 1, lwd = 2)
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all_F"][[1]][1], L0 = la_ests["all_F"][[1]][2], k = la_ests["all_F"][[1]][3]), 
+      col = 2, lty = 1, lwd = 3)
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all_M"][[1]][1], L0 = la_ests["all_M"][[1]][2], k = la_ests["all_M"][[1]][3]), 
+      col = "blue", lty = 1, lwd = 3)
+dev.off()
+
 
 

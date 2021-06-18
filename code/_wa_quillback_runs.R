@@ -1291,17 +1291,18 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   legendloc = "topright", 
                   legendncol = 2,
                   filenameprefix = paste0("SSCpresentation_base.1000_sensitivities_"),
-                  subplot = c(1,3),
-                  col = rich.colors.short(14)[c(1,2,3,5,6,7,8)],
-                  pch = c(1,2,3,5,6,7,8),
+                  subplot = c(1,3,11,12),
                   print = TRUE, 
                   pdf = FALSE)
 
 ###################################################################################
 # Jason Style Sensitivity Figure
 ###################################################################################
-sens_names <- c("Base model","Rec devs","Rec devs reweight", "DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex", "Alt Phase/Alt state")
-x  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112, base.10114))
+#Excluding the alt state one. Its a distraction in the presentation and was included to show 
+#the shallow likelihood space for a poorer fitting model. Because its for a poorer fit to the data
+#Im not showing it. 
+sens_names <- c("Base model","Rec devs","Rec devs reweight", "DW MI", "DW DM", "Est Linf", "Est Old CV", "Est M", "No early rec comps", "Mirror com selex", "Rec dome-shaped selex, recdevs", "Com dome-shaped selex", "Rec block selex")
+x  <- SSsummarize(list(base.1000, base.1011, base.1011b, base.1012, base.1013, base.1014, base.1016, base.1017, base.1018, base.1019c, base.10110b, base.10111, base.10112))
 
 wd_dat <- file.path(paste0(wd,"/sensitivities")) 
 Sensi_plot_dover(model.summaries=x,
@@ -1316,10 +1317,10 @@ Sensi_plot_dover(model.summaries=x,
                  sensi_xlab="Sensitivity scenarios", #X-axis label
                  ylims.in=c(-2,2,-2,2,-2,2,-2,2,-2,2,-2,2,-2,2), #Y-axis label
                  plot.figs=c(1,1,1,1,1,1), #Which plots to make/save? 
-                 sensi.type.breaks=c(3.5, 5.5, 8.5, 13.5), #vertical breaks that can separate out types of sensitivities
-                 anno.x=c(2.5, 4.5, 7.0, 10.5, 14.5), # Vertical positioning of the sensitivity types labels
-                 anno.y=c(1.83,1.80,1.85,1.85,1.9), # Horizontal positioning of the sensitivity types labels
-                 anno.lab=c("Recruitment", "Data Weighting", "Parameters", "Selectivity", "Phasing"), #Sensitivity types labels
+                 sensi.type.breaks=c(3.5, 5.5, 8.5), #vertical breaks that can separate out types of sensitivities
+                 anno.x=c(2.5, 4.5, 7.0, 10.5), # Vertical positioning of the sensitivity types labels
+                 anno.y=c(1.83,1.80,1.85,1.85), # Horizontal positioning of the sensitivity types labels
+                 anno.lab=c("Recruitment", "Data Weighting", "Parameters", "Selectivity"), #Sensitivity types labels
                  horizontal = TRUE)
 ##########################
 

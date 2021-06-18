@@ -833,6 +833,13 @@ model = "7_1_14_noExtremeCatch_3yravg"
 base.7114 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.7114)
 
+#Updating with values for 1990-1992 as the same as for 1993
+#Budrick wanted me to run to see how different from 7114 this is. 
+model = "7_1_14b_adjustExtremeCatch"
+base.7114b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+SS_plots(base.7114b)
+
+
 ##
 #All in one place
 ##
@@ -921,10 +928,10 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   legendlabels = sens_names, 
                   ylimAdj = 1.10,
                   plotdir = file.path(wd, 'sensitivities'), 
-                  legendloc = "topright", 
+                  legendloc = "topleft", 
                   legendncol = 1,
                   filenameprefix = paste0("SSC_presentation_base.710_sensitivities_"),
-                  subplot = c(1,3), 
+                  subplot = c(1,3,9,11), 
                   print = TRUE, 
                   pdf = FALSE)
 

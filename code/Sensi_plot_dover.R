@@ -184,8 +184,8 @@ Sensi_plot_dover <- function(model.summaries,
           expression(SB[0]),
           as.expression(bquote("SB"[.(current.year)])),
           bquote(frac(SB[.(current.year)], SB[0])),
-          expression(Yield['SPR=0.30']),
-          expression(F['SPR=0.30'])
+          expression(Yield['SPR=0.50']),
+          expression(F['SPR=0.50'])
         )
       ) +
       scale_color_manual(
@@ -195,8 +195,8 @@ Sensi_plot_dover <- function(model.summaries,
           expression(SB[0]),
           as.expression(bquote("SB"[.(current.year)])),
           bquote(frac(SB[.(current.year)], SB[0])),
-          expression(Yield['SPR=0.30']),
-          expression(F['SPR=0.30'])
+          expression(Yield['SPR=0.50']),
+          expression(F['SPR=0.50'])
         )
       ) +
       labs(y = "", x = "Relative change") +
@@ -234,8 +234,8 @@ Sensi_plot_dover <- function(model.summaries,
             expression(SB[0]),
             as.expression(bquote("SB"[.(current.year)])),
             bquote(frac(SB[.(current.year)], SB[0])),
-            expression(Yield['SPR=0.30']),
-            expression(F['SPR=0.30'])
+            expression(Yield['SPR=0.50']),
+            expression(F['SPR=0.50'])
           )
         ) +
         scale_color_manual(
@@ -245,8 +245,8 @@ Sensi_plot_dover <- function(model.summaries,
             expression(SB[0]),
             as.expression(bquote("SB"[.(current.year)])),
             bquote(frac(SB[.(current.year)], SB[0])),
-            expression(Yield['SPR=0.30']),
-            expression(F['SPR=0.30'])
+            expression(Yield['SPR=0.50']),
+            expression(F['SPR=0.50'])
           )
         ) +
         labs(x = sensi_xlab, y = "Relative change") +
@@ -275,8 +275,8 @@ Sensi_plot_dover <- function(model.summaries,
             expression(SB[0]),
             as.expression(bquote("SB"[.(current.year)])),
             bquote(frac(SB[.(current.year)], SB[0])),
-            expression(Yield['SPR=0.30']),
-            expression(F['SPR=0.30'])
+            expression(Yield['SPR=0.50']),
+            expression(F['SPR=0.50'])
           )
         ) +
         scale_color_manual(
@@ -286,8 +286,8 @@ Sensi_plot_dover <- function(model.summaries,
             expression(SB[0]),
             as.expression(bquote("SB"[.(current.year)])),
             bquote(frac(SB[.(current.year)], SB[0])),
-            expression(Yield['SPR=0.30']),
-            expression(F['SPR=0.30'])
+            expression(Yield['SPR=0.50']),
+            expression(F['SPR=0.50'])
           )
         ) +
         labs(x = sensi_xlab, y = "Log relative change") +
@@ -375,12 +375,12 @@ Sensi_plot_dover <- function(model.summaries,
         scale_shape_manual(
           values = c(16, 17),
           name = "",
-          labels = expression(Yield['SPR=0.30'], F['SPR=0.30'])
+          labels = expression(Yield['SPR=0.50'], F['SPR=0.50'])
         ) +
         scale_color_manual(
           values = four.colors[4:5],
           name = "",
-          labels = expression(Yield['SPR=0.30'], F['SPR=0.30'])
+          labels = expression(Yield['SPR=0.50'], F['SPR=0.50'])
         ) +
         labs(x = sensi_xlab, y = "") +
         guides(fill = FALSE) +
@@ -468,12 +468,12 @@ Sensi_plot_dover <- function(model.summaries,
         scale_shape_manual(
           values = c(16, 17),
           name = "",
-          labels = expression(Yield['SPR=0.30'], F['SPR=0.30'])
+          labels = expression(Yield['SPR=0.50'], F['SPR=0.50'])
         ) +
         scale_color_manual(
           values = four.colors[4:5],
           name = "",
-          labels = expression(Yield['SPR=0.30'], F['SPR=0.30'])
+          labels = expression(Yield['SPR=0.50'], F['SPR=0.50'])
         ) +
         labs(x = sensi_xlab, y = "") +
         guides(fill = FALSE) +
@@ -657,7 +657,7 @@ Sensi_plot_dover <- function(model.summaries,
         scale_color_manual(
           values = four.colors[4],
           name = "",
-          labels = expression(Yield['SPR=0.30'])
+          labels = expression(Yield['SPR=0.50'])
         ) +
         labs(x = sensi_xlab, y = "Relative change") +
         annotate("text", x = anno.x, y = anno.y, label = anno.lab) +
@@ -679,7 +679,7 @@ Sensi_plot_dover <- function(model.summaries,
         scale_color_manual(
           values = four.colors[4],
           name = "",
-          labels = expression(Yield['SPR=0.30'])
+          labels = expression(Yield['SPR=0.50'])
         ) +
         labs(x = sensi_xlab, y = "Log Relative change") +
         annotate("text", x = anno.x, y = anno.y, label = anno.lab) +
@@ -704,7 +704,7 @@ Sensi_plot_dover <- function(model.summaries,
         scale_color_manual(
           values = four.colors[5],
           name = "",
-          labels = expression(F['SPR=0.30'])
+          labels = expression(F['SPR=0.50'])
         ) +
         labs(x = sensi_xlab, y = "Relative change") +
         annotate("text", x = anno.x, y = anno.y, label = anno.lab) +
@@ -727,7 +727,7 @@ Sensi_plot_dover <- function(model.summaries,
         scale_color_manual(
           values = four.colors[5],
           name = "",
-          labels = expression(F['SPR=0.30'])
+          labels = expression(F['SPR=0.50'])
         ) +
         labs(x = sensi_xlab, y = "Log Relative change") +
         annotate("text", x = anno.x, y = anno.y, label = anno.lab) +
