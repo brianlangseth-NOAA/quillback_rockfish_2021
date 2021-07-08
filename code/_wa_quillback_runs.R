@@ -1264,7 +1264,7 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   legendloc = "topright", 
                   legendncol = 2,
                   filenameprefix = paste0("base.1000_sensitivities_"),
-                  subplot = c(1,3,9), 
+                  subplot = c(1,3,9,11), 
                   print = TRUE, 
                   pdf = FALSE)
 SSplotComparisons(sens_models, endyrvec = 2021, 
@@ -1291,7 +1291,7 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   legendloc = "topright", 
                   legendncol = 2,
                   filenameprefix = paste0("SSCpresentation_base.1000_sensitivities_"),
-                  subplot = c(1,3,11,12),
+                  subplot = c(1,3,9,11),
                   print = TRUE, 
                   pdf = FALSE)
 

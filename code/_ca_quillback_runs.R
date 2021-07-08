@@ -719,6 +719,13 @@ model = "7_1_1_base_ghostCom"
 base.711 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.711)
 
+#Explore whether reducing comp bins to nearer linf affect
+#the high variability in recdevs
+model = "7_1_2_reduceBinN"
+base.712 = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.712)
+#No it does not. 
+
 
 
 ##############################################

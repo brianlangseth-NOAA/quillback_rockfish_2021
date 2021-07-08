@@ -454,6 +454,29 @@ model_settings = get_settings(settings = list(base_name = "7_1_1_norecProfile",
 run_diagnostics(mydir = mydir, model_settings = model_settings)
 
 
+####################
+#Jitter Linf and K sensitivities
+####################
+mydir = "C:/Users/Brian.Langseth/Desktop/or/sensitivities"
+
+base_name = "7_1_4_estlinf"
+base_name = "7_1_4b_estk"
+
+
+model_settings = get_settings(settings = list(base_name = base_name,
+                                              run = c("jitter")))
+
+model_settings$jitter_fraction = 0.1
+
+run_diagnostics(mydir = mydir, model_settings = model_settings)
+
+#Sensitivity for Linf is not converged. Best run models indicate a value very near the
+#base is the best fitting model, which is consistent with the Linf profile.
+
+#Sensitivity for K is not converged. Best run models indicate a value near 0.12 is 
+#the best fitting model. This differs from the K profile.
+
+
 #######################################################################################################
 # California
 #####################################################################################################
