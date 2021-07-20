@@ -36,7 +36,6 @@ ca_recfin_data = rename_recfin(data = ca_recfin,
                                   mode_column_name = "RECFIN_MODE_NAME" )
 ca_recfin_data$Source = "RecFIN_MRFSS"
 
-
 #ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003.csv")
 ca_mrfss_full = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mrfss_bio_1980_2003_Final_UPDATED.csv")
 ca_mrfss = ca_mrfss_full[ca_mrfss_full$ST == 6 & ca_mrfss_full$SP_CODE == 8826010120 & ca_mrfss_full$YEAR < 2004, ]
@@ -52,6 +51,22 @@ ca_mrfss_data = rename_mrfss(data = ca_mrfss,
                              mode_grouping = list(c(1,2), c(6, 7)),
                              mode_names = c("rec_shore", "rec_boat"),
                              mode_column_name = "MODE_FX" )
+
+#Add historical debWV data (onboard party boat) provided by John Budrick July 12, 2021
+deb.data = readxl::read_excel("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/Quillback Rockfish Length Data from Central California Onboard Sampling_Jul12_2021.xlsx")
+deb.data$Data_Type = "RETAINED" #all are "K" which is retained
+deb.data$data = "CPFV-Onboard Data"
+deb.data$Length = deb.data$TL/10 #because in mm
+deb.data$Sex = "U"
+deb.out = data.frame(deb.data[,c("Year", "Length", "Sex", "Data_Type", "data")])
+deb.out$Year = as.numeric(deb.out$Year)
+
+#Add variables to cahist needed to create common dataset in create_data_frame()
+deb.out$Lat = deb.out$Lon = deb.out$Areas = deb.out$Depth = deb.out$Age = deb.out$Weight = NA
+deb.out$State = "CA"
+deb.out$State_Areas = "south"
+deb.out$Fleet = deb.out$data
+deb.out$Source = "CA_Hist"
 
 #Washignton
 # According to Theresa WA lengths are all FL
@@ -111,11 +126,16 @@ input[[2]] = ca_mrfss_data
 input[[3]] = or_mrfss_data
 input[[4]] = or_recfin_len_data
 input[[5]] = wa_recfin_data
+#input[[6]] = deb.out #debWV_comb run uses this and the post SSC script at the very bottom (with files
+#renamed with _comb)
+
 
 ############################################################################################
 #	Create data frame with all the input data
 ############################################################################################
 out = create_data_frame(data_list = input)
+
+out_cahist = create_data_frame(data_list = list(deb.out))
 
 ############################################################################################
 # Clean up the data
@@ -123,7 +143,6 @@ out = create_data_frame(data_list = input)
 #Remove any data without valid lengths
 print(paste("Removed",sum(is.na(out$Length)), "records without any length"))
 out = out[!is.na(out$Length),]
-
 
 # Now lets do a check length check to filter out any anomalous lengths
 remove = which(out$Length > 65 | out$Length < 8) #Palsson et al. 2009 lists Lmax as 61cm for quillback, thus 65 is reasonable extreme
@@ -139,6 +158,13 @@ out = out[-remove, ]
 # Remove the released for the rest of the summaries for now:
 print(paste("Removed",length(which(out$Data_Type=="RELEASED")), "released records"))
 out = out[out$Data_Type %in% c("RETAINED", NA), ]
+
+
+#No data to remove from historical california data
+print(paste("Removed",sum(is.na(out_cahist$Length)), "records without any length"))
+remove = which(out_cahist$Length > 65 | out_cahist$Length < 8) #Palsson et al. 2009 lists Lmax as 61cm for quillback, thus 65 is reasonable extreme
+out_cahist[remove,]
+print(paste("Removed",length(which(out_cahist$Data_Type=="RELEASED")), "released records"))
 
 
 
@@ -253,6 +279,7 @@ GetN.fn(dir = file.path(dir, "data"), dat = ca, type = "length", species = 'othe
 n = read.csv(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
 n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
 write.csv(n, file = file.path(dir, "data", "forSS", "ca_rec_samples.csv"), row.names = FALSE)
+
 #Remove length sample size file which was overwritten for each state
 if(file.exists(file.path(dir, "data", "forSS", "length_SampleSize.csv"))){
     file.remove(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
@@ -265,11 +292,46 @@ lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder i
                        sex = 0, partition = 0, fleet = 2, month = 1)
 
 file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-50.csv"), 
-			to= file.path(dir, "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_Feb2021.csv")) 
-
+    			to= file.path(dir, "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_Feb2021.csv")) 
+    
 PlotFreqData.fn(dir = file.path(dir, "data", "forSS"), 
     dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 
     main = "CA Recreational - Unsexed_Feb2021", yaxs="i", ylab="Length (cm)", dopng = TRUE)
+
+
+
+##
+#California recreational lengths added for post SSC analyses
+##
+
+ca = out_cahist[which(out_cahist$State == "CA"), ]
+#ca = out[which(out$State == "CA"), ] #if running the combined version use this
+ca$Length_cm = ca$Length
+
+# create a table of the samples available by year
+ca$Trawl_id = 1:nrow(ca)
+GetN.fn(dir = file.path(dir, "data"), dat = ca, type = "length", species = 'others')
+n = read.csv(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
+n = n[,c('Year', 'All_Fish', 'Sexed_Fish', 'Unsexed_Fish')]
+write.csv(n, file = file.path(dir, "data", "forSS", "ca_rec_samples_debWV.csv"), row.names = FALSE)
+
+#Remove length sample size file which was overwritten for each state
+if(file.exists(file.path(dir, "data", "forSS", "length_SampleSize.csv"))){
+    file.remove(file.path(dir, "data", "forSS", "length_SampleSize.csv"))
+}
+
+ca$Sex = "U" #UnexpandedLFs.fn will only do comps for Unsexed fish if sex = 0 and ignore male and female. So assign all as U
+
+lfs = UnexpandedLFs.fn(dir = file.path(dir, "data"), #puts into "forSS" folder in this location
+                       datL = ca, lgthBins = len_bin,
+                       sex = 0, partition = 0, fleet = 2, month = 1)
+
+file.rename(from = file.path(dir, "data", "forSS", "Survey_notExpanded_Length_comp_Sex_0_bin=10-50.csv"), 
+            to= file.path(dir, "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_debWV.csv")) 
+
+PlotFreqData.fn(dir = file.path(dir, "data", "forSS"), 
+                dat = lfs$comps, ylim=c(0, max(len_bin) + 4), 
+                main = "CA Recreational - Unsexed_Feb2021 - debWV", yaxs="i", ylab="Length (cm)", dopng = TRUE)
 
 
 
