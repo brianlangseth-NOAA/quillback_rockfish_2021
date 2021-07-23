@@ -279,6 +279,8 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   pdf = FALSE)
 
 
+
+
 ################
 #All comparisons
 ################
@@ -382,8 +384,197 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   pdf = FALSE)
 
 
+
+##############
+##Selectivity plots
+##############
+base_selex <- SSplotSelex(base.710, fleets = 2, fleetnames = fleets, subplot = 1)
+base_selex$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
+
+selex_804 <- SSplotSelex(base.804, fleets = 2, subplot = 1, year = c(2000,2020))
+selex_804$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[3]
+selex_804$infotable$pch <- 2
+
+selex_810 <- SSplotSelex(base.810, fleets = 2, subplot = 1, year = c(2000,2020))
+selex_810$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[8]
+selex_810$infotable$pch <- 7
+
+selex_806c <- SSplotSelex(base.806c, fleets = 2, subplot = 1, year = c(2000,2016,2020))
+selex_806c$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[4]
+selex_806c$infotable$pch <- 3
+
+selex_807 <- SSplotSelex(base.807, fleets = 2, subplot = 1, year = c(2000,2002,2007,2016,2020))
+selex_807$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[5]
+selex_807$infotable$pch <- 4
+
+selex_808 <- SSplotSelex(base.808, fleets = 2, subplot = 1, year = c(2000,2004,2020))
+selex_808$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[1]
+selex_808$infotable$pch <- 5
+
+selex_809 <- SSplotSelex(base.809, fleets = 2, subplot = 1, year = c(2000,2004,2016,2020))
+selex_809$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[7]
+selex_809$infotable$pch <- 6
+
+
+
+##If combining all in one add this and exclude the png and dev.off() below
+png(file = file.path(wd, "sensitivities", "postSSC_plots", "ForReport",
+                     "Selex_together.png"), width = 8, height = 10, units = "in", res = 300)
+par(mfrow = c(3,2), mai = c(0.5,0.5,0.5,0))
+
+#Compare Block 2001, Block 2001 with new data, Base
+#png(file = file.path(wd, "sensitivities", "postSSC_plots", 
+#                     "Selex_block2001-debWV.png"), width = 7, height = 5, units = "in", res = 300)
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.804, fleets = 2, infotable = selex_804$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2020), add = TRUE)
+SSplotSelex(base.810, fleets = 2, infotable = selex_810$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2020), add = TRUE)
+legend("bottomright", c("Block 2001 new data 1916-2000", "Block 2001 new data 2001-2020", 
+                        "Block 2001 1916-2000", "Block 2001 2001-2020", 
+                        "Base 1916-2020"), lty = c(1,2,1,2, 1), 
+       col = c(selex_810$infotable$col, selex_804$infotable$col, base_selex$infotable$col),
+       pch = c(selex_810$infotable$pch, selex_804$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("Block 2001, Block 2001 new data", side = 3, line = 0.5, font = 2)
+grid()
+#dev.off()
+
+plot(1, type = "n", ylab = NA, xlab = NA, xaxt = "n", yaxt = "n", bty = "n")
+
+
+#Compare Block 2001 2017, Base
+#png(file = file.path(wd, "sensitivities", "postSSC_plots", 
+#                     "Selex_block2001-17.png"), width = 7, height = 5, units = "in", res = 300)
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.806c, fleets = 2, infotable = selex_806c$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2016, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2016", "2017-2020",
+                 "Base 1916-2020"), lty = c(1,2,3, 1), 
+       col = c(selex_806c$infotable$col, base_selex$infotable$col),
+       pch = c(selex_806c$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("Block 2001, 2017", side = 3, line = 0.5, font = 2)
+grid()
+#dev.off()
+
+#Compare Block 2001 2003 2008 2017, Base
+#png(file = file.path(wd, "sensitivities", "postSSC_plots", 
+#                     "Selex_block2001-03-08-17.png"), width = 7, height = 5, units = "in", res = 300)
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.807, fleets = 2, infotable = selex_807$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2002, 2007, 2016, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2002", 
+                 "2003-2007", "2008-2016",
+                 "2017-2020",
+                 "Base 1916-2020"), lty = c(1,2,3,4,5,1), 
+       col = c(selex_807$infotable$col, base_selex$infotable$col),
+       pch = c(selex_807$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("Block 2001, 03, 08, 17", side = 3, line = 0.5, font = 2)
+grid()
+#dev.off()
+
+#Compare Block 2001 2005, Base
+#png(file = file.path(wd, "sensitivities", "postSSC_plots", 
+#                     "Selex_block2001-05.png"), width = 7, height = 5, units = "in", res = 300)
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.808, fleets = 2, infotable = selex_808$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2004, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2004", 
+                 "2005-2020",
+                 "Base 1916-2020"), lty = c(1,2,3,1), 
+       col = c(selex_808$infotable$col, base_selex$infotable$col),
+       pch = c(selex_808$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("Block 2001, 05", side = 3, line = 0.5, font = 2)
+grid()
+#dev.off()
+
+#Compare Block 2001 2005 2017, Base
+#png(file = file.path(wd, "sensitivities", "postSSC_plots", 
+#                     "Selex_block2001-05-17.png"), width = 7, height = 5, units = "in", res = 300)
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.809, fleets = 2, infotable = selex_809$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2004, 2016, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2004", 
+                 "2005-2016", "2017-2020",
+                 "Base 1916-2020"), lty = c(1,2,3,4,1), 
+       col = c(selex_809$infotable$col, base_selex$infotable$col),
+       pch = c(selex_809$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("Block 2001, 05, 17", side = 3, line = 0.5, font = 2)
+grid()
+dev.off()
+
+
+
+#Compare Commercial Selectivity
+base_selex <- SSplotSelex(base.710, fleets = 1, subplot = 1)
+base_selex$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
+
+selex_804 <- SSplotSelex(base.804, fleets = 1, subplot = 1)
+selex_804$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[3]
+selex_804$infotable$pch <- 2
+
+selex_810 <- SSplotSelex(base.810, fleets = 1, subplot = 1)
+selex_810$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[8]
+selex_810$infotable$pch <- 7
+
+selex_806c <- SSplotSelex(base.806c, fleets = 1, subplot = 1)
+selex_806c$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[4]
+selex_806c$infotable$pch <- 3
+
+selex_807 <- SSplotSelex(base.807, fleets = 1, subplot = 1)
+selex_807$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[5]
+selex_807$infotable$pch <- 4
+
+selex_808 <- SSplotSelex(base.808, fleets = 1, subplot = 1)
+selex_808$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[6]
+selex_808$infotable$pch <- 5
+
+selex_809 <- SSplotSelex(base.809, fleets = 1, subplot = 1)
+selex_809$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[7]
+selex_809$infotable$pch <- 6
+
+png(file = file.path(wd, "sensitivities", "postSSC_plots", 
+                     "Selex_Commercial.png"), width = 7, height = 5, units = "in", res = 300)
+SSplotSelex(base.710, fleets = 1, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.804, fleets = 1, infotable = selex_804$infotable,
+            subplot = 1, legendloc = NA, add = TRUE)
+SSplotSelex(base.810, fleets = 1, infotable = selex_810$infotable,
+            subplot = 1, legendloc = NA, add = TRUE)
+SSplotSelex(base.806c, fleets = 1, infotable = selex_806c$infotable,
+            subplot = 1, legendloc = NA, add = TRUE)
+SSplotSelex(base.807, fleets = 1, infotable = selex_807$infotable,
+            subplot = 1, legendloc = NA, add = TRUE)
+SSplotSelex(base.808, fleets = 1, infotable = selex_808$infotable,
+            subplot = 1, legendloc = NA, add = TRUE)
+SSplotSelex(base.809, fleets = 1, infotable = selex_809$infotable,
+            subplot = 1, legendloc = NA, add = TRUE)
+legend("left", c("Base", "Block 2001", "Block 2001, 2017", 
+                        "Block 2001, 2003, 2008, 2017", "Block 2001, 2005", "Block 2001, 2005, 2017",
+                        "Block 2001 new data"),   
+       col = rich.colors.short(n = 8, alpha = 0.75)[c(2:8)],
+       lty = 1, pch = 1:7, bty = "n", lwd = 2, seg.len = 5)
+mtext("Commercial Selectivity", side = 3, line = 0.5, font = 2)
+grid()
+dev.off()
+
+
+
+
+
 ###################################################################################################
 # Create a Table of Results
+library(sa4ss)
+
 n = length(sens_names)
 
 sens_table = rbind(
@@ -396,13 +587,6 @@ sens_table = rbind(
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
   as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
   as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]) )  
 
@@ -417,13 +601,6 @@ rownames(sens_table) = c("Total Likelihood",
                          "SB 2020",
                          "Fraction Unfished 2021",
                          "Total Yield at SPR 50",
-                         "Steepness",
-                         "Natural Mortality",
-                         "Length at Amin",
-                         "Length at Amax",
-                         "Von Bert. k",
-                         "CV young",
-                         "CV old",
                          "Peak recreational selex",
                          "Peak commercial selex")
 
@@ -439,4 +616,7 @@ t = table_format(x = sens_table,
                  col_names = sens_names)
 
 kableExtra::save_kable(t, file = file.path(wd, "sensitivities", "postSSC_plots", "ForReport", "sensitivities.tex"))
+
+
+
 
