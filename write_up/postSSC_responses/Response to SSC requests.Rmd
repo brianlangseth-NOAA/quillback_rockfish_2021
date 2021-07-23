@@ -1,0 +1,178 @@
+---
+title: "Quillback Rockfish: Responses to Additional Requests From the Groundfish Subcommittee for the California Model"
+author: "Brian J. Langseth"
+date: "8/17/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readxl)
+library(sa4ss)
+data_dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data\\forSS"
+mod_dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca"
+```
+
+# Requests Based on Additional or Adjusted Data
+
+## Request 2: 
+
+Add the length data from the historical onboard CPFV surveys from the 1980s and 1990s northern California survey conducted by CDFW noted in Table 2 of the SSC Report.
+
+Rationale: While the CRFS and MRFSS data may provide consistent sampling over time and space, the sample sizes for lengths from the MRFSS era are relatively low due to low sampling frequency and only sampling 30 anglers per day.  Addition of these supplementary data sources will help increase the sample size providing more insight on the effects of the low sample size.
+
+## Response 2:
+
+Additional length data for quillback rockfish were provided by California Department of Fish and Wildlife (CDFW) on July 12, 2021. These data were collected by observers onboard commercial passenger fishing vessels (CPFV) fishing in central California (Reilly et al. 1998) from 1987-1998, and were not available for use in the base model that was reviewed and adopted in the June Groundfish Subcommittee meeting of the Scientific
+and Statistical Committee (GFS-SSC). A total of 753 additional length observations from 1987-1998 (Table \ref{tab:len_data}) were added to the California quillback rockfish base model for the recreational fleet.
+
+Length distributions from the new data were similar to existing length distributions within the adopted base model (Figure \ref{fig:sens-debWV-comp}). Given the use of new data, scenarios with and without data weighting were run. Changes to data weights were minimal and resulted in little change in model trajectories. Spawning output (Figure \ref{fig:sens-debWV-ssb}), depletion (Figure \ref{fig:sens-debWV-depl}), and recruitment deviations (Figure \ref{fig:sens-debWV-rdevs}) from models with the new data were similar to those from the adopted base model. Parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table}.
+
+```{r data_table, results = 'asis', echo = FALSE} 
+
+deb  <- read.csv(file.path(data_dir,"ca_rec_samples_debWV.csv"), header = TRUE)
+orig  <- read.csv(file.path(data_dir,"ca_rec_samples.csv"), header = TRUE)
+ldat <- merge(deb[,1:2], orig[,1:2], by = "Year", all = TRUE)
+
+ldat[is.na(ldat)] <- "-"
+
+col_names <- c("Year", "New lengths", "Original lengths")
+table_format(x = ldat[ldat$Year %in% c(1987:1998),],
+             caption = "Number of additional length samples by year (new lengths) from 1987-1998 for quillback rockfish onboard CPFVs in central California as provided by CDFW. The number of length samples in the base model (original lengths) is provided for comparison.",
+             label = "len_data",
+             align = 'l',
+             row.names = FALSE,
+             col.names = col_names)
+```
+
+```{r, results = 'asis', echo = FALSE}
+plot_info = read.csv(file.path(mod_dir, "8_0_0_debWV", "plots", "plotInfoTable_19-07-2021_13.24.22.csv"))
+capt = plot_info[which(plot_info$file == "comp_lendat_flt2mkt0_page1.png"),"caption"]
+capt2 = paste(substr(capt,1,61), substr(capt,70, 135))
+
+add_figure(
+filein = file.path(mod_dir, "8_0_0_debWV", "plots", "comp_lendat_flt2mkt0_page1.png"),
+caption = paste(capt2, "White shading indicates the length distributions of the new data in years (1987-1989, 1993-1998) that overlap with original data (gray shading). For 1990-1992, which do not overlap with the original data, the gray shading is the length distributions of the new data"),
+label = 'sens-debWV-comp')
+```
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_debWV_sensitivities_compare2_spawnbio_uncertainty.png"), 
+caption = "Change in estimated spawning output across scenarios when adding 1987-1998 central California CPFV length data. Shading indicates 95% confidence intervals around each scenario",
+label = 'sens-debWV-ssb')
+
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_debWV_sensitivities_compare4_Bratio_uncertainty.png"), 
+caption = "Change in estimated fraction of unfished across scenarios when adding 1987-1998 central California CPFV length data. Shading indicates 95% confidence intervals around each scenario",
+label = 'sens-debWV-depl')
+
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_debWV_sensitivities_compare12_recdevs_uncertainty.png"), 
+caption = "Yearly recruitment deviations (points) across scenarios when adding 1987-1998 central California CPFV length data. Vertical lines represent the 95% confidence intervals of the deviations for each scenario",
+label = 'sens-debWV-rdevs')
+```
+
+\newpage
+
+## Request 3:  
+
+Reevaluate the catch history taking into account input from the CDFW Report 1 and Report 2 as well as input from the California STAT member to address apparent outlier estimates and methods for filling blanks between 1990 and 1992 for the MRFSS era.
+
+Rationale:  The CDFW reports identify a number of historical catch reconstruction considerations that appear to be outliers that affect depletion and scale.  This request is intended to evaluate the effects of their inclusion on the assessment and reconsider the basis for their inclusion.
+
+## Response 3:
+
+An alternative catch history was explored in the original California quillback rockfish report (see sensitivity #14 on page 18). The average catch in the three years before and three years after years with high catch were used in the alternative catch time series. Catch was higher than neighboring years in 1991 for the commercial fleet, and 1983 and 1993 for the recreational fleet. Alternative catch values were therefore applied to these years. For the results of this sensitivity, see Table 13, and Figures 47-49 from the California report.
+
+No new catch values were provided by CDFW for this document. 
+
+
+## Request 5: 
+
+Age otoliths and use corresponding lengths from samples collected in California and compare results to the growth curve from samples collected in Oregon and Washington. Otoliths should be provided as requested in the NMFS Report 1 (Agenda Item C.10, Supplemental NMFS Report 1, June 2021).
+
+Rationale:  Comparison of ages and lengths of fish sampled in California to the growth curve derived from samples collected in Oregon and Washington will provide a means of examining whether the growth curve provided by them are representative of growth in California. 
+
+## Response 5:
+
+\newpage
+
+
+
+
+# Requests Based on Additional Model Runs
+
+
+## Request 1: 
+
+Evaluate alternative selectivity time blocking based on the timing of depth restrictions from 2001-present north of Pigeon Point, California where they are commonly encountered. In particular add a time block (allowing for dome-shaped selectivity) starting in 2001 and consider additional time blocks. 
+
+Rationale:  Input from the GAP and GMT indicate that asymptotic selectivity for the recreational fishery is not a realistic assumption and was made to fit the need for the model to have at least one sector be asymptotic as required by the TOR (pg 36) . It seems more realistic to consider the period before severe regulations in the early 2000s as asymptotic (or domed) and then consider domed shape assumptions thereafter, perhaps with a separate dome shape after 2016 when regulations were slightly relaxed. 
+
+## Response 1:
+
+Alternative selectivity forms and blocks were explored during original model explorations. The choice of using asymptotic selectivity for the recreational fleet was based on findings from ROV surveys conducted by CDFW that did not show clear signs of increasing size with depth at depths greater than 10 fm. Assuming dome-shaped selectivity also resulted in a similar trajectory as when assuming asymptotic selectivity. Consequently, there was limited support for the additional complexity when adding parameters due to blocking of selectivity. Additional runs here also show limited support for the additional complexity in blocking selectivity. 
+
+We explored numerous options for blocking selectivity based on changes in the estimated percent of area open to fishing (Table A-1 from CDFW Report 1), as well as changes in mean length from the length data in the adopted base model (Figure 20 from the California quillback rockfish report). Specific blocking along with the reasons for blocking (in parenthsis) are described below. 
+
+\begin{enumerate}
+   
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, and 2001-2020 allowing for dome-shaped selectivity (as requested).
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001 and a relaxation of those restrictions starting in 2017).
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2003 allowing for dome-shaped selectivity, 2003-2007 allowing for dome-shaped selectivity, 2008-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, changes in the percent of area open to fishing in 2003 and again in 2008, and a relaxation of depth restrictions starting in 2017).
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2004 allowing for dome-shaped selectivity, and 2005-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, and a noticeable change in mean length in 2005).
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2004 allowing for dome-shaped selectivity, 2005-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, a noticeable change in mean length in 2005, and a relaxation of depth restrictions starting in 2017).
+  
+  \item Blocking selectivity as in option 1 above, but with the new length data from request 3 in the model.
+         
+\end{enumerate}
+
+Data weights were not reweighted for any of the selectivities from this request, in keeping with typical practices when running sensitivities. Suggested reweighted values were within 5% of the original weights from the adopted base model. Under option 2, the selectivity parameter (parameter 2) controlling the width of the peak was hitting its lower bound, which was resolved by fixing this parameter at its lower bound.  
+
+Additional runs here also show limited support for the additional complexity in blocking selectivity. Spawning output (Figure \ref{fig:sens-block-ssb}) and depletion (Figure \ref{fig:sens-block-depl}) from models with alternative blocking for the recreational fleet were similar to those from the adopted base model. Selectivities for both the recreational fleets for each scenario are shown in Figure \ref{fig:sens-block-selex}. Other parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table}. 
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_block_sensitivities_compare2_spawnbio_uncertainty.png"), 
+caption = "Change in estimated spawning output across scenarios for blocking selectivity in the recreational fleet. Shading indicates 95% confidence intervals around each scenario",
+label = 'sens-block-ssb')
+
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_block_sensitivities_compare4_Bratio_uncertainty.png"), 
+caption = "Change in estimated fraction of unfished across scenarios for blocking selectivity in the recreational fleet. Shading indicates 95% confidence intervals around each scenario",
+label = 'sens-block-depl')
+```
+
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "Selex_together.png"), 
+caption = "Recreational selectivity across scenarios for blocking the recreational fleet.",
+label = 'sens-block-selex')
+```
+
+
+\newpage
+
+## Request 4: 
+
+Further evaluate the ability of the model to estimate growth. In particular, run one model while estimating L-infinity and another while estimating both L-infinity and k.
+
+Rationale: The current model uses estimates of growth from fish collected in Oregon and Washington.  Given the higher water temperatures in California, this request is for examination of the ability of the model to estimate growth given the sensitivity of the model and the apparent information in lengths to inform them as seen in profiles of L infinity and k, while, admittedly, estimating k without age data may be problematic.
+
+## Response 4:
+
+The two requested runs were completed in the original California quillback rockfish report (sensitivities #4 and #6 on page 17). Results for those sensitivities are shown in Table 13 and Figures 47-49 in the California report and so are not repeated here.   
+
+
+<!-- tab:sensitivities -->
+\input{C:/Users/Brian.Langseth/Desktop/ca/postSSC_plots/ForReport/sensitivities.tex}
+
+
+

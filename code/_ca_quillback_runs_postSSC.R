@@ -575,6 +575,14 @@ dev.off()
 # Create a Table of Results
 library(sa4ss)
 
+#Switch up order to put debWV models together
+sens_names <- c("Base model", "DebWV", "DebWV reweight","DebWV, Block 2001",
+                "Block 2001", "Block 2001, 2017",
+                "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17")
+sens_models  <- SSsummarize(list(base.710, base.800, base.803, base.810,
+                                 base.804, base.806c,  
+                                 base.807, base.808, base.809))
+
 n = length(sens_names)
 
 sens_table = rbind(
@@ -582,6 +590,8 @@ sens_table = rbind(
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]),
+  2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
@@ -596,18 +606,20 @@ rownames(sens_table) = c("Total Likelihood",
                          "Length Likelihood",
                          "Recruitment Likelihood",
                          "Parameter Bounds Likelihood",
+                         "N parms",
+                         "AIC",
                          "log(R0)",
                          "SB Virgin",
                          "SB 2020",
                          "Fraction Unfished 2021",
                          "Total Yield at SPR 50",
-                         "Peak recreational selex",
-                         "Peak commercial selex")
+                         "Peak commercial selex",
+                         "Peak recreational selex")
 
-write.csv(sens_table, file = file.path(wd, "sensitivities", 'postSSC_plots', "ForReport", paste0("base.800_sensitivities.csv")))
+write.csv(sens_table, file = file.path(wd, 'postSSC_plots', "ForReport", paste0("base.800_sensitivities.csv")))
 
 t = table_format(x = sens_table,
-                 caption = 'Requested explorations with additioanl data and additional model runs, alongside the adopted base model.',
+                 caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational selectivity, and the adopted base model.',
                  label = 'sens-table',
                  longtable = TRUE,
                  font_size = 9,
@@ -615,7 +627,7 @@ t = table_format(x = sens_table,
                  landscape = TRUE,
                  col_names = sens_names)
 
-kableExtra::save_kable(t, file = file.path(wd, "sensitivities", "postSSC_plots", "ForReport", "sensitivities.tex"))
+kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "sensitivities.tex"))
 
 
 
