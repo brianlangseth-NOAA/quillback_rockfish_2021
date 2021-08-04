@@ -53,7 +53,7 @@ ca_mrfss_data = rename_mrfss(data = ca_mrfss,
                              mode_column_name = "MODE_FX" )
 
 #Add historical debWV data (onboard party boat) provided by John Budrick July 12, 2021
-deb.data = readxl::read_excel("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/Quillback Rockfish Length Data from Central California Onboard Sampling_Jul12_2021.xlsx")
+deb.data = readxl::read_excel("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/postSSC_request_data/Quillback Rockfish Length Data from Central California Onboard Sampling_Jul12_2021.xlsx")
 deb.data$Data_Type = "RETAINED" #all are "K" which is retained
 deb.data$data = "CPFV-Onboard Data"
 deb.data$Length = deb.data$TL/10 #because in mm
