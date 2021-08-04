@@ -3,6 +3,7 @@
 
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
+library(ggplot2)
 
 wd = "C:/Users/Brian.Langseth/Desktop/ca"
 
@@ -94,6 +95,37 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   uncertainty = c(TRUE,TRUE,TRUE))
 
 
+#Plot comps of old and new data
+newlen <- read.csv(file.path("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish",
+                             "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_debWV.csv"), header = TRUE)
+newlen <- newlen[,-c(2:5)]
+newlen[,-c(1,2)] <- newlen[,-c(1,2)]/rowSums(newlen[,-c(1,2)])
+newlen.long <- gather(newlen, length, proportion, U.10:U.50, factor_key = TRUE)
+newlen.long$lengthbin = as.numeric(substr(newlen.long$length,3,4))
+newlen.long$Source = "new"
+
+oldlen <- read.csv(file.path("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish",
+                             "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_Feb2021.csv"), header = TRUE)
+oldlen <- oldlen[,-c(2:5)]
+oldlen[,-c(1,2)] <- oldlen[,-c(1,2)]/rowSums(oldlen[,-c(1,2)])
+oldlen.long <- gather(oldlen, length, proportion, U.10:U.50, factor_key = TRUE)
+oldlen.long$lengthbin = as.numeric(substr(oldlen.long$length,3,4))
+oldlen.long$Source = "original"
+
+len.long = rbind(newlen.long,oldlen.long)
+
+png(file = file.path(wd, "postSSC_plots", "ForReport",
+                     "Comp_overlap.png"), width = 7, height = 5, units = "in", res = 300)
+ggplot(len.long[len.long$year %in% c(1987:1998), ], aes(lengthbin, proportion, color=Source))+ 
+  geom_line(lwd=1.5)+
+  ylab("Proportion")+
+  xlab("Length (cm)")+
+  facet_wrap(~year)+
+  geom_text(aes(45, 0.7, label = Nsamp), position = position_dodge(width = 15), show.legend = FALSE)
+dev.off()
+
+
+
 ###########
 #Selectivity adjustments
 ###########
@@ -155,6 +187,15 @@ model = "8_0_6d_recBlock2001_2017_lateAsymp"
 base.806d = SS_output(file.path(wd, model), covar=TRUE)
 SS_plots(base.806d)
 SS_tune_comps(dir = file.path(wd, "8_0_6d_recBlock2001_2017_lateAsymp"), write = FALSE)
+
+#Try with extending the bound for parameter 2 to -10
+#Copy model 806
+model = "8_0_6e_recBlock2001_2017_extend"
+base.806e = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.806e)
+SS_tune_comps(dir = file.path(wd, "8_0_6e_recBlock2001_2017_extend"), write = FALSE)
+#Very similar to model 806b, so try again with init value of parameter 2
+#set to -7
 
 #Add block for rec fleets in 2001, 2003, 2008, and 2017
 #These are based on the "requested" 2001 and 2017, but also based 
@@ -568,6 +609,47 @@ grid()
 dev.off()
 
 
+# ###Compare fits to mean length - Used a powerpoint figure and copied and pasted individual runs' plots
+# ###Powerpoint is C:\Users\Brian.Langseth\Desktop\ca\postSSC_plots\Mean_length_Pearson_combination.ppt
+# 
+# library(png)
+# library(grid)
+# library(gridExtra)
+# 
+# plot1 <- readPNG(file.path(wd,"7_1_0_base","plots","comp_lenfit_residsflt2mkt0_page2.png"))
+# plot2 <- readPNG(file.path(wd,"8_0_4_recBlock2001","plots","comp_lenfit_residsflt2mkt0_page2.png"))
+# plot3 <- readPNG(file.path(wd,"8_0_6c_recBlock2001_2017_fix2lo","plots","comp_lenfit_residsflt2mkt0_page2.png"))
+# plot4 <- readPNG(file.path(wd,"8_0_7_recBlock2001_2003_2008_2017","plots","comp_lenfit_residsflt2mkt0_page2.png"))
+# plot5 <- readPNG(file.path(wd,"8_0_8_recBlock2001_2005","plots","comp_lenfit_residsflt2mkt0_page2.png"))
+# plot6 <- readPNG(file.path(wd,"8_0_9_recBlock2001_2005_2017","plots","comp_lenfit_residsflt2mkt0_page2.png"))
+# 
+# png(file = file.path(wd, "postSSC_plots", "ForReport",
+#                      "Block_compareResids.png"), width = 7, height = 5, units = "in", res = 300)
+# grid.arrange(rasterGrob(plot1,width = unit(3,"in"), height=unit(2,"in")),
+#              rasterGrob(plot2,width = unit(3,"in"), height=unit(2,"in")),
+#              rasterGrob(plot3,width = unit(3,"in"), height=unit(2,"in")),
+#              rasterGrob(plot4,width = unit(3,"in"), height=unit(2,"in")),
+#              rasterGrob(plot5,width = unit(3,"in"), height=unit(2,"in")),
+#              rasterGrob(plot6,width = unit(3,"in"), height=unit(2,"in")),
+#              ncol=2,nrow=3, widths = c(3,3), heights = c(2,2,2))
+# dev.off()
+# 
+# par(mfrow = c(3,2), mai = c(0.5,0.5,0.5,0))
+# SSplotComps(base.710,subplots=24,fleets=2)
+# SSplotComps(base.804,subplots=24,fleets=2)
+# SSplotComps(base.806c,subplots=24,fleets=2)
+# SSplotComps(base.807,subplots=24,fleets=2)
+# SSplotComps(base.808,subplots=24,fleets=2)
+# SSplotComps(base.809,subplots=24,fleets=2)
+# 
+# 
+# 
+# SSplotComps(base.710,subplots=8,fleets=2)
+# SSplotComps(base.804,subplots=8,fleets=2)
+# SSplotComps(base.806c,subplots=8,fleets=2)
+# SSplotComps(base.807,subplots=8,fleets=2)
+# SSplotComps(base.808,subplots=8,fleets=2)
+# SSplotComps(base.809,subplots=8,fleets=2)
 
 
 
@@ -585,20 +667,26 @@ sens_models  <- SSsummarize(list(base.710, base.800, base.803, base.810,
 
 n = length(sens_names)
 
+AIC = 2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n])
+
 sens_table = rbind(
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
   as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
   as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]),
-  2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]),
+  AIC,
+  c((AIC-AIC[1])[1],NA,NA,NA,(AIC-AIC[1])[5:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
   as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
   as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
   as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
   as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]) )  
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Recreational(2)", 1:n]))  
+
 
 sens_table = as.data.frame(sens_table)
 colnames(sens_table) = sens_names
@@ -608,13 +696,16 @@ rownames(sens_table) = c("Total Likelihood",
                          "Parameter Bounds Likelihood",
                          "N parms",
                          "AIC",
-                         "log(R0)",
+                         "delta AIC",
+                         "ln(R0)",
                          "SB Virgin",
-                         "SB 2020",
+                         "SB 2021",
                          "Fraction Unfished 2021",
                          "Total Yield at SPR 50",
                          "Peak commercial selex",
-                         "Peak recreational selex")
+                         "Ascend se commercial selex",
+                         "Peak recreational selex 2020",
+                         "Ascend se recreational selex 2020")
 
 write.csv(sens_table, file = file.path(wd, 'postSSC_plots', "ForReport", paste0("base.800_sensitivities.csv")))
 
@@ -628,6 +719,8 @@ t = table_format(x = sens_table,
                  col_names = sens_names)
 
 kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "sensitivities.tex"))
+
+
 
 
 

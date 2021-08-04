@@ -246,6 +246,8 @@ out_unclean = create_data_frame(data_list = input)
 #	Clean biological data
 ############################################################################################
 out = clean_quillback_biodata(dir = file.path(dir,"data","output biology","plots"), data = out_unclean)
+#write.csv(out, file = file.path(dir, "data", "output biology", "all_biological_analysis_for_model_data.csv"), row.names = FALSE)
+
 
 ###############################################################
 # Create length-age sample table
