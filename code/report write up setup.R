@@ -26,7 +26,8 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              edit = FALSE)
 
 #Read in model, assign whether to create plots function. Currently also generates tables
-sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base", 
+sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",         #review base
+                  #mod_loc = "C:/Users/Brian.Langseth/Desktop/or/8_0_0_postSSC_base",  #post review base
                   create_plots = FALSE, 
                   html = FALSE,
                   save_loc = file.path(getwd(), "tex_tables"),

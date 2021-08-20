@@ -1386,3 +1386,125 @@ t = table_format(x = sens_table,
 kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/sensitivities.tex"))
 
 
+###################################################################################
+#Post SSC model runs
+###################################################################################
+
+#Starting from model 10_0_0_base
+
+
+#1. Correct M prior sd to 0.438
+#2. Adjust projection values based on assuming recent catch 
+#(values here: https://docs.google.com/spreadsheets/d/10EMQltWAhxCbdBvnt8Ao5tWJc-e7FmTDH8tcWgJKiXE/edit#gid=208964021)
+#Take the catch in biomass from model 1000 for averaging. 
+catchbio = base.1000$catch[,c("Yr","Fleet","Obs","kill_num","kill_bio")]
+rec_perc = catchbio[catchbio$Yr %in% c(2018:2020) & catchbio$Fleet == 1,"kill_bio"]/aggregate(kill_bio~Yr,catchbio[catchbio$Yr %in% c(2018:2020),],FUN=sum)$kill_bio
+mean(rec_perc) #97.5%
+#To enter the forecast value in numbers, run the model with the above and place in just_model_files/forecasting
+#and then run the following 
+source("https://raw.githubusercontent.com/nwfsc-assess/PEPtools/master/R/solve_numbers.R")
+solve_numbers(mod_dir = file.path(wd, "11_0_0_postSSC_base", "just model files","forecasting"), fore_yrs = 2021:2022, 
+              fleet_abc = c(2.5935, 2.5935), fleet = 1)
+
+model = "11_0_0_postSSC_base"
+base.1100 = SS_output(file.path(wd, model),covar=TRUE)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\11_0_0_postSSC_base", write = FALSE, option = "none")
+SS_plots(base.1100, forecastplot = TRUE)
+
+#The sensitivity tables and model output are the same whether base.1000 or base.1100 is used. 
+#All values are identical, with the exception being the parameter priors likelihood, which 
+#differ at 10^-12 orders of magnitude. Because the tables, when rounded, are identical, I use 
+#the base.1000 model in the sensitivity table. 
+
+#Use base.1000 model results for the write up, but with the projection table from base.1100
+#Use base.1000 model for model files and r4ss plots
+
+
+##
+#Low and high states of nature - starting from model 11_0_0_postSSC_base
+##
+
+#Use states_of_nature.R to identify values for low and high state
+#Low state is M = 0.0982, high is approximately M = 0.028 (because cant find using states_of_nature.R)
+#High state value based on extending M below values in the likelihood profile
+model = "11_0_1_highState"
+base.1101 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1101)
+
+model = "11_0_2_lowState"
+base.1102 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1102)
+
+
+################   WILL NEED TO UPDATE FORECAST IF USE THESE FOR ACTUAL DECISION TABLE ##################
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.1100, base.1101, base.1102))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+#Alternative Low state is R0 = 1.83, high is R0 = 2.3 
+model = "11_0_3_highState_R0"
+base.1103 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1103)
+
+model = "11_0_4_lowState_R0"
+base.1104 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1104)
+
+################   WILL NEED TO UPDATE FORECAST IF USE THESE FOR ACTUAL DECISION TABLE ##################
+
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.1100, base.1103, base.1104))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("R0_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+#Alternative Low state is Lmax = 44.53, high is Lmax = 42.08
+model = "11_0_5_highState_Lmax"
+base.1105 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1105)
+
+model = "11_0_6_lowState_Lmax"
+base.1106 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1106)
+
+################   WILL NEED TO UPDATE FORECAST IF USE THESE FOR ACTUAL DECISION TABLE ##################
+
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.1100, base.1105, base.1106))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("Lmax_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)

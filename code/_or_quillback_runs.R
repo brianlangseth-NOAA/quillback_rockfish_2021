@@ -1045,7 +1045,7 @@ rownames(sens_table) = c("Total Likelihood",
                   "Parameter Bounds Likelihood",
                   "log(R0)",
                   "SB Virgin",
-                  "SB 2020",
+                  "SB 2021",
                   "Fraction Unfished 2021",
                   "Total Yield at SPR 50",
                   "Steepness",
@@ -1055,8 +1055,8 @@ rownames(sens_table) = c("Total Likelihood",
                   "Von Bert. k",
                   "CV young",
                   "CV old",
-                  "Peak recreational selex",
-                  "Peak commercial selex")
+                  "Peak commercial selex",
+                  "Peak recreational selex")
 
 write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_sensitivities.csv")))
 
@@ -1072,6 +1072,119 @@ t = table_format(x = sens_table,
 kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/sensitivities.tex"))
 
 
+
+
+###################################################################################
+#Post SSC model runs
+###################################################################################
+
+#Starting from model 7_1_0_base
+
+#1. Adjust projection values based on assuming recent catch 
+#(values here: https://docs.google.com/spreadsheets/d/10EMQltWAhxCbdBvnt8Ao5tWJc-e7FmTDH8tcWgJKiXE/edit#gid=208964021)
+#2. Correct M prior sd to 0.438
+
+
+model = "8_0_0_postSSC_base"
+base.800 = SS_output(file.path(wd, model),covar=TRUE)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\8_0_0_postSSC_base", write = FALSE, option = "none")
+SS_plots(base.800, forecastplot = TRUE)
+SSunavailableSpawningOutput(base.800, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
+SSplotSPR(base.800,subplots=4,print=TRUE)
+
+# #Copy model 800 but keep old version of M sd prior (0.48)
+# #It is exactly the same (gradients too) as model 710
+# model = "8_0_1_keepMsd"
+# base.801 = SS_output(file.path(wd, model),covar=TRUE)
+# SS_plots(base.801, forecastplot = TRUE)
+
+
+#The sensitivity tables and model output are the same whether base.710 or base.800 is used. 
+#All values are identical, with the exception being the Forecast recruitment likelihood and the 
+#parameter priors likelihood, which differ at 10^-10 and 10^-12 orders of magnitude, respectively. 
+#Because the tables, when rounded, are identical, I use the base.710 model in the sensitivity table. 
+
+#Use base.710 model results for the write up, but with the projection table from base.800
+#Use base.800 model for model files and r4ss plots
+
+
+##
+#Low and high states of nature - starting from model 8_0_0_postSSC_base
+##
+
+#Use states_of_nature.R to identify values for low and high state
+#Low state is M = 0.0444, high is M = 0.0752 
+model = "8_0_2_highState"
+base.802 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.802)
+
+model = "8_0_3_lowState"
+base.803 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.803)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.800, base.802, base.803))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+#Alternative Low state is R0 = 2.01, high is R0 = 2.28 
+model = "8_0_4_highState_R0"
+base.804 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.804)
+
+model = "8_0_5_lowState_R0"
+base.805 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.805)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.800, base.804, base.805))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("R0_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+#Alternative Low state is Lmax = 43.89, high is R0 = 40.51 
+model = "8_0_6_highState_Lmax"
+base.806 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.806)
+
+model = "8_0_7_lowState_Lmax"
+base.807 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.807)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.800, base.806, base.807))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("Lmax_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
 
 
 
