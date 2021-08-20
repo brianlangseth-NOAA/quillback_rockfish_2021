@@ -238,6 +238,7 @@ The two requested runs were completed in the original [California quillback rock
 
 <!-- tab:sensitivities -->
 \input{C:/Users/Brian.Langseth/Desktop/ca/postSSC_plots/ForReport/sensitivities.tex}
+\input{C:/Users/Brian.Langseth/Desktop/ca/postSSC_plots/ForReport/sensitivities_withComBlock.tex}
 
 
 # References

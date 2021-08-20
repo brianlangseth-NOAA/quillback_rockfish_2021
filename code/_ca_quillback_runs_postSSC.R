@@ -320,8 +320,6 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   pdf = FALSE)
 
 
-
-
 ################
 #All comparisons
 ################
@@ -426,9 +424,90 @@ SSplotComparisons(sens_models, endyrvec = 2021,
 
 
 
+
+###############
+#Blocking commercial selectivity as well as rec, both with dome-shaped
+###############
+#Add block for rec and com fleet in 2001 and 2017
+#Copy model 806
+model = "8_0_10_recComBlock2001_2017"
+base.8010 = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.8010)
+SS_tune_comps(dir = file.path(wd, "8_0_10_recComBlock2001_2017"), write = FALSE)
+
+#Commercial mean length seem to increase in 2009. Try blocking 2001 and 2009 for comm
+#Keep rec block at 2001 and 2017
+#Copy model 8010
+model = "8_0_11_ComBlock2001_2009"
+base.8011 = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.8011)
+SS_tune_comps(dir = file.path(wd, "8_0_11_ComBlock2001_2009"), write = FALSE)
+
+
+###########
+#Additional explorations based on mean length of commercial data and copper treatment
+  #Commercial mean length seem to increase in 2018. Try blocking 2001 and 2017 for comm
+  #Copy model 8010
+  model = "8_0_12_recComBlock2001_2017or2018"
+  base.8012 = SS_output(file.path(wd, model), covar=TRUE)
+  SS_plots(base.8012)
+  SS_tune_comps(dir = file.path(wd, "8_0_12_recComBlock2001_2017or2018"), write = FALSE)
+  
+  #Copper blocks at 2003, so try this for comm, without blocking at 2001
+  #Copy model 8012
+  model = "8_0_13_recComBlock2001_2017or2003"
+  base.8013 = SS_output(file.path(wd, model), covar=TRUE)
+  SS_plots(base.8013)
+  SS_tune_comps(dir = file.path(wd, "8_0_13_recComBlock2001_2017or2003"), write = FALSE)
+
+  #2017 dome is shifted far right, and increases Dead_Catch_SPR. What is simply block at 2001
+  #Copy model 8013
+  model = "8_0_14_recComBlock2001_2017orNot"
+  base.8014 = SS_output(file.path(wd, model), covar=TRUE)
+  SS_plots(base.8014)
+  SS_tune_comps(dir = file.path(wd, "8_0_14_recComBlock2001_2017orNot"), write = FALSE)
+###########
+  
+
+#Comparison of model 8010 with "Combine adjustments" Block above
+sens_names <- c("Base model","Block 2001", "Block 2001, 2017",
+                "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17", 
+                "Block 2001 with new data", "RecCom Block 2001, 2017")
+sens_models  <- SSsummarize(list(base.710, base.804, base.806c, 
+                                 base.807, base.808, base.809,
+                                 base.810, base.8010))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'postSSC_plots'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 1,
+                  col = c(rich.colors.short(8)[-1][1:7],"cyan"),
+                  filenameprefix = paste0("All_comBlock_sensitivities_"),
+                  subplot = c(1,2,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'postSSC_plots'), 
+                  legendloc = "topright", 
+                  legendncol = 1,
+                  col = c(rich.colors.short(8)[-1][1:7],"cyan"),
+                  filenameprefix = paste0("All_comBlock_sensitivities_"),
+                  subplot = c(3,4), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
 ##############
 ##Selectivity plots
 ##############
+
+fleets = c("Comm", "Rec")
+
 base_selex <- SSplotSelex(base.710, fleets = 2, fleetnames = fleets, subplot = 1)
 base_selex$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
 
@@ -456,6 +535,9 @@ selex_809 <- SSplotSelex(base.809, fleets = 2, subplot = 1, year = c(2000,2004,2
 selex_809$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[7]
 selex_809$infotable$pch <- 6
 
+selex_8010 <- SSplotSelex(base.8010, fleets = 2, subplot = 1, year = c(2000,2016,2020))
+selex_8010$infotable$col <- "cyan"
+selex_8010$infotable$pch <- 1
 
 
 ##If combining all in one add this and exclude the png and dev.off() below
@@ -554,6 +636,22 @@ grid()
 dev.off()
 
 
+#Compare base and recCom block 2001, 2017
+#Recreational
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.8010, fleets = 2, infotable = selex_8010$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2016, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2016", "2017-2020",
+                 "Base 1916-2020"), lty = c(1,2,3, 1), 
+       col = c(selex_8010$infotable$col, base_selex$infotable$col),
+       pch = c(selex_8010$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("RecCom Block 2001, 2017 - Recreational", side = 3, line = 0.5, font = 2)
+grid()
+
+
+
 
 #Compare Commercial Selectivity
 base_selex <- SSplotSelex(base.710, fleets = 1, subplot = 1)
@@ -583,6 +681,11 @@ selex_809 <- SSplotSelex(base.809, fleets = 1, subplot = 1)
 selex_809$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[7]
 selex_809$infotable$pch <- 6
 
+selex_8010 <- SSplotSelex(base.8010, fleets = 1, subplot = 1, year = c(2000,2016,2020))
+selex_8010$infotable$col <- "cyan"
+selex_8010$infotable$pch <- 1
+
+
 png(file = file.path(wd, "sensitivities", "postSSC_plots", 
                      "Selex_Commercial.png"), width = 7, height = 5, units = "in", res = 300)
 SSplotSelex(base.710, fleets = 1, infotable = base_selex$infotable,
@@ -607,6 +710,23 @@ legend("left", c("Base", "Block 2001", "Block 2001, 2017",
 mtext("Commercial Selectivity", side = 3, line = 0.5, font = 2)
 grid()
 dev.off()
+
+
+
+
+#Compare base and recCom block 2001, 2017
+#Commercial
+SSplotSelex(base.710, fleets = 1, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.8010, fleets = 1, infotable = selex_8010$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2016, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2016", "2017-2020",
+                 "Base 1916-2020"), lty = c(1,2,3, 1), 
+       col = c(selex_8010$infotable$col, base_selex$infotable$col),
+       pch = c(selex_8010$infotable$pch, base_selex$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("RecCom Block 2001, 2017 - Commercial", side = 3, line = 0.5, font = 2)
+grid()
 
 
 # ###Compare fits to mean length - Used a powerpoint figure and copied and pasted individual runs' plots
@@ -720,6 +840,73 @@ t = table_format(x = sens_table,
 
 kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "sensitivities.tex"))
 
+
+
+
+####Now with including last second request for comm dome-shaped blocking
+sens_names <- c("Base model", "DebWV", "DebWV reweight","DebWV, Block 2001",
+                "Block 2001", "Block 2001, 2017",
+                "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17",
+                "RecCom Block 2001, 2017")
+sens_models  <- SSsummarize(list(base.710, base.800, base.803, base.810,
+                                 base.804, base.806c,  
+                                 base.807, base.808, base.809,
+                                 base.8010))
+
+n = length(sens_names)
+
+AIC = 2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n])
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]),
+  AIC,
+  c((AIC-AIC[1])[1],NA,NA,NA,(AIC-AIC[1])[5:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Recreational(2)", 1:n]))  
+
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                         "Length Likelihood",
+                         "Recruitment Likelihood",
+                         "Parameter Bounds Likelihood",
+                         "N parms",
+                         "AIC",
+                         "delta AIC",
+                         "ln(R0)",
+                         "SB Virgin",
+                         "SB 2021",
+                         "Fraction Unfished 2021",
+                         "Total Yield at SPR 50",
+                         "Peak commercial selex",
+                         "Ascend se commercial selex",
+                         "Peak recreational selex 2020",
+                         "Ascend se recreational selex 2020")
+
+write.csv(sens_table, file = file.path(wd, 'postSSC_plots', 'ForReport', paste0("base.800_withComBlock_sensitivities.csv")))
+
+t = table_format(x = sens_table,
+                 caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational selectivity, and the adopted base model.',
+                 label = 'sens-table_withComBlock',
+                 longtable = TRUE,
+                 font_size = 9,
+                 digits = 2,
+                 landscape = TRUE,
+                 col_names = sens_names)
+
+kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "sensitivities_withComBlock.tex"))
 
 
 
