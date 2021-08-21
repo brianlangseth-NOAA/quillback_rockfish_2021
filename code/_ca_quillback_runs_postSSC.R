@@ -4,6 +4,7 @@
 #devtools::install_github("r4ss/r4ss")
 library(r4ss)
 library(ggplot2)
+library(tidyr)
 
 wd = "C:/Users/Brian.Langseth/Desktop/ca"
 
@@ -95,7 +96,7 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   uncertainty = c(TRUE,TRUE,TRUE))
 
 
-#Plot comps of old and new data
+#Plot comps of old and new data - Used in report
 newlen <- read.csv(file.path("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish",
                              "data", "forSS", "ca_rec_notExpanded_Length_comp_Sex_0_bin=10-50_debWV.csv"), header = TRUE)
 newlen <- newlen[,-c(2:5)]
@@ -257,7 +258,6 @@ sens_models  <- SSsummarize(list(base.710, base.804, base.805, base.7110,
                                  base.806b, base.806c, base.806d, 
                                  base.807, base.808, base.809))
 
-#Plot each individually for control over legend location
 SSplotComparisons(sens_models, endyrvec = 2021, 
                   legendlabels = sens_names, 
                   ylimAdj = 1.10,
@@ -468,8 +468,26 @@ SS_tune_comps(dir = file.path(wd, "8_0_11_ComBlock2001_2009"), write = FALSE)
   SS_tune_comps(dir = file.path(wd, "8_0_14_recComBlock2001_2017orNot"), write = FALSE)
 ###########
   
+##For Report
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
 
-#Comparison of model 8010 with "Combine adjustments" Block above
+model = "8_0_4_recBlock2001"
+base.804 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_6c_recBlock2001_2017_fix2lo"
+base.806c = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_7_recBlock2001_2003_2008_2017"
+base.807 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_8_recBlock2001_2005"
+base.808 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_9_recBlock2001_2005_2017"
+base.809 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_1_0_debWV_block"
+base.810 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_10_recComBlock2001_2017"
+base.8010 = SS_output(file.path(wd, model), covar=TRUE)
+
+
 sens_names <- c("Base model","Block 2001", "Block 2001, 2017",
                 "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17", 
                 "Block 2001 with new data", "RecCom Block 2001, 2017")
@@ -481,7 +499,7 @@ sens_models  <- SSsummarize(list(base.710, base.804, base.806c,
 SSplotComparisons(sens_models, endyrvec = 2021, 
                   legendlabels = sens_names, 
                   ylimAdj = 1.10,
-                  plotdir = file.path(wd, 'postSSC_plots'), 
+                  plotdir = file.path(wd, 'postSSC_plots', "ForReport"), 
                   legendloc = "bottomleft", 
                   legendncol = 1,
                   col = c(rich.colors.short(8)[-1][1:7],"cyan"),
@@ -492,7 +510,7 @@ SSplotComparisons(sens_models, endyrvec = 2021,
 SSplotComparisons(sens_models, endyrvec = 2021, 
                   legendlabels = sens_names, 
                   ylimAdj = 1.10,
-                  plotdir = file.path(wd, 'postSSC_plots'), 
+                  plotdir = file.path(wd, 'postSSC_plots', "ForReport"), 
                   legendloc = "topright", 
                   legendncol = 1,
                   col = c(rich.colors.short(8)[-1][1:7],"cyan"),
@@ -534,10 +552,6 @@ selex_808$infotable$pch <- 5
 selex_809 <- SSplotSelex(base.809, fleets = 2, subplot = 1, year = c(2000,2004,2016,2020))
 selex_809$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[7]
 selex_809$infotable$pch <- 6
-
-selex_8010 <- SSplotSelex(base.8010, fleets = 2, subplot = 1, year = c(2000,2016,2020))
-selex_8010$infotable$col <- "cyan"
-selex_8010$infotable$pch <- 1
 
 
 ##If combining all in one add this and exclude the png and dev.off() below
@@ -636,22 +650,6 @@ grid()
 dev.off()
 
 
-#Compare base and recCom block 2001, 2017
-#Recreational
-SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
-            subplot = 1, legendloc = NA, showmain=FALSE)
-SSplotSelex(base.8010, fleets = 2, infotable = selex_8010$infotable,
-            subplot = 1, legendloc = NA, year = c(2000, 2016, 2020), add = TRUE)
-legend("left", c("1916-2000", "2001-2016", "2017-2020",
-                 "Base 1916-2020"), lty = c(1,2,3, 1), 
-       col = c(selex_8010$infotable$col, base_selex$infotable$col),
-       pch = c(selex_8010$infotable$pch, base_selex$infotable$pch), 
-       bty = "n", lwd = 2, seg.len = 5)
-mtext("RecCom Block 2001, 2017 - Recreational", side = 3, line = 0.5, font = 2)
-grid()
-
-
-
 
 #Compare Commercial Selectivity
 base_selex <- SSplotSelex(base.710, fleets = 1, subplot = 1)
@@ -681,10 +679,6 @@ selex_809 <- SSplotSelex(base.809, fleets = 1, subplot = 1)
 selex_809$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[7]
 selex_809$infotable$pch <- 6
 
-selex_8010 <- SSplotSelex(base.8010, fleets = 1, subplot = 1, year = c(2000,2016,2020))
-selex_8010$infotable$col <- "cyan"
-selex_8010$infotable$pch <- 1
-
 
 png(file = file.path(wd, "sensitivities", "postSSC_plots", 
                      "Selex_Commercial.png"), width = 7, height = 5, units = "in", res = 300)
@@ -713,20 +707,54 @@ dev.off()
 
 
 
+##############
+##Selectivity plots for recCom block 2001, 2017
+##############
+#Recreational
+base_selex_rec <- SSplotSelex(base.710, fleets = 2, fleetnames = fleets, subplot = 1)
+base_selex_rec$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
 
-#Compare base and recCom block 2001, 2017
+selex_8010_rec <- SSplotSelex(base.8010, fleets = 2, subplot = 1, year = c(2000,2016,2020))
+selex_8010_rec$infotable$col <- "cyan"
+selex_8010_rec$infotable$pch <- 1
+
 #Commercial
-SSplotSelex(base.710, fleets = 1, infotable = base_selex$infotable,
+base_selex_com <- SSplotSelex(base.710, fleets = 1, subplot = 1)
+base_selex_com$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
+
+selex_8010_com <- SSplotSelex(base.8010, fleets = 1, subplot = 1, year = c(2000,2016,2020))
+selex_8010_com$infotable$col <- "cyan"
+selex_8010_com$infotable$pch <- 1
+
+
+png(file = file.path(wd, "postSSC_plots", "ForReport",
+                     "comBlock_Selex.png"), width = 8, height = 10, units = "in", res = 300)
+par(mfrow = c(2,1), mai = c(0.5,0.5,0.5,0))
+
+SSplotSelex(base.710, fleets = 2, infotable = base_selex$infotable,
             subplot = 1, legendloc = NA, showmain=FALSE)
-SSplotSelex(base.8010, fleets = 1, infotable = selex_8010$infotable,
+SSplotSelex(base.8010, fleets = 2, infotable = selex_8010_rec$infotable,
             subplot = 1, legendloc = NA, year = c(2000, 2016, 2020), add = TRUE)
 legend("left", c("1916-2000", "2001-2016", "2017-2020",
                  "Base 1916-2020"), lty = c(1,2,3, 1), 
-       col = c(selex_8010$infotable$col, base_selex$infotable$col),
-       pch = c(selex_8010$infotable$pch, base_selex$infotable$pch), 
+       col = c(selex_8010_rec$infotable$col, base_selex_rec$infotable$col),
+       pch = c(selex_8010_rec$infotable$pch, base_selex_rec$infotable$pch), 
+       bty = "n", lwd = 2, seg.len = 5)
+mtext("RecCom Block 2001, 2017 - Recreational", side = 3, line = 0.5, font = 2)
+grid()
+
+SSplotSelex(base.710, fleets = 1, infotable = base_selex$infotable,
+            subplot = 1, legendloc = NA, showmain=FALSE)
+SSplotSelex(base.8010, fleets = 1, infotable = selex_8010_com$infotable,
+            subplot = 1, legendloc = NA, year = c(2000, 2016, 2020), add = TRUE)
+legend("left", c("1916-2000", "2001-2016", "2017-2020",
+                 "Base 1916-2020"), lty = c(1,2,3, 1), 
+       col = c(selex_8010_com$infotable$col, base_selex_com$infotable$col),
+       pch = c(selex_8010_com$infotable$pch, base_selex_com$infotable$pch), 
        bty = "n", lwd = 2, seg.len = 5)
 mtext("RecCom Block 2001, 2017 - Commercial", side = 3, line = 0.5, font = 2)
 grid()
+dev.off()
 
 
 # ###Compare fits to mean length - Used a powerpoint figure and copied and pasted individual runs' plots
@@ -778,72 +806,6 @@ grid()
 library(sa4ss)
 
 #Switch up order to put debWV models together
-sens_names <- c("Base model", "DebWV", "DebWV reweight","DebWV, Block 2001",
-                "Block 2001", "Block 2001, 2017",
-                "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17")
-sens_models  <- SSsummarize(list(base.710, base.800, base.803, base.810,
-                                 base.804, base.806c,  
-                                 base.807, base.808, base.809))
-
-n = length(sens_names)
-
-AIC = 2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n])
-
-sens_table = rbind(
-  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
-  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
-  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
-  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
-  as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]),
-  AIC,
-  c((AIC-AIC[1])[1],NA,NA,NA,(AIC-AIC[1])[5:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
-  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
-  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
-  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
-  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Commercial(1)", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]),
-  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Recreational(2)", 1:n]))  
-
-
-sens_table = as.data.frame(sens_table)
-colnames(sens_table) = sens_names
-rownames(sens_table) = c("Total Likelihood",
-                         "Length Likelihood",
-                         "Recruitment Likelihood",
-                         "Parameter Bounds Likelihood",
-                         "N parms",
-                         "AIC",
-                         "delta AIC",
-                         "ln(R0)",
-                         "SB Virgin",
-                         "SB 2021",
-                         "Fraction Unfished 2021",
-                         "Total Yield at SPR 50",
-                         "Peak commercial selex",
-                         "Ascend se commercial selex",
-                         "Peak recreational selex 2020",
-                         "Ascend se recreational selex 2020")
-
-write.csv(sens_table, file = file.path(wd, 'postSSC_plots', "ForReport", paste0("base.800_sensitivities.csv")))
-
-t = table_format(x = sens_table,
-                 caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational selectivity, and the adopted base model.',
-                 label = 'sens-table',
-                 longtable = TRUE,
-                 font_size = 9,
-                 digits = 2,
-                 landscape = TRUE,
-                 col_names = sens_names)
-
-kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "sensitivities.tex"))
-
-
-
-
-####Now with including last second request for comm dome-shaped blocking
 sens_names <- c("Base model", "DebWV", "DebWV reweight","DebWV, Block 2001",
                 "Block 2001", "Block 2001, 2017",
                 "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17",
@@ -899,7 +861,7 @@ write.csv(sens_table, file = file.path(wd, 'postSSC_plots', 'ForReport', paste0(
 
 t = table_format(x = sens_table,
                  caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational selectivity, and the adopted base model.',
-                 label = 'sens-table_withComBlock',
+                 label = 'sens-table-withComBlock',
                  longtable = TRUE,
                  font_size = 9,
                  digits = 2,

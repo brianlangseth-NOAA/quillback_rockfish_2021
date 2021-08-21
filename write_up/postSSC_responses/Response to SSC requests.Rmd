@@ -29,7 +29,7 @@ Rationale: While the CRFS and MRFSS data may provide consistent sampling over ti
 Additional length data for quillback rockfish were provided by California Department of Fish and Wildlife (CDFW) on July 12, 2021. These data were collected by observers onboard commercial passenger fishing vessels (CPFV) fishing in central California (@Reilly1998) from 1987-1998, and were not available for use in the base model that was reviewed and adopted in the June Groundfish Subcommittee meeting of the Scientific
 and Statistical Committee (GFS-SSC). A total of 753 additional length observations for the recreational fleet from 1987-1998 (Table \ref{tab:len_data}) were added to the California quillback rockfish base model.
 
-Length distributions from the new data were generally similar to existing length distributions within the adopted base model (Figure \ref{fig:sens-debWV-comp}). Given the use of new data, scenarios with and without data weighting were run. Changes to data weights were minimal and resulted in little change in model trajectories. Spawning output (Figure \ref{fig:sens-debWV-ssb}), depletion (Figure \ref{fig:sens-debWV-depl}), and recruitment deviations (Figure \ref{fig:sens-debWV-rdevs}) from models with the new data were similar to those from the adopted base model. Adding the new length data resulted in lower estimates of initial spawning output (SB virgin) and recent spawning output (SB2021) compared to the adopted base model, and resulted in a slightly more depleted stock. Parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table}. Given that different datasets were used for the scenarios, likelihood and AIC values cannot be compared to the adopted base model. 
+Length distributions from the new data were generally similar to existing length distributions within the adopted base model (Figure \ref{fig:sens-debWV-comp}). Given the use of new data, scenarios with and without data weighting were run. Changes to data weights were minimal and resulted in little change in model trajectories. Spawning output (Figure \ref{fig:sens-debWV-ssb}), depletion (Figure \ref{fig:sens-debWV-depl}), and recruitment deviations (Figure \ref{fig:sens-debWV-rdevs}) from models with the new data were similar to those from the adopted base model. Adding the new length data resulted in lower estimates of initial spawning output (SB virgin) and recent spawning output (SB2021) compared to the adopted base model, and resulted in a slightly more depleted stock. Parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table-withComBlock}. Given that different datasets were used for the scenarios, likelihood and AIC values cannot be compared to the adopted base model. 
 
 ```{r data_table, results = 'asis', echo = FALSE} 
 
@@ -162,11 +162,16 @@ Evaluate alternative selectivity time blocking based on the timing of depth rest
 
 Rationale:  Input from the GAP and GMT indicate that asymptotic selectivity for the recreational fishery is not a realistic assumption and was made to fit the need for the model to have at least one sector be asymptotic as required by the TOR (pg 36) . It seems more realistic to consider the period before severe regulations in the early 2000s as asymptotic (or domed) and then consider domed shape assumptions thereafter, perhaps with a separate dome shape after 2016 when regulations were slightly relaxed. 
 
+The rationale for this request was updated by the groundfish subcommittee on August 13, 2021 to include the commercial fishery. The updated rationale was as follows:
+
+Rationale:  Input from the GAP and GMT indicate that asymptotic selectivity for the recreational and commercial fishery is not a realistic assumption and was made to fit the need for the model to have at least one sector be asymptotic as required by the TOR (pg 36) . It seems more realistic to consider the period before severe regulations in the early 2000s as asymptotic (or domed) and then consider domed shape assumptions thereafter, perhaps with a separate dome shape after 2016 when regulations were slightly relaxed. 
+
+
 ## Response 1:
 
 Alternative selectivity forms and blocks were explored during original model explorations. The choice of using asymptotic selectivity for the recreational fleet was based on findings from ROV surveys conducted by CDFW that did not show clear signs of increasing size with depth at depths greater than 10 fm. Assuming dome-shaped selectivity also resulted in a similar trajectory as when assuming asymptotic selectivity. Consequently, there was limited support for the additional complexity when adding parameters due to blocking of selectivity. Additional runs here also show limited support for the additional complexity in blocking selectivity. 
 
-We explored numerous options for blocking selectivity based on changes in the estimated percent of area open to fishing (Table A-1 from [CDFW Report 1](https://www.pcouncil.org/documents/2021/06/g-5-a-supplemental-cdfw-report-1.pdf/)), as well as changes in mean length from the length data in the adopted base model (Figure 20 from the California quillback rockfish report). Specific blocking along with the reasons for blocking (in parenthesis) are described below. In all instances, the model was allowed to estimate dome-shaped selectivity by estimating selectivity parameters controlling the peak size of selectivity (parameter 1), the width of the peak (parameters 2), the width of the ascending and descending limbs of selectivity (parameters 3 and 4), and the selectivity for large individuals (parameter 6). 
+We explored numerous options for blocking selectivity based on changes in the estimated percent of area open to fishing (Table A-1 from [CDFW Report 1](https://www.pcouncil.org/documents/2021/06/g-5-a-supplemental-cdfw-report-1.pdf/)), as well as changes in mean length from the length data in the adopted base model (Figure 20 from the California quillback rockfish report). Specific blocking along with the reasons for blocking (in parenthesis) are described below. In all instances, the model was allowed to estimate dome-shaped selectivity by estimating selectivity parameters controlling the peak size of selectivity (parameter 1), the width of the peak (parameters 2), the width of the ascending and descending limbs of selectivity (parameters 3 and 4), and the selectivity for large individuals (parameter 6). Given the initial interpretation of the request as based on the original rationale, all but the final option applied blocking only for the recreational fishery. The final option was added after being provided with the updated rationale. 
 
 \begin{enumerate}
    
@@ -181,14 +186,18 @@ We explored numerous options for blocking selectivity based on changes in the es
   \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2004 allowing for dome-shaped selectivity, 2005-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, a noticeable change in mean length in 2005, and a relaxation of depth restrictions starting in 2017).
   
   \item Blocking selectivity as in option 1 above, but with the new length data from request 3 in the model.
+  
+  \item Blocking selectivity as in option 2 above, and also applying the same blocks to the commercial fleet. 
          
 \end{enumerate}
 
-Data weights were not reweighted for any of the selectivities from this request, in keeping with typical practices when running sensitivities. Suggested reweighting values were within 5% of the original weights from the adopted base model. Under option 2, the selectivity parameter (parameter 2) controlling the width of the peak hit its lower bound, which was resolved by fixing this parameter at its lower bound.  
+Data weights were not reweighted for any of the selectivities from this request, in keeping with typical practices when running sensitivities. Suggested reweighting values were within 5% of the original weights from the adopted base model when changing recreational selectivities, and within 7% when changing both recreational and commercial selectivities. Under option 2, the selectivity parameter (parameter 2) controlling the width of the peak hit its lower bound, which was resolved by fixing this parameter at its lower bound.  
 
-The additional options explored here show limited support for the additional complexity in blocking selectivity. Spawning output (Figure \ref{fig:sens-block-ssb}) and depletion (Figure \ref{fig:sens-block-depl}) from models with alternative blocking for the recreational fleet were similar to those from the adopted base model. Adding selectivity blocks with the flexibility for dome-shaped selectivity resulted in slightly larger estimates of initial spawning output (SB virgin) and recent spawning output (SB2021) compared to the adopted base model, and resulted in a slightly less depleted stock. 
+The additional options explored here show limited support for the additional complexity in blocking selectivity. Spawning output (Figure \ref{fig:sens-block-ssb}) and depletion (Figure \ref{fig:sens-block-depl}) from models with alternative blocking for the recreational fleet were similar to those from the adopted base model, though  the option with adjusting both recreational and commercial selectivites were more different than when adjusting just recreational selectivity. Adding selectivity blocks with the flexibility for dome-shaped selectivity generally resulted in slightly larger estimates of initial spawning output (SB virgin) and recent spawning output (SB2021) compared to the adopted base model, and resulted in a slightly less depleted stock. Exceptions were the option blocking the recreational fleet at 2001, 2005, and 2017, and the option blocking both recreational and commercial selectivity at 2001 and 2017, which estimated lower recent spawning output and therefore a more depleted stock. 
 
-Selectivity of the recreational fleet for each scenario is shown in Figure \ref{fig:sens-block-selex}. Other parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table}. The added parameter flexibility resulted in improved fits to length compositions, but AIC was improved by more than 2 units for only one option (option 2). Pearson residuals (Figure \ref{fig:Pearson-block}) were visually similar among scenarios as were fits to mean lengths (Figure \ref{fig:MeanLengthFit-block}) with only slight changes occurring in the year between blocks. The scenario with both blocking and new data added is not shown in Figures \ref{fig:Pearson-block} and \ref{fig:MeanLengthFit-block} for ease of comparisons.
+Selectivity of the recreational fleet for each option blocking only the recreational fleet is shown in Figure \ref{fig:sens-block-selex}. Selectivity when blocking both the recreational and commercial fleet is shown in Figure \ref{fig:sens-block-recCom-selex}. A reduction in selectivity (i.e. dome-shapes) was estimated for all explorations, however peak selectivity in recent years for options 5 and 7 was shifted to larger sizes, near 45 cm, which seems unreasonably high. Other parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table-withComBlock}. 
+
+The added parameter flexibility resulted in improved fits to length compositions, but AIC was improved by more than 2 units for only two options (option 2 and 7). Pearson residuals (Figures \ref{fig:Pearson-block} and \ref{fig:Pearson-block-recCom}) were visually similar among scenarios as were fits to mean lengths (Figures \ref{fig:MeanLengthFit-block} and \ref{fig:MeanLengthFit-block-recCom}) with only slight changes occurring in the years between blocks. When blocking the commercial fleet, changes in mean length when blocks were applied were more noticeable than for the recreational fleet, but increases due to the blocks did not align very well with changes in the mean length data (Figure \ref{fig:MeanLengthFit-block-recCom}). The scenario with both blocking and new data added (option 6) is not shown in Figures \ref{fig:Pearson-block} and \ref{fig:MeanLengthFit-block} for ease of comparisons.
 
 ```{r, results = 'asis', echo = FALSE}
 add_figure(
@@ -207,6 +216,11 @@ add_figure(
 filein = file.path(mod_dir, "postSSC_plots", "ForReport", "Selex_together.png"), 
 caption = "Recreational selectivity across scenarios for blocking the recreational fleet",
 label = 'sens-block-selex')
+
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "comBlock_Selex.png"), 
+caption = "Recreational and commercial selectivity for the scenario blocking both at 2001 and 2017",
+label = 'sens-block-recCom-selex')
 ```
 
 ```{r, results = 'asis', echo = FALSE}
@@ -217,9 +231,21 @@ label = 'Pearson-block',
 width = 90, height = 90)
 
 add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "Pearson_block_baseRecCom.png"), 
+caption = "Pearson residuals for the recreational and commercial fleets when blocking selectivity for both fleets at 2001 and 2017, compared to the base. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
+label = 'Pearson-block-recCom',
+width = 90, height = 90)
+
+add_figure(
 filein = file.path(mod_dir, "postSSC_plots", "ForReport", "MeanLengthFit_block.png"), 
 caption = "Mean length and fit (green line) for the recreational length data with 95% confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-block',
+width = 90, height = 90)
+
+add_figure(
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "MeanLengthFit_block_baseRecCom.png"), 
+caption = "Mean length and fit (green line) for the recreational and commercial length data when blocking selectivity for both fleets at 2001 and 2017 compared to the base, with 95% confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
+label = 'MeanLengthFit-block-recCom',
 width = 90, height = 90)
 ```
 
@@ -237,7 +263,6 @@ The two requested runs were completed in the original [California quillback rock
 
 
 <!-- tab:sensitivities -->
-\input{C:/Users/Brian.Langseth/Desktop/ca/postSSC_plots/ForReport/sensitivities.tex}
 \input{C:/Users/Brian.Langseth/Desktop/ca/postSSC_plots/ForReport/sensitivities_withComBlock.tex}
 
 
