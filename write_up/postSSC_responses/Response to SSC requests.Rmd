@@ -12,9 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readxl)
 library(sa4ss)
 library(tidyr)
-data_dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data\\forSS"
+data_dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data"
 mod_dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca"
 ```
+
+This report is an update of the original report, and includes material that was presented at the Groundfish Subcommittee's (GFSC) August 17, 2021 meeting but was not available for inclusion in the original report. New material includes age data that were provided between the original report's deadline and the meeting, and an additional selectivity blocking run based on an updated interpretation for request 1 that was clarified between the original report's deadline and the meeting.     
 
 # Requests Based on Additional or Adjusted Data
 
@@ -33,8 +35,8 @@ Length distributions from the new data were generally similar to existing length
 
 ```{r data_table, results = 'asis', echo = FALSE} 
 
-deb  <- read.csv(file.path(data_dir,"ca_rec_samples_debWV.csv"), header = TRUE)
-orig  <- read.csv(file.path(data_dir,"ca_rec_samples.csv"), header = TRUE)
+deb  <- read.csv(file.path(data_dir, "forSS", "ca_rec_samples_debWV.csv"), header = TRUE)
+orig  <- read.csv(file.path(data_dir, "forSS", "ca_rec_samples.csv"), header = TRUE)
 ldat <- merge(deb[,1:2], orig[,1:2], by = "Year", all = TRUE)
 
 ldat[is.na(ldat)] <- "-"
@@ -96,7 +98,7 @@ Rationale:  Comparison of ages and lengths of fish sampled in California to the 
 
 ## Response 5:
 
-CDFW provided otoliths from 35 quillback rockfish collected from the commercial (N = 6) and recreational (N = 29) fisheries, sampled nearly exclusively from Crescent City, California. In addition, 44 otoliths from CCFRP sampling were provided. An additional 39 otoliths from port sampling efforts were provided by Southwest Fisheries Science Center staff, as were 123 otoliths from the Abrams collection housed at the Southwest Fisheries Science Center. Tables for the number of new otoliths by year (Table \ref{tab:age-year}) and by length bins (Table \ref{tab:age-bins}) are provided.
+CDFW provided otoliths from 35 quillback rockfish collected from the commercial (N = 6) and recreational (N = 29) fisheries, sampled nearly exclusively from Crescent City, California. In addition, 48 otoliths from CCFRP sampling were provided. An additional 39 otoliths from port sampling efforts were provided by Southwest Fisheries Science Center (SWFSC) staff, as were 123 otoliths from the Abrams collection housed at the SWFSC. Tables for the number of new otoliths by year (Table \ref{tab:age-year}) and by length bins (Table \ref{tab:age-bins}) are provided. Lengths for CCFRP samples were not yet available.
 
 ```{r, echo = FALSE}
 agelen <- read.csv("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data\\postSSC_request_data\\combined_age_metadata.csv", header = TRUE)
@@ -145,12 +147,27 @@ kableExtra::save_kable(tbin, file = file.path("U:\\Stock assessments\\quillback_
 
 <!-- New samples were used to compare a California growth curve from new data only with the growth curve used in the quillback rockfish assessments, which included 21 ages from the WCGBTS collected in California waters. Given the use of some California data from the WCGBTS in the assessments, we also compared a growth curve with the 21 ages from the WCGBTS in California combined with thew new california data to that of only Oregon/Washington data.  -->
 
-Otoliths were sent to the Northwest Fisheries Science Center's ageing lab in Newport, Oregon. Complete results were not available at the time of submitting this report.   
+Otoliths were sent to the Northwest Fisheries Science Center's ageing lab in Newport, Oregon. The 35 otoliths from CDFW and the 39 otoliths from the SWFSC (for a total of 74) were aged in time for presenting results at the GFSC meeting, but not in time for including in the first version of this report.
 
+New length-age samples were overlaid onto samples used in the quillback rockfish stock assessment and do not clearly indicate separate growth (Figure \ref{fig:length-age}). A separate California-specific length-age relationship could not be robustly estimated given the limited sample size of young quillback rockfish from California. Twenty-one samples from California were already available from the West Coast Groundfish Bottom Trawl Survey and included within the growth curves estimated for the stock assessment (red circles in Figure \ref{fig:length-age}). Of these samples, only 2 were less than 5 years old. On their own, these 21 samples are too sparse to estimate a reliable growth curve (red line Figure \ref{fig:growth-curve}). Similarly, the new 74 samples lack young fish to estimate a reasonable growth curve on their own (blue line in Figure \ref{fig:growth-curve}). Even in combination, the 95 total samples for California are highly reliant on the two youngest age samples and have insufficient numbers of young fish to reliably estimate a separate growth curve (purple line in Figure \ref{fig:growth-curve}). When adding the new samples to all existing length and age samples, the growth curve is very similar to the estimated curve from the stock assessment report (yellow line in Figure \ref{fig:growth-curve}; $L_{\infty}$ = 43.00 cm and $K$ = 0.194 when combined, compared to $L_{\infty}$ = 43.04 cm and $K$ = 0.199 from the stock assessment). 
+
+Otoliths from the 123 Abrams samples and 48 CCFRP samples have not yet been aged. Lengths for the Abrams samples are similar to those already aged (Table \ref{tab:age-bins}), and it was stated during the GFSC meeting that CCFRP lengths were also similar to those in Table \ref{tab:age-bins}. As such, it is unlikely that the currently unaged samples will provide an adequate number of young fish to robustly estimate a separate California growth curve. 
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(data_dir, "postSSC_request_data", "comb_LA_data.png"), 
+caption = "Length-age data for quillback rockfish. Black and red circles indicate samples used in the stock assessment report that are from Oregon and Washington (black) and California (red). Blue circles indicate new California samples",
+label = 'length-age')
+```
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(data_dir, "postSSC_request_data", "comb_LA_data_All.png"), 
+caption = "Length-age data (circles) for quillback rockfish alongwith estimated growth curves (lines). Black and red circles indicate samples used in the stock assessment report that are from Oregon and Washington (black) and California (red). Blue circles indicate new California samples. The black line (plotted under the yellow line) is the growth curve from data (red and black) used in the stock assessment. The purple line is the growth curve from California data (red and blue), while the yellow line is the growth curve from all data. Blue and red lines are based on the similarly colored data points",
+label = 'growth-curve')
+```
 
 \newpage
-
-
 
 
 # Requests Based on Additional Model Runs
@@ -193,7 +210,7 @@ We explored numerous options for blocking selectivity based on changes in the es
 
 Data weights were not reweighted for any of the selectivities from this request, in keeping with typical practices when running sensitivities. Suggested reweighting values were within 5% of the original weights from the adopted base model when changing recreational selectivities, and within 7% when changing both recreational and commercial selectivities. Under option 2, the selectivity parameter (parameter 2) controlling the width of the peak hit its lower bound, which was resolved by fixing this parameter at its lower bound.  
 
-The additional options explored here show limited support for the additional complexity in blocking selectivity. Spawning output (Figure \ref{fig:sens-block-ssb}) and depletion (Figure \ref{fig:sens-block-depl}) from models with alternative blocking for the recreational fleet were similar to those from the adopted base model, though  the option with adjusting both recreational and commercial selectivites were more different than when adjusting just recreational selectivity. Adding selectivity blocks with the flexibility for dome-shaped selectivity generally resulted in slightly larger estimates of initial spawning output (SB virgin) and recent spawning output (SB2021) compared to the adopted base model, and resulted in a slightly less depleted stock. Exceptions were the option blocking the recreational fleet at 2001, 2005, and 2017, and the option blocking both recreational and commercial selectivity at 2001 and 2017, which estimated lower recent spawning output and therefore a more depleted stock. 
+The additional options explored here show limited support for the additional complexity in blocking selectivity. Spawning output (Figure \ref{fig:sens-block-ssb}) and depletion (Figure \ref{fig:sens-block-depl}) from models with alternative blocking for the recreational fleet were similar to those from the adopted base model, though  the option with adjusting both recreational and commercial selectivities were more different than when adjusting just recreational selectivity. Adding selectivity blocks with the flexibility for dome-shaped selectivity generally resulted in slightly larger estimates of initial spawning output (SB virgin) and recent spawning output (SB2021) compared to the adopted base model, and resulted in a slightly less depleted stock. Exceptions were the option blocking the recreational fleet at 2001, 2005, and 2017, and the option blocking both recreational and commercial selectivity at 2001 and 2017, which estimated lower recent spawning output and therefore a more depleted stock. 
 
 Selectivity of the recreational fleet for each option blocking only the recreational fleet is shown in Figure \ref{fig:sens-block-selex}. Selectivity when blocking both the recreational and commercial fleet is shown in Figure \ref{fig:sens-block-recCom-selex}. A reduction in selectivity (i.e. dome-shapes) was estimated for all explorations, however peak selectivity in recent years for options 5 and 7 was shifted to larger sizes, near 45 cm, which seems unreasonably high. Other parameter estimates, derived quantities, and likelihood components for each scenario are provided in Table \ref{tab:sens-table-withComBlock}. 
 
@@ -201,13 +218,13 @@ The added parameter flexibility resulted in improved fits to length compositions
 
 ```{r, results = 'asis', echo = FALSE}
 add_figure(
-filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_block_sensitivities_compare2_spawnbio_uncertainty.png"), 
-caption = "Change in estimated spawning output across scenarios for blocking selectivity in the recreational fleet. Shading indicates 95% confidence intervals around each scenario",
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "All_comBlock_sensitivities_compare2_spawnbio_uncertainty.png"), 
+caption = "Change in estimated spawning output across scenarios for blocking selectivity. Shading indicates 95% confidence intervals around each scenario",
 label = 'sens-block-ssb')
 
 add_figure(
-filein = file.path(mod_dir, "postSSC_plots", "ForReport", "base.800_block_sensitivities_compare4_Bratio_uncertainty.png"), 
-caption = "Change in estimated fraction of unfished across scenarios for blocking selectivity in the recreational fleet. Shading indicates 95% confidence intervals around each scenario",
+filein = file.path(mod_dir, "postSSC_plots", "ForReport", "All_comBlock_sensitivities_compare4_Bratio_uncertainty.png"), 
+caption = "Change in estimated fraction of unfished across scenarios for blocking selectivity. Shading indicates 95% confidence intervals around each scenario",
 label = 'sens-block-depl')
 ```
 
@@ -238,13 +255,13 @@ width = 90, height = 90)
 
 add_figure(
 filein = file.path(mod_dir, "postSSC_plots", "ForReport", "MeanLengthFit_block.png"), 
-caption = "Mean length and fit (green line) for the recreational length data with 95% confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
+caption = "Mean length and fit (blue line) for the recreational length data with 95% confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-block',
 width = 90, height = 90)
 
 add_figure(
 filein = file.path(mod_dir, "postSSC_plots", "ForReport", "MeanLengthFit_block_baseRecCom.png"), 
-caption = "Mean length and fit (green line) for the recreational and commercial length data when blocking selectivity for both fleets at 2001 and 2017 compared to the base, with 95% confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
+caption = "Mean length and fit (blue line) for the recreational and commercial length data when blocking selectivity for both fleets at 2001 and 2017 compared to the base, with 95% confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-block-recCom',
 width = 90, height = 90)
 ```

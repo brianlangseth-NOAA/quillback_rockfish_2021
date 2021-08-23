@@ -860,7 +860,7 @@ rownames(sens_table) = c("Total Likelihood",
 write.csv(sens_table, file = file.path(wd, 'postSSC_plots', 'ForReport', paste0("base.800_withComBlock_sensitivities.csv")))
 
 t = table_format(x = sens_table,
-                 caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational selectivity, and the adopted base model.',
+                 caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational and commercial selectivity, and the adopted base model.',
                  label = 'sens-table-withComBlock',
                  longtable = TRUE,
                  font_size = 9,
@@ -871,6 +871,14 @@ t = table_format(x = sens_table,
 kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "sensitivities_withComBlock.tex"))
 
 
+####
+#Add 2001 only run for both rec and comm
+####
+#Copy model 8014
+model = "8_0_15_recComBlock2001"
+base.8015 = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.8015)
+SS_tune_comps(dir = file.path(wd, "8_0_15_recComBlock2001"), write = FALSE)
 
 
 
