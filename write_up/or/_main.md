@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "May"
+month: "August"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -55,7 +55,7 @@ address:
 <!--chapter:end:00authors.Rmd-->
 
 ---
-title: DRAFT Status of quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of Oregon in 2021 using catch and length data
+title: Status of quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of Oregon in 2021 using catch and length data
 ---
 
 <!--chapter:end:00title.Rmd-->
@@ -70,10 +70,6 @@ title: DRAFT Status of quillback rockfish (_Sebastes maliger_) in U.S. waters of
 \setlength\parskip{0.5em plus 0.1em minus 0.2em}
 
 \vspace{500cm}
-
-# Disclaimer{-}
-
-_These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited (or reproduced). They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce._
 
 \pagebreak
 
@@ -116,7 +112,7 @@ Quillback rockfish are a long-lived rockfish estimated to live up to 95 years [@
 
 ## Historical and Current Fishery Information
 
-Quillback rockfish off the coast of Oregon is caught in both the commercial and recreational fisheries (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). The reported landings from the commercial fishery extend back to 1892 and, other than a small peak in the late 1930s through the 1940s, were minimal until the late-1960s. Currently, quillback rockfish is one of several rockfish species targeted by a nearshore, primarily live-fish, fixed-gear fishery centered on Oregon's southern coast. Following the development of the nearshore commercial fishery in the late 1990s, Oregon Department of Fish and Wildlife (ODFW) implemented a state-permitted limited access fishery that regulated fleet size, period landing limits, and established harvest guidelines [@rodomsky_2019_2020]. Quillback rockfish is one of 11 species in the Other Nearshore Rockfish category managed under a single state harvest guideline. Within this management category, China, quillback, and copper rockfish are the three primary species landed. Data on landings from the recreational fishery off the coast of Oregon began in 1979 and removals from the recreational fleet have increased across time and now represent the majority of landings for quillback rockfish off the coast of Oregon. Recreational landings were large in the year that data were first available, and were expected to be minimal prior to the 1970s. Consequently a linear ramp in recreational landings was applied from 1970 to 1979.
+Quillback rockfish off the coast of Oregon is caught in both the commercial and recreational fisheries (Table \ref{tab:allcatches} and Figure \ref{fig:catch}). The reported landings from the commercial fishery extend back to 1892 and, other than a small peak in the late 1930s through the 1940s, were minimal until the late-1960s. Currently, quillback rockfish is one of several rockfish species included in a nearshore, primarily live-fish, fixed-gear fishery centered on Oregon's southern coast. Following the development of the nearshore commercial fishery in the late 1990s, Oregon Department of Fish and Wildlife (ODFW) implemented a state-permitted limited access fishery that regulated fleet size, period landing limits, and established harvest guidelines [@rodomsky_2019_2020]. Quillback rockfish is one of 11 species in the Other Nearshore Rockfish category managed under a single state harvest guideline. Within this management category, China, quillback, and copper rockfish are the three primary species landed. Data on landings from the recreational fishery off the coast of Oregon began in 1979 and removals from the recreational fleet have increased across time and now represent the majority of landings for quillback rockfish off the coast of Oregon. Recreational landings were large in the year that data were first available, and were expected to be minimal prior to the 1970s. Consequently a linear ramp in recreational landings was applied from 1970 to 1979.
 
 
 <!-- Summary of Management History and Performance -->
@@ -350,9 +346,9 @@ Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}. The model fit
 
 ### Population Trajectory
 
-The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The predicted spawning output from the base model declines until 1995, and steadies due to several above average recruitment events that occurred in the early- to mid-1990s. The population then increases dramatically in the early 2000s due to the very large recruitment event in 1995. The population increase slows in the late 2000s, and then declines in the 2010s due to below average recruitment through the 2000s. The estimate of total biomass over time is shown in Figure \ref{fig:tot-bio}.
+The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The estimates of spawning output across time are uncertain with the base model estimating a spawning output of 9.21 in 2021 with a 95 percent asymptotic confidence interval ranging from 3.14 - 15.28 millions of eggs. The predicted spawning output from the base model declines until 1995, and steadies due to several above average recruitment events that occurred in the early- to mid-1990s. The population then increases dramatically in the early 2000s due to the very large recruitment event in 1995. The population increase slows in the late 2000s, and then declines in the 2010s due to below average recruitment through the 2000s. The estimate of total biomass over time is shown in Figure \ref{fig:tot-bio}.
 
-The 2020 spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output (0.47, Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is large ranging between approximately 20 - 75 percent of unfished equilibrium spawning output. The standard deviation of the logarithm of the spawning output in 2020 is 0.33.
+The 2021 spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output (0.47, Figure \ref{fig:depl}). Approximate 95% confidence interval based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is large, ranging between approximately 20 - 75 percent of unfished equilibrium spawning output.
 
 The slight dome shape in the final selectivity for the recreational fleet results in a fraction of large fish being unavailable in recent years (Figure \ref{fig:unavail-bio}). The fraction of large fish unavailable averaged five percent of the overall biomass since 1970, and in theory would be available for selection from the commercial fishery, which has asymptotic selectivity.  
 
@@ -369,7 +365,7 @@ Proper convergence was determined by starting the minimization process from disp
 
 ### Likelihood Profiles
 
-Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, growth coefficient ($k$), and , and CV at maximum length values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
+Likelihood profiles were conducted for $R_0$, steepness, natural mortality, $L_{\infty}$, growth coefficient ($k$), and CV at maximum length values separately. These likelihood profiles were conducted by fixing the parameter at specific values and estimating the remaining parameters based on the fixed parameter value. 
 
 In regards to values of $R_0$, the negative log-likelihood was minimized at the base model estimate of ln($R_0$) 2.14 with support from 2.0 to 2.2 (Figure \ref{fig:r0-profile}). The recreational data supported lower ln($R_0$) values whereas the commercial data supported higher ln($R_0$) values. Increasing $R_0$ relative to the base model value resulted in an increase in unfished and recent spawning output (Figure \ref{fig:r0-ssb}) and increase in stock status (Figure \ref{fig:r0-depl}).
 
@@ -389,7 +385,7 @@ A five-year retrospective analysis was conducted by running the model using data
 
 ### Sensitivity Analyses
 
-A number of sensitivity analyses were conducted. Sensitivities were conducted as a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion. The exception was with estimating both $L_{\infty}$ and $k$ in one sensitivity. 
+A number of sensitivity analyses were conducted. Sensitivities were conducted as a single exploration from the base model assumptions and/or data, and were not performed in a cumulative fashion. The exception was with estimating both $L_{\infty}$ and $k$ in one sensitivity. There were challenges in obtaining a converged base model, as described in Section \ref{convergence}. Initial sensitivities for growth parameters did not align with profiles so additional explorations were done to obtain converged sensitivities for growth parameters. Other sensitivities may not be converged, but the sensitivities for natural mortality and coefficient of variation in length of older fishes align with their profiles.    
 
 \begin{enumerate}
    
@@ -415,7 +411,7 @@ A number of sensitivity analyses were conducted. Sensitivities were conducted as
   
   \item Allow commercial selectivity form to be dome-shaped.
 
-  \item Estimate recreational selectivity block: 1979-1999 with asymptotic selectivity curve and 2000-2020 with dome-shaped selectivity.   
+  \item Estimate recreational selectivity block: 1892-2000 with asymptotic selectivity curve and 2001-2020 with dome-shaped selectivity.   
   
   \item Estimate commercial selectivity block for years without bimodal length compositions (2003-2014). 
   
@@ -425,7 +421,7 @@ Likelihood values and estimates of key parameters from each sensitivity are avai
 
 The largest change from the base model resulted when recruitment was fixed to be deterministic, and when selectivity for the recreational fleet was set to be asymptotic. Assuming deterministic recruitment resulted in a higher stock scale, and different population trajectory, but a comparable stock status relative to the base model. Results were similar regardless of whether data weighting was updated. Assuming asymptotic selectivity for the recreational fleet resulted in a reduction in the scale and status of the stock, such that stock status was close to the threshold of 25 percent. 
 
-Most sensitivities resulted in either changes in unfished and recent spawning output of greater than 10 percent from the base model or had stock status between the management precautionary zone (between the target and threshold ratio values). Estimating $L_{\infty}$, $k$, and $L_{\infty}$ and $k$ resulted in similarly low estimates of unfished spawning output as the sensitivity with asymptotic selectivity for the recreational fleet, but sensitivities including $k$ resulted in comparable declines in recent spawning output, and thus stock status was similar to the base model. Estimating $L_{\infty}$ and assuming dome-shaped selectivity for commercial selectivity resulted in a more pessimistic view of stock status compared to the base model, with stock status estimated between the threshold and target ratios. Data weighting with the McAllister-Ianelli (MI) approach and the sensitivity blocking commercial selectivity in years without bimodal length distributions also resulted in stock status being between the threshold and target ratios, due to a lower estimate of recent spawning output compared to the base model. When natural mortality was estimated, recent spawning output was larger than the base model, and stock status less depleted. Estimating variation in length for older fish resulted in an increased stock scale but similar stock status as the base model, while blocking recreational selectivity resulted in a decrease is recent spawning output but similar stock status as the base model. Data weighting with the Dirichlet-Multinomial and excluding early recreational length comps produced similar results as the base model.
+Most sensitivities resulted in either changes in unfished and recent spawning output of greater than 10 percent from the base model or had stock status between the management precautionary zone (between the target and threshold ratio values). Estimating $k$ resulted in similarly low estimates of unfished spawning output as the sensitivity with asymptotic selectivity for the recreational fleet, but resulted in comparable declines in recent spawning output, and thus stock status was similar to the base model. Estimating $L_{\infty}$ and $k$ resulted in higher estimates of unfished and recent spawning output compared to the base, and a more optimistic view of stock status. Assuming dome-shaped selectivity for commercial selectivity resulted in a more pessimistic view of stock status compared to the base model, with stock status estimated between the threshold and target ratios. Data weighting with the McAllister-Ianelli (MI) approach and the sensitivity blocking commercial selectivity in years without bimodal length distributions also resulted in stock status being between the threshold and target ratios, due to a lower estimate of recent spawning output compared to the base model. When natural mortality was estimated, recent spawning output was larger than the base model, and stock status less depleted. Estimating variation in length for older fish resulted in an increased stock scale but similar stock status as the base model, while blocking recreational selectivity resulted in a decrease is recent spawning output but similar stock status as the base model. Data weighting with the Dirichlet-Multinomial and excluding early recreational length comps produced similar results as the base model.
 
 The sensitivity blocking commercial selectivity in years where composition data did not have proportionally higher catches of smaller fish resulted in estimates of commercial selectivity near to that of recreational selectivity. The fit to the aggregate lengths is unsurprisingly shifted more rightward, yet the general pattern in the recruitment deviations are similar (Figure \ref{fig:sens-recdev}). Despite difference between this sensitivity and the base model, due to the lack of clear evidence for blocks within the commercial fleet from 2003-2014, and the added complexity with applying blocks, we chose not to include a block in the base model.
 
@@ -433,18 +429,14 @@ The sensitivity blocking commercial selectivity in years where composition data 
 ### Unresolved Problems and Major Uncertainties
 
 There were four primary uncertainties in the model given current data availability and model assumptions. 
-\begin{enumerate}
 
-  \item First, selectivity patterns was a source of uncertainty. When estimating asymptotic selectivity for the recreational fleet the scale of the population was affected and relative stock size was estimated near the lower edge of the management precautionary zone. We assumed dome-shaped selectivity based on discussion with those knowledgeable about the fishery, depth restrictions in the fishery, and assumed habits of older and larger fish. Sensitivities where the peak in selectivity for the commercial fleet was estimated at larger values nearer to selectivity of the recreational fleet, and therefore fitting nearer the middle of the aggregate commercial lengths, resulted in estimates of stock status within the management precautionary zone.  
+  1. First, selectivity patterns was a source of uncertainty. When estimating asymptotic selectivity for the recreational fleet the scale of the population was affected and relative stock size was estimated near the lower edge of the management precautionary zone. We assumed dome-shaped selectivity based on discussion with those knowledgeable about the fishery, depth restrictions in the fishery, and assumed habits of older and larger fish. Sensitivities where the peak in selectivity for the commercial fleet was estimated at larger values nearer to selectivity of the recreational fleet, and therefore fitting nearer the middle of the aggregate commercial lengths, resulted in estimates of stock status within the management precautionary zone.  
   
-  \item Second, the magnitude of recruitment deviations was a source of uncertainty. Strong recruitment pulses in 1993, 1995, 1999, and 2012 were often estimated during model exploration with some years being stronger in some runs compared to others. Recruitment deviations in other years during the 1990s were typically variable, and sometimes greatly so as shown in (Figure \ref{fig:rec-devs}). These were likely due to limited samples and variable length in the recreational length compositions. This variation influences the magnitude of the increase in biomass in the late 1990s and  2000s as well as the magnitude of the decrease in the 2010s. Omitting recruitment deviations altogether changes the scale of the model as well. 
+  2. Second, the magnitude of recruitment deviations was a source of uncertainty. Strong recruitment pulses in 1993, 1995, 1999, and 2012 were often estimated during model exploration with some years being stronger in some runs compared to others. Recruitment deviations in other years during the 1990s were typically variable, and sometimes greatly so as shown in (Figure \ref{fig:rec-devs}). These were likely due to limited samples and variable length in the recreational length compositions. This variation influences the magnitude of the increase in biomass in the late 1990s and  2000s as well as the magnitude of the decrease in the 2010s. Omitting recruitment deviations altogether changes the scale of the model as well. 
   
-  \item The magnitude of recruitment was also affected by the data weighting values, which is the third uncertainty. Data weighting using McAllister-Ianelli reduced the amount of information coming from the recreational fleet, affecting the magnitude of recruitment, and resulting in a more pessimistic stock status. Francis and the Dirichlet-Multinomial weighting resulted in similar results. 
+  3. The magnitude of recruitment was also affected by the data weighting values, which is the third uncertainty. Data weighting using McAllister-Ianelli reduced the amount of information coming from the recreational fleet, affecting the magnitude of recruitment, and resulting in a more pessimistic stock status. Francis and the Dirichlet-Multinomial weighting resulted in similar results. 
   
-  \item The final uncertainty is with estimating growth parameters. The fixed value for k for quillback rockfish is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is feasible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and $L_{\infty}$ close to the fixed estimate. We decided to keep the fixed values in the base model given the range of plausible $k$ values from the profile included the fixed estimate, concerns over whether length data on its own without age data can inform $k$, that the curve of estimated $k$ and $L_{\infty}$ values poorly fit the age and length data, and that growth estimates used in the model were based on data with young fish from the surveys to inform the estimate of $k$.  
-  
-\end{enumerate}
-
+  4. The final uncertainty is with estimating growth parameters. The fixed value for k for quillback rockfish is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio, but one within the range of Beverton [-@Beverton1992] for Sebastes. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest the model has a difficult time converging when estimating these parameteres, especially for $k$. Estimation results in estimates of $k$ nearer to the middle of the range of literature values and $L_{\infty}$ near to or above the fixed estimate. We decided to keep the fixed values in the base model given the range of plausible $k$ values from the profile included the fixed estimate, concerns over whether length data on its own without age data can inform $k$, that the growth curve using estimated $k$ and $L_{\infty}$ values poorly fit the age and length data, and that growth estimates used in the model were based on data with young fish from the surveys to inform the estimate of $k$.  
 
 <!--chapter:end:34diagnostics.Rmd-->
 
@@ -454,12 +446,12 @@ There were four primary uncertainties in the model given current data availabili
 
 Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). Sustainable total yields  were 3.08 mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($SB_{40\%}$) was 8.79 millions of eggs. 
 
-The 2020 spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has been above the harvest rate limit ($SPR_{50\%}$) in nearly all years from 1977-2001, and in all but 2015 and 2016 since 2011 (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
+The 2021 spawning output relative to unfished equilibrium spawning output is above the target of 40 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has been above the harvest rate limit ($SPR_{50\%}$) in nearly all years from 1977-2001, and in all but 2015 and 2016 since 2011 (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
 
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted ACLs and the percent allocation (58.4 percent) for Oregon provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 each fleet contributes to the total catch. 
+A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the combined total mortality from commercial and recreational fleets averaged from 2017-2020 as requested by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributes to the total catch. 
 
 The decision table uncertainty axes and catch levels are to be determined later.
 
@@ -726,7 +718,7 @@ Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
 \endfoot
 \bottomrule
 \endlastfoot
-NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.48)\\
+NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.438)\\
 L at Amin Fem GP 1 & 8.230 & -2 & (0, 10) & NA & NA & None\\
 L at Amax Fem GP 1 & 43.040 & -2 & (25, 60) & NA & NA & None\\
 VonBert K Fem GP 1 & 0.199 & -2 & (0.03, 0.3) & NA & NA & None\\
@@ -897,7 +889,169 @@ MSY (mt) & 3.46 & 2.85 & 4.06\\*
 <!-- ======================================================= -->
 
 <!-- tab:timeseries -->
-\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/TimeSeries.tex}
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{c>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}}
+\caption{(\#tab:timeseries)Time series of population estimates from the base model.}\\
+\toprule
+Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction Unfished & Age-0 Recruits & Total Mortality (mt) & 1-SPR & Exploitation Rate\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:timeseries)Time series of population estimates from the base model. \textit{(continued)}}\\
+\toprule
+Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction Unfished & Age-0 Recruits & Total Mortality (mt) & 1-SPR & Exploitation Rate\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1892 & 159.10 & 19.71 & 158.49 & 1.00 & 8.51 & 0.06 & 0.01 & 0.00\\
+1893 & 159.05 & 19.70 & 158.44 & 1.00 & 8.51 & 0.06 & 0.01 & 0.00\\
+1894 & 158.99 & 19.69 & 158.38 & 1.00 & 8.51 & 0.06 & 0.01 & 0.00\\
+1895 & 158.94 & 19.69 & 158.33 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1896 & 158.93 & 19.68 & 158.32 & 1.00 & 8.51 & 0.00 & 0.00 & 0.00\\
+1897 & 158.94 & 19.68 & 158.33 & 1.00 & 8.51 & 0.00 & 0.00 & 0.00\\
+1898 & 158.94 & 19.68 & 158.33 & 1.00 & 8.51 & 0.00 & 0.00 & 0.00\\
+1899 & 158.95 & 19.69 & 158.34 & 1.00 & 8.51 & 0.00 & 0.00 & 0.00\\
+1900 & 158.95 & 19.69 & 158.34 & 1.00 & 8.51 & 0.00 & 0.00 & 0.00\\
+1901 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1902 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1903 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1904 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1905 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1906 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1907 & 158.96 & 19.69 & 158.35 & 1.00 & 8.51 & 0.01 & 0.00 & 0.00\\
+1908 & 158.95 & 19.69 & 158.34 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1909 & 158.95 & 19.69 & 158.34 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1910 & 158.94 & 19.68 & 158.33 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1911 & 158.93 & 19.68 & 158.32 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1912 & 158.92 & 19.68 & 158.32 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1913 & 158.91 & 19.68 & 158.30 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1914 & 158.90 & 19.68 & 158.29 & 1.00 & 8.51 & 0.02 & 0.00 & 0.00\\
+1915 & 158.89 & 19.68 & 158.28 & 1.00 & 8.51 & 0.03 & 0.00 & 0.00\\
+1916 & 158.88 & 19.68 & 158.27 & 1.00 & 8.51 & 0.03 & 0.00 & 0.00\\
+1917 & 158.86 & 19.67 & 158.26 & 1.00 & 8.51 & 0.03 & 0.00 & 0.00\\
+1918 & 158.85 & 19.67 & 158.24 & 1.00 & 8.51 & 0.03 & 0.00 & 0.00\\
+1919 & 158.83 & 19.67 & 158.22 & 1.00 & 8.50 & 0.03 & 0.00 & 0.00\\
+1920 & 158.82 & 19.67 & 158.21 & 1.00 & 8.50 & 0.03 & 0.00 & 0.00\\
+1921 & 158.80 & 19.67 & 158.19 & 1.00 & 8.50 & 0.03 & 0.00 & 0.00\\
+1922 & 158.78 & 19.66 & 158.18 & 1.00 & 8.50 & 0.04 & 0.00 & 0.00\\
+1923 & 158.77 & 19.66 & 158.16 & 1.00 & 8.50 & 0.04 & 0.01 & 0.00\\
+1924 & 158.75 & 19.66 & 158.14 & 1.00 & 8.50 & 0.04 & 0.01 & 0.00\\
+1925 & 158.73 & 19.66 & 158.12 & 1.00 & 8.50 & 0.04 & 0.01 & 0.00\\
+1926 & 158.71 & 19.65 & 158.10 & 1.00 & 8.50 & 0.04 & 0.01 & 0.00\\
+1927 & 158.69 & 19.65 & 158.08 & 1.00 & 8.50 & 0.04 & 0.01 & 0.00\\
+1928 & 158.67 & 19.65 & 158.06 & 1.00 & 8.50 & 0.07 & 0.01 & 0.00\\
+1929 & 158.62 & 19.64 & 158.01 & 1.00 & 8.50 & 0.21 & 0.03 & 0.00\\
+1930 & 158.44 & 19.62 & 157.83 & 1.00 & 8.50 & 0.27 & 0.04 & 0.00\\
+1931 & 158.20 & 19.59 & 157.59 & 0.99 & 8.50 & 0.16 & 0.02 & 0.00\\
+1932 & 158.08 & 19.57 & 157.47 & 0.99 & 8.50 & 0.03 & 0.00 & 0.00\\
+1933 & 158.09 & 19.57 & 157.49 & 0.99 & 8.50 & 0.06 & 0.01 & 0.00\\
+1934 & 158.08 & 19.57 & 157.47 & 0.99 & 8.50 & 0.07 & 0.01 & 0.00\\
+1935 & 158.05 & 19.57 & 157.44 & 0.99 & 8.50 & 0.05 & 0.01 & 0.00\\
+1936 & 158.05 & 19.57 & 157.44 & 0.99 & 8.50 & 0.20 & 0.03 & 0.00\\
+1937 & 157.91 & 19.55 & 157.30 & 0.99 & 8.50 & 0.42 & 0.06 & 0.00\\
+1938 & 157.55 & 19.50 & 156.94 & 0.99 & 8.50 & 0.47 & 0.06 & 0.00\\
+1939 & 157.15 & 19.45 & 156.54 & 0.99 & 8.50 & 0.49 & 0.06 & 0.00\\
+1940 & 156.75 & 19.40 & 156.14 & 0.98 & 8.49 & 0.66 & 0.08 & 0.00\\
+1941 & 156.20 & 19.33 & 155.59 & 0.98 & 8.49 & 0.55 & 0.07 & 0.00\\
+1942 & 155.78 & 19.27 & 155.17 & 0.98 & 8.49 & 0.70 & 0.09 & 0.00\\
+1943 & 155.23 & 19.20 & 154.62 & 0.97 & 8.48 & 1.19 & 0.14 & 0.01\\
+1944 & 154.21 & 19.06 & 153.61 & 0.97 & 8.48 & 0.81 & 0.10 & 0.01\\
+1945 & 153.60 & 18.98 & 153.00 & 0.96 & 8.48 & 0.82 & 0.11 & 0.01\\
+1946 & 153.01 & 18.90 & 152.40 & 0.96 & 8.47 & 0.91 & 0.12 & 0.01\\
+1947 & 152.36 & 18.82 & 151.75 & 0.95 & 8.47 & 0.33 & 0.04 & 0.00\\
+1948 & 152.30 & 18.81 & 151.69 & 0.95 & 8.47 & 0.64 & 0.08 & 0.00\\
+1949 & 151.95 & 18.76 & 151.34 & 0.95 & 8.47 & 0.63 & 0.08 & 0.00\\
+1950 & 151.63 & 18.72 & 151.02 & 0.95 & 8.30 & 0.27 & 0.04 & 0.00\\
+1951 & 151.66 & 18.72 & 151.06 & 0.95 & 8.29 & 0.24 & 0.03 & 0.00\\
+1952 & 151.73 & 18.73 & 151.14 & 0.95 & 8.28 & 0.41 & 0.06 & 0.00\\
+1953 & 151.62 & 18.72 & 151.03 & 0.95 & 8.27 & 0.15 & 0.02 & 0.00\\
+1954 & 151.75 & 18.74 & 151.16 & 0.95 & 8.25 & 0.11 & 0.02 & 0.00\\
+1955 & 151.90 & 18.77 & 151.31 & 0.95 & 8.24 & 0.27 & 0.04 & 0.00\\
+1956 & 151.87 & 18.77 & 151.28 & 0.95 & 8.23 & 0.14 & 0.02 & 0.00\\
+1957 & 151.95 & 18.78 & 151.36 & 0.95 & 8.21 & 0.30 & 0.04 & 0.00\\
+1958 & 151.85 & 18.77 & 151.26 & 0.95 & 8.19 & 0.04 & 0.00 & 0.00\\
+1959 & 152.00 & 18.80 & 151.41 & 0.95 & 8.16 & 0.10 & 0.01 & 0.00\\
+1960 & 152.05 & 18.81 & 151.47 & 0.95 & 8.13 & 0.11 & 0.02 & 0.00\\
+1961 & 152.08 & 18.81 & 151.50 & 0.95 & 8.10 & 0.22 & 0.03 & 0.00\\
+1962 & 151.98 & 18.80 & 151.40 & 0.95 & 8.06 & 0.14 & 0.02 & 0.00\\
+1963 & 151.94 & 18.80 & 151.36 & 0.95 & 8.01 & 0.21 & 0.03 & 0.00\\
+1964 & 151.82 & 18.79 & 151.24 & 0.95 & 7.95 & 0.07 & 0.01 & 0.00\\
+1965 & 151.81 & 18.79 & 151.23 & 0.95 & 7.87 & 0.56 & 0.07 & 0.00\\
+1966 & 151.29 & 18.73 & 150.72 & 0.95 & 7.79 & 0.35 & 0.05 & 0.00\\
+1967 & 150.96 & 18.70 & 150.40 & 0.95 & 7.69 & 1.01 & 0.13 & 0.01\\
+1968 & 149.96 & 18.58 & 149.41 & 0.94 & 7.57 & 0.96 & 0.12 & 0.01\\
+1969 & 149.01 & 18.46 & 148.46 & 0.94 & 7.44 & 1.89 & 0.22 & 0.01\\
+1970 & 147.12 & 18.22 & 146.58 & 0.92 & 7.31 & 0.87 & 0.11 & 0.01\\
+1971 & 146.23 & 18.12 & 145.70 & 0.92 & 7.20 & 2.34 & 0.26 & 0.02\\
+1972 & 143.88 & 17.83 & 143.36 & 0.90 & 7.11 & 3.30 & 0.34 & 0.02\\
+1973 & 140.58 & 17.41 & 140.07 & 0.88 & 7.06 & 3.89 & 0.39 & 0.03\\
+1974 & 136.75 & 16.92 & 136.24 & 0.86 & 7.05 & 5.00 & 0.46 & 0.04\\
+1975 & 131.89 & 16.30 & 131.38 & 0.83 & 7.02 & 3.75 & 0.40 & 0.03\\
+1976 & 128.34 & 15.85 & 127.83 & 0.80 & 7.08 & 4.76 & 0.47 & 0.04\\
+1977 & 123.88 & 15.27 & 123.38 & 0.78 & 7.38 & 5.66 & 0.53 & 0.05\\
+1978 & 118.67 & 14.60 & 118.16 & 0.74 & 7.45 & 6.69 & 0.58 & 0.06\\
+1979 & 112.63 & 13.81 & 112.10 & 0.70 & 7.65 & 6.17 & 0.58 & 0.06\\
+1980 & 107.31 & 13.10 & 106.78 & 0.66 & 6.54 & 4.02 & 0.47 & 0.04\\
+1981 & 104.35 & 12.70 & 103.82 & 0.64 & 6.21 & 8.08 & 0.67 & 0.08\\
+1982 & 97.51 & 11.79 & 97.04 & 0.60 & 6.12 & 7.36 & 0.66 & 0.08\\
+1983 & 91.59 & 11.02 & 91.15 & 0.56 & 6.14 & 2.98 & 0.44 & 0.03\\
+1984 & 90.16 & 10.85 & 89.72 & 0.55 & 6.35 & 5.82 & 0.62 & 0.06\\
+1985 & 85.94 & 10.32 & 85.50 & 0.52 & 6.30 & 5.36 & 0.61 & 0.06\\
+1986 & 82.27 & 9.86 & 81.81 & 0.50 & 6.03 & 6.22 & 0.66 & 0.08\\
+1987 & 77.82 & 9.30 & 77.37 & 0.47 & 6.07 & 6.58 & 0.69 & 0.09\\
+1988 & 73.10 & 8.69 & 72.67 & 0.44 & 6.66 & 5.69 & 0.67 & 0.08\\
+1989 & 69.38 & 8.20 & 68.93 & 0.42 & 8.51 & 7.25 & 0.74 & 0.11\\
+1990 & 64.27 & 7.54 & 63.75 & 0.38 & 12.36 & 8.39 & 0.79 & 0.13\\
+1991 & 58.35 & 6.75 & 57.69 & 0.34 & 10.45 & 4.29 & 0.66 & 0.07\\
+1992 & 56.96 & 6.48 & 56.10 & 0.33 & 12.33 & 8.59 & 0.82 & 0.15\\
+1993 & 51.98 & 5.71 & 51.15 & 0.29 & 33.85 & 10.85 & 0.88 & 0.21\\
+1994 & 45.64 & 4.72 & 44.53 & 0.24 & 7.33 & 4.39 & 0.75 & 0.10\\
+1995 & 47.42 & 4.63 & 45.04 & 0.23 & 135.20 & 2.60 & 0.62 & 0.06\\
+1996 & 52.82 & 4.86 & 50.85 & 0.25 & 7.27 & 4.80 & 0.76 & 0.09\\
+1997 & 61.42 & 4.98 & 53.50 & 0.25 & 8.25 & 7.71 & 0.84 & 0.14\\
+1998 & 71.27 & 5.04 & 70.73 & 0.26 & 9.53 & 7.65 & 0.83 & 0.11\\
+1999 & 82.96 & 5.49 & 82.31 & 0.28 & 28.40 & 1.99 & 0.48 & 0.02\\
+2000 & 99.94 & 7.66 & 99.05 & 0.39 & 6.73 & 4.65 & 0.61 & 0.05\\
+2001 & 113.77 & 10.35 & 112.03 & 0.53 & 4.87 & 5.95 & 0.61 & 0.05\\
+2002 & 124.54 & 12.51 & 124.09 & 0.63 & 4.76 & 4.18 & 0.47 & 0.03\\
+2003 & 134.54 & 14.26 & 134.19 & 0.72 & 6.04 & 4.12 & 0.43 & 0.03\\
+2004 & 142.00 & 15.70 & 141.65 & 0.80 & 5.23 & 4.16 & 0.41 & 0.03\\
+2005 & 146.87 & 16.88 & 146.46 & 0.86 & 3.31 & 3.49 & 0.34 & 0.02\\
+2006 & 150.12 & 17.75 & 149.78 & 0.90 & 2.94 & 7.55 & 0.54 & 0.05\\
+2007 & 147.35 & 17.75 & 147.12 & 0.90 & 3.31 & 5.88 & 0.47 & 0.04\\
+2008 & 144.44 & 17.65 & 144.22 & 0.90 & 3.51 & 5.81 & 0.48 & 0.04\\
+2009 & 140.15 & 17.34 & 139.91 & 0.88 & 3.28 & 5.49 & 0.47 & 0.04\\
+2010 & 135.08 & 16.87 & 134.83 & 0.86 & 3.67 & 4.94 & 0.45 & 0.04\\
+2011 & 129.75 & 16.32 & 129.50 & 0.83 & 5.87 & 7.78 & 0.59 & 0.06\\
+2012 & 121.20 & 15.28 & 120.79 & 0.78 & 51.72 & 11.05 & 0.70 & 0.09\\
+2013 & 109.54 & 13.76 & 108.60 & 0.70 & 5.41 & 7.73 & 0.63 & 0.07\\
+2014 & 103.08 & 12.63 & 100.01 & 0.64 & 4.59 & 5.01 & 0.54 & 0.05\\
+2015 & 101.03 & 11.85 & 100.65 & 0.60 & 6.05 & 1.76 & 0.29 & 0.02\\
+2016 & 103.19 & 11.60 & 102.84 & 0.59 & 6.54 & 1.80 & 0.30 & 0.02\\
+2017 & 105.61 & 11.82 & 105.17 & 0.60 & 6.80 & 9.06 & 0.71 & 0.09\\
+2018 & 100.77 & 11.50 & 100.29 & 0.58 & 7.85 & 11.71 & 0.78 & 0.12\\
+2019 & 93.15 & 10.80 & 92.65 & 0.55 & 7.84 & 11.87 & 0.79 & 0.13\\
+2020 & 85.15 & 9.93 & 84.59 & 0.50 & 7.77 & 9.68 & 0.76 & 0.11\\
+2021 & 79.06 & 9.21 & 78.50 & 0.47 & 7.67 & 10.58 & 0.79 & 0.13\\
+2022 & 71.95 & 8.31 & 71.39 & 0.42 & 7.52 & 10.58 & 0.81 & 0.15\\
+2023 & 64.81 & 7.39 & 64.26 & 0.38 & 7.34 & 2.24 & 0.46 & 0.03\\
+2024 & 65.87 & 7.51 & 65.33 & 0.38 & 7.36 & 2.26 & 0.46 & 0.03\\
+2025 & 66.93 & 7.63 & 66.40 & 0.39 & 7.39 & 2.29 & 0.46 & 0.03\\
+2026 & 67.96 & 7.76 & 67.43 & 0.39 & 7.42 & 2.32 & 0.45 & 0.03\\
+2027 & 68.95 & 7.90 & 68.42 & 0.40 & 7.44 & 2.35 & 0.45 & 0.03\\
+2028 & 69.90 & 8.02 & 69.37 & 0.41 & 7.47 & 2.36 & 0.45 & 0.03\\
+2029 & 70.80 & 8.14 & 70.26 & 0.41 & 7.49 & 2.38 & 0.45 & 0.03\\
+2030 & 71.65 & 8.25 & 71.12 & 0.42 & 7.51 & 2.38 & 0.45 & 0.03\\
+2031 & 72.48 & 8.36 & 71.94 & 0.42 & 7.53 & 2.39 & 0.44 & 0.03\\
+2032 & 73.27 & 8.46 & 72.73 & 0.43 & 7.55 & 2.39 & 0.44 & 0.03\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+<!-- \input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/TimeSeries.tex} -->
 
 \newpage
 
@@ -907,7 +1061,7 @@ MSY (mt) & 3.46 & 2.85 & 4.06\\*
 <!-- ======================================================= -->
 
 <!-- tab:sensitivities -->
-\include{tex_tables/sensitivities.tex}
+\include{tex_tables/sensitivities_updated.tex}
 
 \newpage
 
@@ -928,12 +1082,12 @@ MSY (mt) & 3.46 & 2.85 & 4.06\\*
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
-\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.}\\
+\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from 2017-2020. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.}\\
 \toprule
 Year & OFL North & ACL North & OR ACL North & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL. \textit{(continued)}}\\
+\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from 2017-2020. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL. \textit{(continued)}}\\
 \toprule
 Year & OFL North & ACL North & OR ACL North & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
@@ -942,18 +1096,18 @@ Year & OFL North & ACL North & OR ACL North & Assumed removals & OFL & ABC & Buf
 \endfoot
 \bottomrule
 \endlastfoot
-2021 & 7.37 & 5.73 & 3.35 & 3.35 & - & - & - & 9.21 & 0.47\\
-2022 & 7.37 & 5.74 & 3.35 & 3.35 & - & - & - & 9.20 & 0.47\\
-2023 & - & - & - & - & 3.24 & 2.83 & 0.874 & 9.17 & 0.47\\
-2024 & - & - & - & - & 3.24 & 2.81 & 0.865 & 9.21 & 0.47\\
-2025 & - & - & - & - & 3.25 & 2.79 & 0.857 & 9.25 & 0.47\\
-2026 & - & - & - & - & 3.26 & 2.77 & 0.849 & 9.29 & 0.47\\
-2027 & - & - & - & - & 3.27 & 2.75 & 0.841 & 9.32 & 0.47\\
-2028 & - & - & - & - & 3.28 & 2.73 & 0.833 & 9.36 & 0.47\\
-2029 & - & - & - & - & 3.29 & 2.72 & 0.826 & 9.40 & 0.48\\
-2030 & - & - & - & - & 3.3 & 2.7 & 0.818 & 9.43 & 0.48\\
-2031 & - & - & - & - & 3.31 & 2.68 & 0.81 & 9.47 & 0.48\\
-2032 & - & - & - & - & 3.32 & 2.67 & 0.803 & 9.51 & 0.48\\*
+2021 & 7.37 & 5.73 & 3.35 & 10.58 & - & - & - & 9.21 & 0.47\\
+2022 & 7.37 & 5.74 & 3.35 & 10.58 & - & - & - & 8.31 & 0.42\\
+2023 & - & - & - & - & 2.62 & 2.24 & 0.855 & 7.39 & 0.38\\
+2024 & - & - & - & - & 2.66 & 2.26 & 0.851 & 7.51 & 0.38\\
+2025 & - & - & - & - & 2.7 & 2.29 & 0.848 & 7.63 & 0.39\\
+2026 & - & - & - & - & 2.74 & 2.32 & 0.846 & 7.76 & 0.39\\
+2027 & - & - & - & - & 2.79 & 2.35 & 0.841 & 7.90 & 0.40\\
+2028 & - & - & - & - & 2.83 & 2.36 & 0.834 & 8.02 & 0.41\\
+2029 & - & - & - & - & 2.87 & 2.38 & 0.827 & 8.14 & 0.41\\
+2030 & - & - & - & - & 2.91 & 2.38 & 0.818 & 8.25 & 0.42\\
+2031 & - & - & - & - & 2.95 & 2.39 & 0.81 & 8.36 & 0.42\\
+2032 & - & - & - & - & 2.98 & 2.39 & 0.803 & 8.46 & 0.43\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -1171,13 +1325,13 @@ Year & OFL North & ACL North & OR ACL North & Assumed removals & OFL & ABC & Buf
 <!-- ====================================================================== -->
 
 
-![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity."}
+![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_updated_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity."}
 
 
-![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity."}
+![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_updated_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity."}
 
 
-![Change in estimated annual recruitment deviation.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation."}
+![Change in estimated annual recruitment deviation.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/or/sensitivities/base.710_updated_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation."}
 
 
 <!-- ====================================================================== -->
@@ -1189,12 +1343,12 @@ Year & OFL North & ACL North & OR ACL North & Assumed removals & OFL & ABC & Buf
 ![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
 
 
+![Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios..\label{fig:phase-plot}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SPR4_phase.png){width=100% height=100% alt="Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.."}
+
+
 ![Equilibrium yield curve for the base case model. Values are based on the 2020
 fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="Equilibrium yield curve for the base case model. Values are based on the 2020
 fishery selectivity and with steepness fixed at 0.72."}
-
-
-![Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios..\label{fig:phase-plot}](C:/Users/Brian.Langseth/Desktop/or/7_1_0_base/plots/SPR4_phase.png){width=100% height=100% alt="Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.."}
 
 \newpage
 

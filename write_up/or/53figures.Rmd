@@ -396,7 +396,7 @@ label = 'retro-recdevs')
 
 ```{r, echo=FALSE, results='asis'}
 sens_wd = file.path("C:/Users/Brian.Langseth/Desktop/or", "sensitivities")
-nm = "base.710_sensitivities_compare2_spawnbio_uncertainty.png"
+nm = "base.710_updated_sensitivities_compare2_spawnbio_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
@@ -404,7 +404,7 @@ label = 'sens-ssb')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = "base.710_sensitivities_compare4_Bratio_uncertainty.png"
+nm = "base.710_updated_sensitivities_compare4_Bratio_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
@@ -412,7 +412,7 @@ label = 'sens-depl')
 ```
 
 ```{r, echo=FALSE, results='asis'}
-nm = "base.710_sensitivities_compare12_recdevs_uncertainty.png"
+nm = "base.710_updated_sensitivities_compare12_recdevs_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated annual recruitment deviation",
@@ -434,17 +434,17 @@ label = '1-spr')
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
-caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
+filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
+caption = "Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.",
+label = 'phase-plot')
 ```
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
-caption = "Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.",
-label = 'phase-plot')
+filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
+caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
+fishery selectivity and with steepness fixed at 0.72",
+label = 'yield')
 ```
 
 \newpage

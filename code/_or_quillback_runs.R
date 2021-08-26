@@ -838,15 +838,35 @@ model = "7_1_4_estlinf"
 base.714 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.714)
 
+  #Model 714 is not converged so try based on par files. 
+  #Based on starting from 7_1_4 par file doesnt improve so try starting
+  #from par file from run2 in 7_1_4_estlinf_jitter_0.1
+  model = "7_1_4_estlinf_par"
+  base.714par = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+  SS_plots(base.714par)
+
 #Estimate K
 model = "7_1_4b_estk"
 base.714b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.714b)
 
+  #Model 714b is not converged so try based on par files. 
+  #Based on starting from 7_1_4b par file doesnt improve so try starting
+  #from par file from run44 in 7_1_4b_estk_jitter_0.1
+  model = "7_1_4b_estk_par"
+  base.714bpar = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+  SS_plots(base.714bpar)
+
 #Estimate L infinity and K
 model = "7_1_5_estlinfK"
 base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.715)
+
+  #Model 715 is not converged so try based on par files. 
+  #Starting from run18 in the 7_1_5_estLinfK_jitter_0.1 folder
+  model = "7_1_5_estlinfK_par"
+  base.715par = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+  SS_plots(base.715par)
 
 #Estimate CV at L2
 model = "7_1_6_estL2CV"
@@ -1073,6 +1093,141 @@ kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/w
 
 
 
+#############
+#Post SSC corrections - with converged sensitivities for Linf, K, and Linf and K
+#############
+
+##
+#All in one place
+###
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+model = "7_1_1_norec"
+base.711 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_1b_norec_reweight"
+base.711b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_2_dw_MI"
+base.712 = SS_output(file.path(wd, "sensitivities", model),covar=TRUE)
+model = "7_1_3_dw_DM"
+base.713 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_4_estlinf_par"
+base.714par = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_4b_estk_par"
+base.714bpar = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_5_estlinfK_par"
+base.715par = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_6_estL2CV"
+base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_7_estM"
+base.717 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_8_noEarlyRec"
+base.718 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_9_recAsym"
+base.719 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_10_comDome"
+base.7110 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_11_recBlock"
+base.7111 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+model = "7_1_11_comBlock_2003-2014"
+base.7112 = SS_output(file.path(wd, model),covar=TRUE)
+
+#Compare sensitivities
+sens_names <- c("Base model","No rec devs","DW MI", "DW DM", "Est Linf", "Est K", "Est Linf, K", "Est Old CV", "Est M", "No early rec comps", "Rec asymp. selex.", "Com dome-shaped selex.", "Rec block selex.", "Com block selex.")
+sens_models  <- SSsummarize(list(base.710, base.711, base.712, base.713, base.714par, base.714bpar, base.715par, base.716, base.717, base.718, base.719, base.7110, base.7111, base.7112))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_updated_sensitivities_"),
+                  subplot = 2, 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "topleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_updated_sensitivities_"),
+                  subplot = c(4,10), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'sensitivities'), 
+                  legendloc = "bottom", 
+                  legendncol = 2,
+                  filenameprefix = paste0("base.710_updated_sensitivities_"),
+                  subplot = 12, 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+n = length(sens_names)
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Forecast_Recruitment",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_priors",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_BH_steep", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "NatM_p_1_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amin_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "L_at_Amax_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "VonBert_K_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_young_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "CV_old_Fem_GP_1", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_OR_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_OR_Recreational(2)", 1:n])   )  
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                         "Length Likelihood",
+                         "Recruitment Likelihood",
+                         "Forecast Recruitment Likelihood",
+                         "Parameter Priors Likelihood",
+                         "Parameter Bounds Likelihood",
+                         "log(R0)",
+                         "SB Virgin",
+                         "SB 2021",
+                         "Fraction Unfished 2021",
+                         "Total Yield at SPR 50",
+                         "Steepness",
+                         "Natural Mortality",
+                         "Length at Amin",
+                         "Length at Amax",
+                         "Von Bert. k",
+                         "CV young",
+                         "CV old",
+                         "Peak commercial selex",
+                         "Peak recreational selex")
+
+write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_updated_sensitivities.csv")))
+
+t = table_format(x = sens_table,
+                 caption = 'Sensitivities relative to the base model.',
+                 label = 'sensitivities',
+                 longtable = TRUE,
+                 font_size = 9,
+                 digits = 2,
+                 landscape = TRUE,
+                 col_names = sens_names)
+
+kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/sensitivities_updated.tex"))
+
 
 ###################################################################################
 #Post SSC model runs
@@ -1104,8 +1259,9 @@ SSplotSPR(base.800,subplots=4,print=TRUE)
 #parameter priors likelihood, which differ at 10^-10 and 10^-12 orders of magnitude, respectively. 
 #Because the tables, when rounded, are identical, I use the base.710 model in the sensitivity table. 
 
-#Use base.710 model results for the write up, but with the projection table from base.800
-#Use base.800 model for model files and r4ss plots
+#Use base.710 model results for the write up, but with the projection and time series table from base.800
+#Use base.800 model for model files and r4ss plots because r4ss was updated since base.710
+#and figure names are different
 
 
 ##

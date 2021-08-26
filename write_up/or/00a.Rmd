@@ -38,4 +38,16 @@ if(file.exists("00mod.Rdata")){
   print("Model output not being read. Please run the read_model() function.")
 }
 
+# Calculate SB CI
+dq = model$derived_quants[model$derived_quants$Label == 'SSB_2021','Value']
+sd = model$derived_quants[model$derived_quants$Label == 'SSB_2021','StdDev']
+sb_low = dq - qnorm(1 - (1 - 0.95) / 2) * sd
+sb_high =  dq + qnorm(1 - (1 - 0.95) / 2) * sd
+
+# Calculate Dep CI
+dq = model$derived_quants[model$derived_quants$Label == 'Bratio_2021','Value']
+sd = model$derived_quants[model$derived_quants$Label == 'Bratio_2021','StdDev']
+dep_low = dq - qnorm(1 - (1 - 0.95) / 2) * sd
+dep_high =  dq + qnorm(1 - (1 - 0.95) / 2) * sd
+
 ```
