@@ -370,7 +370,7 @@ run_diagnostics(mydir = mydir, model_settings = model_settings)
 base_name = "7_1_0_baseProfile"
 
 get = get_settings_profile( parameters =  c("NatM_p_1_Fem_GP_1", "SR_BH_steep", "SR_LN(R0)", "L_at_Amax_Fem_GP_1", "VonBert_K_Fem_GP_1", "CV_old_Fem_GP_1"),
-                            low =  c(0.03, 0.30, 1.6, 40, 0.12, 0.05),
+                            low =  c(0.03, 0.30, 1.6, 40, 0.105, 0.05),
                             high = c(0.12, 1.0, 3.0, 48, 0.225, 0.15),
                             step_size = c(0.01, 0.10, 0.2, 1, 0.015, 0.01),
                             param_space = c('real', 'real', 'real', 'real', 'real', 'real'))
