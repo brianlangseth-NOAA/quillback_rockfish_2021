@@ -1359,7 +1359,7 @@ rownames(sens_table) = c("Total Likelihood",
                          "Parameter Bounds Likelihood",
                          "log(R0)",
                          "SB Virgin",
-                         "SB 2020",
+                         "SB 2021",
                          "Fraction Unfished 2021",
                          "Total Yield at SPR 50",
                          "Steepness",
@@ -1508,3 +1508,35 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   subplot = c(2,4,9,10,11,12), 
                   print = TRUE, 
                   pdf = FALSE)
+
+
+#Because WA is cat 3 I dont need to do decision tables
+
+
+###################################################################################
+#Post SSC model runs - correct forecasting
+###################################################################################
+
+#Copy model 1100
+#Make changes in the forecast file
+##Set cat 3 buffer to 0.778 for all years
+##Add forecast input catches for 2023-2032 based on Yield at SPR50% (2.855) using the same fleet allocation
+##Set caps and allocations year to 2033
+#To enter the forecast value in numbers, run the model with the above and place in just_model_files/forecasting
+#and then run the following 
+source("https://raw.githubusercontent.com/nwfsc-assess/PEPtools/master/R/solve_numbers.R")
+solve_numbers(mod_dir = file.path(wd, "11_1_0_postSSC_base", "just model files", "forecasting"), 
+              fore_yrs = 2023:2032, 
+              fleet_abc = c(rep(2.7836,10)), fleet = 1)
+#Copy over the catch values (which are now in numbers) over to the forecast file in just_model_files
+
+model = "11_1_0_postSSC_base"
+base.1110 = SS_output(file.path(wd, model),covar=TRUE)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\11_1_0_postSSC_base", write = FALSE, option = "none")
+SS_plots(base.1110, forecastplot = TRUE)
+
+
+
+
+
+

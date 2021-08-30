@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "May"
+month: "August"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -60,7 +60,7 @@ address:
 <!--chapter:end:00authors.Rmd-->
 
 ---
-title: DRAFT Status of quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of Washington in 2021 using catch and length data
+title: Status of quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of Washington in 2021 using catch and length data
 ---
 
 <!--chapter:end:00title.Rmd-->
@@ -75,10 +75,6 @@ title: DRAFT Status of quillback rockfish (_Sebastes maliger_) in U.S. waters of
 \setlength\parskip{0.5em plus 0.1em minus 0.2em}
 
 \vspace{500cm}
-
-# Disclaimer{-}
-
-_These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited (or reproduced). They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce._
 
 \pagebreak
 
@@ -192,7 +188,7 @@ The input sample sizes for the recreational length data were set equal to the nu
 
 ## Fishery-Independent Data
 
-No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS and the Triennial survey collected data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 26) and Triennial Survey (n = 1) off Washington were not included in the model. Biological data from the WCGBTS survey were used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS and the Triennial survey collected data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey were used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
 
 Length data from the International Pacific Halibut Commission longline survey (N = 38), the Marine Fish Science longline survey (N = 36), and the Marine Fish Science rod and reel survey (N = 38) were provided by the WDFW. Lengths ranged from 28 - 45 cm from the longline surveys and 19 - 37 cm from the rod and reel survey. These data were not included in the model nor used in external calculations of biological parameters. 
 
@@ -323,9 +319,9 @@ Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}. There are a f
 
 ### Population Trajectory
 
-The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The predicted spawning output from the base model generally showed a steady decline over the early part of the time series with the spawning output stabilizing around 2010 and increasing in recent years. The total biomass shows a similar slow decline and then recent increase across the modeled years (Figure \ref{fig:tot-bio}).
+The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The estimates of spawning output across time are uncertain with the base model estimating a spawning output of 6.64 in 2021 with a 95 percent asymptotic confidence interval ranging from -1.6 - 14.88 millions of eggs. The predicted spawning output from the base model generally showed a steady decline over the early part of the time series with the spawning output stabilizing around 2010 and increasing in recent years. The total biomass shows a similar slow decline and then recent increase across the modeled years (Figure \ref{fig:tot-bio}).
 
-The 2020 spawning output relative to unfished equilibrium spawning output is just under the target of 40 percent of unfished spawning output (0.39, Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is large ranging between approximately 10 - 70 percent of unfished equilibrium spawning output. The standard deviation of the log of the spawning output in 2020 is 0.58.
+The 2021 spawning output relative to unfished equilibrium spawning output is just under the target of 40 percent of unfished spawning output (0.39, Figure \ref{fig:depl}). Approximate 95% confidence interval based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output is large ranging between approximately 10 - 70 percent of unfished equilibrium spawning output.
 
 The stock-recruit curve resulting from a value of steepness fixed at 0.72 is shown in Figure \ref{fig:bh-curve}. The estimated annual recruitment is shown in Figure \ref{fig:recruits}.
 
@@ -403,11 +399,11 @@ The three sensitivities that had the largest impact relative to the base model w
 
 The next two sensitivities that had the largest impact on stock scale relative to the base model were the sensitivities exploring data weighting using the DM Method and the sensitivity estimating natural mortality. Using the DM method for data weighting resulted in a larger estimate of unfished and recent spawning output than the base model, and estimating natural mortality resulted in a smaller estimate of unfished and recent spawning output than the base model (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). Both sensitivities resulted in higher stock status than the base model. Estimating natural mortality resulted in a tradeoff with selectivity. When allowing flexibility in $M$, the model estimated a higher value than the base model, resulting in higher estimates for the peak size in selectivity for both fleets. The estimate of $M$ is therefore limited by the bounds for the parameter estimates for peak selectivity. 
 
-The sensitivity estimating annual recruitment deviations resulted in a lower biomass scale, and level of depletion such that spawning output in 2020 was below the threshold of 25 percent of unfished spawning output (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). This applied whether data weighting values were updated or not. The estimates or recruitment deviations had a period of above-average recruitment from 1987 to 2003, then switched to a period of below-average recruitment (Figure \ref{fig:sens-recdev}). The recruitment deviation estimates were likely being driven by smaller lengths observed in the recreational fleet in the mid 1990s, as well as a lack of smaller fish being caught since 2000 (Figure \ref{fig:mean-rec-len-data}). Furthermore, the variability of the recruitment deviations prior to 2004 were higher than the assumed variability in recruitment (0.6), suggesting the increased recruitments were not well informed by the data. When adding recruitment deviations and updating data weighting values, individual years of positive recruitment deviations were more apparent, particularly for 1990, 1994, and 2000, and had uncertainty less than that of sigmaR. Lastly, estimating recruitment resulted in higher estimates of peak selectivity for both the recreational and commercial, well above the average maximum size in the population. The general pattern of recruitment deviations estimated seemed extreme for the Washington model, but showed some coherence with the recruitment deviations estimated in the separate Oregon model. The Oregon base model estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s. This may potentially suggest that quillback rockfish off the coast of Oregon and Washington experience similar drivers in recruitment, however, the Oregon model estimated periods of higher recruitment since 2000 to fit pulses of small fish in the length data and support increasing catches over time, whereas the Washington base model estimates lower than average recruitment throughout that time period.  
+The sensitivity estimating annual recruitment deviations resulted in a lower biomass scale, and level of depletion such that spawning output in 2021 was below the threshold of 25 percent of unfished spawning output (Figures \ref{fig:sens-ssb-subset} and \ref{fig:sens-depl-subset}). This applied whether data weighting values were updated or not. The estimates or recruitment deviations had a period of above-average recruitment from 1987 to 2003, then switched to a period of below-average recruitment (Figure \ref{fig:sens-recdev}). The recruitment deviation estimates were likely being driven by smaller lengths observed in the recreational fleet in the mid 1990s, as well as a lack of smaller fish being caught since 2000 (Figure \ref{fig:mean-rec-len-data}). Furthermore, the variability of the recruitment deviations prior to 2004 were higher than the assumed variability in recruitment (0.6), suggesting the increased recruitments were not well informed by the data. When adding recruitment deviations and updating data weighting values, individual years of positive recruitment deviations were more apparent, particularly for 1990, 1994, and 2000, and had uncertainty less than that of sigmaR. Lastly, estimating recruitment resulted in higher estimates of peak selectivity for both the recreational and commercial, well above the average maximum size in the population. The general pattern of recruitment deviations estimated seemed extreme for the Washington model, but showed some coherence with the recruitment deviations estimated in the separate Oregon model. The Oregon base model estimated above average recruitment in the late 1990s which led to an increase in spawning output during the 2000s. This may potentially suggest that quillback rockfish off the coast of Oregon and Washington experience similar drivers in recruitment, however, the Oregon model estimated periods of higher recruitment since 2000 to fit pulses of small fish in the length data and support increasing catches over time, whereas the Washington base model estimates lower than average recruitment throughout that time period.  
 
 ### Length-Based Estimate of Depletion 
 
-An exploratory length-based analysis was done using a Stock Synthesis Length-Only model (SS-LO; [@cope_implementing_2013]) to produce an independent estimate of selectivity and depletion based on observed recreational lengths from 1995-2020. SS-LO is a length only version of Stock Synthesis, meaning the removal history is removed, but the same life history values and length compositions are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment period in order to get an estimate of the current stock status. Length compositions are fit by estimating parameters ln($R_0$) (a nuisance parameter because it does not matter the value, but allows for best fits to the length compositions) and the selectivity by fleet. All other model specifications (e.g. sex-specific life history) match the reference model. This analysis indicated that quillback rockfish were 50 percent selected near 35 cm with full selection at 45 cm. The estimate of depletion for 2020 was 0.57. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimate of the depletion was used to provide an external estimate of stock status for use within a Simple Stock Synthesis run as described below.
+An exploratory length-based analysis was done using a Stock Synthesis Length-Only model (SS-LO; [@cope_implementing_2013]) to produce an independent estimate of selectivity and depletion based on observed recreational lengths from 1995-2020. SS-LO is a length only version of Stock Synthesis, meaning the removal history is removed, but the same life history values and length compositions are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment period in order to get an estimate of the current stock status. Length compositions are fit by estimating parameters ln($R_0$) (a nuisance parameter because it does not matter the value, but allows for best fits to the length compositions) and the selectivity by fleet. All other model specifications (e.g. sex-specific life history) match the reference model. This analysis indicated that quillback rockfish were 50 percent selected near 35 cm with full selection at 45 cm. The estimate of depletion for 2021 was 0.57. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimate of the depletion was used to provide an external estimate of stock status for use within a Simple Stock Synthesis run as described below.
 
 ### Simple stock synthesis
 
@@ -422,7 +418,7 @@ A Simple Stock Synthesis (SSS) was run to compare the results from the base mode
 		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0),
 		\item $L_{\infty}$ = normal distribution ($\mu$ = 43.04, $\sigma$ = 4.3),
 		\item $k$ = normal distribution ($\mu$ = 0.199, $\sigma$ = 0.02), and
-		\item Fraction unfished in 2020 = beta($\alpha$ = 0.40, $\beta$ = 0.20)
+		\item Fraction unfished in 2021 = beta($\alpha$ = 0.40, $\beta$ = 0.20)
 	\end{itemize}
 	\item Current stock status based on estimate from the length-only model (SS-LO):
 	\begin{itemize}
@@ -431,7 +427,7 @@ A Simple Stock Synthesis (SSS) was run to compare the results from the base mode
 		\item $h$ = truncated beta ($\alpha$ = 0.72, $\beta$ = 0.15, a = 0.20, b = 1.0),
 		\item $L_{\infty}$ = normal distribution ($\mu$ = 43.04, $\sigma$ = 4.3),
 		\item $k$ = normal distribution ($\mu$ = 0.199, $\sigma$ = 0.02), and
-		\item Fraction unfished in 2020 = beta($\alpha$ = 0.57, $\beta$ = 0.20)
+		\item Fraction unfished in 2021 = beta($\alpha$ = 0.57, $\beta$ = 0.20)
 	\end{itemize}
 	
 \end{enumerate}
@@ -455,12 +451,12 @@ An additional uncertainty is whether the perceived lack of small fish in the rec
 
 Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). Sustainable total yields  were 2.86 mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($SB_{40\%}$) was 7.67 millions of eggs. 
 
-The 2020 spawning output relative to unfished equilibrium spawning output is below the target of 40 percent but above the threshold of 25 percent of unfished spawning output in 2020 (39 percent, Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, was above the harvest rate limit ($SPR_{50\%}$) from 1987 - 2012, and has been both above and below the harvest rate limit in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium yield curve based on a steepness value fixed at 0.72.
+The 2021 spawning output relative to unfished equilibrium spawning output is below the target of 40 percent but above the threshold of 25 percent of unfished spawning output in 2020 (39 percent, Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, was above the harvest rate limit ($SPR_{50\%}$) from 1987 - 2012, and has been both above and below the harvest rate limit in recent years (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium yield curve based on a steepness value fixed at 0.72.
 
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Allowable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted ACLs and the percent allocation (12.9 percent) for Washington provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributes to the total catch. 
+A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Allowable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the mortality estimates from the GEMM product for the recreational fleet, averaged from 2018-2020, as requested by the PFMC Groundfish Management Team (GMT, personal communication). Removals in 2021 and 2022 were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributed to the total catch. 
 
 Recreational catches were provided in numbers, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in numbers based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.        
 
@@ -1172,7 +1168,7 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & OFL & ABC & Buf
 ![Change in the estimate of spawning output across a range of natural mortality values.\label{fig:m-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of natural mortality values."}
 
 
-![Change in the estimate of fraction unfished across a range of natural values.\label{fig:m-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of natural values."}
+![Change in the estimate of fraction unfished across a range of natural mortality values.\label{fig:m-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of natural mortality values."}
 
 <!-- Linf -->
 
@@ -1236,13 +1232,13 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & OFL & ABC & Buf
 ![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity."}
 
 
-![Change in estimated spawning output by sensitivity. Sensitivities for Linf and CV of older fish are omitted..\label{fig:sens-ssb-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity. Sensitivities for Linf and CV of older fish are omitted.."}
+![Change in estimated spawning output by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-ssb-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted."}
 
 
 ![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity."}
 
 
-![Change in estimated fraction unfished by sensitivity. Sensitivities for Linf and CV of older fish are omitted..\label{fig:sens-depl-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity. Sensitivities for Linf and CV of older fish are omitted.."}
+![Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-depl-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted."}
 
 
 ![Change in estimated annual recruitment deviation.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation."}
