@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.5)  26 AUG 2021 15:55
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.5)  26 AUG 2021 16:47
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -3088,7 +3088,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:68,2:31794,3:4588,4:241,5:2328,6:2276,7:30268,8:81,9:14636,10:
 26,11:702,12:1
  69895 multiletter control sequences out of 65536+600000
- 76 fonts using 15693747 bytes
+ 76 fonts using 15693671 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 warning  (pdf backend): unreferenced destination with name 'append_b'
@@ -3109,7 +3109,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (118 pages, 164825719 bytes).
+Output written on _main.pdf (118 pages, 164826573 bytes).
 
 PDF statistics: 2017 PDF objects out of 2073 (max. 8388607)
  368 named destinations out of 1000 (max. 131072)
