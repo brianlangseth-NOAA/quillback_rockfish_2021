@@ -1318,29 +1318,77 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   pdf = FALSE)
 
 
-#Alternative Low state is Lmax = 43.89, high is R0 = 40.51 
-model = "8_0_6_highState_Lmax"
-base.806 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.806)
+#Now run R0 states with forecasted catches (ABC values) from base.800
+#Copy model 800 and update forecast file with catches
+#allocated based on same allocation for base forecast (rec = 73.5%)
+#Set buffer to 1 for all years
+fore_loc = grep("ForeCatch",base.800$derived_quants$Label)
+baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.800$derived_quants[fore_loc,"Value"][-c(1:2)]*0.265),
+                 data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.800$derived_quants[fore_loc,"Value"][-c(1:2)]*0.735))
+                 
+model = "8_0_4b_highState_R0_baseABC"
+base.804 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.804)
 
-model = "8_0_7_lowState_Lmax"
-base.807 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.807)
+model = "8_0_5b_lowState_R0_baseABC"
+base.805 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.805)
 
-sens_names <- c("Base model","High state","Low state")
-sens_models  <- SSsummarize(list(base.800, base.806, base.807))
 
-#Plot each individually for control over legend location
-SSplotComparisons(sens_models, endyrvec = 2021, 
-                  legendlabels = sens_names, 
-                  ylimAdj = 1.10,
-                  plotdir = file.path(wd, 'decision_tables'), 
-                  legendloc = "bottomleft", 
-                  legendncol = 2,
-                  filenameprefix = paste0("Lmax_States_of_nature_comparison_"),
-                  subplot = c(2,4,9,10,11,12), 
-                  print = TRUE, 
-                  pdf = FALSE)
+
+####### Other states not ultimately used ############################
+  #Alternative Low state is Lmax = 43.89, high is R0 = 40.51 
+  model = "8_0_6_highState_Lmax"
+  base.806 = SS_output(file.path(wd, model),covar=TRUE)
+  SS_plots(base.806)
+  
+  model = "8_0_7_lowState_Lmax"
+  base.807 = SS_output(file.path(wd, model),covar=TRUE)
+  SS_plots(base.807)
+  
+  sens_names <- c("Base model","High state","Low state")
+  sens_models  <- SSsummarize(list(base.800, base.806, base.807))
+  
+  #Plot each individually for control over legend location
+  SSplotComparisons(sens_models, endyrvec = 2021, 
+                    legendlabels = sens_names, 
+                    ylimAdj = 1.10,
+                    plotdir = file.path(wd, 'decision_tables'), 
+                    legendloc = "bottomleft", 
+                    legendncol = 2,
+                    filenameprefix = paste0("Lmax_States_of_nature_comparison_"),
+                    subplot = c(2,4,9,10,11,12), 
+                    print = TRUE, 
+                    pdf = FALSE)
+  
+  
+  #Alternative Low state with sigma = 1 is low is R0 = 1.715, high is R0 = 2.585 
+  model = "8_0_8_highState_R0_sigma1"
+  base.808 = SS_output(file.path(wd, model),covar=TRUE)
+  SS_plots(base.808)
+  
+  model = "8_0_9_lowState_R0_sigma1"
+  base.809 = SS_output(file.path(wd, model),covar=TRUE)
+  SS_plots(base.809)
+  
+  sens_names <- c("Base model","High state","Low state")
+  sens_models  <- SSsummarize(list(base.800, base.808, base.809))
+  
+  #Plot each individually for control over legend location
+  SSplotComparisons(sens_models, endyrvec = 2021, 
+                    legendlabels = sens_names, 
+                    ylimAdj = 1.10,
+                    plotdir = file.path(wd, 'decision_tables'), 
+                    legendloc = "bottomleft", 
+                    legendncol = 2,
+                    filenameprefix = paste0("R0_Sigma1_States_of_nature_comparison_"),
+                    subplot = c(2,4,9,10,11,12), 
+                    print = TRUE, 
+                    pdf = FALSE)
+  #Seems fairly extreme. Suggest going with sigma from the model
+##########################################################################
+
+
 
 
 

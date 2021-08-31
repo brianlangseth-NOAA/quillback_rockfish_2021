@@ -62,6 +62,29 @@ find_para(dir = paste0(dir,"_forR0"),
           slope = "pos")
 #2.01
 
+#Repeat but use SIGMA = 1.0
+find_para(dir = paste0(dir,"_forR0"), 
+          yr = 2021, 
+          parm = c("SR_parm[1]"), quant = c(0.875), 
+          ctl_name = "2021_or_quillback.ctl", 
+          parm_string = "SR_LN(R0)", 
+          est = FALSE,
+          sigma = 1.0,
+          use_115 = TRUE,
+          slope = "pos")
+#2.585 for target of 29.077
+
+find_para(dir = paste0(dir,"_forR0"),  
+          yr = 2021, 
+          parm = c("SR_parm[1]"), quant = c(0.125), 
+          ctl_name = "2021_or_quillback.ctl", 
+          parm_string = "SR_LN(R0)", 
+          est = FALSE,
+          sigma = 1.0,
+          use_115 = TRUE,
+          slope = "pos")
+#1.715 for target of 2.915
+
 #Lmax
 #Adjust the largest step size for this run from 0.04 to 0.5, and both finer
 #step sizes from 0.005 to 0.005 (first) and 0.001 to 0.01 (second) to speed up search
@@ -284,12 +307,12 @@ find_para <- function(dir, base, yr = 2021, parm = c("MGparm[1]"),
                            ifelse(find_sb > target - target* 0.02 & find_sb < target + target * 0.02,
                                   0.0002, 0.001), 0.002)
       } else {
-        # step.size =ifelse(find_sb > target - target * 0.05 & find_sb < target + target * 0.05, 
-        #                   ifelse(find_sb > target - target* 0.02 & find_sb < target + target * 0.02,
-        #                          0.005, 0.01), 0.04)			
-        step.size =ifelse(find_sb > (target - target * 0.1) & find_sb < (target + target * 0.1), 
-                          ifelse(find_sb > (target - target* 0.02) & find_sb < (target + target * 0.02),
-                                 0.01, 0.05), 0.5)		
+        step.size =ifelse(find_sb > target - target * 0.05 & find_sb < target + target * 0.05, 
+                           ifelse(find_sb > target - target* 0.02 & find_sb < target + target * 0.02,
+                                  0.005, 0.01), 0.04)			
+        #step.size =ifelse(find_sb > (target - target * 0.1) & find_sb < (target + target * 0.1), 
+        #                  ifelse(find_sb > (target - target* 0.02) & find_sb < (target + target * 0.02),
+        #                         0.01, 0.05), 0.5)		
       }
       
       if(slope[tt] == "pos"){
