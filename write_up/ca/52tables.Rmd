@@ -121,6 +121,8 @@ mod_params = model$parameters[-c(grep('Impl',model$parameters$Label),
                                   "Max","Status","Parm_StDev",
                                   "Pr_type","Prior","Pr_SD"))] 
 
+mod_params[model$parameters$Label=="NatM_p_1_Fem_GP_1","Pr_SD"] = 0.438 #update for model 900
+
 test = mod_params[which(mod_params$Label == "Wtlen_1_Fem_GP_1"),'Value']
 mod_params[,'Value'] = round(as.numeric(mod_params[,'Value']),3)                                 
 
@@ -222,7 +224,18 @@ the 95 percent intervals.",
 <!-- ======================================================= -->
 
 <!-- tab:timeseries -->
-\input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/TimeSeries.tex}
+```{r, results = 'asis'}
+timeseries = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base", "tables", "TimeSeries.csv"))
+col_names = c("Year", "Total Biomass (mt)", "Spawning Output", "Total Biomass 3+ (mt)", "Fraction Unfished", "Age-0 Recruits", "Total Mortality (mt)", "1-SPR", "Exploitation Rate")
+
+table_format(x = round(timeseries,2),
+                 caption = "Time series of population estimates from the base model.",
+                 label = "timeseries",
+                 longtable = TRUE,
+                 col_names = col_names,
+                 row.names = FALSE)
+```
+<!-- \input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/TimeSeries.tex} -->
 
 \newpage
 
@@ -242,7 +255,7 @@ the 95 percent intervals.",
 <!-- ======================================================= -->
 
 ```{r, results = 'asis'}
-tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base", 'tables', 'g_Projections_ES.csv'))
 man_n = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv")
 man_s = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_south2011_2022.csv")
 
@@ -271,7 +284,7 @@ col_names = c('Year',
               "Spawning Output",
               "Fraction Unfished")
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.",
              label = "project",
              align = 'l',
              col_names = col_names)

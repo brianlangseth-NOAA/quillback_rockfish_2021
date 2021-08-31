@@ -4,11 +4,11 @@
 
 Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (`r endyr`, Table \ref{tab:referenceES}). Sustainable total yields  were `r round(model$derived_quants[model$derived_quants$Label == 'Dead_Catch_SPR', 'Value'], 2)` mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($SB_{40\%}$) was `r round(model$derived_quants[model$derived_quants$Label == 'SSB_SPR', 'Value'], 2)` millions of eggs. 
 
-The `r endyr` spawning output relative to unfished equilibrium spawning output is below the threshold of 25 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has been above the harvest rate limit ($SPR_{50\%}$) in all years but four years from 1975-2009, and in all but three years since (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
+The `r endyr+1` spawning output relative to unfished equilibrium spawning output is below the threshold of 25 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has been above the harvest rate limit ($SPR_{50\%}$) in all years but four years from 1975-2009, and in all but three years since (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at `r model$parameters[model$parameters$Label == "SR_BH_steep","Value"]`.
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45  (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted ACLs for the southern management area and the percent allocation (28.7 percent) for `r state` in the northern management area provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 each fleet contributes to the total catch. 
+A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the combined total removals averaged from 2017-2019 as specified by the PFMC Groundfish Management Team (GMT, personal communication). The removals were apportioned to recreational and commercial catches based on the average proportion from 2017-2019 that each fleet contributed to the total catch. 
 
 The decision table uncertainty axes and catch levels are to be determined later.
 
@@ -19,7 +19,7 @@ filein = file.path(general_wd,'4_management_uncertainty.Rmd')
 read_child(filein)
 ```
 
-## Research and Data Needs
+# Research and Data Needs
 
 The ability to estimate additional process and biological parameters for `r spp` was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
 
@@ -29,7 +29,7 @@ The ability to estimate additional process and biological parameters for `r spp`
   
   \item Improved understanding of where recreational fishing is commonly occurring (areas and depths) and the range of sizes available by depth would better inform the selectivity form, which currently is the near the shape for maturity.  
 
-	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in `r state` would result in samples from the entire U.S. West Coast informing growth.
+	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in `r state` would result in samples from the entire U.S. West Coast informing growth. Samples of young fish would particularly help inform estimates of the growth coefficient (k), and help distinguish whether fish in California waters have different growth dynamics from those in Oregon and Washington waters. 
 	
 	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates. 
 	

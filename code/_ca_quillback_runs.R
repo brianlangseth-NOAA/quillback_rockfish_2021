@@ -1004,7 +1004,7 @@ rownames(sens_table) = c("Total Likelihood",
                          "Parameter Bounds Likelihood",
                          "log(R0)",
                          "SB Virgin",
-                         "SB 2020",
+                         "SB 2021",
                          "Fraction Unfished 2021",
                          "Total Yield at SPR 50",
                          "Steepness",
@@ -1014,8 +1014,8 @@ rownames(sens_table) = c("Total Likelihood",
                          "Von Bert. k",
                          "CV young",
                          "CV old",
-                         "Peak recreational selex",
-                         "Peak commercial selex")
+                         "Peak commercial selex",
+                         "Peak recreational selex")
 
 write.csv(sens_table, file = file.path(wd, "sensitivities", paste0("base.710_sensitivities.csv")))
 
@@ -1030,3 +1030,30 @@ t = table_format(x = sens_table,
 
 kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/sensitivities.tex"))
 
+
+
+###################################################################################
+#Post SSC model runs to update main report
+#August GFSC meeting requests are in _ca_quillback_runs_postSSC
+###################################################################################
+
+#Starting from model 7_1_0_base
+
+#1. Adjust projection values based on assuming recent catch. Update apportionment based on 2017-2019 catches 
+#(values here: https://docs.google.com/spreadsheets/d/10EMQltWAhxCbdBvnt8Ao5tWJc-e7FmTDH8tcWgJKiXE/edit#gid=208964021)
+#2. Correct M prior sd to 0.438
+
+model = "9_0_0_postSSC_base"
+base.900 = SS_output(file.path(wd, model),covar=TRUE)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\9_0_0_postSSC_base", write = FALSE, option = "none")
+SS_plots(base.900, forecastplot = TRUE)
+SSplotSPR(base.900,subplots=4,print=TRUE)
+
+#The sensitivity tables and model output are the same whether base.710 or base.900 is used. 
+#All values are identical, with the exception being the Forecast recruitment likelihood and the 
+#parameter priors likelihood, which differ at 10^-9 and 10^-12 orders of magnitude, respectively. 
+#Because the tables, when rounded, are identical, I use the base.710 model in the sensitivity table. 
+
+#Use base.710 model results for the write up, but with the projection and time series table from base.900
+#Use base.900 model for model files and but base.710 for r4ss plots because r4ss was updated since base.710
+#and figure names are different

@@ -32,7 +32,7 @@ table_format(x = tab,
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(appendix_fig_loc, "quillback_rov_lengths.png"), 
-caption = "Length frequency distribution of in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below)",
+caption = "Length frequency distribution in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below)",
 label = 'ca-ROV')
 ```	
 

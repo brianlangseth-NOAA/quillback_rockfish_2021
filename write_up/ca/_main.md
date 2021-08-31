@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "May"
+month: "August"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -209,7 +209,7 @@ The input sample sizes for the recreational length data were set equal to the nu
 
 ## Fishery-Independent Data
 
-No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the California coast to include abundance indices for this assessment. The WCGBTS, the Hook and Line survey, and the Triennial survey collect data off the California coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, and typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. No quillback rockfish were captured in the Hook and Line survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off California were not included in the model. Biological data from the WCGBTS survey was used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey. 
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the California coast to include abundance indices for this assessment. The WCGBTS, the Hook and Line survey, and the Triennial survey collect data off the California coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, and typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. No quillback rockfish were captured in the Hook and Line survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 26) and Triennial Survey (n = 1) off California were not included in the model. Biological data from the WCGBTS survey was used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey. 
 
 <!--chapter:end:21s-.Rmd-->
 
@@ -341,9 +341,9 @@ Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}. The model fit
 
 ### Population Trajectory
 
-The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The predicted spawning output from the base model declines steadily until 1999, with the exception of a slight increase around 1990, and then increases due to several above average recruitment events that occurred in the to mid- to late-1990s. The population then increases until 2007 after which it remains level until 2016 and then declines through 2020. The estimate of total biomass over time is shown in Figure \ref{fig:tot-bio}.
+The predicted spawning output (in millions of eggs) is given in Table \ref{tab:timeseries} and plotted in Figure \ref{fig:ssb}. The estimates of spawning output across time are uncertain with the base model estimating a spawning output of 7.75 in 2021 with a 95 percent asymptotic confidence interval ranging from 1.65 - 13.84 millions of eggs. The predicted spawning output from the base model declines steadily until 1999, with the exception of a slight increase around 1990, and then increases due to several above average recruitment events that occurred in the to mid- to late-1990s. The population then increases until 2007 after which it remains level until 2016 and then declines through 2020. The estimate of total biomass over time is shown in Figure \ref{fig:tot-bio}.
 
-The 2020 spawning output relative to unfished equilibrium spawning output is below the threshold of 25 percent of unfished spawning output (0.14, Figure \ref{fig:depl}). Approximate confidence intervals based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output ranges between approximately 5 - 25 percent of unfished equilibrium spawning output. The standard deviation of the log of the spawning output in 2020 is 0.39.
+The 2021 spawning output relative to unfished equilibrium spawning output is below the threshold of 25 percent of unfished spawning output (0.14, Figure \ref{fig:depl}). Approximate 95% confidence interval based on the asymptotic variance estimates show that the uncertainty in the estimated spawning output ranges between approximately 5 - 25 percent of unfished equilibrium spawning output.
 
 The stock-recruit curve resulting from a value of steepness fixed at 0.72 is shown in Figure \ref{fig:bh-curve}. The estimated annual recruitment is shown in Figure \ref{fig:recruits}.
 
@@ -423,7 +423,7 @@ All other sensitivities, including those estimating dome-shaped recruitment, res
 
 ### Unresolved Problems and Major Uncertainties
 
-A primary uncertainty for the California quillback rockfish model is in treatment of growth parameters. The fixed value for k for quillback rockfish is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is possible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and estimates of $L_{\infty}$ near to the fixed value. The choice also matters in the sense that estimating growth parameters results in a different stock status compared to the base model. Despite well defined profiles for $k$ and $L_{\infty}$, we decided to keep the fixed values in the base model given the relatively limited length composition data, concerns over whether length data on its own without age data can inform $k$, that the curve of estimated $k$ and $L_{\infty}$ values poorly fit the age and length data, and that growth estimates used in the model were based on data with young fish from the surveys to inform the estimate of $k$.
+A primary uncertainty for the California quillback rockfish model is in treatment of growth parameters. The fixed value for k for quillback rockfish is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio, but one within the range of Beverton [-@Beverton_1992] for Sebastes. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is possible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and estimates of $L_{\infty}$ near to the fixed value. The choice also matters in the sense that estimating growth parameters results in a different stock status compared to the base model. Despite well defined profiles for $k$ and $L_{\infty}$, we decided to keep the fixed values in the base model given the relatively limited length composition data, concerns over whether length data on its own without age data can inform $k$, that the curve of estimated $k$ and $L_{\infty}$ values poorly fit the age and length data, and that growth estimates used in the model were based on data with young fish from the surveys to inform the estimate of $k$.
 
 Variation in recruitment deviations remains an unresolved problem. Recruitment deviations in the 1980s and 1990s were highly variable, and variance was higher than the assumed value for $sigmaR$. We explored numerous ways to account for this, with the only solution reducing recruitment deviations to below the value of $sigmaR$ was by reducing the variability in size at older ages to very small values (~0.01). Under such a scenario, the trajectory of the population was very similar to the base model as was the pattern of stronger than average recruitment deviations in the 1980s and 1990s followed by weaker than average recruitment deviations in the 2000s. Consequently, this remains an unresolved problem that does not appear to greatly affect model results.
 
@@ -439,11 +439,11 @@ Lastly, catches of quillback rockfish were particularly high in a few years for 
 
 Reference points were calculated using the estimated selectivity and catch distributions among fleets in the most recent year of the model (2020, Table \ref{tab:referenceES}). Sustainable total yields  were 8.41 mt when using an $SPR_{50\%}$ reference harvest rate. The spawning output equivalent to 40 percent of the unfished spawning output ($SB_{40\%}$) was 24.58 millions of eggs. 
 
-The 2020 spawning output relative to unfished equilibrium spawning output is below the threshold of 25 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has been above the harvest rate limit ($SPR_{50\%}$) in all years but four years from 1975-2009, and in all but three years since (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
+The 2021 spawning output relative to unfished equilibrium spawning output is below the threshold of 25 percent of unfished spawning output (Figure \ref{fig:depl}). The fishing intensity, $1-SPR$, has been above the harvest rate limit ($SPR_{50\%}$) in all years but four years from 1975-2009, and in all but three years since (Table \ref{tab:timeseries} and Figure \ref{fig:1-spr}). Figure \ref{fig:phase-plot} shows the phase plot of relative spawning output and fishing intensity. Table \ref{tab:referenceES} shows the full suite of estimated reference points for the base model and Figure \ref{fig:yield} shows the equilibrium curve based on a steepness value fixed at 0.72.
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45  (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the adopted ACLs for the southern management area and the percent allocation (28.7 percent) for California in the northern management area provided by the PFMC Groundfish Management Team (GMT, personal communication). ACLs were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 each fleet contributes to the total catch. 
+A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the combined total removals averaged from 2017-2019 as specified by the PFMC Groundfish Management Team (GMT, personal communication). The removals were apportioned to recreational and commercial catches based on the average proportion from 2017-2019 that each fleet contributed to the total catch. 
 
 The decision table uncertainty axes and catch levels are to be determined later.
 
@@ -454,7 +454,7 @@ The decision table uncertainty axes and catch levels are to be determined later.
 
 The estimated uncertainty in the base model around the 2021 spawning output is $\sigma$ = 0.39 and the uncertainty in the base model around the 2021 OFL is $\sigma$ = 0.37. The estimated model uncertainty was less than the category 2 groundfish data moderate assessment default value of  $\sigma$ = 1.0. 
 
-## Research and Data Needs
+# Research and Data Needs
 
 The ability to estimate additional process and biological parameters for quillback rockfish was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
 
@@ -464,7 +464,7 @@ The ability to estimate additional process and biological parameters for quillba
   
   \item Improved understanding of where recreational fishing is commonly occurring (areas and depths) and the range of sizes available by depth would better inform the selectivity form, which currently is the near the shape for maturity.  
 
-	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in California would result in samples from the entire U.S. West Coast informing growth.
+	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in California would result in samples from the entire U.S. West Coast informing growth. Samples of young fish would particularly help inform estimates of the growth coefficient (k), and help distinguish whether fish in California waters have different growth dynamics from those in Oregon and Washington waters. 
 	
 	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates. 
 	
@@ -707,7 +707,7 @@ Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
 \endfoot
 \bottomrule
 \endlastfoot
-NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.48)\\
+NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.438)\\
 L at Amin Fem GP 1 & 8.230 & -2 & (0, 10) & NA & NA & None\\
 L at Amax Fem GP 1 & 43.040 & -2 & (25, 60) & NA & NA & None\\
 VonBert K Fem GP 1 & 0.199 & -2 & (0.03, 0.3) & NA & NA & None\\
@@ -890,7 +890,145 @@ MSY (mt) & 9.3 & 7.91 & 10.69\\*
 <!-- ======================================================= -->
 
 <!-- tab:timeseries -->
-\input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/TimeSeries.tex}
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{c>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}}
+\caption{(\#tab:timeseries)Time series of population estimates from the base model.}\\
+\toprule
+Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction Unfished & Age-0 Recruits & Total Mortality (mt) & 1-SPR & Exploitation Rate\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:timeseries)Time series of population estimates from the base model. \textit{(continued)}}\\
+\toprule
+Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction Unfished & Age-0 Recruits & Total Mortality (mt) & 1-SPR & Exploitation Rate\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1916 & 444.71 & 55.08 & 443.01 & 1.00 & 23.77 & 0.02 & 0.00 & 0.00\\
+1917 & 444.70 & 55.08 & 443.00 & 1.00 & 23.77 & 0.03 & 0.00 & 0.00\\
+1918 & 444.67 & 55.08 & 442.97 & 1.00 & 23.77 & 0.07 & 0.00 & 0.00\\
+1919 & 444.60 & 55.07 & 442.90 & 1.00 & 23.77 & 0.02 & 0.00 & 0.00\\
+1920 & 444.59 & 55.07 & 442.89 & 1.00 & 23.77 & 0.02 & 0.00 & 0.00\\
+1921 & 444.57 & 55.06 & 442.87 & 1.00 & 23.77 & 0.03 & 0.00 & 0.00\\
+1922 & 444.55 & 55.06 & 442.85 & 1.00 & 23.77 & 0.03 & 0.00 & 0.00\\
+1923 & 444.53 & 55.06 & 442.83 & 1.00 & 23.77 & 0.01 & 0.00 & 0.00\\
+1924 & 444.53 & 55.06 & 442.83 & 1.00 & 23.77 & 0.02 & 0.00 & 0.00\\
+1925 & 444.52 & 55.06 & 442.82 & 1.00 & 23.77 & 0.08 & 0.00 & 0.00\\
+1926 & 444.46 & 55.05 & 442.76 & 1.00 & 23.77 & 0.07 & 0.00 & 0.00\\
+1927 & 444.40 & 55.04 & 442.70 & 1.00 & 23.77 & 0.14 & 0.01 & 0.00\\
+1928 & 444.29 & 55.03 & 442.58 & 1.00 & 23.77 & 0.18 & 0.01 & 0.00\\
+1929 & 444.13 & 55.00 & 442.43 & 1.00 & 23.77 & 0.24 & 0.01 & 0.00\\
+1930 & 443.92 & 54.98 & 442.22 & 1.00 & 23.76 & 0.32 & 0.02 & 0.00\\
+1931 & 443.64 & 54.94 & 441.94 & 1.00 & 23.76 & 0.44 & 0.02 & 0.00\\
+1932 & 443.26 & 54.89 & 441.56 & 1.00 & 23.76 & 0.42 & 0.02 & 0.00\\
+1933 & 442.91 & 54.85 & 441.21 & 1.00 & 23.76 & 0.42 & 0.02 & 0.00\\
+1934 & 442.57 & 54.80 & 440.87 & 0.99 & 23.76 & 0.45 & 0.02 & 0.00\\
+1935 & 442.21 & 54.75 & 440.50 & 0.99 & 23.76 & 0.61 & 0.03 & 0.00\\
+1936 & 441.71 & 54.69 & 440.01 & 0.99 & 23.75 & 0.64 & 0.03 & 0.00\\
+1937 & 441.20 & 54.62 & 439.49 & 0.99 & 23.75 & 0.65 & 0.03 & 0.00\\
+1938 & 440.69 & 54.55 & 438.99 & 0.99 & 23.75 & 0.70 & 0.03 & 0.00\\
+1939 & 440.15 & 54.48 & 438.45 & 0.99 & 23.74 & 0.63 & 0.03 & 0.00\\
+1940 & 439.70 & 54.42 & 438.01 & 0.99 & 21.84 & 0.70 & 0.03 & 0.00\\
+1941 & 439.19 & 54.36 & 437.51 & 0.99 & 21.75 & 0.71 & 0.03 & 0.00\\
+1942 & 438.59 & 54.30 & 437.03 & 0.99 & 21.67 & 0.44 & 0.02 & 0.00\\
+1943 & 438.13 & 54.27 & 436.57 & 0.99 & 21.58 & 0.47 & 0.02 & 0.00\\
+1944 & 437.45 & 54.24 & 435.90 & 0.98 & 21.49 & 1.16 & 0.05 & 0.00\\
+1945 & 435.93 & 54.10 & 434.39 & 0.98 & 21.39 & 2.59 & 0.11 & 0.01\\
+1946 & 432.88 & 53.75 & 431.35 & 0.98 & 21.29 & 2.92 & 0.13 & 0.01\\
+1947 & 429.41 & 53.34 & 427.88 & 0.97 & 21.17 & 0.91 & 0.04 & 0.00\\
+1948 & 427.78 & 53.15 & 426.26 & 0.96 & 21.07 & 1.86 & 0.09 & 0.00\\
+1949 & 425.13 & 52.84 & 423.62 & 0.96 & 20.95 & 1.47 & 0.07 & 0.00\\
+1950 & 422.79 & 52.55 & 421.28 & 0.95 & 20.84 & 1.54 & 0.08 & 0.00\\
+1951 & 420.32 & 52.25 & 418.82 & 0.95 & 20.72 & 1.98 & 0.10 & 0.00\\
+1952 & 417.39 & 51.89 & 415.90 & 0.94 & 20.59 & 1.72 & 0.08 & 0.00\\
+1953 & 414.70 & 51.56 & 413.22 & 0.94 & 20.47 & 1.39 & 0.07 & 0.00\\
+1954 & 412.33 & 51.27 & 410.86 & 0.93 & 20.34 & 1.92 & 0.09 & 0.00\\
+1955 & 409.43 & 50.91 & 407.96 & 0.92 & 20.20 & 1.83 & 0.09 & 0.00\\
+1956 & 406.61 & 50.55 & 405.16 & 0.92 & 20.07 & 2.07 & 0.10 & 0.01\\
+1957 & 403.57 & 50.17 & 402.13 & 0.91 & 19.93 & 2.08 & 0.10 & 0.01\\
+1958 & 400.54 & 49.80 & 399.11 & 0.90 & 19.79 & 3.61 & 0.17 & 0.01\\
+1959 & 396.03 & 49.22 & 394.60 & 0.89 & 19.64 & 2.67 & 0.13 & 0.01\\
+1960 & 392.48 & 48.78 & 391.07 & 0.89 & 19.49 & 2.21 & 0.11 & 0.01\\
+1961 & 389.43 & 48.39 & 388.03 & 0.88 & 19.34 & 1.61 & 0.09 & 0.00\\
+1962 & 387.00 & 48.09 & 385.61 & 0.87 & 19.18 & 1.82 & 0.10 & 0.00\\
+1963 & 384.38 & 47.76 & 383.00 & 0.87 & 19.01 & 2.74 & 0.14 & 0.01\\
+1964 & 380.86 & 47.32 & 379.49 & 0.86 & 18.82 & 2.23 & 0.12 & 0.01\\
+1965 & 377.86 & 46.95 & 376.51 & 0.85 & 18.63 & 3.83 & 0.19 & 0.01\\
+1966 & 373.31 & 46.38 & 371.97 & 0.84 & 18.41 & 4.29 & 0.21 & 0.01\\
+1967 & 368.35 & 45.75 & 367.02 & 0.83 & 18.16 & 4.84 & 0.23 & 0.01\\
+1968 & 362.91 & 45.06 & 361.59 & 0.82 & 17.89 & 4.95 & 0.24 & 0.01\\
+1969 & 357.42 & 44.37 & 356.12 & 0.81 & 17.59 & 5.47 & 0.27 & 0.02\\
+1970 & 351.47 & 43.62 & 350.20 & 0.79 & 17.27 & 7.45 & 0.34 & 0.02\\
+1971 & 343.66 & 42.63 & 342.40 & 0.77 & 16.93 & 6.62 & 0.32 & 0.02\\
+1972 & 336.76 & 41.75 & 335.53 & 0.76 & 16.62 & 9.47 & 0.41 & 0.03\\
+1973 & 327.14 & 40.53 & 325.93 & 0.74 & 16.38 & 10.23 & 0.44 & 0.03\\
+1974 & 316.91 & 39.24 & 315.73 & 0.71 & 16.33 & 11.31 & 0.47 & 0.04\\
+1975 & 305.79 & 37.82 & 304.62 & 0.69 & 16.56 & 11.27 & 0.48 & 0.04\\
+1976 & 294.93 & 36.43 & 293.75 & 0.66 & 16.63 & 12.83 & 0.53 & 0.04\\
+1977 & 282.77 & 34.87 & 281.58 & 0.63 & 16.47 & 13.56 & 0.56 & 0.05\\
+1978 & 270.21 & 33.25 & 269.03 & 0.60 & 13.10 & 13.19 & 0.56 & 0.05\\
+1979 & 258.36 & 31.70 & 257.22 & 0.58 & 14.40 & 14.02 & 0.60 & 0.05\\
+1980 & 245.94 & 30.10 & 244.98 & 0.55 & 16.63 & 15.13 & 0.63 & 0.06\\
+1981 & 232.67 & 28.41 & 231.61 & 0.52 & 17.49 & 5.45 & 0.36 & 0.02\\
+1982 & 229.28 & 27.98 & 228.08 & 0.51 & 16.78 & 5.60 & 0.37 & 0.02\\
+1983 & 226.04 & 27.54 & 224.79 & 0.50 & 19.34 & 40.56 & 0.88 & 0.18\\
+1984 & 188.81 & 22.73 & 187.56 & 0.41 & 25.74 & 13.56 & 0.67 & 0.07\\
+1985 & 179.32 & 21.37 & 177.84 & 0.39 & 31.50 & 12.25 & 0.66 & 0.07\\
+1986 & 172.18 & 20.26 & 170.27 & 0.37 & 25.98 & 13.26 & 0.70 & 0.08\\
+1987 & 165.67 & 19.13 & 163.36 & 0.35 & 75.32 & 5.66 & 0.47 & 0.03\\
+1988 & 168.47 & 19.05 & 166.06 & 0.35 & 23.16 & 2.13 & 0.23 & 0.01\\
+1989 & 177.90 & 19.60 & 173.22 & 0.36 & 21.95 & 11.58 & 0.65 & 0.07\\
+1990 & 180.53 & 19.28 & 178.89 & 0.35 & 21.09 & 17.55 & 0.76 & 0.10\\
+1991 & 178.59 & 18.54 & 176.99 & 0.34 & 36.48 & 73.90 & 0.96 & 0.42\\
+1992 & 123.22 & 11.85 & 121.50 & 0.22 & 36.10 & 35.41 & 0.94 & 0.29\\
+1993 & 103.81 & 9.92 & 101.23 & 0.18 & 26.07 & 40.67 & 0.96 & 0.40\\
+1994 & 78.69 & 7.12 & 76.20 & 0.13 & 42.59 & 23.90 & 0.93 & 0.31\\
+1995 & 70.28 & 5.81 & 68.24 & 0.11 & 18.48 & 12.66 & 0.89 & 0.19\\
+1996 & 73.59 & 5.85 & 70.74 & 0.11 & 70.50 & 15.56 & 0.91 & 0.22\\
+1997 & 75.08 & 5.88 & 73.19 & 0.11 & 13.02 & 22.98 & 0.94 & 0.31\\
+1998 & 71.18 & 5.29 & 66.93 & 0.10 & 13.66 & 14.98 & 0.91 & 0.22\\
+1999 & 75.16 & 5.56 & 74.02 & 0.10 & 92.17 & 13.81 & 0.90 & 0.19\\
+2000 & 80.00 & 6.02 & 78.15 & 0.11 & 10.68 & 13.31 & 0.88 & 0.17\\
+2001 & 86.73 & 6.82 & 81.26 & 0.12 & 9.57 & 16.10 & 0.89 & 0.20\\
+2002 & 91.47 & 7.39 & 90.73 & 0.13 & 8.86 & 5.96 & 0.70 & 0.07\\
+2003 & 104.93 & 8.76 & 104.25 & 0.16 & 10.45 & 13.92 & 0.84 & 0.13\\
+2004 & 108.84 & 9.75 & 108.18 & 0.18 & 14.50 & 5.64 & 0.60 & 0.05\\
+2005 & 118.38 & 11.76 & 117.57 & 0.21 & 17.11 & 10.59 & 0.73 & 0.09\\
+2006 & 121.11 & 12.85 & 120.05 & 0.23 & 10.06 & 14.55 & 0.79 & 0.12\\
+2007 & 117.91 & 12.90 & 116.79 & 0.23 & 7.71 & 19.32 & 0.85 & 0.17\\
+2008 & 108.25 & 11.93 & 107.56 & 0.22 & 7.25 & 11.05 & 0.75 & 0.10\\
+2009 & 105.22 & 11.66 & 104.67 & 0.21 & 8.16 & 6.88 & 0.64 & 0.07\\
+2010 & 104.97 & 11.80 & 104.42 & 0.21 & 12.50 & 3.56 & 0.46 & 0.03\\
+2011 & 107.13 & 12.27 & 106.44 & 0.22 & 28.47 & 5.45 & 0.57 & 0.05\\
+2012 & 106.95 & 12.39 & 105.87 & 0.22 & 15.17 & 7.99 & 0.68 & 0.08\\
+2013 & 104.56 & 12.04 & 102.72 & 0.22 & 9.06 & 3.57 & 0.46 & 0.03\\
+2014 & 106.98 & 12.13 & 105.99 & 0.22 & 6.86 & 2.97 & 0.41 & 0.03\\
+2015 & 110.22 & 12.30 & 109.61 & 0.22 & 6.87 & 8.55 & 0.70 & 0.08\\
+2016 & 107.80 & 12.00 & 107.30 & 0.22 & 9.00 & 9.46 & 0.73 & 0.09\\
+2017 & 103.96 & 11.74 & 103.43 & 0.21 & 11.69 & 12.52 & 0.79 & 0.12\\
+2018 & 96.59 & 11.06 & 95.90 & 0.20 & 17.10 & 12.84 & 0.81 & 0.13\\
+2019 & 88.55 & 10.19 & 87.64 & 0.18 & 16.70 & 16.02 & 0.87 & 0.18\\
+2020 & 77.52 & 8.78 & 76.30 & 0.16 & 15.78 & 12.34 & 0.85 & 0.16\\
+2021 & 70.60 & 7.75 & 69.42 & 0.14 & 14.99 & 13.50 & 0.88 & 0.19\\
+2022 & 63.18 & 6.61 & 62.06 & 0.12 & 13.97 & 13.50 & 0.90 & 0.22\\
+2023 & 56.39 & 5.60 & 55.34 & 0.10 & 12.89 & 0.03 & 0.01 & 0.00\\
+2024 & 63.27 & 6.29 & 62.28 & 0.11 & 13.65 & 0.34 & 0.12 & 0.01\\
+2025 & 70.34 & 7.10 & 69.40 & 0.13 & 14.44 & 0.68 & 0.19 & 0.01\\
+2026 & 77.37 & 7.98 & 76.38 & 0.14 & 15.18 & 1.03 & 0.25 & 0.01\\
+2027 & 84.21 & 8.86 & 83.17 & 0.16 & 15.84 & 1.37 & 0.29 & 0.02\\
+2028 & 90.82 & 9.70 & 89.72 & 0.18 & 16.40 & 1.69 & 0.31 & 0.02\\
+2029 & 97.20 & 10.48 & 96.06 & 0.19 & 16.87 & 1.97 & 0.33 & 0.02\\
+2030 & 103.37 & 11.23 & 102.19 & 0.20 & 17.28 & 2.23 & 0.35 & 0.02\\
+2031 & 109.38 & 11.95 & 108.17 & 0.22 & 17.64 & 2.48 & 0.36 & 0.02\\
+2032 & 115.25 & 12.65 & 114.01 & 0.23 & 17.96 & 2.72 & 0.37 & 0.02\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+<!-- \input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/TimeSeries.tex} -->
 
 \newpage
 
@@ -913,12 +1051,12 @@ MSY (mt) & 9.3 & 7.91 & 10.69\\*
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
+\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
 \toprule
 Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values. \textit{(continued)}}\\
+\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values. \textit{(continued)}}\\
 \toprule
 Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
@@ -927,18 +1065,18 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 \endfoot
 \bottomrule
 \endlastfoot
-2021 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 5.83 & - & - & - & 7.75 & 0.14\\
-2022 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 5.84 & - & - & - & 7.52 & 0.14\\
-2023 & - & - & - & - & - & - & 2.67 & 0.82 & 0.306 & 7.43 & 0.13\\
-2024 & - & - & - & - & - & - & 2.92 & 1.08 & 0.372 & 8.08 & 0.15\\
-2025 & - & - & - & - & - & - & 3.18 & 1.38 & 0.434 & 8.83 & 0.16\\
-2026 & - & - & - & - & - & - & 3.45 & 1.69 & 0.488 & 9.62 & 0.17\\
-2027 & - & - & - & - & - & - & 3.72 & 1.98 & 0.532 & 10.41 & 0.19\\
-2028 & - & - & - & - & - & - & 3.98 & 2.26 & 0.567 & 11.18 & 0.20\\
-2029 & - & - & - & - & - & - & 4.23 & 2.52 & 0.595 & 11.91 & 0.22\\
-2030 & - & - & - & - & - & - & 4.47 & 2.76 & 0.618 & 12.63 & 0.23\\
-2031 & - & - & - & - & - & - & 4.7 & 2.99 & 0.636 & 13.33 & 0.24\\
-2032 & - & - & - & - & - & - & 4.93 & 3.21 & 0.652 & 14.00 & 0.25\\*
+2021 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 13.5 & - & - & - & 7.75 & 0.14\\
+2022 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 13.5 & - & - & - & 6.61 & 0.12\\
+2023 & - & - & - & - & - & - & 2.05 & 0.03 & 0.013 & 5.60 & 0.10\\
+2024 & - & - & - & - & - & - & 2.32 & 0.34 & 0.146 & 6.29 & 0.11\\
+2025 & - & - & - & - & - & - & 2.61 & 0.68 & 0.26 & 7.10 & 0.13\\
+2026 & - & - & - & - & - & - & 2.91 & 1.03 & 0.355 & 7.98 & 0.14\\
+2027 & - & - & - & - & - & - & 3.21 & 1.37 & 0.428 & 8.86 & 0.16\\
+2028 & - & - & - & - & - & - & 3.49 & 1.69 & 0.484 & 9.70 & 0.18\\
+2029 & - & - & - & - & - & - & 3.75 & 1.97 & 0.527 & 10.48 & 0.19\\
+2030 & - & - & - & - & - & - & 4 & 2.23 & 0.559 & 11.23 & 0.20\\
+2031 & - & - & - & - & - & - & 4.24 & 2.48 & 0.585 & 11.95 & 0.22\\
+2032 & - & - & - & - & - & - & 4.47 & 2.72 & 0.607 & 12.65 & 0.23\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -1250,7 +1388,7 @@ Total & 401535 & 235 & - & -\\*
 \endgroup{}
 
 
-![Length frequency distribution of in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below).\label{fig:ca-ROV}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/quillback_rov_lengths.png){width=100% height=100% alt="Length frequency distribution of in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below)."}
+![Length frequency distribution in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below).\label{fig:ca-ROV}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/quillback_rov_lengths.png){width=100% height=100% alt="Length frequency distribution in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below)."}
 
 
 ![Percent composition of quillback rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where retention is allowed (above) and in State Marine Reserves where retention is prohibited (below).\label{fig:ca-ROV-percent}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/quillback_rov_barchart_length.png){width=100% height=100% alt="Percent composition of quillback rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where retention is allowed (above) and in State Marine Reserves where retention is prohibited (below)."}
