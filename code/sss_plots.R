@@ -7,12 +7,18 @@ dir = "C:/Users/Brian.Langseth/Desktop/WA_SSS" #where model files are located
 dep = 40 #<-----CHANGE THIS BETWEEN 40 and 57
 if(dep ==40) savedir = paste0("L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_40dep_5_18") #where to save plots
 if(dep ==40) savedir = file.path(dir,"WA_Quillback_SSS_biocatch_40dep_LWcorrect") #where to save plots
+if(dep ==40) savedir = file.path(dir,"WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect") #where to save plots
 if(dep ==57) savedir = paste0("L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_57dep_5_18") #where to save plots
 if(dep ==57) savedir = file.path(dir,"WA_Quillback_SSS_biocatch_57dep_LWcorrect") #where to save plots
+if(dep ==57) savedir = file.path(dir,"WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect") #where to save plots
+
 if(dep == 40) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_40dep_5_18"), "SSS_out.DMP"))
 if(dep == 40) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_40dep_LWcorrect"), "SSS_out.DMP"))
+if(dep == 40) load(file.path(dir, paste0("WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect"), "SSS_out.DMP"))
 if(dep == 57) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_57dep_5_18"), "SSS_out.DMP"))
 if(dep == 57) load(file.path(dir, paste0("WA_Quillback_SSS_biocatch_57dep_LWcorrect"), "SSS_out.DMP"))
+if(dep == 57) load(file.path(dir, paste0("WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect"), "SSS_out.DMP"))
+
 #load(file.path(dir, base, "SSSoutput.DMP"))
 out = SSS.out
 #reps = SSS.output.list
@@ -83,4 +89,7 @@ t = table_format(x = df,
       col_names = col_names,
       format.args = list(big.mark = ','))
 
-kableExtra::save_kable(t, file = paste0("C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_", dep,".tex"))
+kableExtra::save_kable(t, file = paste0("C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base/tex_tables/sss_", dep,".tex"))
+
+#The SSS runs are based on the ABC control rule, not the constant catch control rule. Given these are not going
+#to be used I am ok with this. 

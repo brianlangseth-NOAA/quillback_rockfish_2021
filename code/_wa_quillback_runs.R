@@ -1519,21 +1519,25 @@ SSplotComparisons(sens_models, endyrvec = 2021,
 
 #Copy model 1100
 #Make changes in the forecast file
-##Set cat 3 buffer to 0.778 for all years
-##Add forecast input catches for 2023-2032 based on Yield at SPR50% (2.855) using the same fleet allocation
+##Set buffer to 1 for all years (because use Cat 3 buffer in catch values)
+##Add forecast input catches for 2023-2032 based on Yield at SPR50% (2.855) times the cat 3 buffer (0.778)
+#to obtain a catch value (2.22119). Then use the same fleet allocation to find catch by fleet (2.1657 and 0.0555). 
 ##Set caps and allocations year to 2033
 #To enter the forecast value in numbers, run the model with the above and place in just_model_files/forecasting
 #and then run the following 
 source("https://raw.githubusercontent.com/nwfsc-assess/PEPtools/master/R/solve_numbers.R")
 solve_numbers(mod_dir = file.path(wd, "11_1_0_postSSC_base", "just model files", "forecasting"), 
-              fore_yrs = 2023:2032, 
-              fleet_abc = c(rep(2.7836,10)), fleet = 1)
-#Copy over the catch values (which are now in numbers) over to the forecast file in just_model_files
+              fore_yrs = 2021:2032, 
+              fleet_abc = c(2.5935, 2.5935, rep(2.1657,10)), fleet = 1, threshold = 0.001)
+#Copy over the forecast catch values (which are now in numbers) over to the forecast file in just_model_files
 
 model = "11_1_0_postSSC_base"
 base.1110 = SS_output(file.path(wd, model),covar=TRUE)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\wa\\11_1_0_postSSC_base", write = FALSE, option = "none")
 SS_plots(base.1110, forecastplot = TRUE)
+
+#Use base.1000 model results for the write up, but with the projection table from base.1110
+#Use base.1000 model for model files and r4ss plots
 
 
 

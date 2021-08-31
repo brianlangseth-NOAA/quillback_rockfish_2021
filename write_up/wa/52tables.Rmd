@@ -147,7 +147,7 @@ mod_params = model$parameters[-c(grep('Impl',model$parameters$Label),
                                   "Max","Status","Parm_StDev",
                                   "Pr_type","Prior","Pr_SD"))] 
 
-mod_params[model$parameters$Label=="NatM_p_1_Fem_GP_1","Pr_SD"] = 0.438 #update for model 1100
+mod_params[model$parameters$Label=="NatM_p_1_Fem_GP_1","Pr_SD"] = 0.438 #update for model 1110
 
 test = mod_params[which(mod_params$Label == "Wtlen_1_Fem_GP_1"),'Value']
 mod_params[,'Value'] = round(as.numeric(mod_params[,'Value']),3)                                 
@@ -249,7 +249,7 @@ the 95 percent intervals.",
 
 <!-- tab:timeseries -->
 ```{r, results = 'asis'}
-timeseries = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/wa/11_0_0_postSSC_base", "tables", "TimeSeries.csv"))
+timeseries = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base", "tables", "TimeSeries.csv"))
 col_names = c("Year", "Total Biomass (mt)", "Spawning Output", "Total Biomass 3+ (mt)", "Fraction Unfished", "Age-0 Recruits", "Total Mortality (mt)", "1-SPR", "Exploitation Rate")
 
 table_format(x = round(timeseries,2),
@@ -277,9 +277,9 @@ table_format(x = round(timeseries,2),
 <!-- ****************         SSS            *************** --> 
 <!-- ======================================================= -->
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_57.tex}
+\input{C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base/tex_tables/sss_57.tex}
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_40.tex}
+\input{C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base/tex_tables/sss_40.tex}
 
 \newpage
 
@@ -289,7 +289,7 @@ table_format(x = round(timeseries,2),
 <!-- ======================================================= -->
 
 ```{r, results = 'asis'}
-tab = read.csv(file.path(mod_loc, 'tables', 'g_Projections_ES.csv'))
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base", 'tables', 'g_Projections_ES.csv'))
 man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv")
 
 out = cbind(tab$Year,
@@ -297,8 +297,8 @@ out = cbind(tab$Year,
             c(round(man[man$Year %in% c(2021, 2022), "ACL"],2), rep("-",10)),
             c(round(man[man$Year %in% c(2021, 2022), "ACL"] * 0.129,2), rep("-", 10)),
             c(round(tab[1:2,3],2), rep("-",10)),
-            c(rep("-",2), round(tab[3:12,2], 2)),
             c(rep("-",2), round(tab[3:12,3],2)),
+            c(rep("-",2), round(tab[3:12,2], 2)),
             c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
             round(tab[ ,5:ncol(tab)], 2))
 
@@ -307,13 +307,13 @@ col_names = c('Year',
               'ACL North',
               "WA ACL North",
               "Assumed removals",
-              "OFL", 
-              "ABC", 
-              "Buffer",
+              "Constant ABC",
+              "OFL",
+              "Constant ABC / OFL",
               "Spawning Output",
               "Fraction Unfished")
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.",
+             caption = "Projections of potential OFLs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.",
              label = "project",
              align = 'l',
              col_names = col_names)

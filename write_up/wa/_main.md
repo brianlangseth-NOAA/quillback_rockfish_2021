@@ -432,9 +432,9 @@ A Simple Stock Synthesis (SSS) was run to compare the results from the base mode
 	
 \end{enumerate}
 
-The median of unfished spawning output, spawning output in 2021, fraction unfished in 2021, the OFL in 2023, and the Acceptable Biological Catch (ABC) in 2023 based on the 2021 fraction unfished of 57 percent is shown in in Table \ref{tab:SSS-57}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-57} and \ref{fig:sss-quant-57}. Assuming that the stock was less depleted relative to the base model resulted in higher estimates of the OFL and ABC in 2023, even when the category 3 buffer was applied (buffer = 0.78, based on a P* = 0.45 and $\sigma$ = 2.0).
+The median of unfished spawning output, spawning output in 2021, fraction unfished in 2021, the OFL in 2023, and the Acceptable Biological Catch (ABC) in 2023 based on the 2021 fraction unfished of 57 percent is shown in Table \ref{tab:SSS-57}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-57} and \ref{fig:sss-quant-57}. Assuming that the stock was less depleted relative to the base model resulted in higher estimates of the OFL and ABC in 2023.
 
-The median of unfished spawning output, spawning output in 2021, fraction unfished in 2021, the OFL in 2023, and the ABC in 2023 based on the 2021 fraction unfished of 40 percent is shown in in Table \ref{tab:SSS-40}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-40} and \ref{fig:sss-quant-40}. Assuming that the stock was similarly depleted relative to the base model resulted in very similar estimates of the OFL and slightly lower ABC in 2023 due to the larger buffer applied in the SSS model. This confirms SSS results in similar estimates to the base model under comparable assumptions about depletion. 
+The median of unfished spawning output, spawning output in 2021, fraction unfished in 2021, the OFL in 2023, and the ABC in 2023 based on the 2021 fraction unfished of 40 percent is shown in Table \ref{tab:SSS-40}. The prior distribution for parameters and the derived quantities with 95 percent uncertainty are shown in Figures \ref{fig:sss-prior-40} and \ref{fig:sss-quant-40}. Assuming that the stock was similarly depleted relative to the base model resulted in a slightly lower estimate of the OFL in 2023, and lower estimate of the ABC due to the application of the buffer applied in the SSS model as opposed to the constant catch appied in the base model. This confirms SSS results in similar estimates to the base model under comparable assumptions about depletion. 
 
 ### Unresolved Problems and Major Uncertainties
 
@@ -456,11 +456,9 @@ The 2021 spawning output relative to unfished equilibrium spawning output is bel
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Allowable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the mortality estimates from the GEMM product for the recreational fleet, averaged from 2018-2020, as requested by the PFMC Groundfish Management Team (GMT, personal communication). Removals in 2021 and 2022 were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributed to the total catch. 
+A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated yield at $SPR_{50\%}$ multiplied by buffer (0.778) based on a category 3 sigma and P* = 0.45 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the mortality estimates from the GEMM product for the recreational fleet, averaged from 2018-2020, as requested by the PFMC Groundfish Management Team (GMT, personal communication). Removals in 2021 and 2022 were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributed to the total catch. The same apportionment was also applied to the constant catch values during the projection years (2023-3032).
 
-Recreational catches were provided in numbers, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Catch in biomass for the recreational fleet was converted to catch in numbers based on iteratively searching for the catch in numbers that achieves the desired ACL value (in biomass) for the recreational fleet.        
-
-The decision table uncertainty axes and catch levels are to be determined later.
+Recreational catches were provided in numbers, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Projected catches in biomass for the recreational fleet were converted to catch in numbers based on iteratively searching for the catch in numbers that achieves the desired catch value (in biomass) for the recreational fleet, and is the reason the catches in biomass by year do not exactly equal the fixed catch value.        
 
 
 <!-- Evaluation of Scientific Uncertainty -->
@@ -470,7 +468,7 @@ The decision table uncertainty axes and catch levels are to be determined later.
 
 The estimated uncertainty in the base model around the 2021 spawning output is $\sigma$ = 0.58 and the uncertainty in the base model around the 2021 OFL is $\sigma$ = 0.56. The estimated model uncertainty was less than the category 2 groundfish data moderate assessment default value of  $\sigma$ = 1.0. 
 
-## Research and Data Needs
+# Research and Data Needs
 
 The ability to estimate additional process and biological parameters for quillback rockfish was limited by data.  Collecting the following data would be beneficial to future assessments of the stock:
 
@@ -813,7 +811,7 @@ Parameter & Value & Phase & Bounds & Status & SD & Prior (Exp.Val, SD)\\
 \endfoot
 \bottomrule
 \endlastfoot
-NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.48)\\
+NatM p 1 Fem GP 1 & 0.057 & -2 & (0.01, 0.2) & NA & NA & Log Norm (-2.8647, 0.438)\\
 L at Amin Fem GP 1 & 8.230 & -2 & (0, 10) & NA & NA & None\\
 L at Amax Fem GP 1 & 43.040 & -2 & (25, 60) & NA & NA & None\\
 VonBert K Fem GP 1 & 0.199 & -2 & (0.03, 0.3) & NA & NA & None\\
@@ -916,7 +914,103 @@ MSY (mt) & 3.18 & 2.05 & 4.32\\*
 <!-- ======================================================= -->
 
 <!-- tab:timeseries -->
-\input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/TimeSeries.tex}
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{c>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}>{\centering\arraybackslash}p{1.22cm}}
+\caption{(\#tab:timeseries)Time series of population estimates from the base model.}\\
+\toprule
+Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction Unfished & Age-0 Recruits & Total Mortality (mt) & 1-SPR & Exploitation Rate\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:timeseries)Time series of population estimates from the base model. \textit{(continued)}}\\
+\toprule
+Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction Unfished & Age-0 Recruits & Total Mortality (mt) & 1-SPR & Exploitation Rate\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1958 & 138.77 & 17.19 & 138.24 & 1.00 & 7.42 & 0.08 & 0.01 & 0.00\\
+1959 & 138.69 & 17.18 & 138.16 & 1.00 & 7.42 & 0.26 & 0.04 & 0.00\\
+1960 & 138.46 & 17.15 & 137.92 & 1.00 & 7.42 & 0.44 & 0.06 & 0.00\\
+1961 & 138.06 & 17.09 & 137.53 & 0.99 & 7.42 & 0.61 & 0.08 & 0.00\\
+1962 & 137.51 & 17.02 & 136.98 & 0.99 & 7.41 & 0.79 & 0.11 & 0.01\\
+1963 & 136.81 & 16.93 & 136.28 & 0.99 & 7.41 & 0.96 & 0.13 & 0.01\\
+1964 & 135.98 & 16.82 & 135.45 & 0.98 & 7.40 & 1.14 & 0.15 & 0.01\\
+1965 & 135.01 & 16.69 & 134.49 & 0.97 & 7.40 & 1.31 & 0.17 & 0.01\\
+1966 & 133.92 & 16.55 & 133.39 & 0.96 & 7.39 & 1.49 & 0.19 & 0.01\\
+1967 & 132.71 & 16.39 & 132.18 & 0.95 & 7.39 & 1.67 & 0.21 & 0.01\\
+1968 & 131.38 & 16.21 & 130.85 & 0.94 & 7.38 & 1.84 & 0.23 & 0.01\\
+1969 & 129.94 & 16.03 & 129.41 & 0.93 & 7.37 & 2.01 & 0.24 & 0.02\\
+1970 & 128.40 & 15.82 & 127.87 & 0.92 & 7.36 & 2.19 & 0.26 & 0.02\\
+1971 & 126.75 & 15.60 & 126.22 & 0.91 & 7.35 & 2.36 & 0.28 & 0.02\\
+1972 & 125.01 & 15.38 & 124.48 & 0.89 & 7.34 & 2.53 & 0.30 & 0.02\\
+1973 & 123.18 & 15.13 & 122.66 & 0.88 & 7.32 & 5.09 & 0.46 & 0.04\\
+1974 & 119.10 & 14.60 & 118.57 & 0.85 & 7.30 & 2.87 & 0.34 & 0.02\\
+1975 & 117.18 & 14.34 & 116.66 & 0.83 & 7.28 & 3.04 & 0.36 & 0.03\\
+1976 & 115.19 & 14.08 & 114.67 & 0.82 & 7.27 & 1.40 & 0.20 & 0.01\\
+1977 & 114.82 & 14.03 & 114.29 & 0.82 & 7.26 & 1.59 & 0.23 & 0.01\\
+1978 & 114.30 & 13.96 & 113.78 & 0.81 & 7.26 & 1.66 & 0.23 & 0.01\\
+1979 & 113.75 & 13.88 & 113.23 & 0.81 & 7.25 & 1.98 & 0.27 & 0.02\\
+1980 & 112.93 & 13.77 & 112.41 & 0.80 & 7.25 & 1.56 & 0.23 & 0.01\\
+1981 & 112.55 & 13.72 & 112.03 & 0.80 & 7.24 & 2.08 & 0.28 & 0.02\\
+1982 & 111.69 & 13.61 & 111.17 & 0.79 & 7.24 & 1.94 & 0.27 & 0.02\\
+1983 & 111.01 & 13.52 & 110.49 & 0.79 & 7.23 & 2.37 & 0.31 & 0.02\\
+1984 & 109.95 & 13.38 & 109.43 & 0.78 & 7.22 & 4.83 & 0.49 & 0.04\\
+1985 & 106.61 & 12.95 & 106.09 & 0.75 & 7.19 & 2.96 & 0.37 & 0.03\\
+1986 & 105.15 & 12.75 & 104.63 & 0.74 & 7.18 & 4.41 & 0.48 & 0.04\\
+1987 & 102.39 & 12.39 & 101.88 & 0.72 & 7.15 & 5.86 & 0.56 & 0.06\\
+1988 & 98.39 & 11.87 & 97.87 & 0.69 & 7.11 & 4.54 & 0.50 & 0.05\\
+1989 & 95.73 & 11.52 & 95.22 & 0.67 & 7.09 & 9.61 & 0.70 & 0.10\\
+1990 & 88.47 & 10.57 & 87.96 & 0.62 & 7.00 & 9.75 & 0.72 & 0.11\\
+1991 & 81.30 & 9.64 & 80.79 & 0.56 & 6.90 & 5.30 & 0.60 & 0.07\\
+1992 & 78.48 & 9.27 & 77.98 & 0.54 & 6.86 & 5.15 & 0.61 & 0.07\\
+1993 & 75.92 & 8.93 & 75.42 & 0.52 & 6.82 & 6.52 & 0.67 & 0.09\\
+1994 & 72.18 & 8.44 & 71.69 & 0.49 & 6.75 & 4.76 & 0.61 & 0.07\\
+1995 & 70.20 & 8.18 & 69.71 & 0.48 & 6.71 & 4.47 & 0.60 & 0.06\\
+1996 & 68.57 & 7.97 & 68.09 & 0.46 & 6.68 & 4.81 & 0.63 & 0.07\\
+1997 & 66.68 & 7.73 & 66.20 & 0.45 & 6.64 & 4.34 & 0.61 & 0.07\\
+1998 & 65.29 & 7.55 & 64.81 & 0.44 & 6.61 & 5.31 & 0.66 & 0.08\\
+1999 & 63.04 & 7.26 & 62.57 & 0.42 & 6.56 & 5.66 & 0.69 & 0.09\\
+2000 & 60.53 & 6.94 & 60.06 & 0.40 & 6.50 & 5.93 & 0.70 & 0.10\\
+2001 & 57.85 & 6.59 & 57.38 & 0.38 & 6.43 & 3.98 & 0.63 & 0.07\\
+2002 & 57.01 & 6.48 & 56.54 & 0.38 & 6.41 & 3.55 & 0.60 & 0.06\\
+2003 & 56.60 & 6.43 & 56.14 & 0.37 & 6.40 & 2.73 & 0.54 & 0.05\\
+2004 & 56.97 & 6.48 & 56.51 & 0.38 & 6.41 & 4.08 & 0.64 & 0.07\\
+2005 & 56.07 & 6.36 & 55.61 & 0.37 & 6.39 & 7.22 & 0.77 & 0.13\\
+2006 & 52.23 & 5.88 & 51.77 & 0.34 & 6.27 & 4.70 & 0.69 & 0.09\\
+2007 & 50.81 & 5.70 & 50.35 & 0.33 & 6.23 & 4.22 & 0.68 & 0.08\\
+2008 & 49.85 & 5.58 & 49.40 & 0.32 & 6.19 & 3.75 & 0.65 & 0.08\\
+2009 & 49.34 & 5.51 & 48.90 & 0.32 & 6.18 & 3.53 & 0.64 & 0.07\\
+2010 & 49.05 & 5.47 & 48.61 & 0.32 & 6.17 & 2.26 & 0.53 & 0.05\\
+2011 & 49.95 & 5.59 & 49.50 & 0.33 & 6.20 & 2.29 & 0.53 & 0.05\\
+2012 & 50.81 & 5.70 & 50.37 & 0.33 & 6.23 & 2.71 & 0.57 & 0.05\\
+2013 & 51.26 & 5.76 & 50.82 & 0.34 & 6.24 & 1.81 & 0.46 & 0.04\\
+2014 & 52.53 & 5.93 & 52.09 & 0.34 & 6.28 & 1.98 & 0.47 & 0.04\\
+2015 & 53.63 & 6.07 & 53.18 & 0.35 & 6.32 & 1.44 & 0.39 & 0.03\\
+2016 & 55.20 & 6.27 & 54.75 & 0.36 & 6.36 & 1.91 & 0.45 & 0.03\\
+2017 & 56.31 & 6.41 & 55.85 & 0.37 & 6.40 & 1.77 & 0.42 & 0.03\\
+2018 & 57.51 & 6.57 & 57.06 & 0.38 & 6.43 & 2.48 & 0.51 & 0.04\\
+2019 & 58.02 & 6.63 & 57.57 & 0.39 & 6.44 & 3.86 & 0.62 & 0.07\\
+2020 & 57.23 & 6.53 & 56.77 & 0.38 & 6.42 & 2.08 & 0.46 & 0.04\\
+2021 & 58.11 & 6.64 & 57.65 & 0.39 & 6.44 & 2.66 & 0.52 & 0.05\\
+2022 & 58.44 & 6.68 & 57.98 & 0.39 & 6.45 & 2.66 & 0.52 & 0.05\\
+2023 & 58.76 & 6.72 & 58.30 & 0.39 & 6.46 & 2.22 & 0.47 & 0.04\\
+2024 & 59.49 & 6.81 & 59.03 & 0.40 & 6.48 & 2.22 & 0.47 & 0.04\\
+2025 & 60.22 & 6.91 & 59.76 & 0.40 & 6.50 & 2.22 & 0.46 & 0.04\\
+2026 & 60.93 & 7.00 & 60.47 & 0.41 & 6.52 & 2.22 & 0.46 & 0.04\\
+2027 & 61.63 & 7.09 & 61.17 & 0.41 & 6.53 & 2.22 & 0.46 & 0.04\\
+2028 & 62.32 & 7.18 & 61.86 & 0.42 & 6.55 & 2.22 & 0.45 & 0.04\\
+2029 & 63.00 & 7.26 & 62.53 & 0.42 & 6.56 & 2.22 & 0.45 & 0.04\\
+2030 & 63.66 & 7.35 & 63.19 & 0.43 & 6.58 & 2.22 & 0.45 & 0.04\\
+2031 & 64.31 & 7.43 & 63.84 & 0.43 & 6.59 & 2.22 & 0.44 & 0.03\\
+2032 & 64.94 & 7.51 & 64.47 & 0.44 & 6.61 & 2.22 & 0.44 & 0.03\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+<!-- \input{C:/Users/Brian.Langseth/Desktop/wa/write_up/tex_tables/TimeSeries.tex} -->
 
 \newpage
 
@@ -934,9 +1028,9 @@ MSY (mt) & 3.18 & 2.05 & 4.32\\*
 <!-- ****************         SSS            *************** --> 
 <!-- ======================================================= -->
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_57.tex}
+\input{C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base/tex_tables/sss_57.tex}
 
-\input{C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/tex_tables/sss_40.tex}
+\input{C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base/tex_tables/sss_40.tex}
 
 \newpage
 
@@ -949,32 +1043,32 @@ MSY (mt) & 3.18 & 2.05 & 4.32\\*
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
-\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.}\\
+\caption{(\#tab:project)Projections of potential OFLs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.}\\
 \toprule
-Year & OFL North & ACL North & WA ACL North & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
+Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & OFL & Constant ABC / OFL & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), the assumed removals based on 2021 and 2022 adopted ACL values, estimated spawning output, and fraction unfished. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL. \textit{(continued)}}\\
+\caption[]{(\#tab:project)Projections of potential OFLs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL. \textit{(continued)}}\\
 \toprule
-Year & OFL North & ACL North & WA ACL North & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
+Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & OFL & Constant ABC / OFL & Spawning Output & Fraction Unfished\\
 \midrule
 \endhead
 
 \endfoot
 \bottomrule
 \endlastfoot
-2021 & 7.37 & 5.73 & 0.74 & 0.74 & - & - & - & 6.64 & 0.39\\
-2022 & 7.37 & 5.74 & 0.74 & 0.74 & - & - & - & 6.91 & 0.40\\
-2023 & - & - & - & - & 2.67 & 2.33 & 0.875 & 7.18 & 0.42\\
-2024 & - & - & - & - & 2.7 & 2.33 & 0.865 & 7.25 & 0.42\\
-2025 & - & - & - & - & 2.73 & 2.34 & 0.857 & 7.33 & 0.43\\
-2026 & - & - & - & - & 2.75 & 2.34 & 0.849 & 7.40 & 0.43\\
-2027 & - & - & - & - & 2.78 & 2.34 & 0.841 & 7.46 & 0.43\\
-2028 & - & - & - & - & 2.8 & 2.33 & 0.833 & 7.53 & 0.44\\
-2029 & - & - & - & - & 2.83 & 2.33 & 0.826 & 7.59 & 0.44\\
-2030 & - & - & - & - & 2.85 & 2.33 & 0.818 & 7.65 & 0.45\\
-2031 & - & - & - & - & 2.87 & 2.33 & 0.81 & 7.72 & 0.45\\
-2032 & - & - & - & - & 2.9 & 2.33 & 0.803 & 7.78 & 0.45\\*
+2021 & 7.37 & 5.73 & 0.74 & 2.66 & - & - & - & 6.64 & 0.39\\
+2022 & 7.37 & 5.74 & 0.74 & 2.66 & - & - & - & 6.68 & 0.39\\
+2023 & - & - & - & - & 2.22 & 2.5 & 0.89 & 6.72 & 0.39\\
+2024 & - & - & - & - & 2.22 & 2.53 & 0.877 & 6.81 & 0.40\\
+2025 & - & - & - & - & 2.22 & 2.57 & 0.866 & 6.91 & 0.40\\
+2026 & - & - & - & - & 2.22 & 2.6 & 0.854 & 7.00 & 0.41\\
+2027 & - & - & - & - & 2.22 & 2.64 & 0.844 & 7.09 & 0.41\\
+2028 & - & - & - & - & 2.22 & 2.67 & 0.832 & 7.18 & 0.42\\
+2029 & - & - & - & - & 2.22 & 2.7 & 0.823 & 7.26 & 0.42\\
+2030 & - & - & - & - & 2.22 & 2.73 & 0.813 & 7.35 & 0.43\\
+2031 & - & - & - & - & 2.22 & 2.77 & 0.804 & 7.43 & 0.43\\
+2032 & - & - & - & - & 2.22 & 2.8 & 0.795 & 7.51 & 0.44\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -1250,22 +1344,22 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & OFL & ABC & Buf
 
 
 
-![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-57}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_57dep_5_18/plots/SSS_57_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution."}
+![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-57}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect/plots/SSS_57_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution."}
 
 \newpage
 
 
-![Derived quantities from SSS run where fraction unfished was assumed to be 57 percent.\label{fig:sss-quant-57}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_57dep_5_18/plots/SSS_57_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 57 percent."}
+![Derived quantities from SSS run where fraction unfished was assumed to be 57 percent.\label{fig:sss-quant-57}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect/plots/SSS_57_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 57 percent."}
 
 \newpage
 
 
-![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-40}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_40dep_5_18/plots/SSS_40_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution."}
+![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-40}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect/plots/SSS_40_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution."}
 
 \newpage
 
 
-![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-40}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/models/SSS_inputs/WA_Quillback_SSS_biocatch_40dep_5_18/plots/SSS_40_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 40 percent."}
+![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-40}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect/plots/SSS_40_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 40 percent."}
 
 
 <!-- ====================================================================== -->

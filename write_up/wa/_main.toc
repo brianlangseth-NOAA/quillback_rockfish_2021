@@ -43,10 +43,10 @@
 \contentsline {subsection}{\numberline {4.1}Reference Points}{18}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Harvest Projections and Decision Tables}{19}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Evaluation of Scientific Uncertainty}{19}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Research and Data Needs}{19}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Acknowledgments}{20}{section.5}%
-\contentsline {section}{\numberline {6}References}{21}{section.6}%
-\contentsline {section}{\numberline {7}Tables}{23}{section.7}%
-\contentsline {section}{\numberline {8}Figures}{44}{section.8}%
-\contentsline {section}{\numberline {9}Appendix:}{108}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Detailed Fit to Annual Length Composition Data}{108}{subsection.9.1}%
+\contentsline {section}{\numberline {5}Research and Data Needs}{19}{section.5}%
+\contentsline {section}{\numberline {6}Acknowledgments}{20}{section.6}%
+\contentsline {section}{\numberline {7}References}{21}{section.7}%
+\contentsline {section}{\numberline {8}Tables}{23}{section.8}%
+\contentsline {section}{\numberline {9}Figures}{44}{section.9}%
+\contentsline {section}{\numberline {10}Appendix:}{108}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Detailed Fit to Annual Length Composition Data}{108}{subsection.10.1}%
