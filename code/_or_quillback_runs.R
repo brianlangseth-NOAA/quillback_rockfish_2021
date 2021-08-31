@@ -1260,7 +1260,7 @@ SSplotSPR(base.800,subplots=4,print=TRUE)
 #Because the tables, when rounded, are identical, I use the base.710 model in the sensitivity table. 
 
 #Use base.710 model results for the write up, but with the projection and time series table from base.800
-#Use base.800 model for model files and r4ss plots because r4ss was updated since base.710
+#Use base.800 model for model files but base.710 for r4ss plots because r4ss was updated since base.710
 #and figure names are different
 
 
