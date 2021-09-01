@@ -204,6 +204,140 @@ find_para(dir = dir,
 
 
 
+##################
+##California models
+##################
+
+wd = "C:/Users/Brian.Langseth/Desktop/ca/decision_tables"
+dir = file.path(wd, "9_0_0_postSSC_base")
+
+#M
+find_para(dir = dir, 
+          yr = 2021, 
+          parm = c("MGparm[1]"), quant = c(0.875), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "NatM_p_1_Fem_GP_1", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "pos")
+#0.0744 for target of 12.13
+
+find_para(dir = dir, 
+          yr = 2021, 
+          parm = c("MGparm[1]"), quant = c(0.125), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "NatM_p_1_Fem_GP_1", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "pos")
+#0.0464 for target of 4.946
+
+#R0
+#Need to update the base to have another parameter with phase 1 (select comm selex parm1)
+#Do so in "9_0_0_postSSC_base_forR0"
+find_para(dir = paste0(dir,"_forR0"), 
+          yr = 2021, 
+          parm = c("SR_parm[1]"), quant = c(0.875), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "SR_LN(R0)", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "pos")
+#3.323 for target of 12.13
+
+find_para(dir = paste0(dir,"_forR0"),  
+          yr = 2021, 
+          parm = c("SR_parm[1]"), quant = c(0.125), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "SR_LN(R0)", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "pos")
+#3.003 for target of 4.946 
+
+#Repeat but use SIGMA = 1.0 
+find_para(dir = paste0(dir,"_forR0"), 
+          yr = 2021, 
+          parm = c("SR_parm[1]"), quant = c(0.875), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "SR_LN(R0)", 
+          est = FALSE,
+          sigma = 1.0,
+          use_115 = TRUE,
+          slope = "pos")
+#3.553 for target of 24.46
+
+#Need to adjust smallest step size from 0.005 to 0.0025
+find_para(dir = paste0(dir,"_forR0"),
+          yr = 2021, 
+          parm = c("SR_parm[1]"), quant = c(0.125), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "SR_LN(R0)", 
+          est = FALSE,
+          sigma = 1.0,
+          use_115 = TRUE,
+          slope = "pos")
+#2.731 for target of 2.452
+
+#Lmax
+#Adjust the largest step size for this run from 0.04 to 0.5, and both finer
+#step sizes from 0.005 to 0.01 (first) and 0.01 to 0.05 (second) to speed up search
+#And adjust bounds from 0.05 from target to 0.1
+find_para(dir = dir, 
+          yr = 2021, 
+          parm = c("MGparm[3]"), quant = c(0.875), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "L_at_Amax_Fem_GP_1", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "neg")
+#41.86 for target of 12.13
+
+#Adjust the largest step size for this run from 0.04 to 0.5, and both finer
+#step sizes from 0.005 to 0.01 (first) and 0.01 to 0.05 (second) to speed up search
+#And adjust bounds from 0.05 from target to 0.1
+find_para(dir = dir,  
+          yr = 2021, 
+          parm = c("MGparm[3]"), quant = c(0.125), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "L_at_Amax_Fem_GP_1", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "neg")
+#44.05 for target of 4.946
+
+
+#K
+find_para(dir = dir, 
+          yr = 2021, 
+          parm = c("MGparm[4]"), quant = c(0.875), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "VonBert_K_Fem_GP_1", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "neg")
+#0.152 for target of 12.13
+
+#K
+find_para(dir = dir,  
+          yr = 2021, 
+          parm = c("MGparm[4]"), quant = c(0.125), 
+          ctl_name = "2021_ca_quillback.ctl", 
+          parm_string = "VonBert_K_Fem_GP_1", 
+          est = FALSE,
+          sigma = 0.39,
+          use_115 = TRUE,
+          slope = "neg")
+#0.245 for target of 4.946
+
+
 ############ This is the function ##############
 
 
@@ -307,12 +441,12 @@ find_para <- function(dir, base, yr = 2021, parm = c("MGparm[1]"),
                            ifelse(find_sb > target - target* 0.02 & find_sb < target + target * 0.02,
                                   0.0002, 0.001), 0.002)
       } else {
-        step.size =ifelse(find_sb > target - target * 0.05 & find_sb < target + target * 0.05, 
-                           ifelse(find_sb > target - target* 0.02 & find_sb < target + target * 0.02,
-                                  0.005, 0.01), 0.04)			
-        #step.size =ifelse(find_sb > (target - target * 0.1) & find_sb < (target + target * 0.1), 
-        #                  ifelse(find_sb > (target - target* 0.02) & find_sb < (target + target * 0.02),
-        #                         0.01, 0.05), 0.5)		
+        #step.size =ifelse(find_sb > target - target * 0.05 & find_sb < target + target * 0.05, 
+        #                   ifelse(find_sb > target - target* 0.02 & find_sb < target + target * 0.02,
+        #                          0.005, 0.01), 0.04)	
+        step.size =ifelse(find_sb > (target - target * 0.1) & find_sb < (target + target * 0.1), 
+                          ifelse(find_sb > (target - target* 0.02) & find_sb < (target + target * 0.02),
+                                 0.01, 0.05), 0.5)	
       }
       
       if(slope[tt] == "pos"){

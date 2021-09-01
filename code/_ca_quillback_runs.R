@@ -1057,3 +1057,157 @@ SSplotSPR(base.900,subplots=4,print=TRUE)
 #Use base.710 model results for the write up, but with the projection and time series table from base.900
 #Use base.900 model for model files and but base.710 for r4ss plots because r4ss was updated since base.710
 #and figure names are different
+
+
+##
+#Low and high states of nature - starting from model 9_0_0_postSSC_base
+##
+
+#Use states_of_nature.R to identify values for low and high state
+#Low state is M = 0.0464, high is M = 0.0744 
+model = "9_0_1_highState_M"
+base.901 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.901)
+
+model = "9_0_2_lowState_M"
+base.902 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.902)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.900, base.901, base.902))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("M_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+#Alternative Low state is R0 = 3.003, high is R0 = 3.323 
+model = "9_0_3_highState_R0"
+base.903 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.903)
+
+model = "9_0_4_lowState_R0"
+base.904 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.904)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.900, base.903, base.904))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("R0_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+#Alternative Low state is Lmax = 44.05, high is R0 = 41.86 
+model = "9_0_5_highState_Lmax"
+base.905 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.905)
+
+model = "9_0_6_lowState_Lmax"
+base.906 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.906)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.900, base.905, base.906))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("Lmax_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+#Alternative Low state with sigma = 1 is low is R0 = 2.731, high is R0 = 3.553 
+model = "9_0_7_highState_R0_sigma1"
+base.907 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.907)
+
+model = "9_0_8_lowState_R0_sigma1"
+base.908 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.908)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.900, base.907, base.908))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("R0_Sigma1_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+
+#Alternative Low state is K = 0.245, high is K = 0.152
+model = "9_0_9_highState_K"
+base.909 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.909)
+
+model = "9_0_10_lowState_K"
+base.9010 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.9010)
+
+sens_names <- c("Base model","High state","Low state")
+sens_models  <- SSsummarize(list(base.900, base.909, base.9010))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'decision_tables'), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("K_States_of_nature_comparison_"),
+                  subplot = c(2,4,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+#All are very similar, but given R0 doesn't vary much status wise, suggest M
+#Growth could be an option too, but less variable status wise, and not as variable 
+#over the full time series spawning output wise
+
+
+
+#####HAVENT DONE THESE YET - THESE ARE OREGON SCRIPTS AT THE MOMENT##############
+# #Now run M states with forecasted catches (ABC values) from base.900
+# #Copy model 900 and update forecast file with catches
+# #allocated based on same allocation for base forecast (rec = 76.1%)
+# #Set buffer to 1 for all years
+# fore_loc = grep("ForeCatch",base.900$derived_quants$Label)
+# baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.900$derived_quants[fore_loc,"Value"][-c(1:2)]*0.239),
+#                 data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.900$derived_quants[fore_loc,"Value"][-c(1:2)]*0.761))
+# 
+# model = "9_0_1b_highState_R0_baseABC"
+# base.901b = SS_output(file.path(wd, model),covar=TRUE)
+# SS_plots(base.901b)
+# 
+# model = "9_0_2b_lowState_R0_baseABC"
+# base.902b = SS_output(file.path(wd, model),covar=TRUE)
+# SS_plots(base.902b)
+#########################################
+
