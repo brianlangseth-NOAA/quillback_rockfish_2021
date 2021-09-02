@@ -1319,9 +1319,9 @@ SSplotComparisons(sens_models, endyrvec = 2021,
 
 
 #Now run R0 states with forecasted catches (ABC values) from base.800
-#Copy model 800 and update forecast file with catches
+#Copy model 804 and 805 and update forecast file with catches
 #allocated based on same allocation for base forecast (rec = 73.5%)
-#Set buffer to 1 for all years
+#Set buffer to 1 for all years and caps and allocations to year 2033
 fore_loc = grep("ForeCatch",base.800$derived_quants$Label)
 baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.800$derived_quants[fore_loc,"Value"][-c(1:2)]*0.265),
                  data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.800$derived_quants[fore_loc,"Value"][-c(1:2)]*0.735))

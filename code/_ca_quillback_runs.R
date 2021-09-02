@@ -1189,25 +1189,25 @@ SSplotComparisons(sens_models, endyrvec = 2021,
 
 #All are very similar, but given R0 doesn't vary much status wise, suggest M
 #Growth could be an option too, but less variable status wise, and not as variable 
-#over the full time series spawning output wise
+#over the full time series spawning output wise as M
 
 
 
 #####HAVENT DONE THESE YET - THESE ARE OREGON SCRIPTS AT THE MOMENT##############
-# #Now run M states with forecasted catches (ABC values) from base.900
-# #Copy model 900 and update forecast file with catches
-# #allocated based on same allocation for base forecast (rec = 76.1%)
-# #Set buffer to 1 for all years
-# fore_loc = grep("ForeCatch",base.900$derived_quants$Label)
-# baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.900$derived_quants[fore_loc,"Value"][-c(1:2)]*0.239),
-#                 data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.900$derived_quants[fore_loc,"Value"][-c(1:2)]*0.761))
-# 
-# model = "9_0_1b_highState_R0_baseABC"
-# base.901b = SS_output(file.path(wd, model),covar=TRUE)
-# SS_plots(base.901b)
-# 
-# model = "9_0_2b_lowState_R0_baseABC"
-# base.902b = SS_output(file.path(wd, model),covar=TRUE)
-# SS_plots(base.902b)
+#Now run M states with forecasted catches (ABC values) from base.900
+#Copy model 901 and 902 and update forecast file with catches
+#allocated based on same allocation for base forecast (rec = 76.1%)
+#Set buffer to 1 for all years and caps and allocations to year 2033
+fore_loc = grep("ForeCatch",base.900$derived_quants$Label)
+baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.900$derived_quants[fore_loc,"Value"][-c(1:2)]*0.239),
+                data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.900$derived_quants[fore_loc,"Value"][-c(1:2)]*0.761))
+
+model = "9_0_1b_highState_M_baseABC"
+base.901b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.901b)
+
+model = "9_0_2b_lowState_M_baseABC"
+base.902b = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.902b)
 #########################################
 
