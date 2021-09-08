@@ -1192,8 +1192,6 @@ SSplotComparisons(sens_models, endyrvec = 2021,
 #over the full time series spawning output wise as M
 
 
-
-#####HAVENT DONE THESE YET - THESE ARE OREGON SCRIPTS AT THE MOMENT##############
 #Now run M states with forecasted catches (ABC values) from base.900
 #Copy model 901 and 902 and update forecast file with catches
 #allocated based on same allocation for base forecast (rec = 76.1%)
@@ -1209,5 +1207,87 @@ SS_plots(base.901b)
 model = "9_0_2b_lowState_M_baseABC"
 base.902b = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.902b)
-#########################################
+
+
+
+############################   Rebuilding models   #####################################
+
+#Models in folder "rebuilding"
+
+#Copy model 900 and make adjustments in 
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+#1. Name of file = 2021_ca_quillback_rebuild.dat
+#2. Max number of years = 200
+#3. Fecundity-at-age 0 = 0
+#4. Year for Tmin = 2021
+#5. Number of years with prespecified catches = 2
+#6. Prespecified catches
+#7. Number of future recruitments to override = 0
+#8. Projection type = 11
+#9. Extra lines
+#10. Year of catches and F set to 2023
+#11. More extra lines
+#12. Year to define projection type, switch to probabilities
+#13. Switch years for probability of recovery
+model = "9_1_0_rebuilding"
+base.910 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+SS_plots(base.910)
+
+#Copy model 900 - because have warning about SSB not matching
+#Change Ngenders in .dat file to 1 (from -1)
+model = "9_1_0_1_oneSex"
+base.9101 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+SS_plots(base.9101)
+#Very slight differences in parameter estimates
+
+#Other exploratins in the test folder included 
+#2_test_run_AddGenderInfo - copy sex specific info twice (still get the error)
+#3_test_run_-1Sex - set sex to -1 in rebuild.dat (it doesn't run)
+#4_test_run_oneSex - use model 9101 from above
+#5_test_multiplySBx2 - multiply SSB entry in rebuild.dat by 2
+
+#These tests show results are the same (or very nearly so). Only differences
+#are in historical spawner per recruit. Thus if do recruitment equals option 2
+#then the warning would have an effect. 
+
+#Copy model 910 and make changes to forecast
+#1. Change allocation of F years to 2017-2019 (originally was just 2020)
+#Make adjustments to rebuild.dat in 
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit but
+#a. Try to keep Year for Tmin = 2023 (COULDNT so KEPT at 2021)
+model = "9_2_0_slightMods"
+base.920 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+
+#It is confusing to me that Tmin cant be because age structure is 2023, so...
+#Copy model 920 and adjust Ydecl in forecast to be 2021
+#Ydecl is now set to 2021 and age structure changes, with Tmin set to 2021
+#Make adjustments to rebuild.dat in 
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+model = "9_2_1_forecastYdecl"
+base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+
+
+
+####
+#States of nature exploration - adding uncertainty around M
+####
+#Copy 910 into "rebuilding/states of nature" folder
+#Other models in folder "rebuilding/states of nature"
+
+#Copy model 901 and make adjustments in "CA_rebuilding.R"
+model = "9_1_1_M_high"
+base.911 = SS_output(file.path(wd, model),covar=TRUE)
+
+#Copy model 902 and make adjustments in "CA_rebuilding.R"
+model = "9_1_2_M_low"
+base.912 = SS_output(file.path(wd, model),covar=TRUE)
+
+
+
+
+
+
+
+
+
 
