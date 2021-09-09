@@ -1,2 +1,3 @@
 # Acknowledgments
-Here are all the mad props!
+Thank you to Andre Punt for quickly updating the rebuilder program to apply time-varying $\sigma$ for the Acceptable Biological Catch scenarios and thank you for his  assistance and guidance on application of the rebuilding program. 
+

@@ -31,4 +31,8 @@ if(file.exists("00mod.Rdata")){
   print("Model output not being read. Please run the read_model() function.")
 }
 
+spp = 'quillback rockfish'
+Spp = 'Quillback rockfish'
+spp_latin = 'Sebastes maliger'
+
 ```
