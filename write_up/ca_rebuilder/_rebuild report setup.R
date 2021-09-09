@@ -31,7 +31,9 @@ source_url("https://raw.githubusercontent.com/chantelwetzel-noaa/copper_rockfish
 # Specify the directory where the models are at
 rebuild_dir = "C:/Users/Brian.Langseth/Desktop/ca/rebuilder"
 run <- c(
-  "930_F2017_2019_ageStruc2021")
+  "930_F2017_2019_ageStruc2021",
+  "931_no_abc_max",
+  "931_no_abc_max")
 reb <- list()
 for (a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  8 SEP 2021 13:35
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  9 SEP 2021 07:24
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1959,122 +1959,132 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 ]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 199.
-
-LaTeX Warning: Reference `tab:ref-points' on page 1 undefined on input line 253
-.
-
 [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
-e 293.
+e 241.
 
-LaTeX Warning: Reference `tab:ref-points' on page 2 undefined on input line 311
+LaTeX Warning: Reference `tab:ref-points' on page 2 undefined on input line 293
 .
 
-[2]
+[2
 
-LaTeX Warning: Reference `tab:reb-options' on page 3 undefined on input line 35
-7.
+] [3]
 
-
-LaTeX Warning: Reference `tab:reb-options-catch' on page 3 undefined on input l
-ine 357.
+LaTeX Warning: Reference `tab:ref-points' on page 4 undefined on input line 391
+.
 
 
-LaTeX Warning: Reference `tab:reb-options-year' on page 3 undefined on input li
-ne 357.
+LaTeX Warning: Reference `tab:reb-options' on page 4 undefined on input line 41
+0.
 
 
-LaTeX Warning: Reference `tab:reb-options' on page 3 undefined on input line 36
-3.
+LaTeX Warning: Reference `tab:reb-options-catch' on page 4 undefined on input l
+ine 410.
 
 
-LaTeX Warning: Reference `tab:prob-mat' on page 3 undefined on input line 363.
+LaTeX Warning: Reference `tab:reb-options-year' on page 4 undefined on input li
+ne 410.
 
 
-LaTeX Warning: Reference `fig:prob-fig' on page 3 undefined on input line 363.
+LaTeX Warning: Reference `tab:reb-options' on page 4 undefined on input line 41
+6.
 
 
-LaTeX Warning: Reference `tab:acl-mat' on page 3 undefined on input line 363.
+LaTeX Warning: Reference `tab:prob-mat' on page 4 undefined on input line 416.
 
 
-LaTeX Warning: Reference `fig:acl-fig' on page 3 undefined on input line 363.
+LaTeX Warning: Reference `fig:prob-fig' on page 4 undefined on input line 416.
 
 
-LaTeX Warning: Reference `tab:ssb-mat' on page 3 undefined on input line 363.
+LaTeX Warning: Reference `tab:acl-mat' on page 4 undefined on input line 416.
 
 
-LaTeX Warning: Reference `fig:ssb-fig' on page 3 undefined on input line 363.
+LaTeX Warning: Reference `fig:acl-fig' on page 4 undefined on input line 416.
 
 
-LaTeX Warning: Reference `tab:reb-options' on page 3 undefined on input line 36
-9.
+LaTeX Warning: Reference `tab:ofl-mat' on page 4 undefined on input line 416.
 
 
-LaTeX Warning: Reference `tab:reb-options' on page 3 undefined on input line 36
-9.
+LaTeX Warning: Reference `tab:rel-ssb-mat' on page 4 undefined on input line 41
+6.
 
 
-LaTeX Warning: Reference `tab:prob-mat' on page 3 undefined on input line 369.
+LaTeX Warning: Reference `fig:rel-ssb-fig' on page 4 undefined on input line 41
+6.
 
 
-LaTeX Warning: Reference `tab:reb-options-catch' on page 3 undefined on input l
-ine 375.
+LaTeX Warning: Reference `tab:reb-options' on page 4 undefined on input line 42
+2.
 
 
-LaTeX Warning: Reference `tab:prob-mat-catch' on page 3 undefined on input line
- 375.
+LaTeX Warning: Reference `tab:reb-options' on page 4 undefined on input line 42
+2.
 
 
-LaTeX Warning: Reference `tab:ssb-mat-catch' on page 3 undefined on input line 
-375.
+LaTeX Warning: Reference `tab:prob-mat' on page 4 undefined on input line 422.
 
 
-LaTeX Warning: Reference `tab:reb-options-year' on page 3 undefined on input li
-ne 381.
+LaTeX Warning: Reference `tab:reb-options-catch' on page 4 undefined on input l
+ine 428.
 
 
-LaTeX Warning: Reference `tab:reb-options' on page 3 undefined on input line 38
-1.
+LaTeX Warning: Reference `tab:prob-mat-catch' on page 4 undefined on input line
+ 428.
 
 
-LaTeX Warning: Reference `tab:prob-mat-year' on page 3 undefined on input line 
-381.
+LaTeX Warning: Reference `tab:rel-ssb-mat-catch' on page 4 undefined on input l
+ine 428.
+
+[4]
+
+LaTeX Warning: Reference `tab:reb-options-year' on page 5 undefined on input li
+ne 434.
 
 
-LaTeX Warning: Reference `tab:ssb-mat-year' on page 3 undefined on input line 3
-81.
+LaTeX Warning: Reference `tab:reb-options' on page 5 undefined on input line 43
+4.
 
-[3] [4] [5
 
-] [6
+LaTeX Warning: Reference `tab:prob-mat-year' on page 5 undefined on input line 
+434.
+
+
+LaTeX Warning: Reference `tab:rel-ssb-mat-year' on page 5 undefined on input li
+ne 434.
+
+[5] [6
+
+] [7
 
 ]
-<data-plot.png, id=205, 469.755pt x 361.35pt>
+<data-plot.png, id=246, 469.755pt x 361.35pt>
 File: data-plot.png Graphic file (type png)
 <use data-plot.png>
-Package luatex.def Info: data-plot.png  used on input line 435.
+Package luatex.def Info: data-plot.png  used on input line 488.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
+[8
 
+<./data-plot.png>] 
 AED: lastpage setting LastPage
-[7
+[9
 
-<./data-plot.png>] (./_main.aux)
+] (./_main.aux)
 
 LaTeX Warning: There were undefined references.
 
 )
 
 Here is how much of LuaTeX's memory you used:
- 48864 strings out of 478152
+ 48971 strings out of 478152
  100000,1648299 words of node,token memory allocated
  681 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 glyph, 18 attribute, 77 glue_spec
 , 11 attribute_list, 5 write, 1 close nodes
-   avail lists: 1:36,2:4131,3:303,4:104,5:402,6:56,7:7833,8:35,9:273,10:13,11:52
+   avail lists: 1:36,2:4968,3:393,4:104,5:478,6:71,7:9185,8:45,9:306,10:13,11:59
 0,12:1
- 67353 multiletter control sequences out of 65536+600000
- 75 fonts using 15601467 bytes
- 117i,11n,136p,1484b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67448 multiletter control sequences out of 65536+600000
+ 75 fonts using 15601619 bytes
+ 117i,11n,136p,1535b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm-math/latinmodern-math.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/
 texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Brian.La
@@ -2088,9 +2098,9 @@ lic/lm/lmroman10-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/te
 xmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/
 AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.ot
 f>
-Output written on _main.pdf (11 pages, 3151876 bytes).
+Output written on _main.pdf (13 pages, 3227091 bytes).
 
-PDF statistics: 320 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 131072)
- 646 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 384 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 131072)
+ 816 words of extra memory for PDF output out of 10000 (max. 100000000)
 

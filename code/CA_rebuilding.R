@@ -154,7 +154,8 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 # Read in rebuilding options
 run <- c(
   "930_F2017_2019_ageStruc2021",
-  "931_no_abc_max")
+  "931_no_abc_max",
+  "tests/4_test_run_oneSex")
 reb <- list()
 for(a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
