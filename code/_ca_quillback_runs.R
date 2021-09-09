@@ -1250,13 +1250,20 @@ SS_plots(base.9101)
 #are in historical spawner per recruit. Thus if do recruitment equals option 2
 #then the warning would have an effect. 
 
+#Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
+#As such adjust age-structure to be from 2021
+#Copy model 910's updated rebuild.dat file
+#1. Set age structure to be from 2021 (so the values from model 921)
+#Apply to 910_ageStruc2021 
+
 #Copy model 910 and make changes to forecast
 #1. Change allocation of F years to 2017-2019 (originally was just 2020)
 #Make adjustments to rebuild.dat in 
 #https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit but
 #a. Try to keep Year for Tmin = 2023 (COULDNT so KEPT at 2021)
-model = "9_2_0_slightMods"
+model = "9_2_0_RelF2017_2019"
 base.920 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to 920_F2017_2019
 
 #It is confusing to me that Tmin cant be because age structure is 2023, so...
 #Copy model 920 and adjust Ydecl in forecast to be 2021
@@ -1265,22 +1272,56 @@ base.920 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
 model = "9_2_1_forecastYdecl"
 base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to 921_ydecl2021 
+
+#Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
+#As such adjust age-structure to be from 2021
+#Copy model 920's updated rebuild.dat file
+#1. Set age structure to be from 2021 (so the values from model 921)
+#Apply to 920_F2017_2019_ageStruc2021 
+
+#Apply states of nature incorporation based on 921 values
+#Copy the rebuild.data file in 920_F2017_2019_ageStruc2021
+#and add name rebuild_m_states_921_2021.SSO as file to draw from
+#Apply to 930_F2017_2019_ageStruc2021
+
+#Remove ABC max
+#Copy the rebuild.data file in 930_F2017_2019_ageStruc2021
+#Set constrain catches by ABC to 2
+#Apply to 931_no_abc_max
+
 
 
 
 ####
 #States of nature exploration - adding uncertainty around M
 ####
+
 #Copy 910 into "rebuilding/states of nature" folder
 #Other models in folder "rebuilding/states of nature"
 
 #Copy model 901 and make adjustments in "CA_rebuilding.R"
 model = "9_1_1_M_high"
 base.911 = SS_output(file.path(wd, model),covar=TRUE)
-
 #Copy model 902 and make adjustments in "CA_rebuilding.R"
 model = "9_1_2_M_low"
 base.912 = SS_output(file.path(wd, model),covar=TRUE)
+
+
+
+#Copy 921 into "rebuilding/states of nature" folder
+#Other models in folder "rebuilding/states of nature"
+
+#Copy model 911_M_high (in states_of_nature_910)
+#Adjust forecast rel F to be from 2017-2019
+#Set forecast ydecl to 2021 (so as to get proper age structure)
+model = "9_2_1_M_high"
+base.921 = SS_output(file.path(wd, model),covar=TRUE)
+#Copy model 912_M_low (in states_of_nature_910)
+#Adjust forecast rel F to be from 2017-2019
+#Set forecast ydecl to 2021 (so as to get proper age structure)
+model = "9_2_2_M_low"
+base.922 = SS_output(file.path(wd, model),covar=TRUE)
 
 
 
