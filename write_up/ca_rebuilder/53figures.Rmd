@@ -27,7 +27,7 @@ label = 'rel-ssb-fig')
 add_figure(
 filein = file.path(reb[[1]]$loc, "rebuilding_ssb.png"), 
 caption = "Spawning output by year for alternative rebuilding strategies",
-label = 'rel-ssb-fig')
+label = 'ssb-fig')
 ```
 
 
@@ -57,7 +57,7 @@ label = 'rel-ssb-fig')
 <!-- add_figure( -->
 <!-- filein = file.path(reb[[2]]$loc, "rebuilding_ssb.png"),  -->
 <!-- caption = "Spawning output by year for alternative rebuilding strategies when not constraining catches by the ABC", -->
-<!-- label = 'rel-ssb-fig-noABCmax') -->
+<!-- label = 'ssb-fig-noABCmax') -->
 <!-- ``` -->
 
 
@@ -87,5 +87,5 @@ label = 'rel-ssb-fig')
 <!-- add_figure( -->
 <!-- filein = file.path(reb[[3]]$loc, "rebuilding_ssb.png"),  -->
 <!-- caption = "Spawning output by year for alternative rebuilding strategies when based on an SS model with sex = 1", -->
-<!-- label = 'rel-ssb-fig-sex1') -->
+<!-- label = 'ssb-fig-sex1') -->
 <!-- ``` -->

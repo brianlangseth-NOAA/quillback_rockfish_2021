@@ -15,8 +15,6 @@ Sensitivities to modeling choices and parameter values were explored and showed 
 
 TO DO: Need median and 95% intervals for desired quantities
 
-\clearpage
-
 # Management performance under rebuilding
 
 This is the first rebuilding plan for `r spp` in waters off the coast of California.
