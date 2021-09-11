@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  9 SEP 2021 14:47
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  10 SEP 2021 14:37
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1458,37 +1458,7 @@ LaTeX Warning: Label `tab:ofl-mat' multiply defined.
 LaTeX Warning: Label `tab:rel-ssb-mat' multiply defined.
 
 
-LaTeX Warning: Label `tab:prob-mat-noABCmax' multiply defined.
-
-
-LaTeX Warning: Label `tab:acl-mat-noABCmax' multiply defined.
-
-
-LaTeX Warning: Label `tab:ofl-mat-noABCmax' multiply defined.
-
-
-LaTeX Warning: Label `tab:rel-ssb-mat-noABCmax' multiply defined.
-
-
-LaTeX Warning: Label `tab:prob-mat-sex1' multiply defined.
-
-
-LaTeX Warning: Label `tab:acl-mat-sex1' multiply defined.
-
-
-LaTeX Warning: Label `tab:ofl-mat-sex1' multiply defined.
-
-
-LaTeX Warning: Label `tab:rel-ssb-mat-sex1' multiply defined.
-
-
 LaTeX Warning: Label `fig:rel-ssb-fig' multiply defined.
-
-
-LaTeX Warning: Label `fig:rel-ssb-fig-noABCmax' multiply defined.
-
-
-LaTeX Warning: Label `fig:rel-ssb-fig-sex1' multiply defined.
 
 )
 \openout1 = _main.aux
@@ -2008,647 +1978,250 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.i'
 ]
 Package marginnote Info: Using workaround for absolute page number on input lin
 e 199.
+
+LaTeX Warning: Reference `tab:model-summary' on page 1 undefined on input line 
+237.
+
 [1]
 Package marginnote Info: Using workaround for absolute page number on input lin
-e 241.
-[2
+e 250.
+[2]
 
-] [3]
+LaTeX Warning: Reference `tab:biology' on page 3 undefined on input line 338.
 
-LaTeX Warning: Reference `tab:reb-options-catch' on page 4 undefined on input l
-ine 410.
+[3
 
+] [4] [5]
 
-LaTeX Warning: Reference `tab:reb-options-year' on page 4 undefined on input li
-ne 410.
-
-
-LaTeX Warning: Reference `tab:reb-options-catch' on page 4 undefined on input l
-ine 428.
+LaTeX Warning: Reference `tab:reb-options-catch' on page 6 undefined on input l
+ine 485.
 
 
-LaTeX Warning: Reference `tab:prob-mat-catch' on page 4 undefined on input line
- 428.
+LaTeX Warning: Reference `tab:reb-options-year' on page 6 undefined on input li
+ne 485.
 
 
-LaTeX Warning: Reference `tab:rel-ssb-mat-catch' on page 4 undefined on input l
-ine 428.
-
-[4]
-
-LaTeX Warning: Reference `tab:reb-options-year' on page 5 undefined on input li
-ne 434.
+LaTeX Warning: Reference `tab:reb-options-year' on page 6 undefined on input li
+ne 503.
 
 
-LaTeX Warning: Reference `tab:prob-mat-year' on page 5 undefined on input line 
-434.
+LaTeX Warning: Reference `tab:prob-mat-year' on page 6 undefined on input line 
+503.
 
 
-LaTeX Warning: Reference `tab:rel-ssb-mat-year' on page 5 undefined on input li
-ne 434.
+LaTeX Warning: Reference `tab:rel-ssb-mat-year' on page 6 undefined on input li
+ne 503.
 
-[5] [6
+[6] [7] [8
 
-] [7
+] [9
 
-] [8] [9
+] [10
 
 ]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 604--604
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 611--611
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 609--609
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-[10
-
-
-]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 638--638
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 643--643
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 616--616
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 [11
 
 
-
 ]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 672--672
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 653--653
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 677--677
+Overfull \hbox (23.37526pt too wide) in alignment at lines 650--655
+ [][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 658--658
 []|\TU/lmr/m/n/10 Yr=Tmid|  
+ []
+
+
+Overfull \hbox (23.37526pt too wide) in alignment at lines 655--660
+ [][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.37526pt too wide) in alignment at lines 660--662
+ [][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.37526pt too wide) in alignment at lines 662--664
+ [][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.37526pt too wide) in alignment at lines 664--720
+ [][][][][][][][][][] 
  []
 
 [12
 
 
-
 ]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 714--714
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 732--732
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 711--716
+Overfull \hbox (23.37526pt too wide) in alignment at lines 729--734
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 719--719
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 737--737
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 716--721
+Overfull \hbox (23.37526pt too wide) in alignment at lines 734--739
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 721--723
+Overfull \hbox (23.37526pt too wide) in alignment at lines 739--741
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 723--725
+Overfull \hbox (23.37526pt too wide) in alignment at lines 741--743
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 725--781
+Overfull \hbox (23.37526pt too wide) in alignment at lines 743--799
  [][][][][][][][][][] 
  []
 
-[13
-
-
-]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 793--793
+[13]
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 811--811
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 790--795
+Overfull \hbox (23.37526pt too wide) in alignment at lines 808--813
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 798--798
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 816--816
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 795--800
+Overfull \hbox (23.37526pt too wide) in alignment at lines 813--818
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 800--802
+Overfull \hbox (23.37526pt too wide) in alignment at lines 818--820
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 802--804
+Overfull \hbox (23.37526pt too wide) in alignment at lines 820--822
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 804--860
+Overfull \hbox (23.37526pt too wide) in alignment at lines 822--878
  [][][][][][][][][][] 
  []
 
-[14]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 872--872
+[14] [15]
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 890--890
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 869--874
+Overfull \hbox (23.37526pt too wide) in alignment at lines 887--892
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 877--877
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 895--895
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 874--879
+Overfull \hbox (23.37526pt too wide) in alignment at lines 892--897
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 879--881
+Overfull \hbox (23.37526pt too wide) in alignment at lines 897--899
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 881--883
+Overfull \hbox (23.37526pt too wide) in alignment at lines 899--901
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 883--939
+Overfull \hbox (23.37526pt too wide) in alignment at lines 901--957
  [][][][][][][][][][] 
  []
 
-[15] [16]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 951--951
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 948--953
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 956--956
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 953--958
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 958--960
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 960--962
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 962--1018
- [][][][][][][][][][] 
- []
-
-[17] [18]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1039--1039
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1036--1041
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1044--1044
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1041--1046
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1046--1048
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1048--1050
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1050--1106
- [][][][][][][][][][] 
- []
-
-[19
-
-]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1118--1118
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1115--1120
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1123--1123
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1120--1125
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1125--1127
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1127--1129
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1129--1185
- [][][][][][][][][][] 
- []
-
-[20]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1197--1197
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1194--1199
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1202--1202
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1199--1204
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1204--1206
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1206--1208
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1208--1264
- [][][][][][][][][][] 
- []
-
-[21] [22]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1276--1276
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1273--1278
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1281--1281
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1278--1283
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1283--1285
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1285--1287
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1287--1343
- [][][][][][][][][][] 
- []
-
-[23] [24]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1364--1364
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1361--1366
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1369--1369
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1366--1371
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1371--1373
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1373--1375
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1375--1431
- [][][][][][][][][][] 
- []
-
-[25
-
-]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1443--1443
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1440--1445
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1448--1448
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1445--1450
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1450--1452
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1452--1454
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1454--1510
- [][][][][][][][][][] 
- []
-
-[26]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1522--1522
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1519--1524
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1527--1527
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1524--1529
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1529--1531
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1531--1533
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1533--1589
- [][][][][][][][][][] 
- []
-
-[27] [28]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1601--1601
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1598--1603
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 1606--1606
-[]|\TU/lmr/m/n/10 Yr=Tmid|  
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1603--1608
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1608--1610
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1610--1612
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 1612--1668
- [][][][][][][][][][] 
- []
-
-[29] [30]
+[16] [17]
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/rebui
-lding_probability.png, id=458, 722.7pt x 505.89pt>
+lding_probability.png, id=397, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/
 rebuilding_probability.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/r
 ebuilding_probability.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017
-_2019_ageStruc2021/rebuilding_probability.png  used on input line 1686.
+_2019_ageStruc2021/rebuilding_probability.png  used on input line 977.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/rebui
-lding_acl.png, id=460, 722.7pt x 505.89pt>
+lding_acl.png, id=399, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/
 rebuilding_acl.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/r
 ebuilding_acl.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017
-_2019_ageStruc2021/rebuilding_acl.png  used on input line 1696.
+_2019_ageStruc2021/rebuilding_acl.png  used on input line 987.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/rebui
-lding_relative_sb.png, id=462, 722.7pt x 505.89pt>
+lding_relative_sb.png, id=401, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/
 rebuilding_relative_sb.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/r
 ebuilding_relative_sb.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017
-_2019_ageStruc2021/rebuilding_relative_sb.png  used on input line 1706.
+_2019_ageStruc2021/rebuilding_relative_sb.png  used on input line 997.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/rebui
-lding_ssb.png, id=464, 722.7pt x 505.89pt>
+lding_ssb.png, id=403, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/
 rebuilding_ssb.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/r
 ebuilding_ssb.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017
-_2019_ageStruc2021/rebuilding_ssb.png  used on input line 1716.
+_2019_ageStruc2021/rebuilding_ssb.png  used on input line 1007.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_probabi
-lity.png, id=466, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_pr
-obability.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_pro
-bability.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_ab
-c_max/rebuilding_probability.png  used on input line 1726.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_acl.png
-, id=468, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_ac
-l.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_acl
-.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_ab
-c_max/rebuilding_acl.png  used on input line 1736.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_relativ
-e_sb.png, id=470, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_re
-lative_sb.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_rel
-ative_sb.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_ab
-c_max/rebuilding_relative_sb.png  used on input line 1746.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_ssb.png
-, id=472, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_ss
-b.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_ssb
-.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_ab
-c_max/rebuilding_ssb.png  used on input line 1756.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebuildin
-g_probability.png, id=474, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebu
-ilding_probability.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebui
-lding_probability.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_t
-est_run_oneSex/rebuilding_probability.png  used on input line 1766.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebuildin
-g_acl.png, id=476, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebu
-ilding_acl.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebui
-lding_acl.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_t
-est_run_oneSex/rebuilding_acl.png  used on input line 1776.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebuildin
-g_relative_sb.png, id=478, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebu
-ilding_relative_sb.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebui
-lding_relative_sb.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_t
-est_run_oneSex/rebuilding_relative_sb.png  used on input line 1786.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebuildin
-g_ssb.png, id=480, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebu
-ilding_ssb.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebui
-lding_ssb.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_t
-est_run_oneSex/rebuilding_ssb.png  used on input line 1796.
-(luatex.def)             Requested size: 398.33534pt x 278.83473pt.
-[31
+[18
+
 
 <c:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/rebuil
-ding_probability.png>] [32<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F201
-7_2019_ageStruc2021/rebuilding_acl.png>] [33<c:/Users/Brian.Langseth/Desktop/ca/
-rebuilder/930_F2017_2019_ageStruc2021/rebuilding_relative_sb.png>] [34<c:/Users/
+ding_probability.png>] [19<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/930_F201
+7_2019_ageStruc2021/rebuilding_acl.png>] [20<c:/Users/Brian.Langseth/Desktop/ca/
+rebuilder/930_F2017_2019_ageStruc2021/rebuilding_relative_sb.png>] [21<c:/Users/
 Brian.Langseth/Desktop/ca/rebuilder/930_F2017_2019_ageStruc2021/rebuilding_ssb.p
-ng>] [35<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_max/rebuilding_
-probability.png>] [36<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_abc_ma
-x/rebuilding_acl.png>] [37<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/931_no_a
-bc_max/rebuilding_relative_sb.png>] [38<c:/Users/Brian.Langseth/Desktop/ca/rebui
-lder/931_no_abc_max/rebuilding_ssb.png>] [39<c:/Users/Brian.Langseth/Desktop/ca/
-rebuilder/tests/4_test_run_oneSex/rebuilding_probability.png>] [40<c:/Users/Bria
-n.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebuilding_acl.png>] [4
-1<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_test_run_oneSex/rebuildin
-g_relative_sb.png>] [42<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/tests/4_tes
-t_run_oneSex/rebuilding_ssb.png>] 
+ng>] 
 AED: lastpage setting LastPage
-[43
+[22
 
 ] (./_main.aux)
 
@@ -2660,16 +2233,18 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49445 strings out of 478152
- 305228,1977958 words of node,token memory allocated
- 697 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 glyph, 22 attribute, 77 glue_spec
-, 12 attribute_list, 5 write, 1 close, 1 pdf_action nodes
-   avail lists: 1:65,2:23837,3:2717,4:134,5:1406,6:1339,7:15717,8:71,9:8651,10:1
-3,11:600,12:1
- 67781 multiletter control sequences out of 65536+600000
+ 49243 strings out of 478152
+ 305234,1648299 words of node,token memory allocated
+ 681 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 glyph, 18 attribute, 77 glue_spec
+, 11 attribute_list, 5 write, 1 close nodes
+   avail lists: 1:65,2:23548,3:2699,4:141,5:1406,6:1330,7:15665,8:65,9:8594,10:1
+3,11:651,12:1
+ 67664 multiletter control sequences out of 65536+600000
  75 fonts using 15601315 bytes
- 117i,11n,136p,1535b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 117i,11n,136p,1484b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+warning  (pdf backend): unreferenced destination with name 'append'
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm-math/latinmodern-math.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/
 texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Brian.La
@@ -2683,9 +2258,9 @@ lic/lm/lmroman10-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/te
 xmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/
 AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.ot
 f>
-Output written on _main.pdf (47 pages, 76275350 bytes).
+Output written on _main.pdf (26 pages, 25673896 bytes).
 
-PDF statistics: 699 PDF objects out of 1000 (max. 8388607)
- 128 named destinations out of 1000 (max. 131072)
- 1226 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 574 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 131072)
+ 1186 words of extra memory for PDF output out of 10000 (max. 100000000)
 

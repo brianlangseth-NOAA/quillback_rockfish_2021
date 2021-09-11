@@ -34,5 +34,6 @@ if(file.exists("00mod.Rdata")){
 spp = 'quillback rockfish'
 Spp = 'Quillback rockfish'
 spp_latin = 'Sebastes maliger'
+frac_fem = 0.5
 
 ```

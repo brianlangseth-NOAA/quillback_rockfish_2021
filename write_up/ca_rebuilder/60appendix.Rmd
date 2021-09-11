@@ -1,6 +1,6 @@
 \clearpage
 # Appendix
 
-## Rebuilder data file
+## Rebuilder data file{#append_a}
 
 The rebuild.dat file used for the SPR alternative analysis has been provided as a separate file.
