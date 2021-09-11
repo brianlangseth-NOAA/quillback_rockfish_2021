@@ -872,13 +872,21 @@ kableExtra::save_kable(t, file = file.path(wd, "postSSC_plots", "ForReport", "se
 
 
 ####
-#Add 2001 only run for both rec and comm
+#Extra - post Aug 17 GFSC meeting exploratory runs
 ####
+#Add 2001-only run for both rec and comm
 #Copy model 8014
 model = "8_0_15_recComBlock2001"
 base.8015 = SS_output(file.path(wd, model), covar=TRUE)
 SS_plots(base.8015)
 SS_tune_comps(dir = file.path(wd, "8_0_15_recComBlock2001"), write = FALSE)
+
+#Add 2001-only run for both rec and comm but keep commercial asymptotic
+#Copy model 8014
+model = "8_0_16_recComBlock2001_RecDomeOnly"
+base.8016 = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.8016)
+SS_tune_comps(dir = file.path(wd, "8_0_16_recComBlock2001_RecDomeOnly"), write = FALSE)
 
 
 
