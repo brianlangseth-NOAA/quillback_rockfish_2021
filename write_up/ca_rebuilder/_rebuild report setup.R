@@ -39,7 +39,9 @@ rebuild_dir = "C:/Users/Brian.Langseth/Desktop/ca/rebuilder"
 #Report is based on these models
 run <- c(
   "930_F2017_2019_ageStruc2021",
-  "931_no_abc_max")
+  "931_no_abc_max",
+  "940_recComBlock2001",
+  "941_no_abc_max")
 
 reb <- list()
 for (a in 1:length(run)){

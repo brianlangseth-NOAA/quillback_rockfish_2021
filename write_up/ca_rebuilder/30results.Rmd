@@ -6,9 +6,7 @@
 
 Reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2023 was estimated to be `r reb[[1]]$tmin ` years, corresponding to the stock being rebuilt by `r reb[[1]]$recovery_spec[3] + reb[[1]]$tmin `, assuming the default removals for 2021 and 2022.  The mean generation time was estimated to be `r reb[[1]]$mean_gen ` years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$, is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that require more than 10 years to rebuild.  `r Spp` was unable to rebuild within 10 years so the estimated $\text{T}_\text{MAX}$ was `r reb[[1]]$tmax `. $\text{P}_\text{MAX}$, $\text{T}_\text{TARGET}$, and $\text{SPR}_\text{TARGET}$ are not specified since this is the first rebuilding plan for `r spp` and these values have not been set via the Council's process.
 
-TO DO: Confirm Tmin value (17 or 19) and Tmin year (2040 or 2042). Tmax assumed Tminyear is 2040
-
-TO DO: Add current stock size into the table
+TO DO: Confirm Tmin value (17 or 19) and Tmin year (2040 or 2042). Tmax assumes Tminyear is 2040 so ensure values are accurate here and in tables. 
 
 <!-- A rebuilding strategy is presented below and includes a rebuilding target year termed $\text{T}_\text{MID}$, which equals `r reb[[1]]$rebuild_quants[6,1]` and is the mid-point between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$, along with the associated SPR harvest rate. The Council may opt to select a $\text{T}_\text{TARGET}$ earlier or later than this $\text{T}_\text{MID}$ value based on fishery, economic, or other factors. -->
 
@@ -23,7 +21,7 @@ TO DO: Automate presentation of the years in the first sentence
 
 TO DO: Ensure min max catch values reflect the ABC caps
 
-TO DO: Set tables to be capped at Tmax
+TO DO: Set number of table rows to be capped at Tmax
 
 TO DO: provide an asterisk where ABC caps were applied
 
@@ -37,9 +35,9 @@ TO DO?: This seems short, is more results needed?
 
 ## Results for sensitivity on selectivity blocks and selectivity form
 
-Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-block} and \ref{tab:ref-options-block}. The sensitivity had very similar spawning output and depletion estimates compared to the base model (Figure \ref{fig:two-panel-block}), but selectivity in the recent block was right shifted and domed (Figure \ref{fig:selex-block}) so the numbers at age entered into the sensitivity rebuilding analysis were different from the numbers at age entered into the base rebuilding analysis, contributing to differences in results. 
+Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-block} and \ref{tab:ref-options-block}. Comparisons between stock synthesis output from the adopted base model and the sensitivity run are provided in [Appendix C]{#append_c}. The sensitivity had slightly higher estimates of unfished spawning output (Figure \ref{fig:ssb-sens}) and similar depletion estimates (Figure \ref{fig:depl-sens}) compared to the adopted base model. Selectivity in the recent block was domed at large sizes for both the recreational and commercial fleets, and right shifted in recent years for the commercial fleet (Figure \ref{fig:selex-sens}) so the numbers at age entered into the sensitivity rebuilding analysis were different from the numbers at age entered into the base rebuilding analysis, contributing to differences in results. 
 
-However, we do not consider the sensitivity model to be an improvement over the base model. The right shifted selectivity curve for the commercial fleet in recent years did fit the high observed mean lengths starting around 2010 better than the base model, however the mode and right side of the estimated aggregate length distribution from the commercial fleet visually fit the data worse than the base model. Combined with the strong similarities in population scale and status, the base model is preferred due to parsimony. Improved understanding of where the fleets are fishing and sizes of `r spp` available by depth would better inform the selectivity curve for future assessments of this species. 
+However, we do not consider the sensitivity model to be an improvement over the base model. The shifts in the selectivity curve for the commercial fleet  fit the lower observed mean lengths in the 1990s and the higher observed mean lengths starting around 2010 better than the base model did (Figures \ref{fig:MeanLengthFit-base} and \ref{fig:MeanLengthFit-sens}), leading to an improvement in AIC. However the mode and right side of the estimated aggregate length distribution from the commercial fleet visually fit the data worse than the base model did (Figures \ref{fig:aggLenFit-sens} and \ref{fig:aggLenFit-sens}). Combined with the similarities in population scale and status, the base model is preferred due to parsimony. Improved understanding of where the fleets are fishing and sizes of `r spp` available by depth would better inform the selectivity curve for future assessments of this species. 
 
 
-TO DO: Add fit material from sensitivity MODEL run
+QUESTION: Is there more fit material needed. The amount of it seems extraneous to the rebuilding analysis. 

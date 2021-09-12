@@ -1,27 +1,38 @@
 \clearpage
 # Tables
 
+TO DO: Ensure spawning outputs reflect female spawning output
+
+TO DO: Add sensitivity rebuilder results
+
 <!-- ## Rebuilding reference points and summary of alternatives -->
 ## Rebuilding reference points
 
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
-quants = c(round(reb[[1]]$sb0,2), 
-		   round(reb[[1]]$sb40, 2), 
-		   round(reb[[1]]$sb_ass_year, 2),
+quants = c(round(reb[[1]]$sb0,2)*frac_fem, 
+		   round(reb[[1]]$sb40, 2)*frac_fem, 
+		   round(reb[[1]]$sb_ass_year, 2)*frac_fem,
 		   reb[[1]]$recovery_spec[4],
 		   reb[[1]]$recovery_spec[3], 
-		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4], #I THINK THIS SHOULD BE RECOVERY_SPEC[3] because zero catch rebuild is 17 yet tmin is 19 so the two years of fixed catches from 2021 to 2023 are included in tmin already 
+		   reb[[1]]$tmin + reb[[1]]$recovery_spec[3], 
 		   reb[[1]]$mean_gen, 
 		   reb[[1]]$tmax, 
 		   "TBD",
 		   "TBD",
 		   "TBD")
-row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)", 
-			"SB2021 (millions of eggs)", "Year rebuilding begins",
-		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", 
-		    "Pmax", "Ttarget", "SPRtarget")
-col_names = c("Parameter", "2021 Assessment Values")
+row_names = c("SB0 (millions of eggs)", 
+              "SB40 (millions of eggs)",
+              "SB2021 (millions of eggs)", 
+              "Year rebuilding begins",
+              "Current year", 
+              "Tmin", 
+              "Mean generation time (years)", 
+              "Tmax",
+              "Pmax", 
+              "Ttarget", 
+              "SPRtarget")
+col_names = c("Quantity", "2021 Assessment Values")
 out = cbind(row_names, quants)
 table_format(x = out,
              caption = "Summary of the rebuilding reference points.",
@@ -108,6 +119,7 @@ table_format(x = out,
              col_names = col_names)
 ```
 
+QUESTION: Should ACL actually be ACL contribution? 
 
 <!-- ```{r, results = 'asis'} -->
 <!-- # Rebuilding Reference Points Table -->
@@ -157,6 +169,8 @@ table_format(x = out,
 \clearpage
 
 ## Rebuilding alternative time series 
+
+TO DO: Correct the captions since these are not just SPR alternatives
 
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$prob_matrix[1:55, ],3))

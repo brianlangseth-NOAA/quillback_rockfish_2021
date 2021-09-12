@@ -181,16 +181,16 @@ No current rebuilding plan exists for quillback rockfish in California waters so
  \item Apply the harvest rate that is estimated to lead to a 50% probability of recovery by the TMAX from the previous cycle.
 \end{itemize}
 
-TO DO: Add a harvest policy that would generate the currently specified ACL. There is no ACL, its an ACL contribution. Is this constant catch for every year in the analysis?
+TO DO: Add a run that generates the currently specified ACL. But there is no ACL, its an ACL contribution, so do I need to do this? Not sure how to do this. 
 
-TO DO: Add a run with Tmax
+TO DO: Add a run with Tmax. Not sure how to do this.
 
 All of the above rebuilding strategies were conducted assuming removals of 13.5 mt in 2021 and 2022 as recommended by the Groundfish Management Team (GMT). <!-- A sensitivity examining the impact of reducing removals in 2021 and 2022 to the ACL values of 5.83 mt for 2021 and 5.84 mt for 2022 was conducted using only the fixed SPR harvest rate alternatives listed above. -->
 <!-- [This is currently not done but Im leaving the text in as a place holder should it be asked for] --> 
 
 The Pacific Fishery Management Council's (Council) Scientific and Statistical Committee (SSC) requested at the September Council meeting that an additional rebuilding sensitivity be done examining the impact of blocking both recreational and commercial selectivity at 1916-2000 and 2001-2020, assuming asymptotic selectivity for the early blocks and allowing estimation of dome-shaped selectivity for the recent blocks. This sensitivity was conducted without integration over alternative states of nature for natural mortality, given its treatment as a sensitivity. The biological parameters on which the projections are based for this sensitivity are provided in [Appendix B](#append_b) (Table \ref{tab:sens-biology}).
 
-TO DO: Add the biology table for the sensitivity 
+TO DO: Add this biology table for the sensitivity 
 
 <!--chapter:end:20rebuilding.Rmd-->
 
@@ -202,9 +202,7 @@ TO DO: Add the biology table for the sensitivity
 
 Reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2023 was estimated to be 19 years, corresponding to the stock being rebuilt by 2040, assuming the default removals for 2021 and 2022.  The mean generation time was estimated to be 27 years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$, is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that require more than 10 years to rebuild.  Quillback rockfish was unable to rebuild within 10 years so the estimated $\text{T}_\text{MAX}$ was 2067. $\text{P}_\text{MAX}$, $\text{T}_\text{TARGET}$, and $\text{SPR}_\text{TARGET}$ are not specified since this is the first rebuilding plan for quillback rockfish and these values have not been set via the Council's process.
 
-TO DO: Confirm Tmin value (17 or 19) and Tmin year (2040 or 2042). Tmax assumed Tminyear is 2040
-
-TO DO: Add current stock size into the table
+TO DO: Confirm Tmin value (17 or 19) and Tmin year (2040 or 2042). Tmax assumes Tminyear is 2040 so ensure values are accurate here and in tables. 
 
 <!-- A rebuilding strategy is presented below and includes a rebuilding target year termed $\text{T}_\text{MID}$, which equals 2054 and is the mid-point between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$, along with the associated SPR harvest rate. The Council may opt to select a $\text{T}_\text{TARGET}$ earlier or later than this $\text{T}_\text{MID}$ value based on fishery, economic, or other factors. -->
 
@@ -219,7 +217,7 @@ TO DO: Automate presentation of the years in the first sentence
 
 TO DO: Ensure min max catch values reflect the ABC caps
 
-TO DO: Set tables to be capped at Tmax
+TO DO: Set number of table rows to be capped at Tmax
 
 TO DO: provide an asterisk where ABC caps were applied
 
@@ -233,9 +231,12 @@ TO DO?: This seems short, is more results needed?
 
 ## Results for sensitivity on selectivity blocks and selectivity form
 
-Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-block} and \ref{tab:ref-options-block}. The sensitivity had very similar spawning output and depletion estimates compared to the base model (Figure \ref{fig:two-panel-block}), but selectivity in the recent block was right shifted and domed (Figure \ref{fig:selex-block}) so the numbers at age entered into the sensitivity rebuilding analysis were different from the numbers at age entered into the base rebuilding analysis, contributing to differences in results. 
+Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-block} and \ref{tab:ref-options-block}. Comparisons between stock synthesis output from the adopted base model and the sensitivity run are provided in [Appendix C]{#append_c}. The sensitivity had slightly higher estimates of unfished spawning output (Figure \ref{fig:ssb-sens}) and similar depletion estimates (Figure \ref{fig:depl-sens}) compared to the adopted base model. Selectivity in the recent block was domed at large sizes for both the recreational and commercial fleets, and right shifted in recent years for the commercial fleet (Figure \ref{fig:selex-sens}) so the numbers at age entered into the sensitivity rebuilding analysis were different from the numbers at age entered into the base rebuilding analysis, contributing to differences in results. 
 
-However, we do not consider the sensitivity model to be an improvement over the base model. The right shifted selectivity curve for the commercial fleet in recent years did fit the high observed mean lengths starting around 2010 better than the base model, however the mode and right side of the estimated aggregate length distribution from the commercial fleet visually fit the data worse than the base model. Combined with the strong similarities in population scale and status, the base model is preferred due to parsimony. Improved understanding of where the fleets are fishing and sizes of quillback rockfish available by depth would better inform the selectivity curve for future assessments of this species. 
+However, we do not consider the sensitivity model to be an improvement over the base model. The shifts in the selectivity curve for the commercial fleet  fit the lower observed mean lengths in the 1990s and the higher observed mean lengths starting around 2010 better than the base model did (Figures \ref{fig:MeanLengthFit-base} and \ref{fig:MeanLengthFit-sens}), leading to an improvement in AIC. However the mode and right side of the estimated aggregate length distribution from the commercial fleet visually fit the data worse than the base model did (Figures \ref{fig:aggLenFit-sens} and \ref{fig:aggLenFit-sens}). Combined with the similarities in population scale and status, the base model is preferred due to parsimony. Improved understanding of where the fleets are fishing and sizes of quillback rockfish available by depth would better inform the selectivity curve for future assessments of this species. 
+
+
+QUESTION: Is there more fit material needed. The amount of it seems extraneous to the rebuilding analysis. 
 
 <!--chapter:end:30results.Rmd-->
 
@@ -266,6 +267,10 @@ Andre Punt (University of Washington) quickly updated the rebuilder program to a
 \clearpage
 # Tables
 
+TO DO: Ensure spawning outputs reflect female spawning output
+
+TO DO: Add sensitivity rebuilder results
+
 <!-- ## Rebuilding reference points and summary of alternatives -->
 ## Rebuilding reference points
 
@@ -275,24 +280,24 @@ Andre Punt (University of Washington) quickly updated the rebuilder program to a
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}}
 \caption{(\#tab:ref-points)Summary of the rebuilding reference points.}\\
 \toprule
-Parameter & 2021 Assessment Values\\
+Quantity & 2021 Assessment Values\\
 \midrule
 \endfirsthead
 \caption[]{(\#tab:ref-points)Summary of the rebuilding reference points. \textit{(continued)}}\\
 \toprule
-Parameter & 2021 Assessment Values\\
+Quantity & 2021 Assessment Values\\
 \midrule
 \endhead
 
 \endfoot
 \bottomrule
 \endlastfoot
-SB0 (millions of eggs) & 110.16\\
-SB40% (millions of eggs) & 44.07\\
-SB2021 (millions of eggs) & 15.49\\
+SB0 (millions of eggs) & 55.08\\
+SB40 (millions of eggs) & 22.035\\
+SB2021 (millions of eggs) & 7.745\\
 Year rebuilding begins & 2023\\
 Current year & 2021\\
-Tmin & 2042\\
+Tmin & 2040\\
 Mean generation time (years) & 27\\
 Tmax & 2067\\
 Pmax & TBD\\
@@ -390,6 +395,7 @@ Probability of recovery by Tmax & 0.894 & 0.959 & 0.997 & 1 & 1 & 0.894 & 1 & 0.
 \end{landscape}
 \endgroup{}
 
+QUESTION: Should ACL actually be ACL contribution? 
 
 <!-- ```{r, results = 'asis'} -->
 <!-- # Rebuilding Reference Points Table -->
@@ -439,6 +445,8 @@ Probability of recovery by Tmax & 0.894 & 0.959 & 0.997 & 1 & 1 & 0.894 & 1 & 0.
 \clearpage
 
 ## Rebuilding alternative time series 
+
+TO DO: Correct the captions since these are not just SPR alternatives
 
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
@@ -926,12 +934,43 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 \clearpage
 # Appendix
 
-## Appendix A: Rebuilder data file{#append_a}
+## Appendix A: Rebuilder data file.{#append_a}
 
 The rebuild.dat file used for the SPR alternative analysis has been provided as a separate file.
 
-## Appendix B: Biological information used for sensitivity run{#append_b}
+## Appendix B: Biological information used for the sensitivity rebuilder analysis with dome-shaped selectivity and blocks.{#append_b}
 
+
+
+## Appendix C: Comparison between the approved stock synthesis base case model and the stock synthesis sensitivity model with dome-shaped selectivity and blocks.{#append_b}
+
+<!-- Spawning output and status comparisons -->
+
+![Change in estimated spawning output for the adopted stock synthesis base model (Base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:ssb-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output for the adopted stock synthesis base model (Base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario."}
+
+![Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:depl-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario."}
+
+
+
+![Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the sensitivity for the adopted base model (blue lines).\label{fig:selex-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compare.png){width=100% height=100% alt="Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the sensitivity for the adopted base model (blue lines)."}
+
+<!-- Mean length fits -->
+
+![Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png){width=90% height=90% alt="Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting."}
+
+![Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png){width=90% height=90% alt="Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting."}
+
+<!-- Aggregate length plots -->
+
+![Aggregated length comps over all years for the adopted stock synthesis base model.\label{fig:aggLenFit-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps over all years for the adopted stock synthesis base model."}
+
+![Aggregated length comps over all years for the stock synthesis sensitivity model.\label{fig:aggLenFit-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps over all years for the stock synthesis sensitivity model."}
+
+<!-- Person residuals -->
+
+![Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:Pearson-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__multi-fleet_comparison.png){width=90% height=90% alt="Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
+
+![Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:Pearson-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__multi-fleet_comparison.png){width=90% height=90% alt="Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
 
 <!--chapter:end:60appendix.Rmd-->
 

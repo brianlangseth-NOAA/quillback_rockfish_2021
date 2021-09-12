@@ -701,8 +701,8 @@ SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\7_0_0_base", write 
 
 #Switch to Francis weighting - Had to iterate twice
 model = "7_0_1_Francis"
-base.710 = SS_output(file.path(wd, model),covar=TRUE)
-SS_plots(base.710)
+base.701 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.701)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\7_1_0_base", write = FALSE, option = "none") #for first initial pass
 #Francis has slightly more extreme status but also have more dramatic recdevs. Keep with MI
 
@@ -1240,7 +1240,7 @@ base.9101 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 SS_plots(base.9101)
 #Very slight differences in parameter estimates
 
-#Other exploratins in the test folder included 
+#Other explorations in the test folder included 
 #2_test_run_AddGenderInfo - copy sex specific info twice (still get the error)
 #3_test_run_-1Sex - set sex to -1 in rebuild.dat (it doesn't run)
 #4_test_run_oneSex - use model 9101 from above
@@ -1277,51 +1277,159 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
 #As such adjust age-structure to be from 2021
 #Copy model 920's updated rebuild.dat file
-#1. Set age structure to be from 2021 (so the values from model 921)
+#1. Set age structure to be from 2021 (can use the values from model 921 - also works to use age structure
+#from lines just above this in the rebuild.dat file)
 #Apply to 920_F2017_2019_ageStruc2021 
 
-#Apply states of nature incorporation based on 921 values
-#Copy the rebuild.data file in 920_F2017_2019_ageStruc2021
-#and add name rebuild_m_states_921_2021.SSO as file to draw from
-#Apply to 930_F2017_2019_ageStruc2021
+######################### Base runs ##################################
 
-#Remove ABC max
-#Copy the rebuild.data file in 930_F2017_2019_ageStruc2021
-#Set constrain catches by ABC to 2
-#Apply to 931_no_abc_max
+  #Apply states of nature incorporation based on 921 values
+  #Copy the rebuild.data file in 920_F2017_2019_ageStruc2021
+  #and add name rebuild_m_states_921_2021.SSO as file to draw from
+  #Apply to 930_F2017_2019_ageStruc2021
+  
+  
+  #Remove cap on catch by ABC
+  #Copy the rebuild.data file in 930_F2017_2019_ageStruc2021
+  #Set constrain catches by ABC to 2
+  #Apply to 931_no_abc_max
 
-
-
-
-####
-#States of nature exploration - adding uncertainty around M
-####
-
-#Copy 910 into "rebuilding/states of nature" folder
-#Other models in folder "rebuilding/states of nature"
-
-#Copy model 901 and make adjustments in "CA_rebuilding.R"
-model = "9_1_1_M_high"
-base.911 = SS_output(file.path(wd, model),covar=TRUE)
-#Copy model 902 and make adjustments in "CA_rebuilding.R"
-model = "9_1_2_M_low"
-base.912 = SS_output(file.path(wd, model),covar=TRUE)
+############################################################################
 
 
+######################### Sensitivity runs ##################################
 
-#Copy 921 into "rebuilding/states of nature" folder
-#Other models in folder "rebuilding/states of nature"
+  #Set up sensitivity rebuilder run based on model 8015 sensitivity
+  #Copy SS model 9_2_0_RelF2017_2019.
+  #Replace .ctl file with the one from model 8015. Set sd of M prior to 0.438.
+  #Run model
+  #Make adjustments to rebuild.dat in 
+  #https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit and
+  #adjust age-structure to be from 2021 (copy from line above in rebuild.dat)
+  model = "9_4_0_recComBlock2001"
+  base.940 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+  SS_plots(base.940)
+  #Apply to 940_recComBlock2001
+  
+  #Remove cap on catch by ABC
+  #Copy the rebuild.data file in 940_recComBlock2001
+  #Set constrain catches by ABC to 2
+  #Apply to 941_no_abc_max
+  
+  
+  ####
+  #Comparison plots and tables
+  ####
+  model = "7_1_0_base"
+  base.710 = SS_output(file.path(wd, model), covar=TRUE, printstats = FALSE, verbose = FALSE)
+  model = "9_4_0_recComBlock2001"
+  base.940 = SS_output(file.path(wd, "rebuilder", model), covar=TRUE, printstats = FALSE, verbose = FALSE)
+  
+  reb_names <- c("Adopted SS base", "SS RecCom Block 2001")
+  reb_models  <- SSsummarize(list(base.710, base.940))
+  
+  if(!dir.exists(file.path(wd, 'rebuilder','write_up','figures'))){
+    dir.create(file.path(wd, 'rebuilder','write_up','figures'), recursive=TRUE)
+  }
+  
+  #Plot each individually for control over legend location
+  SSplotComparisons(reb_models, endyrvec = 2021, 
+                    legendlabels = reb_names, 
+                    ylimAdj = 1.10,
+                    plotdir = file.path(wd, 'rebuilder','write_up','figures'), 
+                    legendloc = "bottomleft", 
+                    legendncol = 1,
+                    filenameprefix = paste0("rebuilder_sensitivities_"),
+                    subplot = c(2,4,9,10,11,12), 
+                    print = TRUE, 
+                    pdf = FALSE)
+  
+  
+  ####
+  ##Selectivity plots
+  ####
+  fleets = c("Comm", "Rec")
+  
+  #Recreational
+  base_selex_rec <- SSplotSelex(base.710, fleets = 2, fleetnames = fleets, subplot = 1)
+  base_selex_rec$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
+  
+  selex_940_rec <- SSplotSelex(base.940, fleets = 2, subplot = 1, year = c(2000,2020))
+  selex_940_rec$infotable$col <- "red"
+  selex_940_rec$infotable$pch <- 1
+  
+  #Commercial
+  base_selex_com <- SSplotSelex(base.710, fleets = 1, subplot = 1)
+  base_selex_com$infotable$col <- rich.colors.short(n = 8, alpha = 0.75)[2]
+  
+  selex_940_com <- SSplotSelex(base.940, fleets = 1, subplot = 1, year = c(2000,2020))
+  selex_940_com$infotable$col <- "red"
+  selex_940_com$infotable$pch <- 1
+  
+  
+  png(file = file.path(wd, "rebuilder", "write_up", "figures", "selex_compare.png"), 
+      width = 8, height = 10, units = "in", res = 300)
+  par(mfrow = c(2,1), mai = c(0.5,0.5,0.5,0))
+  
+  SSplotSelex(base.710, fleets = 2, infotable = base_selex_rec$infotable,
+              subplot = 1, legendloc = NA, showmain=FALSE)
+  SSplotSelex(base.940, fleets = 2, infotable = selex_940_rec$infotable,
+              subplot = 1, legendloc = NA, year = c(2000, 2020), add = TRUE)
+  legend("left", c("1916-2000", "2001-2020",
+                   "Base 1916-2020"), lty = c(1,2, 1), 
+         col = c(selex_940_rec$infotable$col, base_selex_rec$infotable$col),
+         pch = c(selex_940_rec$infotable$pch, base_selex_rec$infotable$pch), 
+         bty = "n", lwd = 2, seg.len = 5)
+  mtext("RecCom Block 2001 - Recreational", side = 3, line = 0.5, font = 2)
+  grid()
+  
+  SSplotSelex(base.710, fleets = 1, infotable = base_selex_com$infotable,
+              subplot = 1, legendloc = NA, showmain=FALSE)
+  SSplotSelex(base.940, fleets = 1, infotable = selex_940_com$infotable,
+              subplot = 1, legendloc = NA, year = c(2000, 2020), add = TRUE)
+  legend("left", c("1916-2000", "2001-2020",
+                   "Base 1916-2020"), lty = c(1,2, 1), 
+         col = c(selex_940_com$infotable$col, base_selex_com$infotable$col),
+         pch = c(selex_940_com$infotable$pch, base_selex_com$infotable$pch), 
+         bty = "n", lwd = 2, seg.len = 5)
+  mtext("RecCom Block 2001 - Commercial", side = 3, line = 0.5, font = 2)
+  grid()
+  dev.off()
 
-#Copy model 911_M_high (in states_of_nature_910)
-#Adjust forecast rel F to be from 2017-2019
-#Set forecast ydecl to 2021 (so as to get proper age structure)
-model = "9_2_1_M_high"
-base.921 = SS_output(file.path(wd, model),covar=TRUE)
-#Copy model 912_M_low (in states_of_nature_910)
-#Adjust forecast rel F to be from 2017-2019
-#Set forecast ydecl to 2021 (so as to get proper age structure)
-model = "9_2_2_M_low"
-base.922 = SS_output(file.path(wd, model),covar=TRUE)
+############################################################################
+
+  
+  
+  
+  ####
+  #States of nature exploration - adding uncertainty around M
+  ####
+  
+  #Copy 910 into "rebuilding/states of nature" folder
+  #Other models in folder "rebuilding/states of nature"
+  
+  #Copy model 901 and make adjustments in "CA_rebuilding.R"
+  model = "9_1_1_M_high"
+  base.911 = SS_output(file.path(wd, model),covar=TRUE)
+  #Copy model 902 and make adjustments in "CA_rebuilding.R"
+  model = "9_1_2_M_low"
+  base.912 = SS_output(file.path(wd, model),covar=TRUE)
+  
+  
+  
+  #Copy 921 into "rebuilding/states of nature" folder
+  #Other models in folder "rebuilding/states of nature"
+  
+  #Copy model 911_M_high (in states_of_nature_910)
+  #Adjust forecast rel F to be from 2017-2019
+  #Set forecast ydecl to 2021 (so as to get proper age structure)
+  model = "9_2_1_M_high"
+  base.921 = SS_output(file.path(wd, model),covar=TRUE)
+  #Copy model 912_M_low (in states_of_nature_910)
+  #Adjust forecast rel F to be from 2017-2019
+  #Set forecast ydecl to 2021 (so as to get proper age structure)
+  model = "9_2_2_M_low"
+  base.922 = SS_output(file.path(wd, model),covar=TRUE)
 
 
 
