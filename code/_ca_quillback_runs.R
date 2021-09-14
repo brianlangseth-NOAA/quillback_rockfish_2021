@@ -1395,6 +1395,74 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
   mtext("RecCom Block 2001 - Commercial", side = 3, line = 0.5, font = 2)
   grid()
   dev.off()
+  
+  
+  ####
+  #Comparison table
+  ####
+  model = "7_1_0_base"
+  base.710 = SS_output(file.path(wd, model), covar=TRUE, printstats = FALSE, verbose = FALSE)
+  model = "9_4_0_recComBlock2001"
+  base.940 = SS_output(file.path(wd, "rebuilder", model), covar=TRUE, printstats = FALSE, verbose = FALSE)
+  
+  reb_names <- c("Adopted SS base", "SS RecCom Block 2001")
+  reb_models  <- SSsummarize(list(base.710, base.940))
+  
+  n = length(reb_names)
+  
+  AIC = 2 * as.numeric(colSums(reb_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(reb_models$likelihoods[reb_models$likelihoods$Label == "TOTAL",1:n])
+  
+  reb_table = rbind(
+    as.numeric(reb_models$likelihoods[reb_models$likelihoods$Label == "TOTAL",1:n]), 
+    as.numeric(reb_models$likelihoods[reb_models$likelihoods$Label == "Length_comp",1:n]),
+    as.numeric(reb_models$likelihoods[reb_models$likelihoods$Label == "Recruitment",1:n]), 
+    as.numeric(reb_models$likelihoods[reb_models$likelihoods$Label == "Parm_softbounds",1:n]),
+    as.numeric(colSums(reb_models$parphases>0,na.rm=TRUE)[1:n]),
+    AIC,
+    c(AIC-AIC[1]),
+    as.numeric(reb_models$pars[reb_models$pars$Label == "SR_LN(R0)", 1:n]), 
+    as.numeric(reb_models$SpawnBio[reb_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+    as.numeric(reb_models$SpawnBio[reb_models$SpawnBio$Label == "SSB_2021", 1:n]),
+    as.numeric(reb_models$Bratio[reb_models$Bratio$Label == "Bratio_2021", 1:n]), 
+    as.numeric(reb_models$quants[reb_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+    as.numeric(reb_models$pars[reb_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
+    as.numeric(reb_models$pars[reb_models$pars$Label == "Size_DblN_ascend_se_CA_Commercial(1)", 1:n]),
+    as.numeric(reb_models$pars[reb_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]),
+    as.numeric(reb_models$pars[reb_models$pars$Label == "Size_DblN_ascend_se_CA_Recreational(2)", 1:n]))  
+  
+  
+  reb_table = as.data.frame(reb_table)
+  colnames(reb_table) = reb_names
+  rownames(reb_table) = c("Total Likelihood",
+                           "Length Likelihood",
+                           "Recruitment Likelihood",
+                           "Parameter Bounds Likelihood",
+                           "N parms",
+                           "AIC",
+                           "delta AIC",
+                           "ln(R0)",
+                           "SB Virgin",
+                           "SB 2021",
+                           "Fraction Unfished 2021",
+                           "Total Yield at SPR 50",
+                           "Peak commercial selex",
+                           "Ascend se commercial selex",
+                           "Peak recreational selex 2020",
+                           "Ascend se recreational selex 2020")
+  
+  write.csv(reb_table, file = file.path(wd, "rebuilder", "write_up", "tables", paste0("sensitivity_table.csv")))
+  
+  t = table_format(x = reb_table,
+                   caption = 'Parameter values and derived quantities from the stock synthesis sensitivity model 
+                   with blocks in 2001 and allowing dome-shaped selectivity, compared to the adopted base model.',
+                   label = 'sens-table-withComBlock',
+                   longtable = TRUE,
+                   font_size = 9,
+                   digits = 2,
+                   col_names = reb_names)
+  
+  kableExtra::save_kable(t, file = file.path(wd, "rebuilder", "write_up", "tex_tables", "sensitivity_table.tex"))
+  
 
 ############################################################################
 

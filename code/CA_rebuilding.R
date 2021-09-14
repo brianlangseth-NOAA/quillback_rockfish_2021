@@ -151,11 +151,20 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 #Make plots from runs
 ####
 
+frac_fem = 0.5
+
 # Read in rebuilding options
+# #Test runs based on these models
+# run <- c(
+#   "930_F2017_2019_ageStruc2021",
+#   "931_no_abc_max",
+#   "tests/4_test_run_oneSex")
+#Report is based on these models
 run <- c(
   "930_F2017_2019_ageStruc2021",
   "931_no_abc_max",
-  "tests/4_test_run_oneSex")
+  "940_recComBlock2001",
+  "941_no_abc_max")
 reb <- list()
 for(a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
@@ -202,7 +211,7 @@ for (a in 1:length(run)){
   colnames(sb_gg)<-c("Year","Scenario","SB")
   sb_gg[,"Year"] = rep(x$ssb_matrix[,1], length(2:ncol(x$ssb_matrix)))
   find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
-  ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
+  ggplot(sb_gg[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) + 
     geom_line(lwd = 1.5) + ylab("Spawning output")
   ggsave(file.path(rebuild_dir, run[a], "rebuilding_ssb.png"), width = 10, height = 7)
   

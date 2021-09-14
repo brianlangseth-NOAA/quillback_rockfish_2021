@@ -1,6 +1,9 @@
 \clearpage
 # Figures
 
+
+TO DO: Update the figures because these don't show SPR 0.5 correctly. Need to combine across runs with no ABC caps. 
+
 <!-- Main run figures -->
 ```{r, results = 'asis'}
 add_figure(

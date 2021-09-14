@@ -5,17 +5,53 @@
 
 The rebuild.dat file used for the SPR alternative analysis has been provided as a separate file.
 
+\clearpage
 ## Appendix B: Biological information used for the sensitivity rebuilder analysis with dome-shaped selectivity and blocks.{#append_b}
 
+```{r, results = 'asis'}
+quants = data.frame("Age" = 0:90, "M" = rep(0.057,length(sens.940$endgrowth$int_Age)), #M at age
+           "Mat" = sens.940$endgrowth$Age_Mat, #Maturity at age
+           "Fec" = c(0,sens.940$endgrowth$`Mat*Fecund`[-1]), #Fecundity at age * maturity at age. Reset age 0 to 0
+           "W" = sens.940$endgrowth$`Wt_Mid`, #Weight at age, mid year weight
+           "SelWcom" = sens.940$endgrowth$`SelWt:_1`, #Selectivity weight, com
+           "SelWrec" = sens.940$endgrowth$`SelWt:_2`, #Selectivity weight, rec
+           "N2023" = unlist(sens.940$natage[sens.940$natage$Yr == 2023 & sens.940$natage$`Beg/Mid`=="B", c(which(names(sens.940$natage)=="0"):which(names(sens.940$natage)=="90"))]), #Beg N at age 2023
+           "N2021" = unlist(sens.940$natage[sens.940$natage$Yr == 2021 & sens.940$natage$`Beg/Mid`=="B", c(which(names(sens.940$natage)=="0"):which(names(sens.940$natage)=="90"))])) #Beg N at age 2021
+col_names = c("Age",
+              "Natural Mortality", 
+              "Maturity",
+              "Fecundity", 
+              "Weight",
+              "Selectivity weight, com", 
+              "Selectivity weight, rec", 
+              "Numbers, 2023", 
+              "Numbers, 2021")
+table_format(x = quants,
+             caption = "Biological information by age from the stock synthesis sensitivity model that informs the rebuilding sensitivity. The sensitivity model and rebuilding sensitivity assumed a single sex so values are not provided by sex",
+             label = "biology-sens",
+             align = 'l',
+             col_names = col_names,
+             row.names = FALSE,
+             digits = 4)
+```
 
 
-## Appendix C: Comparison between the approved stock synthesis base case model and the stock synthesis sensitivity model with dome-shaped selectivity and blocks.{#append_b}
+```{r, results = 'asis'}
+```
+
+
+\clearpage
+## Appendix C: Comparison between the approved stock synthesis base case model and the stock synthesis model with dome-shaped selectivity and blocks in 2001.{#append_b}
+
+<!-- tab:sensitivity table -->
+\include{tex_tables/sensitivity_table.tex}
+
 
 <!-- Spawning output and status comparisons -->
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures", "rebuilder_sensitivities_compare2_spawnbio_uncertainty.png"), 
-caption = "Change in estimated spawning output for the adopted stock synthesis base model (Base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario",
+caption = "Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario",
 label = 'ssb-sens')
 
 add_figure(
@@ -28,22 +64,36 @@ label = 'depl-sens')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures", "selex_compare.png"), 
-caption = "Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the sensitivity for the adopted base model (blue lines)",
+caption = "Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines)",
 label = 'selex-sens')
 ```
 
 <!-- Mean length fits -->
 ```{r, results = 'asis', echo = FALSE}
+#Commercial
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "9_0_0_postSSC_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Commercial.png"), 
 caption = "Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
-label = 'MeanLengthFit-base',
+label = 'MeanLengthFit-com-base',
 width = 90, height = 90)
 
 add_figure(
 filein = file.path(rebuild_dir, "9_4_0_recComBlock2001", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Commercial.png"), 
 caption = "Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
-label = 'MeanLengthFit-sens',
+label = 'MeanLengthFit-com-sens',
+width = 90, height = 90)
+
+#Recreational
+add_figure(
+filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "9_0_0_postSSC_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Recreational.png"), 
+caption = "Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
+label = 'MeanLengthFit-rec-base',
+width = 90, height = 90)
+
+add_figure(
+filein = file.path(rebuild_dir, "9_4_0_recComBlock2001", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Recreational.png"), 
+caption = "Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
+label = 'MeanLengthFit-rec-sens',
 width = 90, height = 90)
 ```
 

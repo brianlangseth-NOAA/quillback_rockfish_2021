@@ -49,6 +49,10 @@ for (a in 1:length(run)){
 }
 save(reb, file = file.path(getwd(), "00mod.Rdata"))
 
+base.920 = r4ss::SS_output(file.path(rebuild_dir, "9_2_0_RelF2017_2019"), covar = TRUE, 
+                           verbose = FALSE, printstats = FALSE)
+sens.940 = r4ss::SS_output(file.path(rebuild_dir, "9_4_0_recComBlock2001"), covar = TRUE, 
+                           verbose = FALSE, printstats = FALSE)
 
 if(file.exists("_main.Rmd")){
   file.remove("_main.Rmd")
