@@ -1,8 +1,6 @@
 \clearpage
 # Tables
 
-TO DO: Add sensitivity rebuilder results
-
 TO DO: Confirm my calculation of SPR values in the reference point table
 
 TO DO: In the summary table, state which year SPR is for
@@ -100,36 +98,46 @@ table_format(x = out,
 <!--              col_names = col_names) -->
 <!-- ``` -->
 
-<!-- ```{r, results = 'asis'} -->
-<!-- # Rebuilding Reference Points Table -->
-<!-- quants = c(round(reb[[3]]$sb0,2), -->
-<!-- 		   round(reb[[3]]$sb40, 2), -->
-<!-- 		   round(reb[[3]]$sb_ass_year, 2), -->
-<!-- 		   reb[[3]]$recovery_spec[4], -->
-<!-- 		   reb[[3]]$recovery_spec[3], -->
-<!-- 		   reb[[3]]$tmin + reb[[3]]$recovery_spec[4],#I THINK THIS SHOULD BE RECOVERY_SPEC[3] because zero catch rebuild is 17 yet tmin is 19 so the two years of fixed catches from 2021 to 2023 are included in tmin already -->
-<!-- 		   reb[[3]]$mean_gen, -->
-<!-- 		   reb[[3]]$tmax, -->
-<!-- 		   "TBD", -->
-<!-- 		   "TBD", -->
-<!-- 		   "TBD") -->
-<!-- row_names = c("SB0 (millions of eggs)", "SB40% (millions of eggs)", -->
-<!-- 			"SB2021 (millions of eggs)", "Year rebuilding begins", -->
-<!-- 		    "Current year", "Tmin", "Mean generation time (years)", "Tmax", -->
-<!-- 		    "Pmax", "Ttarget", "SPRtarget") -->
-<!-- col_names = c("Parameter", "2021 Assessment Values") -->
-<!-- out = cbind(row_names, quants) -->
-<!-- table_format(x = out, -->
-<!--              caption = "Summary of the rebuilding reference points based on an SS model with sex equal to 1.", -->
-<!--              label = "ref-points-sex1", -->
-<!--              align = 'l', -->
-<!--              col_names = col_names) -->
-<!-- ``` -->
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+quants = c(round(reb[[3]]$sb0,2)*frac_fem, 
+		   round(reb[[3]]$sb40, 2)*frac_fem, 
+		   round(reb[[3]]$sb_ass_year, 2)*frac_fem,
+		   reb[[3]]$recovery_spec[4],
+		   reb[[3]]$recovery_spec[3], 
+		   reb[[3]]$tmin + reb[[3]]$recovery_spec[3], 
+		   reb[[3]]$mean_gen, 
+		   reb[[3]]$tmax, 
+		   reb[[3]]$tmin + reb[[3]]$recovery_spec[3],
+		   "TBD",
+		   "TBD",
+		   reb[[3]]$spr_matrix[[1,2]])
+row_names = c("SB0 (millions of eggs)", 
+              "SB40 (millions of eggs)",
+              "SB2021 (millions of eggs)", 
+              "Year rebuilding begins",
+              "Current year", 
+              "Tmin", 
+              "Mean generation time (years)", 
+              "Tmax",
+              "TF=0",
+              "Ttarget", 
+              "SPRtarget",
+              "Current SPR (2021)")
+col_names = c("Parameter", "2021 Assessment Values")
+out = cbind(row_names, quants)
+table_format(x = out,
+             caption = "Summary of the rebuilding sensitivity reference points",
+             label = "ref-points-sens",
+             align = 'l',
+             col_names = col_names)
+```
 
 \clearpage
 
 ## Summary of alternatives
 
+<!-- Base rebuilder -->
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
 quants = rbind(round(reb[[1]]$acl_matrix[1:4,-1],2),
@@ -161,36 +169,14 @@ table_format(x = out,
              col_names = col_names)
 ```
 
-```{r, results = 'asis'}
-# Rebuilding Reference Points Table
-quants = rbind(round(reb[[2]]$acl_matrix[1:4,-1],2),
-		   reb[[2]]$rebuild_quants$SPR,
-		   reb[[2]]$rebuild_quants$Ttarget,
-		   rep(reb[[2]]$tmax, length(reb[[2]]$rebuild_quants$Ttarget)),
-		   reb[[2]]$rebuild_quants$Prebuild) # Prob by Tmax
-row_names = c("2021 Assumed Removals (mt)",
-			  "2022 Assumed Removals (mt)",
-			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget",
-			  "Tmax",
-			  "Probability of recovery by Tmax")
-out = cbind(row_names, quants)
-col_names = c("", colnames(out)[-1])
-table_format(x = out,
-             caption = "Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22 when catches are not constrained by the ABC.",
-             label = "reb-options-noABCmax",
-             align = 'l',
-             landscape = TRUE,
-             col_names = col_names)
-```
-
-
+<!-- <!-- Base rebuilder when no-ABC cap-->
 <!-- ```{r, results = 'asis'} -->
 <!-- # Rebuilding Reference Points Table -->
-<!-- quants = rbind(round(reb[[3]]$acl_matrix[1:4,-1],2), -->
-<!-- 		   reb[[3]]$rebuild_quants$SPR, -->
-<!-- 		   reb[[3]]$rebuild_quants$Ttarget, -->
-<!-- 		   rep(reb[[3]]$tmax, length(reb[[3]]$rebuild_quants$Ttarget)), -->
-<!-- 		   reb[[3]]$rebuild_quants$Prebuild) # Prob by Tmax -->
+<!-- quants = rbind(round(reb[[2]]$acl_matrix[1:4,-1],2), -->
+<!-- 		   reb[[2]]$rebuild_quants$SPR, -->
+<!-- 		   reb[[2]]$rebuild_quants$Ttarget, -->
+<!-- 		   rep(reb[[2]]$tmax, length(reb[[2]]$rebuild_quants$Ttarget)), -->
+<!-- 		   reb[[2]]$rebuild_quants$Prebuild) # Prob by Tmax -->
 <!-- row_names = c("2021 Assumed Removals (mt)", -->
 <!-- 			  "2022 Assumed Removals (mt)", -->
 <!-- 			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", -->
@@ -199,8 +185,63 @@ table_format(x = out,
 <!-- out = cbind(row_names, quants) -->
 <!-- col_names = c("", colnames(out)[-1]) -->
 <!-- table_format(x = out, -->
-<!--              caption = "Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22 when based on an SS model with sex equal to 1.", -->
-<!--              label = "reb-options-sex1", -->
+<!--              caption = "BASE - NO CAP. Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22 when catches are not constrained by the ABC", -->
+<!--              label = "reb-options-noABCmax", -->
+<!--              align = 'l', -->
+<!--              landscape = TRUE, -->
+<!--              col_names = col_names) -->
+<!-- ``` -->
+
+<!-- Sensitivity rebuilder -->
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+quants = rbind(round(reb[[3]]$acl_matrix[1:4,-1],2),
+		   reb[[3]]$rebuild_quants$SPR,
+		   reb[[3]]$rebuild_quants$Ttarget,
+		   rep(reb[[3]]$tmax, length(reb[[3]]$rebuild_quants$Ttarget)),
+		   reb[[3]]$rebuild_quants$Prebuild) # Prob by Tmax
+row_names = c("2021 Assumed Removals (mt)",
+			  "2022 Assumed Removals (mt)",
+			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget",
+			  "Tmax",
+			  "Probability of recovery by Tmax")
+
+#Set the SPR = 0.5 run to be from the no-ABC-cap run
+quants[,1] = c(round(reb[[4]]$acl_matrix[1:4,-1][,1],2),
+               reb[[4]]$rebuild_quants$SPR[1],
+               reb[[4]]$rebuild_quants$Ttarget[1],
+               reb[[4]]$tmax,
+               reb[[4]]$rebuild_quants$Prebuild[1]) # Prob by Tmax
+
+out = cbind(row_names, quants)
+col_names = c("", colnames(out)[-1])
+col_names[2] = paste0("*",col_names[2])
+table_format(x = out,
+             caption = "SENS - Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity. The asterisk (*) indicates alternatives that could only be achieved when allowing catches to not be limited by the ABC",
+             label = "reb-options-sens",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names)
+```
+
+<!-- <!-- Sensitivity rebuilder when no-ABC cap-->
+<!-- ```{r, results = 'asis'} -->
+<!-- # Rebuilding Reference Points Table -->
+<!-- quants = rbind(round(reb[[4]]$acl_matrix[1:4,-1],2), -->
+<!-- 		   reb[[4]]$rebuild_quants$SPR, -->
+<!-- 		   reb[[4]]$rebuild_quants$Ttarget, -->
+<!-- 		   rep(reb[[4]]$tmax, length(reb[[4]]$rebuild_quants$Ttarget)), -->
+<!-- 		   reb[[4]]$rebuild_quants$Prebuild) # Prob by Tmax -->
+<!-- row_names = c("2021 Assumed Removals (mt)", -->
+<!-- 			  "2022 Assumed Removals (mt)", -->
+<!-- 			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "Ttarget", -->
+<!-- 			  "Tmax", -->
+<!-- 			  "Probability of recovery by Tmax") -->
+<!-- out = cbind(row_names, quants) -->
+<!-- col_names = c("", colnames(out)[-1]) -->
+<!-- table_format(x = out, -->
+<!--              caption = "SENS - NO CAP. Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22 when catches are not constrained by the ABC. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity", -->
+<!--              label = "reb-options-noABCmax", -->
 <!--              align = 'l', -->
 <!--              landscape = TRUE, -->
 <!--              col_names = col_names) -->
