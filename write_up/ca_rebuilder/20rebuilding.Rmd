@@ -34,14 +34,12 @@ The selectivity used in the rebuilding analysis was obtained from the 2021 asses
 
 ## Inclusion of uncertainty
 
-Model and parameter uncertainty is included in the rebuilding analysis via 1,000 random simulations of stochastic future recruitment strengths and integration over alternative low ($M$ = 0.0464) and high ($M$ = 0.0744) states of nature for values of natural mortality ($M$). Other potential states of nature were explored, including for low and high ln($R0$) and high and low $L_{\infty}$, but alternative values of natural mortality encapsulated a slightly wider range of depletion estimates compared to the other states of natures. The base model was given 50% of the weight and each alternative natural mortality state of nature was given 25% of the weight. 
-
-TO DO: From owen, confirm whether 1000 simulations with states of natures mean 500 for base and 250 for each of the alternatives, or 1000 for each alternative and 2000 for base
+Model and parameter uncertainty is included in the rebuilding analysis via 1,000 random simulations of stochastic future recruitment strengths and integration over alternative low ($M$ = 0.0464) and high ($M$ = 0.0744) states of nature for values of natural mortality ($M$). Other potential states of nature were explored, including for low and high ln($R0$) and high and low $L_{\infty}$, but alternative values of natural mortality encapsulated a slightly wider range of depletion estimates compared to the other states of natures. The base model was given 50% of the weight (500 simulations) and each alternative natural mortality state of nature was given 25% (250 simulations) of the weight. 
 
 
 ## Alternate rebuilding strategies analyzed
 
-Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR) and additional strategies. The additional strategies based on the selection of a SPR harvest rate or rebuilding by a selected target year:  
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate or rebuilding by a selected target year.  
 
 \begin{enumerate}
 	\item Eliminate all harvest, F = 0, beginning in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
@@ -60,20 +58,17 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 	 \item by $\text{T}_\text{MID}$ from the current cycle, which is the year midway between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
 	\end{enumerate}
 	\item Apply the default harvest policy based on the 40:10 harvest control rule.
-	\item Apply the ABC harvest rate with time-varying category 2 $\sigma$ and $P^*$ = 0.45.
+	\item Apply the ABC harvest rate with time-varying category 2 $\sigma$ = 1.0 and $P^*$ = 0.45.
 \end{enumerate}
 
 No current rebuilding plan exists for `r spp` in California waters so the alternatives related to the results of a previous rebuilding plan as specified in the rebuilding TOR could not be done. These include:
 
 \begin{itemize}
  \item Apply the spawning potential ratio or relevant harvest control run in the current rebuilding plan. 
- \item Apply the harvest rate that is estimated to lead to a 50 percent probability of recovery by the current $\text{T}_\text{TARGET}$.
- \item Apply the harvest rate that is estimated to lead to a 50 percent probability of recovery by the TMAX from the previous cycle.
+ \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the current $\text{T}_\text{TARGET}$.
+ \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the TMAX from the previous cycle.
 \end{itemize}
 
-TO DO: Add a run that generates the currently specified ACL contribution.  
-
-TO DO: Add a run with Tmax set to 2067. Not sure how to do this. Likely will be a duplicate of ABC run. 
 
 All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt in 2021 and 2022 as recommended by the Groundfish Management Team (GMT). <!-- A sensitivity examining the impact of reducing removals in 2021 and 2022 to the ACL values of 5.83 mt for 2021 and 5.84 mt for 2022 was conducted using only the fixed SPR harvest rate alternatives listed above. -->
 <!-- [This is currently not done but Im leaving the text in as a place holder should it be asked for] --> 

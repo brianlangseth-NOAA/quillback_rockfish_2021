@@ -41,7 +41,7 @@ table_format(x = quants,
 
 
 \clearpage
-## Appendix C: Comparison between the approved stock synthesis base case model and the stock synthesis model with dome-shaped selectivity and blocks in 2001.{#append_b}
+## Appendix C: Comparison between the approved stock synthesis base case model and the stock synthesis model with dome-shaped selectivity and blocks in 2001.{#append_c}
 
 <!-- tab:sensitivity table -->
 \include{tex_tables/sensitivity_table.tex}
