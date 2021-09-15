@@ -166,7 +166,8 @@ run <- c(
   "940_recComBlock2001",
   "940b_no_abc_max",
   "931_Tmax",
-  "931b_Tmax_no_abc_max")
+  "931b_Tmax_no_abc_max",
+  "tests/6_test_2sexSS")
 reb <- list()
 for(a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
@@ -208,7 +209,9 @@ for (a in 1:length(run)){
   ggsave(file.path(rebuild_dir, run[a], "rebuilding_acl.png"), width = 10, height = 7)
   
   
-  #Spawning output
+  #Spawning output 
+  #Set frac female in 2sex model to 1 so plot just SSB. Keep at 0.5 for all others
+  if(run[a]=="tests/6_test_2sexSS"){ frac_fem = 0 }
   sb_gg <- reshape2::melt(x$ssb_matrix[,2:ncol(x$ssb_matrix)])
   colnames(sb_gg)<-c("Year","Scenario","SB")
   sb_gg[,"Year"] = rep(x$ssb_matrix[,1], length(2:ncol(x$ssb_matrix)))
@@ -228,3 +231,72 @@ for (a in 1:length(run)){
   ggsave(file.path(rebuild_dir, run[a], "rebuilding_relative_sb.png"), width = 10, height = 7)
   
 }
+
+####
+#Figures for report
+#Need to replace SPR500 and Tmid scnearios with no cap runs
+####
+
+#Runs that are the base model with ABC caps, and without
+nrun = which(run %in% c("930_F2017_2019_ageStruc2021","930b_no_abc_max")) 
+x=reb[[nrun[1]]]  
+x_nocap = reb[[nrun[2]]]
+
+#Probability Plots
+probs_gg <-reshape2::melt(data = x$prob_matrix[,2:ncol(x$prob_matrix)])
+colnames(probs_gg)<-c("Year", "Scenario", "Prob")
+#############
+probs_gg_nocap <-reshape2::melt(data = x_nocap$prob_matrix[,2:ncol(x_nocap$prob_matrix)]) #no cap run
+probs_gg[1:200,] <- probs_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+probs_gg[1001:1200,] <- probs_gg_nocap[1001:1200,] #replace Tmid values with no cap run
+#############
+probs_gg[,"Year"] = rep(x$prob_matrix[,1], length(2:ncol(x$prob_matrix)))
+find = which(probs_gg$Prob <=1.0 & probs_gg$Year <= (x$tmax + 3*x$mean_gen))
+ggplot2::ggplot(probs_gg[find,], aes(x = Year,y = Prob, color = Scenario)) + 
+  geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output")
+ggsave(file.path(rebuild_dir, "write_up", "figures", "rebuilding_probability_forREPORT.png"), width = 10, height = 7)
+
+#Catches
+acl_gg <- reshape2::melt(x$acl_matrix[,2:ncol(x$acl_matrix)])
+colnames(acl_gg)<-c("Year", "Scenario", "Catch")
+#############
+acl_gg_nocap <-reshape2::melt(data = x_nocap$acl_matrix[,2:ncol(x_nocap$acl_matrix)]) #no cap run
+acl_gg[1:200,] <- acl_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+acl_gg[1001:1200,] <- acl_gg_nocap[1001:1200,] #replace Tmid values with no cap run
+#############
+acl_gg[,"Year"] = rep(x$acl_matrix[,1], length(2:ncol(x$acl_matrix)))
+find = which(acl_gg$Year > 2023 & acl_gg$Year <= (x$tmax + 3*x$mean_gen))
+ggplot2::ggplot(acl_gg[find,], aes(x = Year, y = Catch, color = Scenario)) + 
+  geom_line(lwd=1.5) + ylab("Catches (mt)")
+ggsave(file.path(rebuild_dir, "write_up", "figures", "rebuilding_acl_forREPORT.png"), width = 10, height = 7)
+
+#Spawning output 
+#Set frac female in 2sex model to 1 so plot just SSB. Keep at 0.5 for all others
+sb_gg <- reshape2::melt(x$ssb_matrix[,2:ncol(x$ssb_matrix)])
+colnames(sb_gg)<-c("Year","Scenario","SB")
+#############
+sb_gg_nocap <-reshape2::melt(data = x_nocap$ssb_matrix[,2:ncol(x_nocap$ssb_matrix)]) #no cap run
+sb_gg[1:200,] <- sb_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+sb_gg[1001:1200,] <- sb_gg_nocap[1001:1200,] #replace Tmid values with no cap run
+#############
+sb_gg[,"Year"] = rep(x$ssb_matrix[,1], length(2:ncol(x$ssb_matrix)))
+find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
+ggplot(sb_gg[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) + 
+  geom_line(lwd = 1.5) + ylab("Spawning output")
+ggsave(file.path(rebuild_dir, "write_up", "figures", "rebuilding_ssb_forREPORT.png"), width = 10, height = 7)
+
+#Spawning output relative to the target
+sb_gg <- reshape2::melt(x$relativeb_matrix[,2:ncol(x$relativeb_matrix)])
+colnames(sb_gg)<-c("Year","Scenario","SB")
+#############
+sb_gg_nocap <-reshape2::melt(data = x_nocap$relativeb_matrix[,2:ncol(x_nocap$relativeb_matrix)]) #no cap run
+sb_gg[1:200,] <- sb_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+sb_gg[1001:1200,] <- sb_gg_nocap[1001:1200,] #replace Tmid values with no cap run
+#############
+sb_gg[,"Year"] = rep(x$relativeb_matrix[,1], length(2:ncol(x$relativeb_matrix)))
+find = which(sb_gg$Year > 2023 & sb_gg$Year <= (x$tmax + 3*x$mean_gen))
+ggplot(sb_gg[find,], aes(x = Year, y = SB, color = Scenario)) + 
+  geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output")
+ggsave(file.path(rebuild_dir, "write_up", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
+
+

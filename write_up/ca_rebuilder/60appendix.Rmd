@@ -3,45 +3,41 @@
 
 ## Appendix A: Rebuilder data file.{#append_a}
 
-The rebuild.dat file used for the SPR alternative analysis has been provided as a separate file.
+The rebuild.dat file used for the base rebuilding analysis has been provided as a separate file.
 
 \clearpage
-## Appendix B: Biological information used for the sensitivity rebuilder analysis with dome-shaped selectivity and blocks.{#append_b}
+<!-- ## Appendix B: Biological information used for the sensitivity rebuilder analysis with dome-shaped selectivity and blocks.{#append_b} -->
 
-```{r, results = 'asis'}
-quants = data.frame("Age" = 0:90, "M" = rep(0.057,length(sens.940$endgrowth$int_Age)), #M at age
-           "Mat" = sens.940$endgrowth$Age_Mat, #Maturity at age
-           "Fec" = c(0,sens.940$endgrowth$`Mat*Fecund`[-1]), #Fecundity at age * maturity at age. Reset age 0 to 0
-           "W" = sens.940$endgrowth$`Wt_Mid`, #Weight at age, mid year weight
-           "SelWcom" = sens.940$endgrowth$`SelWt:_1`, #Selectivity weight, com
-           "SelWrec" = sens.940$endgrowth$`SelWt:_2`, #Selectivity weight, rec
-           "N2023" = unlist(sens.940$natage[sens.940$natage$Yr == 2023 & sens.940$natage$`Beg/Mid`=="B", c(which(names(sens.940$natage)=="0"):which(names(sens.940$natage)=="90"))]), #Beg N at age 2023
-           "N2021" = unlist(sens.940$natage[sens.940$natage$Yr == 2021 & sens.940$natage$`Beg/Mid`=="B", c(which(names(sens.940$natage)=="0"):which(names(sens.940$natage)=="90"))])) #Beg N at age 2021
-col_names = c("Age",
-              "Natural Mortality", 
-              "Maturity",
-              "Fecundity", 
-              "Weight",
-              "Selectivity weight, com", 
-              "Selectivity weight, rec", 
-              "Numbers, 2023", 
-              "Numbers, 2021")
-table_format(x = quants,
-             caption = "Biological information by age from the stock synthesis sensitivity model that informs the rebuilding sensitivity. The sensitivity model and rebuilding sensitivity assumed a single sex so values are not provided by sex",
-             label = "biology-sens",
-             align = 'l',
-             col_names = col_names,
-             row.names = FALSE,
-             digits = 4)
-```
+<!-- ```{r, results = 'asis'} -->
+<!-- quants = data.frame("Age" = 0:90, "M" = rep(0.057,length(sens.940$endgrowth$int_Age)), #M at age -->
+<!--            "Mat" = sens.940$endgrowth$Age_Mat, #Maturity at age -->
+<!--            "Fec" = c(0,sens.940$endgrowth$`Mat*Fecund`[-1]), #Fecundity at age * maturity at age. Reset age 0 to 0 -->
+<!--            "W" = sens.940$endgrowth$`Wt_Mid`, #Weight at age, mid year weight -->
+<!--            "SelCom" = unlist(sens.940$ageselex[sens.940$ageselex$Label == "2021_1_Asel2", which(names(sens.940$ageselex)=="0"):which(names(sens.940$ageselex)=="90")]), #Selectivity com -->
+<!--            "SelRec" = unlist(sens.940$ageselex[sens.940$ageselex$Label == "2021_2_Asel2", which(names(sens.940$ageselex)=="0"):which(names(sens.940$ageselex)=="90")]), #Selectivity weight, rec -->
+<!--            "N2023" = unlist(sens.940$natage[sens.940$natage$Yr == 2023 & sens.940$natage$`Beg/Mid`=="B", c(which(names(sens.940$natage)=="0"):which(names(sens.940$natage)=="90"))]), #Beg N at age 2023 -->
+<!--            "N2021" = unlist(sens.940$natage[sens.940$natage$Yr == 2021 & sens.940$natage$`Beg/Mid`=="B", c(which(names(sens.940$natage)=="0"):which(names(sens.940$natage)=="90"))])) #Beg N at age 2021 -->
+<!-- col_names = c("Age", -->
+<!--               "Natural Mortality",  -->
+<!--               "Maturity", -->
+<!--               "Fecundity",  -->
+<!--               "Weight", -->
+<!--               "Selectivity, Com",  -->
+<!--               "Selectivity, Rec",  -->
+<!--               "Numbers, 2023",  -->
+<!--               "Numbers, 2021") -->
+<!-- table_format(x = quants, -->
+<!--              caption = "Biological information by age from the stock synthesis sensitivity model that informs the rebuilding sensitivity. The sensitivity model and rebuilding sensitivity assumed a single sex so values are not provided by sex", -->
+<!--              label = "biology-sens", -->
+<!--              align = 'l', -->
+<!--              col_names = col_names, -->
+<!--              row.names = FALSE, -->
+<!--              digits = 4) -->
+<!-- ``` -->
 
+<!-- \clearpage -->
 
-```{r, results = 'asis'}
-```
-
-
-\clearpage
-## Appendix C: Comparison between the approved stock synthesis base case model and the stock synthesis model with dome-shaped selectivity and blocks in 2001.{#append_c}
+## Appendix B: Comparison between the approved stock synthesis base case model and the stock synthesis sensitivity model with dome-shaped selectivity and blocks in 2001.{#append_b}
 
 <!-- tab:sensitivity table -->
 \include{tex_tables/sensitivity_table.tex}

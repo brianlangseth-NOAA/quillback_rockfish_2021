@@ -30,7 +30,6 @@
 <!-- ``` -->
 
 <!-- ## Rebuilding reference points and summary of alternatives -->
-\clearpage
 
 ## Base rebuilding reference points and policy projections
 
@@ -100,12 +99,12 @@ quants[,6] = c(round(reb[[2]]$acl_matrix[1:4,-1][,6],2),
                reb[[2]]$rebuild_quants$Prebuild[6]) # Prob by Tmax
 
 #Set the SPR value for 40-10 and ABC to be "-" because it varies by year
-quants[which(row_names=="SPR"),8:9]
+quants[which(row_names=="SPR"),8:9] = "-"
                
 out = cbind(row_names, quants)
 col_names = c("", colnames(out)[-1])
 table_format(x = out,
-             caption = "Results of base rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22",
+             caption = "Results of base rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
              label = "reb-options",
              align = 'l',
              landscape = TRUE,
@@ -120,49 +119,49 @@ out = as.data.frame(round(reb[[1]]$prob_matrix[1:47, ],3))
 out[,2] = round(reb[[2]]$prob_matrix[1:47, 2],3) #Set the SPR = 0.5 run to be from the no-ABC-cap run
 out[,7] = round(reb[[2]]$prob_matrix[1:47, 7],3) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
-             caption = "Probability of recovery by year for base rebuilding strategies assuming removals of 13.5 mt in 2021 and 2022",
+             caption = "Probability of recovery by year for base rebuilding strategies",
              label = "prob-mat",
              align = 'l',
              digits = 3,
              col_names = colnames(out))
 ```
-
+\clearpage
 
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$acl_matrix[1:47, ],2))
 out[,2] = round(reb[[2]]$acl_matrix[1:47, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$acl_matrix[1:47, 7],3) #Set the Tmid run to be from the no-ABC-cap run
+out[,7] = round(reb[[2]]$acl_matrix[1:47, 7],2) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
-             caption = "Catches (mt) by year for base rebuilding strategies assuming removals of 13.5 mt in 2021 and 2022",
+             caption = "Catches (mt) by year for base rebuilding strategies",
              label = "acl-mat",
              align = 'l',
              digits = 3,
              col_names = colnames(out))
 ```
-
+\clearpage
 
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$ofl_matrix[1:47, ],2))
 out[,2] = round(reb[[2]]$ofl_matrix[1:47, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$ofl_matrix[1:47, 7],3) #Set the Tmid run to be from the no-ABC-cap run
+out[,7] = round(reb[[2]]$ofl_matrix[1:47, 7],2) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
-             caption = "OFLs (mt) by year for base rebuilding strategies removals of 13.5 mt in 2021 and 2022",
+             caption = "OFLs (mt) by year for base rebuilding strategies",
              label = "ofl-mat",
              align = 'l',
              digits = 3,
              col_names = colnames(out))
 ```
-
+\clearpage
 
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$relativeb_matrix[1:47, ],2))
 out[,2] = round(reb[[2]]$relativeb_matrix[1:47, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
 out[,7] = round(reb[[2]]$relativeb_matrix[1:47, 7],3) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
-             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for base rebuilding strategies assuming removals of 13.5 mt in 2021 and 2022",
+             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for base rebuilding strategies",
              label = "rel-ssb-mat",
              align = 'l',
-             digits = 3,
+             digits = 2,
              col_names = colnames(out))
 ```
 
@@ -205,7 +204,6 @@ table_format(x = out,
              col_names = col_names)
 ```
 
-\clearpage
 
 <!-- ## Summary of alternatives -->
 
@@ -238,12 +236,12 @@ quants[,6] = c(round(reb[[4]]$acl_matrix[1:4,-1][,6],2),
                reb[[4]]$rebuild_quants$Prebuild[6]) # Prob by Tmax
 
 #Set the SPR value for 40-10 and ABC to be "-" because it varyies by year
-quants[which(row_names=="SPR"),8:9]
+quants[which(row_names=="SPR"),8:9] = "-"
 
 out = cbind(row_names, quants)
 col_names = c("", colnames(out)[-1])
 table_format(x = out,
-             caption = "Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity",
+             caption = "Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
              label = "reb-options-sens",
              align = 'l',
              landscape = TRUE,

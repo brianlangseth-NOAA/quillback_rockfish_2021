@@ -1245,6 +1245,7 @@ SS_plots(base.9101)
 #3_test_run_-1Sex - set sex to -1 in rebuild.dat (it doesn't run)
 #4_test_run_oneSex - use model 9101 from above
 #5_test_multiplySBx2 - multiply SSB entry in rebuild.dat by 2
+#6_test_2sexSS - rebuilder run based on a two-sex SS model with males offset to females
 
 #These tests show results are the same (or very nearly so). Only differences
 #are in historical spawner per recruit. Thus if do recruitment equals option 2
@@ -1265,6 +1266,11 @@ model = "9_2_0_RelF2017_2019"
 base.920 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #Apply to 920_F2017_2019
 
+#Set up a 2-sex model with male and females equal to one another to confirm SSB warning is inconsequential 
+model = "9_2_0_RelF2017_2019_2sex"
+base.920_2sex = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to tests/6_test_2sexSS
+
 #It is confusing to me that Tmin cant be because age structure is 2023, so...
 #Copy model 920 and adjust Ydecl in forecast to be 2021
 #Ydecl is now set to 2021 and age structure changes, with Tmin set to 2021
@@ -1281,6 +1287,8 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #from lines just above this in the rebuild.dat file)
 #Apply to 920_F2017_2019_ageStruc2021 
 
+
+
 ######################### Base runs ##################################
 
   #Apply states of nature incorporation based on 921 values
@@ -1288,11 +1296,18 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
   #and add name rebuild_m_states_921_2021.SSO as file to draw from
   #Apply to 930_F2017_2019_ageStruc2021
   
-  
   #Remove cap on catch by ABC
   #Copy the rebuild.data file in 930_F2017_2019_ageStruc2021
   #Set constrain catches by ABC to 2
-  #Apply to 931_no_abc_max
+  #Apply to 930b_no_abc_max
+
+  #Ensure number of simulations is adequate
+  #Copy the rebuild.data file in 930_F2017_2019_ageStruc2021
+  #Set number of parameters vectors to 1200
+  #Apply to 930c_1200sims
+
+  #Set number of parameters vectors to 2000
+  #Apply to 930d_2000sims
 
 ############################################################################
 
@@ -1314,7 +1329,17 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
   #Remove cap on catch by ABC
   #Copy the rebuild.data file in 940_recComBlock2001
   #Set constrain catches by ABC to 2
-  #Apply to 941_no_abc_max
+  #Apply to 940b_no_abc_max'
+  
+  #The Ttarget value for the Tmid run of the sensitivity was not mid way between Tmin and Tmax
+  #Copy the rebuild.data file in 940_recComBlock2001
+  #Set projection type to 4, set years to 2050-2054
+  #Apply to 941_TmidSpec_sens
+  
+  #Remove cap on catch by ABC
+  #Copy the rebuild.data file in 941_TmidSpec_sens
+  #Set constrain catches by ABC to 2
+  #Apply to 941b_no_abc_max'
   
   
   ####
