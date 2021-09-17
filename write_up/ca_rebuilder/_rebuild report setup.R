@@ -38,12 +38,15 @@ rebuild_dir = "C:/Users/Brian.Langseth/Desktop/ca/rebuilder"
 #   "tests/4_test_run_oneSex")
 #Report is based on these models
 run <- c(
-  "930_F2017_2019_ageStruc2021",
-  "930b_no_abc_max",
-  "940_recComBlock2001",
+  "933_StatesOfNature", #correctly applying the states of nature uncertainty
+  "933b_no_abc_max",
+  "940_recComBlock2001", #sensitivity rebuilder, no states of nature applied
   "940b_no_abc_max",
-  "931_Tmax",
-  "931b_Tmax_no_abc_max")
+  "931_Tmax", #strategy to set Tmax, states of nature not applied correctly
+  "931b_Tmax_no_abc_max",
+  "tests/6_test_2sexSS", #test run based on SS model with Ngender = 2
+  "930_F2017_2019_ageStruc2021", #original run, but states of nature not applied correctly
+  "930b_no_abc_max")
 
 reb <- list()
 for (a in 1:length(run)){
