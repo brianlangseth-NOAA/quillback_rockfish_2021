@@ -144,13 +144,12 @@ table_format(x = out,
 out = as.data.frame(round(reb[[1]]$ofl_matrix[1:46, ],2))
 out[,2] = round(reb[[2]]$ofl_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
 out[,7] = round(reb[[2]]$ofl_matrix[1:46, 7],2) #Set the Tmid run to be from the no-ABC-cap run
-#Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. Need to set values for the SPR = 0.5 run and ABC catch run to be from acl_matrix
-out[,2] = round(reb[[2]]$acl_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,10] = round(reb[[2]]$acl_matrix[1:46, 10],2) #Set the Tmid run to be from the no-ABC-cap run
+#Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. Need to set values for the SPR = 0.5 run to be from the acl_matrix. Dont need this for Tmid because that run has catch < ABC.
+out[,2] = round(reb[[2]]$acl_matrix[1:46, 2],2)
 #And need to divide all other ofls by the buffers, because these are actually ABC's
 buffer <- PEPtools::get_buffer(2021:reb[[1]]$tmax,1,0.45)
 buffer[which(buffer[,2]<0.778),2] = 0.778
-out[,3:9] = round(out[,3:9]/buffer[,2],2)
+out[,3:10] = round(out[,3:10]/buffer[,2],2)
 table_format(x = out,
              caption = "OFLs (mt) by year for base rebuilding strategies",
              label = "ofl-mat",
