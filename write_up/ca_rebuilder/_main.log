@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  17 SEP 2021 10:46
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  17 SEP 2021 11:25
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -2367,7 +2367,7 @@ mf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/Brian.Langseth/
 AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-regular.otf>
-Output written on _main.pdf (44 pages, 69281314 bytes).
+Output written on _main.pdf (44 pages, 69281506 bytes).
 
 PDF statistics: 782 PDF objects out of 1000 (max. 8388607)
  144 named destinations out of 1000 (max. 131072)

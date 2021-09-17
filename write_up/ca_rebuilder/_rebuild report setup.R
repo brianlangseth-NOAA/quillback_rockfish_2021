@@ -9,6 +9,8 @@
 library(devtools)
 library(sa4ss)
 library(r4ss)
+#remotes::install_github("nwfsc-assess/PEPtools")
+library(PEPtools)
 source_url("https://raw.githubusercontent.com/r4ss/r4ss/main/R/RebuildPlot.R")
 #i SHA-1 hash of file is 741ae49399d34dc12492088ecc2d1c3c93666e56
 
