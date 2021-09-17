@@ -777,6 +777,13 @@ base.715 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
 SS_plots(base.715)
 SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca\\sensitivities\\7_1_5_estlinfK", write = FALSE)
 
+  #Test run in preparation for mop up
+  #Estimate Linfinity and K AND L1 (t0)
+  #Need to increase upper bound for t0, increased from 10 to 30
+  model = "7_1_5b_estlinfKt0"
+  base.715b = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
+  SS_plots(base.715b)
+
 #Estimate K
 model = "7_1_6_estK"
 base.716 = SS_output(file.path(wd, "sensitivities", model), covar=TRUE)
@@ -1301,13 +1308,26 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
   #Set constrain catches by ABC to 2
   #Apply to 930b_no_abc_max
 
-  #Ensure number of simulations is adequate
-  #Copy the rebuild.data file in 930_F2017_2019_ageStruc2021
-  #Set number of parameters vectors to 1200
-  #Apply to 930c_1200sims
+  ##The above files incorrectly applied parameter uncertainty
 
+  #Correctly apply states of nature values (use rebuild_m_fixed.sso from CA_rebuilding.R)
+  #Copy the rebuild.dat file from 930_F2017_2019_ageStruc2021
+  #Set "number of parameter vectors" to 4
+  #Set "Conduct projections with multiple starting values (0=No;else yes)" to 1
+  #Apply to 933_StatesOfNature
+  
+  #Remove cap on catch by ABC
+  #Copy the rebuild.data and parameter file in 933_StatesOfNature
+  #Set constrain catches by ABC to 2 in rebuild.data
+  #Apply to 933b_no_abc_max
+
+  #Ensure number of simulations is adequate
+  #Copy the rebuild.data file in 933_StatesOfNature
+  #Set number of parameters vectors to 1200
+  #Apply to 933c_1200sims
+  
   #Set number of parameters vectors to 2000
-  #Apply to 930d_2000sims
+  #Apply to 933d_2000sims
 
 ############################################################################
 

@@ -115,9 +115,9 @@ table_format(x = out,
 ## Base rebuilding time series 
 
 ```{r, results = 'asis'}
-out = as.data.frame(round(reb[[1]]$prob_matrix[1:47, ],3))
-out[,2] = round(reb[[2]]$prob_matrix[1:47, 2],3) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$prob_matrix[1:47, 7],3) #Set the Tmid run to be from the no-ABC-cap run
+out = as.data.frame(round(reb[[1]]$prob_matrix[1:46, ],3))
+out[,2] = round(reb[[2]]$prob_matrix[1:46, 2],3) #Set the SPR = 0.5 run to be from the no-ABC-cap run
+out[,7] = round(reb[[2]]$prob_matrix[1:46, 7],3) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
              caption = "Probability of recovery by year for base rebuilding strategies",
              label = "prob-mat",
@@ -128,9 +128,9 @@ table_format(x = out,
 \clearpage
 
 ```{r, results = 'asis'}
-out = as.data.frame(round(reb[[1]]$acl_matrix[1:47, ],2))
-out[,2] = round(reb[[2]]$acl_matrix[1:47, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$acl_matrix[1:47, 7],2) #Set the Tmid run to be from the no-ABC-cap run
+out = as.data.frame(round(reb[[1]]$acl_matrix[1:46, ],2))
+out[,2] = round(reb[[2]]$acl_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
+out[,7] = round(reb[[2]]$acl_matrix[1:46, 7],2) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
              caption = "Catches (mt) by year for base rebuilding strategies",
              label = "acl-mat",
@@ -141,9 +141,9 @@ table_format(x = out,
 \clearpage
 
 ```{r, results = 'asis'}
-out = as.data.frame(round(reb[[1]]$ofl_matrix[1:47, ],2))
-out[,2] = round(reb[[2]]$ofl_matrix[1:47, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$ofl_matrix[1:47, 7],2) #Set the Tmid run to be from the no-ABC-cap run
+out = as.data.frame(round(reb[[1]]$ofl_matrix[1:46, ],2))
+out[,2] = round(reb[[2]]$ofl_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
+out[,7] = round(reb[[2]]$ofl_matrix[1:46, 7],2) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
              caption = "OFLs (mt) by year for base rebuilding strategies",
              label = "ofl-mat",
@@ -154,9 +154,9 @@ table_format(x = out,
 \clearpage
 
 ```{r, results = 'asis'}
-out = as.data.frame(round(reb[[1]]$relativeb_matrix[1:47, ],2))
-out[,2] = round(reb[[2]]$relativeb_matrix[1:47, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$relativeb_matrix[1:47, 7],3) #Set the Tmid run to be from the no-ABC-cap run
+out = as.data.frame(round(reb[[1]]$relativeb_matrix[1:46, ],2))
+out[,2] = round(reb[[2]]$relativeb_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
+out[,7] = round(reb[[2]]$relativeb_matrix[1:46, 7],3) #Set the Tmid run to be from the no-ABC-cap run
 table_format(x = out,
              caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for base rebuilding strategies",
              label = "rel-ssb-mat",

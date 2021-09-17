@@ -79,11 +79,6 @@ for(i in 1:nrow(statetable)){
 # write resulting file
 writeLines(rebuildblend, file.path(rebuild_dir, "rebuild_m_states_910_2021.sso"))
 
-setwd(file.path(rebuild_dir, 'states_of_nature_910'))
-dirs <- dir()
-states <- r4ss::SSgetoutput(dirvec = paste(getwd(), dirs, sep = "/"), getcovar = FALSE)
-summaries <- r4ss::SSsummarize(states)
-
 # Double check that the rebuildblend file appears to have the correct values from the state of nature models
 a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend, fixed = TRUE)], 1, 7))))
 
@@ -92,8 +87,9 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 # rebuild.dat file under the "# File with multiple parameter vectors " section
 
 
+##
 #Now doing it for 921
-
+##
 statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
 st_dir = file.path(rebuild_dir, "states_of_nature_921") 
 n <- 1
@@ -135,16 +131,17 @@ for(i in 1:nrow(statetable)){
 # write resulting file
 writeLines(rebuildblend, file.path(rebuild_dir, "rebuild_m_states_921_2021.sso"))
 
-setwd(file.path(rebuild_dir, 'states_of_nature_921'))
-dirs <- dir()
-states <- r4ss::SSgetoutput(dirvec = paste(getwd(), dirs, sep = "/"), getcovar = FALSE)
-summaries <- r4ss::SSsummarize(states)
-
 # Double check that the rebuildblend file appears to have the correct values from the state of nature models
 a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend, fixed = TRUE)], 1, 7))))
 
 
-
+##
+#IMPORTANT - NEED TO MAKE MANUAL ADJUSTMENTS TO PARAMETER FILE
+##
+#Do from rebuild_m_states_921_2021.sso
+rebuildblend[grep("# spawn-recr", rebuildblend)] #In these lines add a fourth element, 0.4
+rebuildblend[grep("#female fecundity", rebuildblend)] #In these lines, set the first element to zero
+#SAVE AS "rebuild_m_fixed.sso"
 
 
 ####
@@ -167,7 +164,11 @@ run <- c(
   "940b_no_abc_max",
   "931_Tmax",
   "931b_Tmax_no_abc_max",
-  "tests/6_test_2sexSS")
+  "tests/6_test_2sexSS",
+  "933_StatesOfNature",
+  "933b_no_abc_max",
+  "933c_1200sims",
+  "933d_2000sims")
 reb <- list()
 for(a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[[a]]))	
@@ -234,7 +235,7 @@ for (a in 1:length(run)){
 
 ####
 #Figures for report
-#Need to replace SPR500 and Tmid scnearios with no cap runs
+#Replaced SPR500 and Tmid scnearios with no cap runs
 ####
 
 #Runs that are the base model with ABC caps, and without

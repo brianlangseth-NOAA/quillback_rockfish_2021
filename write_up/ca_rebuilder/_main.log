@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  15 SEP 2021 16:49
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  17 SEP 2021 10:46
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -2019,7 +2019,7 @@ Overfull \hbox (23.37526pt too wide) in alignment at lines 648--650
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 650--698
+Overfull \hbox (23.37526pt too wide) in alignment at lines 650--697
  [][][][][][][][][][] 
  []
 
@@ -2027,59 +2027,64 @@ Overfull \hbox (23.37526pt too wide) in alignment at lines 650--698
 
 
 ] [12]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 711--711
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 710--710
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 708--713
+Overfull \hbox (23.37526pt too wide) in alignment at lines 707--712
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 716--716
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 715--715
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 713--718
+Overfull \hbox (23.37526pt too wide) in alignment at lines 712--717
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 718--720
+Overfull \hbox (23.37526pt too wide) in alignment at lines 717--719
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 720--722
+Overfull \hbox (23.37526pt too wide) in alignment at lines 719--721
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 722--770
+Overfull \hbox (23.37526pt too wide) in alignment at lines 721--768
  [][][][][][][][][][] 
  []
 
 [13
 
 ] [14]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 783--783
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 781--781
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 780--785
+Overfull \hbox (23.37526pt too wide) in alignment at lines 778--783
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 788--788
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 786--786
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 785--790
+Overfull \hbox (23.37526pt too wide) in alignment at lines 783--788
+ [][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.37526pt too wide) in alignment at lines 788--790
  [][][][][][][][][][] 
  []
 
@@ -2089,49 +2094,44 @@ Overfull \hbox (23.37526pt too wide) in alignment at lines 790--792
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 792--794
- [][][][][][][][][][] 
- []
-
-
-Overfull \hbox (23.37526pt too wide) in alignment at lines 794--842
+Overfull \hbox (23.37526pt too wide) in alignment at lines 792--839
  [][][][][][][][][][] 
  []
 
 [15
 
 ] [16]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 855--855
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 852--852
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 852--857
+Overfull \hbox (23.37526pt too wide) in alignment at lines 849--854
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 860--860
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 857--857
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 857--862
+Overfull \hbox (23.37526pt too wide) in alignment at lines 854--859
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 862--864
+Overfull \hbox (23.37526pt too wide) in alignment at lines 859--861
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 864--866
+Overfull \hbox (23.37526pt too wide) in alignment at lines 861--863
  [][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.37526pt too wide) in alignment at lines 866--914
+Overfull \hbox (23.37526pt too wide) in alignment at lines 863--910
  [][][][][][][][][][] 
  []
 
@@ -2140,12 +2140,12 @@ Overfull \hbox (23.37526pt too wide) in alignment at lines 866--914
 ] [18] [19
 
 ]
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 972--972
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 968--968
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
 
-Overfull \hbox (10.0834pt too wide) in paragraph at lines 977--977
+Overfull \hbox (10.0834pt too wide) in paragraph at lines 973--973
 []|\TU/lmr/m/n/10 Yr=Tmid|  
  []
 
@@ -2154,40 +2154,40 @@ Overfull \hbox (10.0834pt too wide) in paragraph at lines 977--977
 
 ]
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_proba
-bility_forREPORT.png, id=503, 722.7pt x 505.89pt>
+bility_forREPORT.png, id=502, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_
 probability_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_p
 robability_forREPORT.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
-figures/rebuilding_probability_forREPORT.png  used on input line 1013.
+figures/rebuilding_probability_forREPORT.png  used on input line 1009.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_acl_f
-orREPORT.png, id=505, 722.7pt x 505.89pt>
+orREPORT.png, id=504, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_
 acl_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_a
 cl_forREPORT.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
-figures/rebuilding_acl_forREPORT.png  used on input line 1023.
+figures/rebuilding_acl_forREPORT.png  used on input line 1019.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_relat
-ive_sb_forREPORT.png, id=507, 722.7pt x 505.89pt>
+ive_sb_forREPORT.png, id=506, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_
 relative_sb_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_r
 elative_sb_forREPORT.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
-figures/rebuilding_relative_sb_forREPORT.png  used on input line 1033.
+figures/rebuilding_relative_sb_forREPORT.png  used on input line 1029.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_ssb_f
-orREPORT.png, id=509, 722.7pt x 505.89pt>
+orREPORT.png, id=508, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_
 ssb_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_s
 sb_forREPORT.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
-figures/rebuilding_ssb_forREPORT.png  used on input line 1043.
+figures/rebuilding_ssb_forREPORT.png  used on input line 1039.
 (luatex.def)             Requested size: 398.33534pt x 278.83473pt.
 [21
 
@@ -2209,66 +2209,66 @@ warning  (pdf backend): ignoring duplicate destination with the name 'append_b'
 
 ]
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensit
-ivities_compare2_spawnbio_uncertainty.png, id=551, 469.755pt x 361.35pt>
+ivities_compare2_spawnbio_uncertainty.png, id=550, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_s
 ensitivities_compare2_spawnbio_uncertainty.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_se
 nsitivities_compare2_spawnbio_uncertainty.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
 figures/rebuilder_sensitivities_compare2_spawnbio_uncertainty.png  used on inpu
-t line 1086.
+t line 1082.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensit
-ivities_compare4_Bratio_uncertainty.png, id=553, 469.755pt x 361.35pt>
+ivities_compare4_Bratio_uncertainty.png, id=552, 469.755pt x 361.35pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_s
 ensitivities_compare4_Bratio_uncertainty.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_se
 nsitivities_compare4_Bratio_uncertainty.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
 figures/rebuilder_sensitivities_compare4_Bratio_uncertainty.png  used on input 
-line 1096.
+line 1092.
 (luatex.def)             Requested size: 398.34032pt x 306.41562pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compare.pn
-g, id=555, 578.16pt x 722.7pt>
+g, id=554, 578.16pt x 722.7pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compa
 re.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compar
 e.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/
-figures/selex_compare.png  used on input line 1106.
+figures/selex_compare.png  used on input line 1102.
 (luatex.def)             Requested size: 398.33975pt x 497.9247pt.
 <C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_w
-eighting_TA1.8_CA_Commercial.png, id=557, 469.755pt x 469.755pt>
+eighting_TA1.8_CA_Commercial.png, id=556, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_d
 ata_weighting_TA1.8_CA_Commercial.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_da
 ta_weighting_TA1.8_CA_Commercial.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/
 plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png  used on input line 11
-16.
+12.
 (luatex.def)             Requested size: 358.50127pt x 358.50127pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_
-lenfit_data_weighting_TA1.8_CA_Commercial.png, id=559, 469.755pt x 469.755pt>
+lenfit_data_weighting_TA1.8_CA_Commercial.png, id=558, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/
 comp_lenfit_data_weighting_TA1.8_CA_Commercial.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/c
 omp_lenfit_data_weighting_TA1.8_CA_Commercial.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_rec
 ComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png  used on 
-input line 1126.
+input line 1122.
 (luatex.def)             Requested size: 358.50127pt x 358.50127pt.
 <C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_w
-eighting_TA1.8_CA_Recreational.png, id=561, 469.755pt x 469.755pt>
+eighting_TA1.8_CA_Recreational.png, id=560, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_d
 ata_weighting_TA1.8_CA_Recreational.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_da
 ta_weighting_TA1.8_CA_Recreational.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/
 plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png  used on input line 
-1136.
+1132.
 (luatex.def)             Requested size: 358.50127pt x 358.50127pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_
-lenfit_data_weighting_TA1.8_CA_Recreational.png, id=563, 469.755pt x 469.755pt>
+lenfit_data_weighting_TA1.8_CA_Recreational.png, id=562, 469.755pt x 469.755pt>
 
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/
 comp_lenfit_data_weighting_TA1.8_CA_Recreational.png Graphic file (type png)
@@ -2276,45 +2276,45 @@ comp_lenfit_data_weighting_TA1.8_CA_Recreational.png Graphic file (type png)
 omp_lenfit_data_weighting_TA1.8_CA_Recreational.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_rec
 ComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png  used o
-n input line 1146.
+n input line 1142.
 (luatex.def)             Requested size: 358.50127pt x 358.50127pt.
 <C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__aggre
-gated_across_time.png, id=565, 469.755pt x 469.755pt>
+gated_across_time.png, id=564, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__
 aggregated_across_time.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__a
 ggregated_across_time.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/
-plots/comp_lenfit__aggregated_across_time.png  used on input line 1156.
+plots/comp_lenfit__aggregated_across_time.png  used on input line 1152.
 (luatex.def)             Requested size: 398.34032pt x 398.34032pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_
-lenfit__aggregated_across_time.png, id=567, 469.755pt x 469.755pt>
+lenfit__aggregated_across_time.png, id=566, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/
 comp_lenfit__aggregated_across_time.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/c
 omp_lenfit__aggregated_across_time.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_rec
 ComBlock2001/plots/comp_lenfit__aggregated_across_time.png  used on input line 
-1166.
+1162.
 (luatex.def)             Requested size: 398.34032pt x 398.34032pt.
 <C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__multi
--fleet_comparison.png, id=569, 469.755pt x 469.755pt>
+-fleet_comparison.png, id=568, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__
 multi-fleet_comparison.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__m
 ulti-fleet_comparison.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/
-plots/comp_lenfit__multi-fleet_comparison.png  used on input line 1176.
+plots/comp_lenfit__multi-fleet_comparison.png  used on input line 1172.
 (luatex.def)             Requested size: 358.50127pt x 358.50127pt.
 <C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_
-lenfit__multi-fleet_comparison.png, id=571, 469.755pt x 469.755pt>
+lenfit__multi-fleet_comparison.png, id=570, 469.755pt x 469.755pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/
 comp_lenfit__multi-fleet_comparison.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/c
 omp_lenfit__multi-fleet_comparison.png>
 Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_rec
 ComBlock2001/plots/comp_lenfit__multi-fleet_comparison.png  used on input line 
-1186.
+1182.
 (luatex.def)             Requested size: 358.50127pt x 358.50127pt.
 
 AED: lastpage setting LastPage
@@ -2343,15 +2343,15 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49622 strings out of 478152
- 195344,1977958 words of node,token memory allocated
+ 49618 strings out of 478152
+ 195332,1977958 words of node,token memory allocated
  713 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 glyph, 26 attribute, 77 glue_spec
 , 13 attribute_list, 5 write, 1 close, 2 pdf_action nodes
-   avail lists: 1:96,2:12714,3:1767,4:125,5:917,6:869,7:10998,8:64,9:5616,10:13,
-11:567,12:1
- 67894 multiletter control sequences out of 65536+600000
- 76 fonts using 15693595 bytes
+   avail lists: 1:101,2:12472,3:1731,4:126,5:899,6:851,7:10778,8:59,9:5502,10:13
+,11:589,12:1
+ 67890 multiletter control sequences out of 65536+600000
+ 76 fonts using 15693671 bytes
  117i,12n,136p,1963b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf
@@ -2367,9 +2367,9 @@ mf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/Brian.Langseth/
 AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-regular.otf>
-Output written on _main.pdf (44 pages, 69282807 bytes).
+Output written on _main.pdf (44 pages, 69281314 bytes).
 
-PDF statistics: 783 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 782 PDF objects out of 1000 (max. 8388607)
  144 named destinations out of 1000 (max. 131072)
- 1437 words of extra memory for PDF output out of 10000 (max. 100000000)
+ 1432 words of extra memory for PDF output out of 10000 (max. 100000000)
 

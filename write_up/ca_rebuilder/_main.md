@@ -65,7 +65,7 @@ These materials do not constitute a formal publication and are for information o
 
 This rebuilding analysis is for the sub-stock of quillback rockfish (_Sebastes maliger_) in waters off California. The analysis is based on the 2021 stock assessment [@Langseth_status_2021]. The 2021 assessment model estimated the quillback rockfish population to be at 14% of the unexploited equilibrium spawning output at the beginning of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2023 and beyond.
 
-The results of the analysis show that the value for $\text{T}_\text{MIN}$, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2023), is 2040. The estimated generation time for quillback rockfish was estimated to be 27 years. In conjunction with $\text{T}_\text{MIN}$ and the mean generation time, $\text{T}_\text{MAX}$ was estimated to be 2067. An SPR = 0.561 harvest rate generates a 50% probability of recovery by $\text{T}_\text{MID}$ where $\text{T}_\text{MID}$ was 2054, an intermediate year between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
+The results of the analysis show that the value for $\text{T}_\text{MIN}$, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2023), is 2040. The estimated generation time for quillback rockfish was estimated to be 26 years. In conjunction with $\text{T}_\text{MIN}$ and the mean generation time, $\text{T}_\text{MAX}$ was estimated to be 2066. An SPR = 0.581 harvest rate generates a 50% probability of recovery by $\text{T}_\text{MID}$ where $\text{T}_\text{MID}$ was 2053, an intermediate year between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
 
 <!--chapter:end:01executive.Rmd-->
 
@@ -84,7 +84,7 @@ The results of the analysis show that the value for $\text{T}_\text{MIN}$, the m
 
 # Introduction
 
-The 2021 assessment of quillback rockfish (_Sebastes maliger_) in California waters documented that the population of quillback rockfish was below the Minimum Stock Size Threshold (MSST), which is 25% of unfished spawning output for rockfish stocks, in 2021 [@Langseth_status_2021]. The population declined below MSST starting in 1992, reached it lowest values in the mid-1990s but increased to near the MSST in the 2000s and early 2010s, and declined in recent years. The stock is expected to be declared overfished for 2023 in 2021. Given the assumed productivity of the stock combined with the longevity of quillback rockfish a range of alternative rebuilding approaches were examined, and are described in this report, with rebuilding ranging from 2040 - 2064 based on various SPR harvest rates from 0.5 to 1 (no harvest). 
+The 2021 assessment of quillback rockfish (_Sebastes maliger_) in California waters documented that the population of quillback rockfish was below the Minimum Stock Size Threshold (MSST), which is 25% of unfished spawning output for rockfish stocks, in 2021 [@Langseth_status_2021]. The population declined below MSST starting in 1992, reached it lowest values in the mid-1990s but increased to near the MSST in the 2000s and early 2010s, and declined in recent years. The stock is expected to be declared overfished for 2023 in 2021. Given the assumed productivity of the stock combined with the longevity of quillback rockfish a range of alternative rebuilding approaches were examined, and are described in this report, with rebuilding ranging from 2040 - 2065 based on various SPR harvest rates from 0.5 to 1 (no harvest). 
 
 
 # Overview of the 2021 stock assessment
@@ -191,25 +191,25 @@ The Pacific Fishery Management Council's (Council) Scientific and Statistical Co
 
 ## Rebuilding reference points
 
-<!-- The following reference points reported below are based on assumed full removals of 13.5 and 13.5001 mt in 2021 and 2022.  The reference points based on assuming lower removals in 2021 and 2022 are presented as sensitivities later in the results section. -->
+<!-- The following reference points reported below are based on assumed full removals of 13.5 and 13.5 mt in 2021 and 2022.  The reference points based on assuming lower removals in 2021 and 2022 are presented as sensitivities later in the results section. -->
 
-Reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2023 was estimated to be 17, 44, 2021, 2023, 2, 2021, 2023, 2, 44, 2067 years, corresponding to the stock being rebuilt by 2040, assuming the default removals for 2021 and 2022.  The mean generation time was estimated to be 27 years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$, is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that require more than 10 years to rebuild.  Quillback rockfish was unable to rebuild within 10 years so the estimated $\text{T}_\text{MAX}$ was 2067. $\text{T}_\text{TARGET}$, and $\text{SPR}_\text{TARGET}$ are not specified since this is the first rebuilding plan for quillback rockfish and these values have not been set via the Council's process.
+Reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2023 was estimated to be 17 years, corresponding to the stock being rebuilt by 2040, assuming the default removals for 2021 and 2022.  The mean generation time was estimated to be 26 years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$, is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that require more than 10 years to rebuild.  Quillback rockfish was unable to rebuild within 10 years so the estimated $\text{T}_\text{MAX}$ was 2066. $\text{T}_\text{TARGET}$, and $\text{SPR}_\text{TARGET}$ are not specified since this is the first rebuilding plan for quillback rockfish and these values have not been set via the Council's process.
 
-A rebuilding strategy is presented below and includes a rebuilding target year termed $\text{T}_\text{MID}$, which equals 2054 and is the mid-point between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$. The Council may opt to select a $\text{T}_\text{TARGET}$ earlier or later than this $\text{T}_\text{MID}$ value based on fishery, economic, or other factors.
+A rebuilding strategy is presented below and includes a rebuilding target year termed $\text{T}_\text{MID}$, which equals 2053 and is the mid-point between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$. The Council may opt to select a $\text{T}_\text{TARGET}$ earlier or later than this $\text{T}_\text{MID}$ value based on fishery, economic, or other factors.
 
 ## Alternative harvest policy projections
 
 Summary results from the rebuilding alternatives are presented in Table \ref{tab:reb-options}. Detailed
 results are presented in Tables \ref{tab:prob-mat}-\ref{tab:rel-ssb-mat} and Figures \ref{fig:prob-fig}-\ref{fig:ssb-fig}.
 
-The target rebuilding year based on the various rebuilding strategies ranged from 2040 - 2064 (Table \ref{tab:reb-options}). The probability of rebuilding by year steadily increased across the alternative SPR values with full rebuilding (reaching a probability of greater than 50%) by 2064 when the lowest SPR of 0.50 was applied (Table \ref{tab:prob-mat} and Figure \ref{fig:prob-fig}). The recommended removals in 2023, the first year of rebuilding, were low ranging between 0.04 - 2.05 mt across strategies excluding the no-harvest strategy (Table \ref{tab:acl-mat}), with the recommended removals slowly increasing by year during the rebuilding period (Figure \ref{fig:acl-fig}). The estimated Overfishing Limits (OFLs) for each rebuilding alternative are given in Table \ref{tab:ofl-mat}. The change in spawning output by year relative to the spawning output target, 40% of unfished, under each of the alternatives are shown by year in Table \ref{tab:rel-ssb-mat} and Figure \ref{fig:rel-ssb-fig}. The harvest rate to obtain a 50% probability of recovery by $\text{T}_\text{MAX}$ corresponds to an SPR that is lower than 0.5, so is not provided in the tables. 
+The target rebuilding year based on the various rebuilding strategies ranged from 2040 - 2065 (Table \ref{tab:reb-options}). The probability of rebuilding by year steadily increased across the alternative SPR values with full rebuilding (reaching a probability of greater than 50%) by 2065 when the lowest SPR of 0.50 was applied (Table \ref{tab:prob-mat} and Figure \ref{fig:prob-fig}). The recommended removals in 2023, the first year of rebuilding, were low ranging between 0.04 - 2.05 mt across strategies excluding the no-harvest strategy (Table \ref{tab:acl-mat}), with the recommended removals slowly increasing by year during the rebuilding period (Figure \ref{fig:acl-fig}). The estimated Overfishing Limits (OFLs) for each rebuilding alternative are given in Table \ref{tab:ofl-mat}. The change in spawning output by year relative to the spawning output target, 40% of unfished, under each of the alternatives are shown by year in Table \ref{tab:rel-ssb-mat} and Figure \ref{fig:rel-ssb-fig}. The harvest rate to obtain a 50% probability of recovery by $\text{T}_\text{MAX}$ corresponds to an SPR that is lower than 0.5, so is not provided in the tables. 
 
-<!-- Reducing the assumed removals in 2021 and 2022 had only a limited impact on the estimated rebuilding by SPR rate (Table \ref{tab:reb-options-catch}). Reducing the removals in 2021 and 2022 decreased the minimum time for rebuilding ($\text{T}_\text{MIN}$) to 2042, two years earlier compared to the initial rebuilding alternatives.  The reduction of the $\text{T}_\text{MIN}$ resulted in a decrease in the $\text{T}_\text{MAX}$ to 2067. The probability of rebuilding, annual catches, OFLs, and relative spawning outputs by year are shown in Tables \ref{tab:prob-mat-catch} - \ref{tab:rel-ssb-mat-catch}.  -->
+<!-- Reducing the assumed removals in 2021 and 2022 had only a limited impact on the estimated rebuilding by SPR rate (Table \ref{tab:reb-options-catch}). Reducing the removals in 2021 and 2022 decreased the minimum time for rebuilding ($\text{T}_\text{MIN}$) to 2042, two years earlier compared to the initial rebuilding alternatives.  The reduction of the $\text{T}_\text{MIN}$ resulted in a decrease in the $\text{T}_\text{MAX}$ to 2066. The probability of rebuilding, annual catches, OFLs, and relative spawning outputs by year are shown in Tables \ref{tab:prob-mat-catch} - \ref{tab:rel-ssb-mat-catch}.  -->
 
 
 ## Results for sensitivity on selectivity blocks and form
 
-Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-sens} and \ref{tab:reb-options-sens}. $\text{T}_\text{MIN}$, and consequently $\text{T}_\text{MAX}$, was one year earlier than the base rebuilding analysis. Time to targets across the various rebuilding strategies occurred one to two years earlier than the base rebuilding model, with the exception of the $\text{T}_\text{MID}$ strategy, which occurred four years earlier. Recommended removals in 2023 were also larger than the base, ranging between 0.3 - 2.45 mt, given the slightly higher spawning output and SPR in 2021 compared to the base model. 
+Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-sens} and \ref{tab:reb-options-sens}. $\text{T}_\text{MIN}$ was one year earlier than the base rebuilding analysis, but because mean generation time was one year earlier (due to not applying uncertainty from the natural mortality states of nature), $\text{T}_\text{MAX}$ was the same as the base rebuilding analysis. Time to targets across the various rebuilding strategies occurred one to three years earlier than the base rebuilding model. Recommended removals in 2023 were also larger than the base, ranging between 0.3 - 2.45 mt, given the slightly higher spawning output and SPR in 2021 compared to the base model. 
 
 Comparisons between stock synthesis output from the adopted base model and the sensitivity run are provided in [Appendix B]{#append_b}. The sensitivity had slightly higher estimates of unfished spawning output (Figure \ref{fig:ssb-sens}) and similar depletion estimates (Figure \ref{fig:depl-sens}) compared to the adopted base model. Selectivity in the recent block was domed at large sizes for both the recreational and commercial fleets, and right shifted in recent years for the commercial fleet (Figure \ref{fig:selex-sens}) so the time series of information entered into the sensitivity rebuilding analysis were different from the time series entered into the base rebuilding analysis, contributing to differences in results. 
 
@@ -300,8 +300,8 @@ SB2021 (millions of eggs) & 7.745\\
 Year rebuilding begins & 2023\\
 Current year & 2021\\
 Tmin & 2040\\
-Mean generation time (years) & 27\\
-Tmax & 2067\\
+Mean generation time (years) & 26\\
+Tmax & 2066\\
 TF=0 & 2040\\
 Ttarget & TBD\\
 SPRtarget & TBD\\
@@ -334,12 +334,12 @@ Current SPR (2021) & 0.1165\\*
 \endlastfoot
 2021 Assumed Removals (mt) & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5\\
 2022 Assumed Removals (mt) & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5\\
-2023 ACL (mt) & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.64 & 0 & 0.04 & 1.79\\
-2024 ACL (mt) & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.81 & 0 & 0.33 & 1.95\\
-SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.561 & 1 & - & -\\
-Ttarget & 2064 & 2051 & 2046 & 2043 & 2042 & 2054 & 2040 & 2050 & 2054\\
-Tmax & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067\\
-Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.943 & 0.894\\*
+2023 ACL (mt) & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.52 & 0 & 0.04 & 1.79\\
+2024 ACL (mt) & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.68 & 0 & 0.33 & 1.95\\
+SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.581 & 1 & - & -\\
+Ttarget & 2065 & 2051 & 2046 & 2043 & 2042 & 2053 & 2040 & 2051 & 2055\\
+Tmax & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066\\
+Probability of recovery by Tmax & 0.525 & 0.897 & 0.979 & 0.999 & 1 & 0.852 & 1 & 0.905 & 0.821\\*
 \end{longtable}
 \endgroup{}
 \end{landscape}
@@ -374,45 +374,44 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 2026 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
 2027 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
 2028 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2029 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2030 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2031 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2032 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2033 & 0.000 & 0.000 & 0.000 & 0.000 & 0.001 & 0.000 & 0.001 & 0.000 & 0.000\\
-2034 & 0.000 & 0.000 & 0.000 & 0.001 & 0.002 & 0.000 & 0.003 & 0.000 & 0.000\\
-2035 & 0.000 & 0.000 & 0.001 & 0.002 & 0.009 & 0.000 & 0.015 & 0.001 & 0.000\\
-2036 & 0.000 & 0.001 & 0.003 & 0.013 & 0.023 & 0.000 & 0.052 & 0.001 & 0.000\\
-2037 & 0.000 & 0.003 & 0.011 & 0.024 & 0.070 & 0.001 & 0.125 & 0.003 & 0.001\\
-2038 & 0.000 & 0.003 & 0.022 & 0.069 & 0.133 & 0.003 & 0.237 & 0.011 & 0.003\\
-2039 & 0.000 & 0.012 & 0.051 & 0.134 & 0.243 & 0.004 & 0.355 & 0.020 & 0.004\\
-2040 & 0.001 & 0.024 & 0.102 & 0.207 & 0.348 & 0.012 & 0.520 & 0.039 & 0.012\\
-2041 & 0.003 & 0.046 & 0.144 & 0.304 & 0.474 & 0.022 & 0.670 & 0.069 & 0.022\\
-2042 & 0.008 & 0.078 & 0.223 & 0.398 & 0.621 & 0.043 & 0.785 & 0.108 & 0.043\\
-2043 & 0.014 & 0.113 & 0.283 & 0.507 & 0.725 & 0.059 & 0.879 & 0.148 & 0.061\\
-2044 & 0.020 & 0.150 & 0.372 & 0.614 & 0.815 & 0.084 & 0.937 & 0.194 & 0.088\\
-2045 & 0.033 & 0.205 & 0.448 & 0.709 & 0.893 & 0.111 & 0.968 & 0.245 & 0.113\\
-2046 & 0.046 & 0.246 & 0.530 & 0.785 & 0.938 & 0.149 & 0.983 & 0.295 & 0.158\\
-2047 & 0.053 & 0.291 & 0.607 & 0.856 & 0.962 & 0.196 & 0.991 & 0.344 & 0.201\\
-2048 & 0.062 & 0.353 & 0.687 & 0.902 & 0.979 & 0.228 & 0.995 & 0.405 & 0.235\\
-2049 & 0.088 & 0.418 & 0.752 & 0.936 & 0.983 & 0.272 & 0.997 & 0.455 & 0.279\\
-2050 & 0.117 & 0.476 & 0.792 & 0.954 & 0.995 & 0.316 & 0.999 & 0.506 & 0.332\\
-2051 & 0.133 & 0.525 & 0.853 & 0.968 & 0.997 & 0.376 & 1.000 & 0.568 & 0.390\\
-2052 & 0.154 & 0.578 & 0.888 & 0.977 & 0.998 & 0.431 & 1.000 & 0.602 & 0.441\\
-2053 & 0.183 & 0.617 & 0.909 & 0.986 & 0.999 & 0.480 & 1.000 & 0.650 & 0.498\\
-2054 & 0.213 & 0.679 & 0.929 & 0.991 & 1.000 & 0.520 & 1.000 & 0.699 & 0.532\\
-2055 & 0.240 & 0.723 & 0.947 & 0.993 & 1.000 & 0.554 & 1.000 & 0.732 & 0.571\\
-2056 & 0.266 & 0.759 & 0.960 & 0.996 & 1.000 & 0.592 & 1.000 & 0.767 & 0.608\\
-2057 & 0.295 & 0.795 & 0.971 & 0.997 & 1.000 & 0.637 & 1.000 & 0.800 & 0.657\\
-2058 & 0.331 & 0.827 & 0.978 & 0.998 & 1.000 & 0.671 & 1.000 & 0.827 & 0.698\\
-2059 & 0.361 & 0.846 & 0.985 & 0.999 & 1.000 & 0.715 & 1.000 & 0.842 & 0.734\\
-2060 & 0.400 & 0.859 & 0.988 & 1.000 & 1.000 & 0.744 & 1.000 & 0.857 & 0.767\\
-2061 & 0.428 & 0.882 & 0.991 & 1.000 & 1.000 & 0.773 & 1.000 & 0.870 & 0.793\\
-2062 & 0.466 & 0.896 & 0.993 & 1.000 & 1.000 & 0.798 & 1.000 & 0.888 & 0.813\\
-2063 & 0.498 & 0.913 & 0.994 & 1.000 & 1.000 & 0.817 & 1.000 & 0.905 & 0.832\\
-2064 & 0.529 & 0.929 & 0.995 & 1.000 & 1.000 & 0.836 & 1.000 & 0.916 & 0.854\\
-2065 & 0.546 & 0.941 & 0.997 & 1.000 & 1.000 & 0.861 & 1.000 & 0.928 & 0.872\\
-2066 & 0.572 & 0.950 & 0.997 & 1.000 & 1.000 & 0.873 & 1.000 & 0.934 & 0.886\\
-2067 & 0.596 & 0.959 & 0.997 & 1.000 & 1.000 & 0.881 & 1.000 & 0.943 & 0.894\\*
+2029 & 0.000 & 0.000 & 0.001 & 0.001 & 0.001 & 0.000 & 0.003 & 0.000 & 0.000\\
+2030 & 0.000 & 0.001 & 0.003 & 0.006 & 0.009 & 0.001 & 0.016 & 0.001 & 0.001\\
+2031 & 0.001 & 0.003 & 0.008 & 0.018 & 0.037 & 0.003 & 0.075 & 0.003 & 0.001\\
+2032 & 0.001 & 0.007 & 0.018 & 0.046 & 0.099 & 0.005 & 0.147 & 0.006 & 0.003\\
+2033 & 0.003 & 0.014 & 0.046 & 0.098 & 0.160 & 0.012 & 0.215 & 0.012 & 0.009\\
+2034 & 0.007 & 0.031 & 0.075 & 0.146 & 0.204 & 0.027 & 0.231 & 0.028 & 0.017\\
+2035 & 0.013 & 0.050 & 0.108 & 0.184 & 0.230 & 0.042 & 0.255 & 0.046 & 0.033\\
+2036 & 0.022 & 0.061 & 0.144 & 0.214 & 0.248 & 0.049 & 0.274 & 0.055 & 0.041\\
+2037 & 0.026 & 0.084 & 0.168 & 0.234 & 0.279 & 0.065 & 0.316 & 0.070 & 0.053\\
+2038 & 0.031 & 0.097 & 0.187 & 0.263 & 0.321 & 0.083 & 0.376 & 0.090 & 0.065\\
+2039 & 0.034 & 0.121 & 0.226 & 0.314 & 0.377 & 0.101 & 0.431 & 0.112 & 0.078\\
+2040 & 0.043 & 0.141 & 0.274 & 0.357 & 0.422 & 0.118 & 0.510 & 0.137 & 0.095\\
+2041 & 0.054 & 0.173 & 0.306 & 0.403 & 0.490 & 0.143 & 0.586 & 0.170 & 0.111\\
+2042 & 0.067 & 0.201 & 0.352 & 0.446 & 0.557 & 0.170 & 0.648 & 0.206 & 0.140\\
+2043 & 0.078 & 0.237 & 0.388 & 0.502 & 0.620 & 0.197 & 0.695 & 0.243 & 0.157\\
+2044 & 0.093 & 0.272 & 0.426 & 0.562 & 0.662 & 0.230 & 0.740 & 0.280 & 0.191\\
+2045 & 0.105 & 0.311 & 0.461 & 0.605 & 0.709 & 0.263 & 0.758 & 0.314 & 0.220\\
+2046 & 0.121 & 0.342 & 0.508 & 0.647 & 0.746 & 0.304 & 0.788 & 0.352 & 0.256\\
+2047 & 0.138 & 0.368 & 0.550 & 0.688 & 0.773 & 0.337 & 0.821 & 0.384 & 0.292\\
+2048 & 0.150 & 0.398 & 0.597 & 0.731 & 0.805 & 0.363 & 0.853 & 0.421 & 0.319\\
+2049 & 0.165 & 0.437 & 0.626 & 0.764 & 0.834 & 0.387 & 0.886 & 0.451 & 0.346\\
+2050 & 0.189 & 0.472 & 0.658 & 0.800 & 0.868 & 0.417 & 0.914 & 0.483 & 0.375\\
+2051 & 0.211 & 0.500 & 0.707 & 0.830 & 0.898 & 0.448 & 0.932 & 0.513 & 0.408\\
+2052 & 0.228 & 0.528 & 0.743 & 0.858 & 0.918 & 0.478 & 0.950 & 0.548 & 0.436\\
+2053 & 0.242 & 0.551 & 0.777 & 0.883 & 0.934 & 0.500 & 0.972 & 0.583 & 0.465\\
+2054 & 0.272 & 0.591 & 0.805 & 0.902 & 0.951 & 0.525 & 0.978 & 0.626 & 0.490\\
+2055 & 0.293 & 0.631 & 0.832 & 0.918 & 0.970 & 0.557 & 0.987 & 0.653 & 0.509\\
+2056 & 0.311 & 0.661 & 0.858 & 0.937 & 0.976 & 0.601 & 0.991 & 0.689 & 0.541\\
+2057 & 0.331 & 0.690 & 0.878 & 0.952 & 0.983 & 0.638 & 0.997 & 0.716 & 0.586\\
+2058 & 0.353 & 0.719 & 0.896 & 0.962 & 0.991 & 0.660 & 0.999 & 0.751 & 0.616\\
+2059 & 0.378 & 0.745 & 0.917 & 0.970 & 0.996 & 0.690 & 1.000 & 0.774 & 0.638\\
+2060 & 0.399 & 0.766 & 0.931 & 0.979 & 0.996 & 0.711 & 1.000 & 0.797 & 0.670\\
+2061 & 0.419 & 0.793 & 0.944 & 0.983 & 0.998 & 0.741 & 1.000 & 0.819 & 0.701\\
+2062 & 0.446 & 0.819 & 0.952 & 0.992 & 0.998 & 0.767 & 1.000 & 0.842 & 0.721\\
+2063 & 0.467 & 0.848 & 0.960 & 0.996 & 0.999 & 0.797 & 1.000 & 0.864 & 0.748\\
+2064 & 0.492 & 0.866 & 0.964 & 0.998 & 0.999 & 0.827 & 1.000 & 0.879 & 0.774\\
+2065 & 0.504 & 0.880 & 0.969 & 0.998 & 0.999 & 0.841 & 1.000 & 0.897 & 0.808\\
+2066 & 0.525 & 0.897 & 0.979 & 0.999 & 1.000 & 0.852 & 1.000 & 0.905 & 0.821\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -438,51 +437,50 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 \endlastfoot
 2021 & 13.50 & 13.50 & 13.50 & 13.50 & 13.50 & 13.50 & 13.5 & 13.50 & 13.50\\
 2022 & 13.50 & 13.50 & 13.50 & 13.50 & 13.50 & 13.50 & 13.5 & 13.50 & 13.50\\
-2023 & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.64 & 0.0 & 0.04 & 1.79\\
-2024 & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.81 & 0.0 & 0.33 & 1.95\\
-2025 & 2.46 & 1.74 & 1.17 & 0.71 & 0.32 & 2.00 & 0.0 & 0.67 & 2.13\\
-2026 & 2.68 & 1.91 & 1.29 & 0.79 & 0.36 & 2.19 & 0.0 & 1.02 & 2.30\\
-2027 & 2.88 & 2.07 & 1.41 & 0.86 & 0.40 & 2.37 & 0.0 & 1.35 & 2.47\\
-2028 & 3.07 & 2.23 & 1.53 & 0.94 & 0.44 & 2.54 & 0.0 & 1.64 & 2.62\\
-2029 & 3.27 & 2.39 & 1.65 & 1.02 & 0.47 & 2.71 & 0.0 & 1.92 & 2.77\\
-2030 & 3.45 & 2.54 & 1.76 & 1.09 & 0.51 & 2.88 & 0.0 & 2.18 & 2.91\\
-2031 & 3.62 & 2.69 & 1.88 & 1.17 & 0.55 & 3.03 & 0.0 & 2.41 & 3.04\\
-2032 & 3.78 & 2.83 & 1.99 & 1.24 & 0.59 & 3.19 & 0.0 & 2.63 & 3.16\\
-2033 & 3.95 & 2.97 & 2.10 & 1.32 & 0.62 & 3.34 & 0.0 & 2.84 & 3.29\\
-2034 & 4.12 & 3.12 & 2.21 & 1.40 & 0.66 & 3.50 & 0.0 & 3.04 & 3.41\\
-2035 & 4.28 & 3.26 & 2.32 & 1.47 & 0.70 & 3.65 & 0.0 & 3.25 & 3.53\\
-2036 & 4.44 & 3.40 & 2.44 & 1.55 & 0.74 & 3.80 & 0.0 & 3.46 & 3.67\\
-2037 & 4.61 & 3.55 & 2.55 & 1.63 & 0.78 & 3.96 & 0.0 & 3.67 & 3.82\\
-2038 & 4.76 & 3.69 & 2.66 & 1.70 & 0.82 & 4.10 & 0.0 & 3.89 & 3.97\\
-2039 & 4.90 & 3.81 & 2.76 & 1.77 & 0.85 & 4.23 & 0.0 & 4.07 & 4.10\\
-2040 & 5.03 & 3.93 & 2.86 & 1.84 & 0.89 & 4.36 & 0.0 & 4.25 & 4.23\\
-2041 & 5.18 & 4.07 & 2.97 & 1.91 & 0.92 & 4.50 & 0.0 & 4.43 & 4.37\\
-2042 & 5.34 & 4.21 & 3.08 & 1.99 & 0.96 & 4.65 & 0.0 & 4.63 & 4.52\\
-2043 & 5.46 & 4.33 & 3.18 & 2.06 & 1.00 & 4.78 & 0.0 & 4.79 & 4.65\\
-2044 & 5.61 & 4.46 & 3.29 & 2.14 & 1.04 & 4.92 & 0.0 & 4.96 & 4.78\\
-2045 & 5.75 & 4.58 & 3.38 & 2.20 & 1.07 & 5.04 & 0.0 & 5.13 & 4.91\\
-2046 & 5.88 & 4.71 & 3.49 & 2.28 & 1.11 & 5.18 & 0.0 & 5.29 & 5.05\\
-2047 & 6.02 & 4.84 & 3.59 & 2.35 & 1.15 & 5.31 & 0.0 & 5.45 & 5.18\\
-2048 & 6.13 & 4.95 & 3.68 & 2.41 & 1.18 & 5.42 & 0.0 & 5.59 & 5.29\\
-2049 & 6.25 & 5.05 & 3.77 & 2.48 & 1.22 & 5.53 & 0.0 & 5.72 & 5.40\\
-2050 & 6.35 & 5.14 & 3.86 & 2.54 & 1.25 & 5.63 & 0.0 & 5.83 & 5.50\\
-2051 & 6.48 & 5.25 & 3.93 & 2.59 & 1.28 & 5.75 & 0.0 & 5.95 & 5.62\\
-2052 & 6.59 & 5.37 & 4.02 & 2.66 & 1.31 & 5.86 & 0.0 & 6.05 & 5.73\\
-2053 & 6.68 & 5.45 & 4.10 & 2.72 & 1.34 & 5.95 & 0.0 & 6.11 & 5.82\\
-2054 & 6.74 & 5.51 & 4.17 & 2.77 & 1.37 & 6.02 & 0.0 & 6.18 & 5.89\\
-2055 & 6.81 & 5.59 & 4.23 & 2.81 & 1.39 & 6.09 & 0.0 & 6.23 & 5.96\\
-2056 & 6.88 & 5.66 & 4.29 & 2.85 & 1.42 & 6.15 & 0.0 & 6.29 & 6.03\\
-2057 & 6.96 & 5.73 & 4.34 & 2.90 & 1.44 & 6.24 & 0.0 & 6.37 & 6.11\\
-2058 & 7.04 & 5.80 & 4.41 & 2.94 & 1.46 & 6.32 & 0.0 & 6.43 & 6.19\\
-2059 & 7.13 & 5.89 & 4.48 & 2.99 & 1.49 & 6.39 & 0.0 & 6.50 & 6.27\\
-2060 & 7.19 & 5.96 & 4.54 & 3.04 & 1.51 & 6.47 & 0.0 & 6.56 & 6.34\\
-2061 & 7.26 & 6.02 & 4.58 & 3.07 & 1.53 & 6.52 & 0.0 & 6.62 & 6.40\\
-2062 & 7.30 & 6.07 & 4.63 & 3.11 & 1.55 & 6.58 & 0.0 & 6.66 & 6.46\\
-2063 & 7.33 & 6.12 & 4.68 & 3.15 & 1.57 & 6.62 & 0.0 & 6.68 & 6.51\\
-2064 & 7.38 & 6.15 & 4.72 & 3.17 & 1.59 & 6.66 & 0.0 & 6.72 & 6.54\\
-2065 & 7.42 & 6.19 & 4.75 & 3.20 & 1.60 & 6.71 & 0.0 & 6.77 & 6.59\\
-2066 & 7.46 & 6.23 & 4.80 & 3.23 & 1.62 & 6.74 & 0.0 & 6.80 & 6.62\\
-2067 & 7.50 & 6.27 & 4.82 & 3.26 & 1.64 & 6.78 & 0.0 & 6.82 & 6.66\\*
+2023 & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.52 & 0.0 & 0.04 & 1.79\\
+2024 & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.68 & 0.0 & 0.33 & 1.95\\
+2025 & 2.46 & 1.74 & 1.17 & 0.71 & 0.32 & 1.86 & 0.0 & 0.67 & 2.13\\
+2026 & 2.68 & 1.91 & 1.29 & 0.79 & 0.36 & 2.04 & 0.0 & 1.02 & 2.30\\
+2027 & 2.89 & 2.08 & 1.42 & 0.87 & 0.40 & 2.22 & 0.0 & 1.35 & 2.47\\
+2028 & 3.08 & 2.24 & 1.53 & 0.94 & 0.44 & 2.39 & 0.0 & 1.65 & 2.63\\
+2029 & 3.26 & 2.39 & 1.65 & 1.02 & 0.47 & 2.54 & 0.0 & 1.92 & 2.77\\
+2030 & 3.45 & 2.54 & 1.76 & 1.09 & 0.51 & 2.70 & 0.0 & 2.17 & 2.91\\
+2031 & 3.61 & 2.68 & 1.88 & 1.17 & 0.55 & 2.85 & 0.0 & 2.40 & 3.03\\
+2032 & 3.79 & 2.84 & 1.99 & 1.25 & 0.59 & 3.01 & 0.0 & 2.63 & 3.17\\
+2033 & 3.95 & 2.97 & 2.10 & 1.32 & 0.62 & 3.15 & 0.0 & 2.84 & 3.29\\
+2034 & 4.13 & 3.12 & 2.21 & 1.40 & 0.66 & 3.31 & 0.0 & 3.04 & 3.42\\
+2035 & 4.29 & 3.27 & 2.33 & 1.48 & 0.70 & 3.46 & 0.0 & 3.26 & 3.54\\
+2036 & 4.47 & 3.42 & 2.44 & 1.55 & 0.74 & 3.61 & 0.0 & 3.47 & 3.69\\
+2037 & 4.63 & 3.56 & 2.56 & 1.63 & 0.78 & 3.76 & 0.0 & 3.71 & 3.84\\
+2038 & 4.77 & 3.69 & 2.66 & 1.70 & 0.82 & 3.90 & 0.0 & 3.91 & 3.97\\
+2039 & 4.91 & 3.81 & 2.76 & 1.78 & 0.85 & 4.02 & 0.0 & 4.07 & 4.10\\
+2040 & 5.04 & 3.94 & 2.86 & 1.85 & 0.89 & 4.15 & 0.0 & 4.26 & 4.23\\
+2041 & 5.17 & 4.06 & 2.96 & 1.91 & 0.92 & 4.28 & 0.0 & 4.42 & 4.36\\
+2042 & 5.33 & 4.20 & 3.08 & 1.99 & 0.96 & 4.42 & 0.0 & 4.61 & 4.51\\
+2043 & 5.44 & 4.32 & 3.17 & 2.06 & 1.00 & 4.54 & 0.0 & 4.78 & 4.63\\
+2044 & 5.60 & 4.45 & 3.27 & 2.13 & 1.04 & 4.68 & 0.0 & 4.95 & 4.77\\
+2045 & 5.72 & 4.56 & 3.37 & 2.20 & 1.07 & 4.79 & 0.0 & 5.10 & 4.88\\
+2046 & 5.87 & 4.70 & 3.49 & 2.28 & 1.11 & 4.93 & 0.0 & 5.26 & 5.03\\
+2047 & 6.00 & 4.83 & 3.58 & 2.34 & 1.14 & 5.07 & 0.0 & 5.42 & 5.17\\
+2048 & 6.11 & 4.93 & 3.67 & 2.41 & 1.18 & 5.17 & 0.0 & 5.56 & 5.27\\
+2049 & 6.22 & 5.04 & 3.77 & 2.47 & 1.21 & 5.28 & 0.0 & 5.69 & 5.39\\
+2050 & 6.31 & 5.12 & 3.84 & 2.53 & 1.24 & 5.37 & 0.0 & 5.78 & 5.48\\
+2051 & 6.38 & 5.20 & 3.91 & 2.58 & 1.27 & 5.44 & 0.0 & 5.85 & 5.55\\
+2052 & 6.49 & 5.29 & 3.98 & 2.63 & 1.30 & 5.55 & 0.0 & 5.94 & 5.66\\
+2053 & 6.58 & 5.40 & 4.06 & 2.69 & 1.33 & 5.64 & 0.0 & 6.03 & 5.75\\
+2054 & 6.65 & 5.45 & 4.12 & 2.74 & 1.36 & 5.70 & 0.0 & 6.09 & 5.81\\
+2055 & 6.71 & 5.51 & 4.17 & 2.78 & 1.38 & 5.75 & 0.0 & 6.14 & 5.88\\
+2056 & 6.81 & 5.59 & 4.24 & 2.82 & 1.40 & 5.84 & 0.0 & 6.24 & 5.96\\
+2057 & 6.88 & 5.66 & 4.30 & 2.87 & 1.43 & 5.91 & 0.0 & 6.31 & 6.04\\
+2058 & 6.98 & 5.75 & 4.37 & 2.91 & 1.45 & 6.00 & 0.0 & 6.38 & 6.13\\
+2059 & 7.04 & 5.82 & 4.43 & 2.97 & 1.47 & 6.07 & 0.0 & 6.44 & 6.19\\
+2060 & 7.12 & 5.90 & 4.49 & 3.01 & 1.50 & 6.15 & 0.0 & 6.51 & 6.28\\
+2061 & 7.15 & 5.93 & 4.53 & 3.05 & 1.52 & 6.18 & 0.0 & 6.53 & 6.31\\
+2062 & 7.19 & 5.96 & 4.57 & 3.07 & 1.54 & 6.23 & 0.0 & 6.57 & 6.36\\
+2063 & 7.25 & 6.03 & 4.62 & 3.11 & 1.56 & 6.28 & 0.0 & 6.62 & 6.41\\
+2064 & 7.28 & 6.07 & 4.66 & 3.14 & 1.57 & 6.31 & 0.0 & 6.64 & 6.45\\
+2065 & 7.35 & 6.12 & 4.70 & 3.17 & 1.59 & 6.38 & 0.0 & 6.69 & 6.51\\
+2066 & 7.37 & 6.17 & 4.74 & 3.19 & 1.61 & 6.42 & 0.0 & 6.72 & 6.56\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -509,50 +507,49 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 2021 & 2.37 & 2.37 & 2.37 & 2.37 & 2.37 & 2.37 & 2.37 & 2.37 & 2.37\\
 2022 & 2.07 & 2.07 & 2.07 & 2.07 & 2.07 & 2.07 & 2.07 & 2.07 & 2.07\\
 2023 & 1.79 & 1.79 & 1.79 & 1.79 & 1.79 & 1.79 & 1.79 & 1.79 & 1.79\\
-2024 & 1.94 & 1.96 & 1.98 & 1.99 & 2.00 & 1.95 & 2.01 & 2.01 & 1.95\\
+2024 & 1.94 & 1.96 & 1.98 & 1.99 & 2.00 & 1.96 & 2.01 & 2.01 & 1.95\\
 2025 & 2.11 & 2.15 & 2.19 & 2.21 & 2.24 & 2.14 & 2.25 & 2.24 & 2.13\\
-2026 & 2.27 & 2.34 & 2.40 & 2.44 & 2.48 & 2.32 & 2.51 & 2.47 & 2.30\\
-2027 & 2.42 & 2.52 & 2.60 & 2.66 & 2.71 & 2.49 & 2.75 & 2.68 & 2.47\\
-2028 & 2.56 & 2.69 & 2.79 & 2.87 & 2.93 & 2.64 & 2.99 & 2.87 & 2.62\\
-2029 & 2.70 & 2.85 & 2.97 & 3.07 & 3.16 & 2.79 & 3.23 & 3.06 & 2.77\\
-2030 & 2.82 & 3.00 & 3.15 & 3.27 & 3.37 & 2.94 & 3.46 & 3.22 & 2.91\\
-2031 & 2.93 & 3.15 & 3.32 & 3.46 & 3.58 & 3.07 & 3.69 & 3.38 & 3.04\\
-2032 & 3.04 & 3.28 & 3.48 & 3.65 & 3.79 & 3.19 & 3.91 & 3.53 & 3.16\\
-2033 & 3.14 & 3.41 & 3.64 & 3.83 & 3.99 & 3.31 & 4.13 & 3.66 & 3.29\\
-2034 & 3.25 & 3.55 & 3.81 & 4.02 & 4.20 & 3.44 & 4.36 & 3.81 & 3.41\\
-2035 & 3.34 & 3.68 & 3.96 & 4.20 & 4.40 & 3.56 & 4.58 & 3.93 & 3.53\\
-2036 & 3.46 & 3.83 & 4.14 & 4.40 & 4.63 & 3.69 & 4.83 & 4.08 & 3.67\\
-2037 & 3.58 & 3.99 & 4.34 & 4.63 & 4.88 & 3.84 & 5.10 & 4.25 & 3.82\\
-2038 & 3.70 & 4.14 & 4.52 & 4.84 & 5.12 & 3.98 & 5.37 & 4.40 & 3.97\\
-2039 & 3.81 & 4.28 & 4.69 & 5.04 & 5.35 & 4.10 & 5.62 & 4.53 & 4.10\\
-2040 & 3.91 & 4.42 & 4.86 & 5.23 & 5.57 & 4.24 & 5.86 & 4.67 & 4.23\\
-2041 & 4.03 & 4.57 & 5.04 & 5.44 & 5.79 & 4.37 & 6.11 & 4.81 & 4.37\\
-2042 & 4.15 & 4.73 & 5.23 & 5.66 & 6.04 & 4.51 & 6.38 & 4.95 & 4.52\\
-2043 & 4.25 & 4.87 & 5.39 & 5.87 & 6.27 & 4.64 & 6.64 & 5.07 & 4.65\\
-2044 & 4.37 & 5.01 & 5.58 & 6.07 & 6.51 & 4.77 & 6.90 & 5.19 & 4.78\\
-2045 & 4.47 & 5.14 & 5.74 & 6.26 & 6.71 & 4.89 & 7.13 & 5.33 & 4.91\\
-2046 & 4.57 & 5.30 & 5.92 & 6.48 & 6.97 & 5.03 & 7.40 & 5.44 & 5.05\\
-2047 & 4.68 & 5.44 & 6.10 & 6.68 & 7.20 & 5.16 & 7.66 & 5.56 & 5.18\\
-2048 & 4.77 & 5.56 & 6.24 & 6.86 & 7.42 & 5.26 & 7.90 & 5.66 & 5.29\\
-2049 & 4.86 & 5.68 & 6.40 & 7.04 & 7.63 & 5.36 & 8.15 & 5.75 & 5.40\\
-2050 & 4.94 & 5.78 & 6.55 & 7.21 & 7.81 & 5.47 & 8.37 & 5.84 & 5.50\\
-2051 & 5.04 & 5.90 & 6.68 & 7.36 & 8.01 & 5.58 & 8.59 & 5.95 & 5.62\\
-2052 & 5.13 & 6.03 & 6.83 & 7.56 & 8.21 & 5.69 & 8.80 & 6.05 & 5.73\\
-2053 & 5.19 & 6.13 & 6.96 & 7.73 & 8.42 & 5.78 & 9.04 & 6.11 & 5.82\\
-2054 & 5.24 & 6.19 & 7.07 & 7.86 & 8.58 & 5.84 & 9.24 & 6.18 & 5.89\\
-2055 & 5.29 & 6.28 & 7.18 & 8.00 & 8.74 & 5.91 & 9.40 & 6.23 & 5.96\\
-2056 & 5.35 & 6.36 & 7.28 & 8.11 & 8.88 & 5.97 & 9.59 & 6.29 & 6.03\\
-2057 & 5.41 & 6.44 & 7.37 & 8.23 & 9.03 & 6.05 & 9.75 & 6.37 & 6.11\\
-2058 & 5.48 & 6.52 & 7.49 & 8.37 & 9.17 & 6.13 & 9.92 & 6.43 & 6.19\\
-2059 & 5.55 & 6.62 & 7.60 & 8.49 & 9.32 & 6.20 & 10.09 & 6.50 & 6.27\\
-2060 & 5.59 & 6.69 & 7.70 & 8.63 & 9.48 & 6.27 & 10.26 & 6.56 & 6.34\\
-2061 & 5.64 & 6.76 & 7.77 & 8.73 & 9.60 & 6.33 & 10.41 & 6.62 & 6.40\\
-2062 & 5.68 & 6.82 & 7.86 & 8.83 & 9.73 & 6.38 & 10.58 & 6.66 & 6.46\\
-2063 & 5.70 & 6.88 & 7.94 & 8.94 & 9.86 & 6.43 & 10.72 & 6.68 & 6.51\\
-2064 & 5.74 & 6.91 & 8.01 & 9.02 & 9.95 & 6.46 & 10.83 & 6.72 & 6.54\\
-2065 & 5.77 & 6.96 & 8.06 & 9.10 & 10.06 & 6.51 & 10.96 & 6.77 & 6.59\\
-2066 & 5.80 & 7.00 & 8.14 & 9.19 & 10.17 & 6.54 & 11.08 & 6.80 & 6.62\\
-2067 & 5.83 & 7.04 & 8.18 & 9.25 & 10.25 & 6.58 & 11.20 & 6.82 & 6.66\\*
+2026 & 2.27 & 2.34 & 2.40 & 2.44 & 2.48 & 2.33 & 2.51 & 2.47 & 2.30\\
+2027 & 2.43 & 2.53 & 2.60 & 2.67 & 2.72 & 2.51 & 2.76 & 2.69 & 2.47\\
+2028 & 2.57 & 2.69 & 2.79 & 2.87 & 2.94 & 2.67 & 3.00 & 2.88 & 2.63\\
+2029 & 2.69 & 2.85 & 2.97 & 3.07 & 3.15 & 2.82 & 3.23 & 3.05 & 2.77\\
+2030 & 2.82 & 3.00 & 3.15 & 3.27 & 3.38 & 2.97 & 3.46 & 3.22 & 2.91\\
+2031 & 2.92 & 3.14 & 3.32 & 3.46 & 3.58 & 3.10 & 3.69 & 3.37 & 3.03\\
+2032 & 3.04 & 3.29 & 3.49 & 3.65 & 3.79 & 3.25 & 3.92 & 3.53 & 3.17\\
+2033 & 3.14 & 3.41 & 3.64 & 3.83 & 3.99 & 3.37 & 4.13 & 3.66 & 3.29\\
+2034 & 3.25 & 3.55 & 3.81 & 4.02 & 4.20 & 3.50 & 4.36 & 3.81 & 3.42\\
+2035 & 3.35 & 3.69 & 3.97 & 4.21 & 4.42 & 3.63 & 4.59 & 3.95 & 3.54\\
+2036 & 3.48 & 3.84 & 4.15 & 4.41 & 4.63 & 3.77 & 4.83 & 4.10 & 3.69\\
+2037 & 3.60 & 4.00 & 4.34 & 4.63 & 4.88 & 3.93 & 5.10 & 4.27 & 3.84\\
+2038 & 3.71 & 4.15 & 4.52 & 4.84 & 5.12 & 4.07 & 5.37 & 4.41 & 3.97\\
+2039 & 3.82 & 4.28 & 4.69 & 5.05 & 5.35 & 4.20 & 5.62 & 4.54 & 4.10\\
+2040 & 3.92 & 4.43 & 4.86 & 5.25 & 5.59 & 4.34 & 5.88 & 4.67 & 4.23\\
+2041 & 4.02 & 4.56 & 5.03 & 5.44 & 5.80 & 4.47 & 6.11 & 4.80 & 4.36\\
+2042 & 4.15 & 4.72 & 5.22 & 5.66 & 6.04 & 4.61 & 6.38 & 4.94 & 4.51\\
+2043 & 4.23 & 4.86 & 5.39 & 5.86 & 6.27 & 4.74 & 6.64 & 5.06 & 4.63\\
+2044 & 4.36 & 5.00 & 5.56 & 6.06 & 6.51 & 4.88 & 6.90 & 5.19 & 4.77\\
+2045 & 4.45 & 5.13 & 5.72 & 6.24 & 6.71 & 5.00 & 7.13 & 5.32 & 4.88\\
+2046 & 4.57 & 5.28 & 5.92 & 6.47 & 6.95 & 5.15 & 7.38 & 5.44 & 5.03\\
+2047 & 4.67 & 5.43 & 6.08 & 6.66 & 7.17 & 5.29 & 7.64 & 5.55 & 5.17\\
+2048 & 4.75 & 5.54 & 6.23 & 6.86 & 7.40 & 5.39 & 7.90 & 5.64 & 5.27\\
+2049 & 4.84 & 5.67 & 6.40 & 7.03 & 7.60 & 5.52 & 8.13 & 5.73 & 5.39\\
+2050 & 4.91 & 5.76 & 6.52 & 7.19 & 7.79 & 5.60 & 8.35 & 5.80 & 5.48\\
+2051 & 4.96 & 5.84 & 6.64 & 7.34 & 7.97 & 5.68 & 8.55 & 5.88 & 5.55\\
+2052 & 5.05 & 5.95 & 6.75 & 7.48 & 8.14 & 5.79 & 8.73 & 5.96 & 5.66\\
+2053 & 5.12 & 6.07 & 6.89 & 7.65 & 8.32 & 5.89 & 8.95 & 6.04 & 5.75\\
+2054 & 5.17 & 6.13 & 7.00 & 7.78 & 8.49 & 5.95 & 9.14 & 6.09 & 5.81\\
+2055 & 5.22 & 6.19 & 7.08 & 7.91 & 8.68 & 6.01 & 9.35 & 6.15 & 5.88\\
+2056 & 5.30 & 6.29 & 7.20 & 8.02 & 8.78 & 6.10 & 9.50 & 6.25 & 5.96\\
+2057 & 5.35 & 6.36 & 7.30 & 8.16 & 8.95 & 6.17 & 9.68 & 6.31 & 6.04\\
+2058 & 5.43 & 6.46 & 7.42 & 8.27 & 9.07 & 6.27 & 9.83 & 6.39 & 6.13\\
+2059 & 5.47 & 6.54 & 7.53 & 8.43 & 9.25 & 6.34 & 10.01 & 6.44 & 6.19\\
+2060 & 5.54 & 6.63 & 7.63 & 8.56 & 9.40 & 6.43 & 10.19 & 6.51 & 6.28\\
+2061 & 5.56 & 6.66 & 7.70 & 8.66 & 9.54 & 6.45 & 10.34 & 6.53 & 6.31\\
+2062 & 5.59 & 6.70 & 7.76 & 8.74 & 9.64 & 6.51 & 10.47 & 6.57 & 6.36\\
+2063 & 5.64 & 6.77 & 7.84 & 8.83 & 9.74 & 6.55 & 10.60 & 6.62 & 6.41\\
+2064 & 5.66 & 6.82 & 7.90 & 8.92 & 9.87 & 6.60 & 10.74 & 6.64 & 6.45\\
+2065 & 5.71 & 6.88 & 7.98 & 9.00 & 9.96 & 6.66 & 10.85 & 6.69 & 6.51\\
+2066 & 5.73 & 6.94 & 8.04 & 9.07 & 10.07 & 6.71 & 10.98 & 6.72 & 6.56\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -583,46 +580,45 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 2025 & 0.30 & 0.31 & 0.31 & 0.32 & 0.32 & 0.31 & 0.32 & 0.32 & 0.30\\
 2026 & 0.33 & 0.34 & 0.35 & 0.36 & 0.36 & 0.34 & 0.37 & 0.36 & 0.34\\
 2027 & 0.36 & 0.38 & 0.39 & 0.40 & 0.41 & 0.37 & 0.41 & 0.40 & 0.37\\
-2028 & 0.39 & 0.41 & 0.42 & 0.44 & 0.45 & 0.40 & 0.46 & 0.44 & 0.40\\
-2029 & 0.41 & 0.44 & 0.46 & 0.47 & 0.49 & 0.43 & 0.50 & 0.47 & 0.42\\
+2028 & 0.39 & 0.41 & 0.42 & 0.44 & 0.45 & 0.41 & 0.46 & 0.44 & 0.40\\
+2029 & 0.41 & 0.44 & 0.46 & 0.48 & 0.49 & 0.43 & 0.50 & 0.47 & 0.43\\
 2030 & 0.44 & 0.47 & 0.49 & 0.51 & 0.53 & 0.46 & 0.54 & 0.50 & 0.45\\
-2031 & 0.46 & 0.50 & 0.53 & 0.55 & 0.57 & 0.48 & 0.59 & 0.54 & 0.48\\
-2032 & 0.48 & 0.53 & 0.56 & 0.59 & 0.61 & 0.51 & 0.63 & 0.57 & 0.51\\
-2033 & 0.51 & 0.55 & 0.59 & 0.63 & 0.65 & 0.54 & 0.68 & 0.60 & 0.53\\
-2034 & 0.53 & 0.58 & 0.63 & 0.66 & 0.70 & 0.56 & 0.72 & 0.63 & 0.56\\
-2035 & 0.55 & 0.61 & 0.66 & 0.70 & 0.74 & 0.59 & 0.77 & 0.66 & 0.59\\
-2036 & 0.57 & 0.64 & 0.70 & 0.74 & 0.78 & 0.62 & 0.82 & 0.68 & 0.61\\
-2037 & 0.60 & 0.67 & 0.73 & 0.78 & 0.82 & 0.64 & 0.86 & 0.71 & 0.64\\
-2038 & 0.62 & 0.70 & 0.76 & 0.82 & 0.87 & 0.67 & 0.91 & 0.74 & 0.66\\
-2039 & 0.64 & 0.72 & 0.79 & 0.86 & 0.91 & 0.69 & 0.96 & 0.77 & 0.69\\
-2040 & 0.66 & 0.75 & 0.82 & 0.89 & 0.95 & 0.71 & 1.01 & 0.79 & 0.71\\
-2041 & 0.67 & 0.77 & 0.85 & 0.93 & 0.99 & 0.73 & 1.05 & 0.81 & 0.73\\
-2042 & 0.69 & 0.80 & 0.89 & 0.96 & 1.03 & 0.76 & 1.09 & 0.84 & 0.76\\
-2043 & 0.71 & 0.82 & 0.92 & 1.00 & 1.08 & 0.78 & 1.14 & 0.86 & 0.78\\
-2044 & 0.73 & 0.85 & 0.95 & 1.04 & 1.12 & 0.80 & 1.19 & 0.88 & 0.81\\
-2045 & 0.75 & 0.87 & 0.98 & 1.08 & 1.16 & 0.83 & 1.24 & 0.90 & 0.83\\
-2046 & 0.77 & 0.90 & 1.01 & 1.11 & 1.20 & 0.85 & 1.28 & 0.93 & 0.85\\
-2047 & 0.79 & 0.92 & 1.04 & 1.15 & 1.24 & 0.87 & 1.33 & 0.95 & 0.88\\
-2048 & 0.81 & 0.95 & 1.07 & 1.18 & 1.28 & 0.90 & 1.37 & 0.97 & 0.90\\
-2049 & 0.82 & 0.97 & 1.10 & 1.22 & 1.32 & 0.91 & 1.42 & 0.98 & 0.92\\
-2050 & 0.84 & 0.99 & 1.13 & 1.25 & 1.36 & 0.93 & 1.46 & 1.00 & 0.94\\
-2051 & 0.85 & 1.01 & 1.15 & 1.28 & 1.40 & 0.95 & 1.50 & 1.02 & 0.96\\
-2052 & 0.87 & 1.03 & 1.17 & 1.31 & 1.43 & 0.97 & 1.54 & 1.03 & 0.98\\
-2053 & 0.88 & 1.05 & 1.20 & 1.34 & 1.47 & 0.99 & 1.58 & 1.05 & 1.00\\
-2054 & 0.89 & 1.07 & 1.23 & 1.37 & 1.50 & 1.00 & 1.62 & 1.06 & 1.01\\
-2055 & 0.90 & 1.08 & 1.25 & 1.39 & 1.53 & 1.01 & 1.66 & 1.07 & 1.02\\
-2056 & 0.91 & 1.09 & 1.26 & 1.42 & 1.56 & 1.03 & 1.69 & 1.08 & 1.04\\
-2057 & 0.92 & 1.11 & 1.28 & 1.44 & 1.59 & 1.04 & 1.72 & 1.09 & 1.05\\
-2058 & 0.93 & 1.12 & 1.30 & 1.46 & 1.61 & 1.05 & 1.75 & 1.11 & 1.06\\
-2059 & 0.94 & 1.14 & 1.32 & 1.48 & 1.64 & 1.06 & 1.78 & 1.12 & 1.08\\
-2060 & 0.95 & 1.15 & 1.34 & 1.51 & 1.66 & 1.08 & 1.81 & 1.13 & 1.09\\
-2061 & 0.96 & 1.17 & 1.36 & 1.53 & 1.69 & 1.09 & 1.84 & 1.14 & 1.10\\
-2062 & 0.97 & 1.18 & 1.37 & 1.55 & 1.71 & 1.10 & 1.87 & 1.15 & 1.11\\
-2063 & 0.98 & 1.19 & 1.39 & 1.57 & 1.74 & 1.11 & 1.90 & 1.16 & 1.12\\
-2064 & 0.98 & 1.20 & 1.40 & 1.58 & 1.76 & 1.11 & 1.92 & 1.16 & 1.13\\
-2065 & 0.99 & 1.20 & 1.41 & 1.60 & 1.78 & 1.12 & 1.94 & 1.17 & 1.14\\
-2066 & 1.00 & 1.21 & 1.42 & 1.62 & 1.80 & 1.13 & 1.97 & 1.18 & 1.15\\
-2067 & 1.00 & 1.22 & 1.43 & 1.63 & 1.81 & 1.14 & 1.99 & 1.18 & 1.15\\*
+2031 & 0.46 & 0.50 & 0.53 & 0.55 & 0.57 & 0.49 & 0.59 & 0.54 & 0.48\\
+2032 & 0.48 & 0.53 & 0.56 & 0.59 & 0.61 & 0.52 & 0.63 & 0.57 & 0.51\\
+2033 & 0.51 & 0.56 & 0.59 & 0.63 & 0.66 & 0.55 & 0.68 & 0.60 & 0.53\\
+2034 & 0.53 & 0.58 & 0.63 & 0.66 & 0.70 & 0.57 & 0.72 & 0.63 & 0.56\\
+2035 & 0.55 & 0.61 & 0.66 & 0.70 & 0.74 & 0.60 & 0.77 & 0.66 & 0.59\\
+2036 & 0.57 & 0.64 & 0.70 & 0.74 & 0.78 & 0.63 & 0.82 & 0.68 & 0.61\\
+2037 & 0.60 & 0.67 & 0.73 & 0.78 & 0.83 & 0.66 & 0.87 & 0.71 & 0.64\\
+2038 & 0.62 & 0.70 & 0.76 & 0.82 & 0.87 & 0.68 & 0.91 & 0.74 & 0.67\\
+2039 & 0.64 & 0.72 & 0.80 & 0.86 & 0.91 & 0.71 & 0.96 & 0.77 & 0.69\\
+2040 & 0.65 & 0.75 & 0.82 & 0.89 & 0.95 & 0.73 & 1.01 & 0.79 & 0.71\\
+2041 & 0.67 & 0.77 & 0.85 & 0.93 & 0.99 & 0.75 & 1.05 & 0.81 & 0.73\\
+2042 & 0.69 & 0.79 & 0.88 & 0.96 & 1.03 & 0.78 & 1.09 & 0.83 & 0.76\\
+2043 & 0.71 & 0.82 & 0.92 & 1.00 & 1.08 & 0.80 & 1.14 & 0.85 & 0.78\\
+2044 & 0.72 & 0.84 & 0.95 & 1.04 & 1.12 & 0.82 & 1.19 & 0.88 & 0.80\\
+2045 & 0.74 & 0.87 & 0.98 & 1.07 & 1.16 & 0.84 & 1.23 & 0.90 & 0.82\\
+2046 & 0.76 & 0.89 & 1.00 & 1.10 & 1.19 & 0.87 & 1.28 & 0.92 & 0.84\\
+2047 & 0.78 & 0.91 & 1.03 & 1.14 & 1.23 & 0.89 & 1.32 & 0.93 & 0.87\\
+2048 & 0.80 & 0.94 & 1.06 & 1.17 & 1.28 & 0.91 & 1.37 & 0.95 & 0.89\\
+2049 & 0.81 & 0.96 & 1.09 & 1.21 & 1.31 & 0.93 & 1.41 & 0.97 & 0.91\\
+2050 & 0.83 & 0.98 & 1.11 & 1.24 & 1.35 & 0.95 & 1.45 & 0.99 & 0.93\\
+2051 & 0.84 & 0.99 & 1.14 & 1.27 & 1.38 & 0.96 & 1.49 & 1.00 & 0.94\\
+2052 & 0.85 & 1.01 & 1.16 & 1.29 & 1.41 & 0.98 & 1.52 & 1.01 & 0.96\\
+2053 & 0.86 & 1.03 & 1.18 & 1.32 & 1.44 & 1.00 & 1.56 & 1.03 & 0.97\\
+2054 & 0.87 & 1.04 & 1.20 & 1.34 & 1.47 & 1.01 & 1.59 & 1.04 & 0.98\\
+2055 & 0.88 & 1.06 & 1.22 & 1.37 & 1.50 & 1.02 & 1.62 & 1.05 & 1.00\\
+2056 & 0.89 & 1.07 & 1.24 & 1.39 & 1.54 & 1.04 & 1.66 & 1.06 & 1.01\\
+2057 & 0.90 & 1.09 & 1.26 & 1.41 & 1.56 & 1.05 & 1.70 & 1.08 & 1.03\\
+2058 & 0.91 & 1.10 & 1.28 & 1.44 & 1.59 & 1.07 & 1.73 & 1.09 & 1.04\\
+2059 & 0.93 & 1.12 & 1.29 & 1.46 & 1.61 & 1.08 & 1.75 & 1.10 & 1.06\\
+2060 & 0.93 & 1.14 & 1.31 & 1.48 & 1.64 & 1.10 & 1.79 & 1.11 & 1.07\\
+2061 & 0.94 & 1.15 & 1.33 & 1.50 & 1.67 & 1.10 & 1.82 & 1.12 & 1.08\\
+2062 & 0.95 & 1.16 & 1.35 & 1.52 & 1.69 & 1.11 & 1.85 & 1.13 & 1.09\\
+2063 & 0.96 & 1.16 & 1.36 & 1.54 & 1.71 & 1.12 & 1.87 & 1.14 & 1.10\\
+2064 & 0.96 & 1.17 & 1.37 & 1.56 & 1.73 & 1.13 & 1.89 & 1.15 & 1.11\\
+2065 & 0.97 & 1.18 & 1.38 & 1.58 & 1.75 & 1.14 & 1.92 & 1.15 & 1.12\\
+2066 & 0.98 & 1.20 & 1.40 & 1.59 & 1.77 & 1.16 & 1.94 & 1.16 & 1.13\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
