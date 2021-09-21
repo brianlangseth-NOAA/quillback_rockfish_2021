@@ -18,25 +18,6 @@
 #' @export
 #'
 
-col_names <- c("Sex","Length","Age")
-many_data <- out_age[out_age$State != "CA" & !is.na(out_age$Age),col_names]
-many_data <- many_data[-c(142,143),]
-few_data <- rbind(out_ca[,col_names],postssc[,col_names],mopup[,col_names])
-nsim = 10
-linf = 40
-l0 = 10
-k = 0.1
-
-sim <- growth_sim(many_data,few_data,nsim = 10, linf = 40, l0 = 10, k = 0.1)
-
-
-agemat = matrix(rep(sim$Ages,10),nrow = length(sim$Ages),ncol=10)
-matplot(agemat,t(sim$Lengths))
-plot(agemat,t(sim$Lengths),xlim=c(0,90),ylim=c(0,50))
-points(few_data$Age,few_data$Length,col=2,pch=19)
-
-
-
 growth_sim <- function(many_data, few_data, nsim, linf, l0, k){
   
   #GENERATE DATA
@@ -60,7 +41,7 @@ growth_sim <- function(many_data, few_data, nsim, linf, l0, k){
       }
       #If no age in manay data, and age is large (greater than 40), sample lengths from ages five-years to the left and right
       if(few_data[i,"Age"] > 40){
-        sim_results$Lengths[,i] <- sample(x = many_data[which(many_data$Age %in% c((few_data[i,"Age"]-5):(few_data[i,"Age"]+5))),"Length"], 
+        sim_results$Lengths[,i] <- sample(x = many_data[which(many_data$Age %in% c((few_data[i,"Age"]-1):(few_data[i,"Age"]+1))),"Length"], 
                                           nsim, replace = TRUE)
       }
     }
@@ -73,6 +54,8 @@ growth_sim <- function(many_data, few_data, nsim, linf, l0, k){
   
   return(sim_results)
 }
+
+
   
 
  
