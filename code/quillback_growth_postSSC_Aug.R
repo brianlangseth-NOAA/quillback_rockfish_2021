@@ -4,10 +4,11 @@
 #tables for number of data entries
 #
 #Uses updated data for 2020 (and other years) in Feb 2021
+#Updates recent data even more in July/Aug 2021
 #
 #Author: Brian Langseth, Chantel Wetzel
 #
-#Updated: 2/26/2020
+#Updated: 8/15/2020
 #########################################
 
 library(dataModerate2021)
