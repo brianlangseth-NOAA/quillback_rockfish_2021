@@ -1,0 +1,160 @@
+---
+title: "Quillback rockfish: Updated growth analysis based on new otolith reads for California"
+author: "Brian J. Langseth"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output: pdf_document
+bibliography: mopup.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(readxl)
+library(sa4ss)
+library(tidyr)
+data_dir = "L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data"
+mod_dir = "C:\\Users\\Brian.Langseth\\Desktop\\ca"
+```
+
+This report is a continuation of growth analyses presented at the Groundfish Subcommittee's (GFSC) August 17, 2021 meeting. New material includes 48 otoliths that were aged between the August 17 meeting and the mop-up panel to be held on September 29-30, 2021.     
+
+# Additional otolith reads
+
+Otoliths were provided from 48 CCFRP samples of quillback rockfish, sampled near the Farallon Islands, and sent to the Northwest Fisheries Science Center's (NWFSC) aging lab in Newport, Oregon. These data were added to the set of 74 recently aged California otoliths, which include 35 quillback rockfish collected from the commercial (N = 6) and recreational (N = 29) fisheries, sampled nearly exclusively from Crescent City, California, and 39 quillback rockfish from port sampling provided by Southwest Fisheries Science Center (SWFSC) staff. There are 123 otoliths from the Abrams collection housed at the SWFSC that have not been aged. Updated tables for the number of otoliths by year (Table \ref{tab:age-year}) and by length bin (Table \ref{tab:age-bins}) are provided. These tables include the numbers at length from the Abrams collection, and show similar sized fish compared to those sources aged.
+
+```{r, echo = FALSE}
+agelen <- read.csv("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data\\mopup_data\\age_metadata_mopup.csv", header = TRUE)
+agelen$length_cm = agelen$FL..mm./10
+agelen$bins = 2 * floor(agelen$length_cm/2)
+#By year
+agelen_year <- aggregate(length_cm ~ Year + Source, data = agelen, length)
+agelen_year_wide <- spread(agelen_year, Source, length_cm)
+agelen_year_wide[is.na(agelen_year_wide)] <- 0
+#By bin
+agelen_bin <- aggregate(length_cm ~ bins + Source, data = agelen, length)
+agelen_bin_wide <- spread(agelen_bin, Source, length_cm)
+agelen_bin_wide[is.na(agelen_bin_wide)] <- 0
+
+colnames_year <- c("Year", "Abrams", "CCFRP", "CDFW Comm.", "CDFW Rec.", "SWFSC boxes", "SWFSC trays")
+
+tyear = table_format(x = agelen_year_wide,
+                 caption = 'Number of new California otoliths available by year and source.',
+                 label = 'age-year',
+                 longtable = TRUE,
+                 font_size = 9,
+                 col_names = colnames_year)
+
+kableExtra::save_kable(tyear, file = file.path("U:\\Stock assessments\\quillback_rockfish_2021\\write_up\\postSSC_responses\\MopUp_response", "age_year_table.tex"))
+
+colnames_bins <- c("Length bins (cm)", "Abrams", "CCFRP", "CDFW Comm.", "CDFW Rec.", "SWFSC boxes", "SWFSC trays")
+
+tbin = table_format(x = agelen_bin_wide,
+                 caption = 'Number of new California otoliths available by length bin and source. Structures are not available for all modeled length bins.',
+                 label = 'age-bins',
+                 longtable = TRUE,
+                 font_size = 9,
+                 col_names = colnames_bins)
+
+kableExtra::save_kable(tbin, file = file.path("U:\\Stock assessments\\quillback_rockfish_2021\\write_up\\postSSC_responses\\MopUp_response", "age_bins_table.tex"))
+```
+
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/age_year_table.tex}
+
+\newpage
+
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/age_bins_table.tex}
+
+Length and age from the new samples were overlaid onto length and age from samples used in the quillback rockfish stock assessment (Langseth et al. -@Langseth_status_2021) along with length and age from samples aged prior to, and presented during, the GFSC's August 17, 2021 meeting. Twenty-one samples from California were already available from the West Coast Groundfish Bottom Trawl Survey (WCGBTS) and were included within the growth curve used for the stock assessment (red circles in Figure \ref{fig:length-age}). Of these samples, only 2 were less than 5 years, and none over 40 years. The age range of the 122 new California samples is 4 - 51, with one age 4 sample, and two samples over 40 years (41 and 51). The lengths-at-age of the new samples are within the ranges of the lengths-at-age of the existing samples, but are smaller on average than the lengths-at-age of the existing samples through approximately age 25. Smaller lengths-at-age are consistent with a slower growth curve (i.e. lower $K$) as well as a truncated population caused by intensive fishing pressure removing faster growing fish (Berkeley et al. -@berkeleyetal_truncation_2004), and approximately two-thirds of the new samples were collected since 2017. 
+
+The growth curves estimated from the California data differ depending on the sources used. The 21 California samples from the WCGBTS have larger lengths at age than other California samples through age 25, but are too sparse to estimate a reliable growth curve (red line Figure \ref{fig:growth-curve}). Similarly, the new 122 samples lack young fish to estimate a reasonable growth curve on their own with only 1 sample less than 5 years old; the resulting curve produces unrealistic estimates for all parameters (green line in Figure \ref{fig:growth-curve}). In combination, the curve resulting from the 143 total samples for California (pink line in Figure \ref{fig:growth-curve}) falls between the curves from the California WCGBTS data and from the new California data, as would be expected, and suggests a different estimate of $L0$ and $K$ than used for the stock assessment, but similar $L_{\infty}$. However, this curve is highly reliant on the two youngest age samples, which if removed results in unreasonable estimates for all parameters, though estimates are less extreme than when removing all 21 WCGBTS samples from California. The paucity of young California fish to inform $K$ and $L0$ suggests the data are inconclusive at this time to robustly estimate a separate California-specific growth curve. When adding the 122 new samples to the 1366 existing length and age samples (of which 1005 are from Oregon and 340 are from Washington), the growth curve is similar to the estimated curve from the stock assessment; $L_{\infty}$ = 43.01 cm and $K$ = 0.190 when combined, compared to $L_{\infty}$ = 43.04 cm and $K$ = 0.199 from the stock assessment.
+
+A table (Table \ref{tab:params}) showing parameters estimates for the curves described above and those explorations described below is provided at the end of the document. 
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(data_dir, "mopup_data", "comb_LA_data.png"), 
+caption = "Length-age data for quillback rockfish. Black and red circles indicate samples used in the stock assessment report that are from Oregon and Washington (black) and California (red). Blue and yellow circles indicate new California samples aged for the August 17 GFSC meeting (blue) and for the mopup meeting (yellow)",
+label = 'length-age')
+```
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(data_dir, "mopup_data", "comb_LA_data_withFit3.png"), 
+caption = "Length-age data (circles) for quillback rockfish alongwith estimated growth curves (lines). Black and red circles indicate samples used in the stock assessment report that are from Oregon and Washington (black) and California (red). Blue and yellow circles indicate new California samples aged for the August 17 GFSC meeting (blue) and for the mopup meeting (yellow). The gray line is the growth curve from data (red and black) used in the stock assessment. The pink line is the growth curve from California data (red, blue, and yellow), while the green line is the growth curve from the new data (blue and yellow). Blue, red, and yellow lines are based on the similarly colored data points",
+label = 'growth-curve')
+```
+
+\newpage
+
+# Additional considerations
+
+Additional explorations, apart from the new growth data and newly estimated growth curves, do not strongly support that the estimated California growth curve is robust. First, the lower $K$ and $L0$ values for California are within ranges estimated in the literature (after converting $L0$ to $t_0$), where $K$ values were lower than the original growth curve estimate of 0.199. This indicates the estimated values from the California curves are not unrealistic provided the youngest two ages are included. Literature values were highly variable. Although there are studies with low $t_0$ values (e.g. those in Love et al. -@loveetal_2002), those studies do not include data points along with their curves, so there is no way to know whether such estimates are based on samples with sufficient numbers of young fish. Other studies that seems to be the basis for those in Love et al. -@loveetal_2002 indicate that ages for the smaller fish are missing (Yamanaka and Lacko -@YamanakaandLacko_rockfish_2001, West et al. -@Westetal_2014).
+
+Second, the stock assessment report includes a sensitivity with $L_{\infty}$ and $K$ internally estimated from the available length data within the model, and had a smaller $K$ value than the base model. Overlaying the model-estimated curve to the curve from the California data show similarities in growth for fish around 10 years and older (Figure \ref{fig:sens-compare}). Comparing these curves is highly questionable and should not be used to support a growth curve. No age data were used within the stock assessment model to inform an internal estimate of $K$. It is not typical to internally estimate growth based solely on length data. Rather, age data, and ideally conditional age-at-length data, should be used when internally estimating growth. An example to show that using an internally estimated growth curve as support for an externally estimated growth curve can be questionable is the stock assessment report for Oregon, which also included a sensitivity with $L_{\infty}$ and $K$ internally estimated (Langseth et al. -@Langseth_ORstatus_2021). The Oregon model-estimated curve was similar to the California model-estimated curve (dashed green line in Figure \ref{fig:sens-compare}), and also differs from the externally estimated growth curve, where Oregon data constituted 74% of the age samples.  
+
+Third, the sensitivity with internally estimated growth used a fixed $L1$, which was the parameterization used for the stock synthesis stock assessment model. Fixing $L1$ to the estimate from the growth curve used in the stock assessment, which is in and of itself not ideal, and estimating a California growth curve results in $K$ functionally being fixed, and a value of $L_{\infty}$ = 40.2 cm. This curve is unreasonable given that among the California data, 40.2 cm is smaller than all but two of the fifteen fish greater than 25 years old. This also highlights the tradeoff between estimates of $K$ and $L0$ with estimates of $L_{\infty}$ given limited samples of young and old fish.       
+
+Fourth, as was the case for removing the California WCGBTS data in its entirity, the removal of the WCGBTS data, which is the only source of quillback rockfish under 5 years old among the data used in the assessment, changes the estimates of the growth curve to $K$ = 0.14 and $L_{\infty}$ = 44.2. Removing only the WCGBTS samples less than 5 years old while keeping samples from older fish resulted in less change ($K$ = 0.18 and $L_{\infty}$ = 43.3) suggesting a curve without young fish can be reasonably similar to when they are included. However, samples of young fish were clearly needed for the California data, where overall sample sizes were much smaller. Although removing just the two youngest fish among California data, which were sampled from the WCGBTS, resulted in less extreme estimates than when removing all California WCGBTS data, the estimates were still unreasonable.   
+
+\newpage
+```{r, echo = FALSE}
+parms <- read.csv("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data\\mopup_data\\parameter_estimates.csv", header = TRUE)
+
+colnames_year <- c("Description", "Linf (cm)", "L0 (cm)", "K", "Location in report")
+
+report_loc <- c("gray line",
+                "violet line",
+                "red line",
+                "light blue line",
+                "yellow line",
+                "green line - Fig 2",
+                "text",
+                "blue line - Fig 3",
+                "green line - Fig 3",
+                "text",
+                "text",
+                "text",
+                "text")
+
+tyear = table_format(x = cbind(parms,report_loc),
+                 caption = 'Growth curve parameters from the various explorations described in this report. The "OR model estimated" curve reflects a converged run and differs slightly from the values shown in the sensitivity table in the draft Oregon stock assessment report.',
+                 label = 'params',
+                 longtable = TRUE,
+                 font_size = 9,
+                 col_names = colnames_year,
+                 digits = c(0,2,2,3,0),
+                 custom_width = TRUE,
+                 col_to_adjust = 5,
+                 width = '4cm')
+
+kableExtra::save_kable(tyear, file = file.path("U:\\Stock assessments\\quillback_rockfish_2021\\write_up\\postSSC_responses\\MopUp_response", "growth_parameters.tex"))
+```
+
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/growth_parameters.tex}
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path(data_dir, "mopup_data", "orig_LA_data_sensitvity values.png"), 
+caption = "Length-age data for quillback rockfish and estimated growth curves external to the model (gray line), based on new and existing California data (pink line), and internal to the California model (blue line) and Oregon model (green dashed line) for L infinity and K",
+label = 'sens-compare')
+```
+
+\newpage
+
+# Conclusion
+
+Given the aforementioned reasons, my conclusion is that the current California data are insufficient to robustly estimate a separate California-specific length-age relationship given the limited sample size of young quillback rockfish from California. The explorations described herein represent an extensive effort to explore the data in depth, and consider multiple avenues of exploration. It is possible that more data would support a growth pattern in California that is similar to that shown by the existing data and thereby different than Oregon/Washington, but current data are too sparse to reliably estimate such a curve at this time. More data, particularly of young and old fish, are needed to be able to robustly estimate a California-specific growth curve and confirm whether growth of quillback rockfish differs between California and Washington and Oregon.
+
+# Acknowledgements
+
+I would like to thank Melissa Monk and John Field from the SWFSC who helped identify otoliths available for ageing from SWFSC collections. Thank you to Traci Larinto (California Department of Fish and Wildlife - CDFW) who provided the various samples from commercial data collection programs and John Budrick (CDFW) for coordinating with Rick Starr who provided otoliths collected by CCFRP. Thank you to Patrick McDonald and Jamie Hale who read all quillback rockfish otoliths within short time windows, and for Jason Cope (NWFSC) for discussions about the analyses described here.  
+
+\newpage
+
+# References
+<!-- If you want to references to appear somewhere before the end, add: -->
+<div id="refs"></div>
+
