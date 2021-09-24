@@ -272,6 +272,30 @@ lines(0:75, vb_fn(age = 0:75, Linf = mopup_ests["all"][[1]][1], L0 = mopup_ests[
       col = 7, lty = 1, lwd = 3)
 dev.off()
 
+png(filename = paste0(dir, "/data/mopup_data/", "comb_LA_data_withFit1.png"), height = 4, width = 6,
+    res = 300, units = "in")
+plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55))
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
+      col = "lightgray", lty = 1, lwd = 3)
+points(postssc$Age, postssc$Length, col = 5, pch = 19)
+points(out_ca$Age, out_ca$Length, col = "red", pch = 19)
+points(mopup$Age, mopup$Length, col = 7, pch = 19)
+legend("bottomright", c("Original", "Original CA data", "New CA data - Aug", "New CA data - mopup",
+                        "CA comb. fit - Mopup"), 
+       lty = 1, col = c(1, "red", 5, 7, "violet"), pch = c(1,19,19,19,19), ncol = 1, text.col = "white")
+legend("bottomright", c("Original", "Original CA data", "New CA data - Aug", "New CA data - mopup",
+                        "CA comb. fit - Mopup"), 
+       lty = 1, col = c("lightgray", "red", 5, 7, "violet"), pch = NA, ncol = 1, bg = NA)
+lines(0:75, vb_fn(age = 0:75, Linf = la_ca_ests["all"][[1]][1], L0 = la_ca_ests["all"][[1]][2], k = la_ca_ests["all"][[1]][3]), 
+      col = "red", lty = 1, lwd = 2)
+lines(0:75, vb_fn(age = 0:75, Linf = postssc_ests["all"][[1]][1], L0 = postssc_ests["all"][[1]][2], k = postssc_ests["all"][[1]][3]), 
+      col = 5, lty = 1, lwd = 3)
+lines(0:75, vb_fn(age = 0:75, Linf = mopup_ests["all"][[1]][1], L0 = mopup_ests["all"][[1]][2], k = mopup_ests["all"][[1]][3]), 
+      col = 7, lty = 1, lwd = 3)
+lines(0:75, vb_fn(age = 0:75, Linf = ca_comb_mopup_ests["all"][[1]][1], L0 = ca_comb_mopup_ests["all"][[1]][2], k = ca_comb_mopup_ests["all"][[1]][3]), 
+      col = "violet", lty = 1, lwd = 3)
+dev.off()
+
 png(filename = paste0(dir, "/data/mopup_data/", "comb_LA_data_withFit2.png"), height = 4, width = 6,
     res = 300, units = "in")
 plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55))
@@ -330,6 +354,30 @@ lines(0:75, vb_fn(age = 0:75, Linf = ca_comb_mopup_ests["all"][[1]][1], L0 = ca_
 dev.off()
 
 
+png(filename = paste0(dir, "/data/mopup_data/", "comb_LA_data_withFit4.png"), height = 4, width = 6,
+    res = 300, units = "in")
+plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55))
+lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
+      col = "lightgray", lty = 1, lwd = 3)
+#New postSSC all
+points(postssc$Age, postssc$Length, col = 5, pch = 19)
+#Just CA all
+points(out_ca$Age, out_ca$Length, col = "red", pch = 19)
+#Mopup
+points(mopup$Age, mopup$Length, col = 7, pch = 19)
+legend("bottomright", c("Original", "Original CA data", "New CA data - Aug", "New CA data - mopup", 
+                        "CA comb. fit - Mopup", "No youngest 2"), 
+       lty = c(1,NA,NA,NA,1,2), col = c(1, "red", 5, 7, "violet", "purple"), pch = c(1,19,19,19,NA,NA), text.col = "white")
+legend("bottomright", c("Original", "Original CA data", "New CA data - Aug", "New CA data - mopup",
+                        "CA comb. fit - Mopup", "No youngest 2"), 
+       lty = c(1,NA,NA,NA,1,2), pch = NA, col = c("lightgray", "red", 5, 7, "violet", "purple"), bg = NA)
+lines(0:75, vb_fn(age = 0:75, Linf = ca_comb_mopup_ests["all"][[1]][1], L0 = ca_comb_mopup_ests["all"][[1]][2], k = ca_comb_mopup_ests["all"][[1]][3]), 
+      col = "violet", lty = 1, lwd = 3)
+lines(0:75, vb_fn(age = 0:75, Linf = ca_mopup_ests_noyoung["all"][[1]][1], L0 = ca_mopup_ests_noyoung["all"][[1]][2], k = ca_mopup_ests_noyoung["all"][[1]][3]), 
+      col = "purple", lty = 2, lwd = 3)
+dev.off()
+
+
 png(filename = paste0(dir, "/data/mopup_data/", "comb_LA_data_All.png"), height = 4, width = 6,
     res = 300, units = "in")
 plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55))
@@ -376,9 +424,9 @@ dev.off()
 
 
 #Original all-data all-sex compared to model and new estimates
-png(filename = paste0(dir, "/data/mopup_data/", "orig_LA_data_sensitvity values.png"), height = 4, width = 6,
+png(filename = paste0(dir, "/data/mopup_data/", "orig_LA_data_sensitvity values1.png"), height = 4, width = 6,
     res = 300, units = "in")
-plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55))
+plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55), type="n")
 lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
       col = "lightgray", lty = 1, lwd = 3)
 lines(0:75, vb_fn(age = 0:75, Linf = 43.02, L0 = 2.96, k = 0.141), #Update L0 from previous plots. Need to change because have different K and Linf (L1 is the same) 
@@ -393,11 +441,11 @@ dev.off()
 
 
 #Original all-data all-sex compared to model and new estimates
-png(filename = paste0(dir, "/data/mopup_data/", "orig_LA_data_sensitvity values.png"), height = 4, width = 6,
+png(filename = paste0(dir, "/data/mopup_data/", "orig_LA_data_sensitvity values2.png"), height = 4, width = 6,
     res = 300, units = "in")
 plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55), type = "n")
 lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
-      col = "darkgray", lty = 1, lwd = 3)
+      col = "lightgray", lty = 1, lwd = 3)
 lines(0:75, vb_fn(age = 0:75, Linf = 43.02, L0 = 2.96, k = 0.141), #Update L0 from previous plots. Need to change because have different K and Linf (L1 is the same) 
       col = 4, lty = 1, lwd = 3)
 #lines(0:75, vb_fn(age = 0:75, Linf = 42.085, L0 = -0.094, k = 0.199), #Linf curve
@@ -411,7 +459,7 @@ lines(0:75, vb_fn(age = 0:75, Linf = ca_comb_mopup_ests["all"][[1]][1], L0 = ca_
 lines(0:75, vb_fn(age = 0:75, Linf = 44.5, L0 = 3.17, k = 0.1305), #Internally estimated curve from Oregon sens
       col = 3, lty = 2, lwd = 3)
 legend("bottomright", c("Original", "CA model est Linf, K", "CA data", "OR model est. Linf, K"), 
-       lty = c(1,1,1,2), col = c("darkgray", 4, "violet", 3))
+       lty = c(1,1,1,2), col = c("lightgray", 4, "violet", 3))
 dev.off()
 
 
@@ -444,7 +492,7 @@ vb_opt_fn_L0fixed <- function(x, age, lengths) {
 data_t0fixed = rbind(out_ca[,col_names],postssc[,col_names],mopup[,col_names]) 
 t0fixed = optim(c(40, 0.1), vb_opt_fn_L0fixed, age = data_t0fixed$Age, lengths = data_t0fixed$Length)$par
 
-png(filename = paste0(dir, "/data/mopup_data/", "orig_LA_data_L0Fixed.png"), height = 4, width = 6,
+png(filename = paste0(dir, "/data/mopup_data/", "orig_LA_data_L1Fixed.png"), height = 4, width = 6,
     res = 300, units = "in")
 plot(temp$Age,temp$Length, xlab = "Age", ylab = "Length (cm)", ylim = c(0,55))
 lines(0:75, vb_fn(age = 0:75, Linf = la_ests["all"][[1]][1], L0 = la_ests["all"][[1]][2], k = la_ests["all"][[1]][3]), 
@@ -457,12 +505,12 @@ lines(0:75, vb_fn(age = 0:75, Linf = ca_comb_mopup_ests["all"][[1]][1], L0 = ca_
 lines(0:75, vb_fn(age = 0:75, Linf = t0fixed[1], L0 = 0.59, k = t0fixed[2]), 
       col = "violet", lty = 2, lwd = 3)
 legend("bottomright", c("Original", "Original CA data", "New CA data - Aug", "New CA data - mopup",
-                        "CA data", "CA data - t0 fixed"), 
+                        "CA data", "CA data - L1 fixed"), 
        lty = c(1,NA,NA,NA,1,2), col = c(1, "red", 5, 7, "violet", "violet"), pch = c(1,19,19,19,NA,NA), 
        text.col = "white")
 legend("bottomright", c("Original", "Original CA data", "New CA data - Aug", "New CA data - mopup",
-                        "CA data", "CA data - t0 fixed"), 
-       lty = c(1,NA,NA,NA,1,1), col = c("lightgray", "red", 5, 7, "violet", "violet"), pch = NA, bg = NA)
+                        "CA data", "CA data - L1 fixed"), 
+       lty = c(1,NA,NA,NA,1,2), col = c("lightgray", "red", 5, 7, "violet", "violet"), pch = NA, bg = NA)
 dev.off()
 
 
