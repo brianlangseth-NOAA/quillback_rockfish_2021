@@ -101,16 +101,19 @@ com_agg_byarea = aggregate(com_2020$ROUND_WEIGHT_MTONS, list(year = com_2020$LAN
 
 #Now add discard rates to commercial data------------
 #Take mean of 2002 to 2018 (since 2019 showed increases due to changes in regulation).
-source("U:/Stock assessments/quillback_rockfish_2021/code/quillback_discard_exploration.R") #This changes dir
+#source("U:/Stock assessments/quillback_rockfish_2021/code/quillback_discard_exploration.R") #This changes dir
+source("U:/Stock assessments/quillback_rockfish_2021/code/quillback_discard_exploration_north_south_4010.R") #This changes dir
 #Need to aggregate over areas to calculate discard rate
 com_agg = aggregate(com_2020$ROUND_WEIGHT_MTONS, list(year = com_2020$LANDING_YEAR, state = com_2020$AGENCY_CODE), FUN = sum, drop = FALSE, na.rm = TRUE)
 ca_com_discard_rate = 1 + mean(dead[dead$Year %in% c(2002:2018), "ca"] / 
   (dead[dead$Year %in% c(2002:2018), "ca"] + com_agg[com_agg$year %in% c(2002:2018),"x"]))
+#Im keeping the overall CA discard rate (it only applies to 2020)
 
 #Add discards to landings - Right now applying historical discard rate to 2020
 com_mort_byarea = com_agg_byarea
-com_mort_byarea[!com_mort_byarea$year %in% dead$Year, "x"] = com_mort_byarea[!com_mort_byarea$year %in% dead$Year,"x"] * ca_com_discard_rate
-com_mort_byarea[com_mort_byarea$year %in% dead$Year, "x"] = com_mort_byarea[com_mort_byarea$year %in% dead$Year, "x"] + dead$ca
+com_mort_byarea[!com_mort_byarea$year %in% dead_4010$Year, "x"] = com_mort_byarea[!com_mort_byarea$year %in% dead_4010$Year,"x"] * ca_com_discard_rate
+com_mort_byarea[com_mort_byarea$year %in% dead_4010$Year & com_mort_byarea$area == "north_4010" , "x"] = com_mort_byarea[com_mort_byarea$year %in% dead_4010$Year & com_mort_byarea$area == "north_4010" , "x"] + dead_4010$ca_north
+com_mort_byarea[com_mort_byarea$year %in% dead_4010$Year & com_mort_byarea$area == "south_4010" , "x"] = com_mort_byarea[com_mort_byarea$year %in% dead_4010$Year & com_mort_byarea$area == "south_4010" , "x"] + dead_4010$ca_south
 
 
 #################################################################################################################
@@ -135,11 +138,11 @@ full = full_all[,c(1,3,7,12,17,22,27)]
 names(full) = c("Year","recN","recS","comN","comS","comN_mort","comS_mort")
 
 #From 2005-2020 including commercial discard estimates
-sum(full[,"recN"] + full[,"comN_mort"]) / sum(full[,"recS"] + full[,"comS_mort"] + full[,"recN"] + full[,"comN_mort"]) #49.15% of catches are from north
+sum(full[,"recN"] + full[,"comN_mort"]) / sum(full[,"recS"] + full[,"comS_mort"] + full[,"recN"] + full[,"comN_mort"]) #49.59% of catches are from north
 #From 2010-2020 including commercial discard estimates
-sum(full[6:16,"recN"] + full[6:16,"comN_mort"]) / sum(full[6:16,"recS"] + full[6:16,"comS_mort"] + full[6:16,"recN"] + full[6:16,"comN_mort"]) #48.96% of catches are from north
+sum(full[6:16,"recN"] + full[6:16,"comN_mort"]) / sum(full[6:16,"recS"] + full[6:16,"comS_mort"] + full[6:16,"recN"] + full[6:16,"comN_mort"]) #49.48% of catches are from north
 #From 2015-2020 including commercial discard estimates
-sum(full[11:16,"recN"] + full[11:16,"comN_mort"]) / sum(full[11:16,"recS"] + full[11:16,"comS_mort"] + full[11:16,"recN"] + full[11:16,"comN_mort"]) #45.24% of catches are from north
+sum(full[11:16,"recN"] + full[11:16,"comN_mort"]) / sum(full[11:16,"recS"] + full[11:16,"comS_mort"] + full[11:16,"recN"] + full[11:16,"comN_mort"]) #45.8% of catches are from north
 
 #From 2005-2020 if excluding commercial discards makes very little difference
 sum(full[,"recN"] + full[,"comN"]) / sum(full[,"recS"] + full[,"comS"] + full[,"recN"] + full[,"comN"]) #49.13% 
