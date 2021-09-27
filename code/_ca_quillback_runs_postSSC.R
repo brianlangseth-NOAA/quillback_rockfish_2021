@@ -947,3 +947,55 @@ SSplotComparisons(sens_models, endyrvec = 2021,
                   print = TRUE, 
                   pdf = FALSE)
 
+###
+#Table with fleet likelihoods distinguished
+###
+n = length(sens_names)
+
+AIC = 2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n])
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods_by_fleet[sens_models$likelihoods_by_fleet$Label == "Length_like","CA_Commercial"]),
+  as.numeric(sens_models$likelihoods_by_fleet[sens_models$likelihoods_by_fleet$Label == "Length_like","CA_Recreational"]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]),
+  AIC,
+  c((AIC-AIC[1])[1],NA,NA,NA,(AIC-AIC[1])[5:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Recreational(2)", 1:n]))  
+
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                         "Length Likelihood",
+                         "Length Comm Likelihood",
+                         "Length Rec Likelihood",
+                         "Recruitment Likelihood",
+                         "Parameter Bounds Likelihood",
+                         "N parms",
+                         "AIC",
+                         "delta AIC",
+                         "ln(R0)",
+                         "SB Virgin",
+                         "SB 2021",
+                         "Fraction Unfished 2021",
+                         "Total Yield at SPR 50",
+                         "Peak commercial selex",
+                         "Ascend se commercial selex",
+                         "Peak recreational selex 2020",
+                         "Ascend se recreational selex 2020")
+
+write.csv(sens_table, file = file.path(wd, 'rebuilder', 'write_up', "tables", paste0("AllBlock_sensitivities_reccomLike.csv")))
+
+
