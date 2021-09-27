@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "August"
+month: "September"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -569,12 +569,12 @@ Year & OFL & ACL & WA ACL & WA Removals\\
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{c>{\centering\arraybackslash}p{2cm}>{\centering\arraybackslash}p{2cm}}
-\caption{(\#tab:nums-mt)Input numbers of fish removals converted to metric tons (mt) within the model.}\\
+\caption{(\#tab:nums-mt)Input numbers of fish removals for the recreational fleet converted to metric tons (mt) within the model.}\\
 \toprule
 Year & Numbers of Fish & Metric Tons\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:nums-mt)Input numbers of fish removals converted to metric tons (mt) within the model. \textit{(continued)}}\\
+\caption[]{(\#tab:nums-mt)Input numbers of fish removals for the recreational fleet converted to metric tons (mt) within the model. \textit{(continued)}}\\
 \toprule
 Year & Numbers of Fish & Metric Tons\\
 \midrule
@@ -1043,14 +1043,14 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
-\caption{(\#tab:project)Projections of potential OFLs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.}\\
+\caption{(\#tab:project)Projections of estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 (as the fixed OFL) times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.}\\
 \toprule
-Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & OFL & Constant ABC / OFL & Spawning Output & Fraction Unfished\\
+Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & Fixed OFL & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:project)Projections of potential OFLs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL. \textit{(continued)}}\\
+\caption[]{(\#tab:project)Projections of estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 (as the fixed OFL) times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL. \textit{(continued)}}\\
 \toprule
-Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & OFL & Constant ABC / OFL & Spawning Output & Fraction Unfished\\
+Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & Fixed OFL & Buffer & Spawning Output & Fraction Unfished\\
 \midrule
 \endhead
 
@@ -1059,16 +1059,16 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & 
 \endlastfoot
 2021 & 7.37 & 5.73 & 0.74 & 2.66 & - & - & - & 6.64 & 0.39\\
 2022 & 7.37 & 5.74 & 0.74 & 2.66 & - & - & - & 6.68 & 0.39\\
-2023 & - & - & - & - & 2.22 & 2.5 & 0.89 & 6.72 & 0.39\\
-2024 & - & - & - & - & 2.22 & 2.53 & 0.877 & 6.81 & 0.40\\
-2025 & - & - & - & - & 2.22 & 2.57 & 0.866 & 6.91 & 0.40\\
-2026 & - & - & - & - & 2.22 & 2.6 & 0.854 & 7.00 & 0.41\\
-2027 & - & - & - & - & 2.22 & 2.64 & 0.844 & 7.09 & 0.41\\
-2028 & - & - & - & - & 2.22 & 2.67 & 0.832 & 7.18 & 0.42\\
-2029 & - & - & - & - & 2.22 & 2.7 & 0.823 & 7.26 & 0.42\\
-2030 & - & - & - & - & 2.22 & 2.73 & 0.813 & 7.35 & 0.43\\
-2031 & - & - & - & - & 2.22 & 2.77 & 0.804 & 7.43 & 0.43\\
-2032 & - & - & - & - & 2.22 & 2.8 & 0.795 & 7.51 & 0.44\\*
+2023 & - & - & - & - & 2.22 & 2.855 & 0.778 & 6.72 & 0.39\\
+2024 & - & - & - & - & 2.22 & 2.855 & 0.778 & 6.81 & 0.40\\
+2025 & - & - & - & - & 2.22 & 2.855 & 0.778 & 6.91 & 0.40\\
+2026 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.00 & 0.41\\
+2027 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.09 & 0.41\\
+2028 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.18 & 0.42\\
+2029 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.26 & 0.42\\
+2030 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.35 & 0.43\\
+2031 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.43 & 0.43\\
+2032 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.51 & 0.44\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
@@ -1129,13 +1129,13 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & 
 ![Fecundity as a function of length.\label{fig:fecundity}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity as a function of length."}
 
 
-![Observed sex-specific weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Sex_ForReport.png){width=100% height=100% alt="Observed sex-specific weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves."}
+![Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Sex_ForReport.png){width=100% height=100% alt="Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves."}
 
 
 ![Weight-at-length relationship used in the model.\label{fig:len-weight}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight-at-length relationship used in the model."}
 
 
-![Observed sex-specific length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex_ForReport.png){width=100% height=100% alt="Observed sex-specific length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves."}
+![Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex_ForReport.png){width=100% height=100% alt="Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves."}
 
 
 ![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
@@ -1335,7 +1335,7 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & 
 ![Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-depl-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted."}
 
 
-![Change in estimated annual recruitment deviation.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation."}
+![Change in estimated annual recruitment deviation by sensitivity.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation by sensitivity."}
 
 
 <!-- ====================================================================== -->
@@ -1371,7 +1371,7 @@ Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & 
 ![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
 
 
-![Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios..\label{fig:phase-plot}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR4_phase.png){width=100% height=100% alt="Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.."}
+![Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.\label{fig:phase-plot}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR4_phase.png){width=100% height=100% alt="Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios."}
 
 
 ![Equilibrium yield curve for the base case model. Values are based on the 2020

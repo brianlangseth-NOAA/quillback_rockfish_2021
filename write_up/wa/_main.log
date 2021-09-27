@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.8.30)  31 AUG 2021 09:58
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  27 SEP 2021 15:01
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -528,7 +528,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lastpage/
 lastpage.sty
-Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyhdr/
 fancyhdr.sty
@@ -3037,14 +3037,14 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 52206 strings out of 478152
+ 52209 strings out of 478112
  305227,2373549 words of node,token memory allocated
  729 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 glyph, 30 attribute, 77 glue_spec
 , 14 attribute_list, 5 write, 1 close, 3 pdf_action nodes
-   avail lists: 1:78,2:17492,3:2476,4:246,5:1272,6:1220,7:16304,8:74,9:7904,10:2
+   avail lists: 1:78,2:17492,3:2476,4:248,5:1272,6:1220,7:16304,8:74,9:7904,10:2
 5,11:795,12:1
- 69858 multiletter control sequences out of 65536+600000
+ 69901 multiletter control sequences out of 65536+600000
  76 fonts using 15693671 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
@@ -3062,7 +3062,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (114 pages, 198371222 bytes).
+Output written on _main.pdf (114 pages, 198374817 bytes).
 
 PDF statistics: 1971 PDF objects out of 2073 (max. 8388607)
  353 named destinations out of 1000 (max. 131072)

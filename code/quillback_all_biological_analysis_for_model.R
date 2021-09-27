@@ -423,7 +423,7 @@ lw_plot_report <- function(data, ests){
   lines(lens, ests["all"][[1]][1] * lens ^ ests["all"][[1]][2], col = 1, lwd = 2, lty = 1)
   leg = c(leg, paste0("All", ": a = ", signif(ests["all"][[1]][1], digits = 3),  
                       " b = ", round(ests["all"][[1]][2], 2) ) )
-  legend("topleft", bty = 'n', legend = leg, lty = c(1,2,1), col = c(1,2,1), lwd = 2)
+  legend("topleft", bty = 'n', legend = leg, lty = c(1,2,1), col = c("red","blue",1), lwd = 2)
   
   for (a in sources){
     get = 0
