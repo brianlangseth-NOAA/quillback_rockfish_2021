@@ -279,8 +279,10 @@ out = cbind(tab$Year,
             c(round(man[man$Year %in% c(2021, 2022), "ACL"] * 0.584,2), rep("-", 10)),
             c(round(tab[1:2,3],2), rep("-",10)),
             c(rep("-",2), round(tab[3:12,2], 2)),
+            c(rep("-",2), PEPtools::get_buffer(2021:2032,1,0.45)[-c(1,2),2]),
+            c(rep("-",2), round(round(tab[3:12,2],3)*PEPtools::get_buffer(2021:2032,1,0.45)[-c(1,2),2],2)),  
             c(rep("-",2), round(tab[3:12,3],2)),
-            c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
+            #c(rep("-",2), round(tab[3:12,3]/tab[3:12,2], 3)),
             round(tab[ ,5:ncol(tab)], 2))
 
 col_names = c('Year',
@@ -288,16 +290,42 @@ col_names = c('Year',
               'ACL North',
               "OR ACL North",
               "Assumed removals",
-              "OFL", 
-              "ABC", 
+              "OFL",
               "Buffer",
+              "ABC", 
+              "ACL",
               "Spawning Output",
               "Fraction Unfished")
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from 2017-2020. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from 2017-2020. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.",
              label = "project",
              align = 'l',
-             col_names = col_names)
+             col_names = col_names,
+             landscape = FALSE)
 ```
 
 \newpage
+
+```{r, results = 'asis'}
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "or", "decision_tables", "decision_table_OR_R0_baseABC.csv"), header = TRUE)
+
+col_names = c("Year", 
+              "Catch (mt)", 
+              "Low: Spawning Output", 
+              "Low: Fraction Unfished", 
+              "Base: Spawning Output", 
+              "Base: Fraction Unfished", 
+              "High: Spawning Output", 
+              "High: Fraction Unfished")
+
+table_format(x = tab,
+             caption = "Decision table for low (2.01) and high (2.28) states of nature around ln(R0).",
+             label = "decision-table",
+             align = 'l',
+             col_names = col_names,
+             landscape = FALSE)
+```
+
+\newpage
+
+
