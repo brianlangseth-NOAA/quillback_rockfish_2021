@@ -890,3 +890,60 @@ SS_tune_comps(dir = file.path(wd, "8_0_16_recComBlock2001_RecDomeOnly"), write =
 
 
 
+
+###########################################
+#Add comparison plot of MopUp sensitivity (RecCom block at 2001 only) with earlier blocking sensitivities
+###########################################
+##For Report
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+
+model = "8_0_4_recBlock2001"
+base.804 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_6c_recBlock2001_2017_fix2lo"
+base.806c = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_7_recBlock2001_2003_2008_2017"
+base.807 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_8_recBlock2001_2005"
+base.808 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_9_recBlock2001_2005_2017"
+base.809 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_1_0_debWV_block"
+base.810 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_10_recComBlock2001_2017"
+base.8010 = SS_output(file.path(wd, model), covar=TRUE)
+
+model = "9_4_0_recComBlock2001"
+base.940 = SS_output(file.path(wd, "rebuilder", model), covar=TRUE)
+
+sens_names <- c("Base model","Block 2001", "Block 2001, 2017",
+                "Block 2001, 03, 08, 17", "Block 2001, 2005", "Block 2001, 05, 17", 
+                "Block 2001 with new data", "RecCom Block 2001, 2017", "RecCom Block 2001")
+sens_models  <- SSsummarize(list(base.710, base.804, base.806c, 
+                                 base.807, base.808, base.809,
+                                 base.810, base.8010, base.940))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'rebuilder', 'write_up', "figures"), 
+                  legendloc = "bottomleft", 
+                  legendncol = 1,
+                  #col = c(rich.colors.short(8)[-1][1:7],"cyan"),
+                  filenameprefix = paste0("All_comBlock_sensitivities_"),
+                  subplot = c(1,2,9,10,11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'rebuilder', 'write_up', "figures"), 
+                  legendloc = "topright", 
+                  legendncol = 1,
+                  #col = c(rich.colors.short(8)[-1][1:7],"cyan"),
+                  filenameprefix = paste0("All_comBlock_sensitivities_"),
+                  subplot = c(3,4), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
