@@ -30,7 +30,7 @@ col_names = c('Depth (fm)',
         'Percent Relative Density')
 
 table_format(x = tab,
-             caption = "Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth",
+             caption = "Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth.",
              label = "ca-ROV",
              align = 'l',
              col_names = col_names)

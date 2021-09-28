@@ -67,7 +67,7 @@ label = 'mean-rec-len-data')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
-caption = "Maturity as a function of  length",
+caption = "Maturity as a function of length",
 label = 'maturity')
 ```
 
@@ -82,7 +82,7 @@ label = 'fecundity')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_Weight_by_Sex_ForReport.png"), 
-caption = "Observed sex-specific weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves",
+caption = "Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves",
 label = 'len-weight-survey')
 ```	
 
@@ -96,7 +96,7 @@ label = 'len-weight')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_Age_by_Sex_ForReport.png"), 
-caption = "Observed sex-specific length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves",
+caption = "Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves",
 label = 'len-age-data')
 ```	
 
@@ -414,7 +414,7 @@ label = 'sens-depl')
 nm = "base.710_sensitivities_compare12_recdevs_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
-caption = "Change in estimated annual recruitment deviation",
+caption = "Change in estimated annual recruitment deviation by sensitivity",
 label = 'sens-recdev')
 ```
 
@@ -433,7 +433,7 @@ label = '1-spr')
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
-caption = "Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.",
+caption = "Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios",
 label = 'phase-plot')
 ```
 

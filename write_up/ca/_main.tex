@@ -39,7 +39,7 @@
 \usepackage{xcolor}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \hypersetup{
-  pdftitle={DRAFT Status of quillback rockfish (Sebastes maliger) in U.S. waters off the coast of California in 2021 using catch and length data},
+  pdftitle={Status of quillback rockfish (Sebastes maliger) in U.S. waters off the coast of California in 2021 using catch and length data},
   pdflang={en},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -83,9 +83,9 @@
 
 
 \date{}
-\newcommand{\trTitle}{DRAFT Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California in 2021 using catch and length data}
+\newcommand{\trTitle}{Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California in 2021 using catch and length data}
 \newcommand{\trYear}{2021}
-\newcommand{\trMonth}{August}
+\newcommand{\trMonth}{September}
 \newcommand{\trAuthsLong}{true}
 \newcommand{\trAuthsBack}{Langseth, B.J., C.R. Wetzel, J.M. Cope, J.E. Budrick}
 \newcommand{\trCitation}{
@@ -110,10 +110,10 @@
 \pagenumbering{roman}
 \noindent
 \begin{center}
-\title{DRAFT Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California in 2021 using catch and length data}
+\title{Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California in 2021 using catch and length data}
 % \textnormal{\MakeTextUppercase{\trTitle{}}}
 \vspace{1.5cm}
-{\Large\textbf\newline{DRAFT Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California in 2021 using catch and length data}}
+{\Large\textbf\newline{Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California in 2021 using catch and length data}}
 \vfill
 by\\
 Brian J. Langseth\textsuperscript{1}\\
@@ -178,20 +178,6 @@ Correct citation for this publication:
 \setlength\parskip{0.5em plus 0.1em minus 0.2em}
 
 \vspace{500cm}
-
-\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
-
-\hypertarget{disclaimer}{%
-\section*{Disclaimer}\label{disclaimer}}
-\addcontentsline{toc}{section}{Disclaimer}
-
-\leavevmode\tagmcend\tagstructend
-
-\tagstructbegin{tag=P}\tagmcbegin{tag=P}
-
-\emph{These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited (or reproduced). They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.}
-
-\leavevmode\tagmcend\tagstructend\par
 
 \pagebreak
 
@@ -1116,7 +1102,13 @@ A ten year projection of the base model was estimated for years 2023-2032, with 
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-The decision table uncertainty axes and catch levels are to be determined later.
+The axis of uncertainty for the decision table was based on a low and high state of nature for alternative values of natural mortality ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}). Following guidance from the TOR, the 12.5 and 87.5 percentiles (i.e.~1.15 standard deviations) of spawning output in 2021, based on the uncertainty around the spawning output in 2021 ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} = 0.39), were used to determine the values of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} corresponding to the states of nature. Once the values of 2021 spawning output at the 12.5 and 87.5 percentiles were identified, a search across natural mortality values was done to obtain the identified spawning output values. The values of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} corresponding to the low and high states of nature were 0.0464 (low) and 0.0744 (high).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The same catch values from the base model projections were applied to the low and high states of nature to provide a range of projected catch quantities given alternative assumptions for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} (Table \ref{tab:decision-table}). Across alternative states, the fraction of unfished at the end of the 10 year projection period ranged 0.12 - 0.39. Only under the high state of nature did the fraction of unfished go above the management limit after 10 years, and nearly reached the management target. The fraction of unfished for the base state of nature was near the management limit after 10 years.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -1430,12 +1422,12 @@ Age & Length (cm) & Weight (kg) & Maturity & Spawning Output\\
 
 \tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
-\caption{\label{tab:dw}Data weights applied by each alternative data weighting method. The Dirichlet Multinomial weight is theta/(1+theta)}\\
+\caption{\label{tab:dw}Data weights applied by each alternative data weighting method. The Dirichlet Multinomial weight is theta/(1+theta).}\\
 \toprule
 Method & Commercial Lengths & Recreational Lengths\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:dw}Data weights applied by each alternative data weighting method. The Dirichlet Multinomial weight is theta/(1+theta) \textit{(continued)}}\\
+\caption[]{\label{tab:dw}Data weights applied by each alternative data weighting method. The Dirichlet Multinomial weight is theta/(1+theta). \textit{(continued)}}\\
 \toprule
 Method & Commercial Lengths & Recreational Lengths\\
 \midrule
@@ -1789,33 +1781,71 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 \begingroup\fontsize{10}{12}\selectfont
 
 \tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{\label{tab:project}Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}}
+\caption{\label{tab:project}Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
 \toprule
-Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
+Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed removals & OFL & Buffer & ABC & ACL & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:project}Projections of potential OFLs (mt), ABCs (mt), estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values. \textit{(continued)}}\\
+\caption[]{\label{tab:project}Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values. \textit{(continued)}}\\
 \toprule
-Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed removals & OFL & ABC & Buffer & Spawning Output & Fraction Unfished\\
+Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed removals & OFL & Buffer & ABC & ACL & Spawning Output & Fraction Unfished\\
 \midrule
 \endhead
 
 \endfoot
 \bottomrule
 \endlastfoot
-2021 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 13.5 & - & - & - & 7.75 & 0.14\\
-2022 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 13.5 & - & - & - & 6.61 & 0.12\\
-2023 & - & - & - & - & - & - & 2.05 & 0.03 & 0.013 & 5.60 & 0.10\\
-2024 & - & - & - & - & - & - & 2.32 & 0.34 & 0.146 & 6.29 & 0.11\\
-2025 & - & - & - & - & - & - & 2.61 & 0.68 & 0.26 & 7.10 & 0.13\\
-2026 & - & - & - & - & - & - & 2.91 & 1.03 & 0.355 & 7.98 & 0.14\\
-2027 & - & - & - & - & - & - & 3.21 & 1.37 & 0.428 & 8.86 & 0.16\\
-2028 & - & - & - & - & - & - & 3.49 & 1.69 & 0.484 & 9.70 & 0.18\\
-2029 & - & - & - & - & - & - & 3.75 & 1.97 & 0.527 & 10.48 & 0.19\\
-2030 & - & - & - & - & - & - & 4 & 2.23 & 0.559 & 11.23 & 0.20\\
-2031 & - & - & - & - & - & - & 4.24 & 2.48 & 0.585 & 11.95 & 0.22\\
-2032 & - & - & - & - & - & - & 4.47 & 2.72 & 0.607 & 12.65 & 0.23\\*
+2021 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 13.5 & - & - & - & - & 7.75 & 0.14\\
+2022 & 5.39 & 4.19 & 7.37 & 1.65 & 5.84 & 13.5 & - & - & - & - & 6.61 & 0.12\\
+2023 & - & - & - & - & - & - & 2.05 & 0.874 & 1.79 & 0.03 & 5.60 & 0.10\\
+2024 & - & - & - & - & - & - & 2.32 & 0.865 & 2.01 & 0.34 & 6.29 & 0.11\\
+2025 & - & - & - & - & - & - & 2.61 & 0.857 & 2.24 & 0.68 & 7.10 & 0.13\\
+2026 & - & - & - & - & - & - & 2.91 & 0.849 & 2.47 & 1.03 & 7.98 & 0.14\\
+2027 & - & - & - & - & - & - & 3.21 & 0.841 & 2.7 & 1.37 & 8.86 & 0.16\\
+2028 & - & - & - & - & - & - & 3.49 & 0.833 & 2.9 & 1.69 & 9.70 & 0.18\\
+2029 & - & - & - & - & - & - & 3.75 & 0.826 & 3.1 & 1.97 & 10.48 & 0.19\\
+2030 & - & - & - & - & - & - & 4 & 0.818 & 3.27 & 2.23 & 11.23 & 0.20\\
+2031 & - & - & - & - & - & - & 4.24 & 0.81 & 3.43 & 2.48 & 11.95 & 0.22\\
+2032 & - & - & - & - & - & - & 4.47 & 0.803 & 3.59 & 2.72 & 12.65 & 0.23\\*
+\end{longtable}
+\leavevmode\tagmcend\tagstructend\par
+\endgroup{}
+\endgroup{}
+
+\newpage
+
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}}
+\caption{\label{tab:decision-table}Decision table summary of 10 year projections for low (0.0464) and high (0.0744) states of nature around natural mortality. Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45.}\\
+\toprule
+Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spawning Output & Base: Fraction of Unfished & High: Spawning Output & High: Fraction of Unfished\\
+\midrule
+\endfirsthead
+\caption[]{\label{tab:decision-table}Decision table summary of 10 year projections for low (0.0464) and high (0.0744) states of nature around natural mortality. Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45. \textit{(continued)}}\\
+\toprule
+Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spawning Output & Base: Fraction of Unfished & High: Spawning Output & High: Fraction of Unfished\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+2021 & 13.50 & 4.95 & 0.08 & 7.75 & 0.14 & 12.08 & 0.24\\
+2022 & 13.50 & 3.70 & 0.06 & 6.61 & 0.12 & 11.04 & 0.22\\
+2023 & 0.03 & 2.55 & 0.04 & 5.60 & 0.10 & 10.17 & 0.20\\
+2024 & 0.34 & 3.03 & 0.05 & 6.29 & 0.11 & 11.07 & 0.22\\
+2025 & 0.68 & 3.60 & 0.06 & 7.10 & 0.13 & 12.12 & 0.24\\
+2026 & 1.03 & 4.22 & 0.07 & 7.98 & 0.14 & 13.22 & 0.27\\
+2027 & 1.37 & 4.83 & 0.08 & 8.86 & 0.16 & 14.34 & 0.29\\
+2028 & 1.69 & 5.37 & 0.09 & 9.70 & 0.18 & 15.43 & 0.31\\
+2029 & 1.97 & 5.84 & 0.10 & 10.48 & 0.19 & 16.47 & 0.33\\
+2030 & 2.23 & 6.26 & 0.11 & 11.23 & 0.20 & 17.45 & 0.35\\
+2031 & 2.48 & 6.64 & 0.11 & 11.95 & 0.22 & 18.40 & 0.37\\
+2032 & 2.72 & 7.00 & 0.12 & 12.65 & 0.23 & 19.31 & 0.39\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
 \endgroup{}
@@ -1892,7 +1922,7 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Maturity as a function of  length.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={Maturity as a function of length.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1912,12 +1942,12 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Observed sex-specific weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=1\textheight]{//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Sex_ForReport.png}
-\caption{Observed sex-specific weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.\label{fig:len-weight-survey}}
+\caption{Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.\label{fig:len-weight-survey}}
 \end{figure}
 
 \tagmcend\tagstructend
@@ -1932,12 +1962,12 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Observed sex-specific length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=1\textheight]{//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex_ForReport.png}
-\caption{Observed sex-specific length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.\label{fig:len-age-data}}
+\caption{Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.\label{fig:len-age-data}}
 \end{figure}
 
 \tagmcend\tagstructend
@@ -2312,12 +2342,12 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in estimated annual recruitment deviation.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={Change in estimated annual recruitment deviation by sensitivity.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/sensitivities/base.710_sensitivities_compare12_recdevs_uncertainty.png}
-\caption{Change in estimated annual recruitment deviation.\label{fig:sens-recdev}}
+\caption{Change in estimated annual recruitment deviation by sensitivity.\label{fig:sens-recdev}}
 \end{figure}
 
 \tagmcend\tagstructend
@@ -2332,12 +2362,12 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios..}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base/plots/SPR4_phase.png}
-\caption{Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios..\label{fig:phase-plot}}
+\caption{Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.\label{fig:phase-plot}}
 \end{figure}
 
 \tagmcend\tagstructend
@@ -2362,6 +2392,25 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 \section{Appendix}\label{appendix}}
 
 \leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{allocation-of-yield-among-federal-management-areas}{%
+\subsection{Allocation of Yield Among Federal Management Areas}\label{allocation-of-yield-among-federal-management-areas}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+The 2021 California stock assessment for quillback rockfish represents U.S. waters between the California-Mexico border and the California-Oregon border 42{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 00' N. lat. Federal management of the nearshore rockfish complex, that includes quillback rockfish, is based on areas north and south of 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' N. lat. Therefore, yield estimates from the California base model must be divided between the northern and southern management areas in order to determine the contribution of quillback rockfish to the nearshore rockfish overfishing limit (OFL).
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Neither of these estimates were available for quillback rockfish at this time to inform allocations by area, although CDFW may have habitat by area data within their analysis of percent area closed to fishing (briefly described in {\tagstructbegin{tag=Link}\tagmcbegin{tag=Link}\protect\hyperlink{append_c}{Appendix C}\leavevmode\tagmcend\tagstructend}) which could form the basis for starting to explore habitat by area estimates for quillback rockfish. In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' N. lat. were calculated. During this period a total of 49.6 percent of all removals were from areas north of 40{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^\circ\)\leavevmode\tagmcend\tagstructend} 10' N. lat. Based on this, the recommended allocation of the OFLs from the California model be 49.6 percent to the north minor nearshore rockfish complex and 50.4 percent to the south complex.
+
+\leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
 
@@ -2399,12 +2448,12 @@ The percentage of fish in 5 cm size categories among 10 fm depths bins north of 
 
 \tagstructbegin{tag=Table}\tagmcbegin{tag=Table}
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}}
-\caption{\label{tab:ca-ROV}Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth}\\
+\caption{\label{tab:ca-ROV}Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth.}\\
 \toprule
 Depth (fm) & Observed Area (m2) & Quillback Rockfish Observed & Quillback Rockfish Density (fish/m2) & Percent Relative Density\\
 \midrule
 \endfirsthead
-\caption[]{\label{tab:ca-ROV}Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth \textit{(continued)}}\\
+\caption[]{\label{tab:ca-ROV}Counts of fish, areas surveyed by the ROV, density (fish/meter square) and percent relative density by 10 fm depth. \textit{(continued)}}\\
 \toprule
 Depth (fm) & Observed Area (m2) & Quillback Rockfish Observed & Quillback Rockfish Density (fish/m2) & Percent Relative Density\\
 \midrule

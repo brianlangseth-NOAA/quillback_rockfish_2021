@@ -453,7 +453,9 @@ The 2021 spawning output relative to unfished equilibrium spawning output is abo
 
 A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Acceptable Biological Catch (ABC) based on the category 2 time-varying sigma and $P^*$ = 0.45 for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the combined total mortality from commercial and recreational fleets averaged from 2017-2020 as requested by the PFMC Groundfish Management Team (GMT, personal communication). The removals were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributed to the total catch. 
 
-Potential alternative states of nature were explored for this assessment following guidance in the Terms of Reference, and included low and high ln($R0$), low and high M, and high and low $L_{\infty}$. Alternative values of ln($R0$) covered a wider range of spawning output and depletion estimates compared to the other states of natures and therefore was used. Other states of nature also had difficulty with convergence and not matching the desired spawning output quantiles. The values of ln($R0$) that resulted in spawning ouput for the lower and upper 75% confidence interval based on the estimated uncertainty in the base model around 2021 spawning output were 2.01 (low) and 2.28 (high). The same catch values from the base model projections were applied to the low and high states of nature to provide a range of projected catch quantities given assumptions about alternative states of ln($R0$) (Table \ref{tab:decision-table}).   
+The axis of uncertainty for the decision table was based on a low and high state of nature for alternative values of unfished recruitment (ln($R0$)). Following guidance from the TOR, the 12.5 and 87.5 percentiles (i.e. 1.15 standard deviations) of spawning output in 2021, based on the uncertainty around the spawning output in 2021 ($\sigma$ = 0.33), were used to determine the values of ln($R0$) corresponding to the states of nature. Once the values of spawning output for the 12.5 and 87.5 percentiles were identified, a search across unfished recruitment values was done to obtain the current year spawning output values. The values of ln($R0$) corresponding to the low and high states of nature were 2.01 (low) and 2.28 (high). 
+
+The same catch values from the base model projections were applied to the low and high states of nature to provide a range of projected catch quantities given alternative assumptions for ln($R0$) (Table \ref{tab:decision-table}). Across alternative states, the fraction of unfished at the end of the 10 year projection period ranges 0.28 - 0.57. Under the low state of nature, fraction of unfished is below the management target, but above the management limit, after 10 years.    
 
 <!-- Evaluation of Scientific Uncertainty -->
 
@@ -1118,14 +1120,14 @@ Year & OFL North & ACL North & OR ACL North & Assumed removals & OFL & Buffer & 
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}}
-\caption{(\#tab:decision-table)Decision table for low (2.01) and high (2.28) states of nature around ln(R0).}\\
+\caption{(\#tab:decision-table)Decision table summary of 10 year projections for low (2.01) and high (2.28) states of nature around ln(R0). Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45}\\
 \toprule
-Year & Catch (mt) & Low: Spawning Output & Low: Fraction Unfished & Base: Spawning Output & Base: Fraction Unfished & High: Spawning Output & High: Fraction Unfished\\
+Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spawning Output & Base: Fraction of Unfished & High: Spawning Output & High: Fraction of Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:decision-table)Decision table for low (2.01) and high (2.28) states of nature around ln(R0). \textit{(continued)}}\\
+\caption[]{(\#tab:decision-table)Decision table summary of 10 year projections for low (2.01) and high (2.28) states of nature around ln(R0). Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45 \textit{(continued)}}\\
 \toprule
-Year & Catch (mt) & Low: Spawning Output & Low: Fraction Unfished & Base: Spawning Output & Base: Fraction Unfished & High: Spawning Output & High: Fraction Unfished\\
+Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spawning Output & Base: Fraction of Unfished & High: Spawning Output & High: Fraction of Unfished\\
 \midrule
 \endhead
 

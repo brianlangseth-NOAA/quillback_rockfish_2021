@@ -312,14 +312,14 @@ tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "or", "decision_tabl
 col_names = c("Year", 
               "Catch (mt)", 
               "Low: Spawning Output", 
-              "Low: Fraction Unfished", 
+              "Low: Fraction of Unfished", 
               "Base: Spawning Output", 
-              "Base: Fraction Unfished", 
+              "Base: Fraction of Unfished", 
               "High: Spawning Output", 
-              "High: Fraction Unfished")
+              "High: Fraction of Unfished")
 
 table_format(x = tab,
-             caption = "Decision table for low (2.01) and high (2.28) states of nature around ln(R0).",
+             caption = "Decision table summary of 10 year projections for low (2.01) and high (2.28) states of nature around ln(R0). Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45",
              label = "decision-table",
              align = 'l',
              col_names = col_names,

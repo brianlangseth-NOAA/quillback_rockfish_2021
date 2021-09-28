@@ -881,6 +881,13 @@ base.8015 = SS_output(file.path(wd, model), covar=TRUE)
 SS_plots(base.8015)
 SS_tune_comps(dir = file.path(wd, "8_0_15_recComBlock2001"), write = FALSE)
 
+#Copy model 8015 and reweight
+model = "8_0_15b_recComBlock2001_reweight"
+base.8015b = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.8015b)
+SS_tune_comps(dir = file.path(wd, "8_0_15b_recComBlock2001_reweight"), write = FALSE)
+#Very little effect
+
 #Add 2001-only run for both rec and comm but keep commercial asymptotic
 #Copy model 8014
 model = "8_0_16_recComBlock2001_RecDomeOnly"
@@ -888,6 +895,13 @@ base.8016 = SS_output(file.path(wd, model), covar=TRUE)
 SS_plots(base.8016)
 SS_tune_comps(dir = file.path(wd, "8_0_16_recComBlock2001_RecDomeOnly"), write = FALSE)
 
+#Add 2001-only run for just commercial to see the effects for comm, which seem larger than when just blocking rec
+#Copy model 8014
+model = "8_0_17_ComBlock2001"
+base.8017 = SS_output(file.path(wd, model), covar=TRUE)
+SS_plots(base.8017)
+SS_tune_comps(dir = file.path(wd, "8_0_17_ComBlock2001"), write = FALSE)
+#Just the Comm block reveals that yes, most improvement in AIC is due to commercial fit
 
 
 
