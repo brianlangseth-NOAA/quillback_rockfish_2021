@@ -147,6 +147,11 @@ sum(full[11:16,"recN"] + full[11:16,"comN_mort"]) / sum(full[11:16,"recS"] + ful
 #From 2005-2020 if excluding commercial discards makes very little difference
 sum(full[,"recN"] + full[,"comN"]) / sum(full[,"recS"] + full[,"comS"] + full[,"recN"] + full[,"comN"]) #49.13% 
 
-
-      
+#Adding plot of rates by year (using mortality)
+byyear = (full[,"recN"] + full[,"comN_mort"])/(full[,"recS"] + full[,"comS_mort"] + full[,"recN"] + full[,"comN_mort"])
+png(file = file.path("C:/Users/Brian.Langseth/Desktop/ca", "write_up", "figures", "catch_allocation_4010.png"), 
+    width = 8, height = 5, units = "in", res = 300)
+plot(byyear, x = 2005:2020, xlab = "Year", ylab = "Proportion North of 40`10", ylim = c(0,1), pch = 19)
+abline(h = 0.496, lty = 2)
+dev.off()      
 

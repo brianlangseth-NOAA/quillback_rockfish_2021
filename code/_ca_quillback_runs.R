@@ -1308,6 +1308,7 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
   #Set constrain catches by ABC to 2
   #Apply to 930b_no_abc_max
 
+
   ##The above files incorrectly applied parameter uncertainty
 
   #Correctly apply states of nature values (use rebuild_m_fixed.sso from CA_rebuilding.R)
@@ -1328,6 +1329,20 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
   
   #Set number of parameters vectors to 2000
   #Apply to 933d_2000sims
+
+
+  ##The Rebuilder exe file was updated at the MopUp to account for when Tmin equals 10 to set Tmax to 10
+
+  #Confirming these results do not change the quillback results
+  #Copy the rebuild.dat file and rebuild_m_fixed.SSO file from 933_StatesOfNature
+  #Copy the new rebuild.exe file from 2021 Rebuilding\September version
+  #Apply to 934_StatesOfNature_SeptExe
+
+  #Remove cap on catch by ABC
+  #Copy the files in 934_StatesOfNature_SeptExe
+  #Set constrain catches by ABC to 2 in rebuild.data
+  #Apply to 934b_no_abc_max
+
 
 ############################################################################
 

@@ -39,7 +39,7 @@ address: ^1^Northwest Fisheries Science Center, U.S. Department of Commerce, Nat
 <!--chapter:end:00authors.Rmd-->
 
 ---
-title: DRAFT Rebuilding analysis for quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of California based on the 2021 stock assessment
+title: DRAFT (post mopup version) Rebuilding analysis for quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of California based on the 2021 stock assessment
 ---
 
 <!--chapter:end:00title.Rmd-->
@@ -210,6 +210,8 @@ The target rebuilding year based on the various rebuilding strategies ranged fro
 ## Results for sensitivity on selectivity blocks and form
 
 Reference points and summary results for the sensitivity rebuilding analysis that was based on a model with selectivity blocks for both the recreational and commercial fleets applied in 2001 with dome-shaped selectivity in the recent blocks are shown in Tables \ref{tab:ref-points-sens} and \ref{tab:reb-options-sens}. $\text{T}_\text{MIN}$ was one year earlier than the base rebuilding analysis, but because mean generation time was one year earlier (due to not applying uncertainty from the natural mortality states of nature), $\text{T}_\text{MAX}$ was the same as the base rebuilding analysis. Time to targets across the various rebuilding strategies occurred one to three years earlier than the base rebuilding model. Recommended removals in 2023 were also larger than the base, ranging between 0.3 - 2.45 mt, given the slightly higher spawning output and SPR in 2021 compared to the base model. 
+
+The sensitivity rebuilding analysis was run without uncertainty from the states of nature, whereas the base rebuilding analysis incorporated the states of nature. The summary tables from the base rebuilding analysis without including uncertainty from the states of nature are therefore shown in Tables \ref{tab:ref-points-noStateOfNature} and \ref{tab:reb-options-noStateOfNature}. These tables allow comparison between the base analysis and the sensitivity analysis due only to differences in the underlying model and not differences in the application of the states of nature. Results from these tables show that the mean generation time is similar, and therefore $\text{T}_\text{MAX}$ for the sensitivity would be one year earlier from the base were states of nature not applied. Time to targets across the various rebuilding strategies would occur one to two years earlier than the base rebuilding model were states of nature not applied, with the exception of the $\text{T}_\text{MID}$ run which would occur four years earlier.  
 
 Comparisons between stock synthesis output from the adopted base model and the sensitivity run are provided in [Appendix B]{#append_b}. The sensitivity had slightly higher estimates of unfished spawning output (Figure \ref{fig:ssb-sens}) and similar depletion estimates (Figure \ref{fig:depl-sens}) compared to the adopted base model. Selectivity in the recent block was domed at large sizes for both the recreational and commercial fleets, and right shifted in recent years for the commercial fleet (Figure \ref{fig:selex-sens}) so the time series of information entered into the sensitivity rebuilding analysis were different from the time series entered into the base rebuilding analysis, contributing to differences in results. 
 
@@ -699,94 +701,78 @@ Probability of recovery by Tmax & 0.608 & 0.96 & 0.997 & 1 & 1 & 0.956 & 1 & 0.9
 
 \clearpage
 
-<!-- ## Rebuilding alternative time series when catches are not constrained by the ABC -->
 
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[2]]$prob_matrix[1:47, ],3)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "Probability of recovery by year for rebuilding SPR alternatives assuming catch is not constrained by the ABC.", -->
-<!--              label = "prob-mat-noABCmax", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
+<!-- Base rebuilder without states of nature-->
 
+<!-- ## Reference points -->
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
 
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[2]]$acl_matrix[1:47, ],2)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "Catches (mt) by year for rebuilding SPR alternatives assuming catch is not constrained by the ABC.", -->
-<!--              label = "acl-mat-noABCmax", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}}
+\caption{(\#tab:ref-points-noStateOfNature)Summary of the base rebuilding reference points without applying the states of nature.}\\
+\toprule
+Quantity & 2021 Assessment Values\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:ref-points-noStateOfNature)Summary of the base rebuilding reference points without applying the states of nature. \textit{(continued)}}\\
+\toprule
+Quantity & 2021 Assessment Values\\
+\midrule
+\endhead
 
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[2]]$ofl_matrix[1:47, ],2)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "OFLs (mt) by year for rebuilding SPR alternatives assuming catch is not constrained by the ABC.", -->
-<!--              label = "ofl-mat-noABCmax", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
+\endfoot
+\bottomrule
+\endlastfoot
+SB0 (millions of eggs) & 55.08\\
+SB40 (millions of eggs) & 22.035\\
+SB2021 (millions of eggs) & 7.745\\
+Year rebuilding begins & 2023\\
+Current year & 2021\\
+Tmin & 2040\\
+Mean generation time (years) & 27\\
+Tmax & 2067\\
+TF=0 & 2040\\
+Ttarget & TBD\\
+SPRtarget & TBD\\
+Current SPR (2021) & 0.1165\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
 
+<!-- ## Summary of alternatives -->
+\begingroup\fontsize{10}{12}\selectfont
 
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[2]]$relativeb_matrix[1:47, ],2)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives assuming catch is not constrained by the ABC.", -->
-<!--              label = "rel-ssb-mat-noABCmax", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
+\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
-<!-- \clearpage -->
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\caption{(\#tab:reb-options-noStateOfNature)Results of base rebuilding alternatives without applying the states of nature based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value}\\
+\toprule
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:reb-options-noStateOfNature)Results of base rebuilding alternatives without applying the states of nature based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value \textit{(continued)}}\\
+\toprule
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+\midrule
+\endhead
 
-<!-- ## Rebuilding alternative time series for rebuilding based on an SS model with sex equal to 1 -->
+\endfoot
+\bottomrule
+\endlastfoot
+2021 Assumed Removals (mt) & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5\\
+2022 Assumed Removals (mt) & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5 & 13.5\\
+2023 ACL (mt) & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.64 & 0 & 0.04 & 1.79\\
+2024 ACL (mt) & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.81 & 0 & 0.33 & 1.95\\
+SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.561 & 1 & - & -\\
+Ttarget & 2064 & 2051 & 2046 & 2043 & 2042 & 2054 & 2040 & 2050 & 2054\\
+Tmax & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067\\
+Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.943 & 0.894\\*
+\end{longtable}
+\endgroup{}
+\end{landscape}
+\endgroup{}
+\clearpage
 
-
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[3]]$prob_matrix[1:55, ],3)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "The probability of rebuilding by year for rebuilding SPR alternatives based on an SS model with sex equal to 1.", -->
-<!--              label = "prob-mat-sex1", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
-
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[3]]$acl_matrix[1:55, ],2)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "Catches (mt) by year for rebuilding SPR alternatives based on an SS model with sex equal to 1.", -->
-<!--              label = "acl-mat-sex1", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
-
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[3]]$ofl_matrix[1:55, ],2)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "OFLs (mt) by year for rebuilding SPR alternatives based on an SS model with sex equal to 1.", -->
-<!--              label = "ofl-mat-sex1", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
-
-<!-- ```{r, results = 'asis'} -->
-<!-- out = as.data.frame(round(reb[[3]]$relativeb_matrix[1:55, ],2)) -->
-<!-- table_format(x = out, -->
-<!--              caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding SPR alternatives based on an SS model with sex equal to 1.", -->
-<!--              label = "rel-ssb-mat-sex1", -->
-<!--              align = 'l', -->
-<!--              digits = 2, -->
-<!--              col_names = colnames(out)) -->
-<!-- ``` -->
 
 
 <!--chapter:end:52tables.Rmd-->

@@ -50,11 +50,14 @@ run <- c(
   "930_F2017_2019_ageStruc2021", #original run, but states of nature not applied correctly
   "930b_no_abc_max")
 
-reb <- list()
-for (a in 1:length(run)){
-  reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
-}
-save(reb, file = file.path(getwd(), "00mod.Rdata"))
+#Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved 
+# reb <- list()
+# for (a in 1:length(run)){
+#   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
+# }
+# save(reb, file = file.path(getwd(), "00mod.Rdata"))
+
+load(file = file.path(getwd(), "00mod.Rdata"))
 
 base.920 = r4ss::SS_output(file.path(rebuild_dir, "9_2_0_RelF2017_2019"), covar = TRUE, 
                            verbose = FALSE, printstats = FALSE)
