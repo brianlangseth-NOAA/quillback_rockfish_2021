@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  1 OCT 2021 11:18
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  1 OCT 2021 11:53
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -3291,7 +3291,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:81,2:26603,3:3819,4:266,5:1944,6:1892,7:25550,8:76,9:12188,10:
 26,11:724,12:1
  70368 multiletter control sequences out of 65536+600000
- 76 fonts using 15693975 bytes
+ 76 fonts using 15693671 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf
@@ -3308,7 +3308,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (125 pages, 190699121 bytes).
+Output written on _main.pdf (125 pages, 190699169 bytes).
 
 PDF statistics: 2212 PDF objects out of 2487 (max. 8388607)
  406 named destinations out of 1000 (max. 131072)

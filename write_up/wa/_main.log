@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  27 SEP 2021 15:01
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  1 OCT 2021 12:03
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -986,7 +986,7 @@ Package: pgfpages 2011/01/05 ver 0.02
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/base/glossaries.sty
-Package: glossaries 2020/03/19 v4.46 (NLCT)
+Package: glossaries 2021/09/20 v4.47 (NLCT)
 
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mfirstuc/
 mfirstuc.sty
@@ -1149,7 +1149,7 @@ Package: fp-eval 1995/04/03
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/base/glossaries-compatible-307.sty
-Package: glossaries-compatible-307 2020/03/19 v4.46 (NLCT)
+Package: glossaries-compatible-307 2021/09/20 v4.47 (NLCT)
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s-english/glossaries-english.ldf
@@ -1165,16 +1165,16 @@ File: glossaries-english.ldf 2014/11/23 v1.0
 
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/styles/glossary-hypernav.sty
-Package: glossary-hypernav 2020/03/19 v4.46 (NLCT)
+Package: glossary-hypernav 2021/09/20 v4.47 (NLCT)
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/styles/glossary-list.sty
-Package: glossary-list 2020/03/19 v4.46 (NLCT)
+Package: glossary-list 2021/09/20 v4.47 (NLCT)
 \glslistdottedwidth=\skip87
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/styles/glossary-long.sty
-Package: glossary-long 2020/03/19 v4.46 (NLCT)
+Package: glossary-long 2021/09/20 v4.47 (NLCT)
 
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/lon
 gtable.sty
@@ -1201,7 +1201,7 @@ Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
 )
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/glossarie
 s/styles/glossary-tree.sty
-Package: glossary-tree 2020/03/19 v4.46 (NLCT)
+Package: glossary-tree 2021/09/20 v4.47 (NLCT)
 \glstreeindent=\skip94
 )))
 (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/
@@ -3037,15 +3037,15 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 52209 strings out of 478112
+ 52232 strings out of 478112
  305227,2373549 words of node,token memory allocated
  729 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 3 glyph, 30 attribute, 77 glue_spec
 , 14 attribute_list, 5 write, 1 close, 3 pdf_action nodes
    avail lists: 1:78,2:17492,3:2476,4:248,5:1272,6:1220,7:16304,8:74,9:7904,10:2
 5,11:795,12:1
- 69901 multiletter control sequences out of 65536+600000
- 76 fonts using 15693671 bytes
+ 69924 multiletter control sequences out of 65536+600000
+ 76 fonts using 15693595 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf
@@ -3062,7 +3062,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (114 pages, 198374817 bytes).
+Output written on _main.pdf (114 pages, 198374853 bytes).
 
 PDF statistics: 1971 PDF objects out of 2073 (max. 8388607)
  353 named destinations out of 1000 (max. 131072)
