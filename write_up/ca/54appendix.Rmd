@@ -2,20 +2,28 @@
 
 # Appendix
 
-## Allocation of Yield Among Federal Management Areas
+## Appendix A: Allocation of Yield Among Federal Management Areas{#append_a}
 
 The 2021 California stock assessment for `r spp` represents U.S. waters between the California-Mexico border and the California-Oregon border 42$^\circ$ 00' N. lat. Federal management of the nearshore rockfish complex, that includes `r spp`, is based on areas north and south of 40$^\circ$ 10' N. lat. Therefore, yield estimates from the California base model must be divided between the northern and southern management areas in order to determine the contribution of `r spp` to the nearshore rockfish overfishing limit (OFL). 
 
-Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Neither of these estimates were available for `r spp` at this time to inform allocations by area, although CDFW may have habitat by area data within their analysis of percent area closed to fishing (briefly described in [Appendix C](#append_c)) which could form the basis for starting to explore habitat by area estimates for `r spp`. In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated.  During this period a total of 49.6 percent of all removals were from areas north of 40$^\circ$ 10' N. lat. Based on this, the recommended allocation of the OFLs from the California model be 49.6 percent to the north minor nearshore rockfish complex and 50.4 percent to the south complex.    
+Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Neither of these estimates were available for `r spp` at this time to inform allocations by area. In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated. The proportion of removals that are north of 40$^\circ$ 10' N in each year is shown by year in Figure \ref{fig:catch-4010}. During the entire 2005-2020 period, a total of 49.6 percent of all removals were from areas north of 40$^\circ$ 10' N. lat (horizontal dashed line on Figure \ref{fig:catch-4010}) . Based on this, the recommended allocation of the OFLs from the California model be 49.6 percent to the north minor nearshore rockfish complex and 50.4 percent to the south complex. 
 
+```{r, results = 'asis'}
+add_figure(
+filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "write_up", "figures", "catch_allocation_4010.png"), 
+caption = "Proportion of total removals in the recreational and commercial fisheries that are north of 40 degrees 10 minutes N. lat. by year from 2005 to 2020. The horizontal dashed line is the proportion of total removals over the full 2005-2020 time period that is noth of 40 degrees 10 minutes N. lat",
+label = 'catch-4010')
+```
 
-## Appendix A: California ROV Survey Data Informing Selectivity{#append_a}
+\clearpage
+
+## Appendix B: California ROV Survey Data Informing Selectivity{#append_b}
 
 From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside MPAs and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of `r spp` biomass (Table \ref{tab:ca-ROV}). 
  
 In addition, length frequency distributions by depth were determined from fish observed by the ROV based on visual approximations using the distance between paired lasers. While future efforts to increase the precision of length estimates include using stereo-camera data and programs estimating length from trigonometric calculations, the trends in approximate length distribution with depth still provides useful information. The length frequency distribution by depth is provided in Figure \ref{fig:ca-ROV}. In reviewing both the density by depth and length by depth relative to ontogenetic migration, the patterns may not reflect the smaller fish using shallow rocky reef as juveniles in less than 10 fm, and only reflect the density and composition in deeper depths where ontogenetic migration to deeper depths has already taken place for nearshore species and is not as apparent. 
 
-When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. The combination of MPAs and RCAs restrict a larger portion of habitat to fishing (see [Appendix B](#append_b) for details). 
+When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. The combination of MPAs and RCAs restrict a larger portion of habitat to fishing (see [Appendix C](#append_c) for details). 
 
 The percentage of fish in 5 cm size categories among 10 fm depths bins north of Point Conception did not show clear signs of increasing size with depth in greater than 10 fm in either region or protected vs. reference sites (Figure \ref{fig:ca-ROV-percent}). This may be in part due to the fish having already moved from shallow kelp forest habitat where the ROV cannot operate to the adult depth distribution in greater than 10 fm by the time they are observed. Only in the shallower depth bins is there higher proportion of smaller individuals. This would indicate that selectivity may not be domed shaped as would be considered if the depth restrictions protected a larger proportion of adult biomass.
 
@@ -52,7 +60,7 @@ label = 'ca-ROV-percent')
 
 \clearpage
 
-## Appendix B: Percent Area Closed to Fishing in the RCAs and MPAs over time{#append_b}
+## Appendix C: Percent Area Closed to Fishing in the RCAs and MPAs over time{#append_c}
 
 MPAs were instituted at various times from 2003 to 2012 as the area selection process was undertaken on a regional process. The existence of no take MPAs in some of the areas selected prior to expansion of the MPAs to encompass approximately 20-30% of rocky reef habitat in state waters, duration of existence of new areas, degree of effort prior to protection or criteria for selection including productivity of the reef may have contributed to the current patterns in composition and density inside vs. outside MPAs. As biomass accrues inside MPAs, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside the MPAs. 
  
@@ -76,7 +84,7 @@ table_format(x = tab,
 
 \clearpage
 
-## Appendix C: Detailed Fit to Annual Length Composition Data{#append_c}
+## Appendix D: Detailed Fit to Annual Length Composition Data{#append_d}
 
 
 ```{r, results='asis'}

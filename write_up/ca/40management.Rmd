@@ -31,7 +31,7 @@ The ability to estimate additional process and biological parameters for `r spp`
   
   \item Improved understanding of where recreational fishing is commonly occurring (areas and depths) and the range of sizes available by depth would better inform the selectivity form, which currently is the near the shape for maturity.  
 
-	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in `r state` would result in samples from the entire U.S. West Coast informing growth. Samples of young fish would particularly help inform estimates of the growth coefficient (k), and help distinguish whether fish in California waters have different growth dynamics from those in Oregon and Washington waters. 
+	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in `r state` would result in samples from the entire U.S. West Coast informing growth. Otoliths from the WCGBTS survey would also help inform growth. California otoliths identified and aged during model reivews were insufficient to robustly estimate a separate California-specific length-age relationship given the limited sample size of young quillback rockfish from California. More data, particularly of young and old fish, are needed to be able to robustly estimate a California-specific growth curve and confirm whether growth of quillback rockfish differs between California and Washington and Oregon. 
 	
 	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates. 
 	

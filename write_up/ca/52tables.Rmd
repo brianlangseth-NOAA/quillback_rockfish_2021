@@ -246,9 +246,35 @@ table_format(x = round(timeseries,2),
 <!-- tab:sensitivities -->
 \include{tex_tables/sensitivities.tex}
 
+<!-- Table of lengths from debWV data -->
+```{r data_table, results = 'asis', echo = FALSE} 
+deb  <- read.csv(file.path("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data", "forSS", "ca_rec_samples_debWV.csv"), header = TRUE)
+orig  <- read.csv(file.path("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data", "forSS", "ca_rec_samples.csv"), header = TRUE)
+ldat <- merge(deb[,1:2], orig[,1:2], by = "Year", all = TRUE)
+
+ldat[is.na(ldat)] <- "-"
+
+col_names <- c("Year", "New lengths", "Original lengths")
+table_format(x = ldat[ldat$Year %in% c(1987:1998),],
+             caption = "Number of additional length samples by year (new lengths) from 1987-1998 for quillback rockfish onboard CPFVs in central California as provided by CDFW. The number of length samples in the base model (original lengths - Table 4) is provided for comparison.",
+             label = "debWV-len-data",
+             align = 'l',
+             row.names = FALSE,
+             col.names = col_names)
+```
+
+<!-- tab:review-sensitivities -->
+\include{tex_tables/review_sensitivities.tex}
+
 \newpage
 
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/age_year_table.tex}
 
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/age_bins_table.tex}
+
+\newpage
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
@@ -290,7 +316,8 @@ table_format(x = out,
              caption = "Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.",
              label = "project",
              align = 'l',
-             col_names = col_names)
+             col_names = col_names,
+             landscape = TRUE)
 ```
 
 \newpage
@@ -312,7 +339,7 @@ table_format(x = tab[,-c(3,4)],
              label = "decision-table",
              align = 'l',
              col_names = col_names,
-             landscape = TRUE)
+             landscape = FALSE)
 ```
 
 \newpage

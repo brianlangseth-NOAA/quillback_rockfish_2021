@@ -908,7 +908,7 @@ SS_tune_comps(dir = file.path(wd, "8_0_17_ComBlock2001"), write = FALSE)
 ###########################################
 #Add comparison plot of MopUp sensitivity (RecCom block at 2001 only) with earlier blocking sensitivities
 ###########################################
-##For Report
+##For MopUp Report
 model = "7_1_0_base"
 base.710 = SS_output(file.path(wd, model),covar=TRUE)
 
@@ -1011,5 +1011,137 @@ rownames(sens_table) = c("Total Likelihood",
                          "Ascend se recreational selex 2020")
 
 write.csv(sens_table, file = file.path(wd, 'rebuilder', 'write_up', "tables", paste0("AllBlock_sensitivities_reccomLike.csv")))
+
+
+###########################################
+#Add comparison plot of MopUp sensitivity (RecCom block at 2001 only) with earlier blocking and data sensitivities
+#For finalized assessment report
+###########################################
+##For Assessment Report
+model = "7_1_0_base"
+base.710 = SS_output(file.path(wd, model),covar=TRUE)
+
+model = "8_0_0_debWV"
+base.800 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_3_debWV_comb_reweight"
+base.803 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_4_recBlock2001"
+base.804 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_6c_recBlock2001_2017_fix2lo"
+base.806c = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_7_recBlock2001_2003_2008_2017"
+base.807 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_8_recBlock2001_2005"
+base.808 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_9_recBlock2001_2005_2017"
+base.809 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_1_0_debWV_block"
+base.810 = SS_output(file.path(wd, model), covar=TRUE)
+model = "8_0_10_recComBlock2001_2017"
+base.8010 = SS_output(file.path(wd, model), covar=TRUE)
+
+model = "9_4_0_recComBlock2001"
+base.940 = SS_output(file.path(wd, "rebuilder", model), covar=TRUE)
+
+sens_names <- c("Base model", "DebWV", "DebWV reweight", "DebWV, Rec Block 2001", 
+                "Rec Block 2001", "Rec Block 2001, 2017",
+                "Rec Block 2001, 03, 08, 17", "Rec Block 2001, 2005", "Rec Block 2001, 05, 17", 
+                "RecCom Block 2001, 2017", "RecCom Block 2001")
+sens_models  <- SSsummarize(list(base.710, base.800, base.803, base.810, 
+                                 base.804, base.806c, 
+                                 base.807, base.808, base.809,
+                                 base.8010, base.940))
+
+#Plot each individually for control over legend location
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'write_up', "figures"), 
+                  legendloc = "bottomleft", 
+                  legendncol = 1,
+                  filenameprefix = paste0("All_review_sensitivities_"),
+                  subplot = c(1,2,9,10), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'write_up', "figures"), 
+                  legendloc = "topright", 
+                  legendncol = 1,
+                  filenameprefix = paste0("All_review_sensitivities_"),
+                  subplot = c(3,4), 
+                  print = TRUE, 
+                  pdf = FALSE)
+SSplotComparisons(sens_models, endyrvec = 2021, 
+                  legendlabels = sens_names, 
+                  ylimAdj = 1.10,
+                  plotdir = file.path(wd, 'write_up', "figures"), 
+                  legendloc = "bottomleft", 
+                  legendncol = 2,
+                  filenameprefix = paste0("All_review_sensitivities_"),
+                  subplot = c(11,12), 
+                  print = TRUE, 
+                  pdf = FALSE)
+
+###
+#Table with fleet likelihoods distinguished
+###
+n = length(sens_names)
+
+AIC = 2 * as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]) + 2 * as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n])
+
+sens_table = rbind(
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "TOTAL",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Length_comp",1:n]),
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Recruitment",1:n]), 
+  as.numeric(sens_models$likelihoods[sens_models$likelihoods$Label == "Parm_softbounds",1:n]),
+  as.numeric(colSums(sens_models$parphases>0,na.rm=TRUE)[1:n]),
+  AIC,
+  c((AIC-AIC[1])[1],NA,NA,NA,(AIC-AIC[1])[5:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "SR_LN(R0)", 1:n]), 
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_Virgin", 1:n]),
+  as.numeric(sens_models$SpawnBio[sens_models$SpawnBio$Label == "SSB_2021", 1:n]),
+  as.numeric(sens_models$Bratio[sens_models$Bratio$Label == "Bratio_2021", 1:n]), 
+  as.numeric(sens_models$quants[sens_models$quants$Label == "Dead_Catch_SPR", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Commercial(1)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_peak_CA_Recreational(2)", 1:n]),
+  as.numeric(sens_models$pars[sens_models$pars$Label == "Size_DblN_ascend_se_CA_Recreational(2)", 1:n]))  
+
+
+sens_table = as.data.frame(sens_table)
+colnames(sens_table) = sens_names
+rownames(sens_table) = c("Total Likelihood",
+                         "Length Likelihood",
+                         "Recruitment Likelihood",
+                         "Parameter Bounds Likelihood",
+                         "N parms",
+                         "AIC",
+                         "delta AIC",
+                         "ln(R0)",
+                         "SB Virgin",
+                         "SB 2021",
+                         "Fraction Unfished 2021",
+                         "Total Yield at SPR 50",
+                         "Peak commercial selex",
+                         "Ascend se commercial selex",
+                         "Peak recreational selex 2020",
+                         "Ascend se recreational selex 2020")
+
+write.csv(sens_table, file = file.path(wd, 'write_up', "tables", paste0("All_review_sensitivities.csv")))
+
+t = table_format(x = sens_table,
+                 caption = 'Parameter values and derived quantities from requested explorations for adding CPFV central California length data, and blocking of recreational and commercial selectivity, and the base model.',
+                 label = 'review-sensitivities',
+                 longtable = TRUE,
+                 font_size = 9,
+                 digits = 2,
+                 landscape = TRUE,
+                 col_names = sens_names)
+
+kableExtra::save_kable(t, file = file.path(wd, "write_up", "tex_tables", "review_sensitivities.tex"))
+
+
 
 

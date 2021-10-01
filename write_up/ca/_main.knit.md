@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "September"
+month: "October"
 year: "2021"
 preamble: |
 output: sa4ss::techreport_pdf
@@ -123,9 +123,9 @@ As open access fisheries are allowed to retain shelf rockfish species co-occurri
 
 _Recreational_
 
-The California recreational fishery in the early part of the 1900s was focused on nearshore waters near ports, but expanded further from port and into deeper depths over time [@Milleretal_2014]. Prior to the groundfish fishery disaster being declared in 2000, there was no time or areas closures for fishing groundfish. During this period, access to deeper depths led to effort being spread over a larger area and filled bag limits with a greater diversity of species from the shelf as well as the nearshore. This resulted in lower catch rates for nearshore rockfish relative to the period after 2000 when depth restrictions at a range of depths starting between 20 to 50 fm were put in place in various management areas north of Point Conception where quillback rockfish are commonly found. This shift of effort into the nearshore kept catch levels high for nearshore rockfish, including quillback rockfish (Figure \ref{fig:catch}), despite greatly reduced seasons. While the part of the stock that was available to the fishery in shallower depths was subject to higher fishing effort, the remainder of the stock (see [Appendix A](#append_a) for estimates of density at depth based on remotely operated vehicle observations) was subject to reduced fishing effort during more than a decade of depth restrictions in waters deeper than 20 to 30 fm that were put in place to facilitate rebuilding of yelloweye rockfish. 
+The California recreational fishery in the early part of the 1900s was focused on nearshore waters near ports, but expanded further from port and into deeper depths over time [@Milleretal_2014]. Prior to the groundfish fishery disaster being declared in 2000, there was no time or areas closures for fishing groundfish. During this period, access to deeper depths led to effort being spread over a larger area and filled bag limits with a greater diversity of species from the shelf as well as the nearshore. This resulted in lower catch rates for nearshore rockfish relative to the period after 2000 when depth restrictions at a range of depths starting between 20 to 50 fm were put in place in various management areas north of Point Conception where quillback rockfish are commonly found. This shift of effort into the nearshore kept catch levels high for nearshore rockfish, including quillback rockfish (Figure \ref{fig:catch}), despite greatly reduced seasons. While the part of the stock that was available to the fishery in shallower depths was subject to higher fishing effort, the remainder of the stock (see [Appendix B](#append_b) for estimates of density at depth based on remotely operated vehicle observations) was subject to reduced fishing effort during more than a decade of depth restrictions in waters deeper than 20 to 30 fm that were put in place to facilitate rebuilding of yelloweye rockfish. 
 
-As the yelloweye rockfish stock continues to rebuild, depth restrictions are expected to lessen, increasing access to more of the habitat for quillback rockfish. Once fishing is allowed in waters up to 60 fm, effort for quillback rockfish may decrease as overall effort shifts to the shelf and away from waters where quillback rockfish are most prevalent. Marine Protected Areas (MPAs) instituted between 2003 and 2012 now encompass 20-30% of the rocky reef habitat within 3 miles of shore in state waters (see [Appendix B](#append_b) for details), and provide refugia to spawning stock in a network designed to seed areas outside the MPAs.
+As the yelloweye rockfish stock continues to rebuild, depth restrictions are expected to lessen, increasing access to more of the habitat for quillback rockfish. Once fishing is allowed in waters up to 60 fm, effort for quillback rockfish may decrease as overall effort shifts to the shelf and away from waters where quillback rockfish are most prevalent. Marine Protected Areas (MPAs) instituted between 2003 and 2012 now encompass 20-30% of the rocky reef habitat within 3 miles of shore in state waters (see [Appendix C](#append_c) for details), and provide refugia to spawning stock in a network designed to seed areas outside the MPAs.
 
 <!-- Summary of Management History and Performance -->
 
@@ -299,7 +299,7 @@ Fixed parameters in the model were as follows. Steepness was fixed at 0.72, and 
 
 Selectivity in the recreational and commercial fleets was fixed to be asymptotic with only ascending width and beginning size of maximum selectivity being estimated. During initial model development, the descending width and width of maximum selectivity parameters for the recreational and commercial fleets were estimated to identify appropriate fixed values consistent with the data, and then fixed at those estimates. Dome-shaped selectivity was explored for all fleets within the model as sensitivities (see [Sensitivity Analyses](#sensitivity-analyses) section). Older quillback rockfish are often found in deeper waters and may move into areas that limit their availability to fishing gear. Dome shaped selectivity can also occur under heterogeneous fishing pressure across space by fleets [@Waterhouseetal_spatialSelex_2014]. 
 
-Given the depth closures in the recreational fishery off California it was initially assumed that large quillback rockfish would not be caught in the fishery indicating dome-shaped selectivity. However, lengths at depth of quillback rockfish from Remote Operated Vehicle data suggested larger quillback rockfish occur across depths and are not limited to depths closed to fishing (see [Appendix A](#append_a) for details). This information lead to the assumption of asymptotic selectivity for the recreational fleet for the base model.       
+Given the depth closures in the recreational fishery off California it was initially assumed that large quillback rockfish would not be caught in the fishery indicating dome-shaped selectivity. However, lengths at depth of quillback rockfish from Remote Operated Vehicle data suggested larger quillback rockfish occur across depths and are not limited to depths closed to fishing (see [Appendix B](#append_b) for details). This information lead to the assumption of asymptotic selectivity for the recreational fleet for the base model.       
 
 ## Model Selection and Evaluation
 
@@ -326,11 +326,11 @@ The large recruitment pulses in the 1980s and 1990s primarily show up in the com
 
 ### Fits to the Data
 
-Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for each of the commercial and recreational fleets. Fits to the length composition data by year are provided in [Appendix C](#append_c).
+Fits to the length data are shown based on the Pearson residuals-at-length, the annual mean lengths, and aggregated length composition data for each of the commercial and recreational fleets. Fits to the length composition data by year are provided in [Appendix D](#append_d).
 
-The Pearson residuals for the commercial fishery have no discernible pattern of misfit to the length data across cohorts but show areas of misfit over time (Figure \ref{fig:com-pearson}). The residuals show that the peak of the composition is being underfit in many years since 2001, where sample sizes are lower and the distributions have a prominent peak (see [Appendix C](#append_c) for details). The mean lengths observed by the commercial fishery were variable by year, with higher variation since 2004 given smaller sample size, and showed an increase in mean length starting in 2007 and a decline after 2014 (Figure \ref{fig:com-mean-len-fit}). The increase in mean size estimated by the model was substantially less than the increase in mean size observed in the data, and likely a consequence of smaller sample size for commercial lengths compared to recreational lengths during this time.   
+The Pearson residuals for the commercial fishery have no discernible pattern of misfit to the length data across cohorts but show areas of misfit over time (Figure \ref{fig:com-pearson}). The residuals show that the peak of the composition is being underfit in many years since 2001, where sample sizes are lower and the distributions have a prominent peak (see [Appendix D](#append_d) for details). The mean lengths observed by the commercial fishery were variable by year, with higher variation since 2004 given smaller sample size, and showed an increase in mean length starting in 2007 and a decline after 2014 (Figure \ref{fig:com-mean-len-fit}). The increase in mean size estimated by the model was substantially less than the increase in mean size observed in the data, and likely a consequence of smaller sample size for commercial lengths compared to recreational lengths during this time.   
 
-The Pearson residuals for the recreational length data were variable by year and indicate no discernible pattern of misfit to the length data (Figure \ref{fig:rec-pearson}). Positive residuals at the edges of the distribution in years before 2004 , which are the largest residuals, are indicative of widely spread distributions with lower sample size. In years since 2004, there are periods of positive and negative residuals in clusters over two to five years. The positive residuals indicate underfitting of peaked distributions (e.g. in 2006-2010, or in 2012-2014), whereas negative residuals indicate overfitting of the distribution as it skews to the left or right (e.g. 2005-2007 or 2015-2019; see [Appendix C](#append_c) for details). The mean length decreased from a high around 40cm in the early 1980s through the 1990s to under 30cm, and then increased slightly through 2004. After 2004, the variation in mean length was reduced, and mean length varied around 35 cm, with increases through 2013 and decline in 2015 and 2016 (Figure \ref{fig:rec-mean-len-fit}). The mean length was highly variable in 2002 due to low sample size (Table \ref{tab:len-samps}) and a flat length distribution. 
+The Pearson residuals for the recreational length data were variable by year and indicate no discernible pattern of misfit to the length data (Figure \ref{fig:rec-pearson}). Positive residuals at the edges of the distribution in years before 2004 , which are the largest residuals, are indicative of widely spread distributions with lower sample size. In years since 2004, there are periods of positive and negative residuals in clusters over two to five years. The positive residuals indicate underfitting of peaked distributions (e.g. in 2006-2010, or in 2012-2014), whereas negative residuals indicate overfitting of the distribution as it skews to the left or right (e.g. 2005-2007 or 2015-2019; see [Appendix D](#append_d) for details). The mean length decreased from a high around 40cm in the early 1980s through the 1990s to under 30cm, and then increased slightly through 2004. After 2004, the variation in mean length was reduced, and mean length varied around 35 cm, with increases through 2013 and decline in 2015 and 2016 (Figure \ref{fig:rec-mean-len-fit}). The mean length was highly variable in 2002 due to low sample size (Table \ref{tab:len-samps}) and a flat length distribution. 
 
 Aggregate fits by fleet are shown in Figure \ref{fig:agg-len-fit}. The model fits the aggregated lengths for both the commercial and recreational fleet well. Both fleets show similar ranges of sizes caught and a central tendency of 36 cm. The commercial fleet is more peaked compared to the recreational fleet, which has a more rounded peak around its central tendency and slight shift toward smaller sizes. The model expects a slightly higher proportion of the largest fish for both fleets relative to the data. This may indicate that the true selectivity of the recreational and commercial fleets may have some level of reduced selectivity for the largest fish (i.e. dome-shape). Sensitivities examining dome-shaped selectivity form were performed and presented in the [Sensitivity Analyses](#sensitivity-analyses) section below. 
 
@@ -417,11 +417,64 @@ Six other sensitivities had either changes in initial spawning output near 10 pe
 
 All other sensitivities, including those estimating dome-shaped recruitment, resulted in similar estimates of unfished and recent spawning output, and thus had similar stock status, compared to the base model.
 
+#### Additional Sensitivity Analyses and Data Explorations During Reviews
+
+During the reviews of the quillback rockfish stock assessment at the SSC's Groundfish Subcommittee (GFSC) meetings on June 21-22, 2021 and August 17, 2021, a number of new additional sensitivities and data explorations were requested. These requests were grouped around exploration of additional length data, additional age data, and alternative selectivity blocks. Responses to these requests were described in reports presented at the August 17, 2021 meeting (Langseth -@Langseth_augrequests_2021 for requests made during the June 21-22 review) and the mop-up meeting on September 29-30, 2021 (Langseth -@Langseth_mopupgrowth_2021) for requests made during the August 17 review) but are also described herein so as to have a single source of information about quillback rockfish. Two additional requests were made at the June 21-22, 2021 meeting for i) updated California catch values and ii) estimating $L_{\infty}$ and $k$, but these were already addressed in the original sensitivity explorations, so are not repeated again. The model explorations to address the new requests were as follows:
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+   
+  \item Add the length data from the historical onboard commercial passenger fishing vessels (CPFV) surveys from the 1980s and 1990s northern California survey conducted by CDFW.
+
+  \item Evaluate alternative selectivity time blocking based on the timing of depth restrictions from 2001-present. In particular add a time block (allowing for dome-shaped selectivity) starting in 2001 and consider additional time blocks. Numerous sensitivity scenarios were explored to adddress this request including:
+  
+  \begin{enumerate}
+  
+  \item Blocking recreational selectivity from 1916-2000 assuming asymptotic selectivity, and 2001-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001).
+  
+  \item Blocking recreational selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001 and a relaxation of those restrictions starting in 2017). For this sensitivity, the selectivity parameter (parameter 2) controlling the width of the peak hit its lower bound, which was resolved by fixing this parameter at its lower bound.
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2002 allowing for dome-shaped selectivity, 2003-2007 allowing for dome-shaped selectivity, 2008-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, changes in the percent of area open to fishing in 2003 and again in 2008, and a relaxation of depth restrictions starting in 2017).
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2004 allowing for dome-shaped selectivity, and 2005-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, and a noticeable change in mean length in 2005).
+  
+  \item Blocking selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2004 allowing for dome-shaped selectivity, 2005-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (due to depth restrictions starting in 2001, a noticeable change in mean length in 2005, and a relaxation of depth restrictions starting in 2017).
+  
+  \item Blocking recreational selectivity from 1916-2000 assuming asymptotic selectivity, and 2001-2020 allowing for dome-shaped selectivity with the new CPFV length data (same as in item 16a above but with data from item 15 also included).
+  
+  \item Blocking recreational and commercial selectivity from 1916-2000 assuming asymptotic selectivity, 2001-2016 allowing for dome-shaped selectivity, and 2017-2020 allowing for dome-shaped selectivity (same as in item 16b above but with commercial selectivity as well).
+  
+  \item Blocking recreational and commercial selectivity from 1916-2000 assuming asymptotic selectivity, and 2001-2020 allowing for dome-shaped selectivity (same as in item 16a above but with commercial selectivity as well).
+  
+  \end{enumerate}
+
+\end{enumerate}
+  
+The data explorations done outside the model to address the new requests were as follows:
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+  \item Age otoliths and use corresponding lengths from samples collected in California and compare results to the growth curve from samples collected in Oregon and Washington. Comparisons were done external to the stock assessment model.
+
+\end{enumerate}
+
+Additional length data for quillback rockfish were provided by California Department of Fish and Wildlife (CDFW) on July 12, 2021. These data were collected by observers onboard CPFV fishing in central California (@Reilly1998) from 1987-1998, and were not available for use in the base model that was reviewed and adopted in the June GFSC meeting. A total of 753 additional length observations for the recreational fleet from 1987-1998 (Table \ref{tab:debWV-len-data}) were added for this sensitivity. Length distributions from the new data were generally similar to existing length distributions within the adopted base model (Figure \ref{fig:sens-debWV-comp}). Given the use of new data, a scenario with and without data weighting was run. 
+
+Likelihood values and estimates of key parameters from each additional sensitivity to address review requests based on internal model explorations (i.e. all but growth explorations) are available in Table \ref{tab:review-sensitivities}. Plots of the estimated time-series of spawning output, relative spawning output, and recruitment are shown in Figures \ref{fig:review-sens-ssb}, \ref{fig:review-sens-depl}, and \ref{fig:review-sens-recdev}, respectively.
+
+Adding the new length data resulted in lower estimates of initial spawning output and recent spawning output compared to the adopted base model, and resulted in a slightly more depleted stock. This sensitivity did not suggest that important information was missing from the base model to warrant a change to the base model at the time of review, but it was recommended to explore use of the data for future assessments. The additional explorations on selectivity showed limited support for the additional complexity in blocking selectivity. Changes to both the recreational and commercial selectivity resulted in larger estimates of initial spawning output, and in the case of blocking both fleets at 2001 and 2017, lower estimates of recent spawning output and depletion. For all explorations, depletion remained below the management limit, thus estimates of status were robust to changes in selectivity blocks and form and were not affected by the addition of CPFV length data.
+
+To address the requests regarding additional age data, CDFW provided otoliths from 35 quillback rockfish collected from the commercial (N = 6) and recreational (N = 29) fisheries, sampled nearly exclusively from Crescent City, California. In addition, 48 otoliths from CCFRP sampling near the Farallon Islands were provided. An additional 39 otoliths from port sampling efforts were provided by SWFSC staff, as were 123 otoliths from the Abrams collection housed at the SWFSC. Otoliths were sent to the NWFSC's aging lab in Newport, Oregon. Tables for the number of new otoliths by year (Table \ref{tab:age-year}) and by length bin (Table \ref{tab:age-bins}) are provided. These tables include the numbers at length from otoliths in the Abrams collection, which were not yet aged by the mop-up review, and show similar sized fish compared to those sources aged.
+
+Length and age from the new samples were overlaid onto original length and age from samples used in the base model. Twenty-one samples from California were already available from the WCGBTS (Table \ref{tab:len-at-age-samps}) and were included within the growth curve used for the base model (red circles in Figure \ref{fig:review-length-age}). Of these samples, only 2 were less than 5 years, and none over 40 years. The age range of the 122 new California samples (blue and yellow circles in Figure \ref{fig:review-length-age}) was 4 - 51, with one age 4 sample, and two samples over 40 years (41 and 51). After extensive exploration, the paucity of young California fish to inform $K$ and $L0$ suggests the data are inconclusive at this time to robustly estimate a separate California-specific growth curve, and more data, particularly of young but also old fish would help inform whether growth in California differs from Washington and Oregon.  
+
+
 ### Unresolved Problems and Major Uncertainties
 
-A primary uncertainty for the California quillback rockfish model is in treatment of growth parameters. The fixed value for k for quillback rockfish is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio, but one within the range of Beverton [-@Beverton_1992] for Sebastes. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is possible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and estimates of $L_{\infty}$ near to the fixed value. The choice also matters in the sense that estimating growth parameters results in a different stock status compared to the base model. Despite well defined profiles for $k$ and $L_{\infty}$, we decided to keep the fixed values in the base model given the relatively limited length composition data, concerns over whether length data on its own without age data can inform $k$, that the curve of estimated $k$ and $L_{\infty}$ values poorly fit the age and length data, and that growth estimates used in the model were based on data with young fish from the surveys to inform the estimate of $k$.
+A primary uncertainty for the California quillback rockfish model is in treatment of growth parameters. The fixed value for k for quillback rockfish is on the higher end of other published studies, ranging between 0.06-0.19, and results in a low $M$/$k$ ratio, but one within the range of Beverton [-@Beverton_1992] for Sebastes. Profiles and sensitivities for $L_{\infty}$ and $k$ suggest estimating these parameters is possible, both separately and together, and result in estimates of $k$ nearer to the middle of the range of literature values and estimates of $L_{\infty}$ near to the fixed value. The choice also matters in the sense that estimating growth parameters results in a different stock status compared to the base model. Despite well defined profiles for $k$ and $L_{\infty}$, we decided to keep the fixed values in the base model given the relatively limited length composition data, concerns over whether length data on its own without age data can inform $k$, that the curve of estimated $k$ and $L_{\infty}$ values poorly fit the age and length data, and that growth estimates used in the model were based on data with young fish from the surveys to inform the estimate of $k$. New California age data did not resolve the uncertainty around growth. Current California data were insufficient to robustly estimate a separate California-specific length-age relationship given the limited sample size of young quillback rockfish from California. It is possible that more data would support a growth pattern in California that is similar to that shown by the additional data and thereby different than Oregon/Washington, but current data are too sparse to reliably estimate such a curve at this time. California growth remains an uncertainty that needs additional data to resolve. 
 
-Variation in recruitment deviations remains an unresolved problem. Recruitment deviations in the 1980s and 1990s were highly variable, and variance was higher than the assumed value for $sigmaR$. We explored numerous ways to account for this, with the only solution reducing recruitment deviations to below the value of $sigmaR$ was by reducing the variability in size at older ages to very small values (~0.01). Under such a scenario, the trajectory of the population was very similar to the base model as was the pattern of stronger than average recruitment deviations in the 1980s and 1990s followed by weaker than average recruitment deviations in the 2000s. Consequently, this remains an unresolved problem that does not appear to greatly affect model results.
+Variation in recruitment deviations remains an unresolved problem. Recruitment deviations in the 1980s and 1990s were highly variable, and variance was higher than the assumed value for ${\sigma}_R$. We explored numerous ways to account for this, with the only solution reducing recruitment deviations to below the value of ${\sigma}_R$ was by reducing the variability in size at older ages to very small values (~0.01). Under such a scenario, the trajectory of the population was very similar to the base model as was the pattern of stronger than average recruitment deviations in the 1980s and 1990s followed by weaker than average recruitment deviations in the 2000s. Consequently, this remains an unresolved problem that does not appear to greatly affect model results.
 
 Lastly, catches of quillback rockfish were particularly high in a few years for both the recreational and commercial fleets. Although not affecting estimates of depletion, averaging out these high years of catches affected model scale and therefore estimates of sustainable yield. Changes to catches affecting model scale is true of all models that assume catch is well known, however for quillback rockfish in California the magnitude of the reduction in catch for these years was approximately 20 percent of the total removals. Better understanding the factors contributing to these high catches as well as potential resolutions, should they be needed, would aid in ensuring catch time series and resulting estimates of sustainable yield are accurate.  
 
@@ -462,7 +515,7 @@ The ability to estimate additional process and biological parameters for quillba
   
   \item Improved understanding of where recreational fishing is commonly occurring (areas and depths) and the range of sizes available by depth would better inform the selectivity form, which currently is the near the shape for maturity.  
 
-	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in California would result in samples from the entire U.S. West Coast informing growth. Samples of young fish would particularly help inform estimates of the growth coefficient (k), and help distinguish whether fish in California waters have different growth dynamics from those in Oregon and Washington waters. 
+	\item Age data were predominantly from Oregon and Washington waters. Collecting length and otolith samples from recreational and commercial catches in California would result in samples from the entire U.S. West Coast informing growth. Otoliths from the WCGBTS survey would also help inform growth. California otoliths identified and aged during model reivews were insufficient to robustly estimate a separate California-specific length-age relationship given the limited sample size of young quillback rockfish from California. More data, particularly of young and old fish, are needed to be able to robustly estimate a California-specific growth curve and confirm whether growth of quillback rockfish differs between California and Washington and Oregon. 
 	
 	\item Recruitment patterns showed lower than average recruitment in the 2000s. Additional data to support such patterns in recruitment would provide additional support for model estimates. 
 	
@@ -1037,16 +1090,61 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- tab:sensitivities -->
 \include{tex_tables/sensitivities.tex}
 
+<!-- Table of lengths from debWV data -->
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2cm}}
+\caption{(\#tab:debWV-len-data)Number of additional length samples by year (new lengths) from 1987-1998 for quillback rockfish onboard CPFVs in central California as provided by CDFW. The number of length samples in the base model (original lengths - Table 4) is provided for comparison.}\\
+\toprule
+Year & New lengths & Original lengths\\
+\midrule
+\endfirsthead
+\caption[]{(\#tab:debWV-len-data)Number of additional length samples by year (new lengths) from 1987-1998 for quillback rockfish onboard CPFVs in central California as provided by CDFW. The number of length samples in the base model (original lengths - Table 4) is provided for comparison. \textit{(continued)}}\\
+\toprule
+Year & New lengths & Original lengths\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+1987 & 4 & 8\\
+1988 & 87 & 7\\
+1989 & 107 & 51\\
+1990 & 37 & -\\
+1991 & 6 & -\\
+1992 & 43 & -\\
+1993 & 61 & 57\\
+1994 & 22 & 29\\
+1995 & 164 & 18\\
+1996 & 104 & 43\\
+1997 & 73 & 79\\
+1998 & 45 & 60\\*
+\end{longtable}
+\endgroup{}
+\endgroup{}
+
+<!-- tab:review-sensitivities -->
+\include{tex_tables/review_sensitivities.tex}
+
 \newpage
 
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/age_year_table.tex}
 
+<!-- tab:sensitivities -->
+\input{U:/Stock assessments/quillback_rockfish_2021/write_up/postSSC_responses/MopUp_response/age_bins_table.tex}
+
+\newpage
 
 <!-- ======================================================= -->
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 
 \begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
+
+\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}>{\raggedright\arraybackslash}p{0.85cm}}
 \caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N. The OFL North is the year specific total OFL for quillback rockfish, and the CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
@@ -1077,6 +1175,7 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 2032 & - & - & - & - & - & - & 4.47 & 0.803 & 3.59 & 2.72 & 12.65 & 0.23\\*
 \end{longtable}
 \endgroup{}
+\end{landscape}
 \endgroup{}
 
 \newpage
@@ -1340,6 +1439,22 @@ Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spa
 ![Change in estimated annual recruitment deviation by sensitivity.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/ca/sensitivities/base.710_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation by sensitivity."}
 
 
+<!-- For additional exploration requests -->
+
+![Length distributions of the additional data (red line) requested during the June review compared to the original base model data (blue line) in years where the additional data were available (1987-1998). Numbers indicate the number of lengths from each dataset for each year that are also shown in Table 14.\label{fig:sens-debWV-comp}](C:/Users/Brian.Langseth/Desktop/ca/postSSC_plots/ForReport/Comp_overlap.png){width=100% height=100% alt="Length distributions of the additional data (red line) requested during the June review compared to the original base model data (blue line) in years where the additional data were available (1987-1998). Numbers indicate the number of lengths from each dataset for each year that are also shown in Table 14."}
+
+
+![Change in estimated spawning output by additional sensitivity requests during model reviews.\label{fig:review-sens-ssb}](C:/Users/Brian.Langseth/Desktop/ca/write_up/figures/All_review_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output by additional sensitivity requests during model reviews."}
+
+
+![Change in estimated fraction unfished by additional sensitivity requests during model reviews.\label{fig:review-sens-depl}](C:/Users/Brian.Langseth/Desktop/ca/write_up/figures/All_review_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction unfished by additional sensitivity requests during model reviews."}
+
+
+![Change in estimated annual recruitment deviation by additional sensitivity requests during model reviews.\label{fig:review-sens-recdev}](C:/Users/Brian.Langseth/Desktop/ca/write_up/figures/All_review_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation by additional sensitivity requests during model reviews."}
+
+
+![Length-age data for quillback rockfish. Black and red circles indicate samples used in the base model that are from Oregon and Washington (black) and California (red). Blue and yellow circles indicate new California samples identified and aged during review at the August 17, 2021 GFSC meeting (blue) and at the September 29-30, 2021 mopup meeting (yellow). The gray line indicates the growth curve used in the base model.\label{fig:review-length-age}](L:\Assessments\CurrentAssessments\DataModerate_2021\Quillback_Rockfish\data/mopup_data/comb_LA_data.png){width=100% height=100% alt="Length-age data for quillback rockfish. Black and red circles indicate samples used in the base model that are from Oregon and Washington (black) and California (red). Blue and yellow circles indicate new California samples identified and aged during review at the August 17, 2021 GFSC meeting (blue) and at the September 29-30, 2021 mopup meeting (yellow). The gray line indicates the growth curve used in the base model."}
+
 <!-- ====================================================================== -->
 <!-- ******************    Reference Points    **************************** --> 
 <!-- ====================================================================== -->
@@ -1363,20 +1478,24 @@ fishery selectivity and with steepness fixed at 0.72."}
 
 # Appendix
 
-## Allocation of Yield Among Federal Management Areas
+## Appendix A: Allocation of Yield Among Federal Management Areas{#append_a}
 
 The 2021 California stock assessment for quillback rockfish represents U.S. waters between the California-Mexico border and the California-Oregon border 42$^\circ$ 00' N. lat. Federal management of the nearshore rockfish complex, that includes quillback rockfish, is based on areas north and south of 40$^\circ$ 10' N. lat. Therefore, yield estimates from the California base model must be divided between the northern and southern management areas in order to determine the contribution of quillback rockfish to the nearshore rockfish overfishing limit (OFL). 
 
-Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Neither of these estimates were available for quillback rockfish at this time to inform allocations by area, although CDFW may have habitat by area data within their analysis of percent area closed to fishing (briefly described in [Appendix C](#append_c)) which could form the basis for starting to explore habitat by area estimates for quillback rockfish. In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated.  During this period a total of 49.6 percent of all removals were from areas north of 40$^\circ$ 10' N. lat. Based on this, the recommended allocation of the OFLs from the California model be 49.6 percent to the north minor nearshore rockfish complex and 50.4 percent to the south complex.    
+Ideally, allocation by area would be based on calculations of habitat by area and/or estimates of biomass by area. Neither of these estimates were available for quillback rockfish at this time to inform allocations by area. In lieu of this information, historical catches by each region were used to recommend allocation percents by area. Total removals from the recreational and commercial fleets between 2005 - 2020 by areas north and south of 40$^\circ$ 10' N. lat. were calculated. The proportion of removals that are north of 40$^\circ$ 10' N in each year is shown by year in Figure \ref{fig:catch-4010}. During the entire 2005-2020 period, a total of 49.6 percent of all removals were from areas north of 40$^\circ$ 10' N. lat (horizontal dashed line on Figure \ref{fig:catch-4010}) . Based on this, the recommended allocation of the OFLs from the California model be 49.6 percent to the north minor nearshore rockfish complex and 50.4 percent to the south complex. 
 
 
-## Appendix A: California ROV Survey Data Informing Selectivity{#append_a}
+![Proportion of total removals in the recreational and commercial fisheries that are north of 40 degrees 10 minutes N. lat. by year from 2005 to 2020. The horizontal dashed line is the proportion of total removals over the full 2005-2020 time period that is noth of 40 degrees 10 minutes N. lat.\label{fig:catch-4010}](C:/Users/Brian.Langseth/Desktop/ca/write_up/figures/catch_allocation_4010.png){width=100% height=100% alt="Proportion of total removals in the recreational and commercial fisheries that are north of 40 degrees 10 minutes N. lat. by year from 2005 to 2020. The horizontal dashed line is the proportion of total removals over the full 2005-2020 time period that is noth of 40 degrees 10 minutes N. lat."}
+
+\clearpage
+
+## Appendix B: California ROV Survey Data Informing Selectivity{#append_b}
 
 From 2013-2015, the CDFW in collaboration with Marine Applied Research and Exploration (MARE), conducted Remote Operated Vehicle (ROV) surveys along the full length of the California coastline inside MPAs and in reference sites outside for comparison. Density estimates were produced from the ratio of observed fish per unit area observed over the area of seafloor observed by the ROV in fish per meter squared. The percent relative density reflecting the proportion of the density observed in each depth bin was estimated relative to the sum of the density values in observed depths. A particular advantage of ROV data compared to other data sources is the accuracy of the depth of encounter of individual fish, providing useful information regarding selectivity of fishing gear relative to the depth distribution of fish observed by the ROV. Depth restrictions north of Point Conception varied from 20 to 40 fm for most of the last two decades. Densities were highest in the depths of 10 to 50 fm. Therefore, fish occur at depths greater than those that are open to fishing, indicating depth restrictions offer protection of quillback rockfish biomass (Table \ref{tab:ca-ROV}). 
  
 In addition, length frequency distributions by depth were determined from fish observed by the ROV based on visual approximations using the distance between paired lasers. While future efforts to increase the precision of length estimates include using stereo-camera data and programs estimating length from trigonometric calculations, the trends in approximate length distribution with depth still provides useful information. The length frequency distribution by depth is provided in Figure \ref{fig:ca-ROV}. In reviewing both the density by depth and length by depth relative to ontogenetic migration, the patterns may not reflect the smaller fish using shallow rocky reef as juveniles in less than 10 fm, and only reflect the density and composition in deeper depths where ontogenetic migration to deeper depths has already taken place for nearshore species and is not as apparent. 
 
-When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. The combination of MPAs and RCAs restrict a larger portion of habitat to fishing (see [Appendix B](#append_b) for details). 
+When examining the length composition data by depth inside and outside of MPAs north of Point Conception (Figure \ref{fig:ca-ROV}), no extreme differences in composition were observed, which is not surprising given the relatively recent implementation of MPAs north of Point Conception between 2007 and 2012. The MPAs make up 20-30% of the rocky reef habitat in state waters within three miles of shore and are intended to preserve the larger individuals as biomass accumulates in MPAs over time. The combination of MPAs and RCAs restrict a larger portion of habitat to fishing (see [Appendix C](#append_c) for details). 
 
 The percentage of fish in 5 cm size categories among 10 fm depths bins north of Point Conception did not show clear signs of increasing size with depth in greater than 10 fm in either region or protected vs. reference sites (Figure \ref{fig:ca-ROV-percent}). This may be in part due to the fish having already moved from shallow kelp forest habitat where the ROV cannot operate to the adult depth distribution in greater than 10 fm by the time they are observed. Only in the shallower depth bins is there higher proportion of smaller individuals. This would indicate that selectivity may not be domed shaped as would be considered if the depth restrictions protected a larger proportion of adult biomass.
 
@@ -1435,7 +1554,7 @@ Total & 401535 & 235 & - & -\\*
 
 \clearpage
 
-## Appendix B: Percent Area Closed to Fishing in the RCAs and MPAs over time{#append_b}
+## Appendix C: Percent Area Closed to Fishing in the RCAs and MPAs over time{#append_c}
 
 MPAs were instituted at various times from 2003 to 2012 as the area selection process was undertaken on a regional process. The existence of no take MPAs in some of the areas selected prior to expansion of the MPAs to encompass approximately 20-30% of rocky reef habitat in state waters, duration of existence of new areas, degree of effort prior to protection or criteria for selection including productivity of the reef may have contributed to the current patterns in composition and density inside vs. outside MPAs. As biomass accrues inside MPAs, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside the MPAs. 
  
@@ -1486,7 +1605,7 @@ Year & Percent Habitat Protected by MPA & Percent Habitat Protected by RCA & Per
 
 \clearpage
 
-## Appendix C: Detailed Fit to Annual Length Composition Data{#append_c}
+## Appendix D: Detailed Fit to Annual Length Composition Data{#append_d}
 
 
 

@@ -419,6 +419,46 @@ label = 'sens-recdev')
 ```
 
 
+<!-- For additional exploration requests -->
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "postSSC_plots", "ForReport", "Comp_overlap.png"),
+caption = "Length distributions of the additional data (red line) requested during the June review compared to the original base model data (blue line) in years where the additional data were available (1987-1998). Numbers indicate the number of lengths from each dataset for each year that are also shown in Table 14",
+label = 'sens-debWV-comp')
+```
+
+```{r, echo=FALSE, results='asis'}
+review_sens_wd = file.path("C:/Users/Brian.Langseth/Desktop/ca", "write_up", "figures")
+nm = "All_review_sensitivities_compare2_spawnbio_uncertainty.png"
+add_figure(
+filein = file.path(review_sens_wd, nm),
+caption = "Change in estimated spawning output by additional sensitivity requests during model reviews",
+label = 'review-sens-ssb')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = "All_review_sensitivities_compare4_Bratio_uncertainty.png"
+add_figure(
+filein = file.path(review_sens_wd, nm),
+caption = "Change in estimated fraction unfished by additional sensitivity requests during model reviews",
+label = 'review-sens-depl')
+```
+
+```{r, echo=FALSE, results='asis'}
+nm = "All_review_sensitivities_compare12_recdevs_uncertainty.png"
+add_figure(
+filein = file.path(review_sens_wd, nm),
+caption = "Change in estimated annual recruitment deviation by additional sensitivity requests during model reviews",
+label = 'review-sens-recdev')
+```
+
+```{r, results = 'asis', echo = FALSE}
+add_figure(
+filein = file.path("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data", "mopup_data", "comb_LA_data.png"), 
+caption = "Length-age data for quillback rockfish. Black and red circles indicate samples used in the base model that are from Oregon and Washington (black) and California (red). Blue and yellow circles indicate new California samples identified and aged during review at the August 17, 2021 GFSC meeting (blue) and at the September 29-30, 2021 mopup meeting (yellow). The gray line indicates the growth curve used in the base model",
+label = 'review-length-age')
+```
+
 <!-- ====================================================================== -->
 <!-- ******************    Reference Points    **************************** --> 
 <!-- ====================================================================== -->
