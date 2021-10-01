@@ -43,11 +43,44 @@ dec_tab = data.frame("Year" = 2021:2032,
 
 write.csv(round(dec_tab,2), file.path(loc, "or", "decision_tables", "decision_table_OR_R0_baseABC.csv"), row.names = FALSE)
 
+
+##Post MopUp Version (with new catch values for 2021-2022)
+
+or  <- SS_output(file.path(loc, "or", "8_1_0_postMopUp_base"), printstats=FALSE, verbose=FALSE)
+low <- SS_output(file.path(loc, "or", "8_1_2_lowState_R0_baseABC"), printstats=FALSE, verbose=FALSE)
+high <- SS_output(file.path(loc, "or", "8_1_1_highState_R0_baseABC"), printstats=FALSE, verbose=FALSE)
+
+modelnames <- c("Base (ln(R0) = 2.14)", "Low (ln(R0) = 2.01)", "High (ln(R0) = 2.28)")
+mysummary  <- SSsummarize(list(or, low, high))
+SSplotComparisons(mysummary, 
+                  filenameprefix = "OR_REPORT_R0_baseABC_decision_table_postmopup_",
+                  legendlabels = modelnames, 
+                  legendloc = "bottomleft",
+                  plotdir = file.path(loc, "or", "decision_tables"),
+                  subplot = c(2,4),
+                  pdf = FALSE,
+                  png = TRUE)
+
+#percent = c(0.40, 0.60) #percent allocation by fleet
+
+dec_tab = data.frame("Year" = 2021:2032, 
+                     "Cbase" = or$derived_quants[grep("ForeCatch",or$derived_quants$Label),"Value"],
+                     #"Clow" = low$derived_quants[grep("ForeCatch",low$derived_quants$Label),"Value"],
+                     #"Chigh" = high$derived_quants[grep("ForeCatch",high$derived_quants$Label),"Value"],
+                     "SBlow" = low$derived_quants[which(low$derived_quants$Label == "SSB_2021"):which(low$derived_quants$Label == "SSB_2032"),"Value"],
+                     "depllow" = low$derived_quants[which(low$derived_quants$Label == "Bratio_2021"):which(low$derived_quants$Label == "Bratio_2032"),"Value"],
+                     "SBbase" = or$derived_quants[which(or$derived_quants$Label == "SSB_2021"):which(or$derived_quants$Label == "SSB_2032"),"Value"],
+                     "deplbase" = or$derived_quants[which(or$derived_quants$Label == "Bratio_2021"):which(or$derived_quants$Label == "Bratio_2032"),"Value"],
+                     "SBhigh" = high$derived_quants[which(high$derived_quants$Label == "SSB_2021"):which(high$derived_quants$Label == "SSB_2032"),"Value"],
+                     "deplhigh" = high$derived_quants[which(high$derived_quants$Label == "Bratio_2021"):which(high$derived_quants$Label == "Bratio_2032"),"Value"])
+
+write.csv(round(dec_tab,2), file.path(loc, "or", "decision_tables", "decision_table_OR_R0_baseABC_postmopup.csv"), row.names = FALSE)
+
 ####
 #Generate the tex table for the report
 ####
 
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "or", "decision_tables", "decision_table_OR_R0_baseABC.csv"), header = TRUE)
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "or", "decision_tables", "decision_table_OR_R0_baseABC_postmopup.csv"), header = TRUE)
 
 col_names = c("Year", 
               "Catch (mt)", 
@@ -58,7 +91,7 @@ col_names = c("Year",
               "High: Spawning Output", 
               "High: Fraction of Unfished")
 
-table_format(x = tab,
+t = table_format(x = tab,
              caption = "Decision table summary of 10 year projections for low (2.01) and high (2.28) states of nature around ln(R0). Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45.",
              label = "decision-table",
              align = 'l',
@@ -66,10 +99,10 @@ table_format(x = tab,
              landscape = FALSE)
 
 kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables", 
-                                           "or_decision_table_nonformatted.tex"))
+                                           "or_decision_table_nonformatted_postmopup.tex"))
 
 #Note: I couldn't get formatting right so copied over table here: https://github.com/chantelwetzel-noaa/copper_rockfish_2021/blob/master/write_up/decision_table/nca_decision_table.tex
-#and updated caption, label, and quantities to be for or quillback: renamed or_decision_table.tex.
+#and updated caption, label, and quantities to be for or quillback: renamed or_decision_table_postmopup.tex.
 
 
 ## CALIFORNIA decision tables----------------------------------------------------

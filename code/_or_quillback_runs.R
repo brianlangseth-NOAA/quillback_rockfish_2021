@@ -1391,5 +1391,40 @@ SS_plots(base.805)
 
 
 
+###################################################################################
+#Post MopUp model runs
+###################################################################################
+  
+#Starting from model 8_0_0_postSSC_base
+#Add new catch values for 2021 and 2022. From email by Katie Pearson sent Sept 29, 2021
+#Catch in 2021: 6.52 would be 4.2 mt rec (64%) and 2.32 mt (36%) commercial
+#Catch in 2022: 2.43 would be 1.46 mt rec (60%) and 0.97 mt commercial (40%)
+
+model = "8_1_0_postMopUp_base"
+base.810 = SS_output(file.path(wd, model),covar=TRUE)
+SS_tune_comps(dir = "C:\\Users\\Brian.Langseth\\Desktop\\or\\8_1_0_postMopUp_base", write = FALSE, option = "none")
+SS_plots(base.810, forecastplot = TRUE)
+SSunavailableSpawningOutput(base.810, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
+SSplotSPR(base.810,subplots=4,print=TRUE)
+
+#Now run R0 states with forecasted catches (ABC values) from base.810
+#Copy model 804b and 805b (to 811 and 812) and update forecast file with catches
+#allocated based on new values
+#Replace 2021-2022 with values for forecast file in base.810
+#Set buffer to 1 for all years and caps and allocations to year 2033
+fore_loc = grep("ForeCatch",base.810$derived_quants$Label)
+baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.810$derived_quants[fore_loc,"Value"][-c(1:2)]*0.40),
+                data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.810$derived_quants[fore_loc,"Value"][-c(1:2)]*0.60))
+
+model = "8_1_1_highState_R0_baseABC"
+base.811 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.811)
+
+model = "8_1_2_lowState_R0_baseABC"
+base.812 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.812)
+
+  
+  
 
 

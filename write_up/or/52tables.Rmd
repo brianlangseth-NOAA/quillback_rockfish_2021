@@ -270,7 +270,7 @@ table_format(x = round(timeseries,2),
 
 
 ```{r, results = 'asis'}
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or/8_0_0_postSSC_base", 'tables', 'g_Projections_ES.csv'))
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/or/8_1_0_postMopUp_base", 'tables', 'g_Projections_ES.csv'))
 man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv")
 
 out = cbind(tab$Year,
@@ -297,7 +297,7 @@ col_names = c('Year',
               "Spawning Output",
               "Fraction Unfished")
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from 2017-2020. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on recommended values from the Groundfish Management Team. The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40 degrees 10 minutes Latitude N, while the OR ACL North is the Oregon specific allocation of the total ACL.",
              label = "project",
              align = 'l',
              col_names = col_names,
@@ -306,25 +306,8 @@ table_format(x = out,
 
 \newpage
 
-```{r, results = 'asis'}
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "or", "decision_tables", "decision_table_OR_R0_baseABC.csv"), header = TRUE)
-
-col_names = c("Year", 
-              "Catch (mt)", 
-              "Low: Spawning Output", 
-              "Low: Fraction of Unfished", 
-              "Base: Spawning Output", 
-              "Base: Fraction of Unfished", 
-              "High: Spawning Output", 
-              "High: Fraction of Unfished")
-
-table_format(x = tab,
-             caption = "Decision table summary of 10 year projections for low (2.01) and high (2.28) states of nature around ln(R0). Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45",
-             label = "decision-table",
-             align = 'l',
-             col_names = col_names,
-             landscape = FALSE)
-```
+<!-- tab:decision-table -->
+\input{C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables/or_decision_table_postmopup.tex}
 
 \newpage
 
