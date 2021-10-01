@@ -66,7 +66,10 @@ table_format(x = tab,
              landscape = FALSE)
 
 kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables", 
-                                           "or_decision_table.tex"))
+                                           "or_decision_table_nonformatted.tex"))
+
+#Note: I couldn't get formatting right so copied over table here: https://github.com/chantelwetzel-noaa/copper_rockfish_2021/blob/master/write_up/decision_table/nca_decision_table.tex
+#and updated caption, label, and quantities to be for or quillback: renamed or_decision_table.tex.
 
 
 ## CALIFORNIA decision tables----------------------------------------------------
@@ -108,6 +111,7 @@ write.csv(round(dec_tab,2), file.path(loc, "ca", "decision_tables", "decision_ta
 
 tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "ca", "decision_tables", "decision_table_CA_M_baseABC.csv"), header = TRUE)
 
+
 col_names = c("Year", 
               "Catch (mt)", 
               "Low: Spawning Output", 
@@ -125,4 +129,7 @@ t = table_format(x = tab[,-c(3,4)],
              landscape = FALSE)
 
 kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables", 
-                                           "ca_decision_table.tex"))
+                                           "ca_decision_table_nonformatted.tex"))
+
+#Note: I couldn't get formatting right so copied over table here: https://github.com/chantelwetzel-noaa/copper_rockfish_2021/blob/master/write_up/decision_table/nca_decision_table.tex
+#and updated caption, label, and quantities to be for ca quillback: renamed ca_decision_table.tex.

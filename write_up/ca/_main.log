@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  1 OCT 2021 09:53
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.9.22)  1 OCT 2021 11:18
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -2515,6 +2515,16 @@ Overfull \hbox (5.44476pt too wide) in paragraph at lines 1934--1934
 
 
 ] (c:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/ca_decision_table.tex
+
+Overfull \hbox (2.5399pt too wide) in paragraph at lines 9--9
+[]|\TU/lmr/m/n/10 Catch 
+ []
+
+
+Overfull \hbox (40.09445pt too wide) in alignment at lines 4--25
+ [][][][][][][][][] 
+ []
+
 ) [53
 
 ]
@@ -3281,7 +3291,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:81,2:26603,3:3819,4:266,5:1944,6:1892,7:25550,8:76,9:12188,10:
 26,11:724,12:1
  70368 multiletter control sequences out of 65536+600000
- 76 fonts using 15693747 bytes
+ 76 fonts using 15693975 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf
@@ -3298,7 +3308,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (125 pages, 190698930 bytes).
+Output written on _main.pdf (125 pages, 190699121 bytes).
 
 PDF statistics: 2212 PDF objects out of 2487 (max. 8388607)
  406 named destinations out of 1000 (max. 131072)
