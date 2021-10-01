@@ -419,7 +419,7 @@ All other sensitivities, including those estimating dome-shaped recruitment, res
 
 #### Additional Sensitivity Analyses and Data Explorations During Reviews
 
-During the reviews of the quillback rockfish stock assessment at the SSC's Groundfish Subcommittee (GFSC) meetings on June 21-22, 2021 and August 17, 2021, a number of new additional sensitivities and data explorations were requested. These requests were grouped around exploration of additional length data, additional age data, and alternative selectivity blocks. Responses to these requests were described in reports presented at the August 17, 2021 meeting (Langseth -@Langseth_augrequests_2021 for requests made during the June 21-22 review) and the mop-up meeting on September 29-30, 2021 (Langseth -@Langseth_mopupgrowth_2021) for requests made during the August 17 review) but are also described herein so as to have a single source of information about quillback rockfish. Two additional requests were made at the June 21-22, 2021 meeting for i) updated California catch values and ii) estimating $L_{\infty}$ and $k$, but these were already addressed in the original sensitivity explorations, so are not repeated again. The model explorations to address the new requests were as follows:
+During the reviews of the quillback rockfish stock assessment at the SSC's Groundfish Subcommittee (GFSC) meetings on June 21-22, 2021 and August 17, 2021, a number of new additional sensitivities and data explorations were requested. These requests were grouped around exploration of additional length data, additional age data, and alternative selectivity blocks. Responses to these requests were described in reports presented at the August 17, 2021 meeting (Langseth -@Langseth_augrequests_2021 for requests made during the June 21-22 review) and the mop-up meeting on September 29-30, 2021 (Langseth -@Langseth_mopupgrowth_2021 for requests made during the August 17 review) but are also described herein so as to have a single source of information about quillback rockfish. Two additional requests were made at the June 21-22, 2021 meeting for i) updated California catch values and ii) estimating $L_{\infty}$ and $k$, but these were already addressed in the original sensitivity explorations, so are not repeated again. The model explorations to address the new requests were as follows:
 
 \begin{enumerate}
 \setcounter{enumi}{14}
@@ -1180,39 +1180,8 @@ Year & OFL South & ACL South & OFL North & CA ACL North & Total CA ACL & Assumed
 
 \newpage
 
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}>{\raggedright\arraybackslash}p{1.38cm}}
-\caption{(\#tab:decision-table)Decision table summary of 10 year projections for low (0.0464) and high (0.0744) states of nature around natural mortality. Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45.}\\
-\toprule
-Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spawning Output & Base: Fraction of Unfished & High: Spawning Output & High: Fraction of Unfished\\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:decision-table)Decision table summary of 10 year projections for low (0.0464) and high (0.0744) states of nature around natural mortality. Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45. \textit{(continued)}}\\
-\toprule
-Year & Catch (mt) & Low: Spawning Output & Low: Fraction of Unfished & Base: Spawning Output & Base: Fraction of Unfished & High: Spawning Output & High: Fraction of Unfished\\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-2021 & 13.50 & 4.95 & 0.08 & 7.75 & 0.14 & 12.08 & 0.24\\
-2022 & 13.50 & 3.70 & 0.06 & 6.61 & 0.12 & 11.04 & 0.22\\
-2023 & 0.03 & 2.55 & 0.04 & 5.60 & 0.10 & 10.17 & 0.20\\
-2024 & 0.34 & 3.03 & 0.05 & 6.29 & 0.11 & 11.07 & 0.22\\
-2025 & 0.68 & 3.60 & 0.06 & 7.10 & 0.13 & 12.12 & 0.24\\
-2026 & 1.03 & 4.22 & 0.07 & 7.98 & 0.14 & 13.22 & 0.27\\
-2027 & 1.37 & 4.83 & 0.08 & 8.86 & 0.16 & 14.34 & 0.29\\
-2028 & 1.69 & 5.37 & 0.09 & 9.70 & 0.18 & 15.43 & 0.31\\
-2029 & 1.97 & 5.84 & 0.10 & 10.48 & 0.19 & 16.47 & 0.33\\
-2030 & 2.23 & 6.26 & 0.11 & 11.23 & 0.20 & 17.45 & 0.35\\
-2031 & 2.48 & 6.64 & 0.11 & 11.95 & 0.22 & 18.40 & 0.37\\
-2032 & 2.72 & 7.00 & 0.12 & 12.65 & 0.23 & 19.31 & 0.39\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
+<!-- tab:decision-table -->
+\input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/ca_decision_table.tex}
 
 \newpage
 
@@ -1554,11 +1523,45 @@ Total & 401535 & 235 & - & -\\*
 
 \clearpage
 
-## Appendix C: Percent Area Closed to Fishing in the RCAs and MPAs over time{#append_c}
+## Appendix C: Percent of Habitat Area Closed to Fishing for Groundfish in the RCAs, CCAs and MPAs in California from 2001-2021{#append_c}
 
-MPAs were instituted at various times from 2003 to 2012 as the area selection process was undertaken on a regional process. The existence of no take MPAs in some of the areas selected prior to expansion of the MPAs to encompass approximately 20-30% of rocky reef habitat in state waters, duration of existence of new areas, degree of effort prior to protection or criteria for selection including productivity of the reef may have contributed to the current patterns in composition and density inside vs. outside MPAs. As biomass accrues inside MPAs, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside the MPAs. 
+### Introduction
+At present, stock assessments reliant on fishery dependent data only represent the areas open to fishing, unless there is a fishery independent data source providing information on the relative abundance and length composition in closed areas. A network of marine protected areas (MPAs) was established between 2003 to 2012 through a regional siting process. The length composition and relative abundance inside and outside MPAs in part results from the presence of MPAs prohibiting take of groundfish established prior to expansion of the current network, duration of existence of new areas, degree of effort prior to protection and criteria for selection focusing on high productivity reefs. These areas are established in perpetuity and will provide substantial protections to nearshore fish stocks for the foreseeable future. 
+
+In addition to MPAs, extensive Rockfish Conservation Areas (RCAs) of varying depths over time and space, as well as the two cowcod conservation areas (CCAs) encompassing 4200 square miles of water area since 2001, were established to facilitate rebuilding of overfished species.  While the depth restrictions in these closed areas can change or be eliminated, the areas closed become refugia that reduce fishing mortality, allowing accumulation of biomass within them. There has long been interest in quantifying the area of reef habitat for each assessed species that resides in protected areas, but until very recently, there was insufficient data on the distribution of rocky reef habitat. This analysis provides the percentage of habitat area for copper and quillback rockfish closed to fishing in MPAs, RCAs and CCAs where the take of groundfish was prohibited in each year from 2001 to 2021. 
+
  
-The percentage area closed to fishing in MPAs and Rockfish Conservation Areas (RCAs) north of Point Conception from 2001 to 2021 are shown in Table \ref{tab:ca-mpa}. The percentage closed to fishing provides a buffer against uncertainty through protection of a portion of the population. The percent area in MPAs prohibiting take by the recreational and commercial fisheries were included in the estimates of area closed to fishing from the first year in which the MPA was in place for a full calendar year. Areas closed to fishing prior to the implementation of the present MPA network were also accounted for. The RCAs for commercial and recreational fisheries were based on the deeper of the depth restrictions for the sectors to reflect only areas where take was prohibited for both. Where the RCA lines for the stock in question were not available, depth contours were used to approximate the percent of area closed. The presence of each type of closure in each assessment region and year was converted to tables of Boolean fields allowing GIS algorithms estimating the area open and closed to fishing. The distribution and area of rocky reef habitat was determined using the GIS layers rendering the results of the side scanning sonar from the California Seafloor Mapping Project to identify hard bottom at varying levels of resolution from two square meters to ten meters based on the depth surveyed due to cone width of the sonar. The area of rocky reef habitat closed to fishing within the depth distribution of the focal species was converted to a percentage of the total habitat. 
+### Methods
+#### Descriptions of the habitat layers 
+A predictive substrate layer that identifies hard and soft substrate was used to analyze seafloor coverage within the 3 nautical miles from California’s shore. Substrate types were generated algorithmically using rugosity analysis, to identify areas likely to have rocky reefs. This layer was derived from bathymetric data of 2, 5 and 10 m resolution and bathymetric data were collected by California Seafloor Mapping Project (CSMP). Potential issues with this rugosity analysis include noise and artifacts resulting from unusual substrate structure, original mapping data, and steep slopes. In addition, hard substrate might be underestimated in areas with canyon slopes, deep water, over smooth rock and where sediments cover rock. 
+
+Data from the CSMP is known to have nearshore data gaps referred to as the white zone. Contributors from The University of California Santa Cruz, California Ocean Science Trust, and California Department of Fish and Wildlife (CDFW) conducted a 30 m resolution interpolation analysis to estimate hard and soft substrate within the white zone. The interpolation analysis utilized data from the CSMP and National Oceanic and the National Oceanic and Atmospheric Administration Environmental Sensitivity Index (ESI). Accuracy of the interpolation is estimated to be best where the white zone bands are narrowest and worst where the white zone bands are widest. In addition, metadata indicates the interpolation is questionable at scales finer than 100 m.
+
+Substrate data developed for an Essential Fish Habitat Review was incorporated into this analysis for seafloor occurring outside of California State Waters (3 nautical miles). This dataset was generated by Joe Bizarro of the National Marine Fisheries Service, Southwest Fisheries Science Center in Santa Cruz and was created by combining multiple sources of bathymetric data with varying resolutions including multibeam sonar, sidescan sonar, sediment grabs, core samples seismic reflection profiles, still photos and video. This habitat data is subject to georeferencing errors and data resolution errors. Currently this is the best available data that represents hard and soft substrate types offshore for the areas outside of California State waters. 
+
+#### Boundaries of the CCAs, RCAs and MPAs 
+Regulation histories for each type of closure were converted to Boolean fields with zeros and ones indicating absence and implementation, respectively from 2001-2020. The corresponding GIS layers were either available from previous CDFW GIS staff projects or approximated by the depth contour where specific weigh points were unavailable. The area in MPAs prohibiting take by the recreational and commercial fisheries were included in the estimates of area closed to fishing from the first year in which the MPA was in place for a full calendar year. The Western CCA area accounted for waters around islands and banks open to take of a limited suite of groundfish species including copper rockfish. The RCAs for commercial and recreational fisheries were based on the deeper of the depth restrictions for the sectors to reflect only areas where take was prohibited for both. Where the RCA lines for the stock in question were not available, depth contours were used to approximate the percent of area closed. 
+
+#### Delineating Habitat in Restricted Areas and Open to Fishing
+The depth range of habitat for copper and quillback rockfish was between shore to 100 m, covering the primary depth distribution of both stocks observed in the CDFW ROV survey (Budrick et al. -@Budricketal_rov_2019) or noted in Love et al. -@loveetal_2002). The latitudinal range was set from the California/Mexican border to the California/Oregon border (42$^\circ$ N. lat.), which was stratified north and south Point Conception (34$^\circ$ 27’ N. lat.). Quillback rockfish are relatively rare south of Point Conception, thus only estimates for the area north of Point Conception are pertinent to this stock. 
+ 
+The distribution and area of rocky reef habitat within a species range was delineated in ArcGIS Pro (2.6) by extracting specific values from a 10 m bathymetric raster based on species depth and latitudinal ranges. The resulting raster layer was converted into a shapefile and merged with a coastal boundary of California to account for gaps in the bathymetric raster. Hard habitat within the species range was identified and isolated using the intersect tool to create species range shapefile. This process was repeated to identify overlapping coverage between the species range and hard substrate, as well as intersecting the species range with a combination of different types of regulatory boundaries. 
+
+The area of the resulting shapefiles were calculated in GIS and exported into tables using Python script. The combination of area closures in a given year were overlayed on the habitat maps, with the area in MPAs and CCAs extracted first, then the habitat in the remaining RCAs estimated. The residual habitat still open to fishing after accounting for the closed areas was then estimated. The area of rocky reef habitat closed to fishing within a species range was converted to a percentage of the total habitat. This process for identifying overlapping boundaries and calculating areas were scripted in Python to reduce the possibility of human error. 
+
+#### Examination of bottom type coverage relative to habitat 
+The extent of existing substrate data within a given species range was examined through geospatial analysis. This included hard, soft, and unknown substrate for data from California Seafloor Mapping Project, and hard, mixed, and soft data from the EFH project. Both datasets were merged within the species range for copper and quillback rockfish. The resulting combination of substrate data was erased from the species range. 
+ 
+### Results
+The tables reflecting the percent of habitat area in RCAs, MPAs, CCAs closed to fishing for groundfish and waters open to fishing are provided for north of Point Conception (Table \ref{tab:ca-mpa}). The potential habitat within the primary depth range of the species, rocky reef habitat within the potential habitat, MPAs and CCAs are depicted for the entire state (Figure \ref{fig:ca-mpa-map}). 
+
+We found minimal voids in coverage in habitat layers across the species range, with 0.13 square miles missing north of Point Conception and 4.95 square miles missing from the south of Point Conception. 
+
+### Discussion
+Current assessments do not account for length/age composition and differing fishing mortality rates inside and outside MPAs or waters in long-established CCAs and RCAs. As biomass accrues inside these areas, accounting for protections through area-based assessment methods or effects on selectivity should be considered as fishery dependent data will only reflect the length composition and density outside. There is the potential for future assessments to account for differences in length composition, fishing mortality and relative abundance in a two-area model in Stock Synthesis with available data from long-term MPA monitoring.  
+
+Additional high resolution side scan sonar data in waters seaward of the CSMP coverage would improve coverage and resolution of habitat data. Similar analyses for each nearshore or shallower distributed shelf rockfish species (i.e. vermilion rockfish) would be a helpful addition to stock assessments to inform time blocking and selectivity considerations. The extent and design of the network to function in this way is unique to California and it’s efforts to conserve nearshore stocks. Until the closed areas can be accounted for explicitly in stock assessments, the substantial areas in MPAs should be taken into consideration as a buffer against overfishing, since they were established in the interest of preserving spawning stock to seed areas outside and other MPAs in the network.  
+ 
 
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
@@ -1578,30 +1581,34 @@ Year & Percent Habitat Protected by MPA & Percent Habitat Protected by RCA & Per
 \endfoot
 \bottomrule
 \endlastfoot
-2001 & 4 & 0 & 96\\
-2002 & 4 & 0 & 96\\
-2003 & 4 & 38 & 59\\
-2004 & 7 & 23 & 70\\
-2005 & 7 & 29 & 64\\
-2006 & 7 & 29 & 64\\
-2007 & 7 & 27 & 66\\
-2008 & 14 & 27 & 59\\
-2009 & 14 & 27 & 59\\
-2010 & 14 & 32 & 54\\
-2011 & 21 & 30 & 49\\
-2012 & 23 & 30 & 47\\
-2013 & 26 & 30 & 44\\
-2014 & 26 & 30 & 44\\
-2015 & 26 & 27 & 47\\
-2016 & 26 & 27 & 47\\
-2017 & 26 & 16 & 58\\
-2018 & 26 & 16 & 58\\
-2019 & 26 & 13 & 61\\
-2020 & 26 & 13 & 61\\
-2021 & 26 & 6 & 68\\*
+2001 & 3 & 0 & 97\\
+2002 & 3 & 0 & 97\\
+2003 & 3 & 41 & 55\\
+2004 & 3 & 23 & 73\\
+2005 & 3 & 30 & 67\\
+2006 & 3 & 30 & 67\\
+2007 & 3 & 28 & 69\\
+2008 & 11 & 27 & 62\\
+2009 & 11 & 27 & 62\\
+2010 & 11 & 33 & 56\\
+2011 & 17 & 29 & 54\\
+2012 & 17 & 29 & 54\\
+2013 & 20 & 27 & 53\\
+2014 & 20 & 27 & 53\\
+2015 & 20 & 24 & 56\\
+2016 & 20 & 24 & 56\\
+2017 & 20 & 14 & 66\\
+2018 & 20 & 14 & 66\\
+2019 & 20 & 11 & 68\\
+2020 & 20 & 13 & 67\\
+2021 & 20 & 5 & 75\\*
 \end{longtable}
 \endgroup{}
 \endgroup{}
+\clearpage
+
+
+![Copper and quillback rockfish potential depth range off California in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCAs in light blue.\label{fig:ca-mpa-map}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Data_From_States/ca/ca_mpa_rca_habitat_map.png){width=100% height=100% alt="Copper and quillback rockfish potential depth range off California in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCAs in light blue."}
 
 \clearpage
 

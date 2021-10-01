@@ -322,24 +322,7 @@ table_format(x = out,
 
 \newpage
 
-```{r, results = 'asis'}
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "ca", "decision_tables", "decision_table_CA_M_baseABC.csv"), header = TRUE)
-
-col_names = c("Year", 
-              "Catch (mt)", 
-              "Low: Spawning Output", 
-              "Low: Fraction of Unfished", 
-              "Base: Spawning Output", 
-              "Base: Fraction of Unfished", 
-              "High: Spawning Output", 
-              "High: Fraction of Unfished")
-
-table_format(x = tab[,-c(3,4)],
-             caption = "Decision table summary of 10 year projections for low (0.0464) and high (0.0744) states of nature around natural mortality. Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45.",
-             label = "decision-table",
-             align = 'l',
-             col_names = col_names,
-             landscape = FALSE)
-```
+<!-- tab:decision-table -->
+\input{C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables/ca_decision_table.tex}
 
 \newpage

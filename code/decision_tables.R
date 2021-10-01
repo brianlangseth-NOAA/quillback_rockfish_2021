@@ -5,6 +5,7 @@
 #######################################################################################################
 
 library(r4ss)
+library(sa4ss)
 
 # Load in each of the models ------------------------------------------------
 loc = "C:/Users/Brian.Langseth/Desktop"
@@ -42,7 +43,30 @@ dec_tab = data.frame("Year" = 2021:2032,
 
 write.csv(round(dec_tab,2), file.path(loc, "or", "decision_tables", "decision_table_OR_R0_baseABC.csv"), row.names = FALSE)
 
-col_names = c("Year", "Catch (mt)", "Spawning Output", "Fraction Unfished", "Spawning Output", "Fraction Unfished", "Spawning Output", "Fraction Unfished")
+####
+#Generate the tex table for the report
+####
+
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "or", "decision_tables", "decision_table_OR_R0_baseABC.csv"), header = TRUE)
+
+col_names = c("Year", 
+              "Catch (mt)", 
+              "Low: Spawning Output", 
+              "Low: Fraction of Unfished", 
+              "Base: Spawning Output", 
+              "Base: Fraction of Unfished", 
+              "High: Spawning Output", 
+              "High: Fraction of Unfished")
+
+table_format(x = tab,
+             caption = "Decision table summary of 10 year projections for low (2.01) and high (2.28) states of nature around ln(R0). Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45.",
+             label = "decision-table",
+             align = 'l',
+             col_names = col_names,
+             landscape = FALSE)
+
+kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/write_up/tex_tables", 
+                                           "or_decision_table.tex"))
 
 
 ## CALIFORNIA decision tables----------------------------------------------------
@@ -77,4 +101,28 @@ dec_tab = data.frame("Year" = 2021:2032,
 
 write.csv(round(dec_tab,2), file.path(loc, "ca", "decision_tables", "decision_table_CA_M_baseABC.csv"), row.names = FALSE)
 
-col_names = c("Year", "Catch (mt)", "Spawning Output", "Fraction Unfished", "Spawning Output", "Fraction Unfished", "Spawning Output", "Fraction Unfished")
+
+####
+#Generate the tex table for the report
+####
+
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "ca", "decision_tables", "decision_table_CA_M_baseABC.csv"), header = TRUE)
+
+col_names = c("Year", 
+              "Catch (mt)", 
+              "Low: Spawning Output", 
+              "Low: Fraction of Unfished", 
+              "Base: Spawning Output", 
+              "Base: Fraction of Unfished", 
+              "High: Spawning Output", 
+              "High: Fraction of Unfished")
+
+t = table_format(x = tab[,-c(3,4)],
+             caption = "Decision table summary of 10 year projections for low (0.0464) and high (0.0744) states of nature around natural mortality. Columns range over low, base, and high states of nature, and rows range over different catch level assumptions. The current catch level assumption is the ACL from the base model where P* = 0.45.",
+             label = "decision-table",
+             align = 'l',
+             col_names = col_names,
+             landscape = FALSE)
+
+kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/ca/write_up/tex_tables", 
+                                           "ca_decision_table.tex"))
