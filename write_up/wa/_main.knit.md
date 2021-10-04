@@ -456,9 +456,11 @@ The 2021 spawning output relative to unfished equilibrium spawning output is bel
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated yield at $SPR_{50\%}$ multiplied by buffer (0.778) based on a category 3 sigma and P* = 0.45 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the mortality estimates from the GEMM product for the recreational fleet, averaged from 2018-2020, as requested by the PFMC Groundfish Management Team (GMT, personal communication). Removals in 2021 and 2022 were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributed to the total catch. The same apportionment was also applied to the constant catch values during the projection years (2023-3032).
+The SSC recommended that the Washington quillback rockfish stock assessment be categorized as a category 3 assessment, and consequently recommended a constant catch OFL (2.86 mt) equal to the yield at $SPR_{50\%}$ (Table \ref{tab:referenceES}). The buffer (0.778) to obtain an ABC was based on the category 3 sigma with $P^*$ = 0.45, resulting in a constant catch ABC of 2.22 mt. Due to the recommendation for this assessment to be categorized as a category 3 assessment, projection and decision tables are not presented.    
 
-Recreational catches were provided in numbers, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Projected catches in biomass for the recreational fleet were converted to catch in numbers based on iteratively searching for the catch in numbers that achieves the desired catch value (in biomass) for the recreational fleet, and is the reason the catches in biomass by year do not exactly equal the fixed catch value.        
+<!-- A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated yield at $SPR_{50\%}$ multiplied by buffer (0.778) based on a category 3 sigma and P* = 0.45 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the mortality estimates from the GEMM product for the recreational fleet, averaged from 2018-2020, as requested by the PFMC Groundfish Management Team (GMT, personal communication). Removals in 2021 and 2022 were apportioned to recreational and commercial catches based on the average proportion from 2018-2020 that each fleet contributed to the total catch. The same apportionment was also applied to the constant catch values during the projection years (2023-3032). -->
+
+<!-- Recreational catches were provided in numbers, so the internally estimated catch in weight from the model was used to calculate the average catch from 2018-2020. Projected catches in biomass for the recreational fleet were converted to catch in numbers based on iteratively searching for the catch in numbers that achieves the desired catch value (in biomass) for the recreational fleet, and is the reason the catches in biomass by year do not exactly equal the fixed catch value.         -->
 
 
 <!-- Evaluation of Scientific Uncertainty -->
@@ -1039,41 +1041,38 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ********  Reference Points & Management *************** --> 
 <!-- ======================================================= -->
 
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
+<!-- ```{r, results = 'asis'} -->
+<!-- tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base", 'tables', 'g_Projections_ES.csv')) -->
+<!-- man = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv") -->
 
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
-\caption{(\#tab:project)Projections of estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 (as the fixed OFL) times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.}\\
-\toprule
-Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & Fixed OFL & Buffer & Spawning Output & Fraction Unfished\\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:project)Projections of estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 (as the fixed OFL) times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL. \textit{(continued)}}\\
-\toprule
-Year & OFL North & ACL North & WA ACL North & Assumed removals & Constant ABC & Fixed OFL & Buffer & Spawning Output & Fraction Unfished\\
-\midrule
-\endhead
+<!-- out = cbind(tab$Year, -->
+<!--             c(round(man[man$Year %in% c(2021, 2022), "OFL"],2), rep("-",10)), -->
+<!--             c(round(man[man$Year %in% c(2021, 2022), "ACL"],2), rep("-",10)), -->
+<!--             c(round(man[man$Year %in% c(2021, 2022), "ACL"] * 0.129,2), rep("-", 10)), -->
+<!--             c(round(tab[1:2,3],2), rep("-",10)), -->
+<!--             c(rep("-",2), round(tab[3:12,3],2)), -->
+<!--             c(rep("-",2), rep(round(model$derived_quants[model$derived_quants$Label == "Dead_Catch_SPR","Value"],3),10)), -->
+<!--             c(rep("-",2), rep(0.778,10)), -->
+<!--             round(tab[ ,5:ncol(tab)], 2)) -->
 
-\endfoot
-\bottomrule
-\endlastfoot
-2021 & 7.37 & 5.73 & 0.74 & 2.66 & - & - & - & 6.64 & 0.39\\
-2022 & 7.37 & 5.74 & 0.74 & 2.66 & - & - & - & 6.68 & 0.39\\
-2023 & - & - & - & - & 2.22 & 2.855 & 0.778 & 6.72 & 0.39\\
-2024 & - & - & - & - & 2.22 & 2.855 & 0.778 & 6.81 & 0.40\\
-2025 & - & - & - & - & 2.22 & 2.855 & 0.778 & 6.91 & 0.40\\
-2026 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.00 & 0.41\\
-2027 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.09 & 0.41\\
-2028 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.18 & 0.42\\
-2029 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.26 & 0.42\\
-2030 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.35 & 0.43\\
-2031 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.43 & 0.43\\
-2032 & - & - & - & - & 2.22 & 2.855 & 0.778 & 7.51 & 0.44\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
+<!-- col_names = c('Year', -->
+<!--               'OFL North', -->
+<!--               'ACL North', -->
+<!--               "WA ACL North", -->
+<!--               "Assumed removals", -->
+<!--               "Constant ABC", -->
+<!--               "Fixed OFL", -->
+<!--               "Buffer", -->
+<!--               "Spawning Output", -->
+<!--               "Fraction Unfished") -->
+<!-- table_format(x = out, -->
+<!--              caption = "Projections of estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total mortality from the GEMM report for 2018-2020, and fixed catches in 2023-2032 equal to the yield at SPR50 (as the fixed OFL) times the category 3 buffer with P* = 0.45 (buffer = 0.778). The OFL North and ACL North for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area north of 40.10 Latitude N., while the WA ACL North is the Washington specific allocation of the ACL.", -->
+<!--              label = "project", -->
+<!--              align = 'l', -->
+<!--              col_names = col_names) -->
+<!-- ``` -->
 
-\newpage
+<!-- \newpage -->
 
 <!--chapter:end:52tables.Rmd-->
 
