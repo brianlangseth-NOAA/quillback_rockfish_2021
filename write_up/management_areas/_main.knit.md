@@ -1,0 +1,257 @@
+---
+geometry: margin=1in
+month: "October"
+year: "2021"
+preamble: |
+output:
+  sa4ss::techreport_pdf:
+    default
+  bookdown::pdf_document2:
+    keep_tex: true
+lang: en
+papersize: letter
+---
+
+
+
+<!--chapter:end:00a.Rmd-->
+
+---
+author:
+  - name: Brian J. Langseth
+    code: 1
+    first: B
+    middle: J
+    family: Langseth
+  - name: Chantel R. Wetzel
+    code: 1
+    first: C
+    middle: R
+    family: Wetzel
+author_list: Langseth, B.J., C.R. Wetzel
+affiliation:
+  - code: 1
+    address: Northwest Fisheries Science Center, U.S. Department of Commerce, National
+      Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725
+      Montlake Boulevard East, Seattle, Washington 98112
+address: ^1^Northwest Fisheries Science Center, U.S. Department of Commerce, National
+  Oceanic and Atmospheric Administration, National Marine Fisheries Service, 2725
+  Montlake Boulevard East, Seattle, Washington 98112
+---
+
+<!--chapter:end:00authors.Rmd-->
+
+---
+bibliography:
+  - sa4ss.bib
+---
+
+<!--chapter:end:00bibliography.Rmd-->
+
+---
+title: Evaluating available information to inform stock management delineation for quillback rockfish (_Sebastes maliger_) off the U.S. West coast
+---
+
+<!--chapter:end:00title.Rmd-->
+
+\pagebreak
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\renewcommand{\thetable}{\roman{table}}
+\renewcommand{\thefigure}{\roman{figure}}
+
+
+\setlength\parskip{0.5em plus 0.1em minus 0.2em}
+
+<!--chapter:end:01a.Rmd-->
+
+\pagebreak
+\setlength{\parskip}{5mm plus1mm minus1mm}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\setlength\parskip{0.2em plus 0.1em minus 0.2em}
+
+<!--chapter:end:10a.Rmd-->
+
+# Introduction
+
+At the September 2021 Council meeting, the Council requested that the Groundfish Subcommittee (GFSC) evaluate and make recommendations on the stock delineations for copper, quillback, and vermillion/sunset rockfish. Information for copper rockfish was presented at the GFSC mop-up meeting on September 29-30, 2021 (@Wetzel_copper_area_2021). This report updates the information prepared on copper rockfish for application to quillback rockfish. There are few directed studies on quillback rockfish compared to copper rockfish so emphasising quillback rockfish adds limited information beyond that already provided for copper rockfish. To more clearly indicate the information most applicable to quillback rockfish, we have added text to the beginning of the study descriptions to clarify studies that focus on or include quillback rockfish. 
+
+<!--chapter:end:11introduction.Rmd-->
+
+# Status determination across area-based assessments
+
+## Dispersal
+
+### Recruitment and Dispersal
+
+_Evidence for Managing at Assessment Scale_
+
+Markel [-@markel_rockfish_2011] - quillback included: Observed significant differences of recruitment among sites and years which were not consistent, indicating spatial differences in recruitment intensity during year of high recruitment within the Barkley Sound, British Columbia. Study was based on black rockfish, and a complex of copper, quillback, and brown rockfish.
+
+Buonaccorsi et al. [-@buonaccorsi_molecular_2004] - no quillback: Estimated the dispersal distance of copper rockfish recruits as 13km or less, and dispersal distance of grass rockfish recruits as 11km or less, based on a stepping stone model. *Caveat*: These values can be highly sensitive to the ratio of total population size to effective population size.
+
+Wilson et al. [-@wilson_recruitment_2008] - no quillback: Found greater correlation of recruitment strength with localized environmental conditions than with regional environmental patterns in California for kelp, copper, gopher, and black and yellow rockfish. *Caveat*: Limited regional variability during time of study was identified as possible reason for limited correlation between regional environmental patterns and recruitment.
+
+Sivasundar and Palumbi [-@sivasundar_life_2010] - no quillback: Have a schematic (their Figure 1) that shows a general ecological gradient from weak upwelling and high larval settlement in waters off Oregon/Washington to strong upwelling and low larval settlement in waters near Point Conception, California.
+
+_Evidence for Alternative Management Scale_
+
+Field et al. [-@field_spatiotemporal_2021] - no quillback: Determined that rockfish strong recruitments observed between 2014-2016 were largely coastwide events. *Caveat*: study utilizes a large dataset covering a wide spatial and temporal range, although neither copper nor quillback were among the most caught species.    
+
+_Information from assessment reports_
+
+Annual recruitment deviations were estimated in the base models for California and Oregon, but not Washington. Overlaying recruitment estimates across areas (using the model sensitivity to estimating annual recruitment deviations for Washington) showed some general coherence with the overall patterns of positive or negative recruitment deviations among areas, with variability in individual years (Figure \ref{fig:recruit-comparison}). In the base model for Washington we opted to not estimate annual recruitment deviations due to limited information available in the length compositions for that area). *Caveat*: Length data may not be fully informative for recruitment as variation in growth can result in low or high recruitment years being attributed to multiple years.
+
+
+
+
+![Estimates of recruitment in millions of eggs from the base models for Oregon and California, and from the sensitivity where recruitment was estimated for Washington.\label{fig:recruit-comparison}](comprare_recruitments.png){width=100% height=100% alt="."}
+
+
+<!---------------------------------------------------->
+
+### Adult Movement 
+
+_Evidence for Managing at Assessment Scale_
+
+Lea et al [-@lea_biological_1999] - quillback mentioned: Summarized tagging data from Moro to Monterey Bay, California that reported species of the gopher complex (which includes quillback rockfish though no quillback rockfish data were provided) to have no movement and therefore considered very residential in California. Copper rockfish was found to have limited movement; of 32 tagged copper that were recaptured the distance moved ranged between 0-1.5 nautical miles after 2-1,017 days at liberty. 
+
+Matthews [-@matthews_telemetry_1990] - quillback focus: Home ranges of four tagged quillback and 11 tagged copper rockfish in Puget Sound, Washington were <10km$^2$ on high relief reefs but greater (4000km$^2$) on low relief reefs. Additional , home ranges  exhibited long periods of residency with limited movements. A study with substantially more samples based on copper, quillback, and brown rockfish [@matthews_seasonal_home_range_1990] indicated similar patterns with ranges from 8km$^2$-1500km$^2$ depending on reef type and season. 
+
+Tolimieri et al. [-@tolimieri_home_2009] - quillback included: Observed home ranges of quillback rockfish in Puget Sound, Washington was relatively small (~1500 to ~2500m$^2$) and similar among copper and quillback rockfish and lingcod. Caveat: movement of fish in the Puget Sound may not be representative of movement in coastal populations.
+
+Hannah and Rankin [-@HannahandRankin_rockfish_site_fidelity_2011] - quillback focused: Observed high site fidelity for quillback rockfish based on tagging of four individuals tracked for approximately one year. Quillback rockfish exhibited higher site fidelity than copper rockfish. 
+
+_Evidence for Alternative Management Scale_
+
+Lowe et al. [-@lowe_site_2009] - no quillback: Copper rockfish exhibited low degrees of site fidelity and had high variation in the percentage of days on which individuals were detected based on 7 tagged fish at petroleum platforms in the Santa Barbara Channel.
+
+McGilliard et al. [-@mcgilliard_accounting_2015] - general: Fisheries managed by area closures impose spatial heterogeneity in fishing mortality, and simulations from generic operating models suggest that the accuracy of conventional stock assessments depends on movement rates.
+
+<!---------------------------------------------------->
+
+## Geographic variation
+
+### Variation in Genetic Composition 
+
+There are very limited genetic studies available for quillback rockfish along U.S. West Coast
+
+_Evidence for Managing at Assessment Scale_
+
+Sivasundar and Palumbi [-@sivasundar_life_2010] - no quillback: Measured moderate differentiation in mtDNA structure but no nuclear structure in coastal copper rockfish populations. *Caveat*: other species that were included in this analysis had a mix of differentiation and no differentiation.
+
+Buonaccorsi et al. [-@buonaccorsi_population_2002] - no quillback: Identified significant divergence along the U.S. West Coast when measured as variance in allele frequency or mean repeat number, indicting a substantial isolation by distance between regions. Examined samples from Queen Charlotte, Puget Sound, Canadian Gulf Islands, Crescent City, Big Creek, San Miguel Island.
+
+Johansson et al. [-@johansson_influence_2008] - no quillback: Identified isolation by distance in coastal copper rockfish populations ($\text{F}_\text{ST}$ = 0.006) similar to Buonaccorsi et al. [-@buonaccorsi_population_2002]  ($\text{F}_\text{ST}$ = 0.008). However, concluded that some of the genetic divergence may be related to habitat patchiness and not distance alone.
+
+_Evidence for Alternative Management Scale_
+
+Sivasundar and Palumbi [-@sivasundar_life_2010] - no quillback: The Oregon and Monterey Bay populations were both genetically differentiated from the Santa Barbara populations for mtDNA but the Monterey Bay and Oregon populations could not be distinguished from each other. This could indicate that there is limited differentiation between northern California and Oregon copper rockfish populations indicating mixing between the areas.
+
+Seeb [-@seeb_gene_1998] - quillback focused: Significant genetic differences were found between Puget Sound and coastal stocks of quillback rockfish based on allozyme frequency and mtDNA, however there was not significant differentiation in allozyme frequency in populations of quillback rockfish between coastal Washington and Alaska.
+
+_Caveat_
+
+Waples and Gaggiotti [-@waples_what_2006]: Significant differences in neutral genetic characters indicate that the populations have been reproductively isolated for many generations, which is far longer than the ecological time scales that are relevant to stock assessment or fishery management. Argue for use of mtDNA data to determine demographic independence on the scales relevant to stock assessment. 
+
+Schwenke et al. [-@schwenke_introgression_2018] - quillback included: Found long-term low-level introgression among quillback, copper, and brown rockfish within the Salish sea at higher rates than in coastal populations. Suggests greater isolation of Salish Sea populations, possibly due to the specific environmental conditions in the sub basins of the Salish Sea.
+
+Stout et al. [-@Stoutetal_DPS_2001] - quillback focused: Concluded there were three distinct population sub-units within Puget Sound, Washington. Relied heavily on information from the genetic studies of Seeb [-@seeb_gene_1998].
+
+<!---------------------------------------------------->
+
+### Variation in Phenotypic Traits
+
+_Evidence for Managing at Assessment Scale_
+
+Minor differences measured in maturity-at-length between two areas of the coast for copper rockfish: Oregon [@hannah_length_2014] and South of Point Conception (Melissa Head, NWFSC). *Caveat*: Maturity data for quillback rockfish was only available for Oregon samples [@HannahandBlume_maturity_2011] so coastal comparisons were not available.
+
+Punt et al.[-@punt_which_2015] - general: Conventional stock assessments produced significantly biased estimates when applied to an operating model of pink ling fisheries with spatial heterogeneity in fishing mortality, growth, and recruitment.
+
+_Evidence for Alternative Management Scale_
+
+Limited differences in growth based on original age-length estimates between fish off the Oregon and Washington coast were shown at data workshop in October, 2020. Limited number of new California samples during reviews considered insufficient to estimate a California curve for comparison. Stock assessments used a single coastwide growth curve. *Caveat*: Spatial gradients of growth across the coast are commonly observed in rockfish or other fish species along the U.S. west coast  [@keller_variation_2012; @gertseva_spatial_2017; @keller_canary_2018]. 
+
+The assessments for quillback rockfish utilized the same growth, maturity, fecundity, and length-weight relationships across areas. 
+
+<!---------------------------------------------------->
+
+## Other Considerations
+
+### Abundance Trends
+
+_Evidence for Managing at Assessment Scale_
+
+Ying et al. [-@ying_risks_2011]: Measured the performance of stock assessments using an operating model to represent three connected sub-populations of small yellow croaker and observed that assessing and managing each sub-population as a unit led to overfishing and managing the metapopulation as a unit stock often led to local depletion.
+
+The trajectories across all model areas showed varying patterns (Figure \ref{fig:relb-comparison}). The separate models for the modeled areas estimated different stock trajectories with the stock in California declining earlier, and to a greater degree, than in Oregon or Washington. Both Oregon and California display an increase in stock size starting in the early 2000s that differs in the magnitude of increase, while Washington's change in stock size is much more gradual overall, and seemingly opposite to that of Oregon and California in recent years. The model for Washington did not estimate annual recruitment deviations which likely contributes to stock trajectory differences in recent years (where large recruitment pulses in the 1990s led to increases in recent stock size). 
+
+
+![Estimated relative spawning output (in millions of eggs) by assessed area.\label{fig:relb-comparison}](L:/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/presentations/base_comparisonscompare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
+
+\clearpage
+
+_Evidence for Alternative Management Scale_
+
+The areas of true population variation in relative stock size may not align with the assessment boundaries as currently defined. State based management is likely not the only factor impacting relative stock sizes across the coast where movement, habitat availability, and recruitment patterns likely also influence potential differences in relative stock size.  
+
+_Caveat_
+
+Cope and Punt [-@cope_data-moderate_2013]: Conventional stock assessments failed to estimate differing spatial patterns and exploitation (localized depletion) but adequately estimated the overall stock status. These findings are supported by Bosley et al. [-@Bosleyetal_mismatch_2021] who found parameter estimates were generally unbiased at the system level but biased for sub-areas when assumptions about the spatial structure of the population were incorrect.   
+
+Bosley et al. [-@Bosleyetal_mismatch_2021] also found via simulation that spatial estimation models were generally more robust (i.e. bias was lower) than assuming non-spatial dynamics, even when the underlying spatial structure of the population was unknown or not present.
+
+
+<!---------------------------------------------------->
+
+### Size and Age Composition   
+
+_Evidence for Managing at Assessment Scale_
+
+Different selectivity curves were estimated between the recreational and commercial fisheries across modeled areas (Figure \ref{fig:selectivity-comparison}). Differences were greater between Oregon and California recreational selectivity than Oregon and Washington. For commercial selectivity, the size at which quillback rockfish began to be selected was similar for Oregon and Washington, but the slope of the selectivity curve was similar for California and Washington.
+
+
+
+
+![Estimated selectivity patterns for commercial (dashed line) and recreational (solid line) fleets by assessed area.\label{fig:selectivity-comparison}](comprare_selectivity.png){width=100% height=100% alt="."}
+
+\clearpage
+
+Bosely et al. [-@bosley_overcoming_2019]: Specifying the correct form of spatial population structure may not be as critical as understanding movement patterns and spatial heterogeneity in fishery selectivity and life-history variation when developing reference points for management. 
+
+Berger et al. [-@berger_incoherent_2021]: Aligning management assessment areas with  with underlying population
+structure and processes is important, especially when fishing mortality is disproportionate to vulnerable biomass among management areas, demographic parameters (growth and maturity) are not homogeneous within management areas, and connectivity (via recruitment or movement) unknowingly exists among management areas. Bias and risk were greater for assessments that incorrectly span multiple population segments compared to assessments that cover a subset of a population segment, and these results were exacerbated when there was connectivity between population segments. *Caveat*: The variation in growth and connectivity between areas via recruitment for quillback rockfish off the West Coast is currently unknown or uncertain. 
+
+_Caveat_
+
+Rather than creating separate assessments to account for variation in exploitation or life-history variation across areas a more integrated approach could be to apply a spatial assessment that can provide both area- and coastwide population estimates. However, spatial assessments come at the cost of a larger number of parameters to estimate, but general guidance around the key decisions exists when moving to spatial assessments (Punt [-@punt_spatial_2019]). This approach should be evaluated to understand the trade-offs between adding parameters that may be poorly informed (e.g., movement, recruitment by area) via a spatial assessment approach versus either conducting separate assessments or applying the "fleets-as-areas" approach.  
+
+\clearpage
+
+<!--chapter:end:21summary.Rmd-->
+
+\clearpage
+
+# References
+<!-- If you want to references to appear somewhere before the end, add: -->
+<div id="refs"></div>
+<!-- where you want it to appear -->
+<!-- The following sets the appropriate indentation for the references
+  but it cannot be used with bookdown and the make file because it leads
+  to a bad pdf.
+\noindent
+\vspace{-2em}
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+ -->
+
+<!--chapter:end:49bibliography.Rmd-->
+
