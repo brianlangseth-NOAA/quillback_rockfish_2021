@@ -8,6 +8,10 @@ filein = file.path(general_wd, '3_model_general.Rmd')
 read_child(filein)
 ```
 
+## Selection of Method
+
+`r Spp` was assessed using a catch and length-based (SS-CL) data moderate method, as allowed within the Terms of Reference. Fishery-independent indices had inadequate sample sizes, as described in Section \ref{fishery-independent-data} above, so index-based methods were not selected.
+
 ## Model Structure and Assumptions
 
 `r state` `r spp` was assessed using a one-sex model with life history parameters combined across sexes. The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in `r startyr`. Selectivity for the commercial and recreational fleets was specified to be asymptotic using a six-parameter double normal parameterization. The ascending width and beginning size of maximum selectivity parameters were estimated. Annual recruitment deviations were not estimated within the base model.
@@ -27,7 +31,6 @@ general_wd = "U:/Stock assessments/quillback_rockfish_2021/write_up/general_text
 filein = file.path(general_wd, '3_data_weighting.Rmd')
 read_child(filein)
 ```
-
 
 ### Estimated and Fixed Parameters
 

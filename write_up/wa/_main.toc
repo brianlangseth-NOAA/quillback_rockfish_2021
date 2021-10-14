@@ -21,32 +21,33 @@
 \contentsline {section}{\numberline {3}Assessment Model}{8}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Summary of Previous Assessments}{9}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Bridging Analysis}{9}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Model Structure and Assumptions}{9}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Modeling Platform and Structure}{9}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Priors}{10}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Data Weighting}{10}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Estimated and Fixed Parameters}{10}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Model Selection and Evaluation}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Base Model Results}{11}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Parameter Estimates}{11}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Fits to the Data}{12}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Population Trajectory}{13}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Model Diagnostics}{13}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Convergence}{13}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Likelihood Profiles}{13}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Retrospective Analysis}{15}{subsubsection.3.5.3}%
-\contentsline {subsubsection}{\numberline {3.5.4}Sensitivity Analyses}{15}{subsubsection.3.5.4}%
-\contentsline {subsubsection}{\numberline {3.5.5}Length-Based Estimate of Depletion}{17}{subsubsection.3.5.5}%
-\contentsline {subsubsection}{\numberline {3.5.6}Simple stock synthesis}{18}{subsubsection.3.5.6}%
-\contentsline {subsubsection}{\numberline {3.5.7}Unresolved Problems and Major Uncertainties}{19}{subsubsection.3.5.7}%
+\contentsline {subsection}{\numberline {3.2}Selection of Method}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Model Structure and Assumptions}{9}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Modeling Platform and Structure}{9}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Priors}{10}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Data Weighting}{10}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Estimated and Fixed Parameters}{11}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Model Selection and Evaluation}{11}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Base Model Results}{11}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Parameter Estimates}{12}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Fits to the Data}{12}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Population Trajectory}{13}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Model Diagnostics}{13}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Convergence}{13}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Likelihood Profiles}{14}{subsubsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.3}Retrospective Analysis}{15}{subsubsection.3.6.3}%
+\contentsline {subsubsection}{\numberline {3.6.4}Sensitivity Analyses}{16}{subsubsection.3.6.4}%
+\contentsline {subsubsection}{\numberline {3.6.5}Length-Based Estimate of Depletion}{18}{subsubsection.3.6.5}%
+\contentsline {subsubsection}{\numberline {3.6.6}Simple stock synthesis}{18}{subsubsection.3.6.6}%
+\contentsline {subsubsection}{\numberline {3.6.7}Unresolved Problems and Major Uncertainties}{19}{subsubsection.3.6.7}%
 \contentsline {section}{\numberline {4}Management}{20}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Reference Points}{20}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Harvest Projections and Decision Tables}{20}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Evaluation of Scientific Uncertainty}{20}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Evaluation of Scientific Uncertainty}{21}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Research and Data Needs}{21}{section.5}%
 \contentsline {section}{\numberline {6}Acknowledgments}{21}{section.6}%
 \contentsline {section}{\numberline {7}References}{22}{section.7}%
-\contentsline {section}{\numberline {8}Tables}{25}{section.8}%
-\contentsline {section}{\numberline {9}Figures}{45}{section.9}%
-\contentsline {section}{\numberline {10}Appendix:}{110}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Detailed Fit to Annual Length Composition Data}{110}{subsection.10.1}%
+\contentsline {section}{\numberline {8}Tables}{24}{section.8}%
+\contentsline {section}{\numberline {9}Figures}{44}{section.9}%
+\contentsline {section}{\numberline {10}Appendix:}{109}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Detailed Fit to Annual Length Composition Data}{109}{subsection.10.1}%

@@ -1,7 +1,7 @@
 \input{input_accessability.tex}
 \documentclass[11pt,
   english,
-  a4paper,
+  letterpaper,
 ]{article}
 \usepackage{sa4ss}
 \usepackage{amsmath,amssymb,array}
@@ -78,6 +78,10 @@
   \usepackage[shorthands=off,main=english]{babel}
 \fi
 
+%Define cslreferences environment, required by pandoc 2.8
+%https://github.com/rstudio/rmarkdown/issues/1649
+
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
@@ -90,7 +94,7 @@
 \newcommand{\trAuthsBack}{Langseth, B.J., C.R. Wetzel, J.M. Cope, T.S. Tsou, L.K. Hillier}
 \newcommand{\trCitation}{
 \begin{hangparas}{1em}{1}
-\trAuthsBack{}. \trYear{}. \trTitle{}. Pacific Fisheries Management Council, Portland, Oregon. \pageref{LastPage}{}\,p.
+\trAuthsBack{}. \trYear{}. \trTitle{}. \glsentrylong{pfmc}, Portland, Oregon. \pageref{LastPage}{}\,p.
 \end{hangparas}}
 
 \AtBeginDocument{\tagstructbegin{tag=Document}}
@@ -131,7 +135,7 @@ Lisa K. Hillier\textsuperscript{2}\vfill
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
-\copyright{} Pacific Fisheries Management Council, \trYear{}\\
+\copyright{} \glsentrylong{pfmc}, \trYear{}\\
 \end{center}
 \par
 \bigskip
@@ -147,7 +151,6 @@ Correct citation for this publication:
 
 % Table of contents page, lists of figures and tables
 \tableofcontents\clearpage
-%\listoffigures \listoftables \clearpage
 \label{TRlastRoman}
 \clearpage
 
@@ -166,9 +169,6 @@ Correct citation for this publication:
 
 \newcommand{\lt}{\ensuremath <}
 \newcommand{\gt}{\ensuremath >}
-
-%Define cslreferences environment, required by pandoc 2.8
-%https://github.com/rstudio/rmarkdown/issues/1649
 
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -225,25 +225,25 @@ The stock off the Washington coast was assessed as a separate stock from other p
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Quillback rockfish are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002)\leavevmode\tagmcend\tagstructend}. Off the U.S. West Coast quillback rockfish are primarily located north of central California, with few observations south of Point Conception. Quillback rockfish have historically been part of both commercial and recreational fisheries throughout their range.
+Quillback rockfish are a medium- to large-sized nearshore rockfish found from southern California to the Gulf of Alaska {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love et al. 2002)\leavevmode\tagmcend\tagstructend}. Off the U.S. West Coast quillback rockfish are primarily located north of central California, with few observations south of Point Conception. Quillback rockfish have historically been part of both commercial and recreational fisheries throughout their range.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002)\leavevmode\tagmcend\tagstructend}. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans and fish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Murie 1995)\leavevmode\tagmcend\tagstructend}. The body coloring of adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002)\leavevmode\tagmcend\tagstructend}. As their name suggests, quillback rockfish have long dorsal fin spines.
+Quillback rockfish are found in waters less than 274 meters in depth in nearshore kelp forests and rocky habitat {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love et al. 2002)\leavevmode\tagmcend\tagstructend}. The diets of quillback rockfish consist primarily of benthic and pelagic crustaceans and fish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Murie 1995)\leavevmode\tagmcend\tagstructend}. The body coloring of adult quillback rockfish is brown with yellow to orange blotching and light-colored dorsal saddle patches {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love et al. 2002)\leavevmode\tagmcend\tagstructend}. As their name suggests, quillback rockfish have long dorsal fin spines.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Limited studies have evaluated genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Seeb 1998; Stout et al. 2001)\leavevmode\tagmcend\tagstructend}, however Seeb {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(1998)\leavevmode\tagmcend\tagstructend} did not find significant differentiation in populations of quillback rockfish between coastal Washington and Alaska. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (\emph{Sebastes caurinus}), indicating limited oceanographic exchange among geographically proximate locations {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Seeb 1998; Buonaccorsi et al. 2002; Johansson et al. 2008)\leavevmode\tagmcend\tagstructend}. High site-fidelity {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Hannah and Rankin 2011)\leavevmode\tagmcend\tagstructend} and relatively small home ranges {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Tolimieri et al. 2009)\leavevmode\tagmcend\tagstructend} for quillback rockfish suggests patterns of isolation-by-distance as found for other rockfish.
+Limited studies have evaluated genetic variation in quillback rockfish across the U.S. West Coast. Genetic work has revealed significant differences between Puget Sound and coastal stocks of quillback rockfish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Stout et al. 2001; Seeb 1998)\leavevmode\tagmcend\tagstructend}, however Seeb {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(1998)\leavevmode\tagmcend\tagstructend} did not find significant differentiation in populations of quillback rockfish between coastal Washington and Alaska. Significant population sub-division along the U.S. West Coast has been detected for the closely related, and more well-studied copper rockfish (\emph{Sebastes caurinus}), indicating limited oceanographic exchange among geographically proximate locations {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Seeb 1998; Buonaccorsi et al. 2002; Johansson et al. 2008)\leavevmode\tagmcend\tagstructend}. High site-fidelity {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Hannah and Rankin 2011)\leavevmode\tagmcend\tagstructend} and relatively small home ranges {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Tolimieri et al. 2009)\leavevmode\tagmcend\tagstructend} for quillback rockfish suggests patterns of isolation-by-distance as found for other rockfish.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Quillback rockfish are a long-lived rockfish estimated to live up to 95 years {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002; Yamanako and Lacko 2001)\leavevmode\tagmcend\tagstructend}. Quillback rockfish was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Cope et al. 2011)\leavevmode\tagmcend\tagstructend}. This analysis calculated species specific vulnerability scores based on two dimensions: productivity characterized by the life history, and susceptibility characterized by how the stock is likely affected by the fishery in question.
+Quillback rockfish are a long-lived rockfish estimated to live up to 95 years {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Yamanako and Lacko 2001; Love et al. 2002)\leavevmode\tagmcend\tagstructend}. Quillback rockfish was determined to have a vulnerability (V = 2.22) of major concern in a productivity susceptibility analysis {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Cope et al. 2011)\leavevmode\tagmcend\tagstructend}. This analysis calculated species specific vulnerability scores based on two dimensions: productivity characterized by the life history, and susceptibility characterized by how the stock is likely affected by the fishery in question.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -468,7 +468,7 @@ The input sample sizes for the recreational length data were set equal to the nu
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS and the Triennial survey collected data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey were used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample sizes of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS and the Triennial survey collected data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey were used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -518,7 +518,7 @@ The above is also the median of the prior suggested by Hamel {\tagstructbegin{ta
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-The maximum age assumed for calculating natural mortality in the base model was 95 years. The maximum age of 95 years was based on literature values for the U.S. West Coast examining the longevity of female quillback rockfish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Love, Yoklavich, and Thorsteinson 2002; Palsson et al. 2009; Yamanako and Lacko 2001)\leavevmode\tagmcend\tagstructend}. Yamanaka and Lacko {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2001)\leavevmode\tagmcend\tagstructend} found male longevity to be 76 years. Literature estimates were larger than the oldest aged quillback rockfish (73, 70, and 69) among data used in this assessment. These ages were from fish caught off the coast of Washington in 1999.
+The maximum age assumed for calculating natural mortality in the base model was 95 years. The maximum age of 95 years was based on literature values for the U.S. West Coast examining the longevity of female quillback rockfish {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Yamanako and Lacko 2001; Love et al. 2002; Palsson et al. 2009)\leavevmode\tagmcend\tagstructend}. Yamanaka and Lacko {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2001)\leavevmode\tagmcend\tagstructend} found male longevity to be 76 years. Literature estimates were larger than the oldest aged quillback rockfish (73, 70, and 69) among data used in this assessment. These ages were from fish caught off the coast of Washington in 1999.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -531,7 +531,7 @@ The maximum age assumed for calculating natural mortality in the base model was 
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Maturity-at-length estimates were based on the work of Hannah and Blume {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2014)\leavevmode\tagmcend\tagstructend} which estimated the 50\% size-at-maturity of 29.2 cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50\% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which provide a range of 26-32 cm {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Echeverria 1987; Rosenthal et al. 1982)\leavevmode\tagmcend\tagstructend}.
+Maturity-at-length estimates were based on the work of Hannah and Blume {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2011)\leavevmode\tagmcend\tagstructend} which estimated the 50\% size-at-maturity of 29.2 cm off the coast of Oregon with maturity asymptoting to 1.0 for larger fish (Figure \ref{fig:maturity}). A length at 50\% maturity of 29.2 cm is consistent with other studies for quillback rockfish, which provide a range of 26-32 cm {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Rosenthal et al. 1982; Echeverria 1987)\leavevmode\tagmcend\tagstructend}.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -575,7 +575,7 @@ $L_{\infty}$ = 43.04 cm; $k$ = 0.199; $t0$ = -0.067 cm
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}. The estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} is comparable to literature values, while the estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} is on the higher side of literature values which vary from 0.06 - 0.19 {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Yamanako and Lacko 2001; Palsson et al. 2009; West, Helser, and O'Neill 2014)\leavevmode\tagmcend\tagstructend}.
+These values were fixed within the base model. The coefficient of variation (CV) around young and old fish was fixed at a value of 0.10. The length-at-age curve with the CV around length-at-age is shown in Figure \ref{fig:len-age-ss}. The estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend} is comparable to literature values, while the estimate of {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(k\)\leavevmode\tagmcend\tagstructend} is on the higher side of literature values which vary from 0.06 - 0.19 {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Yamanako and Lacko 2001; Palsson et al. 2009; West et al. 2014)\leavevmode\tagmcend\tagstructend}.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -615,6 +615,19 @@ Quillback rockfish was last assessed in 2010 {\tagstructbegin{tag=Reference}\tag
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
 A direct bridging analysis was not conducted because the previous assessment was structured as a single coastwide model. The previous assessment also used DB-SRA, which uses different assumptions and data than the model used for this assessment, making a direct bridging analysis intractable.
+
+\leavevmode\tagmcend\tagstructend\par
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{selection-of-method}{%
+\subsection{Selection of Method}\label{selection-of-method}}
+
+\leavevmode\tagmcend\tagstructend
+
+\tagstructbegin{tag=P}\tagmcbegin{tag=P}
+
+Quillback rockfish was assessed using a catch and length-based (SS-CL) data moderate method, as allowed within the Terms of Reference. Fishery-independent indices had inadequate sample sizes, as described in Section \ref{fishery-independent-data} above, so index-based methods were not selected.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -972,7 +985,7 @@ The sensitivity estimating annual recruitment deviations resulted in a lower bio
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-An exploratory length-based analysis was done using a Stock Synthesis Length-Only model (SS-LO; {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Cope 2013)\leavevmode\tagmcend\tagstructend}) to produce an independent estimate of selectivity and depletion based on observed recreational lengths from 1995-2020. SS-LO is a length only version of Stock Synthesis, meaning the removal history is removed, but the same life history values and length compositions are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment period in order to get an estimate of the current stock status. Length compositions are fit by estimating parameters ln({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}) (a nuisance parameter because it does not matter the value, but allows for best fits to the length compositions) and the selectivity by fleet. All other model specifications (e.g.~sex-specific life history) match the reference model. This analysis indicated that quillback rockfish were 50 percent selected near 35 cm with full selection at 45 cm. The estimate of depletion for 2021 was 0.57. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimate of the depletion was used to provide an external estimate of stock status for use within a Simple Stock Synthesis run as described below.
+An exploratory length-based analysis was done using a Stock Synthesis Length-Only model (SS-LO; Cope {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2013)\leavevmode\tagmcend\tagstructend}) to produce an independent estimate of selectivity and depletion based on observed recreational lengths from 1995-2020. SS-LO is a length only version of Stock Synthesis, meaning the removal history is removed, but the same life history values and length compositions are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment period in order to get an estimate of the current stock status. Length compositions are fit by estimating parameters ln({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}) (a nuisance parameter because it does not matter the value, but allows for best fits to the length compositions) and the selectivity by fleet. All other model specifications (e.g.~sex-specific life history) match the reference model. This analysis indicated that quillback rockfish were 50 percent selected near 35 cm with full selection at 45 cm. The estimate of depletion for 2021 was 0.57. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimate of the depletion was used to provide an external estimate of stock status for use within a Simple Stock Synthesis run as described below.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -1144,88 +1157,88 @@ Many people were instrumental in the successful completion of this assessment an
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-buonaccorsi_population_2002}{}%
-Buonaccorsi, Vincent P, Carol A Kimbrell, Eric A Lynn, and Russell D Vetter. 2002. ``Population Structure of Copper Rockfish (\emph{Sebastes Caurinus}) Reflects Postglacial Colonization and Contemporary Patterns of Larval Dispersal.'' \emph{Canadian Journal of Fisheries and Aquatic Sciences} 59 (8): 1374--84. \url{https://doi.org/10.1139/f02-101}.
-
-\leavevmode\hypertarget{ref-cope_approach_2011}{}%
-Cope, Jason M., John DeVore, E. J. Dick, Kelly Ames, John Budrick, Daniel L. Erickson, Joanna Grebel, et al. 2011. ``An Approach to Defining Stock Complexes for U.S. West Coast Groundfishes Using Vulnerabilities and Ecological Distributions.'' \emph{North American Journal of Fisheries Management} 31 (4): 589--604. \url{https://doi.org/10.1080/02755947.2011.591264}.
+Buonaccorsi, V.P., Kimbrell, C.A., Lynn, E.A., and Vetter, R.D. 2002. Population structure of copper rockfish (\emph{Sebastes caurinus}) reflects postglacial colonization and contemporary patterns of larval dispersal. Canadian Journal of Fisheries and Aquatic Sciences 59(8): 1374--1384.
 
 \leavevmode\hypertarget{ref-cope_implementing_2013}{}%
-Cope, J. M. 2013. ``Implementing a Statistical Catch-at-Age Model (Stock Synthesis) as a Tool for Deriving Overfishing Limits in Data-Limited Situations.'' \emph{Fisheries Research} 142 (May): 3--14. \url{https://doi.org/10.1016/j.fishres.2012.03.006}.
+Cope, J.M. 2013. Implementing a statistical catch-at-age model (Stock Synthesis) as a tool for deriving overfishing limits in data-limited situations. Fisheries Research 142: 3--14.
+
+\leavevmode\hypertarget{ref-cope_approach_2011}{}%
+Cope, J.M., DeVore, J., Dick, E.J., Ames, K., Budrick, J., Erickson, D.L., Grebel, J., Hanshew, G., Jones, R., Mattes, L., Niles, C., and Williams, S. 2011. An Approach to Defining Stock Complexes for U.S. West Coast Groundfishes Using Vulnerabilities and Ecological Distributions. North American Journal of Fisheries Management 31(4): 589--604.
 
 \leavevmode\hypertarget{ref-dick_meta-analysis_2017}{}%
-Dick, E. J., Sabrina Beyer, Marc Mangel, and Stephen Ralston. 2017. ``A Meta-Analysis of Fecundity in Rockfishes (Genus \emph{Sebastes}).'' \emph{Fisheries Research} 187 (March): 73--85. \url{https://doi.org/10.1016/j.fishres.2016.11.009}.
+Dick, E.J., Beyer, S., Mangel, M., and Ralston, S. 2017. A meta-analysis of fecundity in rockfishes (genus \emph{sebastes}). Fisheries Research 187: 73--85.
 
 \leavevmode\hypertarget{ref-DickandMacCall_dbsra_2010}{}%
-Dick, E. J., and Alec D. MacCall. 2010. ``Estimates of Sustainable Yield for 50 Data-Poor Stocks in the Pacfici Coast Groundfish Fishery Management Plot.'' NOAA-TM-NMFS-SWFSC-460. NOAA Tech. Memo.
+Dick, E.J., and MacCall, A.D. 2010. Estimates of sustainable yield for 50 data-poor stocks in the pacfici coast groundfish fishery management plot. NOAA Tech. Memo.
 
 \leavevmode\hypertarget{ref-Echeverria_maturity_1987}{}%
-Echeverria, Tina Wyllie. 1987. ``Thirty-Four Species of California Rockfishes: Maturity and Seasonality of Reproduction.'' \emph{Fishery Bulletin} 85 (2): 229--50.
+Echeverria, T.W. 1987. Thirty-four species of california rockfishes: Maturity and seasonality of reproduction. Fishery Bulletin 85(2): 229--250.
 
 \leavevmode\hypertarget{ref-francis_data_2011}{}%
-Francis, R. I. C. Chris, and R. Hilborn. 2011. ``Data Weighting in Statistical Fisheries Stock Assessment Models.'' \emph{Canadian Journal of Fisheries and Aquatic Sciences} 68 (6): 1124--38. \url{https://doi.org/10.1139/f2011-025}.
+Francis, R.I.C.C., and Hilborn, R. 2011. Data weighting in statistical fisheries stock assessment models. Canadian Journal of Fisheries and Aquatic Sciences 68(6): 1124--1138.
 
 \leavevmode\hypertarget{ref-hamel_method_2015}{}%
-Hamel, Owen S. 2015. ``A Method for Calculating a Meta-Analytical Prior for the Natural Mortality Rate Using Multiple Life History Correlates.'' \emph{ICES Journal of Marine Science: Journal Du Conseil} 72 (1): 62--69. \url{https://doi.org/10.1093/icesjms/fsu131}.
+Hamel, O.S. 2015. A method for calculating a meta-analytical prior for the natural mortality rate using multiple life history correlates. ICES Journal of Marine Science: Journal du Conseil 72(1): 62--69.
 
 \leavevmode\hypertarget{ref-HannahandBlume_maturity_2011}{}%
-Hannah, Robert W., and Matthew T. O. Blume. 2014. ``Maturity of Female Quillback (\emph{Sebastes Maliger}) and China Rockfish (\emph{S. Nebulosus}) from Oregon Waters Based on Histological Evaluation of Ovaries.'' Information Reports 2011-01. Oregon Department of Fish; Wildlife.
+Hannah, R.W., and Blume, M.T.O. 2011. Maturity of female quillback (\emph{Sebastes maliger}) and china rockfish (\emph{s. Nebulosus}) from Oregon waters based on histological evaluation of ovaries. Information Reports, Oregon Department of Fish; Wildlife.
 
 \leavevmode\hypertarget{ref-HannahandRankin_rockfish_site_fidelity_2011}{}%
-Hannah, Robert W., and Polly S. Rankin. 2011. ``Comparative Feeding Ecology of Two Sympatric Rockfish Congeners (\emph{Sebastes Caurinus}) (Copper Rockfish) and (\emph{S. Caurinus}) (Quillback Rockfish).'' \emph{North American Journal of Fisheries Management} 31: 483--94.
+Hannah, R.W., and Rankin, P.S. 2011. Site fidelity and movement of eight species of pacific rockfish at a high-relief rocky reef on the oregon coast. North American Journal of Fisheries Management 31: 483--494.
 
 \leavevmode\hypertarget{ref-johansson_influence_2008}{}%
-Johansson, M. L., M. A. Banks, K. D. Glunt, H. M. Hassel-Finnegan, and V. P. Buonaccorsi. 2008. ``Influence of Habitat Discontinuity, Geographical Distance, and Oceanography on Fine-Scale Population Genetic Structure of Copper Rockfish ( \emph{Sebastes Caurinus} ).'' \emph{Molecular Ecology} 17 (13): 3051--61. \url{https://doi.org/10.1111/j.1365-294X.2008.03814.x}.
+Johansson, M.L., Banks, M.A., Glunt, K.D., Hassel-Finnegan, H.M., and Buonaccorsi, V.P. 2008. Influence of habitat discontinuity, geographical distance, and oceanography on fine-scale population genetic structure of copper rockfish ( \emph{Sebastes caurinus} ). Molecular Ecology 17(13): 3051--3061.
 
 \leavevmode\hypertarget{ref-LenarzandEcheverria_dimorphism_1991}{}%
-Lenarz, William H., and Tina Wyllie Echeverria. 1991. ``Sexual Dimorphism in (\emph{Sebastes}).'' \emph{Marine Biology} 30: 71--80.
+Lenarz, W.H., and Echeverria, T.W. 1991. Sexual dimorphism in (\emph{sebastes}). Marine Biology 30: 71--80.
 
 \leavevmode\hypertarget{ref-loveetal_2002}{}%
-Love, Milton S., Mary Yoklavich, and Lyman Thorsteinson. 2002. \emph{The Rockfishes of the Northeast Pacific}. Berkley; Los Angeles, California: University of California Press.
+Love, M.S., Yoklavich, M., and Thorsteinson, L. 2002. The rockfishes of the northeast pacific. University of California Press, Berkley; Los Angeles, California.
 
 \leavevmode\hypertarget{ref-mcallister_bayesian_1997}{}%
-McAllister, M. K., and J. N. Ianelli. 1997. ``Bayesian Stock Assessment Using Catch-Age Data and the Sampling - Importance Resampling Algorithm.'' \emph{Canadian Journal of Fisheries and Aquatic Sciences} 54: 284--300.
+McAllister, M.K., and Ianelli, J.N. 1997. Bayesian stock assessment using catch-age data and the sampling - importance resampling algorithm. Canadian Journal of Fisheries and Aquatic Sciences 54: 284--300.
 
 \leavevmode\hypertarget{ref-methot_stock_2013}{}%
-Methot, R. D., and C. R. Wetzel. 2013. ``Stock Synthesis: A Biological and Statistical Framework for Fish Stock Assessment and Fishery Management.'' \emph{Fisheries Research} 142 (May): 86--99. \url{https://doi.org/10.1016/j.fishres.2012.10.012}.
+Methot, R.D., and Wetzel, C.R. 2013. Stock synthesis: A biological and statistical framework for fish stock assessment and fishery management. Fisheries Research 142: 86--99.
 
 \leavevmode\hypertarget{ref-Murie_diet_1995}{}%
-Murie, D. J. 1995. ``Comparative Feeding Ecology of Two Sympatric Rockfish Congeners (\emph{Sebastes Caurinus}) (Copper Rockfish) and (\emph{S. Caurinus}) (Quillback Rockfish).'' \emph{Marine Biology} 124: 341--53.
+Murie, D.J. 1995. Comparative feeding ecology of two sympatric rockfish congeners (\emph{Sebastes caurinus}) (copper rockfish) and (\emph{s. Caurinus}) (quillback rockfish). Marine Biology 124: 341--353.
 
 \leavevmode\hypertarget{ref-Palssonetal_2009}{}%
-Palsson, Wayne A., Tien-Shui Tsou, Greg G. Bargmann, Raymond M. Buckley, Jim E. West, Mary Lou Mills, Wing Cheng, and Robert Pacunski. 2009. ``The Biology and Assessment of Rockfishes in Puget Sound.'' FPT 09-04. Washington Department of Fish; Wildlife.
+Palsson, W.A., Tsou, T.-S., Bargmann, G.G., Buckley, R.M., West, J.E., Mills, M.L., Cheng, W., and Pacunski, R. 2009. The biology and assessment of rockfishes in puget sound. Washington Department of Fish; Wildlife.
 
 \leavevmode\hypertarget{ref-R_2020}{}%
-R Core Team. 2020. \emph{R: A Language and Environment for Statistical Computing}. Vienna, Austria: R Foundation for Statistical Computing. \url{https://www.R-project.org/}.
+R Core Team. 2020. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.
 
 \leavevmode\hypertarget{ref-Rosenthaletal_maturity_1982}{}%
-Rosenthal, R. J., L. Haldorson, L. J. Field, V. Moran-O'Connell, and M. G. LaRiviere. 1982. \emph{Inshore and Shallow Offshore Bottomfish Resources in the Southeastern Gulf of Alaska}. Alaska Coastal Research. Juneau, Alaska: University of Alaska.
+Rosenthal, R.J., Haldorson, L., Field, L.J., Moran-O'Connell, V., and LaRiviere, M.G. 1982. Inshore and shallow offshore bottomfish resources in the southeastern gulf of alaska. University of Alaska, Juneau, Alaska.
 
 \leavevmode\hypertarget{ref-seeb_gene_1998}{}%
-Seeb, L. W. 1998. ``Gene Flow and Introgression Within and Among Three Species of Rockfishes, Sebastes Auriculatus, \emph{S. Caurinus} and \emph{S. Maliger}.'' \emph{Journal of Heredity} 89 (5): 393--403. \url{https://doi.org/10.1093/jhered/89.5.393}.
+Seeb, L.W. 1998. Gene flow and introgression within and among three species of rockfishes, Sebastes auriculatus, \emph{S. Caurinus} and \emph{S. Maliger}. Journal of Heredity 89(5): 393--403.
 
 \leavevmode\hypertarget{ref-Stoutetal_DPS_2001}{}%
-Stout, Heather A, Bruce B. McCain, Russell D. Vetter, Tonya L. Builder, William H. Lenarz, Lyndal L. Johnson, and Richard D. Methot. 2001. ``Status Review of Copper Rockfish (\emph{Sebastes Caurinus}), Quillback Rockfish (\emph{S. Maliger}), and Brown Rockfish (\emph{S. Auriculatus}) in Puget Sound, Washington.'' NOAA-TM-NMFS-NWFSC-46. NOAA Tech. Memo.
+Stout, H.A., McCain, B.B., Vetter, R.D., Builder, T.L., Lenarz, W.H., Johnson, L.L., and Methot, R.D. 2001. Status review of copper rockfish (\emph{sebastes caurinus}), quillback rockfish (\emph{s. Maliger}), and brown rockfish (\emph{s. Auriculatus}) in puget sound, washington. NOAA Tech. Memo.
 
 \leavevmode\hypertarget{ref-r4ss_2021}{}%
-Taylor, Ian G., Kathryn L. Doering, Kelli F. Johnson, Chantel R. Wetzel, and Ian J. Stewart. 2021. ``Beyond Visualizing Catch-at-Age Models: Lessons Learned from the R4ss Package About Software to Support Stock Assessments.'' \emph{Fisheries Research} 239: 105924. \url{https://doi.org/10.1016/j.fishres.2021.105924}.
+Taylor, I.G., Doering, K.L., Johnson, K.F., Wetzel, C.R., and Stewart, I.J. 2021. Beyond visualizing catch-at-age models: Lessons learned from the r4ss package about software to support stock assessments. Fisheries Research 239: 105924.
 
 \leavevmode\hypertarget{ref-then_evaluating_2015-1}{}%
-Then, A. Y., J. M. Hoenig, N. G. Hall, and D. A. Hewitt. 2015. ``Evaluating the Predictive Performance of Empirical Estimators of Natural Mortality Rate Using Information on over 200 Fish Species.'' \emph{ICES Journal of Marine Science} 72 (1): 82--92. \url{https://doi.org/10.1093/icesjms/fsu136}.
+Then, A.Y., Hoenig, J.M., Hall, N.G., and Hewitt, D.A. 2015. Evaluating the predictive performance of empirical estimators of natural mortality rate using information on over 200 fish species. ICES Journal of Marine Science 72(1): 82--92.
 
 \leavevmode\hypertarget{ref-thorson_model-based_2017}{}%
-Thorson, James T., Kelli F. Johnson, R. D. Methot, and I. G. Taylor. 2017. ``Model-Based Estimates of Effective Sample Size in Stock Assessment Models Using the Dirichlet-Multinomial Distribution.'' \emph{Fisheries Research} 192: 84--93. \url{https://doi.org/10.1016/j.fishres.2016.06.005}.
+Thorson, J.T., Johnson, K.F., Methot, R.D., and Taylor, I.G. 2017. Model-based estimates of effective sample size in stock assessment models using the Dirichlet-multinomial distribution. Fisheries Research 192: 84--93.
 
 \leavevmode\hypertarget{ref-tolimieri_home_2009}{}%
-Tolimieri, N, K Andrews, G Williams, S Katz, and Ps Levin. 2009. ``Home Range Size and Patterns of Space Use by Lingcod, Copper Rockfish and Quillback Rockfish in Relation to Diel and Tidal Cycles.'' \emph{Marine Ecology Progress Series} 380 (April): 229--43. \url{https://doi.org/10.3354/meps07930}.
+Tolimieri, N., Andrews, K., Williams, G., Katz, S., and Levin, P. 2009. Home range size and patterns of space use by lingcod, copper rockfish and quillback rockfish in relation to diel and tidal cycles. Marine Ecology Progress Series 380: 229--243.
 
 \leavevmode\hypertarget{ref-Waterhouseetal_spatialSelex_2014}{}%
-Waterhouse, Lynn, David B. Sampson, Mark Maunder, and Brice X. Semmens. 2014. ``Using Areas-as-Fleets Selectivity to Model Spatial Fishing: Asymptotic Curves Are Unlikely Under Equilibrium Conditions.'' \emph{Fisheries Research} 158: 15--25.
+Waterhouse, L., Sampson, D.B., Maunder, M., and Semmens, B.X. 2014. Using areas-as-fleets selectivity to model spatial fishing: Asymptotic curves are unlikely under equilibrium conditions. Fisheries Research 158: 15--25.
 
 \leavevmode\hypertarget{ref-Westetal_2014}{}%
-West, James E., Thomas E. Helser, and Sandra M. O'Neill. 2014. ``Variation in Quillback Rockfish (\emph{Sebastes Maliger}) Growth Patterns from Oceanic to Inland Waters of the Salish Sea.'' \emph{Bulletin of Marine Science} 90 (3): 747--61.
+West, J.E., Helser, T.E., and O'Neill, S.M. 2014. Variation in quillback rockfish (\emph{sebastes maliger}) growth patterns from oceanic to inland waters of the salish sea. Bulletin of Marine Science 90(3): 747--761.
 
 \leavevmode\hypertarget{ref-YamanakaandLacko_rockfish_2001}{}%
-Yamanako, K. L., and L. C. Lacko. 2001. ``Inshore Rockfish ((\emph{Sebastes Ruberrimus}), (\emph{S. Maliger}), (\emph{S. Caurinus}), (\emph{S. Melanops}, (\emph{S. Nigrocinctus}), and (\emph{S. Nebulosus})) Stock Assessment for the West Coast of Canada and Recommendations for Management.'' Canadian Science Advisory Secretariat, Research Document 2001/139.
+Yamanako, K.L., and Lacko, L.C. 2001. Inshore rockfish ((\emph{sebastes ruberrimus}), (\emph{s. Maliger}), (\emph{s. Caurinus}), (\emph{s. Melanops}, (\emph{s. Nigrocinctus}), and (\emph{s. Nebulosus})) stock assessment for the west coast of canada and recommendations for management. Canadian Science Advisory Secretariat, Research Document 2001/139.
 
 \leavevmode\tagmcend\tagstructend
 
@@ -1513,7 +1526,7 @@ CV young Fem GP 1 & 0.100 & -2 & (0.01, 1) & NA & NA & None\\
 CV old Fem GP 1 & 0.100 & -2 & (0.01, 1) & NA & NA & None\\
 Wtlen 1 Fem GP 1 & 1.963e-05 & -9 & (0, 0.1) & NA & NA & None\\
 Wtlen 2 Fem GP 1 & 3.016 & -9 & (2, 4) & NA & NA & None\\
-Mat50% Fem GP 1 & 29.230 & -9 & (10, 60) & NA & NA & None\\
+Mat50\% Fem GP 1 & 29.230 & -9 & (10, 60) & NA & NA & None\\
 Mat slope Fem GP 1 & -0.800 & -9 & (-2, 0) & NA & NA & None\\
 Eggs scalar Fem GP 1 & 0.000 & -9 & (-3, 3) & NA & NA & None\\
 Eggs exp len Fem GP 1 & 3.702 & -9 & (0, 6) & NA & NA & None\\
@@ -1572,11 +1585,11 @@ Unfished Age 3+ Biomass (mt) & 138.24 & 78.54 & 197.94\\
 Unfished Recruitment (R0) & 7.42 & 4.21 & 10.62\\
 Spawning Output (2021) & 6.64 & -1.6 & 14.88\\
 Fraction Unfished (2021) & 0.39 & 0.07 & 0.7\\
-Reference Points Based SB40\% & - & - & -\\
-Proxy Spawning Output SB40\% & 6.88 & 3.91 & 9.84\\
-SPR Resulting in SB40\% & 0.46 & 0.46 & 0.46\\
-Exploitation Rate Resulting in SB40\% & 0.05 & 0.05 & 0.05\\
-Yield with SPR Based On SB40\% (mt) & 2.99 & 1.92 & 4.07\\
+Reference Points Based SB40\textbackslash{}\% & - & - & -\\
+Proxy Spawning Output SB40\textbackslash{}\% & 6.88 & 3.91 & 9.84\\
+SPR Resulting in SB40\textbackslash{}\% & 0.46 & 0.46 & 0.46\\
+Exploitation Rate Resulting in SB40\textbackslash{}\% & 0.05 & 0.05 & 0.05\\
+Yield with SPR Based On SB40\textbackslash{}\% (mt) & 2.99 & 1.92 & 4.07\\
 Reference Points Based on SPR Proxy for MSY & - & - & -\\
 Proxy Spawning Output (SPR50) & 7.67 & 4.36 & 10.98\\
 Exploitation Rate Corresponding to SPR50 & 0.04 & 0.04 & 0.05\\
@@ -1723,7 +1736,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Summary of data sources used in the base model.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1733,7 +1746,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Length composition data from the commercial fleet.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1743,7 +1756,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Aggregate length composition for the commercial and recreational fleet over all years.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1753,7 +1766,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Mean length for commercial fleet with 95 percent confidence intervals.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1763,7 +1776,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Length composition data from the recreational fleet.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1773,7 +1786,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Mean length for recreational fleet with 95 percent confidence intervals.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1783,7 +1796,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Maturity as a function of  length.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1793,7 +1806,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Fecundity as a function of length.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1803,7 +1816,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1813,7 +1826,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Weight-at-length relationship used in the model.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1823,7 +1836,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1833,7 +1846,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Length at age in the beginning of the year in the ending year of the model.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1843,7 +1856,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Selectivity at length by fleet.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1853,7 +1866,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1863,7 +1876,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Model estimated mean length in cm (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1873,7 +1886,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1883,7 +1896,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Model estimated mean length in cm (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1893,7 +1906,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Aggregated length comps over all years.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1903,7 +1916,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Estimated time series of spawning output.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1913,7 +1926,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Estimated time series of total biomass.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1923,7 +1936,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Estimated time series of relative spawning output.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1933,7 +1946,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1943,7 +1956,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Estimated time series of age-0 recruits (1000s).}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1953,7 +1966,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of ln(R0) values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1963,7 +1976,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of ln(R0) values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1973,7 +1986,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of ln(R0) values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1983,7 +1996,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of steepness values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1993,7 +2006,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of steepness values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2003,7 +2016,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of steepness values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2013,7 +2026,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2023,7 +2036,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2033,7 +2046,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2043,7 +2056,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2053,7 +2066,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2063,7 +2076,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2073,7 +2086,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of natural mortality values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2083,7 +2096,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of natural mortality values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2093,7 +2106,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of natural mortality values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2103,7 +2116,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of maximum length values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2113,7 +2126,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of maximum length values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2123,7 +2136,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of maximum length values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2133,7 +2146,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of k values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2143,7 +2156,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of k values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2153,7 +2166,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of k values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2163,7 +2176,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of CV at maximum length values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2173,7 +2186,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of CV at maximum length values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2183,7 +2196,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of CV at maximum length values.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2193,7 +2206,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the negative log-likelihood across a range of CV at maximum length values with recreational selectivity fixed.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2203,7 +2216,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output across a range of CV at maximum length values with recreational selectivity fixed.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2213,7 +2226,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished across a range of CV at maximum length values with recreational selectivity fixed.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2223,7 +2236,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of spawning output when the most recent 5 years of data are removed sequentially.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2233,7 +2246,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in the estimate of fraction unfished when the most recent 5 years of data are removed sequentially.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2245,7 +2258,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \newpage
 
-\tagstructbegin{tag=Figure,alttext={Change in estimated spawning output by sensitivity.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2255,7 +2268,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in estimated spawning output by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2265,7 +2278,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in estimated fraction unfished by sensitivity.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2275,7 +2288,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2285,7 +2298,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Change in estimated annual recruitment deviation by sensitivity.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2295,7 +2308,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2307,7 +2320,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \newpage
 
-\tagstructbegin{tag=Figure,alttext={Derived quantities from SSS run where fraction unfished was assumed to be 57 percent.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2319,7 +2332,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \newpage
 
-\tagstructbegin{tag=Figure,alttext={Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2331,7 +2344,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \newpage
 
-\tagstructbegin{tag=Figure,alttext={Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2341,7 +2354,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Estimated 1 - relative spawning ratio (SPR) by year.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2351,7 +2364,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2361,7 +2374,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Equilibrium yield curve for the base case model. Values are based on the 2020 fishery selectivity and with steepness fixed at 0.72.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2389,7 +2402,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \leavevmode\tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2399,7 +2412,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Length comps, whole catch, WA_Recreational (plot 2 of 2).}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -2409,7 +2422,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Length comps, whole catch, WA_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering

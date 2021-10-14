@@ -8,6 +8,9 @@ filein = file.path(general_wd, '3_model_general.Rmd')
 read_child(filein)
 ```
 
+## Selection of Method
+
+`r Spp` was assessed using a catch and length-based (SS-CL) data moderate method, as allowed within the Terms of Reference. Fishery-independent indices had inadequate sample sizes, as described in Section \ref{fishery-independent-data} above, so index-based methods were not selected.
 
 ## Model Structure and Assumptions
 

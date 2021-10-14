@@ -3,10 +3,15 @@ geometry: margin=1in
 month: "October"
 year: "2021"
 preamble: |
-output: sa4ss::techreport_pdf
+csl: sa4ss.csl
+output:
+  sa4ss::techreport_pdf:
+    default
+  bookdown::pdf_document2:
+    keep_tex: true
 bibliography: sa4ss.bib
 lang: en
-papersize: a4
+papersize: letter
 ---
 
 
@@ -188,7 +193,7 @@ The input sample sizes for the recreational length data were set equal to the nu
 
 ## Fishery-Independent Data
 
-No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample size of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS and the Triennial survey collected data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey were used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
+No fishery-independent data sources that are commonly incorporated in West Coast groundfish assessments (as required by the data moderate Terms of Reference) had adequate sample sizes of quillback rockfish off the Washington coast to include abundance indices for this assessment. The WCGBTS and the Triennial survey collected data off the Washington coast on rockfish biology and abundance. There were no more than ten positive tows of quillback rockfish in any one year coastwide in the WCGBTS, but typically fewer than five. Similarly there were no more than five positive tows of quillback rockfish in any one year coastwide for the Triennial survey. Given that indices of abundance were not calculated due to small sample sizes, length composition data from the WCGBTS (n = 91) and Triennial Survey (n = 42) off Washington were not included in the model. Biological data from the WCGBTS survey were used in external calculations of biological parameters, including growth and weight-at-length relationships. No ages or weights for quillback rockfish were available from the Triennial survey.
 
 Length data from the International Pacific Halibut Commission longline survey (N = 38), the Marine Fish Science longline survey (N = 36), and the Marine Fish Science rod and reel survey (N = 38) were provided by the WDFW. Lengths ranged from 28 - 45 cm from the longline surveys and 19 - 37 cm from the rod and reel survey. These data were not included in the model nor used in external calculations of biological parameters. 
 
@@ -253,6 +258,10 @@ Quillback rockfish was last assessed in 2010 [@DickandMacCall_dbsra_2010]. The s
 
 A direct bridging analysis was not conducted because the previous assessment was structured as a single coastwide model. The previous assessment also used DB-SRA, which uses different assumptions and data than the model used for this assessment, making a direct bridging analysis intractable.  
 
+## Selection of Method
+
+Quillback rockfish was assessed using a catch and length-based (SS-CL) data moderate method, as allowed within the Terms of Reference. Fishery-independent indices had inadequate sample sizes, as described in Section \ref{fishery-independent-data} above, so index-based methods were not selected.
+
 ## Model Structure and Assumptions
 
 Washington quillback rockfish was assessed using a one-sex model with life history parameters combined across sexes. The model assumed two fleets: 1) commercial and 2) recreational fleets with removals beginning in 1958. Selectivity for the commercial and recreational fleets was specified to be asymptotic using a six-parameter double normal parameterization. The ascending width and beginning size of maximum selectivity parameters were estimated. Annual recruitment deviations were not estimated within the base model.
@@ -278,7 +287,6 @@ The prior for steepness assumed a beta distribution with mean of 0.72 and standa
 Length composition data for the commercial fishery started with a sample size determined from the equation listed in Section \ref{commercial-fishery} (Table \ref{tab:com-len-samps}). The input sample size for the recreational fishery length composition data was set equal to the number of length samples by year (Table \ref{tab:len-samps}). 
 
 The base  model was weighted using the Francis method, which was based on equation TA1.8 in Francis [-@francis_data_2011]. The weightings applied using the Francis method are provided in Table \ref{tab:dw}. This formulation looks at the mean length or age by year and the standard error of the mean to determine if, across years, the variability is adequately explained by the model. If the standard error of the mean does not encompass the model predictions, then that data source should be down-weighted. This method accounts for correlation in the data (i.e., the multinomial distribution). Sensitivities were performed examining the difference in weighting using McAllister-Ianelli Harmonic Mean Weighting [@mcallister_bayesian_1997] and the Dirichlet Multinomial Weighting [@thorson_model-based_2017].
-
 
 ### Estimated and Fixed Parameters
 
@@ -403,7 +411,7 @@ The sensitivity estimating annual recruitment deviations resulted in a lower bio
 
 ### Length-Based Estimate of Depletion 
 
-An exploratory length-based analysis was done using a Stock Synthesis Length-Only model (SS-LO; [@cope_implementing_2013]) to produce an independent estimate of selectivity and depletion based on observed recreational lengths from 1995-2020. SS-LO is a length only version of Stock Synthesis, meaning the removal history is removed, but the same life history values and length compositions are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment period in order to get an estimate of the current stock status. Length compositions are fit by estimating parameters ln($R_0$) (a nuisance parameter because it does not matter the value, but allows for best fits to the length compositions) and the selectivity by fleet. All other model specifications (e.g. sex-specific life history) match the reference model. This analysis indicated that quillback rockfish were 50 percent selected near 35 cm with full selection at 45 cm. The estimate of depletion for 2021 was 0.57. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimate of the depletion was used to provide an external estimate of stock status for use within a Simple Stock Synthesis run as described below.
+An exploratory length-based analysis was done using a Stock Synthesis Length-Only model (SS-LO; Cope [-@cope_implementing_2013]) to produce an independent estimate of selectivity and depletion based on observed recreational lengths from 1995-2020. SS-LO is a length only version of Stock Synthesis, meaning the removal history is removed, but the same life history values and length compositions are used. The underlying assumption is that the population has gone through an aggregate constant catch and constant recruitment period in order to get an estimate of the current stock status. Length compositions are fit by estimating parameters ln($R_0$) (a nuisance parameter because it does not matter the value, but allows for best fits to the length compositions) and the selectivity by fleet. All other model specifications (e.g. sex-specific life history) match the reference model. This analysis indicated that quillback rockfish were 50 percent selected near 35 cm with full selection at 45 cm. The estimate of depletion for 2021 was 0.57. This type of analysis can provide insight on the fishing effort based on life history and observed length data in the absence of an integrated assessment model. The estimate of the depletion was used to provide an external estimate of stock status for use within a Simple Stock Synthesis run as described below.
 
 ### Simple stock synthesis
 
@@ -821,7 +829,7 @@ CV young Fem GP 1 & 0.100 & -2 & (0.01, 1) & NA & NA & None\\
 CV old Fem GP 1 & 0.100 & -2 & (0.01, 1) & NA & NA & None\\
 Wtlen 1 Fem GP 1 & 1.963e-05 & -9 & (0, 0.1) & NA & NA & None\\
 Wtlen 2 Fem GP 1 & 3.016 & -9 & (2, 4) & NA & NA & None\\
-Mat50% Fem GP 1 & 29.230 & -9 & (10, 60) & NA & NA & None\\
+Mat50\% Fem GP 1 & 29.230 & -9 & (10, 60) & NA & NA & None\\
 Mat slope Fem GP 1 & -0.800 & -9 & (-2, 0) & NA & NA & None\\
 Eggs scalar Fem GP 1 & 0.000 & -9 & (-3, 3) & NA & NA & None\\
 Eggs exp len Fem GP 1 & 3.702 & -9 & (0, 6) & NA & NA & None\\
@@ -888,11 +896,11 @@ Unfished Age 3+ Biomass (mt) & 138.24 & 78.54 & 197.94\\
 Unfished Recruitment (R0) & 7.42 & 4.21 & 10.62\\
 Spawning Output (2021) & 6.64 & -1.6 & 14.88\\
 Fraction Unfished (2021) & 0.39 & 0.07 & 0.7\\
-Reference Points Based SB40\% & - & - & -\\
-Proxy Spawning Output SB40\% & 6.88 & 3.91 & 9.84\\
-SPR Resulting in SB40\% & 0.46 & 0.46 & 0.46\\
-Exploitation Rate Resulting in SB40\% & 0.05 & 0.05 & 0.05\\
-Yield with SPR Based On SB40\% (mt) & 2.99 & 1.92 & 4.07\\
+Reference Points Based SB40\textbackslash{}\% & - & - & -\\
+Proxy Spawning Output SB40\textbackslash{}\% & 6.88 & 3.91 & 9.84\\
+SPR Resulting in SB40\textbackslash{}\% & 0.46 & 0.46 & 0.46\\
+Exploitation Rate Resulting in SB40\textbackslash{}\% & 0.05 & 0.05 & 0.05\\
+Yield with SPR Based On SB40\textbackslash{}\% (mt) & 2.99 & 1.92 & 4.07\\
 Reference Points Based on SPR Proxy for MSY & - & - & -\\
 Proxy Spawning Output (SPR50) & 7.67 & 4.36 & 10.98\\
 Exploitation Rate Corresponding to SPR50 & 0.04 & 0.04 & 0.05\\
@@ -1091,7 +1099,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ====================================================================== --> 
 
 
-![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/data_plot.png){width=100% height=100% alt="Summary of data sources used in the base model."}
+![Summary of data sources used in the base model.\label{fig:data-plot}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/data_plot.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1099,45 +1107,45 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ====================================================================== -->
 
 
-![Length composition data from the commercial fleet.\label{fig:com-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_bubflt2mkt0.png){width=100% height=100% alt="Length composition data from the commercial fleet."}
+![Length composition data from the commercial fleet.\label{fig:com-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_bubflt2mkt0.png){width=100% height=100% alt="."}
 
 
-![Aggregate length composition for the commercial and recreational fleet over all years.\label{fig:wa-len-agg}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat__aggregated_across_time.png){width=100% height=100% alt="Aggregate length composition for the commercial and recreational fleet over all years."}
+![Aggregate length composition for the commercial and recreational fleet over all years.\label{fig:wa-len-agg}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat__aggregated_across_time.png){width=100% height=100% alt="."}
 
 
-![Mean length for commercial fleet with 95 percent confidence intervals.\label{fig:mean-com-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Commercial.png){width=100% height=100% alt="Mean length for commercial fleet with 95 percent confidence intervals."}
+![Mean length for commercial fleet with 95 percent confidence intervals.\label{fig:mean-com-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Commercial.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- **************** Recreational Length Samples    ********************** --> 
 <!-- ====================================================================== -->
 
 
-![Length composition data from the recreational fleet.\label{fig:rec-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="Length composition data from the recreational fleet."}
+![Length composition data from the recreational fleet.\label{fig:rec-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_bubflt1mkt0_page2.png){width=100% height=100% alt="."}
 
 
-![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-rec-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Mean length for recreational fleet with 95 percent confidence intervals."}
+![Mean length for recreational fleet with 95 percent confidence intervals.\label{fig:mean-rec-len-data}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lendat_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- *************************     Biology     **************************** --> 
 <!-- ====================================================================== -->
 
 
-![Maturity as a function of  length.\label{fig:maturity}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio6_maturity.png){width=100% height=100% alt="Maturity as a function of  length."}
+![Maturity as a function of  length.\label{fig:maturity}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio6_maturity.png){width=100% height=100% alt="."}
 
 
-![Fecundity as a function of length.\label{fig:fecundity}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio9_fecundity_len.png){width=100% height=100% alt="Fecundity as a function of length."}
+![Fecundity as a function of length.\label{fig:fecundity}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio9_fecundity_len.png){width=100% height=100% alt="."}
 
 
-![Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Sex_ForReport.png){width=100% height=100% alt="Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves."}
+![Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves.\label{fig:len-weight-survey}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Weight_by_Sex_ForReport.png){width=100% height=100% alt="."}
 
 
-![Weight-at-length relationship used in the model.\label{fig:len-weight}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio5_weightatsize.png){width=100% height=100% alt="Weight-at-length relationship used in the model."}
+![Weight-at-length relationship used in the model.\label{fig:len-weight}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio5_weightatsize.png){width=100% height=100% alt="."}
 
 
-![Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex_ForReport.png){width=100% height=100% alt="Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves."}
+![Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves.\label{fig:len-age-data}](//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/data/output biology/plots/Length_Age_by_Sex_ForReport.png){width=100% height=100% alt="."}
 
 
-![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio1_sizeatage.png){width=100% height=100% alt="Length at age in the beginning of the year in the ending year of the model."}
+![Length at age in the beginning of the year in the ending year of the model.\label{fig:len-age-ss}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/bio1_sizeatage.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1145,7 +1153,7 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ====================================================================== -->
 
 
-![Selectivity at length by fleet.\label{fig:selex}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="Selectivity at length by fleet."}
+![Selectivity at length by fleet.\label{fig:selex}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/sel01_multiple_fleets_length1.png){width=100% height=100% alt="."}
 
 <!-- ```{r, results = 'asis'} -->
 <!-- add_figure( -->
@@ -1168,32 +1176,32 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 
 
-![Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:com-pearson}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_residsflt2mkt0.png){width=100% height=100% alt="Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
+![Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:com-pearson}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_residsflt2mkt0.png){width=100% height=100% alt="."}
 
 
-![Model estimated mean length in cm (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.\label{fig:com-mean-len-fit}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Commercial.png){width=100% height=100% alt="Model estimated mean length in cm (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes."}
+![Model estimated mean length in cm (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.\label{fig:com-mean-len-fit}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Commercial.png){width=100% height=100% alt="."}
 
 
-![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)."}
+![Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:rec-pearson}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_residsflt1mkt0_page2.png){width=100% height=100% alt="."}
 
 
-![Model estimated mean length in cm (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="Model estimated mean length in cm (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes."}
+![Model estimated mean length in cm (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals based on current samples sizes.\label{fig:rec-mean-len-fit}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_data_weighting_TA1.8_WA_Recreational.png){width=100% height=100% alt="."}
 
 
-![Aggregated length comps over all years.\label{fig:agg-len-fit}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Aggregated length comps over all years."}
+![Aggregated length comps over all years.\label{fig:agg-len-fit}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="."}
 
 <!-- ====================================================================== -->
 <!-- ******************      Time Series       **************************** --> 
 <!-- ====================================================================== -->
 
 
-![Estimated time series of spawning output.\label{fig:ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="Estimated time series of spawning output."}
+![Estimated time series of spawning output.\label{fig:ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png){width=100% height=100% alt="."}
 
 
-![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="Estimated time series of total biomass."}
+![Estimated time series of total biomass.\label{fig:tot-bio}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts1_Total_biomass_(mt).png){width=100% height=100% alt="."}
 
 
-![Estimated time series of relative spawning output.\label{fig:depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts9_Relative_spawning_output_intervals.png){width=100% height=100% alt="Estimated time series of relative spawning output."}
+![Estimated time series of relative spawning output.\label{fig:depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts9_Relative_spawning_output_intervals.png){width=100% height=100% alt="."}
 
 <!-- ```{r, results = 'asis'} -->
 <!-- add_figure( -->
@@ -1203,10 +1211,10 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ``` -->
 
 
-![Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.\label{fig:bh-curve}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SR_curve.png){width=100% height=100% alt="Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years."}
+![Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years.\label{fig:bh-curve}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SR_curve.png){width=100% height=100% alt="."}
 
 
-![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="Estimated time series of age-0 recruits (1000s)."}
+![Estimated time series of age-0 recruits (1000s).\label{fig:recruits}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1215,93 +1223,93 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 <!-- R0 -->
 
-![Change in the negative log-likelihood across a range of ln(R0) values.\label{fig:r0-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="Change in the negative log-likelihood across a range of ln(R0) values."}
+![Change in the negative log-likelihood across a range of ln(R0) values.\label{fig:r0-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/piner_panel_SR_LN(R0).png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of ln(R0) values.\label{fig:r0-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of ln(R0) values."}
+![Change in the estimate of spawning output across a range of ln(R0) values.\label{fig:r0-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of ln(R0) values.\label{fig:r0-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of ln(R0) values."}
+![Change in the estimate of fraction unfished across a range of ln(R0) values.\label{fig:r0-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_LN(R0)/SR_LN(R0)_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- h -->
 
-![Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of steepness values."}
+![Change in the negative log-likelihood across a range of steepness values.\label{fig:h-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of steepness values.\label{fig:h-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of steepness values."}
+![Change in the estimate of spawning output across a range of steepness values.\label{fig:h-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of steepness values."}
+![Change in the estimate of fraction unfished across a range of steepness values.\label{fig:h-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- h rec selex fixed (parm 1 and 3) -->
 
-![Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed."}
+![Change in the negative log-likelihood across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/piner_panel_SR_BH_steep.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed."}
+![Change in the estimate of spawning output across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/SR_BH_steep_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed."}
+![Change in the estimate of fraction unfished across a range of steepness values with recreational selectivity fixed.\label{fig:h-recfix-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_SR_BH_steep/SR_BH_steep_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- Rec selex -->
 
-![Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/piner_panel_Size_DblN_peak_WA_Recreational(1).png){width=100% height=100% alt="Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery."}
+![Change in the negative log-likelihood across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/piner_panel_Size_DblN_peak_WA_Recreational(1).png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/Size_DblN_peak_WA_Recreational(1)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery."}
+![Change in the estimate of spawning output across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/Size_DblN_peak_WA_Recreational(1)_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/Size_DblN_peak_WA_Recreational(1)_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery."}
+![Change in the estimate of fraction unfished across a range of values for the peak in selectivity for the recreational fishery.\label{fig:recselex-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_Size_DblN_peak_WA_Recreational(1)/Size_DblN_peak_WA_Recreational(1)_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- M -->
 
-![Change in the negative log-likelihood across a range of natural mortality values.\label{fig:m-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of natural mortality values."}
+![Change in the negative log-likelihood across a range of natural mortality values.\label{fig:m-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/piner_panel_NatM_p_1_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of natural mortality values.\label{fig:m-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of natural mortality values."}
+![Change in the estimate of spawning output across a range of natural mortality values.\label{fig:m-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of natural mortality values.\label{fig:m-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of natural mortality values."}
+![Change in the estimate of fraction unfished across a range of natural mortality values.\label{fig:m-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_NatM_p_1_Fem_GP_1/NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- Linf -->
 
-![Change in the negative log-likelihood across a range of maximum length values.\label{fig:linf-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of maximum length values."}
+![Change in the negative log-likelihood across a range of maximum length values.\label{fig:linf-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/piner_panel_L_at_Amax_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of maximum length values.\label{fig:linf-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of maximum length values."}
+![Change in the estimate of spawning output across a range of maximum length values.\label{fig:linf-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of maximum length values.\label{fig:linf-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of maximum length values."}
+![Change in the estimate of fraction unfished across a range of maximum length values.\label{fig:linf-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_L_at_Amax_Fem_GP_1/L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- k -->
 
-![Change in the negative log-likelihood across a range of k values.\label{fig:k-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of k values."}
+![Change in the negative log-likelihood across a range of k values.\label{fig:k-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/piner_panel_VonBert_K_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of k values.\label{fig:k-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of k values."}
+![Change in the estimate of spawning output across a range of k values.\label{fig:k-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of k values.\label{fig:k-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of k values."}
+![Change in the estimate of fraction unfished across a range of k values.\label{fig:k-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_VonBert_K_Fem_GP_1/VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- CV-old -->
 
-![Change in the negative log-likelihood across a range of CV at maximum length values.\label{fig:cv2-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_CV_old_Fem_GP_1/piner_panel_CV_old_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of CV at maximum length values."}
+![Change in the negative log-likelihood across a range of CV at maximum length values.\label{fig:cv2-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_CV_old_Fem_GP_1/piner_panel_CV_old_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of CV at maximum length values.\label{fig:cv2-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of CV at maximum length values."}
+![Change in the estimate of spawning output across a range of CV at maximum length values.\label{fig:cv2-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of CV at maximum length values.\label{fig:cv2-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of CV at maximum length values."}
+![Change in the estimate of fraction unfished across a range of CV at maximum length values.\label{fig:cv2-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 <!-- CV old rec selex fixed (parm 1 and 3) -->
 
-![Change in the negative log-likelihood across a range of CV at maximum length values with recreational selectivity fixed.\label{fig:cv2-recfix-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_CV_old_Fem_GP_1/piner_panel_CV_old_Fem_GP_1.png){width=100% height=100% alt="Change in the negative log-likelihood across a range of CV at maximum length values with recreational selectivity fixed."}
+![Change in the negative log-likelihood across a range of CV at maximum length values with recreational selectivity fixed.\label{fig:cv2-recfix-profile}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_CV_old_Fem_GP_1/piner_panel_CV_old_Fem_GP_1.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of spawning output across a range of CV at maximum length values with recreational selectivity fixed.\label{fig:cv2-recfix-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="Change in the estimate of spawning output across a range of CV at maximum length values with recreational selectivity fixed."}
+![Change in the estimate of spawning output across a range of CV at maximum length values with recreational selectivity fixed.\label{fig:cv2-recfix-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished across a range of CV at maximum length values with recreational selectivity fixed.\label{fig:cv2-recfix-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="Change in the estimate of fraction unfished across a range of CV at maximum length values with recreational selectivity fixed."}
+![Change in the estimate of fraction unfished across a range of CV at maximum length values with recreational selectivity fixed.\label{fig:cv2-recfix-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_fixRecSelex_profile_CV_old_Fem_GP_1/CV_old_Fem_GP_1_trajectories_compare3_Bratio.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1309,10 +1317,10 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ====================================================================== -->
 
 
-![Change in the estimate of spawning output when the most recent 5 years of data are removed sequentially.\label{fig:retro-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in the estimate of spawning output when the most recent 5 years of data are removed sequentially."}
+![Change in the estimate of spawning output when the most recent 5 years of data are removed sequentially.\label{fig:retro-ssb}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_retro/compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in the estimate of fraction unfished when the most recent 5 years of data are removed sequentially.\label{fig:retro-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in the estimate of fraction unfished when the most recent 5 years of data are removed sequentially."}
+![Change in the estimate of fraction unfished when the most recent 5 years of data are removed sequentially.\label{fig:retro-depl}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_baseProfile_retro/compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
 
 \newpage
 
@@ -1322,19 +1330,19 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 <!-- ====================================================================== -->
 
 
-![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity."}
+![Change in estimated spawning output by sensitivity.\label{fig:sens-ssb}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in estimated spawning output by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-ssb-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated spawning output by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted."}
+![Change in estimated spawning output by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-ssb-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare2_spawnbio_uncertainty_subset.png){width=100% height=100% alt="."}
 
 
-![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity."}
+![Change in estimated fraction unfished by sensitivity.\label{fig:sens-depl}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
 
 
-![Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-depl-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty_subset.png){width=100% height=100% alt="Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted."}
+![Change in estimated fraction unfished by sensitivity. Sensitivities for Linf, CV of older fish, and alternative phase/state are omitted.\label{fig:sens-depl-subset}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare4_Bratio_uncertainty_subset.png){width=100% height=100% alt="."}
 
 
-![Change in estimated annual recruitment deviation by sensitivity.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="Change in estimated annual recruitment deviation by sensitivity."}
+![Change in estimated annual recruitment deviation by sensitivity.\label{fig:sens-recdev}](C:/Users/Brian.Langseth/Desktop/wa/sensitivities/base.1000_sensitivities_compare12_recdevs_uncertainty.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1343,22 +1351,22 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 
 
-![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-57}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect/plots/SSS_57_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution."}
+![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 57 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-57}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect/plots/SSS_57_Priors.png){width=100% height=100% alt="."}
 
 \newpage
 
 
-![Derived quantities from SSS run where fraction unfished was assumed to be 57 percent.\label{fig:sss-quant-57}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect/plots/SSS_57_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 57 percent."}
+![Derived quantities from SSS run where fraction unfished was assumed to be 57 percent.\label{fig:sss-quant-57}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_57dep_LWcorrect/plots/SSS_57_quants.png){width=100% height=100% alt="."}
 
 \newpage
 
 
-![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-40}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect/plots/SSS_40_Priors.png){width=100% height=100% alt="Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution."}
+![Prior distributions for parameter input for SSS where fraction unfished was assumed to be 40 percent. The red vertical line represents the median of the distribution.\label{fig:sss-prior-40}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect/plots/SSS_40_Priors.png){width=100% height=100% alt="."}
 
 \newpage
 
 
-![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-40}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect/plots/SSS_40_quants.png){width=100% height=100% alt="Derived quantities from SSS run where fraction unfished was assumed to be 40 percent."}
+![Derived quantities from SSS run where fraction unfished was assumed to be 40 percent.\label{fig:sss-quant-40}](C:/Users/Brian.Langseth/Desktop/WA_SSS/WA_Quillback_SSS_biocatchGMT_40dep_LWcorrect/plots/SSS_40_quants.png){width=100% height=100% alt="."}
 
 
 <!-- ====================================================================== -->
@@ -1367,15 +1375,14 @@ Year & Total Biomass (mt) & Spawning Output & Total Biomass 3+ (mt) & Fraction U
 
 
 
-![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="Estimated 1 - relative spawning ratio (SPR) by year."}
+![Estimated 1 - relative spawning ratio (SPR) by year.\label{fig:1-spr}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR2_minusSPRseries.png){width=100% height=100% alt="."}
 
 
-![Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.\label{fig:phase-plot}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR4_phase.png){width=100% height=100% alt="Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios."}
+![Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios.\label{fig:phase-plot}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/SPR4_phase.png){width=100% height=100% alt="."}
 
 
 ![Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="Equilibrium yield curve for the base case model. Values are based on the 2020
-fishery selectivity and with steepness fixed at 0.72."}
+fishery selectivity and with steepness fixed at 0.72.\label{fig:yield}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/yield2_yield_curve_with_refpoints.png){width=100% height=100% alt="."}
 
 \newpage
 
@@ -1389,11 +1396,11 @@ fishery selectivity and with steepness fixed at 0.72."}
 
 
 
-![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method."}
+![Length comps, whole catch, WA_Recreational (plot 1 of 2).<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt1mkt0_page1}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt1mkt0_page1.png){width=100% height=100% alt="."}
 
-![Length comps, whole catch, WA_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="Length comps, whole catch, WA_Recreational (plot 2 of 2)."}
+![Length comps, whole catch, WA_Recreational (plot 2 of 2).\label{fig:comp_lenfit_flt1mkt0_page2}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt1mkt0_page2.png){width=100% height=100% alt="."}
 
-![Length comps, whole catch, WA_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt2mkt0}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt2mkt0.png){width=100% height=100% alt="Length comps, whole catch, WA_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method."}
+![Length comps, whole catch, WA_Commercial.<br><br>'N adj.' is the input sample size after data-weighting adjustment. N eff. is the calculated effective sample size used in the McAllister-Iannelli tuning method.\label{fig:comp_lenfit_flt2mkt0}](C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base/plots/comp_lenfit_flt2mkt0.png){width=100% height=100% alt="."}
 
 <!--chapter:end:54appendix.Rmd-->
 
