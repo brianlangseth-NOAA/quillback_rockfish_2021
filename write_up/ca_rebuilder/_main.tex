@@ -1,7 +1,7 @@
 \input{input_accessability.tex}
 \documentclass[11pt,
   english,
-  a4paper,
+  letterpaper,
 ]{article}
 \usepackage{sa4ss}
 \usepackage{amsmath,amssymb,array}
@@ -39,7 +39,7 @@
 \usepackage{xcolor}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \hypersetup{
-  pdftitle={DRAFT (post mopup version) Rebuilding analysis for quillback rockfish (Sebastes maliger) in U.S. waters off the coast of California based on the 2021 stock assessment},
+  pdftitle={Rebuilding analysis for quillback rockfish (Sebastes maliger) in U.S. waters off the coast of California based on the 2021 stock assessment},
   pdflang={en},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -78,19 +78,23 @@
   \usepackage[shorthands=off,main=english]{babel}
 \fi
 
+%Define cslreferences environment, required by pandoc 2.8
+%https://github.com/rstudio/rmarkdown/issues/1649
+
+
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
 \date{}
-\newcommand{\trTitle}{DRAFT (post mopup version) Rebuilding analysis for quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California based on the 2021 stock assessment}
+\newcommand{\trTitle}{Rebuilding analysis for quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California based on the 2021 stock assessment}
 \newcommand{\trYear}{2021}
-\newcommand{\trMonth}{September}
+\newcommand{\trMonth}{October}
 \newcommand{\trAuthsLong}{true}
 \newcommand{\trAuthsBack}{Langseth, B.J., C.R. Wetzel}
 \newcommand{\trCitation}{
 \begin{hangparas}{1em}{1}
-\trAuthsBack{}. \trYear{}. \trTitle{}. Pacific Fisheries Management Council, Portland, Oregon. \pageref{LastPage}{}\,p.
+\trAuthsBack{}. \trYear{}. \trTitle{}. \glsentrylong{pfmc}, Portland, Oregon. \pageref{LastPage}{}\,p.
 \end{hangparas}}
 
 \AtBeginDocument{\tagstructbegin{tag=Document}}
@@ -110,10 +114,10 @@
 \pagenumbering{roman}
 \noindent
 \begin{center}
-\title{DRAFT (post mopup version) Rebuilding analysis for quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California based on the 2021 stock assessment}
+\title{Rebuilding analysis for quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California based on the 2021 stock assessment}
 % \textnormal{\MakeTextUppercase{\trTitle{}}}
 \vspace{1.5cm}
-{\Large\textbf\newline{DRAFT (post mopup version) Rebuilding analysis for quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California based on the 2021 stock assessment}}
+{\Large\textbf\newline{Rebuilding analysis for quillback rockfish (\emph{Sebastes maliger}) in U.S. waters off the coast of California based on the 2021 stock assessment}}
 \vfill
 by\\
 Brian J. Langseth\textsuperscript{1}\\
@@ -127,7 +131,7 @@ Chantel R. Wetzel\textsuperscript{1}\vfill
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{center}
-\copyright{} Pacific Fisheries Management Council, \trYear{}\\
+\copyright{} \glsentrylong{pfmc}, \trYear{}\\
 \end{center}
 \par
 \bigskip
@@ -143,7 +147,6 @@ Correct citation for this publication:
 
 % Table of contents page, lists of figures and tables
 \tableofcontents\clearpage
-%\listoffigures \listoftables \clearpage
 \label{TRlastRoman}
 \clearpage
 
@@ -163,9 +166,6 @@ Correct citation for this publication:
 \newcommand{\lt}{\ensuremath <}
 \newcommand{\gt}{\ensuremath >}
 
-%Define cslreferences environment, required by pandoc 2.8
-%https://github.com/rstudio/rmarkdown/issues/1649
-
 \pagebreak
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -177,22 +177,6 @@ Correct citation for this publication:
 
 \tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
 
-\hypertarget{disclaimer}{%
-\section*{Disclaimer}\label{disclaimer}}
-\addcontentsline{toc}{section}{Disclaimer}
-
-\leavevmode\tagmcend\tagstructend
-
-\tagstructbegin{tag=P}\tagmcbegin{tag=P}
-
-These materials do not constitute a formal publication and are for information only. They are in a pre-review, pre-decisional state and should not be formally cited (or reproduced). They are to be considered provisional and do not represent any determination or policy of NOAA or the Department of Commerce.
-
-\leavevmode\tagmcend\tagstructend\par
-
-\pagebreak
-
-\tagstructbegin{tag=H1}\tagmcbegin{tag=H1}
-
 \hypertarget{summary}{%
 \section*{Summary}\label{summary}}
 \addcontentsline{toc}{section}{Summary}
@@ -201,13 +185,13 @@ These materials do not constitute a formal publication and are for information o
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-This rebuilding analysis is for the sub-stock of quillback rockfish (\emph{Sebastes maliger}) in waters off California. The analysis is based on the 2021 stock assessment {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Langseth et al. 2021)\leavevmode\tagmcend\tagstructend}. The 2021 assessment model estimated the quillback rockfish population to be at 14\% of the unexploited equilibrium spawning output at the beginning of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2023 and beyond.
+This rebuilding analysis is for the sub-stock of quillback rockfish (\emph{Sebastes maliger}) in waters off California. The analysis is based on the 2021 stock assessment {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Langseth et al. 2021)\leavevmode\tagmcend\tagstructend}. The 2021 assessment model estimated the quillback rockfish population to be at 14\% of the unexploited equilibrium spawning output at the start of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2023 and beyond.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-The results of the analysis show that the value for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend}, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2023), is 2040. The estimated generation time for quillback rockfish was estimated to be 26 years. In conjunction with {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend} and the mean generation time, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MAX}\)\leavevmode\tagmcend\tagstructend} was estimated to be 2066. An SPR = 0.581 harvest rate generates a 50\% probability of recovery by {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MID}\)\leavevmode\tagmcend\tagstructend} where {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MID}\)\leavevmode\tagmcend\tagstructend} was 2053, an intermediate year between {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend} and {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MAX}\)\leavevmode\tagmcend\tagstructend}.
+The results of the analysis show that the value for {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend}, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2023), is 2040. The estimated generation time for quillback rockfish was estimated to be 26 years. In conjunction with {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend} and the mean generation time, {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MAX}\)\leavevmode\tagmcend\tagstructend} was estimated to be 2066. An SPR = 0.581 harvest rate leads to a 50\% probability of recovery by {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MID}\)\leavevmode\tagmcend\tagstructend} where {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MID}\)\leavevmode\tagmcend\tagstructend} was 2053, an intermediate year between {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MIN}\)\leavevmode\tagmcend\tagstructend} and {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{MAX}\)\leavevmode\tagmcend\tagstructend}.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -244,19 +228,19 @@ The 2021 assessment of quillback rockfish (\emph{Sebastes maliger}) in Californi
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-The 2021 assessment of quillback rockfish assessed the stock as three separate sub-stocks along the U.S. west coast: Washington, Oregon, and California. These were the first assessments of quillback rockfish conducted within Stock Synthesis {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Methot and Wetzel 2013)\leavevmode\tagmcend\tagstructend} that used catch and length composition data to inform model estimates around stock size and status. The previous assessment of quillback rockfish conducted in 2010 was a coastwide assessment modeled using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide OFLs using catch data and biological information {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Dick and MacCall 2010)\leavevmode\tagmcend\tagstructend}. DB-SRA is a catch-only model and does not assess overfished status; the 2010 assessment assumed that current depletion was distributed around the management target of 40\%. The 2010 assessment found there was a 52\% chance that quillback rockfish was experiencing overfishing, as recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate at the time. Recent catches of quillback rockfish for the current assessment also exceed the ACL contributions for the species in all modeled areas.
+The 2021 assessment of quillback rockfish assessed the stock as three separate sub-stocks along the U.S. west coast: Washington, Oregon, and California. These were the first assessments of quillback rockfish conducted within Stock Synthesis {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Methot and Wetzel 2013)\leavevmode\tagmcend\tagstructend} that used catch and length composition data to inform model estimates around stock size and status. The previous assessment of quillback rockfish conducted in 2010 was a coastwide assessment modeled using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide OFLs using catch data and biological information {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Dick and MacCall 2010)\leavevmode\tagmcend\tagstructend}. DB-SRA is a catch-only method and does not assess overfished status; the 2010 assessment assumed that current depletion was distributed around the management target of 40\%. The 2010 assessment found there was a 52\% chance that quillback rockfish was experiencing overfishing, as recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate at the time. Recent catches of quillback rockfish for the current assessment also exceed the ACL contributions for the species in all modeled areas.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Estimates of depletion in 2021 for the sub-stocks off Washington and Oregon were above the MSST threshold, but the estimate of depletion for the sub-stock off California was 14\%. See {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(Langseth et al. 2021)\leavevmode\tagmcend\tagstructend} for additional results from the California quillback rockfish base model.
+Estimates of depletion in 2021 for the sub-stocks off Washington and Oregon were above the MSST threshold, but the estimate of depletion for the sub-stock off California was 14\%. See Langseth et al.~{\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2021)\leavevmode\tagmcend\tagstructend} for additional results from the California quillback rockfish base model.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-California quillback rockfish was assessed using a one-sex model with coastwide life history parameters combined across sexes. Life history parameters were estimated externally and then fixed within the model. Natural mortality and steepness were both fixed, at the median and mean of the priors, respectively. Annual recruitment deviations were estimated within the base model. The model for quillback rockfish in California waters included two fishing fleets, a commercial and a recreational fleet. The majority of the removals and length composition data arose from the recreational fleet. Recreational removals peaked in the late 1970s and early 1980s, with two years of large catches in 1984 and 1993. Removals declined sharply in 1994, but increased to levels similar to the late 1970s and early 1980s in the mid 2000s and again in recent years. Commercial removals peaked in the mid to late 1990s, with one year of exceptionally large catches in 1991. Removals declined through the mid 2010s, but increased in recent years. Selectivity for the commercial and recreational fleets was specified to be asymptotic. The assessment model decision table explored uncertainty around stock size and status using lower ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0464) and higher ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0744) natural mortality ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}) values relative to the base model.
+California quillback rockfish was assessed using a single-sex model with coastwide life history parameters combined across sexes. Life history parameters were estimated externally and then fixed within the model. Natural mortality and steepness were both fixed, at the median and mean of the priors, respectively. Annual recruitment deviations were estimated within the base model. The model for quillback rockfish in California waters included two fishing fleets, a commercial and a recreational fleet. The majority of the removals and length composition data arose from the recreational fleet. Recreational removals peaked in the late 1970s and early 1980s, with two years of large catches in 1984 and 1993. Removals declined sharply in 1994, but increased to levels similar to the late 1970s and early 1980s during the mid 2000s and again in recent years. Commercial removals peaked in the mid to late 1990s, with one year of exceptionally large catches in 1991. Removals declined through the mid 2010s, but increased in recent years. Selectivity for the commercial and recreational fleets was specified to be asymptotic. The assessment model decision table explored uncertainty around stock size and status using lower ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0464 yr{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^{-1}\)\leavevmode\tagmcend\tagstructend}) and higher ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0744 yr{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^{-1}\)\leavevmode\tagmcend\tagstructend}) natural mortality ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}) values relative to the base model.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -362,7 +346,7 @@ The selectivity used in the rebuilding analysis was obtained from the 2021 asses
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Model and parameter uncertainty is included in the rebuilding analysis via 1,000 random simulations of stochastic future recruitment strengths and integration over alternative low ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0464) and high ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0744) states of nature for values of natural mortality ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}). Other potential states of nature were explored for the assessment, including for low and high ln({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R0\)\leavevmode\tagmcend\tagstructend}) and high and low {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend}, but alternative values of natural mortality encapsulated a slightly wider range of depletion estimates compared to the other states of natures. The base model was given 50\% of the weight (500 simulations) and each alternative natural mortality state of nature was given 25\% (250 simulations) of the weight.
+Model and parameter uncertainty is included in the rebuilding analysis via 1,000 random simulations of stochastic future recruitment strengths and integration over alternative low ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0464 yr{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^{-1}\)\leavevmode\tagmcend\tagstructend}) and high ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend} = 0.0744 yr{\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(^{-1}\)\leavevmode\tagmcend\tagstructend}) states of nature for values of natural mortality ({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(M\)\leavevmode\tagmcend\tagstructend}). Other potential states of nature were explored for the assessment, including for low and high ln({\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(R_0\)\leavevmode\tagmcend\tagstructend}) and high and low {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(L_{\infty}\)\leavevmode\tagmcend\tagstructend}, but alternative values of natural mortality encapsulated a slightly wider range of depletion estimates compared to the other states of natures. The base model was given 50\% of the weight (500 simulations) and each alternative natural mortality state of nature was given 25\% (250 simulations) of the weight.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -375,12 +359,12 @@ Model and parameter uncertainty is included in the rebuilding analysis via 1,000
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{TARGET}\)\leavevmode\tagmcend\tagstructend} (year for 50\% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate or rebuilding by a selected target year.
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\text{T}_\text{TARGET}\)\leavevmode\tagmcend\tagstructend} (year for 50\% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR; PFMC {\tagstructbegin{tag=Reference}\tagmcbegin{tag=Reference}(2020)\leavevmode\tagmcend\tagstructend}) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate or rebuilding by a selected target year.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \begin{enumerate}
-    \item Eliminate all harvest, F = 0, beginning in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
+    \item Eliminate all harvest, F = 0, starting in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
     \item Apply the harvest rate that would generate the ACL contributions specified for the current year (i.e., the latest year specified in regulations). 
     \item Apply a range of SPR values: 
     \begin{enumerate}
@@ -395,8 +379,8 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
      \item by $\text{T}_\text{MAX}$ from the current cycle, and 
      \item by $\text{T}_\text{MID}$ from the current cycle, which is the year midway between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
     \end{enumerate}
-    \item Apply the default harvest policy based on the 40:10 harvest control rule with time-varying category 2 $\sigma$ = 1.0 and $P^*$ = 0.45.
-    \item Apply the ABC harvest rate with time-varying category 2 $\sigma$ = 1.0 and $P^*$ = 0.45.
+    \item Apply the default harvest policy based on the 40:10 harvest control rule with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
+    \item Apply the ABC harvest rate with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
 \end{enumerate}
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
@@ -425,7 +409,7 @@ All of the above rebuilding strategies were conducted assuming removals of 13.5 
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-The Pacific Fishery Management Council's (Council) Scientific and Statistical Committee (SSC) requested at the September Council meeting that an additional rebuilding sensitivity be done examining the impact of blocking both recreational and commercial selectivity at 1916-2000 and 2001-2020, assuming asymptotic selectivity for the early blocks and allowing estimation of dome-shaped selectivity for the recent blocks. This sensitivity was conducted without integration over alternative states of nature for natural mortality, given its treatment as a sensitivity.
+The Pacific Fishery Management Council's (Council) Scientific and Statistical Committee (SSC) requested at the September Council meeting that an additional rebuilding sensitivity be conducted examining the impact of blocking both recreational and commercial selectivity at 1916-2000 and 2001-2020, assuming asymptotic selectivity for the early blocks and allowing estimation of dome-shaped selectivity for the recent blocks. This sensitivity was conducted without integration over alternative states of nature for natural mortality, given its treatment as a sensitivity.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -495,13 +479,13 @@ The sensitivity rebuilding analysis was run without uncertainty from the states 
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Comparisons between stock synthesis output from the adopted base model and the sensitivity run are provided in \protect\hypertarget{append_b}{}{Appendix B}. The sensitivity had slightly higher estimates of unfished spawning output (Figure \ref{fig:ssb-sens}) and similar depletion estimates (Figure \ref{fig:depl-sens}) compared to the adopted base model. Selectivity in the recent block was domed at large sizes for both the recreational and commercial fleets, and right shifted in recent years for the commercial fleet (Figure \ref{fig:selex-sens}) so the time series of information entered into the sensitivity rebuilding analysis were different from the time series entered into the base rebuilding analysis, contributing to differences in results.
+Comparisons between Stock Synthesis output from the adopted base model and the sensitivity run are provided in (Figures \ref{fig:ssb-sens} - \ref{fig:Pearson-sens}). The sensitivity had slightly higher estimates of unfished spawning output (Figure \ref{fig:ssb-sens}) and similar depletion estimates (Figure \ref{fig:depl-sens}) compared to the adopted base model. Selectivity in the recent block was domed at large sizes for both the recreational and commercial fleets, and right shifted in recent years for the commercial fleet (Figure \ref{fig:selex-sens}) so the time series of information entered into the sensitivity rebuilding analysis were different from the time series entered into the base rebuilding analysis, contributing to differences in results.
 
 \leavevmode\tagmcend\tagstructend\par
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-We do not consider the sensitivity model to be an improvement over the base model. The shifts in the selectivity curve for the commercial fleet in the sensitivity model fit the lower observed commercial mean lengths in the 1990s and the higher observed commercial mean lengths starting around 2010 better than the base model (Figures \ref{fig:MeanLengthFit-com-base} and \ref{fig:MeanLengthFit-com-sens}), leading to an improvement in AIC (Table \ref{tab:sens-table-withComBlock}). However, the change in estimated commercial mean length in 2001 for the sensitivity model does not align with a shift in the commercial mean length data at that time. Furthermore, the mode and right side of the estimated aggregate length distribution from the commercial fleet are shifted right, and overestimate the proportion of larger fish on aggregate compared to the base model (Figures \ref{fig:aggLenFit-base} and \ref{fig:aggLenFit-sens}). Combined with the similarities in estimates of population scale and status, the base model is preferred due to parsimony.
+We do not consider the sensitivity model to be an improvement over the base model. The shifts in the selectivity curve for the commercial fleet in the sensitivity model fit the lower observed commercial mean lengths in the 1990s and the higher observed commercial mean lengths starting around 2010 better than the base model (Figures \ref{fig:MeanLengthFit-com-base} and \ref{fig:MeanLengthFit-com-sens}), leading to an improvement in AIC (Table \ref{tab:sens-table-withComBlock}). Fits to the recreational fleet mean length data were similar (Figures \ref{fig:MeanLengthFit-rec-base} and \ref{fig:MeanLengthFit-rec-sens}), and Pearson residuals for both fleets were not noticeably improved (Figures \ref{fig:Pearson-base} and \ref{fig:Pearson-sens}). The change in estimated commercial mean length in 2001 for the sensitivity model does not align with a shift in the commercial mean length data at that time. Furthermore, the mode and right side of the estimated aggregate length distribution from the commercial fleet are shifted right, and overestimate the proportion of larger fish on aggregate compared to the base model (Figures \ref{fig:aggLenFit-base} and \ref{fig:aggLenFit-sens}). Combined with the similarities in estimates of population scale and status, the base model is preferred due to parsimony.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -514,7 +498,7 @@ We do not consider the sensitivity model to be an improvement over the base mode
 
 \tagstructbegin{tag=P}\tagmcbegin{tag=P}
 
-Andre Punt (University of Washington) updated the rebuilder program to apply time-varying {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} for the Acceptable Biological Catch and 40-10 scenarios. Andre Punt and Owen Hamel (NOAA) provided assistant in understanding and applying the rebuilder program. Owen Hamel provided comments on early drafts of the analysis.
+Andre Punt (University of Washington) updated the rebuilder program to apply time-varying {\tagstructbegin{tag=Formula}\tagmcbegin{tag=Formula}\(\sigma\)\leavevmode\tagmcend\tagstructend} for the Acceptable Biological Catch and 40-10 scenarios. Andre Punt and Owen Hamel (NOAA) provided assistance in understanding and applying the rebuilder program. Owen Hamel provided comments on early drafts of the analysis.
 
 \leavevmode\tagmcend\tagstructend\par
 
@@ -531,13 +515,16 @@ Andre Punt (University of Washington) updated the rebuilder program to apply tim
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-DickandMacCall_dbsra_2010}{}%
-Dick, E. J., and Alec D. MacCall. 2010. ``Estimates of Sustainable Yield for 50 Data-Poor Stocks in the Pacfici Coast Groundfish Fishery Management Plot.'' NOAA-TM-NMFS-SWFSC-460. NOAA Tech. Memo.
+Dick, E.J., and MacCall, A.D. 2010. Estimates of sustainable yield for 50 data-poor stocks in the pacfici coast groundfish fishery management plot. NOAA Tech. Memo, NOAA-TM-NMFS-SWFSC-460.
 
 \leavevmode\hypertarget{ref-Langseth_status_2021}{}%
-Langseth, Brian J., Chantel R. Wetzel, Jason M. Cope, and John E. Budrick. 2021. ``Status of Quillback Rockfish (\emph{Sebastes Maliger}) in U.S. Waters Off the Coast of California in 2021 Using Catch and Length Data.'' 7700 Ambassador Place NE, Suite 200, Portland, OR 97220: Pacific Fishery Management Council.
+Langseth, B.J., Wetzel, C.R., Cope, J.M., and Budrick, J.E. 2021. Status of quillback rockfish (\emph{Sebastes maliger}) in U.S. Waters off the coast of california in 2021 using catch and length data. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 200, Portland, OR 97220.
 
 \leavevmode\hypertarget{ref-methot_stock_2013}{}%
-Methot, R. D., and C. R. Wetzel. 2013. ``Stock Synthesis: A Biological and Statistical Framework for Fish Stock Assessment and Fishery Management.'' \emph{Fisheries Research} 142 (May): 86--99. \url{https://doi.org/10.1016/j.fishres.2012.10.012}.
+Methot, R.D., and Wetzel, C.R. 2013. Stock synthesis: A biological and statistical framework for fish stock assessment and fishery management. Fisheries Research 142: 86--99.
+
+\leavevmode\hypertarget{ref-TOR_2020}{}%
+Pacific Fishery Management Council (PFMC). 2020. Terms of reference for the groundfish and coastal pelagic species stock assessment review process for 2021-2022. Pacific Fishery Management Council, 7700 Ambassador Place NE, Suite 200, Portland, OR 97220.
 
 \leavevmode\tagmcend\tagstructend
 
@@ -581,12 +568,12 @@ SB40 (millions of eggs) & 22.035\\
 SB2021 (millions of eggs) & 7.745\\
 Year rebuilding begins & 2023\\
 Current year & 2021\\
-Tmin & 2040\\
+T\textsubscript{MIN} & 2040\\
 Mean generation time (years) & 26\\
-Tmax & 2066\\
-TF=0 & 2040\\
-Ttarget & TBD\\
-SPRtarget & TBD\\
+T\textsubscript{MAX} & 2066\\
+T\textsubscript{F=0} & 2040\\
+T\textsubscript{TARGET} & TBD\\
+SPR\textsubscript{TARGET} & TBD\\
 Current SPR (2021) & 0.1165\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
@@ -601,12 +588,12 @@ Current SPR (2021) & 0.1165\\*
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:reb-options}Results of base rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value}\\
 \toprule
- & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:reb-options}Results of base rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value \textit{(continued)}}\\
 \toprule
- & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -618,9 +605,9 @@ Current SPR (2021) & 0.1165\\*
 2023 ACL (mt) & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.52 & 0 & 0.04 & 1.79\\
 2024 ACL (mt) & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.68 & 0 & 0.33 & 1.95\\
 SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.581 & 1 & - & -\\
-Ttarget & 2065 & 2051 & 2046 & 2043 & 2042 & 2053 & 2040 & 2051 & 2055\\
-Tmax & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066\\
-Probability of recovery by Tmax & 0.525 & 0.897 & 0.979 & 0.999 & 1 & 0.852 & 1 & 0.905 & 0.821\\*
+T\textsubscript{TARGET} & 2065 & 2051 & 2046 & 2043 & 2042 & 2053 & 2040 & 2051 & 2055\\
+T\textsubscript{MAX} & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066\\
+Probability of recovery by T\textsubscript{MAX} & 0.525 & 0.897 & 0.979 & 0.999 & 1 & 0.852 & 1 & 0.905 & 0.821\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
 \endgroup{}
@@ -642,12 +629,12 @@ Probability of recovery by Tmax & 0.525 & 0.897 & 0.979 & 0.999 & 1 & 0.852 & 1 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:prob-mat}Probability of recovery by year for base rebuilding strategies}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:prob-mat}Probability of recovery by year for base rebuilding strategies \textit{(continued)}}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -713,12 +700,12 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:acl-mat}Catches (mt) by year for base rebuilding strategies}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:acl-mat}Catches (mt) by year for base rebuilding strategies \textit{(continued)}}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -784,12 +771,12 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:ofl-mat}OFLs (mt) by year for base rebuilding strategies}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:ofl-mat}OFLs (mt) by year for base rebuilding strategies \textit{(continued)}}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -855,12 +842,12 @@ Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & S
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:rel-ssb-mat}Spawning output relative to the 40 percent of unfished spawning output target by year for base rebuilding strategies}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:rel-ssb-mat}Spawning output relative to the 40 percent of unfished spawning output target by year for base rebuilding strategies \textit{(continued)}}\\
 \toprule
-Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+Year & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -951,12 +938,12 @@ SB40 (millions of eggs) & 23.475\\
 SB2021 (millions of eggs) & 8.71\\
 Year rebuilding begins & 2023\\
 Current year & 2021\\
-Tmin & 2039\\
+T\textsubscript{MIN} & 2039\\
 Mean generation time (years) & 27\\
-Tmax & 2066\\
-TF=0 & 2039\\
-Ttarget & TBD\\
-SPRtarget & TBD\\
+T\textsubscript{MAX} & 2066\\
+T\textsubscript{F=0} & 2039\\
+T\textsubscript{TARGET} & TBD\\
+SPR\textsubscript{TARGET} & TBD\\
 Current SPR (2021) & 0.1367\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
@@ -971,12 +958,12 @@ Current SPR (2021) & 0.1367\\*
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:reb-options-sens}Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value}\\
 \toprule
- & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:reb-options-sens}Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value \textit{(continued)}}\\
 \toprule
- & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -988,9 +975,9 @@ Current SPR (2021) & 0.1367\\*
 2023 ACL (mt) & 2.45 & 1.69 & 1.12 & 0.67 & 0.3 & 1.71 & 0 & 0.38 & 2.14\\
 2024 ACL (mt) & 2.66 & 1.86 & 1.24 & 0.75 & 0.34 & 1.88 & 0 & 0.7 & 2.31\\
 SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.597 & 1 & - & -\\
-Ttarget & 2062 & 2050 & 2045 & 2042 & 2040 & 2050 & 2039 & 2049 & 2052\\
-Tmax & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066\\
-Probability of recovery by Tmax & 0.608 & 0.96 & 0.997 & 1 & 1 & 0.956 & 1 & 0.947 & 0.901\\*
+T\textsubscript{TARGET} & 2062 & 2050 & 2045 & 2042 & 2040 & 2050 & 2039 & 2049 & 2052\\
+T\textsubscript{MAX} & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066 & 2066\\
+Probability of recovery by T\textsubscript{MAX} & 0.608 & 0.96 & 0.997 & 1 & 1 & 0.956 & 1 & 0.947 & 0.901\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
 \endgroup{}
@@ -1023,12 +1010,12 @@ SB40 (millions of eggs) & 22.035\\
 SB2021 (millions of eggs) & 7.745\\
 Year rebuilding begins & 2023\\
 Current year & 2021\\
-Tmin & 2040\\
+T\textsubscript{MIN} & 2040\\
 Mean generation time (years) & 27\\
-Tmax & 2067\\
-TF=0 & 2040\\
-Ttarget & TBD\\
-SPRtarget & TBD\\
+T\textsubscript{MAX} & 2067\\
+T\textsubscript{F=0} & 2040\\
+T\textsubscript{TARGET} & TBD\\
+SPR\textsubscript{TARGET} & TBD\\
 Current SPR (2021) & 0.1165\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
@@ -1043,12 +1030,12 @@ Current SPR (2021) & 0.1165\\*
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
 \caption{\label{tab:reb-options-noStateOfNature}Results of base rebuilding alternatives without applying the states of nature based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value}\\
 \toprule
- & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
 \caption[]{\label{tab:reb-options-noStateOfNature}Results of base rebuilding alternatives without applying the states of nature based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value \textit{(continued)}}\\
 \toprule
- & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=Tmid         & F=0             & 40-10 rule      & ABC Rule       \\
+ & SPR= .500       & SPR= .600       & SPR= .700       & SPR= .800       & SPR= .900       & Yr=T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endhead
 
@@ -1060,15 +1047,24 @@ Current SPR (2021) & 0.1165\\*
 2023 ACL (mt) & 2.05 & 1.42 & 0.94 & 0.56 & 0.25 & 1.64 & 0 & 0.04 & 1.79\\
 2024 ACL (mt) & 2.24 & 1.57 & 1.05 & 0.63 & 0.29 & 1.81 & 0 & 0.33 & 1.95\\
 SPR & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 0.561 & 1 & - & -\\
-Ttarget & 2064 & 2051 & 2046 & 2043 & 2042 & 2054 & 2040 & 2050 & 2054\\
-Tmax & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067\\
-Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.943 & 0.894\\*
+T\textsubscript{TARGET} & 2064 & 2051 & 2046 & 2043 & 2042 & 2054 & 2040 & 2050 & 2054\\
+T\textsubscript{MAX} & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067 & 2067\\
+Probability of recovery by T\textsubscript{MAX} & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.943 & 0.894\\*
 \end{longtable}
 \leavevmode\tagmcend\tagstructend\par
 \endgroup{}
 \end{landscape}
 \endgroup{}
 \clearpage
+
+\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
+
+\hypertarget{base-and-sensitivity-stock-synthesis-model-outputs}{%
+\subsection{Base and sensitivity Stock Synthesis model outputs}\label{base-and-sensitivity-stock-synthesis-model-outputs}}
+
+\leavevmode\tagmcend\tagstructend
+
+\input{tex_tables/sensitivity_table.tex}
 
 \clearpage
 
@@ -1079,7 +1075,7 @@ Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.
 
 \leavevmode\tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Probability of rebuilding by year for the base alternative rebuilding strategies.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1089,7 +1085,7 @@ Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Catches (mt) by year for the base alternative rebuilding strategies.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1099,7 +1095,7 @@ Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Spawning output relative to the management target of 40 percent of unfished spawning output by year for the base alternative rebuilding strategies.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1109,7 +1105,7 @@ Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.
 
 \tagmcend\tagstructend
 
-\tagstructbegin{tag=Figure,alttext={Spawning output by year for the base alternative rebuilding strategies.}}\tagmcbegin{tag=Figure}
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
 
 \begin{figure}
 \centering
@@ -1118,6 +1114,118 @@ Probability of recovery by Tmax & 0.596 & 0.959 & 0.997 & 1 & 1 & 0.881 & 1 & 0.
 \end{figure}
 
 \tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare2_spawnbio_uncertainty.png}
+\caption{Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:ssb-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare4_Bratio_uncertainty.png}
+\caption{Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:depl-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compare.png}
+\caption{Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines).\label{fig:selex-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png}
+\caption{Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-base}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png}
+\caption{Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png}
+\caption{Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-base}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png}
+\caption{Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__multi-fleet_comparison.png}
+\caption{Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed \textgreater{} expected) and open bubbles are negative residuals (observed \textless{} expected).\label{fig:Pearson-base}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__multi-fleet_comparison.png}
+\caption{Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed \textgreater{} expected) and open bubbles are negative residuals (observed \textless{} expected).\label{fig:Pearson-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__aggregated_across_time.png}
+\caption{Aggregated length comps over all years for the adopted stock synthesis base model.\label{fig:aggLenFit-base}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\tagstructbegin{tag=Figure,alttext={.}}\tagmcbegin{tag=Figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__aggregated_across_time.png}
+\caption{Aggregated length comps over all years for the stock synthesis sensitivity model.\label{fig:aggLenFit-sens}}
+\end{figure}
+
+\tagmcend\tagstructend
+
+\clearpage
 
 \clearpage
 
@@ -1142,123 +1250,4 @@ The rebuild.dat file used for the base rebuilding analysis has been provided as 
 \leavevmode\tagmcend\tagstructend\par
 
 \clearpage
-
-\tagstructbegin{tag=H2}\tagmcbegin{tag=H2}
-
-\hypertarget{append_b}{%
-\subsection{Appendix B: Comparison between the approved stock synthesis base case model and the stock synthesis sensitivity model with dome-shaped selectivity and blocks in 2001.}\label{append_b}}
-
-\leavevmode\tagmcend\tagstructend
-
-\include{tex_tables/sensitivity_table.tex}
-
-\tagstructbegin{tag=Figure,alttext={Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare2_spawnbio_uncertainty.png}
-\caption{Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:ssb-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare4_Bratio_uncertainty.png}
-\caption{Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:depl-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines).}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compare.png}
-\caption{Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines).\label{fig:selex-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png}
-\caption{Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-base}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png}
-\caption{Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png}
-\caption{Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-base}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png}
-\caption{Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Aggregated length comps over all years for the adopted stock synthesis base model.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__aggregated_across_time.png}
-\caption{Aggregated length comps over all years for the adopted stock synthesis base model.\label{fig:aggLenFit-base}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Aggregated length comps over all years for the stock synthesis sensitivity model.}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__aggregated_across_time.png}
-\caption{Aggregated length comps over all years for the stock synthesis sensitivity model.\label{fig:aggLenFit-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__multi-fleet_comparison.png}
-\caption{Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed \textgreater{} expected) and open bubbles are negative residuals (observed \textless{} expected).\label{fig:Pearson-base}}
-\end{figure}
-
-\tagmcend\tagstructend
-
-\tagstructbegin{tag=Figure,alttext={Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).}}\tagmcbegin{tag=Figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=0.9\textwidth,height=0.9\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__multi-fleet_comparison.png}
-\caption{Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed \textgreater{} expected) and open bubbles are negative residuals (observed \textless{} expected).\label{fig:Pearson-sens}}
-\end{figure}
-
-\tagmcend\tagstructend
 \end{document}
