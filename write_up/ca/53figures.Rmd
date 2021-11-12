@@ -9,7 +9,8 @@
 add_figure(
 filein = file.path(mod_loc, "plots", "catch2 landings stacked.png"), 
 caption = "Total removals (mt) by fleet used in the base model",
-label = 'catch')
+label = 'catch',
+alt_caption = "Stacked barchart showing landings in each year for two fleets")
 ```	
 
 <!-- ====================================================================== --> 
@@ -20,7 +21,8 @@ label = 'catch')
 add_figure(
 filein = file.path(mod_loc, "plots", "data_plot.png"), 
 caption = "Summary of data sources used in the base model",
-label = 'data-plot')
+label = 'data-plot',
+alt_caption = "Dot plot indicating the years where catch and length composition data were available for each fleet")
 ```	
 
 <!-- ====================================================================== -->
@@ -31,14 +33,16 @@ label = 'data-plot')
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_bubflt1mkt0_page2.png"), 
 caption = "Length composition data from the commercial fleet",
-label = 'com-len-data')
+label = 'com-len-data',
+alt_caption = "Bubble plot indicating quantity of data by length bin in each year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_CA_Commercial.png"), 
 caption = "Mean length for commercial fleet with 95 percent confidence intervals",
-label = 'mean-com-len-data')
+label = 'mean-com-len-data',
+alt_caption = "Thin box plot showing mean and confidence intervals of length data in each year")
 ```
 
 <!-- ====================================================================== -->
@@ -49,14 +53,16 @@ label = 'mean-com-len-data')
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_bubflt2mkt0_page3.png"), 
 caption = "Length composition data from the recreational fleet",
-label = 'rec-len-data')
+label = 'rec-len-data',
+alt_caption = "Bubble plot indicating quantity of data by length bin in each year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lendat_data_weighting_TA1.8_CA_Recreational.png"), 
 caption = "Mean length for recreational fleet with 95 percent confidence intervals",
-label = 'mean-rec-len-data')
+label = 'mean-rec-len-data',
+alt_caption = "Thin box plot showing mean and confidence intervals of length data in each year")
 ```
 
 
@@ -68,7 +74,8 @@ label = 'mean-rec-len-data')
 add_figure(
 filein = file.path(mod_loc, "plots", "bio6_maturity.png"), 
 caption = "Maturity as a function of length",
-label = 'maturity')
+label = 'maturity',
+alt_caption = "Line plot of the logistic shaped maturity-at-length relationship")
 ```
 
 
@@ -76,28 +83,32 @@ label = 'maturity')
 add_figure(
 filein = file.path(mod_loc, "plots", "bio9_fecundity_len.png"), 
 caption = "Fecundity as a function of length",
-label = 'fecundity')
+label = 'fecundity',
+alt_caption = "Line plot showing fecundity increase as a power function of length")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_Weight_by_Sex_ForReport.png"), 
 caption = "Observed sex-specific (red is female, blue is male, gray is unsexed) weight-at-length data from the individual sources with length and weight data, along with all sources combined with the estimated weight-at-length curves",
-label = 'len-weight-survey')
+label = 'len-weight-survey',
+alt_caption = "Four-panel dot plot showing the power-function shape of weight and length data across all data sources with the relationship plotted, and individually for the recreational, commercial, and survey data")
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "bio5_weightatsize.png"), 
 caption = "Weight-at-length relationship used in the model",
-label = 'len-weight')
+label = 'len-weight',
+alt_caption = "Line plot showing weight increase as a power function of length")
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(data_fig_loc, "Length_Age_by_Sex_ForReport.png"), 
 caption = "Observed sex-specific (red is female, blue is male, gray is unsexed) length-at-age data from the individual sources with length and age data, along with all sources combined with the estimated length-at-age curves",
-label = 'len-age-data')
+label = 'len-age-data',
+alt_caption = "Four-panel dot plot showing an increasing and then plateauing shape of length and age data across all data sources with the relationship plotted, and individually for the recreational, commercial, and survey data")
 ```	
 
 
@@ -105,7 +116,8 @@ label = 'len-age-data')
 add_figure(
 filein = file.path(mod_loc, "plots", "bio1_sizeatage.png"), 
 caption = "Length at age in the beginning of the year in the ending year of the model",
-label = 'len-age-ss')
+label = 'len-age-ss',
+alt_caption = "Line plot showing length increasing and then plateauing with age")
 ```
 
 
@@ -117,7 +129,8 @@ label = 'len-age-ss')
 add_figure(
 filein = file.path(mod_loc, "plots", "sel01_multiple_fleets_length1.png"),
 caption = "Selectivity at length by fleet",
-label = 'selex')
+label = 'selex',
+alt_caption = "Line plot showing the logistic-shaped pattern of selectivity")
 ```
 
 <!-- ====================================================================== -->
@@ -128,21 +141,24 @@ label = 'selex')
 add_figure(
 filein = file.path(mod_loc, "plots", "ts11_Age-0_recruits_(1000s)_with_95_asymptotic_intervals.png"), 
 caption = "Estimated time series of age-0 recruits (1000s)",
-label = 'recruits')
+label = 'recruits',
+alt_caption = "A whisker plot showing mean and 95 percent confidence intervals of recruitment each year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "recdevs2_withbars.png"), 
 caption = "Estimated time series of recruitment deviations",
-label = 'rec-devs')
+label = 'rec-devs',
+alt_caption = "A whisker plot showing mean and 95 percent confidence intervals of log-recruitment deviations each year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "recruit_fit_bias_adjust_forReport.png"),
 caption = "Recruitment bias adjustment applied in the base model",
-label = 'bias-adj')
+label = 'bias-adj',
+alt_caption = "A line plot with two lines, one showing model-estimated transformed variance by year and a second showing the suggested bias correction to apply by year")
 ```
 
 
@@ -155,35 +171,40 @@ label = 'bias-adj')
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt1mkt0_page2.png"), 
 caption = "Pearson residuals for commercial fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
-label = 'com-pearson')
+label = 'com-pearson',
+alt_caption = "Bubble plot of residuals by length bins in each year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_CA_Commercial.png"), 
 caption = "Model estimated mean length in cm (blue line) overlaid on mean length of commercial lengths (gray circles) with 95 percent confidence intervals (thick bars) based on current samples sizes. The thin bars indicate the confidence interval if Francis weighting were used instead",
-label = 'com-mean-len-fit')
+label = 'com-mean-len-fit',
+alt_caption = "Box and whisker plot of mean length for each year that commercial length data were available, along with a line of model-fitted mean length")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_residsflt2mkt0_page3.png"), 
 caption = "Pearson residuals for recreational fleet. Closed bubble are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
-label = 'rec-pearson')
+label = 'rec-pearson',
+alt_caption = "Bubble plot of residuals by length bins in each year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit_data_weighting_TA1.8_CA_Recreational.png"), 
 caption = "Model estimated mean length in cm (blue line) overlaid on mean length for recreational lengths (gray circles) with 95 percent confidence intervals (thick bars) based on current samples sizes. The thin bars indicate the confidence interval if Francis weighting were used instead",
-label = 'rec-mean-len-fit')
+label = 'rec-mean-len-fit',
+alt_caption = "Box and whisker plot of mean length for each year that recreational length data were available, along with a line of model-fitted mean length")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "comp_lenfit__aggregated_across_time.png"), 
 caption = "Aggregated length comps over all years",
-label = 'agg-len-fit')
+label = 'agg-len-fit',
+alt_caption = "Two-panel density plot of length data with a line showing the model estimated density, where the top panel is for commercial data and the bottom panel is for recreational data")
 ```
 
 
@@ -195,21 +216,24 @@ label = 'agg-len-fit')
 add_figure(
 filein = file.path(mod_loc, "plots", "ts7_Spawning_output_with_95_asymptotic_intervals_intervals.png"), 
 caption = "Estimated time series of spawning output",
-label = 'ssb')
+label = 'ssb',
+alt_caption = "Line plot of spawning output by year, with lines for 95 percent confidence interval")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts1_Total_biomass_(mt).png"), 
 caption = "Estimated time series of total biomass",
-label = 'tot-bio')
+label = 'tot-bio',
+alt_caption = "Line plot of total biomass by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "ts9_Relative_spawning_output_intervals.png"), 
 caption = "Estimated time series of relative spawning output",
-label = 'depl')
+label = 'depl',
+alt_caption = "Line plot of fraction of unfished, with lines for 95 percent confidence interval")
 ```
 
 <!-- ```{r, results = 'asis'} -->
@@ -223,7 +247,8 @@ label = 'depl')
 add_figure(
 filein = file.path(mod_loc, "plots", "SR_curve.png"), 
 caption = "Stock-recruit curve. Point colors indicate year, with warmer colors indicating earlier years and cooler colors in showing later years",
-label = 'bh-curve')
+label = 'bh-curve',
+alt_caption = "Dot plot showing estimates of recruitment and spawning output in each year along with a curve showing the estimated recruitment relationship")
 ```
 
 
@@ -236,21 +261,24 @@ label = 'bh-curve')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_LN(R0)"),  "piner_panel_SR_LN(R0).png"), 
 caption = "Change in the negative log-likelihood across a range of ln(R0) values",
-label = 'r0-profile')
+label = 'r0-profile',
+alt_caption = "Two-panel line plot showing the change of three components of likelihood across a range of values. In the top panel the components are total, length, and recruitment. In the bottom panel the components are elements  of the length likelihood, and are broken down into total, recreational, and commercial")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_LN(R0)"),  "SR_LN(R0)_trajectories_compare1_spawnbio.png"), 
 caption = "Change in the estimate of spawning output across a range of ln(R0) values",
-label = 'r0-ssb')
+label = 'r0-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_LN(R0)"),  "SR_LN(R0)_trajectories_compare3_Bratio.png"), 
 caption = "Change in the estimate of fraction unfished across a range of ln(R0) values",
-label = 'r0-depl')
+label = 'r0-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 <!-- h -->
@@ -258,21 +286,24 @@ label = 'r0-depl')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_BH_steep"),  "piner_panel_SR_BH_steep.png"), 
 caption = "Change in the negative log-likelihood across a range of steepness values",
-label = 'h-profile')
+label = 'h-profile',
+alt_caption = "Two-panel line plot showing the change of three components of likelihood across a range of values. In the top panel the components are total, length, and recruitment. In the bottom panel the components are elements  of the length likelihood, and are broken down into total, recreational, and commercial")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_BH_steep"),  "SR_BH_steep_trajectories_compare1_spawnbio.png"), 
 caption = "Change in the estimate of spawning output across a range of steepness values",
-label = 'h-ssb')
+label = 'h-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_SR_BH_steep"),  "SR_BH_steep_trajectories_compare3_Bratio.png"), 
 caption = "Change in the estimate of fraction unfished across a range of steepness values",
-label = 'h-depl')
+label = 'h-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 <!-- M -->
@@ -280,21 +311,24 @@ label = 'h-depl')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_NatM_p_1_Fem_GP_1"),  "piner_panel_NatM_p_1_Fem_GP_1.png"), 
 caption = "Change in the negative log-likelihood across a range of natural mortality values",
-label = 'm-profile')
+label = 'm-profile',
+alt_caption = "Two-panel line plot showing the change of three components of likelihood across a range of values. In the top panel the components are total, length, and recruitment. In the bottom panel the components are elements  of the length likelihood, and are broken down into total, recreational, and commercial")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_NatM_p_1_Fem_GP_1"),  "NatM_p_1_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
 caption = "Change in the estimate of spawning output across a range of natural mortality values",
-label = 'm-ssb')
+label = 'm-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_NatM_p_1_Fem_GP_1"),  "NatM_p_1_Fem_GP_1_trajectories_compare3_Bratio.png"), 
 caption = "Change in the estimate of fraction unfished across a range of natural mortality values",
-label = 'm-depl')
+label = 'm-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 <!-- Linf -->
@@ -302,21 +336,24 @@ label = 'm-depl')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_L_at_Amax_Fem_GP_1"),  "piner_panel_L_at_Amax_Fem_GP_1.png"), 
 caption = "Change in the negative log-likelihood across a range of maximum length values",
-label = 'linf-profile')
+label = 'linf-profile',
+alt_caption = "Two-panel line plot showing the change of three components of likelihood across a range of values. In the top panel the components are total, length, and recruitment. In the bottom panel the components are elements  of the length likelihood, and are broken down into total, recreational, and commercial")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
 caption = "Change in the estimate of spawning output across a range of maximum length values",
-label = 'linf-ssb')
+label = 'linf-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_L_at_Amax_Fem_GP_1"),  "L_at_Amax_Fem_GP_1_trajectories_compare3_Bratio.png"), 
 caption = "Change in the estimate of fraction unfished across a range of maximum length values",
-label = 'linf-depl')
+label = 'linf-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 <!-- k -->
@@ -324,21 +361,24 @@ label = 'linf-depl')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_VonBert_K_Fem_GP_1"),  "piner_panel_VonBert_K_Fem_GP_1.png"), 
 caption = "Change in the negative log-likelihood across a range of k values",
-label = 'k-profile')
+label = 'k-profile',
+alt_caption = "Two-panel line plot showing the change of three components of likelihood across a range of values. In the top panel the components are total, length, and recruitment. In the bottom panel the components are elements  of the length likelihood, and are broken down into total, recreational, and commercial")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_VonBert_K_Fem_GP_1"),  "VonBert_K_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
 caption = "Change in the estimate of spawning output across a range of k values",
-label = 'k-ssb')
+label = 'k-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_VonBert_K_Fem_GP_1"),  "VonBert_K_Fem_GP_1_trajectories_compare3_Bratio.png"), 
 caption = "Change in the estimate of fraction unfished across a range of k values",
-label = 'k-depl')
+label = 'k-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 <!-- CV-old -->
@@ -346,21 +386,24 @@ label = 'k-depl')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_CV_old_Fem_GP_1"),  "piner_panel_CV_old_Fem_GP_1.png"), 
 caption = "Change in the negative log-likelihood across a range of CV at maximum length values",
-label = 'cv2-profile')
+label = 'cv2-profile',
+alt_caption = "Two-panel line plot showing the change of three components of likelihood across a range of values. In the top panel the components are total, length, and recruitment. In the bottom panel the components are elements  of the length likelihood, and are broken down into total, recreational, and commercial")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_CV_old_Fem_GP_1"),  "CV_old_Fem_GP_1_trajectories_compare1_spawnbio.png"), 
 caption = "Change in the estimate of spawning output across a range of CV at maximum length values",
-label = 'cv2-ssb')
+label = 'cv2-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_profile_CV_old_Fem_GP_1"),  "CV_old_Fem_GP_1_trajectories_compare3_Bratio.png"), 
 caption = "Change in the estimate of fraction unfished across a range of CV at maximum length values",
-label = 'cv2-depl')
+label = 'cv2-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 
@@ -372,21 +415,24 @@ label = 'cv2-depl')
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare2_spawnbio_uncertainty.png"), 
 caption = "Change in the estimate of spawning output when the most recent 5 years of data are removed sequentially",
-label = 'retro-ssb')
+label = 'retro-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare4_Bratio_uncertainty.png"),
 caption = "Change in the estimate of fraction unfished when the most recent 5 years of data are removed sequentially",
-label = 'retro-depl')
+label = 'retro-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(paste0(mod_loc, "Profile_retro"),  "compare11_recdevs.png"),
 caption = "Change in the estimate of annual recruitment deviations when the most recent 5 years of data are removed sequentially",
-label = 'retro-recdevs')
+label = 'retro-recdevs',
+alt_caption = "Dot plot showing different time series of estimated log-recruitment deviations by year")
 ```
 
 <!-- ====================================================================== -->
@@ -399,7 +445,8 @@ nm = "base.710_sensitivities_compare2_spawnbio_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated spawning output by sensitivity",
-label = 'sens-ssb')
+label = 'sens-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, echo=FALSE, results='asis'}
@@ -407,7 +454,8 @@ nm = "base.710_sensitivities_compare4_Bratio_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated fraction unfished by sensitivity",
-label = 'sens-depl')
+label = 'sens-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 ```{r, echo=FALSE, results='asis'}
@@ -415,7 +463,8 @@ nm = "base.710_sensitivities_compare12_recdevs_uncertainty.png"
 add_figure(
 filein = file.path(sens_wd, nm),
 caption = "Change in estimated annual recruitment deviation by sensitivity",
-label = 'sens-recdev')
+label = 'sens-recdev',
+alt_caption = "Whisker plot showing different time series of estimated mean and 95 percent confidence intervals of log-recruitment deviations each year")
 ```
 
 
@@ -424,7 +473,8 @@ label = 'sens-recdev')
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "postSSC_plots", "ForReport", "Comp_overlap.png"),
 caption = "Length distributions of the additional data (red line) requested during the June review compared to the original base model data (blue line) in years where the additional data were available (1987-1998). Numbers indicate the number of lengths from each dataset for each year that are also shown in Table 14",
-label = 'sens-debWV-comp')
+label = 'sens-debWV-comp',
+alt_caption = "Multi-panel density plot showing overlaid length distributions from two separate datasets. Each panel represents a separate year")
 ```
 
 ```{r, echo=FALSE, results='asis'}
@@ -433,7 +483,8 @@ nm = "All_review_sensitivities_compare2_spawnbio_uncertainty.png"
 add_figure(
 filein = file.path(review_sens_wd, nm),
 caption = "Change in estimated spawning output by additional sensitivity requests during model reviews",
-label = 'review-sens-ssb')
+label = 'review-sens-ssb',
+alt_caption = "Line plot showing different trajectories of spawning output by year")
 ```
 
 ```{r, echo=FALSE, results='asis'}
@@ -441,7 +492,8 @@ nm = "All_review_sensitivities_compare4_Bratio_uncertainty.png"
 add_figure(
 filein = file.path(review_sens_wd, nm),
 caption = "Change in estimated fraction unfished by additional sensitivity requests during model reviews",
-label = 'review-sens-depl')
+label = 'review-sens-depl',
+alt_caption = "Line plot showing different trajectories of fraction of unfished by year")
 ```
 
 ```{r, echo=FALSE, results='asis'}
@@ -449,14 +501,16 @@ nm = "All_review_sensitivities_compare12_recdevs_uncertainty.png"
 add_figure(
 filein = file.path(review_sens_wd, nm),
 caption = "Change in estimated annual recruitment deviation by additional sensitivity requests during model reviews",
-label = 'review-sens-recdev')
+label = 'review-sens-recdev',
+alt_caption = "Whisker plot showing different time series of estimated mean and 95 percent confidence intervals of log-recruitment deviations each year")
 ```
 
 ```{r, results = 'asis', echo = FALSE}
 add_figure(
 filein = file.path("L:\\Assessments\\CurrentAssessments\\DataModerate_2021\\Quillback_Rockfish\\data", "mopup_data", "comb_LA_data.png"), 
 caption = "Length-age data for quillback rockfish. Black and red circles indicate samples used in the base model that are from Oregon and Washington (black) and California (red). Blue and yellow circles indicate new California samples identified and aged during review at the August 17, 2021 GFSC meeting (blue) and at the September 29-30, 2021 mopup meeting (yellow). The gray line indicates the growth curve used in the base model",
-label = 'review-length-age')
+label = 'review-length-age',
+alt_caption = "Dot plot showing new length-at-age data overlaid onto the larger set of length-at-age data used in the model")
 ```
 
 <!-- ====================================================================== -->
@@ -467,14 +521,16 @@ label = 'review-length-age')
 add_figure(
 filein = file.path(mod_loc, "plots", "SPR2_minusSPRseries.png"), 
 caption = "Estimated 1 - relative spawning ratio (SPR) by year",
-label = '1-spr')
+label = '1-spr',
+alt_caption = "Line plot")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(mod_loc, "plots", "SPR4_phase.png"), 
 caption = "Phase plot showing the fraction unfished versus fishing intensity for each year. Each point shows the spawning output relative to the unfished spawning output and the SPR ratio for each year. Lines through the final point show the 95 percent confidence intervals based on the asymptotic uncertainty for each dimension. The shaded ellipse is a 95 percent confidence region which accounts for the estimated correlations between the spawning output and SPR ratios",
-label = 'phase-plot')
+label = 'phase-plot',
+alt_caption = "Biplot showing sequential estimates of fishing intensity and relative biomass over time. The plot is divided into two quadrants separated by 0.4 relative biomass")
 ```
 
 ```{r, results = 'asis'}
@@ -482,7 +538,8 @@ add_figure(
 filein = file.path(mod_loc, "plots", "yield2_yield_curve_with_refpoints.png"), 
 caption = "Equilibrium yield curve for the base case model. Values are based on the 2020
 fishery selectivity and with steepness fixed at 0.72",
-label = 'yield')
+label = 'yield',
+alt_caption = "Line plot showing the yield corresponding to a range of fraction of unfished values from 0 to 1, with reference lines at fraction of unfished values for management reference points of 0.4 and 0.25, and model quantities of SPR target and current 2021 value")
 ```
 
 \newpage

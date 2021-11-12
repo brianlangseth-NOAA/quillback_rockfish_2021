@@ -12,7 +12,8 @@ Ideally, allocation by area would be based on calculations of habitat by area an
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "write_up", "figures", "catch_allocation_4010.png"), 
 caption = "Proportion of total removals in the recreational and commercial fisheries that are north of 40 degrees 10 minutes N. lat. by year from 2005 to 2020. The horizontal dashed line is the proportion of total removals over the full 2005-2020 time period that is noth of 40 degrees 10 minutes N. lat",
-label = 'catch-4010')
+label = 'catch-4010',
+alt_caption = "A dot plot showing proportions between years 2005 and 2020 that vary around 50 percent")
 ```
 
 \clearpage
@@ -48,14 +49,16 @@ table_format(x = tab,
 add_figure(
 filein = file.path(appendix_fig_loc, "quillback_rov_lengths.png"), 
 caption = "Length frequency distribution in each 10 fm depth bin for quillback rockfish sampled by the ROV in reference locations open to fishing north of Point Conception (above) and State Marine Reserves prohibiting take (below)",
-label = 'ca-ROV')
+label = 'ca-ROV',
+alt_caption = "Two-panel relative frequency stacked bar chart of length counts. Each bar represents a 10 fathom depth bin, and lengths are binned within each bar in 5 cm increments")
 ```	
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(appendix_fig_loc, "quillback_rov_barchart_length.png"), 
 caption = "Percent composition of quillback rockfish length frequency in 5 cm size classes for each 10 fm depth bin from ROV observations north of Point Conception in reference locations where retention is allowed (above) and in State Marine Reserves where retention is prohibited (below)",
-label = 'ca-ROV-percent')
+label = 'ca-ROV-percent',
+alt_caption = "Two-panel three-dimensional bar chart of length counts. Length bins are 5 cm and mulitple groups of bar charts are plotted going into the page and reflect 10 fathom depth categories")
 ```	
 
 \clearpage
@@ -121,7 +124,8 @@ table_format(x = tab,
 add_figure(
 filein = file.path(appendix_fig_loc, "ca_mpa_rca_habitat_map.png"), 
 caption = "Copper and quillback rockfish potential depth range off California in red hatched polygon, hard substrate occurring within the potential range in pink, MPAs in dark blue outline, and the CCAs in light blue",
-label = 'ca-mpa-map')
+label = 'ca-mpa-map',
+alt_caption = "Bathymetric map of the California coast highlighting locations of hard substrate and potential rockfish habitat, with insets showing areas near Monterey Bay, Cape Mendocino, and the Channel Islands")
 ```
 
 \clearpage
@@ -134,13 +138,15 @@ plot_info = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/ca/7_1_1_base_gh
 len_fit = plot_info[which(plot_info$category == "LenComp"), ]
 plot.vec = c(grep("comp_lenfit_flt", len_fit$label),grep("comp_gstlenfit_flt", len_fit$label))
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/7_1_1_base_ghostCom", "plots")
+altcap = list()
 
 for (a in plot.vec){
 	cap = sub("[.]$", "", len_fit$caption[a])
 	lab = len_fit$label[a]
 	add_figure(filein = file.path(filein, len_fit$file[a]), 
 			   caption = cap, 
-			   label = lab)
+			   label = lab,
+			   alt_caption = "Multi-panel density plot showing length distributions by year along with a line showing the model fit. Each panel represents a separate year")
 }
 ```
 

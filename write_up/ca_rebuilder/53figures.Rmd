@@ -6,28 +6,32 @@
 add_figure(
 filein = file.path(getwd(), "figures", "rebuilding_probability_forREPORT.png"), 
 caption = "Probability of rebuilding by year for the base alternative rebuilding strategies",
-label = 'prob-fig')
+label = 'prob-fig',
+alt_caption = "Line plot of probability of recovery by year after 2021 showing 9 lines that represent each rebuilding strategy")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(getwd(), "figures", "rebuilding_acl_forREPORT.png"), 
 caption = "Catches (mt) by year for the base alternative rebuilding strategies",
-label = 'acl-fig')
+label = 'acl-fig',
+alt_caption = "Line plot of catches by year after 2021 showing 9 lines that represent each rebuilding strategy")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(getwd(), "figures", "rebuilding_relative_sb_forREPORT.png"), 
 caption = "Spawning output relative to the management target of 40 percent of unfished spawning output by year for the base alternative rebuilding strategies",
-label = 'rel-ssb-fig')
+label = 'rel-ssb-fig',
+alt_caption = "Line plot of relative spawning output by year after 2021 showing 9 lines that represent each rebuilding strategy")
 ```
 
 ```{r, results = 'asis'}
 add_figure(
 filein = file.path(getwd(), "figures", "rebuilding_ssb_forREPORT.png"), 
 caption = "Spawning output by year for the base alternative rebuilding strategies",
-label = 'ssb-fig')
+label = 'ssb-fig',
+alt_caption = "Line plot of spawning output by year after 2021 showing 9 lines that represent each rebuilding strategy")
 ```
 
 
@@ -97,12 +101,16 @@ label = 'ssb-fig')
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures", "rebuilder_sensitivities_compare2_spawnbio_uncertainty.png"), 
 caption = "Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario",
-label = 'ssb-sens')
+label = 'ssb-sens',
+alt_caption = "Line plot of spawning output by year from 1916 to 2021 for two models showing similar trajectories"
+)
 
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures", "rebuilder_sensitivities_compare4_Bratio_uncertainty.png"), 
 caption = "Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario",
-label = 'depl-sens')
+label = 'depl-sens',
+alt_caption = "Line plot of fraction of unfished by year from 1916 to 2021 for two models showing similar trajectories"
+)
 ```
 
 
@@ -110,7 +118,9 @@ label = 'depl-sens')
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures", "selex_compare.png"), 
 caption = "Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines)",
-label = 'selex-sens')
+label = 'selex-sens',
+alt_caption = "Two-panel line plot showing selectivty by length for two different models where the top panel is for the recreational fleet, and the bottom panel is for the commercial fleet"
+)
 ```
 
 <!-- Mean length fits -->
@@ -120,26 +130,30 @@ add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "9_0_0_postSSC_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Commercial.png"), 
 caption = "Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-com-base',
-width = 90, height = 90)
+width = 90, height = 90,
+alt_caption = "Box and whisker plot of mean length in each year that commercial length data were available, along with a line of model-fitted mean length")
 
 add_figure(
 filein = file.path(rebuild_dir, "9_4_0_recComBlock2001", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Commercial.png"), 
 caption = "Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-com-sens',
-width = 90, height = 90)
+width = 90, height = 90,
+alt_caption = "Box and whisker plot of mean length for each year that commercial length data were available, along with a line of model-fitted mean length")
 
 #Recreational
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "9_0_0_postSSC_base", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Recreational.png"), 
 caption = "Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-rec-base',
-width = 90, height = 90)
+width = 90, height = 90,
+alt_caption = "Box and whisker plot of mean length for each year that recreational length data were available, along with a line of model-fitted mean length")
 
 add_figure(
 filein = file.path(rebuild_dir, "9_4_0_recComBlock2001", "plots", "comp_lenfit_data_weighting_TA1.8_CA_Recreational.png"), 
 caption = "Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting",
 label = 'MeanLengthFit-rec-sens',
-width = 90, height = 90)
+width = 90, height = 90,
+alt_caption = "Box and whisker plot of mean length for each year that recreational length data were available, along with a line of model-fitted mean length")
 ```
 
 <!-- Person residuals -->
@@ -148,13 +162,15 @@ add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "9_0_0_postSSC_base", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
 caption = "Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'Pearson-base',
-width = 90, height = 90)
+width = 90, height = 90,
+alt_caption = "Two-panel bubble plot of residuals by length bins in each year, where the top panel is for commercial data and the bottom panel for recreational data")
 
 add_figure(
 filein = file.path(rebuild_dir, "9_4_0_recComBlock2001", "plots", "comp_lenfit__multi-fleet_comparison.png"), 
 caption = "Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected)",
 label = 'Pearson-sens',
-width = 90, height = 90)
+width = 90, height = 90,
+alt_caption = "Two-panel bubble plot of residuals by length bins in each year, where the top panel is for commercial data and the bottom panel for recreational data")
 ```
 
 <!-- Aggregate length plots -->
@@ -162,12 +178,14 @@ width = 90, height = 90)
 add_figure(
 filein = file.path("C:/Users/Brian.Langseth/Desktop/ca", "9_0_0_postSSC_base", "plots", "comp_lenfit__aggregated_across_time.png"), 
 caption = "Aggregated length comps over all years for the adopted stock synthesis base model",
-label = 'aggLenFit-base')
+label = 'aggLenFit-base',
+alt_caption = "Two-panel density plot of length data with a line showing the model estimated density, where the top panel is for commercial data and the bottom panel is for recreational data")
 
 add_figure(
 filein = file.path(rebuild_dir, "9_4_0_recComBlock2001", "plots", "comp_lenfit__aggregated_across_time.png"), 
 caption = "Aggregated length comps over all years for the stock synthesis sensitivity model",
-label = 'aggLenFit-sens')
+label = 'aggLenFit-sens',
+alt_caption = "Two-panel density plot of length data with a line showing the model estimated density, where the top panel is for commercial data and the bottom panel is for recreational data")
 ```
 
 \clearpage

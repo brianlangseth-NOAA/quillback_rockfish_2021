@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "October"
+month: "November"
 year: "2021"
 preamble: |
 csl: sa4ss.csl
@@ -788,16 +788,16 @@ Probability of recovery by T\textsubscript{MAX} & 0.596 & 0.959 & 0.997 & 1 & 1 
 
 <!-- Main run figures -->
 
-![Probability of rebuilding by year for the base alternative rebuilding strategies.\label{fig:prob-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_probability_forREPORT.png){width=100% height=100% alt="."}
+![Probability of rebuilding by year for the base alternative rebuilding strategies.\label{fig:prob-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_probability_forREPORT.png){width=100% height=100% alt="Line plot of probability of recovery by year after 2021 showing 9 lines that represent each rebuilding strategy."}
 
 
-![Catches (mt) by year for the base alternative rebuilding strategies.\label{fig:acl-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_acl_forREPORT.png){width=100% height=100% alt="."}
+![Catches (mt) by year for the base alternative rebuilding strategies.\label{fig:acl-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_acl_forREPORT.png){width=100% height=100% alt="Line plot of catches by year after 2021 showing 9 lines that represent each rebuilding strategy."}
 
 
-![Spawning output relative to the management target of 40 percent of unfished spawning output by year for the base alternative rebuilding strategies.\label{fig:rel-ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_relative_sb_forREPORT.png){width=100% height=100% alt="."}
+![Spawning output relative to the management target of 40 percent of unfished spawning output by year for the base alternative rebuilding strategies.\label{fig:rel-ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_relative_sb_forREPORT.png){width=100% height=100% alt="Line plot of relative spawning output by year after 2021 showing 9 lines that represent each rebuilding strategy."}
 
 
-![Spawning output by year for the base alternative rebuilding strategies.\label{fig:ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_ssb_forREPORT.png){width=100% height=100% alt="."}
+![Spawning output by year for the base alternative rebuilding strategies.\label{fig:ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilding_ssb_forREPORT.png){width=100% height=100% alt="Line plot of spawning output by year after 2021 showing 9 lines that represent each rebuilding strategy."}
 
 
 <!-- <!-- Runs with no abc max -->
@@ -863,35 +863,35 @@ Probability of recovery by T\textsubscript{MAX} & 0.596 & 0.959 & 0.997 & 1 & 1 
 <!-- Sensitivity run figures -->
 <!-- Spawning output and status comparisons -->
 
-![Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:ssb-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="."}
+![Change in estimated spawning output for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:ssb-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare2_spawnbio_uncertainty.png){width=100% height=100% alt="Line plot of spawning output by year from 1916 to 2021 for two models showing similar trajectories."}
 
-![Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:depl-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="."}
+![Change in estimated fraction of unfished for the adopted stock synthesis base model (base) and the stock synthesis sensitivity model that informs the rebuilding sensitivity (RecCom Block 2001). Shading indicates 95 percent confidence intervals around each scenario.\label{fig:depl-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/rebuilder_sensitivities_compare4_Bratio_uncertainty.png){width=100% height=100% alt="Line plot of fraction of unfished by year from 1916 to 2021 for two models showing similar trajectories."}
 
 
 
-![Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines).\label{fig:selex-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compare.png){width=100% height=100% alt="."}
+![Recreational and commercial selectivity for the stock synthesis sensitvity model with blocks in 2001 and allowing dome-shaped selectivity (red lines) compared to the selectivity for the adopted base model (blue lines).\label{fig:selex-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up/figures/selex_compare.png){width=100% height=100% alt="Two-panel line plot showing selectivty by length for two different models where the top panel is for the recreational fleet, and the bottom panel is for the commercial fleet."}
 
 <!-- Mean length fits -->
 
-![Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png){width=90% height=90% alt="."}
+![Mean length and fit (blue line) for the commercial length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png){width=90% height=90% alt="Box and whisker plot of mean length in each year that commercial length data were available, along with a line of model-fitted mean length."}
 
-![Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png){width=90% height=90% alt="."}
+![Mean length and fit (blue line) for the commercial length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-com-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Commercial.png){width=90% height=90% alt="Box and whisker plot of mean length for each year that commercial length data were available, along with a line of model-fitted mean length."}
 
-![Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png){width=90% height=90% alt="."}
+![Mean length and fit (blue line) for the recreational length data from the adoped stock synthesis base model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png){width=90% height=90% alt="Box and whisker plot of mean length for each year that recreational length data were available, along with a line of model-fitted mean length."}
 
-![Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png){width=90% height=90% alt="."}
+![Mean length and fit (blue line) for the recreational length data from the stock synthesis sensitivity model with 95 percent confidence intervals (solid black bar) based on current samples sizes. Thinner intervals (with capped ends) show result of further adjusting sample sizes based on suggested multiplier for Francis data weighting.\label{fig:MeanLengthFit-rec-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit_data_weighting_TA1.8_CA_Recreational.png){width=90% height=90% alt="Box and whisker plot of mean length for each year that recreational length data were available, along with a line of model-fitted mean length."}
 
 <!-- Person residuals -->
 
-![Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:Pearson-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__multi-fleet_comparison.png){width=90% height=90% alt="."}
+![Pearson residuals for the recreational and commercial fleets for the adopted stock synthesis base model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:Pearson-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__multi-fleet_comparison.png){width=90% height=90% alt="Two-panel bubble plot of residuals by length bins in each year, where the top panel is for commercial data and the bottom panel for recreational data."}
 
-![Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:Pearson-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__multi-fleet_comparison.png){width=90% height=90% alt="."}
+![Pearson residuals for the recreational and commercial fleets for the stock synthesis sensitivity model. Closed bubbles are positive residuals (observed > expected) and open bubbles are negative residuals (observed < expected).\label{fig:Pearson-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__multi-fleet_comparison.png){width=90% height=90% alt="Two-panel bubble plot of residuals by length bins in each year, where the top panel is for commercial data and the bottom panel for recreational data."}
 
 <!-- Aggregate length plots -->
 
-![Aggregated length comps over all years for the adopted stock synthesis base model.\label{fig:aggLenFit-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="."}
+![Aggregated length comps over all years for the adopted stock synthesis base model.\label{fig:aggLenFit-base}](C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Two-panel density plot of length data with a line showing the model estimated density, where the top panel is for commercial data and the bottom panel is for recreational data."}
 
-![Aggregated length comps over all years for the stock synthesis sensitivity model.\label{fig:aggLenFit-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="."}
+![Aggregated length comps over all years for the stock synthesis sensitivity model.\label{fig:aggLenFit-sens}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/9_4_0_recComBlock2001/plots/comp_lenfit__aggregated_across_time.png){width=100% height=100% alt="Two-panel density plot of length data with a line showing the model estimated density, where the top panel is for commercial data and the bottom panel is for recreational data."}
 
 \clearpage
 

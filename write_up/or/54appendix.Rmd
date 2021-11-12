@@ -16,7 +16,8 @@ for (a in plot.vec){
 	lab = len_fit$label[a]
 	add_figure(filein = file.path(filein, len_fit$file[a]), 
 			   caption = cap, 
-			   label = lab)
+			   label = lab,
+			   alt_caption = "Multi-panel density plot showing length distributions by year along with a line showing the model fit. Each panel represents a separate year")
 }
 ```
 
@@ -91,7 +92,8 @@ loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 add_figure(
 filein = file.path(loc,  "fig_2_cpue_val.png"), 
 caption = "Quillback rockfish CPUE calculated based on positive values only",
-label = 'fig-2')
+label = 'fig-2',
+alt_caption = "Boxplots of catch per unit effort by year from 2011 to 2019")
 ```
 
 ```{r, results = 'asis'}
@@ -99,7 +101,8 @@ loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 add_figure(
 filein = file.path(loc,  "fig_3_cpue.png"), 
 caption = "Quillback rockfish CPUE calculated based on all values",
-label = 'fig-3')
+label = 'fig-3',
+alt_caption = "Violin plots of catch per unit effort by year from 2011 to 2019")
 ```
 
 Additional filtering may not be necessary, as the filtering for "active" cells has already likely removed any unsuitable sampling units, based on habitat, depth and local knowledge.  Based on the annual proportion of positive cell-days and the relative rarity of `r spp` encounters, there are probably not enough data to move forward with a timeseries at a coastwide level. However, Redfish Rocks has been sampled in each year from 2011 - 2019, except for 2018. Though sample size is extremely limited, CPUE based on positive values at this site shows a variable and slightly declining trend from 2011 to 2015 followed by a slightly increasing trend from 2015 to 2020 for `r spp` (Figures \ref{fig:fig-4}). This differs from the trajectory from the base model, which shows a decline from 2016 to 2020 (Figure \ref{fig:tot-bio}).
@@ -109,7 +112,8 @@ loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 add_figure(
 filein = file.path(loc,  "fig_4_redfish_cpue.png"), 
 caption = "Quillback rockfish CPUE calculated at Redfish Rocks based on postive values only",
-label = 'fig-4')
+label = 'fig-4',
+alt_caption = "Boxplots of catch per unit effort by year from 2011 to 2019")
 ```
 
 When all sites and all values are included, `r spp` appear to have a relatively stable trend from 2011 – 2019, with the annual mean CPUE oscillating around the long-term mean (Figures \ref{fig:fig-5}). 
@@ -120,7 +124,8 @@ loc = "//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback
 add_figure(
 filein = file.path(loc,  "fig_5_relative_cpue.png"), 
 caption = "Quillback rockfish relative CPUE across all sample sites and with all data values",
-label = 'fig-5')
+label = 'fig-5',
+alt_caption = "Whisker plot of mean catch per unit effort by year from 2011 to 2019")
 ```
 
 \clearpage
