@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "November"
+month: "December"
 year: "2021"
 preamble: |
 csl: sa4ss.csl

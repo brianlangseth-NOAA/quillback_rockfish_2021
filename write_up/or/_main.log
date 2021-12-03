@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.10.18)  12 NOV 2021 14:23
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.10.18)  3 DEC 2021 10:42
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -2142,8 +2142,8 @@ Overfull \hbox (5.03375pt too wide) in paragraph at lines 8--8
  []
 
 
-Overfull \hbox (102.18321pt too wide) in alignment at lines 5--10
- [][][][][][][][][][][][][][][] 
+Overfull \hbox (56.2516pt too wide) in alignment at lines 5--10
+ [][][][][][][][][][][][][][][][] 
  []
 
 
@@ -2167,18 +2167,18 @@ Overfull \hbox (5.03375pt too wide) in paragraph at lines 13--13
  []
 
 
-Overfull \hbox (102.18321pt too wide) in alignment at lines 10--15
- [][][][][][][][][][][][][][][] 
+Overfull \hbox (56.2516pt too wide) in alignment at lines 10--15
+ [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (102.18321pt too wide) in alignment at lines 15--17
- [][][][][][][][][][][][][][][] 
+Overfull \hbox (56.2516pt too wide) in alignment at lines 15--17
+ [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (102.18321pt too wide) in alignment at lines 17--19
- [][][][][][][][][][][][][][][] 
+Overfull \hbox (56.2516pt too wide) in alignment at lines 17--19
+ [][][][][][][][][][][][][][][][] 
  []
 
 
@@ -2247,6 +2247,11 @@ Overfull \hbox (2.71251pt too wide) in paragraph at lines 20--20
  []
 
 
+Overfull \hbox (2.71251pt too wide) in paragraph at lines 20--21
+ []|\TU/lmr/m/n/9 250.34| 
+ []
+
+
 Overfull \hbox (2.71251pt too wide) in paragraph at lines 21--21
  []|\TU/lmr/m/n/9 214.79| 
  []
@@ -2312,8 +2317,13 @@ Overfull \hbox (2.71251pt too wide) in paragraph at lines 21--21
  []
 
 
-Overfull \hbox (102.18321pt too wide) in alignment at lines 19--40
- [][][][][][][][][][][][][][][] 
+Overfull \hbox (2.71251pt too wide) in paragraph at lines 21--22
+ []|\TU/lmr/m/n/9 220.52| 
+ []
+
+
+Overfull \hbox (56.2516pt too wide) in alignment at lines 19--40
+ [][][][][][][][][][][][][][][][] 
  []
 
 [50
@@ -3120,7 +3130,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:66,2:31814,3:4588,4:243,5:2328,6:2276,7:30268,8:78,9:14636,10:
 25,11:633,12:1
  70020 multiletter control sequences out of 65536+600000
- 76 fonts using 15693595 bytes
+ 76 fonts using 15693823 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 warning  (pdf backend): unreferenced destination with name 'append_b'
@@ -3141,7 +3151,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (124 pages, 164861322 bytes).
+Output written on _main.pdf (124 pages, 164861143 bytes).
 
 PDF statistics: 2016 PDF objects out of 2073 (max. 8388607)
  377 named destinations out of 1000 (max. 131072)
