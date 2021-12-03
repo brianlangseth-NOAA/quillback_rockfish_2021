@@ -281,7 +281,7 @@ table_format(x = ldat[ldat$Year %in% c(1987:1998),],
 <!-- ======================================================= -->
 
 ```{r, results = 'asis'}
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base", 'tables', 'g_Projections_ES.csv'))
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop/ca/10_0_0_postNov_base", 'tables', 'g_Projections_ES.csv'))
 man_n = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_north2011_2022.csv")
 man_s = read.csv("//nwcfile/FRAM/Assessments/CurrentAssessments/DataModerate_2021/Quillback_Rockfish/management/quillback_south2011_2022.csv")
 
@@ -315,7 +315,7 @@ col_names = c('Year',
               "Spawning Output",
               "Fraction Unfished")
 table_format(x = out,
-             caption = "Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N, and the OFL North and ACL North for the area north of 40.10 Latitude N. The CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.",
+             caption = "Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 provided by the GMT. Values provided by the GMT were based on the average total removals from 2017-2019 for 2021 values and trends in total removals from 2017-2021 adjusted for updated management measures for 2022 values. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N, and the OFL North and ACL North for the area north of 40.10 Latitude N. The CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.",
              label = "project",
              align = 'l',
              col_names = col_names,

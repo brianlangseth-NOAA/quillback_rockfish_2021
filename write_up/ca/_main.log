@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.10.18)  12 NOV 2021 14:49
+This is LuaHBTeX, Version 1.13.2 (TeX Live 2021/W32TeX)  (format=lualatex 2021.10.18)  3 DEC 2021 10:13
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -2143,8 +2143,18 @@ Overfull \hbox (3.95209pt too wide) in paragraph at lines 8--8
  []
 
 
-Overfull \hbox (138.78043pt too wide) in alignment at lines 5--10
- [][][][][][][][][][][][][][][][] 
+Overfull \hbox (1.91466pt too wide) in paragraph at lines 8--9
+ \TU/lmr/m/n/9 treme 
+ []
+
+
+Overfull \hbox (7.72545pt too wide) in paragraph at lines 8--9
+ \TU/lmr/m/n/9 catches| 
+ []
+
+
+Overfull \hbox (65.1227pt too wide) in alignment at lines 5--10
+ [][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -2163,18 +2173,28 @@ Overfull \hbox (3.95209pt too wide) in paragraph at lines 13--13
  []
 
 
-Overfull \hbox (138.78043pt too wide) in alignment at lines 10--15
- [][][][][][][][][][][][][][][][] 
+Overfull \hbox (1.91466pt too wide) in paragraph at lines 13--14
+ \TU/lmr/m/n/9 treme 
  []
 
 
-Overfull \hbox (138.78043pt too wide) in alignment at lines 15--17
- [][][][][][][][][][][][][][][][] 
+Overfull \hbox (7.72545pt too wide) in paragraph at lines 13--14
+ \TU/lmr/m/n/9 catches| 
  []
 
 
-Overfull \hbox (138.78043pt too wide) in alignment at lines 17--19
- [][][][][][][][][][][][][][][][] 
+Overfull \hbox (65.1227pt too wide) in alignment at lines 10--15
+ [][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (65.1227pt too wide) in alignment at lines 15--17
+ [][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (65.1227pt too wide) in alignment at lines 17--19
+ [][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -2248,6 +2268,11 @@ Overfull \hbox (4.4196pt too wide) in paragraph at lines 20--20
  []
 
 
+Overfull \hbox (4.4196pt too wide) in paragraph at lines 20--21
+ []|\TU/lmr/m/n/9 192.96| 
+ []
+
+
 Overfull \hbox (4.4196pt too wide) in paragraph at lines 21--21
  []|\TU/lmr/m/n/9 163.10| 
  []
@@ -2318,8 +2343,13 @@ Overfull \hbox (4.4196pt too wide) in paragraph at lines 21--21
  []
 
 
-Overfull \hbox (138.78043pt too wide) in alignment at lines 19--40
- [][][][][][][][][][][][][][][][] 
+Overfull \hbox (4.4196pt too wide) in paragraph at lines 21--22
+ []|\TU/lmr/m/n/9 163.12| 
+ []
+
+
+Overfull \hbox (65.1227pt too wide) in alignment at lines 19--40
+ [][][][][][][][][][][][][][][][][] 
  []
 
 [51
@@ -3306,7 +3336,7 @@ Here is how much of LuaTeX's memory you used:
    avail lists: 1:65,2:26603,3:3819,4:266,5:1944,6:1892,7:25550,8:79,9:12188,10:
 25,11:680,12:1
  70347 multiletter control sequences out of 65536+600000
- 76 fonts using 15693671 bytes
+ 76 fonts using 15693823 bytes
  218i,12n,216p,3094b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publi
 c/lm/lmroman9-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf
@@ -3323,7 +3353,7 @@ ppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf
 ><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/publ
 ic/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texm
 f-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (131 pages, 190670294 bytes).
+Output written on _main.pdf (131 pages, 190673132 bytes).
 
 PDF statistics: 2200 PDF objects out of 2487 (max. 8388607)
  414 named destinations out of 1000 (max. 131072)

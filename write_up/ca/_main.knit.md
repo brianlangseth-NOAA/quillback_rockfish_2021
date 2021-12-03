@@ -1,6 +1,6 @@
 ---
 geometry: margin=1in
-month: "November"
+month: "December"
 year: "2021"
 preamble: |
 csl: sa4ss.csl
@@ -501,7 +501,7 @@ The 2021 spawning output relative to unfished equilibrium spawning output is bel
 
 ## Harvest Projections and Decision Tables
 
-A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Annual Catch Limit (ACL), which is based on the Acceptable Biological Catch (ABC) using the category 2 time-varying sigma and $P^*$ = 0.45 and the 40-10 harvest control rule, for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were set based on the combined total removals averaged from 2017-2019 as specified by the PFMC Groundfish Management Team (GMT, personal communication). The removals were apportioned to recreational and commercial catches based on the average proportion from 2017-2019 that each fleet contributed to the total catch. 
+A ten year projection of the base model was estimated for years 2023-2032, with catches equal to the estimated Annual Catch Limit (ACL), which is based on the Acceptable Biological Catch (ABC) using the category 2 time-varying sigma and $P^*$ = 0.45 and the 40-10 harvest control rule, for years 2023-2032 (Table \ref{tab:project}). The removals in 2021 and 2022 were as specified by the PFMC Groundfish Management Team (GMT, personal communication). Removals in 2021 were set based on the combined total removals averaged from 2017-2019, and the removals in 2022 were set based on the trend in catches from 2017-2021 adjusted for updated 2022 management measures. The removals were apportioned to recreational and commercial catches based on the average proportion from 2017-2019 that each fleet contributed to the total catch. 
 
 The axis of uncertainty for the decision table was based on a low and high state of nature for alternative values of natural mortality ($M$). Following guidance from the TOR, the 12.5 and 87.5 percentiles (i.e. 1.15 standard deviations) of spawning output in 2021, based on the uncertainty around the spawning output in 2021 ($\sigma$ = 0.39), were used to determine the values of $M$ corresponding to the states of nature. Once the values of 2021 spawning output at the 12.5 and 87.5 percentiles were identified, a search across natural mortality values was done to obtain the identified spawning output values. The values of $M$ corresponding to the low and high states of nature were 0.0464 (low) and 0.0744 (high). 
 
@@ -1156,12 +1156,12 @@ Year & New lengths & Original lengths\\
 \begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}>{\raggedright\arraybackslash}p{0.79cm}}
-\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N, and the OFL North and ACL North for the area north of 40.10 Latitude N. The CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
+\caption{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 provided by the GMT. Values provided by the GMT were based on the average total removals from 2017-2019 for 2021 values and trends in total removals from 2017-2021 adjusted for updated management measures for 2022 values. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N, and the OFL North and ACL North for the area north of 40.10 Latitude N. The CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values.}\\
 \toprule
 Year & OFL South & ACL South & OFL North & ACL North & CA ACL North & Total CA ACL & Assumed removals & OFL & Buffer & ABC & ACL & Spawning Output & Fraction Unfished\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 based on the average total removals from 2017-2019 as provided by the GMT. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N, and the OFL North and ACL North for the area north of 40.10 Latitude N. The CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values. \textit{(continued)}}\\
+\caption[]{(\#tab:project)Projections of potential OFLs (mt), ABCs (mt), resulting ACLs (mt) based on 40-10 rule, estimated spawning output, and fraction unfished for 2023-2032, with assumed removals in 2021 and 2022 provided by the GMT. Values provided by the GMT were based on the average total removals from 2017-2019 for 2021 values and trends in total removals from 2017-2021 adjusted for updated management measures for 2022 values. The OFL South and ACL South for 2021 and 2022 reflect adopted management limits for quillback rockfish for the area south of 40.10 Latitude N, and the OFL North and ACL North for the area north of 40.10 Latitude N. The CA ACL North is the California specific allocation of the total ACL for 2021 and 2022 north of 40.10 Latitude N. Total CA ACL is the sum of the ACL South and CA ACL North values. \textit{(continued)}}\\
 \toprule
 Year & OFL South & ACL South & OFL North & ACL North & CA ACL North & Total CA ACL & Assumed removals & OFL & Buffer & ABC & ACL & Spawning Output & Fraction Unfished\\
 \midrule
@@ -1171,17 +1171,17 @@ Year & OFL South & ACL South & OFL North & ACL North & CA ACL North & Total CA A
 \bottomrule
 \endlastfoot
 2021 & 5.39 & 4.19 & 7.37 & 5.73 & 1.65 & 5.84 & 13.5 & - & - & - & - & 7.75 & 0.14\\
-2022 & 5.39 & 4.19 & 7.37 & 5.74 & 1.65 & 5.84 & 13.5 & - & - & - & - & 6.61 & 0.12\\
-2023 & - & - & - & - & - & - & - & 2.05 & 0.874 & 1.79 & 0.03 & 5.60 & 0.10\\
-2024 & - & - & - & - & - & - & - & 2.32 & 0.865 & 2.01 & 0.34 & 6.29 & 0.11\\
-2025 & - & - & - & - & - & - & - & 2.61 & 0.857 & 2.24 & 0.68 & 7.10 & 0.13\\
-2026 & - & - & - & - & - & - & - & 2.91 & 0.849 & 2.47 & 1.03 & 7.98 & 0.14\\
-2027 & - & - & - & - & - & - & - & 3.21 & 0.841 & 2.7 & 1.37 & 8.86 & 0.16\\
-2028 & - & - & - & - & - & - & - & 3.49 & 0.833 & 2.9 & 1.69 & 9.70 & 0.18\\
-2029 & - & - & - & - & - & - & - & 3.75 & 0.826 & 3.1 & 1.97 & 10.48 & 0.19\\
-2030 & - & - & - & - & - & - & - & 4 & 0.818 & 3.27 & 2.23 & 11.23 & 0.20\\
-2031 & - & - & - & - & - & - & - & 4.24 & 0.81 & 3.43 & 2.48 & 11.95 & 0.22\\
-2032 & - & - & - & - & - & - & - & 4.47 & 0.803 & 3.59 & 2.72 & 12.65 & 0.23\\*
+2022 & 5.39 & 4.19 & 7.37 & 5.74 & 1.65 & 5.84 & 11.9 & - & - & - & - & 6.61 & 0.12\\
+2023 & - & - & - & - & - & - & - & 2.11 & 0.874 & 1.85 & 0.11 & 5.78 & 0.10\\
+2024 & - & - & - & - & - & - & - & 2.38 & 0.865 & 2.06 & 0.42 & 6.47 & 0.12\\
+2025 & - & - & - & - & - & - & - & 2.67 & 0.857 & 2.29 & 0.75 & 7.28 & 0.13\\
+2026 & - & - & - & - & - & - & - & 2.97 & 0.849 & 2.52 & 1.1 & 8.15 & 0.15\\
+2027 & - & - & - & - & - & - & - & 3.26 & 0.841 & 2.74 & 1.44 & 9.02 & 0.16\\
+2028 & - & - & - & - & - & - & - & 3.54 & 0.833 & 2.95 & 1.75 & 9.85 & 0.18\\
+2029 & - & - & - & - & - & - & - & 3.8 & 0.826 & 3.14 & 2.03 & 10.63 & 0.19\\
+2030 & - & - & - & - & - & - & - & 4.05 & 0.818 & 3.31 & 2.29 & 11.38 & 0.21\\
+2031 & - & - & - & - & - & - & - & 4.29 & 0.81 & 3.47 & 2.53 & 12.09 & 0.22\\
+2032 & - & - & - & - & - & - & - & 4.52 & 0.803 & 3.63 & 2.77 & 12.79 & 0.23\\*
 \end{longtable}
 \endgroup{}
 \end{landscape}

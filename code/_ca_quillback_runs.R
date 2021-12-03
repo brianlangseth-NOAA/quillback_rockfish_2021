@@ -1305,6 +1305,36 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #Apply to 920_F2017_2019_ageStruc2021 
 
 
+######################
+#States of nature exploration - adding uncertainty around M
+######################
+
+#Copy 910 into "rebuilding/states of nature" folder
+#Other models in folder "rebuilding/states of nature"
+
+#Copy model 901 and make adjustments in "CA_rebuilding.R"
+model = "9_1_1_M_high"
+base.911 = SS_output(file.path(wd, model),covar=TRUE)
+#Copy model 902 and make adjustments in "CA_rebuilding.R"
+model = "9_1_2_M_low"
+base.912 = SS_output(file.path(wd, model),covar=TRUE)
+
+
+#Copy 921 into "rebuilding/states of nature" folder
+#Other models in folder "rebuilding/states of nature"
+
+#Copy model 911_M_high (in states_of_nature_910)
+#Adjust forecast rel F to be from 2017-2019
+#Set forecast ydecl to 2021 (so as to get proper age structure)
+model = "9_2_1_M_high"
+base.921 = SS_output(file.path(wd, model),covar=TRUE)
+#Copy model 912_M_low (in states_of_nature_910)
+#Adjust forecast rel F to be from 2017-2019
+#Set forecast ydecl to 2021 (so as to get proper age structure)
+model = "9_2_2_M_low"
+base.922 = SS_output(file.path(wd, model),covar=TRUE)
+
+
 
 ######################### Base runs ##################################
 
@@ -1537,42 +1567,117 @@ base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 ############################################################################
 
   
+######################### November Council Meeting Updates ##################################  
   
-  
-  ####
-  #States of nature exploration - adding uncertainty around M
-  ####
-  
-  #Copy 910 into "rebuilding/states of nature" folder
-  #Other models in folder "rebuilding/states of nature"
-  
-  #Copy model 901 and make adjustments in "CA_rebuilding.R"
-  model = "9_1_1_M_high"
-  base.911 = SS_output(file.path(wd, model),covar=TRUE)
-  #Copy model 902 and make adjustments in "CA_rebuilding.R"
-  model = "9_1_2_M_low"
-  base.912 = SS_output(file.path(wd, model),covar=TRUE)
-  
-  
-  
-  #Copy 921 into "rebuilding/states of nature" folder
-  #Other models in folder "rebuilding/states of nature"
-  
-  #Copy model 911_M_high (in states_of_nature_910)
-  #Adjust forecast rel F to be from 2017-2019
-  #Set forecast ydecl to 2021 (so as to get proper age structure)
-  model = "9_2_1_M_high"
-  base.921 = SS_output(file.path(wd, model),covar=TRUE)
-  #Copy model 912_M_low (in states_of_nature_910)
-  #Adjust forecast rel F to be from 2017-2019
-  #Set forecast ydecl to 2021 (so as to get proper age structure)
-  model = "9_2_2_M_low"
-  base.922 = SS_output(file.path(wd, model),covar=TRUE)
+#Copy model 900
+#Change catches in 2022 to reflect those requested during November Council meeting
+#Document found here: https://www.pcouncil.org/documents/2021/11/e-7-a-supplemental-cdfw-report-2.pdf/
+#Request 11.9mt in 2022. Report describes 8.3mt for rec and 3.6mt for com but given request was for 
+#reduced total and existing allocation already used, keep as is. 
+model = "10_0_0_postNov_base"
+base.1000 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1000)
+
+#Now run M states with forecasted catches (ABC values) from base.910
+#Copy model 901b and 902b and update forecast file with 2022 catches 
+#and catches in 2023 to 2032 allocated based on same allocation for 
+#2021 and 2022 (rec 76.1%)
+fore_loc = grep("ForeCatch",base.1000$derived_quants$Label)
+baseABC = rbind(data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 1, "Catch" = base.1000$derived_quants[fore_loc,"Value"][-c(1:2)]*0.239),
+                data.frame("Year" = c(2023:2032), "Seas" = 1, "Fleet" = 2, "Catch" = base.1000$derived_quants[fore_loc,"Value"][-c(1:2)]*0.761))
+
+model = "10_0_1_highState_M_postNov"
+base.1001 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1001)
+
+model = "10_0_2_lowState_M_postNov"
+base.1002 = SS_output(file.path(wd, model),covar=TRUE)
+SS_plots(base.1002)
 
 
+######################
+#Rebuilding analysis - CONTINUE HERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+######################
+
+#Models in folder "rebuilding"
+
+#Copy model 900 and make adjustments in 
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+#1. Name of file = 2021_ca_quillback_rebuild.dat
+#2. Max number of years = 200
+#3. Fecundity-at-age 0 = 0
+#4. Year for Tmin = 2021
+#5. Number of years with prespecified catches = 2
+#6. Prespecified catches
+#7. Number of future recruitments to override = 0
+#8. Projection type = 11
+#9. Extra lines
+#10. Year of catches and F set to 2023
+#11. More extra lines
+#12. Year to define projection type, switch to probabilities
+#13. Switch years for probability of recovery
+model = "9_1_0_rebuilding"
+base.910 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+SS_plots(base.910)
+
+#Copy model 900 - because have warning about SSB not matching
+#Change Ngenders in .dat file to 1 (from -1)
+model = "9_1_0_1_oneSex"
+base.9101 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+SS_plots(base.9101)
+#Very slight differences in parameter estimates
+
+#Other explorations in the test folder included 
+#2_test_run_AddGenderInfo - copy sex specific info twice (still get the error)
+#3_test_run_-1Sex - set sex to -1 in rebuild.dat (it doesn't run)
+#4_test_run_oneSex - use model 9101 from above
+#5_test_multiplySBx2 - multiply SSB entry in rebuild.dat by 2
+#6_test_2sexSS - rebuilder run based on a two-sex SS model with males offset to females
+
+#These tests show results are the same (or very nearly so). Only differences
+#are in historical spawner per recruit. Thus if do recruitment equals option 2
+#then the warning would have an effect. 
+
+#Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
+#As such adjust age-structure to be from 2021
+#Copy model 910's updated rebuild.dat file
+#1. Set age structure to be from 2021 (so the values from model 921)
+#Apply to 910_ageStruc2021 
+
+#Copy model 910 and make changes to forecast
+#1. Change allocation of F years to 2017-2019 (originally was just 2020)
+#Make adjustments to rebuild.dat in 
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit but
+#a. Try to keep Year for Tmin = 2023 (COULDNT so KEPT at 2021)
+model = "9_2_0_RelF2017_2019"
+base.920 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to 920_F2017_2019
+
+#Set up a 2-sex model with male and females equal to one another to confirm SSB warning is inconsequential 
+model = "9_2_0_RelF2017_2019_2sex"
+base.920_2sex = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to tests/6_test_2sexSS
+
+#It is confusing to me that Tmin cant be because age structure is 2023, so...
+#Copy model 920 and adjust Ydecl in forecast to be 2021
+#Ydecl is now set to 2021 and age structure changes, with Tmin set to 2021
+#Make adjustments to rebuild.dat in 
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+model = "9_2_1_forecastYdecl"
+base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to 921_ydecl2021 
+
+#Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
+#As such adjust age-structure to be from 2021
+#Copy model 920's updated rebuild.dat file
+#1. Set age structure to be from 2021 (can use the values from model 921 - also works to use age structure
+#from lines just above this in the rebuild.dat file)
+#Apply to 920_F2017_2019_ageStruc2021 
 
 
-
+######################
+#States of nature exploration - adding uncertainty around M
+######################
 
 
 

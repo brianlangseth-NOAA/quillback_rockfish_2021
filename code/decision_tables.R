@@ -1,6 +1,6 @@
 #######################################################################################################
 #
-# 			Copper Rockfish 2021 Decision Table
+# 			Quillback Rockfish 2021 Decision Table - script to set up tex tables
 #
 #######################################################################################################
 
@@ -107,14 +107,14 @@ kableExtra::save_kable(t, file = file.path("C:/Users/Brian.Langseth/Desktop/or/w
 
 ## CALIFORNIA decision tables----------------------------------------------------
 
-ca  <- SS_output(file.path(loc, "ca", "9_0_0_postSSC_base"), printstats=FALSE, verbose=FALSE)
-low <- SS_output(file.path(loc, "ca", "9_0_2b_lowState_M_baseABC"), printstats=FALSE, verbose=FALSE)
-high <- SS_output(file.path(loc, "ca", "9_0_1b_highState_M_baseABC"), printstats=FALSE, verbose=FALSE)
+ca  <- SS_output(file.path(loc, "ca", "10_0_0_postNov_base"), printstats=FALSE, verbose=FALSE)
+low <- SS_output(file.path(loc, "ca", "10_0_2_lowState_M_postNov"), printstats=FALSE, verbose=FALSE)
+high <- SS_output(file.path(loc, "ca", "10_0_1_highState_M_postNov"), printstats=FALSE, verbose=FALSE)
 
 modelnames <- c("Base (M = 0.057)", "Low (M = 0.0464)", "High (M = 0.0744)")
 mysummary  <- SSsummarize(list(ca, low, high))
 SSplotComparisons(mysummary, 
-                  filenameprefix = "CA_REPORT_M_baseABC_decision_table",
+                  filenameprefix = "CA_REPORT_M_postNov_decision_table",
                   legendlabels = modelnames, 
                   legendloc = "bottomleft",
                   plotdir = file.path(loc, "ca", "decision_tables"),
@@ -135,14 +135,14 @@ dec_tab = data.frame("Year" = 2021:2032,
                      "SBhigh" = high$derived_quants[which(high$derived_quants$Label == "SSB_2021"):which(high$derived_quants$Label == "SSB_2032"),"Value"],
                      "deplhigh" = high$derived_quants[which(high$derived_quants$Label == "Bratio_2021"):which(high$derived_quants$Label == "Bratio_2032"),"Value"])
 
-write.csv(round(dec_tab,2), file.path(loc, "ca", "decision_tables", "decision_table_CA_M_baseABC.csv"), row.names = FALSE)
+write.csv(round(dec_tab,2), file.path(loc, "ca", "decision_tables", "decision_table_CA_M_postNov.csv"), row.names = FALSE)
 
 
 ####
 #Generate the tex table for the report
 ####
 
-tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "ca", "decision_tables", "decision_table_CA_M_baseABC.csv"), header = TRUE)
+tab = read.csv(file.path("C:/Users/Brian.Langseth/Desktop", "ca", "decision_tables", "decision_table_CA_M_postNov.csv"), header = TRUE)
 
 
 col_names = c("Year", 
