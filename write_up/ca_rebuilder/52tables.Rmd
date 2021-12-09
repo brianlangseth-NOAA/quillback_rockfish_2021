@@ -1,37 +1,9 @@
 \clearpage
 # Tables
 
-<!-- ## Biological information -->
-<!-- ```{r, results = 'asis'} -->
-<!-- quants = data.frame("Age" = 0:90, "M" = rep(0.057,length(base.920$endgrowth$int_Age)), #M at age -->
-<!--            "Mat" = base.920$endgrowth$Age_Mat, #Maturity at age -->
-<!--            "Fec" = c(0,base.920$endgrowth$`Mat*Fecund`[-1]), #Fecundity at age * maturity at age. Reset age 0 to 0 -->
-<!--            "W" = base.920$endgrowth$`Wt_Mid`, #Weight at age, mid year weight -->
-<!--            "SelCom" = unlist(base.920$ageselex[base.920$ageselex$Label == "2021_1_Asel2", which(names(base.920$ageselex)=="0"):which(names(base.920$ageselex)=="90")]), #Selectivity com -->
-<!--            "SelRec" = unlist(base.920$ageselex[base.920$ageselex$Label == "2021_2_Asel2", which(names(base.920$ageselex)=="0"):which(names(base.920$ageselex)=="90")]), #Selectivity weight, rec -->
-<!--            "N2023" = unlist(base.920$natage[base.920$natage$Yr == 2023 & base.920$natage$`Beg/Mid`=="B", c(which(names(base.920$natage)=="0"):which(names(base.920$natage)=="90"))]), #Beg N at age 2023 -->
-<!--            "N2021" = unlist(base.920$natage[base.920$natage$Yr == 2021 & base.920$natage$`Beg/Mid`=="B", c(which(names(base.920$natage)=="0"):which(names(base.920$natage)=="90"))])) #Beg N at age 2021 -->
-<!-- col_names = c("Age", -->
-<!--               "Natural Mortality",  -->
-<!--               "Maturity", -->
-<!--               "Fecundity",  -->
-<!--               "Weight", -->
-<!--               "Selectivity, Com.",  -->
-<!--               "Selectivity, Rec.",  -->
-<!--               "Numbers, 2023",  -->
-<!--               "Numbers, 2021") -->
-<!-- table_format(x = quants, -->
-<!--              caption = "Biological information by age on which the base rebuilding analysis projections are based. The assessment model and rebuilding analysis assumed a single sex so values are not provided by sex", -->
-<!--              label = "biology-base", -->
-<!--              align = 'l', -->
-<!--              col_names = col_names, -->
-<!--              row.names = FALSE, -->
-<!--              digits = 4) -->
-<!-- ``` -->
-
 <!-- ## Rebuilding reference points and summary of alternatives -->
 
-## Base rebuilding reference points and policy projections
+## Rebuilding reference points and policy projections
 
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
@@ -40,10 +12,10 @@ quants = c(round(reb[[1]]$sb0,2)*frac_fem,
 		   round(reb[[1]]$sb_ass_year, 2)*frac_fem,
 		   reb[[1]]$recovery_spec[4],
 		   reb[[1]]$recovery_spec[3],
-		   reb[[1]]$tmin + reb[[1]]$recovery_spec[3],
+		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4],
 		   reb[[1]]$mean_gen,
 		   reb[[1]]$tmax,
-		   reb[[1]]$tmin + reb[[1]]$recovery_spec[3],
+		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4],
 		   "TBD",
 		   "TBD",
 		   reb[[1]]$spr_matrix[[1,2]])
@@ -62,7 +34,7 @@ row_names = c("SB0 (millions of eggs)",
 col_names = c("Quantity", "2021 Assessment Values")
 out = cbind(row_names, quants)
 table_format(x = out,
-             caption = 'Summary of the base rebuilding reference points.',
+             caption = 'Summary of the rebuilding reference points.',
              label = 'ref-points',
              align = 'l',
              col_names = col_names,
@@ -95,22 +67,77 @@ quants[,1] = c(round(reb[[2]]$acl_matrix[1:4,-1][,1],2),
                reb[[2]]$tmax,
                reb[[2]]$rebuild_quants$Prebuild[1]) # Prob by Tmax
 
-#Set the Tmid run to be from the no-ABC-cap run because it matters
-quants[,6] = c(round(reb[[2]]$acl_matrix[1:4,-1][,6],2),
-               reb[[2]]$rebuild_quants$SPR[6],
-               reb[[2]]$rebuild_quants$Ttarget[6],
-               reb[[2]]$tmax,
-               reb[[2]]$rebuild_quants$Prebuild[6]) # Prob by Tmax
-
 #Set the SPR value for 40-10 and ABC to be "-" because it varies by year
 quants[which(row_names=="SPR"),8:9] = "-"
-               
-out = cbind(row_names, quants)
-col_names = c("", colnames(out)[-1])
-col_names[7] = "Yr=T\\textsubscript{MID}"
+
+#Add SPR = 0.55 and SPR 0.65 runs
+extra = rbind(round(reb[[3]]$acl_matrix[1:4,-1],2),
+	   reb[[3]]$rebuild_quants$SPR,
+	   reb[[3]]$rebuild_quants$Ttarget,
+	   rep(reb[[3]]$tmax, length(reb[[3]]$rebuild_quants$Ttarget)),
+	   reb[[3]]$rebuild_quants$Prebuild)[,c(2,4)] # Prob by Tmax
+
+#Set the SPR = 0.55 run to be from the no-ABC-cap run because it matters
+extra[,1] = c(round(reb[[4]]$acl_matrix[1:4,-1][,2],2),
+               reb[[4]]$rebuild_quants$SPR[2],
+               reb[[4]]$rebuild_quants$Ttarget[2],
+               reb[[4]]$tmax,
+               reb[[4]]$rebuild_quants$Prebuild[2]) # Prob by Tmax
+
+out = cbind(row_names, quants[,1], extra[,1], quants[,2], extra[,2], quants[,-c(1,2)])
+col_names = c("", colnames(quants)[1], 
+              colnames(extra)[1], 
+              colnames(quants)[2], 
+              colnames(extra)[2], 
+              colnames(quants)[-c(1,2)])
+col_names[9] = "Yr= T\\textsubscript{MID}"
 table_format(x = out,
-             caption = "Results of base rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
+             caption = "Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
              label = "reb-options",
+             align = 'l',
+             landscape = TRUE,
+             col_names = col_names,
+             escape = FALSE,
+             font_size = 10)
+```
+\clearpage
+
+<!-- Ramp down policies rebuilder -->
+```{r, results = 'asis'}
+# Rebuilding Reference Points Table
+quants = rbind(round(reb[[1]]$acl_matrix[1:5,-1],2),
+		   reb[[1]]$rebuild_quants$SPR,
+		   reb[[1]]$rebuild_quants$Ttarget,
+		   rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
+		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
+row_names = c("2021 Assumed Removals (mt)", 
+			  "2022 Assumed Removals (mt)",
+			  "2023 Fixed Removals (mt), (2023 ACL for non-ramp)", "2024 Fixed Removals (mt), (2024 ACL for non-ramp)", 
+			  "2025 ACL (mt)", "SPR in 2025", "T\\textsubscript{TARGET}", 
+			  "T\\textsubscript{MAX}",
+			  "Probability of recovery by T\\textsubscript{MAX} = 2066")
+
+#Add ramp down policy for SPR 0.7
+ramp70 = rbind(round(reb[[5]]$acl_matrix[1:5,-1],2),
+	   reb[[5]]$rebuild_quants$SPR,
+	   reb[[5]]$rebuild_quants$Ttarget,
+	   rep(2066, length(reb[[5]]$rebuild_quants$Ttarget)), #Set as 2066 because its for policy with 0 catch starting in 2023
+	   reb[[5]]$rebuild_quants$Prebuild) # Prob by Tmax for ramp policy (2067)
+ramp70[9,] = reb[[5]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
+
+#Add ramp down policy for SPR 0.6
+ramp60 = rbind(round(reb[[6]]$acl_matrix[1:5,-1],2),
+	   reb[[6]]$rebuild_quants$SPR,
+	   reb[[6]]$rebuild_quants$Ttarget,
+	   rep(2066, length(reb[[6]]$rebuild_quants$Ttarget)), #
+	   reb[[6]]$rebuild_quants$Prebuild) # Prob by Tmax
+ramp60[9,] = reb[[6]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
+
+out = cbind(row_names, ramp60[,3], quants[,2], ramp70[,5],  quants[,3])
+col_names = c("", "Ramp SPR = .600", "SPR = .600", "Ramp SPR = .700", "SPR = .700") 
+table_format(x = out[-8,],
+             caption = "Results of rebuilding alternatives for ramp-down strategies (ramp) based on applying alternative SPR targets starting in 2025 for 50 percent probability of recovery based on assumed removals for 2021-22 and fixed removals in 2023-24. Non-ramp strategies are copied from Table \\ref{tab:reb-options} and included for comparison. Catches in 2023-2024 for non-ramp strategies were estimated based on the specified SPR value, and were not fixed",
+             label = "reb-ramp-options",
              align = 'l',
              landscape = TRUE,
              col_names = col_names,
@@ -118,19 +145,38 @@ table_format(x = out,
 ```
 \clearpage
 
-## Base rebuilding time series 
+## Rebuilding time series 
 
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$prob_matrix[1:46, ],3))
 out[,2] = round(reb[[2]]$prob_matrix[1:46, 2],3) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$prob_matrix[1:46, 7],3) #Set the Tmid run to be from the no-ABC-cap run
-colnames(out)[7] = "Yr=T\\textsubscript{MID}"
-table_format(x = out,
-             caption = "Probability of recovery by year for base rebuilding strategies",
+colnames(out)[7] = "Yr= T\\textsubscript{MID}"
+
+#Add SPR = 0.55 and SPR 0.65 runs
+extra = as.data.frame(round(reb[[3]]$prob_matrix[1:46, ],3))
+extra[,3] = round(reb[[4]]$prob_matrix[1:46, 3],3) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
+out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
+
+#Add ramp policies for SPR 0.6 and 0.7
+ramp60 = as.data.frame(round(reb[[6]]$prob_matrix[1:46, ],3))
+ramp70 = as.data.frame(round(reb[[5]]$prob_matrix[1:46, ],3))
+out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+
+table_format(x = out5,
+             caption = "Probability of recovery by year for rebuilding strategies, including ramp strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year",
              label = "prob-mat",
              align = 'l',
              digits = 3,
-             col_names = colnames(out),
+             col_names = c(colnames(out)[1:2], 
+                           "SPR= .550", 
+                           colnames(out)[3], 
+                           "Ramp SPR= .600", 
+                           "SPR= .650", 
+                           colnames(out)[4],
+                           "Ramp SPR= .700",
+                           colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
 \clearpage
@@ -138,14 +184,33 @@ table_format(x = out,
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$acl_matrix[1:46, ],2))
 out[,2] = round(reb[[2]]$acl_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$acl_matrix[1:46, 7],2) #Set the Tmid run to be from the no-ABC-cap run
-colnames(out)[7] = "Yr=T\\textsubscript{MID}"
-table_format(x = out,
-             caption = "Catches (mt) by year for base rebuilding strategies",
+colnames(out)[7] = "Yr= T\\textsubscript{MID}"
+
+#Add SPR = 0.55 and SPR 0.65 runs
+extra = as.data.frame(round(reb[[3]]$acl_matrix[1:46, ],2))
+extra[,3] = round(reb[[4]]$acl_matrix[1:46, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
+out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
+
+#Add ramp policies for SPR 0.6 and 0.7
+ramp60 = as.data.frame(round(reb[[6]]$acl_matrix[1:46, ],2))
+ramp70 = as.data.frame(round(reb[[5]]$acl_matrix[1:46, ],2))
+out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+
+table_format(x = out5,
+             caption = "Catches (mt) by year for rebuilding strategies, including ramp strategies. Catches in 2021-2022 for all strategies were set at values recommended by the Groundfish Management Team. Catches in 2023-2024 for ramp strategies were fixed to approximate a linear ramp in catch for 2023-2025.",
              label = "acl-mat",
              align = 'l',
              digits = 3,
-             col_names = colnames(out),
+             col_names = c(colnames(out)[1:2], 
+                           "SPR= .550", 
+                           colnames(out)[3], 
+                           "Ramp SPR= .600", 
+                           "SPR= .650", 
+                           colnames(out)[4],
+                           "Ramp SPR= .700",
+                           colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
 \clearpage
@@ -153,20 +218,41 @@ table_format(x = out,
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$ofl_matrix[1:46, ],2))
 out[,2] = round(reb[[2]]$ofl_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$ofl_matrix[1:46, 7],2) #Set the Tmid run to be from the no-ABC-cap run
-#Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. Need to set values for the SPR = 0.5 run to be from the acl_matrix. Dont need this for Tmid because that run has catch < ABC.
-out[,2] = round(reb[[2]]$acl_matrix[1:46, 2],2)
-#And need to divide all other ofls by the buffers, because these are actually ABC's
+#Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. Need to set values for the SPR = 0.5 run to be from the acl_matrix (with the exception of the first two fixed catch years).
+out[-c(1,2),2] = round(reb[[2]]$acl_matrix[3:46, 2],2)
+colnames(out)[7] = "Yr= T\\textsubscript{MID}"
+
+#Add SPR = 0.55 and SPR 0.65 runs
+extra = as.data.frame(round(reb[[3]]$ofl_matrix[1:46, ],2))
+extra[,3] = round(reb[[4]]$ofl_matrix[1:46, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+#Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. However, the acl's do not reach the OFL levels as is the case for SPR = 0.5. Thus no need to set these to the acl_matrix like was done for SPR = 0.5
+out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
+out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
+
+#Add ramp policies for SPR 0.6 and 0.7
+ramp60 = as.data.frame(round(reb[[6]]$ofl_matrix[1:46, ],2))
+ramp70 = as.data.frame(round(reb[[5]]$ofl_matrix[1:46, ],2))
+out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+
+#And need to divide ofls (which are actually the ABC) by the buffers (other than the SPR = 0.5 strategy, and first two years across runs)
 buffer <- PEPtools::get_buffer(2021:reb[[1]]$tmax,1,0.45)
 buffer[which(buffer[,2]<0.778),2] = 0.778
-out[,3:10] = round(out[,3:10]/buffer[,2],2)
-colnames(out)[7] = "Yr=T\\textsubscript{MID}"
-table_format(x = out,
-             caption = "OFLs (mt) by year for base rebuilding strategies",
+out5[,-c(1:2)] = round(out5[,-c(1:2)]/buffer[,2],2)
+
+table_format(x = out5,
+             caption = "OFLs (mt) by year for rebuilding strategies, including ramp strategies",
              label = "ofl-mat",
              align = 'l',
              digits = 3,
-             col_names = colnames(out),
+             col_names = c(colnames(out)[1:2], 
+                           "SPR= .550", 
+                           colnames(out)[3], 
+                           "Ramp SPR= .600", 
+                           "SPR= .650", 
+                           colnames(out)[4],
+                           "Ramp SPR= .700",
+                           colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
 \clearpage
@@ -174,191 +260,33 @@ table_format(x = out,
 ```{r, results = 'asis'}
 out = as.data.frame(round(reb[[1]]$relativeb_matrix[1:46, ],2))
 out[,2] = round(reb[[2]]$relativeb_matrix[1:46, 2],2) #Set the SPR = 0.5 run to be from the no-ABC-cap run
-out[,7] = round(reb[[2]]$relativeb_matrix[1:46, 7],3) #Set the Tmid run to be from the no-ABC-cap run
-colnames(out)[7] = "Yr=T\\textsubscript{MID}"
-table_format(x = out,
-             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for base rebuilding strategies",
+colnames(out)[7] = "Yr= T\\textsubscript{MID}"
+
+#Add SPR = 0.55 and SPR 0.65 runs
+extra = as.data.frame(round(reb[[3]]$relativeb_matrix[1:46, ],2))
+extra[,3] = round(reb[[4]]$relativeb_matrix[1:46, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
+out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
+
+#Add ramp policies for SPR 0.6 and 0.7
+ramp60 = as.data.frame(round(reb[[6]]$relativeb_matrix[1:46, ],2))
+ramp70 = as.data.frame(round(reb[[5]]$relativeb_matrix[1:46, ],2))
+out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+
+table_format(x = out5,
+             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies, including ramp strategies",
              label = "rel-ssb-mat",
              align = 'l',
-             digits = 2,
-             col_names = colnames(out),
-             escape = FALSE)
-```
-
-\clearpage
-
-## Sensitivity rebuilding reference points and policy projections
-
-```{r, results = 'asis'}
-# Rebuilding Sensitivity Reference Points Table
-quants = c(round(reb[[3]]$sb0,2)*frac_fem, 
-		   round(reb[[3]]$sb40, 2)*frac_fem, 
-		   round(reb[[3]]$sb_ass_year, 2)*frac_fem,
-		   reb[[3]]$recovery_spec[4],
-		   reb[[3]]$recovery_spec[3], 
-		   reb[[3]]$tmin + reb[[3]]$recovery_spec[3], 
-		   reb[[3]]$mean_gen, 
-		   reb[[3]]$tmax, 
-		   reb[[3]]$tmin + reb[[3]]$recovery_spec[3],
-		   "TBD",
-		   "TBD",
-		   reb[[3]]$spr_matrix[[1,2]])
-row_names = c("SB0 (millions of eggs)", 
-              "SB40 (millions of eggs)",
-              "SB2021 (millions of eggs)", 
-              "Year rebuilding begins",
-              "Current year", 
-              "T\\textsubscript{MIN}", 
-              "Mean generation time (years)", 
-              "T\\textsubscript{MAX}",
-              "T\\textsubscript{F=0}",
-              "T\\textsubscript{TARGET}", 
-              "SPR\\textsubscript{TARGET}",
-              "Current SPR (2021)")
-col_names = c("Parameter", "2021 Assessment Values")
-out = cbind(row_names, quants)
-table_format(x = out,
-             caption = "Summary of the rebuilding sensitivity reference points",
-             label = "ref-points-sens",
-             align = 'l',
-             col_names = col_names,
-             escape = FALSE)
-```
-
-
-<!-- ## Summary of alternatives -->
-
-<!-- Sensitivity rebuilder -->
-```{r, results = 'asis'}
-# Rebuilding Reference Points Table
-quants = rbind(round(reb[[3]]$acl_matrix[1:4,-1],2),
-		   reb[[3]]$rebuild_quants$SPR,
-		   reb[[3]]$rebuild_quants$Ttarget,
-		   rep(reb[[3]]$tmax, length(reb[[3]]$rebuild_quants$Ttarget)),
-		   reb[[3]]$rebuild_quants$Prebuild) # Prob by Tmax
-row_names = c("2021 Assumed Removals (mt)",
-			  "2022 Assumed Removals (mt)",
-			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "T\\textsubscript{TARGET}",
-			  "T\\textsubscript{MAX}",
-			  "Probability of recovery by T\\textsubscript{MAX}")
-
-#Set the SPR = 0.5 run to be from the no-ABC-cap run because it matters
-quants[,1] = c(round(reb[[4]]$acl_matrix[1:4,-1][,1],2),
-               reb[[4]]$rebuild_quants$SPR[1],
-               reb[[4]]$rebuild_quants$Ttarget[1],
-               reb[[4]]$tmax,
-               reb[[4]]$rebuild_quants$Prebuild[1]) # Prob by Tmax
-
-#Set the Tmid run to be from the no-ABC-cap run because it matters
-quants[,6] = c(round(reb[[4]]$acl_matrix[1:4,-1][,6],2),
-               reb[[4]]$rebuild_quants$SPR[6],
-               reb[[4]]$rebuild_quants$Ttarget[6],
-               reb[[4]]$tmax,
-               reb[[4]]$rebuild_quants$Prebuild[6]) # Prob by Tmax
-
-#Set the SPR value for 40-10 and ABC to be "-" because it varyies by year
-quants[which(row_names=="SPR"),8:9] = "-"
-
-out = cbind(row_names, quants)
-col_names = c("", colnames(out)[-1])
-col_names[7] = "Yr=T\\textsubscript{MID}"
-table_format(x = out,
-             caption = "Results of rebuilding sensitivity based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. Rebuilding sensitivity blocks selectivity in 2001 and allows dome-shaped selectivity. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
-             label = "reb-options-sens",
-             align = 'l',
-             landscape = TRUE,
-             col_names = col_names,
-             escape = FALSE)
-```
-
-\clearpage
-
-
-<!-- Base rebuilder without states of nature-->
-
-<!-- ## Reference points -->
-```{r, results = 'asis'}
-# Rebuilding Reference Points Table
-quants = c(round(reb[[8]]$sb0,2)*frac_fem, 
-		   round(reb[[8]]$sb40, 2)*frac_fem, 
-		   round(reb[[8]]$sb_ass_year, 2)*frac_fem,
-		   reb[[8]]$recovery_spec[4],
-		   reb[[8]]$recovery_spec[3], 
-		   reb[[8]]$tmin + reb[[8]]$recovery_spec[3], 
-		   reb[[8]]$mean_gen, 
-		   reb[[8]]$tmax, 
-		   reb[[8]]$tmin + reb[[8]]$recovery_spec[3],
-		   "TBD",
-		   "TBD",
-		   reb[[8]]$spr_matrix[[1,2]])
-row_names = c("SB0 (millions of eggs)", 
-              "SB40 (millions of eggs)",
-              "SB2021 (millions of eggs)", 
-              "Year rebuilding begins",
-              "Current year", 
-              "T\\textsubscript{MIN}", 
-              "Mean generation time (years)", 
-              "T\\textsubscript{MAX}",
-              "T\\textsubscript{F=0}",
-              "T\\textsubscript{TARGET}", 
-              "SPR\\textsubscript{TARGET}",
-              "Current SPR (2021)")
-col_names = c("Quantity", "2021 Assessment Values")
-out = cbind(row_names, quants)
-table_format(x = out,
-             caption = "Summary of the base rebuilding reference points without applying the states of nature.",
-             label = "ref-points-noStateOfNature",
-             align = 'l',
-             col_names = col_names,
-             escape = FALSE)
-```
-
-<!-- ## Summary of alternatives -->
-```{r, results = 'asis'}
-# Rebuilding Reference Points Table
-quants = rbind(round(reb[[8]]$acl_matrix[1:4,-1],2),
-		   reb[[8]]$rebuild_quants$SPR,
-		   reb[[8]]$rebuild_quants$Ttarget,
-		   rep(reb[[8]]$tmax, length(reb[[8]]$rebuild_quants$Ttarget)),
-		   reb[[8]]$rebuild_quants$Prebuild) # Prob by Tmax
-row_names = c("2021 Assumed Removals (mt)", 
-			  "2022 Assumed Removals (mt)",
-			  "2023 ACL (mt)", "2024 ACL (mt)", "SPR", "T\\textsubscript{TARGET}", 
-			  "T\\textsubscript{MAX}",
-			  "Probability of recovery by T\\textsubscript{MAX}")
-
-#Set the SPR = 0.5 run to be from the no-ABC-cap run because it matters
-quants[,1] = c(round(reb[[9]]$acl_matrix[1:4,-1][,1],2),
-               reb[[9]]$rebuild_quants$SPR[1],
-               reb[[9]]$rebuild_quants$Ttarget[1],
-               reb[[9]]$tmax,
-               reb[[9]]$rebuild_quants$Prebuild[1]) # Prob by Tmax
-
-#Set the Tmid run to be from the no-ABC-cap run because it matters
-quants[,6] = c(round(reb[[9]]$acl_matrix[1:4,-1][,6],2),
-               reb[[9]]$rebuild_quants$SPR[6],
-               reb[[9]]$rebuild_quants$Ttarget[6],
-               reb[[9]]$tmax,
-               reb[[9]]$rebuild_quants$Prebuild[6]) # Prob by Tmax
-
-#Set the SPR value for 40-10 and ABC to be "-" because it varies by year
-quants[which(row_names=="SPR"),8:9] = "-"
-               
-out = cbind(row_names, quants)
-col_names = c("", colnames(out)[-1])
-col_names[7] = "Yr=T\\textsubscript{MID}"
-table_format(x = out,
-             caption = "Results of base rebuilding alternatives without applying the states of nature based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
-             label = "reb-options-noStateOfNature",
-             align = 'l',
-             landscape = TRUE,
-             col_names = col_names,
+             digits = 3,
+             col_names = c(colnames(out)[1:2], 
+                           "SPR= .550", 
+                           colnames(out)[3], 
+                           "Ramp SPR= .600", 
+                           "SPR= .650", 
+                           colnames(out)[4],
+                           "Ramp SPR= .700",
+                           colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
 \clearpage
-
-## Base and sensitivity Stock Synthesis model outputs
-
-<!-- tab:sensitivity table -->
-\input{tex_tables/sensitivity_table.tex}
-

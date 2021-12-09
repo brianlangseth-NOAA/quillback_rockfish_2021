@@ -1596,19 +1596,20 @@ SS_plots(base.1002)
 
 
 ######################
-#Rebuilding analysis - CONTINUE HERE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#Rebuilding analysis 
 ######################
 
-#Models in folder "rebuilding"
-
-#Copy model 900 and make adjustments in 
+#Copy model 1000 into 'rebuilder' folder and change 
+#allocation of F years to 2017-2019 (originally was just 2020)
+#Set up forecast to run rebuilder as in
 #https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+#Take rebuild.dat file, move into "just model files" folder and make the following changes
 #1. Name of file = 2021_ca_quillback_rebuild.dat
 #2. Max number of years = 200
 #3. Fecundity-at-age 0 = 0
 #4. Year for Tmin = 2021
 #5. Number of years with prespecified catches = 2
-#6. Prespecified catches
+#6. Prespecified catches (updated to postNov values)
 #7. Number of future recruitments to override = 0
 #8. Projection type = 11
 #9. Extra lines
@@ -1616,68 +1617,79 @@ SS_plots(base.1002)
 #11. More extra lines
 #12. Year to define projection type, switch to probabilities
 #13. Switch years for probability of recovery
-model = "9_1_0_rebuilding"
-base.910 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
-SS_plots(base.910)
 
-#Copy model 900 - because have warning about SSB not matching
-#Change Ngenders in .dat file to 1 (from -1)
-model = "9_1_0_1_oneSex"
-base.9101 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
-SS_plots(base.9101)
-#Very slight differences in parameter estimates
+#In addition to the above make the following changes as was done for NovBB runs (934_StatesOfNature_SeptExe)
+#A: Conduct projections = 1
+#B: Number of projection vectors = 4
+#C: Set Age structure at Ydeclare to be from 2021 (copying age structure from line above in rebuild.dat file)
+#D: Year for Tmin = 2021
+#E: Name of multiple parameter vector file = rebuild_m_fixed.SSO
 
-#Other explorations in the test folder included 
-#2_test_run_AddGenderInfo - copy sex specific info twice (still get the error)
-#3_test_run_-1Sex - set sex to -1 in rebuild.dat (it doesn't run)
-#4_test_run_oneSex - use model 9101 from above
-#5_test_multiplySBx2 - multiply SSB entry in rebuild.dat by 2
-#6_test_2sexSS - rebuilder run based on a two-sex SS model with males offset to females
+#All of the above changes are equivalent to copying rebuild.dat from 934_StatesOfNature_SeptExe
+#and changing fixed catch in 2022 to be 11.9 instead of 13.5
+model = "10_1_0_postNov_rebuilding"
+base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
+#Apply to 1010_postNov folder (copy .exe and rebuild_m_fixed.SSO)
 
-#These tests show results are the same (or very nearly so). Only differences
-#are in historical spawner per recruit. Thus if do recruitment equals option 2
-#then the warning would have an effect. 
-
-#Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
-#As such adjust age-structure to be from 2021
-#Copy model 910's updated rebuild.dat file
-#1. Set age structure to be from 2021 (so the values from model 921)
-#Apply to 910_ageStruc2021 
-
-#Copy model 910 and make changes to forecast
-#1. Change allocation of F years to 2017-2019 (originally was just 2020)
-#Make adjustments to rebuild.dat in 
-#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit but
-#a. Try to keep Year for Tmin = 2023 (COULDNT so KEPT at 2021)
-model = "9_2_0_RelF2017_2019"
-base.920 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
-#Apply to 920_F2017_2019
-
-#Set up a 2-sex model with male and females equal to one another to confirm SSB warning is inconsequential 
-model = "9_2_0_RelF2017_2019_2sex"
-base.920_2sex = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
-#Apply to tests/6_test_2sexSS
-
-#It is confusing to me that Tmin cant be because age structure is 2023, so...
-#Copy model 920 and adjust Ydecl in forecast to be 2021
-#Ydecl is now set to 2021 and age structure changes, with Tmin set to 2021
-#Make adjustments to rebuild.dat in 
-#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
-model = "9_2_1_forecastYdecl"
-base.921 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
-#Apply to 921_ydecl2021 
-
-#Based on emails with Owen, yinit should be 2021, ydecl 2023, and yinit^0 2021
-#As such adjust age-structure to be from 2021
-#Copy model 920's updated rebuild.dat file
-#1. Set age structure to be from 2021 (can use the values from model 921 - also works to use age structure
-#from lines just above this in the rebuild.dat file)
-#Apply to 920_F2017_2019_ageStruc2021 
+#Copy 1010_postNov
+#Set Constrain_catches_by_ABC to 2 in rebuild.dat file
+#Apply to 1010b_no_abc_max
 
 
-######################
-#States of nature exploration - adding uncertainty around M
-######################
+#Copy 1010_postNov
+#Set SPR runs to 0.5, 0.55, 0.6, 0.65, 0.7
+#Apply to 1011_addedSPRruns
+
+#Copy 1011_addedSPRruns
+#Set Constrain_catches_by_ABC to 2 in rebuild.dat file
+#Apply to 1011b_no_abc_max
+
+
+#Copy 1010_postNov
+#Change SPR runs to 0.5, 0.55, 0.6, 0.65, 0.7
+#Change number of years with prespecified catch to 3
+#Change First year of rebuilding period to be 2024
+#Change year for Catches/F to be 2024
+#Set catch in 2023 to the ABC catch in 2023 from 1010_postNov RES.csv (1.84)
+#Apply to 1012_ramp_2023
+
+#Copy 1012_ramp_2023
+#Change number of years with prespecified catch to 4
+#Change First year of rebuilding period to be 2025
+#Change year for Catches/F to be 2025
+#Set catch in 2024 to 1.52 which is just less than midway between the fixed catch 
+#in 2023 (1.84) and the SPR0.7 catch in 2025 (1.18) from 1012_ramp_2023. Set just
+#less than to accommodate slight increase caused by not setting 2024 catch to SPR0.7
+#Apply to 1013_ramp0.7
+
+#Copy 1013_ramp0.7
+#Set catch in 2024 to be 1.5. This ensures the ramp from 1.84 to 1.5 is more than the
+#ramp from 1.5 to the resulting catch in 2025. Using 1.52 for 2024 catch does not
+#meet this criterion
+#Apply to 1013_ramp0.7_2
+
+#Copy 1012_ramp_2023
+#Change number of years with prespecified catch to 4
+#Change First year of rebuilding period to be 2025
+#Change year for Catches/F to be 2025
+#Set catch in 2024 to 1.8 which is midway between the fixed catch 
+#in 2023 (1.84) and the SPR0.6 catch in 2025 (1.77) from 1012_ramp_2023.
+#Apply to 1013_ramp0.6
+
+#Copy 1012_ramp_2023
+#Change number of years with prespecified catch to 4
+#Change First year of rebuilding period to be 2025
+#Change year for Catches/F to be 2025
+#Set catch in 2024 to 1.98 which is midway between the fixed catch 
+#in 2023 (1.84) and the SPR0.55 catch in 2025 (2.12) from 1012_ramp_2023.
+#Apply to 1013_ramp0.55
+
+
+
+
+
+
+
 
 
 

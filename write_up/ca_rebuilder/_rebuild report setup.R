@@ -12,57 +12,41 @@ library(r4ss)
 #remotes::install_github("nwfsc-assess/PEPtools")
 library(PEPtools)
 source_url("https://raw.githubusercontent.com/r4ss/r4ss/main/R/RebuildPlot.R")
-#i SHA-1 hash of file is 741ae49399d34dc12492088ecc2d1c3c93666e56
 
 # Specify the directory for the document
-setwd("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up")
+setwd("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_postNov")
 
-#Do once: Set up default document sections. May need to delete a few
-sa4ss::draft(authors = c("Brian J. Langseth",
-                         "Chantel R. Wetzel"),
-             species = "Quillback Rockfish",
-             latin = "Sebastes maliger",
-             coast = "California US West",
-             type = c("sa"),
-             create_dir = FALSE,
-             edit = FALSE)
+# #Do once: Set up default document sections. May need to delete a few
+# sa4ss::draft(authors = c("Brian J. Langseth",
+#                          "Chantel R. Wetzel"),
+#              species = "Quillback Rockfish",
+#              latin = "Sebastes maliger",
+#              coast = "California US West",
+#              type = c("sa"),
+#              create_dir = FALSE,
+#              edit = FALSE)
 
 source_url("https://raw.githubusercontent.com/chantelwetzel-noaa/copper_rockfish_2021/master/code/get_values_rebuilder.R")
-#i SHA-1 hash of file is 7bdea98ad6a4ef578ae93a9619973e59cc29a1c5
 
 # Specify the directory where the models are at
 rebuild_dir = "C:/Users/Brian.Langseth/Desktop/ca/rebuilder"
 
-# #Test runs based on these models
-# run <- c(
-#   "930_F2017_2019_ageStruc2021",
-#   "931_no_abc_max",
-#   "tests/4_test_run_oneSex")
 #Report is based on these models
 run <- c(
-  "933_StatesOfNature", #correctly applying the states of nature uncertainty
-  "933b_no_abc_max",
-  "940_recComBlock2001", #sensitivity rebuilder, no states of nature applied
-  "940b_no_abc_max",
-  "931_Tmax", #strategy to set Tmax, states of nature not applied correctly
-  "931b_Tmax_no_abc_max",
-  "tests/6_test_2sexSS", #test run based on SS model with Ngender = 2
-  "930_F2017_2019_ageStruc2021", #original run, but states of nature not applied correctly
-  "930b_no_abc_max")
+  "1010_postNov", #same policies as original
+  "1010b_no_abc_max",
+  "1011_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1011b_no_abc_max",
+  "1013_ramp0.7_2", #ramp applied and ensured to be more of a ramp for 2024-2025 than 2023-2024, only use SPR 0.7 policy
+  "1013_ramp0.6", #ramp applied, only use SPR 0.6 policy
+  "1013_ramp0.55") #ramp applied, only use SPR 0.55 policy
 
-#Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved 
-# reb <- list()
-# for (a in 1:length(run)){
-#   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
-# }
-# save(reb, file = file.path(getwd(), "00mod.Rdata"))
-
-load(file = file.path(getwd(), "00mod.Rdata"))
-
-base.920 = r4ss::SS_output(file.path(rebuild_dir, "9_2_0_RelF2017_2019"), covar = TRUE, 
-                           verbose = FALSE, printstats = FALSE)
-sens.940 = r4ss::SS_output(file.path(rebuild_dir, "9_4_0_recComBlock2001"), covar = TRUE, 
-                           verbose = FALSE, printstats = FALSE)
+#Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved
+reb <- list()
+for (a in 1:length(run)){
+  reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
+}
+save(reb, file = file.path(getwd(), "00mod.Rdata"))
 
 if(file.exists("_main.Rmd")){
   file.remove("_main.Rmd")

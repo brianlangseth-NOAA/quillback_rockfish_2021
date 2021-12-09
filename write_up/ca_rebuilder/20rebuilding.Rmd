@@ -1,6 +1,6 @@
 # Rebuilding calculations
 
-This rebuilding analysis was conducted in September, 2021 using software developed by A. Punt (version 3.12h, August 2021). The input file for the analysis is provided in [Appendix A](#append_a). The steps followed were: 
+This rebuilding analysis was conducted in December, 2021 using software developed by A. Punt (version 3.12i, September 2021). The input file for the analysis is provided in [Appendix A](#append_a). The steps followed were: 
 
 \begin{enumerate}
 	\item Define how equilibrium spawning output ($\text{SB}_0$) will be calculated. 
@@ -25,7 +25,6 @@ The estimated parameters of the stock recruitment relationship including the une
 ## Population biology
 
 The biological parameters used for the rebuilding analysis were based on the values from the 2021 assessment. Biological parameters in the assessment were aggregated across sex and constant across time. The rebuilding analysis was based on a single sex model. 
-<!-- Biological values used as input into the rebuilding analysis are provided in (Table \ref{tab:biology-base}). -->
 
 
 ## Fishery selectivity, and removal allocations
@@ -40,7 +39,7 @@ Model and parameter uncertainty is included in the rebuilding analysis via 1,000
 
 ## Alternate rebuilding strategies analyzed
 
-Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR; PFMC -@TOR_2020) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate or rebuilding by a selected target year.  
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR; PFMC -@TOR_2020) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate, rebuilding by a selected target year, or by delaying a SPR harvest rate for a specified number of years.  
 
 \begin{enumerate}
 	\item Eliminate all harvest, F = 0, starting in the next management cycle, 2023, the same as setting a constant SPR harvest rate of 1.0.
@@ -48,10 +47,17 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 	\item Apply a range of SPR values: 
 	\begin{enumerate}
 	 \item SPR = 0.50,
+	 \item SPR = 0.55
 	 \item SPR = 0.60,
+	 \item SPR = 0.65,
 	 \item SPR = 0.70,
 	 \item SPR = 0.80, and
 	 \item SPR = 0.90. 
+	\end{enumerate}
+	\item Apply a range of SPR values to start in 2025 to allow a ramp down in fishing pressure from 2023-2025:
+	\begin{enumerate}
+	 \item SPR = 0.60, and
+	 \item SPR = 0.7.
 	\end{enumerate}
 	\item Apply SPR harvest rates that are estimated to lead to a 50$\%$ probability of recovery by alternative target years: 
 	\begin{enumerate}
@@ -62,7 +68,7 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 	\item Apply the ABC harvest rate with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
 \end{enumerate}
 
-The sum of ACL contributions for `r spp` from the southern management area and the percent allocation for California (28.7$\%$) in the northern management area as provided by the Groundfish Management Team (GMT) were larger than the catch resulting from applying an SPR of 0.5, implying an SPR rate of below 0.5 for this run, so results from this run are not provided in this report. Similarly, the SPR rate that led to a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ was less than 0.5 so results from the $\text{T}_\text{MAX}$ strategy are not presented in this report.
+The sum of ACL contributions for `r spp` from the southern management area and the percent allocation for California (28.7$\%$) in the northern management area as provided by the Groundfish Management Team (GMT) were larger than the catch resulting from applying an SPR of 0.5, implying an SPR rate of below 0.5 for this run, so results from this strategy are not provided in this report. Similarly, the SPR rate that led to a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ was less than 0.5 so results from the $\text{T}_\text{MAX}$ strategy are not presented in this report.
 
 No current rebuilding plan exists for `r spp` in California waters so the alternatives related to the results of a previous rebuilding plan as specified in the rebuilding TOR could not be done. These include:
 
@@ -72,7 +78,9 @@ No current rebuilding plan exists for `r spp` in California waters so the altern
  \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle.
 \end{itemize}
 
-All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt in 2021 and 2022 as recommended by the GMT.
+All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt in 2021 and `r round(reb[[1]]$acl_matrix[2,2],2)` mt in 2022 as recommended by the GMT. 
 
-The Pacific Fishery Management Council's (Council) Scientific and Statistical Committee (SSC) requested at the September Council meeting that an additional rebuilding sensitivity be conducted examining the impact of blocking both recreational and commercial selectivity at 1916-2000 and 2001-2020, assuming asymptotic selectivity for the early blocks and allowing estimation of dome-shaped selectivity for the recent blocks. This sensitivity was conducted without integration over alternative states of nature for natural mortality, given its treatment as a sensitivity. 
-<!-- The biological parameters on which the projections are based for this sensitivity are provided in [Appendix B](#append_b) (Table \ref{tab:biology-sens}). -->
+### Ramp strategies
+
+The Council requested "ramp-down" strategies be explored that gradually reduced catches from 2022 values over a three year period. Two strategies were explored using constant SPR = 0.6 and SPR = 0.7 rates starting in 2025. For these ramp-down strategies, catch in 2023 was set equal to the catch in 2023 indicated under the ABC harvest rate strategy. Catches in 2024 were iteratively set to be approximately midway between the 2023 ABC-based catch value and the estimated catch in 2025 from the corresponding SPR strategy (SPR = 0.6 or SPR = 0.7) starting in 2024 with fixed 2023 catch, and therefore reflects a linear ramp in catch between 2023-2025. Catch in 2024 was further adjusted as necessary, to ensure a declining ramp, meaning that the change in catch between 2023-2024 was greater than or equal to the change in catch between 2024-2025.
+
