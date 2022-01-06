@@ -26,6 +26,9 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              edit = FALSE)
 
 #Read in model, assign whether to create plots function. Currently also generates tables
+#Generate tables and tex files based on most recent base model (last commented out model run)
+#because these have different projection values. Then run write-up script with review base 
+#because figure names are set up for that version of r4ss. Model outputs before projections are the same.  
 sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/or/7_1_0_base",         #review base
                   #mod_loc = "C:/Users/Brian.Langseth/Desktop/or/8_0_0_postSSC_base",  #post review base
                   #mod_loc = "C:/Users/Brian.Langseth/Desktop/or/8_1_0_postMopUp_base",  #post mop up base
@@ -73,6 +76,9 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              edit = FALSE)
 
 #Read in model, assign whether to create plots function. Currently also generates tables
+#Generate tables and tex files based on most recent base model (last commented out model run)
+#because these have different projection values. Then run write-up script with review base 
+#because figure names are set up for that version of r4ss. Model outputs before projections are the same.  
 sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/wa/10_0_0_base",
                   #mod_loc = "C:/Users/Brian.Langseth/Desktop/wa/11_1_0_postSSC_base",  #post review base
                   create_plots = FALSE, 
@@ -118,6 +124,9 @@ sa4ss::draft(authors = c("Brian J. Langseth",
              edit = FALSE)
 
 #Read in model, assign whether to create plots function. Currently also generates tables and table_labels.csv
+#Generate tables and tex files based on most recent base model (last commented out model run)
+#because these have different projection values. Then run write-up script with review base 
+#because figure names are set up for that version of r4ss. Model outputs before projections are the same.  
 sa4ss::read_model(mod_loc = "C:/Users/Brian.Langseth/Desktop/ca/7_1_0_base", 
                   #mod_loc = "C:/Users/Brian.Langseth/Desktop/ca/9_0_0_postSSC_base",  #post review base
                   #mod_loc = "C:/Users/Brian.Langseth/Desktop/ca/10_0_0_postNov_base",  #post Nov review base
