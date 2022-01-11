@@ -320,7 +320,9 @@ run <- c(
   "1011_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
   "1011b_no_abc_max",
   "1013_ramp0.7_2", #ramp applied and ensured to be more of a ramp for 2024-2025 than 2023-2024, only use SPR 0.7 policy
-  "1013_ramp0.6") #ramp applied, only use SPR 0.6 policy
+  "1013_ramp0.6", #ramp applied, only use SPR 0.6 policy
+  "1014_ramp0.7", #ramp applied starting above ABC, only use SPR 0.7 policy
+  "1014_ramp0.6") #ramp applied starting above ABC, only use SPR 0.6 policy
 
 reb <- list()
 for (a in 1:length(run)){
@@ -343,32 +345,45 @@ colnames(probs_gg_extra)<-c("Year", "Scenario", "Prob")
 probs_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$prob_matrix[,2:ncol(reb[[4]]$prob_matrix)]) #no cap run
 probs_gg_extra[201:400,] <- probs_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
 #############
-#Add ramp runs
+#Add first ramp runs
 probs_gg_ramp60 <-reshape2::melt(data = reb[[6]]$prob_matrix[,2:ncol(reb[[6]]$prob_matrix)])
-probs_gg_ramp60$Var2 <- paste0(probs_gg_ramp60$Var2,"ramp")
+probs_gg_ramp60$Var2 <- paste0(probs_gg_ramp60$Var2,"ramp1")
 colnames(probs_gg_ramp60)<-c("Year", "Scenario", "Prob")
 probs_gg_ramp70 <-reshape2::melt(data = reb[[5]]$prob_matrix[,2:ncol(reb[[5]]$prob_matrix)])
-probs_gg_ramp70$Var2 <- paste0(probs_gg_ramp70$Var2,"ramp")
+probs_gg_ramp70$Var2 <- paste0(probs_gg_ramp70$Var2,"ramp1")
 colnames(probs_gg_ramp70)<-c("Year", "Scenario", "Prob")
+#Add second ramp runs
+probs_gg_ramp602 <-reshape2::melt(data = reb[[8]]$prob_matrix[,2:ncol(reb[[8]]$prob_matrix)])
+probs_gg_ramp602$Var2 <- paste0(probs_gg_ramp602$Var2,"ramp2")
+colnames(probs_gg_ramp602)<-c("Year", "Scenario", "Prob")
+probs_gg_ramp702 <-reshape2::melt(data = reb[[7]]$prob_matrix[,2:ncol(reb[[7]]$prob_matrix)])
+probs_gg_ramp702$Var2 <- paste0(probs_gg_ramp702$Var2,"ramp2")
+colnames(probs_gg_ramp702)<-c("Year", "Scenario", "Prob")
 #Combine datasets and reorder scenarios
 probs_all <- rbind(probs_gg,
                    probs_gg_extra[probs_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),],
-                   probs_gg_ramp60[probs_gg_ramp60$Scenario %in% c("SPR= .600      ramp"),],
-                   probs_gg_ramp70[probs_gg_ramp70$Scenario %in% c("SPR= .700      ramp"),])
+                   probs_gg_ramp60[probs_gg_ramp60$Scenario %in% c("SPR= .600      ramp1"),],
+                   probs_gg_ramp602[probs_gg_ramp602$Scenario %in% c("SPR= .600      ramp2"),],
+                   probs_gg_ramp70[probs_gg_ramp70$Scenario %in% c("SPR= .700      ramp1"),],
+                   probs_gg_ramp702[probs_gg_ramp702$Scenario %in% c("SPR= .700      ramp2"),])
 probs_all[,"Year"] <- rep(reb[[1]]$prob_matrix[,1], nrow(probs_all)/200)
 probs_all$Scenario <- factor(probs_all$Scenario, levels = c("SPR= .500      ",
                                       "SPR= .550      ",
                                       "SPR= .600      ",
-                                      "SPR= .600      ramp",
+                                      "SPR= .600      ramp1",
+                                      "SPR= .600      ramp2",
                                       "SPR= .650      ",
                                       "SPR= .700      ",
-                                      "SPR= .700      ramp",
+                                      "SPR= .700      ramp1",
+                                      "SPR= .700      ramp2",
                                       "SPR= .800      ",
                                       "SPR= .900      ",
                                       "Yr=Tmid        ",
                                       "F=0            ",
                                       "40-10 rule     ",
                                       "ABC Rule       "))
+head(acast(probs_all, Scenario~Year, value.var = "Prob")[,1:30],10) #test to ensure ramps are different
+
 #Plot
 find = which(probs_all$Prob <=1.0 & probs_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot2::ggplot(probs_all[find,], aes(x = Year,y = Prob, color = Scenario)) + 
@@ -392,32 +407,45 @@ colnames(acl_gg_extra)<-c("Year", "Scenario", "Catch")
 acl_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$acl_matrix[,2:ncol(reb[[4]]$acl_matrix)]) #no cap run
 acl_gg_extra[201:400,] <- acl_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
 #############
-#Add ramp runs
+#Add first ramp runs
 acl_gg_ramp60 <-reshape2::melt(data = reb[[6]]$acl_matrix[,2:ncol(reb[[6]]$acl_matrix)])
-acl_gg_ramp60$Var2 <- paste0(acl_gg_ramp60$Var2,"ramp")
+acl_gg_ramp60$Var2 <- paste0(acl_gg_ramp60$Var2,"ramp1")
 colnames(acl_gg_ramp60)<-c("Year", "Scenario", "Catch")
 acl_gg_ramp70 <-reshape2::melt(data = reb[[5]]$acl_matrix[,2:ncol(reb[[5]]$acl_matrix)])
-acl_gg_ramp70$Var2 <- paste0(acl_gg_ramp70$Var2,"ramp")
+acl_gg_ramp70$Var2 <- paste0(acl_gg_ramp70$Var2,"ramp1")
 colnames(acl_gg_ramp70)<-c("Year", "Scenario", "Catch")
+#Add second ramp runs
+acl_gg_ramp602 <-reshape2::melt(data = reb[[8]]$acl_matrix[,2:ncol(reb[[8]]$acl_matrix)])
+acl_gg_ramp602$Var2 <- paste0(acl_gg_ramp602$Var2,"ramp2")
+colnames(acl_gg_ramp602)<-c("Year", "Scenario", "Catch")
+acl_gg_ramp702 <-reshape2::melt(data = reb[[7]]$acl_matrix[,2:ncol(reb[[7]]$acl_matrix)])
+acl_gg_ramp702$Var2 <- paste0(acl_gg_ramp702$Var2,"ramp2")
+colnames(acl_gg_ramp702)<-c("Year", "Scenario", "Catch")
 #Combine datasets and reorder scenarios
 acl_all <- rbind(acl_gg,
                    acl_gg_extra[acl_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),],
-                   acl_gg_ramp60[acl_gg_ramp60$Scenario %in% c("SPR= .600      ramp"),],
-                   acl_gg_ramp70[acl_gg_ramp70$Scenario %in% c("SPR= .700      ramp"),])
+                   acl_gg_ramp60[acl_gg_ramp60$Scenario %in% c("SPR= .600      ramp1"),],
+                   acl_gg_ramp602[acl_gg_ramp602$Scenario %in% c("SPR= .600      ramp2"),],
+                   acl_gg_ramp70[acl_gg_ramp70$Scenario %in% c("SPR= .700      ramp1"),],
+                   acl_gg_ramp702[acl_gg_ramp702$Scenario %in% c("SPR= .700      ramp2"),])
 acl_all[,"Year"] = rep(reb[[1]]$acl_matrix[,1], nrow(acl_all)/200)
 acl_all$Scenario <- factor(acl_all$Scenario, levels = c("SPR= .500      ",
                                                             "SPR= .550      ",
                                                             "SPR= .600      ",
-                                                            "SPR= .600      ramp",
+                                                            "SPR= .600      ramp1",
+                                                            "SPR= .600      ramp2",
                                                             "SPR= .650      ",
                                                             "SPR= .700      ",
-                                                            "SPR= .700      ramp",
+                                                            "SPR= .700      ramp1",
+                                                            "SPR= .700      ramp2",
                                                             "SPR= .800      ",
                                                             "SPR= .900      ",
                                                             "Yr=Tmid        ",
                                                             "F=0            ",
                                                             "40-10 rule     ",
                                                             "ABC Rule       "))
+head(acast(acl_all, Scenario~Year, value.var = "Catch")[,1:10],10) #test to ensure ramps are different
+
 #Plot
 find = which(acl_all$Year > 2022 & acl_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot2::ggplot(acl_all[find,], aes(x = Year, y = Catch, color = Scenario)) + 
@@ -442,32 +470,45 @@ colnames(sb_gg_extra)<-c("Year", "Scenario", "SB")
 sb_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$ssb_matrix[,2:ncol(reb[[4]]$ssb_matrix)]) #no cap run
 sb_gg_extra[201:400,] <- sb_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
 #############
-#Add ramp runs
+#Add first ramp runs
 sb_gg_ramp60 <-reshape2::melt(data = reb[[6]]$ssb_matrix[,2:ncol(reb[[6]]$ssb_matrix)])
-sb_gg_ramp60$Var2 <- paste0(sb_gg_ramp60$Var2,"ramp")
+sb_gg_ramp60$Var2 <- paste0(sb_gg_ramp60$Var2,"ramp1")
 colnames(sb_gg_ramp60)<-c("Year", "Scenario", "SB")
 sb_gg_ramp70 <-reshape2::melt(data = reb[[5]]$ssb_matrix[,2:ncol(reb[[5]]$ssb_matrix)])
-sb_gg_ramp70$Var2 <- paste0(sb_gg_ramp70$Var2,"ramp")
+sb_gg_ramp70$Var2 <- paste0(sb_gg_ramp70$Var2,"ramp1")
 colnames(sb_gg_ramp70)<-c("Year", "Scenario", "SB")
+#Add second ramp runs
+sb_gg_ramp602 <-reshape2::melt(data = reb[[8]]$ssb_matrix[,2:ncol(reb[[8]]$ssb_matrix)])
+sb_gg_ramp602$Var2 <- paste0(sb_gg_ramp602$Var2,"ramp2")
+colnames(sb_gg_ramp602)<-c("Year", "Scenario", "SB")
+sb_gg_ramp702 <-reshape2::melt(data = reb[[7]]$ssb_matrix[,2:ncol(reb[[7]]$ssb_matrix)])
+sb_gg_ramp702$Var2 <- paste0(sb_gg_ramp702$Var2,"ramp2")
+colnames(sb_gg_ramp702)<-c("Year", "Scenario", "SB")
 #Combine datasets and reorder scenarios
 sb_all <- rbind(sb_gg,
                  sb_gg_extra[sb_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),],
-                 sb_gg_ramp60[sb_gg_ramp60$Scenario %in% c("SPR= .600      ramp"),],
-                 sb_gg_ramp70[sb_gg_ramp70$Scenario %in% c("SPR= .700      ramp"),])
+                 sb_gg_ramp60[sb_gg_ramp60$Scenario %in% c("SPR= .600      ramp1"),],
+                 sb_gg_ramp602[sb_gg_ramp602$Scenario %in% c("SPR= .600      ramp2"),],
+                 sb_gg_ramp70[sb_gg_ramp70$Scenario %in% c("SPR= .700      ramp1"),],
+                 sb_gg_ramp702[sb_gg_ramp702$Scenario %in% c("SPR= .700      ramp2"),])
 sb_all[,"Year"] = rep(reb[[1]]$ssb_matrix[,1], nrow(sb_all)/200)
 sb_all$Scenario <- factor(sb_all$Scenario, levels = c("SPR= .500      ",
                                                         "SPR= .550      ",
                                                         "SPR= .600      ",
-                                                        "SPR= .600      ramp",
+                                                        "SPR= .600      ramp1",
+                                                        "SPR= .600      ramp2",
                                                         "SPR= .650      ",
                                                         "SPR= .700      ",
-                                                        "SPR= .700      ramp",
+                                                        "SPR= .700      ramp1",
+                                                        "SPR= .700      ramp2",
                                                         "SPR= .800      ",
                                                         "SPR= .900      ",
                                                         "Yr=Tmid        ",
                                                         "F=0            ",
                                                         "40-10 rule     ",
                                                         "ABC Rule       "))
+head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure ramps are different
+
 #Plot
 find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot(sb_all[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) + 
@@ -491,32 +532,45 @@ colnames(sb_gg_extra)<-c("Year", "Scenario", "SB")
 sb_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$relativeb_matrix[,2:ncol(reb[[4]]$relativeb_matrix)]) #no cap run
 sb_gg_extra[201:400,] <- sb_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
 #############
-#Add ramp runs
+#Add first ramp runs
 sb_gg_ramp60 <-reshape2::melt(data = reb[[6]]$relativeb_matrix[,2:ncol(reb[[6]]$relativeb_matrix)])
-sb_gg_ramp60$Var2 <- paste0(sb_gg_ramp60$Var2,"ramp")
+sb_gg_ramp60$Var2 <- paste0(sb_gg_ramp60$Var2,"ramp1")
 colnames(sb_gg_ramp60)<-c("Year", "Scenario", "SB")
 sb_gg_ramp70 <-reshape2::melt(data = reb[[5]]$relativeb_matrix[,2:ncol(reb[[5]]$relativeb_matrix)])
-sb_gg_ramp70$Var2 <- paste0(sb_gg_ramp70$Var2,"ramp")
+sb_gg_ramp70$Var2 <- paste0(sb_gg_ramp70$Var2,"ramp1")
 colnames(sb_gg_ramp70)<-c("Year", "Scenario", "SB")
+#Add second ramp runs
+sb_gg_ramp602 <-reshape2::melt(data = reb[[8]]$relativeb_matrix[,2:ncol(reb[[8]]$relativeb_matrix)])
+sb_gg_ramp602$Var2 <- paste0(sb_gg_ramp602$Var2,"ramp2")
+colnames(sb_gg_ramp602)<-c("Year", "Scenario", "SB")
+sb_gg_ramp702 <-reshape2::melt(data = reb[[7]]$relativeb_matrix[,2:ncol(reb[[7]]$relativeb_matrix)])
+sb_gg_ramp702$Var2 <- paste0(sb_gg_ramp702$Var2,"ramp2")
+colnames(sb_gg_ramp702)<-c("Year", "Scenario", "SB")
 #Combine datasets and reorder scenarios
 sb_all <- rbind(sb_gg,
                 sb_gg_extra[sb_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),],
-                sb_gg_ramp60[sb_gg_ramp60$Scenario %in% c("SPR= .600      ramp"),],
-                sb_gg_ramp70[sb_gg_ramp70$Scenario %in% c("SPR= .700      ramp"),])
+                sb_gg_ramp60[sb_gg_ramp60$Scenario %in% c("SPR= .600      ramp1"),],
+                sb_gg_ramp602[sb_gg_ramp602$Scenario %in% c("SPR= .600      ramp2"),],
+                sb_gg_ramp70[sb_gg_ramp70$Scenario %in% c("SPR= .700      ramp1"),],
+                sb_gg_ramp702[sb_gg_ramp702$Scenario %in% c("SPR= .700      ramp2"),])
 sb_all[,"Year"] = rep(reb[[1]]$relativeb_matrix[,1], nrow(sb_all)/200)
 sb_all$Scenario <- factor(sb_all$Scenario, levels = c("SPR= .500      ",
                                                       "SPR= .550      ",
                                                       "SPR= .600      ",
-                                                      "SPR= .600      ramp",
+                                                      "SPR= .600      ramp1",
+                                                      "SPR= .600      ramp2",
                                                       "SPR= .650      ",
                                                       "SPR= .700      ",
-                                                      "SPR= .700      ramp",
+                                                      "SPR= .700      ramp1",
+                                                      "SPR= .700      ramp2",
                                                       "SPR= .800      ",
                                                       "SPR= .900      ",
                                                       "Yr=Tmid        ",
                                                       "F=0            ",
                                                       "40-10 rule     ",
                                                       "ABC Rule       "))
+head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure ramps are different
+
 #Plot
 find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot(sb_all[find,], aes(x = Year, y = SB, color = Scenario)) + 

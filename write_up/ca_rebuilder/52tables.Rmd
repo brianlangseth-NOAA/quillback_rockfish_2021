@@ -7,9 +7,9 @@
 
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
-quants = c(round(reb[[1]]$sb0,2)*frac_fem,
-		   round(reb[[1]]$sb40, 2)*frac_fem,
-		   round(reb[[1]]$sb_ass_year, 2)*frac_fem,
+quants = c(round(reb[[1]]$sb0 * frac_fem, 2),
+		   round(reb[[1]]$sb40 * frac_fem, 2),
+		   round(reb[[1]]$sb_ass_year * frac_fem, 2),
 		   reb[[1]]$recovery_spec[4],
 		   reb[[1]]$recovery_spec[3],
 		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4],
@@ -18,7 +18,7 @@ quants = c(round(reb[[1]]$sb0,2)*frac_fem,
 		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4],
 		   "TBD",
 		   "TBD",
-		   reb[[1]]$spr_matrix[[1,2]])
+		   round(reb[[1]]$spr_matrix[[1,2]],2))
 row_names = c("SB0 (millions of eggs)",
               "SB40 (millions of eggs)",
               "SB2021 (millions of eggs)",
@@ -50,7 +50,7 @@ table_format(x = out,
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
 quants = rbind(round(reb[[1]]$acl_matrix[1:4,-1],2),
-		   reb[[1]]$rebuild_quants$SPR,
+		   round(reb[[1]]$rebuild_quants$SPR,2),
 		   reb[[1]]$rebuild_quants$Ttarget,
 		   rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
 		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
@@ -62,7 +62,7 @@ row_names = c("2021 Assumed Removals (mt)",
 
 #Set the SPR = 0.5 run to be from the no-ABC-cap run because it matters
 quants[,1] = c(round(reb[[2]]$acl_matrix[1:4,-1][,1],2),
-               reb[[2]]$rebuild_quants$SPR[1],
+               round(reb[[2]]$rebuild_quants$SPR[1],2),
                reb[[2]]$rebuild_quants$Ttarget[1],
                reb[[2]]$tmax,
                reb[[2]]$rebuild_quants$Prebuild[1]) # Prob by Tmax
@@ -85,14 +85,14 @@ extra[,1] = c(round(reb[[4]]$acl_matrix[1:4,-1][,2],2),
                reb[[4]]$rebuild_quants$Prebuild[2]) # Prob by Tmax
 
 out = cbind(row_names, quants[,1], extra[,1], quants[,2], extra[,2], quants[,-c(1,2)])
-col_names = c("", colnames(quants)[1], 
+col_names = c("Quantity", colnames(quants)[1], 
               colnames(extra)[1], 
               colnames(quants)[2], 
               colnames(extra)[2], 
               colnames(quants)[-c(1,2)])
 col_names[9] = "Yr= T\\textsubscript{MID}"
 table_format(x = out,
-             caption = "Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value",
+             caption = "Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021-22. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.",
              label = "reb-options",
              align = 'l',
              landscape = TRUE,
@@ -106,37 +106,60 @@ table_format(x = out,
 ```{r, results = 'asis'}
 # Rebuilding Reference Points Table
 quants = rbind(round(reb[[1]]$acl_matrix[1:5,-1],2),
-		   reb[[1]]$rebuild_quants$SPR,
+		   round(reb[[1]]$spr_matrix[3:4,-1],2), #Add SPR for 2023 and 2024
+		   round(reb[[1]]$rebuild_quants$SPR,2),
 		   reb[[1]]$rebuild_quants$Ttarget,
 		   rep(reb[[1]]$tmax, length(reb[[1]]$rebuild_quants$Ttarget)),
 		   reb[[1]]$rebuild_quants$Prebuild) # Prob by Tmax
 row_names = c("2021 Assumed Removals (mt)", 
 			  "2022 Assumed Removals (mt)",
 			  "2023 Fixed Removals (mt), (2023 ACL for non-ramp)", "2024 Fixed Removals (mt), (2024 ACL for non-ramp)", 
-			  "2025 ACL (mt)", "SPR in 2025", "T\\textsubscript{TARGET}", 
+			  "2025 ACL (mt)", "SPR in 2023", "SPR in 2024", "SPR in 2025", "T\\textsubscript{TARGET}", 
 			  "T\\textsubscript{MAX}",
 			  "Probability of recovery by T\\textsubscript{MAX} = 2066")
 
 #Add ramp down policy for SPR 0.7
 ramp70 = rbind(round(reb[[5]]$acl_matrix[1:5,-1],2),
-	   reb[[5]]$rebuild_quants$SPR,
+	   round(reb[[5]]$spr_matrix[3:4,-1],2), #Add SPR for 2023 and 2024
+	   round(reb[[5]]$rebuild_quants$SPR,2),
 	   reb[[5]]$rebuild_quants$Ttarget,
 	   rep(2066, length(reb[[5]]$rebuild_quants$Ttarget)), #Set as 2066 because its for policy with 0 catch starting in 2023
 	   reb[[5]]$rebuild_quants$Prebuild) # Prob by Tmax for ramp policy (2067)
-ramp70[9,] = reb[[5]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
+ramp70[11,] = reb[[5]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
 
 #Add ramp down policy for SPR 0.6
 ramp60 = rbind(round(reb[[6]]$acl_matrix[1:5,-1],2),
-	   reb[[6]]$rebuild_quants$SPR,
+	   round(reb[[6]]$spr_matrix[3:4,-1],2), #Add SPR for 2023 and 2024
+	   round(reb[[6]]$rebuild_quants$SPR,2),
 	   reb[[6]]$rebuild_quants$Ttarget,
 	   rep(2066, length(reb[[6]]$rebuild_quants$Ttarget)), #
 	   reb[[6]]$rebuild_quants$Prebuild) # Prob by Tmax
-ramp60[9,] = reb[[6]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
+ramp60[11,] = reb[[6]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
 
-out = cbind(row_names, ramp60[,3], quants[,2], ramp70[,5],  quants[,3])
-col_names = c("", "Ramp SPR = .600", "SPR = .600", "Ramp SPR = .700", "SPR = .700") 
-table_format(x = out[-8,],
-             caption = "Results of rebuilding alternatives for ramp-down strategies (ramp) based on applying alternative SPR targets starting in 2025 for 50 percent probability of recovery based on assumed removals for 2021-22 and fixed removals in 2023-24. Non-ramp strategies are copied from Table \\ref{tab:reb-options} and included for comparison. Catches in 2023-2024 for non-ramp strategies were estimated based on the specified SPR value, and were not fixed",
+
+#Add ramp down policy for SPR 0.7 where catch is set above ABC
+ramp702 = rbind(round(reb[[7]]$acl_matrix[1:5,-1],2),
+     round(reb[[7]]$spr_matrix[3:4,-1],2), #Add SPR for 2023 and 2024           
+	   round(reb[[7]]$rebuild_quants$SPR,2),
+	   reb[[7]]$rebuild_quants$Ttarget,
+	   rep(2066, length(reb[[7]]$rebuild_quants$Ttarget)), #Set as 2066 because its for policy with 0 catch starting in 2023
+	   reb[[7]]$rebuild_quants$Prebuild) # Prob by Tmax for ramp policy (2067)
+ramp702[11,] = reb[[7]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
+
+#Add ramp down policy for SPR 0.6 where catch is set above ABC
+ramp602 = rbind(round(reb[[8]]$acl_matrix[1:5,-1],2),
+	   round(reb[[8]]$spr_matrix[3:4,-1],2), #Add SPR for 2023 and 2024
+	   round(reb[[8]]$rebuild_quants$SPR,2),
+	   reb[[8]]$rebuild_quants$Ttarget,
+	   rep(2066, length(reb[[8]]$rebuild_quants$Ttarget)), #Set as 2066 because its for policy with 0 catch starting in 2023
+	   reb[[8]]$rebuild_quants$Prebuild) # Prob by Tmax
+ramp602[11,] = reb[[8]]$prob_matrix[46,-1] #Set Prob by non-ramp Tmax (2066)
+
+
+out = cbind(row_names, ramp60[,3], ramp602[,3], quants[,2], ramp70[,5], ramp702[,5], quants[,3])
+col_names = c("Quantity", "Ramp1 SPR = .600", "Ramp2 SPR = .600",  "SPR = .600", "Ramp1 SPR = .700", "Ramp2 SPR = .700", "SPR = .700") 
+table_format(x = out[-10,],
+             caption = "Results of rebuilding alternatives for ramp-down strategy approaches (ramp1 and ramp2) based on applying alternative SPR targets starting in 2025 for 50 percent probability of recovery based on assumed removals for 2021-22 and fixed removals in 2023-24. Non-ramp strategies are copied from Table \\ref{tab:reb-options} and included for comparison. Catches (labeled ACLs) in 2023-2024 for non-ramp strategies were estimated based on the specified SPR value, and were not fixed.",
              label = "reb-ramp-options",
              align = 'l',
              landscape = TRUE,
@@ -161,21 +184,30 @@ out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 #Add ramp policies for SPR 0.6 and 0.7
 ramp60 = as.data.frame(round(reb[[6]]$prob_matrix[1:46, ],3))
 ramp70 = as.data.frame(round(reb[[5]]$prob_matrix[1:46, ],3))
-out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
-out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+out4 = as.data.frame(append(out3, list("Ramp1 SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp1 SPR= .700" = ramp70[,6]), after = 7))
 
-table_format(x = out5,
-             caption = "Probability of recovery by year for rebuilding strategies, including ramp strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year",
+#Add ramp policies for SPR 0.6 and 0.7 where catch was set to above the ABC
+ramp602 = as.data.frame(round(reb[[8]]$prob_matrix[1:46, ],3))
+ramp702 = as.data.frame(round(reb[[7]]$prob_matrix[1:46, ],3))
+out6 = as.data.frame(append(out5, list("Ramp2 SPR= .600" = ramp602[,4]), after = 5))
+out7 = as.data.frame(append(out6, list("Ramp2 SPR= .700" = ramp702[,6]), after = 9))
+
+table_format(x = out7,
+             caption = "Probability of recovery by year for rebuilding strategies, including ramp strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.",
              label = "prob-mat",
              align = 'l',
              digits = 3,
+             landscape = TRUE,
              col_names = c(colnames(out)[1:2], 
                            "SPR= .550", 
                            colnames(out)[3], 
-                           "Ramp SPR= .600", 
+                           "Ramp1 SPR= .600",
+                           "Ramp2 SPR= .600",
                            "SPR= .650", 
                            colnames(out)[4],
-                           "Ramp SPR= .700",
+                           "Ramp1 SPR= .700",
+                           "Ramp2 SPR= .700",
                            colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
@@ -195,21 +227,30 @@ out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 #Add ramp policies for SPR 0.6 and 0.7
 ramp60 = as.data.frame(round(reb[[6]]$acl_matrix[1:46, ],2))
 ramp70 = as.data.frame(round(reb[[5]]$acl_matrix[1:46, ],2))
-out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
-out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+out4 = as.data.frame(append(out3, list("Ramp1 SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp1 SPR= .700" = ramp70[,6]), after = 7))
 
-table_format(x = out5,
-             caption = "Catches (mt) by year for rebuilding strategies, including ramp strategies. Catches in 2021-2022 for all strategies were set at values recommended by the Groundfish Management Team. Catches in 2023-2024 for ramp strategies were fixed to approximate a linear ramp in catch for 2023-2025.",
+#Add ramp policies for SPR 0.6 and 0.7 where catch was set to above the ABC
+ramp602 = as.data.frame(round(reb[[8]]$acl_matrix[1:46, ],2))
+ramp702 = as.data.frame(round(reb[[7]]$acl_matrix[1:46, ],2))
+out6 = as.data.frame(append(out5, list("Ramp2 SPR= .600" = ramp602[,4]), after = 5))
+out7 = as.data.frame(append(out6, list("Ramp2 SPR= .700" = ramp702[,6]), after = 9))
+
+table_format(x = out7,
+             caption = "Catches (mt) by year for rebuilding strategies, including ramp strategies. Catches in 2021-2022 for all strategies were set at values recommended by the Groundfish Management Team. Catches in 2023-2024 for the ramp strategies were fixed as described in the text.",
              label = "acl-mat",
              align = 'l',
              digits = 3,
+             landscape = TRUE,
              col_names = c(colnames(out)[1:2], 
                            "SPR= .550", 
                            colnames(out)[3], 
-                           "Ramp SPR= .600", 
+                           "Ramp1 SPR= .600",
+                           "Ramp2 SPR= .600",
                            "SPR= .650", 
                            colnames(out)[4],
-                           "Ramp SPR= .700",
+                           "Ramp1 SPR= .700",
+                           "Ramp2 SPR= .700",
                            colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
@@ -232,26 +273,36 @@ out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 #Add ramp policies for SPR 0.6 and 0.7
 ramp60 = as.data.frame(round(reb[[6]]$ofl_matrix[1:46, ],2))
 ramp70 = as.data.frame(round(reb[[5]]$ofl_matrix[1:46, ],2))
-out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
-out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+out4 = as.data.frame(append(out3, list("Ramp1 SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp1 SPR= .700" = ramp70[,6]), after = 7))
+
+#Add ramp policies for SPR 0.6 and 0.7 where catch was set to above the ABC
+ramp602 = as.data.frame(round(reb[[8]]$ofl_matrix[1:46, ],2))
+ramp702 = as.data.frame(round(reb[[7]]$ofl_matrix[1:46, ],2))
+out6 = as.data.frame(append(out5, list("Ramp2 SPR= .600" = ramp602[,4]), after = 5))
+out7 = as.data.frame(append(out6, list("Ramp2 SPR= .700" = ramp702[,6]), after = 9))
 
 #And need to divide ofls (which are actually the ABC) by the buffers (other than the SPR = 0.5 strategy, and first two years across runs)
+#Cap buffers to the cat3 buffer
 buffer <- PEPtools::get_buffer(2021:reb[[1]]$tmax,1,0.45)
 buffer[which(buffer[,2]<0.778),2] = 0.778
-out5[,-c(1:2)] = round(out5[,-c(1:2)]/buffer[,2],2)
+out7[,-c(1:2)] = round(out7[,-c(1:2)]/buffer[,2],2)
 
-table_format(x = out5,
-             caption = "OFLs (mt) by year for rebuilding strategies, including ramp strategies",
+table_format(x = out7,
+             caption = "OFLs (mt) by year for rebuilding strategies, including ramp strategies.",
              label = "ofl-mat",
              align = 'l',
              digits = 3,
+             landscape = TRUE,
              col_names = c(colnames(out)[1:2], 
                            "SPR= .550", 
                            colnames(out)[3], 
-                           "Ramp SPR= .600", 
+                           "Ramp1 SPR= .600",
+                           "Ramp2 SPR= .600",
                            "SPR= .650", 
                            colnames(out)[4],
-                           "Ramp SPR= .700",
+                           "Ramp1 SPR= .700",
+                           "Ramp2 SPR= .700",
                            colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```
@@ -271,21 +322,31 @@ out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 #Add ramp policies for SPR 0.6 and 0.7
 ramp60 = as.data.frame(round(reb[[6]]$relativeb_matrix[1:46, ],2))
 ramp70 = as.data.frame(round(reb[[5]]$relativeb_matrix[1:46, ],2))
-out4 = as.data.frame(append(out3, list("Ramp SPR= .600" = ramp60[,4]), after = 4))
-out5 = as.data.frame(append(out4, list("Ramp SPR= .700" = ramp70[,6]), after = 7))
+out4 = as.data.frame(append(out3, list("Ramp1 SPR= .600" = ramp60[,4]), after = 4))
+out5 = as.data.frame(append(out4, list("Ramp1 SPR= .700" = ramp70[,6]), after = 7))
 
-table_format(x = out5,
-             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies, including ramp strategies",
+#Add ramp policies for SPR 0.6 and 0.7 where catch was set to above the ABC
+ramp602 = as.data.frame(round(reb[[8]]$relativeb_matrix[1:46, ],2))
+ramp702 = as.data.frame(round(reb[[7]]$relativeb_matrix[1:46, ],2))
+out6 = as.data.frame(append(out5, list("Ramp2 SPR= .600" = ramp602[,4]), after = 5))
+out7 = as.data.frame(append(out6, list("Ramp2 SPR= .700" = ramp702[,6]), after = 9))
+
+
+table_format(x = out7,
+             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies, including ramp strategies.",
              label = "rel-ssb-mat",
              align = 'l',
              digits = 3,
+             landscape = TRUE,
              col_names = c(colnames(out)[1:2], 
                            "SPR= .550", 
                            colnames(out)[3], 
-                           "Ramp SPR= .600", 
+                           "Ramp1 SPR= .600",
+                           "Ramp2 SPR= .600",
                            "SPR= .650", 
                            colnames(out)[4],
-                           "Ramp SPR= .700",
+                           "Ramp1 SPR= .700",
+                           "Ramp2 SPR= .700",
                            colnames(out)[-c(1:4)]),
              escape = FALSE)
 ```

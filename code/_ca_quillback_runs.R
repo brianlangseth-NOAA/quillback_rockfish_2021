@@ -1657,7 +1657,7 @@ base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #Change number of years with prespecified catch to 4
 #Change First year of rebuilding period to be 2025
 #Change year for Catches/F to be 2025
-#Set catch in 2024 to 1.52 which is just less than midway between the fixed catch 
+#Set catch in 2024 to 1.52 which is just more than midway between the fixed catch 
 #in 2023 (1.84) and the SPR0.7 catch in 2025 (1.18) from 1012_ramp_2023. Set just
 #less than to accommodate slight increase caused by not setting 2024 catch to SPR0.7
 #Apply to 1013_ramp0.7
@@ -1672,7 +1672,7 @@ base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #Change number of years with prespecified catch to 4
 #Change First year of rebuilding period to be 2025
 #Change year for Catches/F to be 2025
-#Set catch in 2024 to 1.8 which is midway between the fixed catch 
+#Set catch in 2024 to 1.8 which is just less than midway between the fixed catch 
 #in 2023 (1.84) and the SPR0.6 catch in 2025 (1.77) from 1012_ramp_2023.
 #Apply to 1013_ramp0.6
 
@@ -1685,6 +1685,19 @@ base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 #Apply to 1013_ramp0.55
 
 
+#####
+#Additional ramp policies
+#####
+
+#Copy 1013_ramp0.6
+#Set catch in 2023 and 2024 to 2.05mt. Per Gretchen Hanshew and Owen, 
+#there does not have to be a linear ramp. Use for SPR = 0.6 policy.
+#Apply to 1014_ramp0.6
+
+#Copy 1013_ramp0.7_2
+#Set catch in 2023 and 2024 to 2.05mt and 2.00mt. Per Gretchen Hanshew and Owen, 
+#there does not have to be a linear ramp. Use for SPR = 0.7 policy.
+#Apply to 1014_ramp0.7
 
 
 

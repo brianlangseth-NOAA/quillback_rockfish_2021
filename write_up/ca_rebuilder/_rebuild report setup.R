@@ -39,7 +39,8 @@ run <- c(
   "1011b_no_abc_max",
   "1013_ramp0.7_2", #ramp applied and ensured to be more of a ramp for 2024-2025 than 2023-2024, only use SPR 0.7 policy
   "1013_ramp0.6", #ramp applied, only use SPR 0.6 policy
-  "1013_ramp0.55") #ramp applied, only use SPR 0.55 policy
+  "1014_ramp0.7", #ramp applied starting above ABC, only use SPR 0.7 policy
+  "1014_ramp0.6") #ramp applied starting above ABC, only use SPR 0.6 policy
 
 #Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved
 reb <- list()
