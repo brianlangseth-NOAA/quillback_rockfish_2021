@@ -1578,6 +1578,10 @@ model = "10_0_0_postNov_base"
 base.1000 = SS_output(file.path(wd, model),covar=TRUE)
 SS_plots(base.1000)
 
+r4ss::TSCplot(base.1000,
+              makePNG = file.path(wd, model, "plots", "TSC_plots.png"),
+              ylimDepl = c(0,1.3))
+
 #Now run M states with forecasted catches (ABC values) from base.910
 #Copy model 901b and 902b and update forecast file with 2022 catches 
 #and catches in 2023 to 2032 allocated based on same allocation for 

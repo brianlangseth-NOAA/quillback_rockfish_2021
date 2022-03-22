@@ -1407,6 +1407,10 @@ SS_plots(base.810, forecastplot = TRUE)
 SSunavailableSpawningOutput(base.810, plot=TRUE, print = TRUE, plotdir = file.path(wd, model, "plots"))
 SSplotSPR(base.810,subplots=4,print=TRUE)
 
+r4ss::TSCplot(base.810,
+              makePNG = file.path(wd, model, "plots", "TSC_plots.png"),
+              ylimDepl = c(0,1.3))
+
 #Now run R0 states with forecasted catches (ABC values) from base.810
 #Copy model 804b and 805b (to 811 and 812) and update forecast file with catches
 #allocated based on new values

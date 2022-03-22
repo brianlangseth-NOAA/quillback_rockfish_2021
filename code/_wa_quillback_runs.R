@@ -1549,7 +1549,9 @@ SS_plots(base.1110, forecastplot = TRUE)
 #Use base.1000 model results for the write up, but with the projection table from base.1110
 #Use base.1000 model for model files and r4ss plots
 
-
+r4ss::TSCplot(base.1110,
+              makePNG = file.path(wd, model, "plots", "TSC_plots.png"),
+              ylimDepl = c(0,1.3))
 
 
 
