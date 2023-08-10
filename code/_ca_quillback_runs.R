@@ -1705,9 +1705,67 @@ base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 
 
 
+######################### 2023 Rebuilding Updates ##################################  
 
+#For the 2023 cycle, and update to the CA rebuilding analysis was requested.
+#Updated catches (known) for estimated (at the time) catches in 2021 and 2022 were provided by the GMT
+#New estimates for 2023 and 2024 were also provided.
+#This requires updating the base model, as well as the states of nature, and then rerunning the rebuilding analysis. 
 
+##
+#Update base model ---------------------------------------------
+##
 
+#Copy model 1000 and change catches in 2021-2024 to reflect those provided by GMT
+model = "11_0_0_2023"
+old_model = "10_0_0_postNov_base"
+
+mod <- SS_read(file.path(wd,old_model))
+
+#Change forecast years to be 2017-2019
+mod$fore$Fcast_years[c(3,4)] = c(2017, 2019) 
+
+#Make changes to the model with it now being 2023
+mod$fore$Nforecastyrs <- 14
+mod$fore$Flimitfraction_m <- data.frame("Year" = 2021:2034,
+                                        "Fraction" = c(1,1,PEPtools::get_buffer(2023:2034, sigma = 1, pstar = 0.45)[,2]))
+mod$fore$FirstYear_for_caps_and_allocations <- 2025
+
+tot_catch <- c(13.5, 11.9, 2.05, 2.32)
+rec_prop <- 0.761 #proportion of catch coming from rec (as used in 10_0_0_postNov_base: average from 2017-2019 catches)
+mod$fore$ForeCatch <- data.frame("Year" = rep(2021:2024, each = 2),
+                                 "Seas" = 1,
+                                 "Fleet" = c(1,2),
+                                 "Catch or F" = c(rbind(tot_catch*(1-rec_prop), tot_catch*rec_prop)))
+
+SS_write(mod, dir = file.path(wd, "rebuilder", model), overwrite = TRUE)
+file.copy(from = file.path(wd, old_model, "run_ss.bat"), to = file.path(wd, "rebuilder", model, "run_ss.bat"))
+
+##
+#Now update states of nature ---------------------------------------------
+##
+
+#Copy model 1001 and 1002 and update forecast file with 2022-2025 catches 
+#and catches in 2026 to 2034 from model 11_0_0 using same allocation for fleets as 
+#originally done for 2021 and 2022 (rec 76.1%)
+
+base.1100 <- SS_output(file.path(wd, model))
+fore_loc = grep("ForeCatch",base.1100$derived_quants$Label)
+baseABC = data.frame("Year" = rep(2021:2034, each = 2), "Seas" = 1, "Fleet" = c(1,2), 
+                     "Catch or F" = c(rbind(base.1100$derived_quants[fore_loc,"Value"]*(1-rec_prop),
+                                       base.1100$derived_quants[fore_loc,"Value"]*rec_prop)))
+
+#High state of nature
+mod_high <- SS_read(file.path(wd, "10_0_1_highState_M_postNov"))
+mod_high$fore$ForeCatch <- baseABC
+SS_write(mod_high, dir = file.path(wd, "11_0_1_highState_2023"), overwrite = TRUE)
+file.copy(from = file.path(wd, model, "run_ss.bat"), to = file.path(wd, "11_0_1_highState_2023", "run_ss.bat"))
+
+#Low state of nature
+mod_low <- SS_read(file.path(wd, "10_0_2_lowState_M_postNov"))
+mod_high$fore$ForeCatch <- baseABC
+SS_write(mod_high, dir = file.path(wd, "11_0_2_lowState_2023"), overwrite = TRUE)
+file.copy(from = file.path(wd, model, "run_ss.bat"), to = file.path(wd, "11_0_2_lowState_2023", "run_ss.bat"))
 
 
 
