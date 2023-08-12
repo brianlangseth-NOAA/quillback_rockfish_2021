@@ -38,6 +38,7 @@ rebuild_dir = file.path(dir, "rebuilder")
 # make a table of the 9 states of nature with information about each one
 statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
 st_dir = file.path(rebuild_dir, "states_of_nature_910") 
+st_dir = file.path(dir, "states_of_nature_1100") 
 n <- 1
 for(iM in 1:length(dir(st_dir))){
   mydir <- file.path(st_dir, dir(st_dir)[iM])

@@ -1705,19 +1705,24 @@ base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 
 
 
+############################################################################
+
 ######################### 2023 Rebuilding Updates ##################################  
 
-#For the 2023 cycle, and update to the CA rebuilding analysis was requested.
+############################################################################
+
+#For the 2023 cycle, an update to the CA rebuilding analysis was requested.
 #Updated catches (known) for estimated (at the time) catches in 2021 and 2022 were provided by the GMT
 #New estimates for 2023 and 2024 were also provided.
-#This requires updating the base model, as well as the states of nature, and then rerunning the rebuilding analysis. 
+#This requires updating the base model, as well as the states of nature, and then rerunning the rebuilding analysis,
+#which for this time around was based on the December 2021 exe. 
 
 ##
 #Update base model ---------------------------------------------
 ##
 
 #Copy model 1000 and change catches in 2021-2024 to reflect those provided by GMT
-model = "11_0_0_2023"
+model = "11_0_0_2023update"
 old_model = "10_0_0_postNov_base"
 
 mod <- SS_read(file.path(wd,old_model))
@@ -1726,11 +1731,16 @@ mod <- SS_read(file.path(wd,old_model))
 mod$fore$Fcast_years[c(3,4)] = c(2017, 2019) 
 
 #Make changes to the model with it now being 2023
+
+#Talked with Owen and he said the buffer should be such that 2025 is year 4 from the assessment, so 0.857, thus
+#apply get_buffer starting in 2021. For buffer in 2023-2024, because catch there is entered, use buffer of 1.0
 mod$fore$Nforecastyrs <- 14
 mod$fore$Flimitfraction_m <- data.frame("Year" = 2021:2034,
-                                        "Fraction" = c(1,1,PEPtools::get_buffer(2023:2034, sigma = 1, pstar = 0.45)[,2]))
+                                        "Fraction" = c(PEPtools::get_buffer(2021:2034, sigma = 1, pstar = 0.45)[,2]))
+mod$fore$Flimitfraction_m[mod$fore$Flimitfraction_m$Year %in% c(2021:2024),"Fraction"] = 1.000
 mod$fore$FirstYear_for_caps_and_allocations <- 2025
 
+#Update catches to those provided by the GMT
 tot_catch <- c(13.5, 11.9, 2.05, 2.32)
 rec_prop <- 0.761 #proportion of catch coming from rec (as used in 10_0_0_postNov_base: average from 2017-2019 catches)
 mod$fore$ForeCatch <- data.frame("Year" = rep(2021:2024, each = 2),
@@ -1738,8 +1748,8 @@ mod$fore$ForeCatch <- data.frame("Year" = rep(2021:2024, each = 2),
                                  "Fleet" = c(1,2),
                                  "Catch or F" = c(rbind(tot_catch*(1-rec_prop), tot_catch*rec_prop)))
 
-SS_write(mod, dir = file.path(wd, "rebuilder", model), overwrite = TRUE)
-file.copy(from = file.path(wd, old_model, "run_ss.bat"), to = file.path(wd, "rebuilder", model, "run_ss.bat"))
+SS_write(mod, dir = file.path(wd, model), overwrite = TRUE)
+file.copy(from = file.path(wd, old_model, "run_ss.bat"), to = file.path(wd, model, "run_ss.bat"))
 
 ##
 #Now update states of nature ---------------------------------------------
@@ -1747,7 +1757,7 @@ file.copy(from = file.path(wd, old_model, "run_ss.bat"), to = file.path(wd, "reb
 
 #Copy model 1001 and 1002 and update forecast file with 2022-2025 catches 
 #and catches in 2026 to 2034 from model 11_0_0 using same allocation for fleets as 
-#originally done for 2021 and 2022 (rec 76.1%)
+#originally done for 2021 and 2022 (rec 76.1%) from the 2021 postNov base (model 1000)
 
 base.1100 <- SS_output(file.path(wd, model))
 fore_loc = grep("ForeCatch",base.1100$derived_quants$Label)
@@ -1757,16 +1767,150 @@ baseABC = data.frame("Year" = rep(2021:2034, each = 2), "Seas" = 1, "Fleet" = c(
 
 #High state of nature
 mod_high <- SS_read(file.path(wd, "10_0_1_highState_M_postNov"))
+mod_high$fore$Fcast_years[c(3,4)] = c(2017, 2019) 
+mod_high$fore$Nforecastyrs <- 14
 mod_high$fore$ForeCatch <- baseABC
 SS_write(mod_high, dir = file.path(wd, "11_0_1_highState_2023"), overwrite = TRUE)
 file.copy(from = file.path(wd, model, "run_ss.bat"), to = file.path(wd, "11_0_1_highState_2023", "run_ss.bat"))
 
 #Low state of nature
 mod_low <- SS_read(file.path(wd, "10_0_2_lowState_M_postNov"))
-mod_high$fore$ForeCatch <- baseABC
-SS_write(mod_high, dir = file.path(wd, "11_0_2_lowState_2023"), overwrite = TRUE)
+mod_low$fore$Fcast_years[c(3,4)] = c(2017, 2019) 
+mod_low$fore$Nforecastyrs <- 14
+mod_low$fore$ForeCatch <- baseABC
+SS_write(mod_low, dir = file.path(wd, "11_0_2_lowState_2023"), overwrite = TRUE)
 file.copy(from = file.path(wd, model, "run_ss.bat"), to = file.path(wd, "11_0_2_lowState_2023", "run_ss.bat"))
 
+##
+#Do rebuilding analysis ---------------------------------------------
+##
+
+##
+#Copy model 1100 into 'rebuilder' folder and set up forecast to run rebuilder as in
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+##
+
+mod <- SS_read(file.path(wd, model))
+
+mod$fore$Do_West_Coast_gfish_rebuilder_output <- 1
+mod$fore$Ydecl <- 2025
+mod$fore$Yinit <- -1 #(ednyr + 1 = 2021)
+
+SS_write(mod, dir = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding"), overwrite = TRUE)
+file.copy(from = file.path(wd, model, "run_ss.bat"), 
+          to = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "run_ss.bat"))
+SS_write(mod, dir = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_model_files"), overwrite = TRUE)
 
 
+##
+#Now take rebuild.dat file, and make the following changes.
+##
 
+reb <- readLines(file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "rebuild.dat"),n=-1)
+
+#1. Name of file = 2021_ca_quillback_rebuild.dat
+loc <- grep("#Title", reb)
+reb[loc+1] <- "2023_ca_quillback_rebuild.dat"
+#2. Max number of years = 200
+loc <- grep("# Maximum number of years", reb)
+reb[loc+1] <- 200
+#3. Fecundity-at-age 0 = 0
+loc <- grep("# Fecundity-at-age", reb)
+tmp_val <- strsplit(reb[loc+2], split = " ") 
+tmp_val[[1]][2] <- 0
+new_val <- lapply(tmp_val, FUN = paste, collapse = " ")
+reb[loc+2] <- new_val
+#4. Year for Tmin = 2021 
+#This may need to be updated to 2023 (current year) in which case change the age structure too in C below
+loc <- grep("# Year for Tmin", reb)
+reb[loc+1] <- 2021
+#5. Number of years with prespecified catches = 4
+loc <- grep("# Number of years with pre-specified", reb)
+reb[loc+1] <- 4
+#6. Prespecified catches (updated to postNov values)
+loc <- grep("# catches for years", reb)
+tmp_val <- cbind(2021:2024,tot_catch, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+#7. Number of future recruitments to override = 0
+loc <- grep("# Number of future", reb)
+reb[loc+1] <- 0
+#8. Projection type = 11
+loc <- grep("# Projection type", reb)
+reb[loc+1] <- 11
+#9. Extra lines (the lines for the buffer may or may not be right: can confirm by testing)
+loc <- grep("# Definition of the 40-10 rule", reb)
+new_val <- c("# Sigma Assessment Error (Base, Year1, Slope, MaxSigma)",
+             "1.0 2024 0.075 2.0",
+             "# Pstar",
+             0.45,
+             "# Constrain catches by the ABC (1=yes; 2=no)",
+             1,
+             "# Implementation Error (0=no; 1=lognormal; 2=uniform)",
+             0,
+             "# Parameters of Implementation Error",
+             "1 0.3")
+reb <- append(reb, values = new_val, after = (loc+1))
+#10. Year of catches and F set to 2025
+loc <- grep("# Catches and F", reb)
+reb[loc+1] <- "2025 1 1"
+#11. More extra lines
+loc <- grep("# Fixed catch project", reb)
+new_val <- c("# (48a) Special catch options [switch (1 = Yes, 0 = No), Emsy, distribution, buffer, option to replace]",
+            "0 0.18 1.00 1.00 0 6",
+            "# (48b) B1Target",
+            150000)
+reb <- append(reb, values = new_val, after = (loc+1))
+#12. Year to define projection type, switch to probabilities
+loc <- grep("# Yrs to define", reb)
+reb[loc+1] <- "0.5 0.6 0.7 0.8 0.9"
+#13. Switch years for probability of recovery
+loc <- grep("# Year for probability", reb)
+reb[loc+1] <- "2030 2031 2041 2046 2051 2056 2061 2065"
+
+#In addition to the above make the following changes as was done for NovBB runs (934_StatesOfNature_SeptExe)
+#A: Conduct projections = 1
+loc <- grep("# Conduct projections", reb)
+reb[loc+1] <- 1
+#B: Number of projection vectors = 4
+loc <- grep("# Number of parameter", reb)
+reb[loc+1] <- 4
+#C: Set Age structure at Ydeclare to be from 2021 (copying age structure from line above in rebuild.dat file)
+loc <- grep("# Age-structure at Ydeclare", reb)
+reb[loc+1] <- reb[loc-1]
+#D: Name of multiple parameter vector file = rebuild_m_fixed.SSO
+#Need to update this with new values
+loc <- grep("# File with multiple", reb)
+reb[loc+1] <- "rebuild_m_fixed_2023.SSO"
+#E: Set up for new December .exe by adding sex correction term (for sex = -1 models)
+#I think I divide results by 2 when presenting so keep this as 1 for the moment
+loc <- grep("M and current", reb)
+new_val <- c("# Sex ratio correction", 1)
+reb <- append(reb, values = new_val, after = (loc - 1))
+
+#Move updated rebuild.dat file into "just model files" folder. Save as "updated rebuild file.dat"
+writeLines(as.character(reb), file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_model_files", "updated rebuild file.dat"))
+
+
+##
+#Apply to 1100_2023 folder (copy .exe (December version)). Will need to copy rebuild_m_fixed_2023.SSO. Set that up later)
+##
+dir.create(file.path(wd, "rebuilder", "1100_2023"))
+file.copy(from = file.path(wd,"rebuilder","2021 Rebuilder", "December version", "rebuild.exe"),
+          to = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_model_files", "updated rebuild file.dat"),
+          to = file.path(wd, "rebuilder", "1100_2023", "rebuild.dat"))
+
+
+##
+#Set up rebuilder for alternative states of nature to create rebuild_m_fixed_2023.SSO
+##
+
+make the above changes a function
+
+
+##Things to confirm
+1. Confirm Tmin is 2021. It may be 2023 now. Confirm age structure
+2. Getting error that SSB is twice what is expected. Set sex ratio correction to 0.5 but confirm results are not halved for write up
+3. Confirm that the rebuilder set up for the buffer is accurate in that the buffers are applied but values of 1 are set for 2021-2024
+4. Set up alternative states of nature
