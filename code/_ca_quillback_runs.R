@@ -1803,7 +1803,7 @@ SS_write(mod, dir = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_m
 
 
 ##
-#Now take rebuild.dat file, and make the following changes.
+#Now take rebuild.dat file, and make the following changes so that the rebuild.exe can read it.
 ##
 
 reb <- readLines(file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "rebuild.dat"),n=-1)
@@ -1881,7 +1881,7 @@ reb[loc+1] <- reb[loc-1]
 #D: Name of multiple parameter vector file = rebuild_m_fixed.SSO
 #Need to update this with new values
 loc <- grep("# File with multiple", reb)
-reb[loc+1] <- "rebuild_m_fixed_2023.SSO"
+reb[loc+1] <- "rebuild_m_2023.SSO"
 #E: Set up for new December .exe by adding sex correction term (for sex = -1 models)
 #I think I divide results by 2 when presenting so keep this as 1 for the moment
 loc <- grep("M and current", reb)
@@ -1893,20 +1893,49 @@ writeLines(as.character(reb), file.path(wd, "rebuilder", "11_0_0_2023_rebuilding
 
 
 ##
-#Apply to 1100_2023 folder (copy .exe (December version)). Will need to copy rebuild_m_fixed_2023.SSO. Set that up later)
+#Apply updated rebuild.dat to 1100_2023 folder (copy .exe (December version)). 
+#Will need to set up alternative states of nature starting conditions (rebuild_m_fixed_2023.SSO) before running. 
+#Set that up later
 ##
 dir.create(file.path(wd, "rebuilder", "1100_2023"))
-file.copy(from = file.path(wd,"rebuilder","2021 Rebuilder", "December version", "rebuild.exe"),
+file.copy(from = file.path(wd, "rebuilder", "2021 Rebuilder", "December version", "rebuild.exe"),
           to = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"))
 file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_model_files", "updated rebuild file.dat"),
           to = file.path(wd, "rebuilder", "1100_2023", "rebuild.dat"))
 
 
 ##
-#Set up rebuilder for alternative states of nature to create rebuild_m_fixed_2023.SSO
+#Set up starting conditions file (rebuild_m_2023.SSO) in states_of_nature_1100 folder from alternative states of nature
+#Note that the file name cant exceed 15-16 characters. This is why although I have rebuild_m_correct.SSO (17 characters)
+#my final file name in rebuild runs was rebuild_m_fixed.SSO (15 characters)
 ##
 
-make the above changes a function
+dir.create(file.path(wd, "rebuilder", "states_of_nature_1100"))
+#Copy in base model
+file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding"), file.path(wd, "rebuilder", "states_of_nature_1100"), recursive=TRUE)
+#Copy in low and high states of nature
+#High state (reset forecast file and run to create rebuild.sso)
+mod <- SS_read(file.path(wd, "11_0_1_highState_2023"))
+mod$fore$Do_West_Coast_gfish_rebuilder_output <- 1
+mod$fore$Ydecl <- 2025
+mod$fore$Yinit <- -1 #(ednyr + 1 = 2021)
+SS_write(mod, dir = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_1_high"), overwrite = TRUE)
+file.copy(from = file.path(wd, model, "run_ss.bat"), 
+          to = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_1_high"))
+#Low state (reset forecast file and run to create rebuild.sso)
+mod <- SS_read(file.path(wd, "11_0_2_lowState_2023"))
+mod$fore$Do_West_Coast_gfish_rebuilder_output <- 1
+mod$fore$Ydecl <- 2025
+mod$fore$Yinit <- -1 #(ednyr + 1 = 2021)
+SS_write(mod, dir = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_2_low"), overwrite = TRUE)
+file.copy(from = file.path(wd, model, "run_ss.bat"), 
+          to = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_2_low"))
+
+#After running low and high state use CA_rebuilding.R to get combined file (rebuild_m_fixed_2023.SSO)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", "1100_2023", "rebuild_m_fixed_2023.SSO"))
+
 
 
 ##Things to confirm

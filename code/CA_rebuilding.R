@@ -38,7 +38,6 @@ rebuild_dir = file.path(dir, "rebuilder")
 # make a table of the 9 states of nature with information about each one
 statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
 st_dir = file.path(rebuild_dir, "states_of_nature_910") 
-st_dir = file.path(dir, "states_of_nature_1100") 
 n <- 1
 for(iM in 1:length(dir(st_dir))){
   mydir <- file.path(st_dir, dir(st_dir)[iM])
@@ -141,6 +140,73 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 rebuildblend[grep("# spawn-recr", rebuildblend)] #In these lines add a fourth element, 0.4
 rebuildblend[grep("#female fecundity", rebuildblend)] #In these lines, set the first element to zero
 #SAVE AS "rebuild_m_fixed.sso"
+
+
+##
+#Now doing it for 1100
+##
+# Create a rebuilding that incorporates uncertainity around M
+# make a table of the 3 states of nature with information about each one
+statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
+st_dir = file.path(rebuild_dir, "states_of_nature_1100") 
+n <- 1
+for(iM in 1:length(dir(st_dir))){
+  mydir <- file.path(st_dir, dir(st_dir)[iM])
+  # set index and text for M
+  statetable$iM[n] <- iM
+  statetable$iM[n] <- c("mle","high", "low")[iM]
+  # set directory where files are located
+  statetable$dir[n] <- mydir
+  # set weighting of 1, 2, or 4
+  statetable$weight[n] <- c(2, 1, 1)[iM]
+  statetable$weight_frac[n] <- c(0.50, 0.25, 0.25)[iM]
+  statetable$M[n] <- c(0.057, 0.0744, 0.0464)[iM]
+  n <- n+1
+}
+
+rebuildblend <- NULL
+for(i in 1:nrow(statetable)){
+  # read rebuild.sso from directories
+  rebuildlines <- readLines(paste(statetable$dir[i],"/rebuild.sso",sep=""))
+  # take only final section of this file
+  # (because file doesn't get deleted when model is rerun and may contain out-of-date values)
+  rebuildlines <- rebuildlines[max(1+grep("in maximization mode",rebuildlines)):length(rebuildlines)]
+  # print first line to confirm that it looks like some numbers
+  print(rebuildlines[1])
+  for(j in 1:statetable$weight[i]){
+    header <- c(paste("# values from ",statetable$dir[i],", catch at ", statetable$catch[i],"%",
+                      " and natural mortality at ",statetable$M[i]," value.",sep=""),
+                paste("# this is state of nature ",i," out of ",3," (in no particular order)",sep=""),
+                paste("# and parameter set number ", j, " out of ", statetable$weight[i], sep=""))
+    # can only have 1 header line, must collapse header into 1 line
+    header <- paste(header, collapse=" ")
+    # concatenate new header and lines to existing stuff
+    rebuildblend <- c(rebuildblend, header, rebuildlines)  	
+  }
+}
+
+# Double check that the rebuildblend file appears to have the correct values from the state of nature models
+a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend, fixed = TRUE)], 1, 7))))
+
+
+#IMPORTANT - NEED TO MAKE ADJUSTMENTS TO PARAMETER FILE
+
+rebuildblend[grep("# spawn-recr", rebuildblend)] #In these lines add a fourth element, 0.4
+rebuildblend[grep("#female fecundity", rebuildblend)] #In these lines, set the first element to zero
+#Add fourth element first
+rebuildblend[grep("# spawn-recr", rebuildblend)] <- 
+  unlist(lapply(
+    lapply(strsplit(rebuildblend[grep("# spawn-recr", rebuildblend)], " "), FUN = function(x) append(x, 0.4, after = 3)),
+    FUN = paste, collapse = " "))
+#Now set first element to zero (typically its the second element because the first is a space)
+rebuildblend[grep("#female fecundity", rebuildblend)] <- 
+  unlist(lapply(
+    lapply(strsplit(rebuildblend[grep("#female fecundity", rebuildblend)], " "), FUN = function(x) replace(x, 2, 0)),
+    FUN = paste, collapse = " "))
+
+#SAVE AS "rebuild_m_2023.sso" THERE IS A FINAL NAME LENGTH LIMIT of ~15 characters. BEWARE
+writeLines(rebuildblend, file.path(rebuild_dir, "rebuild_m_2023.sso"))
+
 
 
 ####
