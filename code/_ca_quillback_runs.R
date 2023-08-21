@@ -1934,7 +1934,7 @@ file.copy(from = file.path(wd, model, "run_ss.bat"),
 #After running low and high state use CA_rebuilding.R to get combined file (rebuild_m_fixed_2023.SSO)
 
 file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
-          to = file.path(wd, "rebuilder", "1100_2023", "rebuild_m_fixed_2023.SSO"))
+          to = file.path(wd, "rebuilder", "1100_2023", "rebuild_m_2023.SSO"))
 
 
 
