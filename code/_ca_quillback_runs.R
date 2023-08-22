@@ -1838,10 +1838,12 @@ reb[loc+1] <- 0
 #8. Projection type = 11
 loc <- grep("# Projection type", reb)
 reb[loc+1] <- 11
-#9. Extra lines (the lines for the buffer may or may not be right: can confirm by testing)
+#9. Extra lines confirmed by running with no abc cap and dividing ABC by Catch for SPR = 0.5 run
+#Need to set Year1 to 2022 to start buffer values in 2023 (though 2023 and 2024 get overwritten by fixed catch)
+#MaxSigma is such that buffer is still just being applied after 10 years
 loc <- grep("# Definition of the 40-10 rule", reb)
 new_val <- c("# Sigma Assessment Error (Base, Year1, Slope, MaxSigma)",
-             "1.0 2024 0.075 2.0",
+             "1.0 2022 0.075 2.0",
              "# Pstar",
              0.45,
              "# Constrain catches by the ABC (1=yes; 2=no)",
@@ -1884,7 +1886,7 @@ reb[loc+1] <- reb[loc-1]
 loc <- grep("# File with multiple", reb)
 reb[loc+1] <- "rebuild_m_2023.SSO"
 #E: Set up for new December .exe by adding sex correction term (for sex = -1 models)
-#I think I divide results by 2 when presenting so keep this as 1 for the moment
+#I divide results by 2 when presenting so keep this as 1 for the moment
 loc <- grep("M and current", reb)
 new_val <- c("# Sex ratio correction", 1)
 reb <- append(reb, values = new_val, after = (loc - 1))
@@ -1895,7 +1897,7 @@ writeLines(as.character(reb), file.path(wd, "rebuilder", "11_0_0_2023_rebuilding
 
 ##
 #Apply updated rebuild.dat to 1100_2023 folder (copy .exe (December version)). 
-#Will need to set up alternative states of nature starting conditions (rebuild_m_fixed_2023.SSO) before running. 
+#Will need to set up alternative states of nature starting conditions (rebuild_m_2023.SSO) before running. 
 #Set that up later
 ##
 
@@ -1933,15 +1935,15 @@ mod$fore$Yinit <- -1 #(ednyr + 1 = 2021)
 SS_write(mod, dir = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_2_low"), overwrite = TRUE)
 file.copy(from = file.path(wd, model, "run_ss.bat"), 
           to = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_2_low"))
+#Run low and high models...
 
-#Do CA_rebuilding.R to get combined file (rebuild_m_2023.SSO) after running low and high models
-
+#After running low and high models use CA_rebuilding.R to get combined file (rebuild_m_2023.sso) 
 file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
           to = file.path(wd, "rebuilder", "1100_2023", "rebuild_m_2023.SSO"))
 
 
 ##
-#Add additional SPR runs and constrain catches by the ABC
+#Add additional SPR runs and constrain catches by the ABC ---------------------------------------------
 ##
 
 #1100b_no_abc_max: Set Constrain_catches_by_ABC to 2 in rebuild.dat file
@@ -1988,11 +1990,3 @@ loc <- grep("# Constrain catches by the ABC", reb)
 reb[loc+1] <- 2
 writeLines(reb, file.path(new_dir, "rebuild.dat"))
 
-
-
-
-
-
-##Things to confirm
-2. Getting error that SSB is twice what is expected. Set sex ratio correction to 0.5 but confirm results are not halved for write up in results plotting
-3. Confirm that the rebuilder set up for the buffer is accurate in that the buffers are applied but values of 1 are set for 2021-2024
