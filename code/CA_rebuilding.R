@@ -654,3 +654,203 @@ find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mea
 ggplot(sb_all[find,], aes(x = Year, y = SB, color = Scenario)) + 
   geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output")
 ggsave(file.path(rebuild_dir, "write_up_postNov", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
+
+
+
+#####################################################################################################
+######################## 2023 Rebuilding Analysis Figures ######################################
+#####################################################################################################
+
+
+####
+#Figures for 2023 rebuilding
+#Replaced SPR500 and SPR550 scenarios with no cap runs (Tmid no longer needed)
+#Added extra SPR runs (for SPR 0.55 and 0.65)
+####
+
+#Copy the write_up_postNov directory to write_up_2023rebuild and remove unneeded files
+if(!dir.exists(file.path(wd, 'rebuilder', "write_up_2023rebuild"))){
+  dir.create(file.path(wd, "rebuilder", "write_up_2023rebuild"))
+  
+  my_files <- list.files(file.path(wd, "rebuilder", "write_up_postNov"))
+  my_files <- my_files[-grep(".docx|.pdf",my_files)]
+  file.copy(from = file.path(wd, "rebuilder", "write_up_postNov", my_files), 
+            to = file.path(wd, "rebuilder", "write_up_2023rebuild", my_files))
+  
+  #the figure subdirectory doesn't copy over as a folder so remove and recreate
+  file.remove(file.path(wd, "rebuilder", "write_up_2023rebuild", "figures"))
+  dir.create(file.path(wd, "rebuilder", "write_up_2023rebuild", "figures"))
+}
+
+frac_fem = 0.5
+
+run <- c(
+  "1100_2023", #same policies as original
+  "1100b_no_abc_max",
+  "1101_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1101b_no_abc_max")
+
+reb <- list()
+for (a in 1:length(run)){
+  reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
+}
+
+#############
+#Probability Plots
+#############
+probs_gg <-reshape2::melt(data = reb[[1]]$prob_matrix[,2:ncol(reb[[1]]$prob_matrix)])
+colnames(probs_gg)<-c("Year", "Scenario", "Prob")
+#############
+probs_gg_nocap <-reshape2::melt(data = reb[[2]]$prob_matrix[,2:ncol(reb[[2]]$prob_matrix)]) #no cap run
+probs_gg[1:200,] <- probs_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+#############
+#Add SPR 0.55 and 0.65 runs
+probs_gg_extra <-reshape2::melt(data = reb[[3]]$prob_matrix[,2:ncol(reb[[3]]$prob_matrix)])
+colnames(probs_gg_extra)<-c("Year", "Scenario", "Prob")
+##############
+probs_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$prob_matrix[,2:ncol(reb[[4]]$prob_matrix)]) #no cap run
+probs_gg_extra[201:400,] <- probs_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
+#############
+#Combine datasets and reorder scenarios
+probs_all <- rbind(probs_gg,
+                   probs_gg_extra[probs_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),])
+probs_all[,"Year"] <- rep(reb[[1]]$prob_matrix[,1], nrow(probs_all)/200)
+probs_all$Scenario <- factor(probs_all$Scenario, levels = c("SPR= .500      ",
+                                                            "SPR= .550      ",
+                                                            "SPR= .600      ",
+                                                            "SPR= .650      ",
+                                                            "SPR= .700      ",
+                                                            "SPR= .800      ",
+                                                            "SPR= .900      ",
+                                                            "Yr=Tmid        ",
+                                                            "F=0            ",
+                                                            "40-10 rule     ",
+                                                            "ABC Rule       "))
+head(acast(probs_all, Scenario~Year, value.var = "Prob")[,1:30],10) #test to ensure ramps are different
+
+#Plot
+find = which(probs_all$Prob <=1.0 & probs_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+ggplot2::ggplot(probs_all[find,], aes(x = Year,y = Prob, color = Scenario)) + 
+  geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output")
+ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT.png"), width = 10, height = 7)
+
+
+#############
+#Catches
+#############
+acl_gg <- reshape2::melt(reb[[1]]$acl_matrix[,2:ncol(reb[[1]]$acl_matrix)])
+colnames(acl_gg)<-c("Year", "Scenario", "Catch")
+#############
+acl_gg_nocap <-reshape2::melt(data = reb[[2]]$acl_matrix[,2:ncol(reb[[2]]$acl_matrix)]) #no cap run
+acl_gg[1:200,] <- acl_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+#############
+#Add SPR 0.55 and 0.65 runs
+acl_gg_extra <-reshape2::melt(data = reb[[3]]$acl_matrix[,2:ncol(reb[[3]]$acl_matrix)])
+colnames(acl_gg_extra)<-c("Year", "Scenario", "Catch")
+##############
+acl_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$acl_matrix[,2:ncol(reb[[4]]$acl_matrix)]) #no cap run
+acl_gg_extra[201:400,] <- acl_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
+#############
+#Combine datasets and reorder scenarios
+acl_all <- rbind(acl_gg,
+                 acl_gg_extra[acl_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),])
+acl_all[,"Year"] = rep(reb[[1]]$acl_matrix[,1], nrow(acl_all)/200)
+acl_all$Scenario <- factor(acl_all$Scenario, levels = c("SPR= .500      ",
+                                                        "SPR= .550      ",
+                                                        "SPR= .600      ",
+                                                        "SPR= .650      ",
+                                                        "SPR= .700      ",
+                                                        "SPR= .800      ",
+                                                        "SPR= .900      ",
+                                                        "Yr=Tmid        ",
+                                                        "F=0            ",
+                                                        "40-10 rule     ",
+                                                        "ABC Rule       "))
+head(acast(acl_all, Scenario~Year, value.var = "Catch")[,1:10],10) #test to ensure ramps are different
+
+#Plot
+find = which(acl_all$Year > 2022 & acl_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+ggplot2::ggplot(acl_all[find,], aes(x = Year, y = Catch, color = Scenario)) + 
+  geom_line(lwd=1.5) + ylab("Catches (mt)")
+ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT.png"), width = 10, height = 7)
+
+
+#############
+#Spawning output
+#############
+#Set frac female in 2sex model to 1 so plot just SSB. Keep at 0.5 for all others
+sb_gg <- reshape2::melt(reb[[1]]$ssb_matrix[,2:ncol(reb[[1]]$ssb_matrix)])
+colnames(sb_gg)<-c("Year","Scenario","SB")
+#############
+sb_gg_nocap <-reshape2::melt(data = reb[[2]]$ssb_matrix[,2:ncol(reb[[2]]$ssb_matrix)]) #no cap run
+sb_gg[1:200,] <- sb_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+#############
+#Add SPR 0.55 and 0.65 runs
+sb_gg_extra <-reshape2::melt(data = reb[[3]]$ssb_matrix[,2:ncol(reb[[3]]$ssb_matrix)])
+colnames(sb_gg_extra)<-c("Year", "Scenario", "SB")
+##############
+sb_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$ssb_matrix[,2:ncol(reb[[4]]$ssb_matrix)]) #no cap run
+sb_gg_extra[201:400,] <- sb_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
+#############
+#Combine datasets and reorder scenarios
+sb_all <- rbind(sb_gg,
+                sb_gg_extra[sb_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),])
+sb_all[,"Year"] = rep(reb[[1]]$ssb_matrix[,1], nrow(sb_all)/200)
+sb_all$Scenario <- factor(sb_all$Scenario, levels = c("SPR= .500      ",
+                                                      "SPR= .550      ",
+                                                      "SPR= .600      ",
+                                                      "SPR= .650      ",
+                                                      "SPR= .700      ",
+                                                      "SPR= .800      ",
+                                                      "SPR= .900      ",
+                                                      "Yr=Tmid        ",
+                                                      "F=0            ",
+                                                      "40-10 rule     ",
+                                                      "ABC Rule       "))
+head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure ramps are different
+
+#Plot
+find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+ggplot(sb_all[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) + 
+  geom_line(lwd = 1.5) + ylab("Spawning output")
+ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT.png"), width = 10, height = 7)
+
+
+#############
+#Spawning output relative to the target
+#############
+sb_gg <- reshape2::melt(reb[[1]]$relativeb_matrix[,2:ncol(reb[[1]]$relativeb_matrix)])
+colnames(sb_gg)<-c("Year","Scenario","SB")
+#############
+sb_gg_nocap <-reshape2::melt(data = reb[[2]]$relativeb_matrix[,2:ncol(reb[[2]]$relativeb_matrix)]) #no cap run
+sb_gg[1:200,] <- sb_gg_nocap[1:200,] #replace SPR = 0.500 values with no cap run
+#############
+#Add SPR 0.55 and 0.65 runs
+sb_gg_extra <-reshape2::melt(data = reb[[3]]$relativeb_matrix[,2:ncol(reb[[3]]$relativeb_matrix)])
+colnames(sb_gg_extra)<-c("Year", "Scenario", "SB")
+##############
+sb_gg_extra_nocap <-reshape2::melt(data = reb[[4]]$relativeb_matrix[,2:ncol(reb[[4]]$relativeb_matrix)]) #no cap run
+sb_gg_extra[201:400,] <- sb_gg_extra_nocap[201:400,] #replace SPR = 0.550 values with no cap run
+#############
+#Combine datasets and reorder scenarios
+sb_all <- rbind(sb_gg,
+                sb_gg_extra[sb_gg_extra$Scenario %in% c("SPR= .550      ", "SPR= .650      "),])
+sb_all[,"Year"] = rep(reb[[1]]$relativeb_matrix[,1], nrow(sb_all)/200)
+sb_all$Scenario <- factor(sb_all$Scenario, levels = c("SPR= .500      ",
+                                                      "SPR= .550      ",
+                                                      "SPR= .600      ",
+                                                      "SPR= .650      ",
+                                                      "SPR= .700      ",
+                                                      "SPR= .800      ",
+                                                      "SPR= .900      ",
+                                                      "Yr=Tmid        ",
+                                                      "F=0            ",
+                                                      "40-10 rule     ",
+                                                      "ABC Rule       "))
+head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure ramps are different
+
+#Plot
+find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+ggplot(sb_all[find,], aes(x = Year, y = SB, color = Scenario)) + 
+  geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output")
+ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
