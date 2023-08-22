@@ -32,6 +32,7 @@ rebuild_dir = file.path(dir, "rebuilder")
 ####
 #Copy Chantel's script for running rebuilder for states of nature
 #Revise to apply to mine, which are based on M, not R0
+#For model 910
 ####
 
 # Create a rebuilding that incorporates uncertainity around M
@@ -189,7 +190,6 @@ for(i in 1:nrow(statetable)){
 
 # Double check that the rebuildblend file appears to have the correct values from the state of nature models
 a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend, fixed = TRUE)], 1, 7))))
-
 
 #IMPORTANT - NEED TO MAKE ADJUSTMENTS TO PARAMETER FILE
 #This time around I do it after combining whereas before (for 921) I did it to each state of nature file before combining

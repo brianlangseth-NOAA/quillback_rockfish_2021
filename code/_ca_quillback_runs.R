@@ -1712,7 +1712,7 @@ base.1010 = SS_output(file.path(wd, "rebuilder", model),covar=TRUE)
 ############################################################################
 
 #For the 2023 cycle, an update to the CA rebuilding analysis was requested.
-#Updated catches (known) for estimated (at the time) catches in 2021 and 2022 were provided by the GMT
+#Updated catches (now known) for estimated (at the time) catches in 2021 and 2022 were provided by the GMT
 #New estimates for 2023 and 2024 were also provided.
 #This requires updating the base model, as well as the states of nature, and then rerunning the rebuilding analysis,
 #which for this time around was based on the December 2021 exe. 
@@ -1741,8 +1741,9 @@ mod$fore$Flimitfraction_m[mod$fore$Flimitfraction_m$Year %in% c(2021:2024),"Frac
 mod$fore$FirstYear_for_caps_and_allocations <- 2025
 
 #Update catches to those provided by the GMT
-tot_catch <- c(13.5, 11.9, 2.05, 2.32)
-rec_prop <- 0.761 #proportion of catch coming from rec (as used in 10_0_0_postNov_base: average from 2017-2019 catches)
+tot_catch <- c(15.58, 18.11, 11.12, 10.62)
+#rec_prop <- 0.761 #proportion of catch coming from rec (as used in 10_0_0_postNov_base: average from 2017-2019 catches)
+rec_prop <- c(0.677, 0.510, 0.310, 0.306) #proportion of catch from rec in the new catches provided by the GMT
 mod$fore$ForeCatch <- data.frame("Year" = rep(2021:2024, each = 2),
                                  "Seas" = 1,
                                  "Fleet" = c(1,2),
@@ -1756,14 +1757,13 @@ file.copy(from = file.path(wd, old_model, "run_ss.bat"), to = file.path(wd, mode
 ##
 
 #Copy model 1001 and 1002 and update forecast file with 2022-2025 catches 
-#and catches in 2026 to 2034 from model 11_0_0 using same allocation for fleets as 
-#originally done for 2021 and 2022 (rec 76.1%) from the 2021 postNov base (model 1000)
+#and catches in 2026 to 2034 from model 11_0_0 using allocation for fleets from forecast
+#which is based on relative Fs from 2017-2019
 
 base.1100 <- SS_output(file.path(wd, model))
-fore_loc = grep("ForeCatch",base.1100$derived_quants$Label)
-baseABC = data.frame("Year" = rep(2021:2034, each = 2), "Seas" = 1, "Fleet" = c(1,2), 
-                     "Catch or F" = c(rbind(base.1100$derived_quants[fore_loc,"Value"]*(1-rec_prop),
-                                       base.1100$derived_quants[fore_loc,"Value"]*rec_prop)))
+fore_catch <- r4ss::SS_ForeCatch(base.1100, yrs = 2021:2034)
+baseABC = data.frame("Year" = fore_catch$`#Year`, "Seas" = fore_catch$Sea, "Fleet" = fore_catch$Fleet, 
+                     "Catch or F" = fore_catch$`dead(B)`, "comment" = fore_catch$comment)
 
 #High state of nature
 mod_high <- SS_read(file.path(wd, "10_0_1_highState_M_postNov"))
@@ -1800,7 +1800,7 @@ SS_write(mod, dir = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding"), overwr
 file.copy(from = file.path(wd, model, "run_ss.bat"), 
           to = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "run_ss.bat"))
 SS_write(mod, dir = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_model_files"), overwrite = TRUE)
-
+#and run this
 
 ##
 #Now take rebuild.dat file, and make the following changes so that the rebuild.exe can read it.
@@ -1821,13 +1821,13 @@ tmp_val[[1]][2] <- 0
 new_val <- lapply(tmp_val, FUN = paste, collapse = " ")
 reb[loc+2] <- new_val
 #4. Year for Tmin = 2021 
-#This may need to be updated to 2023 (current year) in which case change the age structure too in C below
+#Need to change the age structure too in C below
 loc <- grep("# Year for Tmin", reb)
 reb[loc+1] <- 2021
 #5. Number of years with prespecified catches = 4
 loc <- grep("# Number of years with pre-specified", reb)
 reb[loc+1] <- 4
-#6. Prespecified catches (updated to postNov values)
+#6. Prespecified catches (updated to new values provided by the GMT)
 loc <- grep("# catches for years", reb)
 tmp_val <- cbind(2021:2024,tot_catch, deparse.level = 0)
 new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
@@ -1898,6 +1898,7 @@ writeLines(as.character(reb), file.path(wd, "rebuilder", "11_0_0_2023_rebuilding
 #Will need to set up alternative states of nature starting conditions (rebuild_m_fixed_2023.SSO) before running. 
 #Set that up later
 ##
+
 dir.create(file.path(wd, "rebuilder", "1100_2023"))
 file.copy(from = file.path(wd, "rebuilder", "2021 Rebuilder", "December version", "rebuild.exe"),
           to = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"))
@@ -1913,7 +1914,8 @@ file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_mode
 
 dir.create(file.path(wd, "rebuilder", "states_of_nature_1100"))
 #Copy in base model
-file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding"), file.path(wd, "rebuilder", "states_of_nature_1100"), recursive=TRUE)
+file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding"), 
+          to = file.path(wd, "rebuilder", "states_of_nature_1100"), recursive=TRUE)
 #Copy in low and high states of nature
 #High state (reset forecast file and run to create rebuild.sso)
 mod <- SS_read(file.path(wd, "11_0_1_highState_2023"))
@@ -1940,7 +1942,5 @@ file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
 
 
 ##Things to confirm
-1. Confirm Tmin is 2021. It may be 2023 now. Confirm age structure
 2. Getting error that SSB is twice what is expected. Set sex ratio correction to 0.5 but confirm results are not halved for write up in results plotting
 3. Confirm that the rebuilder set up for the buffer is accurate in that the buffers are applied but values of 1 are set for 2021-2024
-4. Set up alternative states of nature
