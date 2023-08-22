@@ -1877,9 +1877,10 @@ loc <- grep("# Number of parameter", reb)
 reb[loc+1] <- 4
 #C: Set Age structure at Ydeclare to be from 2021 (copying age structure from line above in rebuild.dat file)
 loc <- grep("# Age-structure at Ydeclare", reb)
+reb[loc] <- "# Age-structure at Ydeclare= 2021"
 reb[loc+1] <- reb[loc-1]
-#D: Name of multiple parameter vector file = rebuild_m_fixed.SSO
-#Need to update this with new values
+#D: Name of multiple parameter vector file = rebuild_m_2023.SSO (NOTE THE LENGTH OF THIS FILE CANT BE >16 CHARACTERS)
+#Need to update this with new values (which I do down below)
 loc <- grep("# File with multiple", reb)
 reb[loc+1] <- "rebuild_m_2023.SSO"
 #E: Set up for new December .exe by adding sex correction term (for sex = -1 models)
@@ -1905,9 +1906,9 @@ file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_mode
 
 
 ##
-#Set up starting conditions file (rebuild_m_2023.SSO) in states_of_nature_1100 folder from alternative states of nature
-#Note that the file name cant exceed 15-16 characters. This is why although I have rebuild_m_correct.SSO (17 characters)
-#my final file name in rebuild runs was rebuild_m_fixed.SSO (15 characters)
+#Set up starting conditions file (rebuild_m_2023.SSO) in states_of_nature_1100 folder based on states of nature models
+#Note that the file name cant exceed 16 characters. This is why although I have rebuild_m_correct.SSO (17 characters)
+#my final file name in 2021 rebuild runs was rebuild_m_fixed.SSO (15 characters)
 ##
 
 dir.create(file.path(wd, "rebuilder", "states_of_nature_1100"))
@@ -1931,7 +1932,7 @@ SS_write(mod, dir = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_2_
 file.copy(from = file.path(wd, model, "run_ss.bat"), 
           to = file.path(wd, "rebuilder", "states_of_nature_1100", "11_0_2_low"))
 
-#After running low and high state use CA_rebuilding.R to get combined file (rebuild_m_fixed_2023.SSO)
+#Do CA_rebuilding.R to get combined file (rebuild_m_2023.SSO) after running low and high models
 
 file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
           to = file.path(wd, "rebuilder", "1100_2023", "rebuild_m_2023.SSO"))
@@ -1940,6 +1941,6 @@ file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
 
 ##Things to confirm
 1. Confirm Tmin is 2021. It may be 2023 now. Confirm age structure
-2. Getting error that SSB is twice what is expected. Set sex ratio correction to 0.5 but confirm results are not halved for write up
+2. Getting error that SSB is twice what is expected. Set sex ratio correction to 0.5 but confirm results are not halved for write up in results plotting
 3. Confirm that the rebuilder set up for the buffer is accurate in that the buffers are applied but values of 1 are set for 2021-2024
 4. Set up alternative states of nature

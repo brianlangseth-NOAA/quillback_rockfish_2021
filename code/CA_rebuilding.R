@@ -85,9 +85,9 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 # rebuild.dat file under the "# File with multiple parameter vectors " section
 
 
-##
+#######################
 #Now doing it for 921
-##
+#######################
 statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
 st_dir = file.path(rebuild_dir, "states_of_nature_921") 
 n <- 1
@@ -142,9 +142,11 @@ rebuildblend[grep("#female fecundity", rebuildblend)] #In these lines, set the f
 #SAVE AS "rebuild_m_fixed.sso"
 
 
-##
+
+#######################
 #Now doing it for 1100
-##
+#######################
+
 # Create a rebuilding that incorporates uncertainity around M
 # make a table of the 3 states of nature with information about each one
 statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
@@ -190,9 +192,11 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 
 
 #IMPORTANT - NEED TO MAKE ADJUSTMENTS TO PARAMETER FILE
+#This time around I do it after combining whereas before (for 921) I did it to each state of nature file before combining
 
 rebuildblend[grep("# spawn-recr", rebuildblend)] #In these lines add a fourth element, 0.4
 rebuildblend[grep("#female fecundity", rebuildblend)] #In these lines, set the first element to zero
+rebuildblend[grep("#numbers for year Ydeclare", rebuildblend)] #In these lines, need to replace Ydecl age structure with Yinit's
 #Add fourth element first
 rebuildblend[grep("# spawn-recr", rebuildblend)] <- 
   unlist(lapply(
@@ -203,8 +207,15 @@ rebuildblend[grep("#female fecundity", rebuildblend)] <-
   unlist(lapply(
     lapply(strsplit(rebuildblend[grep("#female fecundity", rebuildblend)], " "), FUN = function(x) replace(x, 2, 0)),
     FUN = paste, collapse = " "))
+#Now replace Ydecl age structure. 
+#Copy over default SS3 output for second set of age-structures to be from Yinit for 2023 quillback (SS3 default is to use Ydecl)
+rebuildblend[grep("#numbers for year Ydeclare", rebuildblend)] <- 
+  unlist(lapply(
+    lapply(strsplit(rebuildblend[grep("#numbers for year Yinit", rebuildblend)], " "), FUN = function(x) 
+    replace(x, length(x)-3, c("Ydeclare:"))),
+    FUN = paste, collapse = " "))
 
-#SAVE AS "rebuild_m_2023.sso" THERE IS A FINAL NAME LENGTH LIMIT of ~15 characters. BEWARE
+#SAVE AS "rebuild_m_2023.sso" THERE IS A FINAL NAME LENGTH LIMIT of 16 characters. BEWARE!!
 writeLines(rebuildblend, file.path(rebuild_dir, "rebuild_m_2023.sso"))
 
 
