@@ -1940,6 +1940,58 @@ file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
           to = file.path(wd, "rebuilder", "1100_2023", "rebuild_m_2023.SSO"))
 
 
+##
+#Add additional SPR runs and constrain catches by the ABC
+##
+
+#1100b_no_abc_max: Set Constrain_catches_by_ABC to 2 in rebuild.dat file
+new_dir <- file.path(wd, "rebuilder", "1100b_no_abc_max")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1100_2023", "rebuild.dat"),n=-1)
+loc <- grep("# Constrain catches by the ABC", reb)
+reb[loc+1] <- 2
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+#1101_addedSPRruns: Add additional SPR runs (0.5, 0.55, 0.6, 0.65, 0.7)
+new_dir <- file.path(wd, "rebuilder", "1101_addedSPRruns")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1100_2023", "rebuild.dat"),n=-1)
+loc <- grep("# Yrs to define T_target", reb)
+reb[loc+1] <- "0.5 0.55 0.6 0.65 0.7"
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+#1101b_no_abc_max: Set Constrain_catches_by_ABC to 2 in rebuild.dat file of the added SPR runs
+new_dir <- file.path(wd, "rebuilder", "1101b_no_abc_max")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1101_addedSPRruns", "rebuild.dat"),n=-1)
+loc <- grep("# Constrain catches by the ABC", reb)
+reb[loc+1] <- 2
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+
+
+
 
 ##Things to confirm
 2. Getting error that SSB is twice what is expected. Set sex ratio correction to 0.5 but confirm results are not halved for write up in results plotting
