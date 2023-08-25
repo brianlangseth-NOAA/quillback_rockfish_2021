@@ -1912,6 +1912,9 @@ file.copy(from = file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_mode
 #Set up starting conditions file (rebuild_m_2023.SSO) in states_of_nature_1100 folder based on states of nature models
 #Note that the file name cant exceed 16 characters. This is why although I have rebuild_m_correct.SSO (17 characters)
 #my final file name in 2021 rebuild runs was rebuild_m_fixed.SSO (15 characters)
+#
+#Technically setting up rebuild_m_2023 is not needed because all values are for 2021 and thus unchanged from rebuild_m_fixed
+#Still do it for next rebuilding analysis, when these will change.
 ##
 
 dir.create(file.path(wd, "rebuilder", "states_of_nature_1100"))

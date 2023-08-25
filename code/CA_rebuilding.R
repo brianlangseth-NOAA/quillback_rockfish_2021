@@ -89,6 +89,7 @@ a1 <- unique(sort(as.numeric(substring(rebuildblend[grep("#mean M", rebuildblend
 #######################
 #Now doing it for 921
 #######################
+
 statetable <- data.frame(iM=rep(NA, 3), M=rep(NA,3), dir=rep(NA,3), weight = rep(NA,3),weight_frac=rep(NA,3))
 st_dir = file.path(rebuild_dir, "states_of_nature_921") 
 n <- 1
@@ -145,7 +146,7 @@ rebuildblend[grep("#female fecundity", rebuildblend)] #In these lines, set the f
 
 
 #######################
-#Now doing it for 1100
+#Now doing it for 1100 
 #######################
 
 # Create a rebuilding that incorporates uncertainity around M
@@ -219,6 +220,10 @@ rebuildblend[grep("#numbers for year Ydeclare", rebuildblend)] <-
 writeLines(rebuildblend, file.path(rebuild_dir, "rebuild_m_2023.sso"))
 
 
+
+#---------------------------------------------------------------------------------------------------------#
+#                                             Result Plotting
+#---------------------------------------------------------------------------------------------------------#
 
 ####
 #Make plots from runs
@@ -731,7 +736,8 @@ head(acast(probs_all, Scenario~Year, value.var = "Prob")[,1:30],10) #test to ens
 #Plot
 find = which(probs_all$Prob <=1.0 & probs_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot2::ggplot(probs_all[find,], aes(x = Year,y = Prob, color = Scenario)) + 
-  geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output")
+  geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output") +
+  scale_color_manual(values = brewer.pal(length(unique(probs_all$Scenario)), "RdYlBu"))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT.png"), width = 10, height = 7)
 
 
@@ -769,9 +775,10 @@ acl_all$Scenario <- factor(acl_all$Scenario, levels = c("SPR= .500      ",
 head(acast(acl_all, Scenario~Year, value.var = "Catch")[,1:10],10) #test to ensure ramps are different
 
 #Plot
-find = which(acl_all$Year > 2022 & acl_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+find = which(acl_all$Year > 2024 & acl_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot2::ggplot(acl_all[find,], aes(x = Year, y = Catch, color = Scenario)) + 
-  geom_line(lwd=1.5) + ylab("Catches (mt)")
+  geom_line(lwd=1.5) + ylab("Catches (mt)") +
+  scale_color_manual(values = brewer.pal(length(unique(acl_all$Scenario)), "RdYlBu"))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT.png"), width = 10, height = 7)
 
 
@@ -810,9 +817,10 @@ sb_all$Scenario <- factor(sb_all$Scenario, levels = c("SPR= .500      ",
 head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure ramps are different
 
 #Plot
-find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+find = which(sb_all$Year > 2024 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot(sb_all[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) + 
-  geom_line(lwd = 1.5) + ylab("Spawning output")
+  geom_line(lwd = 1.5) + ylab("Spawning output") +
+  scale_color_manual(values = brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu"))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT.png"), width = 10, height = 7)
 
 
@@ -850,7 +858,8 @@ sb_all$Scenario <- factor(sb_all$Scenario, levels = c("SPR= .500      ",
 head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure ramps are different
 
 #Plot
-find = which(sb_all$Year > 2022 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
+find = which(sb_all$Year > 2024 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot(sb_all[find,], aes(x = Year, y = SB, color = Scenario)) + 
-  geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output")
+  geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output") +
+  scale_color_manual(values = brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu"))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
