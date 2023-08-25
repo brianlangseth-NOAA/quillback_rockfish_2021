@@ -14,11 +14,10 @@ library(PEPtools)
 source_url("https://raw.githubusercontent.com/r4ss/r4ss/main/R/RebuildPlot.R")
 
 # Specify the directory for the document
-setwd("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_postNov")
+setwd("C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild")
 
 # #Do once: Set up default document sections. May need to delete a few
-# sa4ss::draft(authors = c("Brian J. Langseth",
-#                          "Chantel R. Wetzel"),
+# sa4ss::draft(authors = c("Brian J. Langseth"),
 #              species = "Quillback Rockfish",
 #              latin = "Sebastes maliger",
 #              coast = "California US West",
@@ -33,14 +32,10 @@ rebuild_dir = "C:/Users/Brian.Langseth/Desktop/ca/rebuilder"
 
 #Report is based on these models
 run <- c(
-  "1010_postNov", #same policies as original
-  "1010b_no_abc_max",
-  "1011_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
-  "1011b_no_abc_max",
-  "1013_ramp0.7_2", #ramp applied and ensured to be more of a ramp for 2024-2025 than 2023-2024, only use SPR 0.7 policy
-  "1013_ramp0.6", #ramp applied, only use SPR 0.6 policy
-  "1014_ramp0.7", #ramp applied starting above ABC, only use SPR 0.7 policy
-  "1014_ramp0.6") #ramp applied starting above ABC, only use SPR 0.6 policy
+  "1100_2023", #same policies as original
+  "1100b_no_abc_max",
+  "1101_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1101b_no_abc_max")
 
 #Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved
 reb <- list()

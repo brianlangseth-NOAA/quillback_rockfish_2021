@@ -1,3 +1,3 @@
 # Acknowledgements
-Andre Punt (University of Washington) updated the rebuilder program to apply time-varying $\sigma$ for the Acceptable Biological Catch and 40-10 scenarios. Andre Punt and Owen Hamel (NOAA) provided assistance in understanding and applying the rebuilder program. Owen Hamel provided comments on drafts of the analysis.
+Thank you to the Groundfish Management Team for providing catch estimates for 2021--2024. Owen Hamel (NOAA) provided assistance in understanding and applying the rebuilder program, and also provided comments on drafts of the analysis.
 

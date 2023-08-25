@@ -5,12 +5,7 @@ author:
     first: B
     middle: J
     family: Langseth
-  - name: Chantel R. Wetzel
-    code: 1
-    first: C
-    middle: R
-    family: Wetzel
-author_list: Langseth, B.J., C.R. Wetzel
+author_list: Langseth, B.J
 affiliation:
   - code: 1
     address: Northwest Fisheries Science Center, U.S. Department of Commerce, National
