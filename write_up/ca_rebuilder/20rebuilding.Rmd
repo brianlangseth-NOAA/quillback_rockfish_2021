@@ -1,6 +1,6 @@
 # Rebuilding calculations
 
-This rebuilding analysis was conducted in August, 2023 using software developed by A. Punt (version 3.12j, December 2021). The input file for the analysis is provided in [Appendix A](#append_a). The steps followed were: 
+This rebuilding analysis was conducted in August and September, 2023 using software developed by A. Punt (version 3.12j, December 2021). The input file for the analysis is provided in [Appendix A](#append_a). The steps followed were: 
 
 \begin{enumerate}
 	\item Define how equilibrium spawning output ($\text{SB}_0$) will be calculated. 
@@ -19,7 +19,7 @@ The equilibrium spawning output ($\text{SB}_0$) used in this rebuilding analysis
 
 ## Generation of future recruitment
 
-The estimated parameters of the stock recruitment relationship including the unexploited equilibrium recruitment (natural log of $R_0$ = 3.168), steepness ($h$ = 0.72), and degree of recruitment variability ($\sigma_R = 0.60$) from the 2021 assessment were used to generate future recruitments in the rebuilding analysis.
+The estimated parameters of the stock recruitment relationship including the unexploited equilibrium recruitment (ln($R_0$) = 3.168), steepness ($h$ = 0.72), and degree of recruitment variability ($\sigma_R = 0.60$) from the 2021 assessment were used to generate future recruitments in the rebuilding analysis.
 
 
 ## Population biology
@@ -29,9 +29,9 @@ The biological parameters used for the rebuilding analysis were based on the val
 
 ## Fishery selectivity, and removal allocations
 
-The selectivity used in the rebuilding analysis was obtained from the 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in the rebuilding analysis was informed using the relative fishing mortality from the assessment averaged over recent years (2017-2019). This choice provides some consistency between recent model results and forecasts from the rebuilding analysis, accounting for the unique dynamics in 2020 caused by the COVID-19 pandemic. 
+The selectivity used in the rebuilding analysis was obtained from the 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in the rebuilding analysis was informed using the relative fishing mortality from the assessment averaged over recent years (2017--2019). This choice provides some consistency between recent model results and forecasts from the rebuilding analysis, accounting for the unique dynamics in 2020 caused by the COVID-19 pandemic. 
 
-Removals for 2021--2024 are entered as fixed within value the analysis and were provided by the Groundfish Management Team (GMT). Removals in these years were allocated among fleets based on the fleet-specific values as provided by the GMT and not based on relative fishery mortality from 2017-2019.   
+Removals for 2021--2024 were entered as fixed values within the analysis and were provided by the Groundfish Management Team (GMT). Removals in these years were allocated among fleets based on the fleet-specific values as provided by the GMT and not based on relative fishery mortality from 2017--2019.   
 
 
 ## Inclusion of uncertainty
@@ -41,7 +41,7 @@ Model and parameter uncertainty is included in the rebuilding analysis via 1,000
 
 ## Alternate rebuilding strategies analyzed
 
-Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR; PFMC -@pfmc_rebuildingTOR_2022) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate, and rebuilding by a selected target year.  
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a target year for 50% probability of recovery. This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in Section 2.5 of the rebuilding Terms of Reference (TOR; @pfmc_rebuildingTOR_2022) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate, and rebuilding by a selected target year $\text{T}_\text{MID}$.  
 
 \begin{enumerate}
 	\item Eliminate all harvest, F = 0, starting in the next management cycle, 2025, the same as setting a constant SPR harvest rate of 1.0.
@@ -65,14 +65,15 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 	\item Apply the ABC harvest rate with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
 \end{enumerate}
 
-The sum of ACL contributions for `r spp` from the southern management area and the percent allocated to California from the north management area (28.7$\%$) as provided by the GMT (*THIS TEXT IS A LITTLE ODD. CONSIDER REWORDING. ALSO CONFIRM PERCENTAGE*) were larger than the catch resulting from applying an SPR of 0.5. This implies that an SPR rate of below 0.5 would be needed to achieve the current ACL contributions, so results from this strategy (strategy 2 above) are not provided in this report. Similarly, the SPR rate that led to a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ was less than 0.5 so results from the $\text{T}_\text{MAX}$ strategy (strategy 5b above) are not presented in this report.
+The sum of ACL contributions for `r spp` in California waters from the southern and northern management areas for 2024 was larger than the catch resulting from applying an SPR of 0.5 in 2025. This implies that an SPR rate of below 0.5 would be needed to achieve the current ACL contributions, so results from this strategy (strategy 2 above) are not provided in this report. 
+<!-- Similarly, the SPR rate that led to a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ from the current cycle was less than 0.5 so results from the $\text{T}_\text{MAX}$ strategy (strategy 5a above) are not presented in this report. -->
 
-No current rebuilding plan exists for `r spp` in California waters so the alternatives related to the results of a previous rebuilding plan as specified in the rebuilding TOR could not be done. These include:
+No current rebuilding plan exists for `r spp` in California waters so the alternatives related to the results of a previous rebuilding plan as specified in Section 2.5 of the rebuilding TOR could not be done. These include:
 
 \begin{itemize}
- \item Apply the spawning potential ratio or relevant harvest control run in the current rebuilding plan. 
- \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the current $\text{T}_\text{TARGET}$.
- \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle.
+ \item Apply the spawning potential ratio or relevant harvest control run in the current rebuilding plan (strategy 3 in TOR). 
+ \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the current $\text{T}_\text{TARGET}$ (strategy 4 in TOR).
+ \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle (strategy 6 in TOR).
 \end{itemize}
 
 All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt in 2021, `r round(reb[[1]]$acl_matrix[2,2],2)` mt in 2022, `r round(reb[[1]]$acl_matrix[3,2],2)` mt in 2023, and `r round(reb[[1]]$acl_matrix[4,2],2)` mt in 2024, as recommended by the GMT. 
