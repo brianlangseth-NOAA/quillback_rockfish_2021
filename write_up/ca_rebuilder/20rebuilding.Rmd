@@ -61,8 +61,8 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 	 \item by $\text{T}_\text{MAX}$ from the current cycle, and 
 	 \item by $\text{T}_\text{MID}$ from the current cycle, which is the year midway between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
 	\end{enumerate}
-	\item Apply the default harvest policy based on the 40:10 harvest control rule with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
-	\item Apply the ABC harvest rate with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
+	\item Apply the default harvest policy based on the 40:10 harvest control rule with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas with a cap at the category 3 value of $\sigma$ = 2.0) and $P^*$ = 0.45.
+	\item Apply the ABC harvest rate with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas with a cap at the category 3 value of $\sigma$ = 2.0) and $P^*$ = 0.45.
 \end{enumerate}
 
 The estimated removal in 2025 from applying an SPR of 0.5 was smaller than the 2024 ACL contributions (`r 0.9573 + 0.9727` mt) for `r spp` in California waters. This implies that an SPR rate of below 0.5 would be needed to achieve the current ACL contributions, so results from this strategy (strategy 2 above) are not provided in this report. The SPR harvest rate to achieve a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ from the current cycle was `r median(reb[[5]]$spr_matrix[,grep("2071", colnames(reb[[5]]$spr_matrix))])`, essentially equal to that of the SPR = 0.5 strategy. Consequently, results fom the $\text{T}_\text{MAX}$ strategy (strategy 5a above) are not presented in this report.
