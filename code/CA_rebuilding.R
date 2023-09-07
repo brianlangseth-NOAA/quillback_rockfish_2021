@@ -669,7 +669,7 @@ ggsave(file.path(rebuild_dir, "write_up_postNov", "figures", "rebuilding_relativ
 
 ####
 #Figures for 2023 rebuilding
-#Replaced SPR500 and SPR550 scenarios with no cap runs (Tmid no longer needed)
+#Replaced SPR500 and SPR550 scenarios with no cap runs
 #Added extra SPR runs (for SPR 0.55 and 0.65)
 ####
 
@@ -737,7 +737,9 @@ head(acast(probs_all, Scenario~Year, value.var = "Prob")[,1:30],10) #test to ens
 find = which(probs_all$Prob <=1.0 & probs_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot2::ggplot(probs_all[find,], aes(x = Year,y = Prob, color = Scenario)) + 
   geom_line(lwd = 1.5) + ylab("Probability Relative Spawning Output > 40% Spawning Output") +
-  scale_color_manual(values = brewer.pal(length(unique(probs_all$Scenario)), "RdYlBu"))
+  geom_point(aes(shape = Scenario), size = 3, data = subset(probs_all[find,], Year %% 10 == 1)) + #only plot every 10th label
+  scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(probs_all$Scenario)), "RdYlBu")) +
+  scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT.png"), width = 10, height = 7)
 
 
@@ -778,7 +780,9 @@ head(acast(acl_all, Scenario~Year, value.var = "Catch")[,1:10],10) #test to ensu
 find = which(acl_all$Year > 2024 & acl_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot2::ggplot(acl_all[find,], aes(x = Year, y = Catch, color = Scenario)) + 
   geom_line(lwd=1.5) + ylab("Catches (mt)") +
-  scale_color_manual(values = brewer.pal(length(unique(acl_all$Scenario)), "RdYlBu"))
+  geom_point(aes(shape = Scenario), size = 3, data = subset(acl_all[find,], Year %% 10 == 1)) + #only plot every 10th label
+  scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(acl_all$Scenario)), "RdYlBu")) +
+  scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT.png"), width = 10, height = 7)
 
 
@@ -820,7 +824,9 @@ head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure r
 find = which(sb_all$Year > 2024 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot(sb_all[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) + 
   geom_line(lwd = 1.5) + ylab("Spawning output") +
-  scale_color_manual(values = brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu"))
+  geom_point(aes(shape = Scenario), size = 3, data = subset(sb_all[find,], Year %% 10 == 1)) + #only plot every 10th label
+  scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu")) +
+  scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT.png"), width = 10, height = 7)
 
 
@@ -861,5 +867,7 @@ head(acast(sb_all, Scenario~Year, value.var = "SB")[,1:10],10) #test to ensure r
 find = which(sb_all$Year > 2024 & sb_all$Year <= (reb[[1]]$tmax + 3*reb[[1]]$mean_gen))
 ggplot(sb_all[find,], aes(x = Year, y = SB, color = Scenario)) + 
   geom_line(lwd = 1.5) + ylab("Spawning output relative to 40% spawning output") +
-  scale_color_manual(values = brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu"))
+  geom_point(aes(shape = Scenario), size = 3, data = subset(sb_all[find,], Year %% 10 == 1)) + #only plot every 10th label
+  scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu")) +
+  scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
 ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
