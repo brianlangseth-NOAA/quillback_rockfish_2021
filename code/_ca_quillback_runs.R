@@ -1993,3 +1993,23 @@ loc <- grep("# Constrain catches by the ABC", reb)
 reb[loc+1] <- 2
 writeLines(reb, file.path(new_dir, "rebuild.dat"))
 
+
+#Test model run to confirm Tmax year run is similar to SPR = 0.5 run
+#1102b_TmaxRuns_no_abc_max: Set proejction type to year (type = 4) and add years around 2072
+new_dir <- file.path(wd, "rebuilder", "1102b_TmaxRuns_no_abc_max")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1100_2023", "rebuild.dat"),n=-1)
+loc <- grep("# Constrain catches by the ABC", reb)
+reb[loc+1] <- 2
+loc <- grep("# Projection type", reb)
+reb[loc+1] <- 4
+loc <- grep("# Yrs to define", reb)
+reb[loc+1] <- paste(c(2069:2074), collapse = " ")
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+

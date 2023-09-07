@@ -15,18 +15,20 @@ quants = c(round(reb[[1]]$sb0 * frac_fem, 2),
 		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4],
 		   reb[[1]]$mean_gen,
 		   reb[[1]]$tmax,
+		   reb[[1]]$tmid,
 		   reb[[1]]$tmin + reb[[1]]$recovery_spec[4],
 		   "TBD",
 		   "TBD",
 		   round(reb[[1]]$spr_matrix[[1,2]],2))
-row_names = c("SB0 (millions of eggs)",
-              "SB40 (millions of eggs)",
-              "SB2021 (millions of eggs)",
+row_names = c("SB\\textsubscript{0} (millions of eggs)",
+              "SB\\textsubscript{40\\%} (millions of eggs)",
+              "SB\\textsubscript{2021} (millions of eggs)",
               "Year rebuilding begins",
               "Current year",
               "T\\textsubscript{MIN}",
               "Mean generation time (years)",
               "T\\textsubscript{MAX}",
+              "T\\textsubscript{MID}",
               "T\\textsubscript{F=0}",
               "T\\textsubscript{TARGET}",
               "SPR\\textsubscript{TARGET}",
@@ -77,12 +79,12 @@ extra = rbind(round(reb[[3]]$acl_matrix[1:6,-1],2),
 	   rep(reb[[3]]$tmax, length(reb[[3]]$rebuild_quants$Ttarget)),
 	   reb[[3]]$rebuild_quants$Prebuild)[,c(2,4)] # Prob by Tmax
 
-# #Set the SPR = 0.55 run to be from the no-ABC-cap run because it matters
-# extra[,1] = c(round(reb[[4]]$acl_matrix[1:6,-1][,2],2),
-#                reb[[4]]$rebuild_quants$SPR[2],
-#                reb[[4]]$rebuild_quants$Ttarget[2],
-#                reb[[4]]$tmax,
-#                reb[[4]]$rebuild_quants$Prebuild[2]) # Prob by Tmax
+#Set the SPR = 0.55 run to be from the no-ABC-cap run because it matters
+extra[,1] = c(round(reb[[4]]$acl_matrix[1:6,-1][,2],2),
+               reb[[4]]$rebuild_quants$SPR[2],
+               reb[[4]]$rebuild_quants$Ttarget[2],
+               reb[[4]]$tmax,
+               reb[[4]]$rebuild_quants$Prebuild[2]) # Prob by Tmax
 
 out = cbind(row_names, quants[,1], extra[,1], quants[,2], extra[,2], quants[,-c(1,2)])
 col_names = c("Quantity", colnames(quants)[1], 
@@ -116,7 +118,7 @@ colnames(out)[7] = "Yr= T\\textsubscript{MID}"
 
 #Add SPR = 0.55 and SPR 0.65 runs
 extra = as.data.frame(round(reb[[3]]$prob_matrix[1:tabrows, ],3))
-#extra[,3] = round(reb[[4]]$prob_matrix[1:tabrows, 3],3) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+extra[,3] = round(reb[[4]]$prob_matrix[1:tabrows, 3],3) #Set the SPR = 0.55 run to be from the no-ABC-cap run
 out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 
@@ -144,7 +146,7 @@ colnames(out)[7] = "Yr= T\\textsubscript{MID}"
 
 #Add SPR = 0.55 and SPR 0.65 runs
 extra = as.data.frame(round(reb[[3]]$acl_matrix[1:tabrows, ],2))
-#extra[,3] = round(reb[[4]]$acl_matrix[1:tabrows, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+extra[,3] = round(reb[[4]]$acl_matrix[1:tabrows, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
 out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 
@@ -174,8 +176,8 @@ colnames(out)[7] = "Yr= T\\textsubscript{MID}"
 
 #Add SPR = 0.55 and SPR 0.65 runs
 extra = as.data.frame(round(reb[[3]]$ofl_matrix[1:tabrows, ],2))
-# extra[,3] = round(reb[[4]]$ofl_matrix[1:tabrows, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
-# #Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. However, the acl's do not reach the OFL levels as is the case for SPR = 0.5. Thus no need to set these to the acl_matrix like was done for SPR = 0.5
+extra[,3] = round(reb[[4]]$ofl_matrix[1:tabrows, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+#Because ACLs no longer equal OFLs the OFLs for no-cap scenarios are less than acl's. However, the acl's do not reach the OFL levels as is the case for SPR = 0.5. Thus no need to set these to the acl_matrix like was done for SPR = 0.5
 out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 
@@ -210,7 +212,7 @@ colnames(out)[7] = "Yr= T\\textsubscript{MID}"
 
 #Add SPR = 0.55 and SPR 0.65 runs
 extra = as.data.frame(round(reb[[3]]$relativeb_matrix[1:tabrows, ],2))
-#extra[,3] = round(reb[[4]]$relativeb_matrix[1:tabrows, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
+extra[,3] = round(reb[[4]]$relativeb_matrix[1:tabrows, 3],2) #Set the SPR = 0.55 run to be from the no-ABC-cap run
 out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 

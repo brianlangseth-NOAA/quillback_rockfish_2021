@@ -1,5 +1,5 @@
 ---
-month: "August"
+month: "September"
 year: "2023"
 preamble: |
 csl: canadian-journal-of-fisheries-and-aquatic-sciences.csl
@@ -67,14 +67,14 @@ title: DRAFT 2023 Rebuilding analysis for quillback rockfish (_Sebastes maliger_
 
 # Summary{-}
 
-This rebuilding analysis is for the stock of quillback rockfish (_Sebastes maliger_) in waters off California. The analysis is based on the 2021 stock assessment [@Langseth_status_2021]. The 2021 assessment model estimated the quillback rockfish population to be at 14% of the unexploited equilibrium spawning output at the start of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2025 and beyond based on updated catch values for 2021-2024 as provided by the Groundfish Management Team (GMT). This rebuilding analysis uses the standard suite of management scenarios as described in the rebuilding Terms of Reference [@pfmc_rebuildingTOR_2022] along with two additional SPR strategies at SPR = 0.55 and SPR = 0.65.
+This rebuilding analysis is for the stock of quillback rockfish (_Sebastes maliger_) in waters off California. The analysis is based on the 2021 stock assessment [@Langseth_status_2021]. The 2021 assessment model estimated the quillback rockfish population to be at 14% of the unexploited equilibrium spawning output at the start of 2021. This rebuilding analysis compares the results of applying a suite of potential management actions to the stock for 2025 and beyond based on updated catch values for 2021--2024 as provided by the Groundfish Management Team (GMT). This rebuilding analysis uses the standard suite of management scenarios as described in the rebuilding Terms of Reference (TOR; @pfmc_rebuildingTOR_2022), along with five SPR strategies ranging from SPR = 0.50 to SPR = 0.90 in increments of 0.10 and two additional SPR strategies at SPR = 0.55 and SPR = 0.65.
 
-The results of the analysis show that the value for $\text{T}_\text{MIN}$, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2023), is 2045. The estimated generation time for quillback rockfish was 26 years. In conjunction with $\text{T}_\text{MIN}$ and the mean generation time, $\text{T}_\text{MAX}$ was estimated to be 2071. An SPR = 0.586 harvest rate leads to a 50% probability of recovery by $\text{T}_\text{MID}$ where $\text{T}_\text{MID}$ was 2058, an intermediate year between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
+The results of the analysis show that the value for $\text{T}_\text{MIN}$, the median year for rebuilding to the target level in the absence of fishing since the year of declaration (2025), was 2045. The estimated generation time for quillback rockfish was 26 years. In conjunction with $\text{T}_\text{MIN}$ and the mean generation time, $\text{T}_\text{MAX}$ was estimated to be 2071. An SPR = 0.586 harvest rate leads to a 50% probability of recovery by $\text{T}_\text{MID}$ where $\text{T}_\text{MID}$ was 2058, an intermediate year between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$.
 
 <!--chapter:end:01executive.Rmd-->
 
 \pagebreak
-\setlength{\parskip}{5mm plus1mm minus1mm}
+\setlength{\parskip}{3mm plus1mm minus1mm}
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \renewcommand{\thefigure}{\arabic{figure}}
@@ -82,38 +82,37 @@ The results of the analysis show that the value for $\text{T}_\text{MIN}$, the m
 \setcounter{table}{0}
 \setcounter{figure}{0}
 
-\setlength\parskip{0.2em plus 0.1em minus 0.2em}
-
 <!--chapter:end:10a.Rmd-->
 
 # Introduction
 
-The 2021 assessment of quillback rockfish (_Sebastes maliger_) in California waters documented that the population of quillback rockfish was below the Minimum Stock Size Threshold (MSST), which is 25% of unfished spawning output for rockfish stocks, in 2021 [@Langseth_status_2021]. The population declined below MSST starting in 1992, reached it lowest values in the mid-1990s, increased to near the MSST in the 2000s and early 2010s, and declined in recent years. Given the assumed productivity of the stock combined with the longevity of quillback rockfish a range of alternative rebuilding approaches were examined, and are described in this report, with rebuilding ranging from 2045 -- 2072 based on various SPR harvest rates from 0.5 to 1 (no harvest). 
+The 2021 assessment of quillback rockfish (_Sebastes maliger_) in California waters documented that the population of quillback rockfish in 2021 was below the Minimum Stock Size Threshold (MSST), which is 25$\%$ of unfished spawning output for rockfish stocks [@Langseth_status_2021]. The population declined below MSST starting in 1992, reached it lowest values in the mid-1990s, increased to near the MSST in the 2000s and early 2010s, and declined in recent years. 
+
+A draft rebuilding analysis was done in 2021 based on the results of the 2021 stock assessment and was used to inform catch levels (i.e. ACLs) for 2023--2024 using an SPR = 0.55 [@langseth_rebuild_2022]. However, no status declaration of quillback rockfish in California waters was made because quillback rockfish were defined in the Fisheries Management Plan (FMP) at the time as a coastwide stock, and therefore a rebuilding plan for California quillback rockfish was not required. Since the 2021 assessment, Amendment 31 to the FMP has been proposed that, if approved, would define quillback rockfish along the U.S. west coast as three stocks [@fed_registry_2023]: Washington, Oregon, and California.
+
+Given the assumed levels of depletion for quillback rockfish in California waters a range of alternative rebuilding strategies were examined, and are described in this report. This analysis updates the draft 2021 rebuilding analysis and contains new estimates for removals of quillback rockfish in California waters in 2021--2024. The years by which rebuilding occurred ranged from 2045 -- 2072 based on various SPR harvest rates from 0.5 to 1 (no harvest). 
 
 
 # Overview of the 2021 stock assessment
 
-The 2021 assessment of quillback rockfish assessed the stock as three separate sub-stocks along the U.S. west coast: Washington, Oregon, and California. These were the first assessments of quillback rockfish conducted within Stock Synthesis [@methot_stock_2013] that used catch and length composition data to inform model estimates around stock size and status. The previous assessment of quillback rockfish, conducted in 2010, was a coastwide assessment modeled using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide overfishing limits (OFLs) based on data and biological information [@DickandMacCall_dbsra_2010]. DB-SRA is a catch-only method and does not assess overfished status; the 2010 assessment assumed that current depletion was distributed around the management target of 40%. The 2010 assessment found there was a 52% chance that quillback rockfish was experiencing overfishing, as recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate at the time. Recent catches of quillback rockfish for the current assessment also exceed the annual catch limit (ACL) contributions for the species in all modeled areas. 
+The 2021 assessments of quillback rockfish assessed the stock as three separate sub-stocks along the U.S. west coast: Washington, Oregon, and California. These were the first assessments of quillback rockfish conducted within Stock Synthesis [@methot_stock_2013] that used catch and length composition data to inform model estimates around stock size and status. The previous assessment of quillback rockfish, conducted in 2010, was a coastwide assessment modeled using Depletion-Based Stock Reduction Analysis (DB-SRA) to provide estimates of coastwide overfishing limits (OFLs) based on data and biological information [@DickandMacCall_dbsra_2010]. DB-SRA is a catch-only method and does not assess overfished status; the 2010 assessment assumed that current depletion was distributed around the management target of 40$\%$. The 2010 assessment found there was a 52$\%$ chance that quillback rockfish was experiencing overfishing, as recent coastwide catch of quillback rockfish slightly exceeded the median coastwide OFL estimate at the time. Recent catches of quillback rockfish for the current assessment also exceed the annual catch limit (ACL) contributions for the species in all modeled areas. Estimates of depletion in 2021 for the stocks off Washington and Oregon were above the MSST threshold, but the estimate of depletion for the sub-stock off California was 14$\%$ [@Langseth_status_2021].
 
-Estimates of depletion in 2021 for the stocks off Washington and Oregon were above the MSST threshold, but the estimate of depletion for the stock off California was 14%. See Langseth et al. [-@Langseth_status_2021] for additional results from the California quillback rockfish base model.
-
-California quillback rockfish was assessed using a single-sex model with coastwide life history parameters combined across sexes. Life history parameters were estimated externally and then fixed within the model. Natural mortality and steepness were both fixed, at the median and mean of the priors, respectively. Annual recruitment deviations were estimated within the base model. The model for quillback rockfish in California waters included two fishing fleets, a commercial and a recreational fleet. The majority of the removals and length composition data arose from the recreational fleet. Recreational removals peaked in the late 1970s and early 1980s, with two years of large catches in 1984 and 1993. Removals declined sharply in 1994, but increased to levels similar to the late 1970s and early 1980s during the mid 2000s and again in recent years. Commercial removals peaked in the mid to late 1990s, with one year of exceptionally large catches in 1991. Removals declined through the mid 2010s, but increased in recent years. Selectivity for the commercial and recreational fleets was specified to be asymptotic. The assessment model decision table explored uncertainty around stock size and status using lower ($M$ = 0.0464 yr$^{-1}$) and higher ($M$ = 0.0744 yr$^{-1}$) natural mortality ($M$) values relative to the base model.
+California quillback rockfish was assessed using a single-sex model with coastwide life history parameters combined across sexes [@Langseth_status_2021]. Life history parameters were estimated externally and then fixed within the model. Natural mortality and steepness were both fixed, at the median and mean of the priors, respectively. Annual recruitment deviations were estimated within the base model. The model for quillback rockfish in California waters included two fishing fleets, a commercial and a recreational fleet. The majority of the removals and length composition data arose from the recreational fleet. Recreational removals peaked in the late 1970s and early 1980s, with two years of large catches in 1984 and 1993. Removals declined sharply in 1994, but increased to levels similar to the late 1970s and early 1980s during the mid 2000s and again in recent years. Commercial removals peaked in the mid to late 1990s, with one year of exceptionally large catches in 1991. Removals declined through the mid 2010s, but increased in recent years. Selectivity for the commercial and recreational fleets was specified to be asymptotic. The assessment model decision table explored uncertainty around stock size and status using lower ($M$ = 0.0464 yr$^{-1}$) and higher ($M$ = 0.0744 yr$^{-1}$) natural mortality ($M$) values relative to the base model ($M$ = 0.057 yr$^{-1}$).
 
 Sensitivities to modeling choices, catch history, and parameter values were explored and showed general support for the base model estimates of stock status and depletion. Sensitivities to the von Bertalanffy growth coefficient ($k$, whether estimated on its own or along with $L_\infty$) and natural mortality showed that model estimates of depletion were sensitive to these parameter choices.  
 
 # Management performance under rebuilding
 
-(*NEED TO CONFIRM THIS IS ACCURATE - I WILL NEED HELP ADDING DETAILS TO THIS SECTION IF THAT IS WHAT IS REQUIRED*)
+No rebuilding plan exists for quillback rockfish in waters off the coast of California.
 
-This is the first formal rebuilding plan for quillback rockfish in waters off the coast of California. A rebuilding analysis was done in 2021 based on the results of the 2021 stock assessment, and was used to inform catch levels [@langseth_rebuild_2022] (*WAS IT? IVE ONLY HEARD ANECDOTAL WORD ON THIS*). However, no declaration of quillback rockfish in California waters was made because quillback rockfish were defined in the FMP as a coastwide stock, and therefore a rebuilding plan for California quillback rockfish was not required. Since the 2021 assessment, Amendment 31 to the FMP has been developed which, if approved, would define quillback rockfish along the U.S. west coast as three stocks [@fed_registry_2023]. Based on the 2021 assessments, the California stock of quillback rockfish would need a rebuilding analysis. Therefore, this analysis updates the 2021 rebuilding analysis and contains new estimates for removals of quillback rockfish in 2021--2024. Removals of quillback rockfish in 2021--2022 are higher than estimates from the 2021 rebuilding analysis, even with in-season actions to reduce catch of quillback rockfish. Projected landings for 2023--2024 are higher than specified catch limits, and in season actions have been applied by the California Department of Fish and Wildlife (CDFW) for 2023. 
-
+<!-- This is the first rebuilding plan for quillback rockfish in waters off the coast of California. -->
 
 
 <!--chapter:end:11introduction.Rmd-->
 
 # Rebuilding calculations
 
-This rebuilding analysis was conducted in August, 2023 using software developed by A. Punt (version 3.12j, December 2021). The input file for the analysis is provided in [Appendix A](#append_a). The steps followed were: 
+This rebuilding analysis was conducted in August and September, 2023 using software developed by A. Punt (version 3.12j, December 2021). The input file for the analysis is provided in [Appendix A](#append_a). The steps followed were: 
 
 \begin{enumerate}
 	\item Define how equilibrium spawning output ($\text{SB}_0$) will be calculated. 
@@ -132,7 +131,7 @@ The equilibrium spawning output ($\text{SB}_0$) used in this rebuilding analysis
 
 ## Generation of future recruitment
 
-The estimated parameters of the stock recruitment relationship including the unexploited equilibrium recruitment (natural log of $R_0$ = 3.168), steepness ($h$ = 0.72), and degree of recruitment variability ($\sigma_R = 0.60$) from the 2021 assessment were used to generate future recruitments in the rebuilding analysis.
+The estimated parameters of the stock recruitment relationship including the unexploited equilibrium recruitment (ln($R_0$) = 3.168), steepness ($h$ = 0.72), and degree of recruitment variability ($\sigma_R = 0.60$) from the 2021 assessment were used to generate future recruitments in the rebuilding analysis.
 
 
 ## Population biology
@@ -142,19 +141,19 @@ The biological parameters used for the rebuilding analysis were based on the val
 
 ## Fishery selectivity, and removal allocations
 
-The selectivity used in the rebuilding analysis was obtained from the 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in the rebuilding analysis was informed using the relative fishing mortality from the assessment averaged over recent years (2017-2019). This choice provides some consistency between recent model results and forecasts from the rebuilding analysis, accounting for the unique dynamics in 2020 caused by the COVID-19 pandemic. 
+The selectivity used in the rebuilding analysis was obtained from the 2021 assessment. Selectivity in the assessment model was constant across time for each fishing fleet. The relative allocation of catch among fleets in the rebuilding analysis was informed using the relative fishing mortality from the assessment averaged over recent years (2017--2019). This choice provides some consistency between recent model results and forecasts from the rebuilding analysis, accounting for the unique dynamics in 2020 caused by the COVID-19 pandemic. 
 
-Removals for 2021--2024 are entered as fixed within value the analysis and were provided by the Groundfish Management Team (GMT). Removals in these years were allocated among fleets based on the fleet-specific values as provided by the GMT and not based on relative fishery mortality from 2017-2019.   
+Removals for 2021--2024 were entered as fixed values within the analysis and were provided by the Groundfish Management Team (GMT). Removals in these years were allocated among fleets based on the fleet-specific values as provided by the GMT and not based on relative fishery mortality from 2017--2019.   
 
 
 ## Inclusion of uncertainty
 
-Model and parameter uncertainty is included in the rebuilding analysis via 1,000 random simulations of stochastic future recruitment strengths and integration over alternative low ($M$ = 0.0464 yr$^{-1}$) and high ($M$ = 0.0744 yr$^{-1}$) states of nature for values of natural mortality ($M$). Other potential states of nature were explored for the assessment, including for low and high ln($R_0$) and high and low $L_{\infty}$, but alternative values of natural mortality encapsulated a slightly wider range of depletion estimates compared to the other states of natures. The base model was given 50% of the weight (500 simulations) and each alternative natural mortality state of nature was given 25% (250 simulations) of the weight. 
+Model and parameter uncertainty is included in the rebuilding analysis via 1,000 random simulations of stochastic future recruitment strengths and integration over alternative low ($M$ = 0.0464 yr$^{-1}$) and high ($M$ = 0.0744 yr$^{-1}$) states of nature for values of natural mortality ($M$). Other potential states of nature were explored for the assessment, including for low and high ln($R_0$) and high and low $L_{\infty}$, but alternative values of natural mortality encapsulated a slightly wider range of depletion estimates compared to the other states of natures. The base model was given 50$\%$ of the weight (500 simulations) and each alternative natural mortality state of nature was given 25$\%$ of the weight (250 simulations). 
 
 
 ## Alternate rebuilding strategies analyzed
 
-Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a $\text{T}_\text{TARGET}$ (year for 50% probability of recovery). This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in the rebuilding Terms of Reference (TOR; PFMC -@pfmc_rebuildingTOR_2022) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate, and rebuilding by a selected target year.  
+Assuming that a constant rate of harvest will be applied throughout a rebuilding period, the basis for rebuilding alternatives can be divided into two approaches: 1) strategies based on selection of a constant harvest rate (SPR rate), or 2) strategies based on selection of a target year for 50$\%$ probability of recovery. This rebuilding analysis presents the following alternate strategies, which are a combination of those specified in Section 2.5 of the rebuilding Terms of Reference (TOR; @pfmc_rebuildingTOR_2022) and additional strategies. The additional strategies are based on the selection of a SPR harvest rate, and rebuilding by a selected target year $\text{T}_\text{MID}$.  
 
 \begin{enumerate}
 	\item Eliminate all harvest, F = 0, starting in the next management cycle, 2025, the same as setting a constant SPR harvest rate of 1.0.
@@ -178,14 +177,14 @@ Assuming that a constant rate of harvest will be applied throughout a rebuilding
 	\item Apply the ABC harvest rate with time-varying sigma ($\sigma$ = 1.0 as the basis for the time-varying sigmas) and $P^*$ = 0.45.
 \end{enumerate}
 
-The sum of ACL contributions for quillback rockfish from the southern management area and the percent allocated to California from the north management area (28.7$\%$) as provided by the GMT (*THIS TEXT IS A LITTLE ODD. CONSIDER REWORDING. ALSO CONFIRM PERCENTAGE*) were larger than the catch resulting from applying an SPR of 0.5. This implies that an SPR rate of below 0.5 would be needed to achieve the current ACL contributions, so results from this strategy (strategy 2 above) are not provided in this report. Similarly, the SPR rate that led to a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ was less than 0.5 so results from the $\text{T}_\text{MAX}$ strategy (strategy 5b above) are not presented in this report.
+The estimated removal in 2025 from applying an SPR of 0.5 was smaller than the 2024 ACL contributions (1.93 mt) for quillback rockfish in California waters. This implies that an SPR rate of below 0.5 would be needed to achieve the current ACL contributions, so results from this strategy (strategy 2 above) are not provided in this report. The SPR harvest rate to achieve a 50$\%$ probability of recovery by $\text{T}_\text{MAX}$ from the current cycle was 0.5039, essentially equal to that of the SPR = 0.5 strategy. Consequently, results fom the $\text{T}_\text{MAX}$ strategy (strategy 5a above) are not presented in this report.
 
-No current rebuilding plan exists for quillback rockfish in California waters so the alternatives related to the results of a previous rebuilding plan as specified in the rebuilding TOR could not be done. These include:
+No current rebuilding plan exists for quillback rockfish in California waters so the alternatives related to the results of a previous rebuilding plan as specified in Section 2.5 of the rebuilding TOR could not be done. These include:
 
 \begin{itemize}
- \item Apply the spawning potential ratio or relevant harvest control run in the current rebuilding plan. 
- \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the current $\text{T}_\text{TARGET}$.
- \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle.
+ \item Apply the spawning potential ratio or relevant harvest control run in the current rebuilding plan (strategy 3 in TOR). 
+ \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the current $\text{T}_\text{TARGET}$ (strategy 4 in TOR).
+ \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle (strategy 6 in TOR).
 \end{itemize}
 
 All of the above rebuilding strategies were conducted assuming removals of 15.58 mt in 2021, 18.11 mt in 2022, 11.12 mt in 2023, and 10.62 mt in 2024, as recommended by the GMT. 
@@ -197,21 +196,21 @@ All of the above rebuilding strategies were conducted assuming removals of 15.58
 
 ## Rebuilding reference points
 
-Reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2025 was estimated to be 20 years, corresponding to the stock being rebuilt by 2045, assuming the default removals for 2021--2024. The mean generation time was estimated to be 26 years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$, is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that require more than 10 years to rebuild.  Quillback rockfish was unable to rebuild within 10 years so the estimated $\text{T}_\text{MAX}$ was 2071. $\text{T}_\text{TARGET}$, and $\text{SPR}_\text{TARGET}$ are not specified since this is the first rebuilding plan for quillback rockfish and these values have not been set via the Council's process.
+Reference points calculated based on this rebuilding analysis are given in Table \ref{tab:ref-points}. The minimum time required for rebuilding, $\text{T}_\text{MIN}$, with no fishing (F=0) starting in 2025 was estimated to be 20 years, corresponding to the stock being rebuilt by 2045, assuming the default removals for 2021--2024. The mean generation time was estimated to be 26 years. The maximum time allowed for rebuilding, $\text{T}_\text{MAX}$, is defined as the $\text{T}_\text{MIN}$ plus the mean generation time for stocks that require more than 10 years to rebuild.  Quillback rockfish was unable to rebuild within 10 years so the estimated $\text{T}_\text{MAX}$ was 2071. $\text{T}_\text{TARGET}$ and $\text{SPR}_\text{TARGET}$ are not specified because no rebuilding plan for quillback rockfish exists so these values have not been set via the Council's process.
 
-A rebuilding strategy is presented below and includes a rebuilding target year termed $\text{T}_\text{MID}$, which equals 2058 and is the mid-point between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$. The Council may opt to select a $\text{T}_\text{TARGET}$ earlier or later than this $\text{T}_\text{MID}$ value based on fishery, economic, or other factors.
+A rebuilding strategy is presented below that includes a rebuilding target year termed $\text{T}_\text{MID}$, which equals 2058 and is the mid-point between $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$. The Council may opt to select a $\text{T}_\text{TARGET}$ earlier or later than this $\text{T}_\text{MID}$ value based on fishery, economic, or other factors.
 
 ## Alternative harvest policy projections
 
-Summary results from the rebuilding alternatives are presented in Table \ref{tab:reb-options}. Within Table \ref{tab:reb-options}, non-fixed catch values for 2025-2026 are labeled as ACL values. Detailed results for all runs are presented in Tables \ref{tab:prob-mat}--\ref{tab:rel-ssb-mat} and Figures \ref{fig:prob-fig}--\ref{fig:ssb-fig}.
+Summary results from the rebuilding analysis are presented in Table \ref{tab:reb-options}. Within Table \ref{tab:reb-options}, estimated catch values for 2025--2026 from the rebuilding analysis are labeled as ACL values. Detailed results for all runs are presented in Tables \ref{tab:prob-mat}--\ref{tab:rel-ssb-mat} and Figures \ref{fig:prob-fig}--\ref{fig:ssb-fig}.
 
-The target rebuilding year based on the various rebuilding strategies ranged from 2045 -- 2072 (Table \ref{tab:reb-options}). The probability of rebuilding by year steadily increased across the alternative SPR values with full rebuilding (reaching a probability of greater than 50%) by 2072 when the lowest SPR of 0.50 was applied (Table \ref{tab:prob-mat} and Figure \ref{fig:prob-fig}). The recommended removals in 2025, the first year of rebuilding, were low ranging between 0 -- 1.48 mt across strategies excluding the no-harvest strategy (Table \ref{tab:acl-mat}), with the recommended removals slowly increasing by year during the rebuilding period (Figure \ref{fig:acl-fig}). The estimated overfishing limits (OFLs) for each rebuilding alternative are given in Table \ref{tab:ofl-mat}. The change in spawning output by year relative to the spawning output target, 40% of unfished, under each of the alternatives are shown by year in Table \ref{tab:rel-ssb-mat} and Figure \ref{fig:rel-ssb-fig}. The harvest rate to obtain a 50% probability of recovery by $\text{T}_\text{MAX}$ corresponds to an SPR that is lower than 0.5, which represents catch that is greater than the OFL, so is not provided in the tables. 
+The target rebuilding year based on the various rebuilding strategies ranged from 2045 -- 2072 (Table \ref{tab:reb-options}). The probability of rebuilding by year steadily increased across the alternative SPR values with full rebuilding (reaching a probability of greater than 50$\%$) by 2072 when the lowest SPR of 0.50 was applied (Table \ref{tab:prob-mat} and Figure \ref{fig:prob-fig}). Note, however, that this year is beyond the year associated with $\text{T}_\text{MAX}$. The recommended removals in 2025, the first year of rebuilding, were low, ranging between 0 -- 1.48 mt across strategies excluding the no-harvest strategy (Table \ref{tab:acl-mat}). Zero catches were observed for the first three years under the 40-10 strategy because spawning output relative to unfished spawning output was below the 10$\%$ limit through 2027. The recommended removals slowly increased by year during the rebuilding period (Figure \ref{fig:acl-fig}). The estimated overfishing limits (OFLs) for each rebuilding alternative are given in Table \ref{tab:ofl-mat}. The change in spawning output by year relative to the spawning output target, 40$\%$ of unfished, under each of the alternatives are shown by year in Table \ref{tab:rel-ssb-mat} and Figure \ref{fig:rel-ssb-fig}. 
+<!-- The harvest rate to obtain a 50% probability of recovery by $\text{T}_\text{MAX}$ corresponds to an SPR that is lower than 0.5, which represents catch that is greater than the OFL, so is not provided in the tables.  -->
 
 <!--chapter:end:30results.Rmd-->
 
 # Acknowledgements
-Thank you to the Groundfish Management Team for providing catch estimates for 2021--2024. Owen Hamel (NOAA) provided assistance in understanding and applying the rebuilder program, and also provided comments on drafts of the analysis.
-
+Thank you to the Groundfish Management Team for providing catch estimates for 2021--2024. Owen Hamel (NOAA) provided assistance in understanding and applying the rebuilder program for this cycle, and Chantel Wetzel (NOAA) provided comments on drafts of the analysis. 
 
 <!--chapter:end:41acknowledgments.Rmd-->
 
@@ -258,14 +257,15 @@ Quantity & 2021 Assessment Values\\
 \endfoot
 \bottomrule
 \endlastfoot
-SB0 (millions of eggs) & 55.08\\
-SB40 (millions of eggs) & 22.03\\
-SB2021 (millions of eggs) & 7.75\\
+SB\textsubscript{0} (millions of eggs) & 55.08\\
+SB\textsubscript{40\%} (millions of eggs) & 22.03\\
+SB\textsubscript{2021} (millions of eggs) & 7.75\\
 Year rebuilding begins & 2025\\
 Current year & 2021\\
 T\textsubscript{MIN} & 2045\\
 Mean generation time (years) & 26\\
 T\textsubscript{MAX} & 2071\\
+T\textsubscript{MID} & 2058\\
 T\textsubscript{F=0} & 2045\\
 T\textsubscript{TARGET} & TBD\\
 SPR\textsubscript{TARGET} & TBD\\
@@ -283,12 +283,12 @@ Current SPR (2021) & 0.1\\*
 \begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:reb-options)Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.}\\
+\caption{(\#tab:reb-options)Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.}\\
 \toprule
 Quantity & SPR= .500       & SPR= .550       & SPR= .600       & SPR= .650       & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:reb-options)Results of rebuilding alternatives based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value. \textit{(continued)}}\\
+\caption[]{(\#tab:reb-options)Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value. \textit{(continued)}}\\
 \toprule
 Quantity & SPR= .500       & SPR= .550       & SPR= .600       & SPR= .650       & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
@@ -311,14 +311,14 @@ Probability of recovery by T\textsubscript{MAX} & 0.487 & 0.726 & 0.798 & 0.867 
 \endgroup{}
 \end{landscape}
 \endgroup{}
+
 \clearpage
 
 
 ## Rebuilding time series 
 
 \begingroup\fontsize{10}{12}\selectfont
-
-\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
 \caption{(\#tab:prob-mat)Probability of recovery by year for rebuilding strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.}\\
@@ -388,13 +388,13 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 2071 & 0.487 & 0.726 & 0.798 & 0.867 & 0.911 & 0.974 & 0.995 & 0.767 & 0.999 & 0.834 & 0.726\\*
 \end{longtable}
 \endgroup{}
-\end{landscape}
 \endgroup{}
+
 \clearpage
 
-\begingroup\fontsize{10}{12}\selectfont
 
-\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
 \caption{(\#tab:acl-mat)Catches (mt) by year for rebuilding strategies. Catches in 2021--2024 for all strategies were set at values recommended by the Groundfish Management Team.}\\
@@ -464,13 +464,13 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 2071 & 7.30 & 6.51 & 6.13 & 5.43 & 4.71 & 3.19 & 1.60 & 6.32 & 0.00 & 6.70 & 6.51\\*
 \end{longtable}
 \endgroup{}
-\end{landscape}
 \endgroup{}
+
 \clearpage
 
-\begingroup\fontsize{10}{12}\selectfont
 
-\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
 \caption{(\#tab:ofl-mat)OFLs (mt) by year for rebuilding strategies.}\\
@@ -540,13 +540,13 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 2071 & 7.30 & 8.37 & 8.84 & 9.56 & 10.27 & 11.65 & 12.90 & 8.64 & 14.07 & 8.61 & 8.37\\*
 \end{longtable}
 \endgroup{}
-\end{landscape}
 \endgroup{}
+
 \clearpage
 
-\begingroup\fontsize{10}{12}\selectfont
 
-\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
+\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
 \caption{(\#tab:rel-ssb-mat)Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies.}\\
@@ -616,8 +616,8 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 2071 & 0.96 & 1.11 & 1.18 & 1.29 & 1.38 & 1.58 & 1.76 & 1.15 & 1.93 & 1.15 & 1.11\\*
 \end{longtable}
 \endgroup{}
-\end{landscape}
 \endgroup{}
+
 \clearpage
 
 <!--chapter:end:52tables.Rmd-->
@@ -627,16 +627,16 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 
 <!-- Main run figures -->
 
-![Probability of rebuilding by year for the alternative rebuilding strategies.\label{fig:prob-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild_NEWsa4ss/figures/rebuilding_probability_forREPORT.png){width=100% height=100% alt="Line plot of probability of recovery by year after 2021 showing 11 lines that represent each rebuilding strategy."}
+![Probability of rebuilding by year for the alternative rebuilding strategies.\label{fig:prob-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png){width=100% height=100% alt="Line plot of probability of recovery by year after 2021 showing 11 lines that represent each rebuilding strategy."}
 
 
-![Catches (mt) by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:acl-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild_NEWsa4ss/figures/rebuilding_acl_forREPORT.png){width=100% height=100% alt="Line plot of catches by year after 2024 showing 11 lines that represent each rebuilding strategy."}
+![Catches (mt) by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:acl-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png){width=100% height=100% alt="Line plot of catches by year after 2024 showing 11 lines that represent each rebuilding strategy."}
 
 
-![Spawning output relative to the management target of 40 percent of unfished spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:rel-ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild_NEWsa4ss/figures/rebuilding_relative_sb_forREPORT.png){width=100% height=100% alt="Line plot of relative spawning output by year after 2024 showing 11 lines that represent each rebuilding strategy."}
+![Spawning output relative to the management target of 40 percent of unfished spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:rel-ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png){width=100% height=100% alt="Line plot of relative spawning output by year after 2024 showing 11 lines that represent each rebuilding strategy."}
 
 
-![Spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild_NEWsa4ss/figures/rebuilding_ssb_forREPORT.png){width=100% height=100% alt="Line plot of spawning output by year after 2024 showing 13 lines that represent each rebuilding strategy."}
+![Spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png){width=100% height=100% alt="Line plot of spawning output by year after 2024 showing 13 lines that represent each rebuilding strategy."}
 
 \clearpage
 
