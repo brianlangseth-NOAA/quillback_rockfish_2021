@@ -3,7 +3,7 @@
 
 ## Appendix A: Rebuilder data file.{#append_a}
 
-The rebuild.dat file used for the base rebuilding analysis has been provided as a separate file.
+The rebuild.dat file used for the base rebuilding analysis is provided below. Note that to achieve the SPR = 0.5 and SPR = 0.55 strategies, the option "Constrain catches by the ABC" had to be set to 2 (no). 
 
 \clearpage
 
