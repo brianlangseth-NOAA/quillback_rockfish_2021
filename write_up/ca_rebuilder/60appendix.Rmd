@@ -5,5 +5,11 @@
 
 The rebuild.dat file used for the base rebuilding analysis is provided below. Note that to achieve the SPR = 0.5 and SPR = 0.55 strategies, the option "Constrain catches by the ABC" had to be set to 2 (no). 
 
+## Appendix B: Alternative assumption for assumed total removals in 2024.{#append_b}
+
+At its September 2023 meeting, the Council set the value for total removals in 2024 to be `r round(reb_alt[[1]]$acl_matrix[2,2],2)` mt. A second rebuilding analysis was done that was identical to the rebuilding analysis described within the main text of this report with the exception that 2024 removals were set to `r round(reb_alt[[1]]$acl_matrix[2,2],2)` mt instead of `r round(reb[[1]]$acl_matrix[2,2],2)`. Due to the lateness at which the new removal value for 2024 was provided, only the tables and figures from this second analysis are provided. Numbering of tables and figures follow those used in the main text of the report and are preceded by the letter 'A'. 
+
 \clearpage
+
+
 

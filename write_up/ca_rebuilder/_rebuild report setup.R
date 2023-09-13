@@ -37,13 +37,21 @@ run <- c(
   "1101_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
   "1101b_no_abc_max",
   "1102b_TmaxRuns_no_abc_max")
+run_alt <- c(
+  "1100_2023", #same policies as original
+  "1100b_no_abc_max",
+  "1101_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1101b_no_abc_max",
+  "1102b_TmaxRuns_no_abc_max")
 
 #Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved
 reb <- list()
+reb_alt <- list()
 for (a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
+  reb_alt[[a]] <- get_values(rebuild_dir = file.path(rebuild_dir, run_alt[a]))
 }
-save(reb, file = file.path(getwd(), "00mod.Rdata"))
+save(reb, reb_alt, file = file.path(getwd(), "00mod.Rdata"))
 
 if(file.exists("_main.Rmd")){
   file.remove("_main.Rmd")
@@ -51,4 +59,7 @@ if(file.exists("_main.Rmd")){
 # Render the pdf
 bookdown::render_book("00a.Rmd", clean=FALSE, output_dir = getwd())
 
-
+# #Can automate but tags are removed. Combine manually
+# library(pdftools)
+# pdf_combine(c("_main.pdf", "CA_quillback_rebuilder_file_2023rebuild_noTitle.pdf"), 
+#             output = "CA_quillback_rebuilding_2023_MopUp_Sept11.pdf")
