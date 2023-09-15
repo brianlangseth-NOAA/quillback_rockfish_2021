@@ -695,6 +695,28 @@ run <- c(
   "1101_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
   "1101b_no_abc_max")
 
+#If want the alternative catch runs use these (rename figures "ALT")
+run <- c(
+  "1200_2023altCatch", #same policies as original
+  "1200b_no_abc_max",
+  "1201_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1201b_no_abc_max")
+
+#If want the original GMT catch runs but relative Fs set to approximate fleet specific catch use these (rename figures "relF")
+run <- c(
+  "1110_2023_relF", #same policies as original
+  "1110b_no_abc_max_relF",
+  "1111_addedSPRruns_relF", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1111b_no_abc_max_relF")
+
+#If want the alternative catch runs but relative Fs set to approximate fleet specific catch use these (rename figures "ALTrelF")
+run <- c(
+  "1210_2023altCatch_relF", #same policies as original
+  "1210b_no_abc_max_relF",
+  "1211_addedSPRruns_relF", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1211b_no_abc_max_relF")
+
+
 reb <- list()
 for (a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
@@ -740,7 +762,10 @@ ggplot2::ggplot(probs_all[find,], aes(x = Year,y = Prob, color = Scenario)) +
   geom_point(aes(shape = Scenario), size = 3, data = subset(probs_all[find,], Year %% 10 == 1)) + #only plot every 10th label
   scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(probs_all$Scenario)), "RdYlBu")) +
   scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
-ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT_ALT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT_relF.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_probability_forREPORT_ALTrelF.png"), width = 10, height = 7)
 
 
 #############
@@ -783,7 +808,10 @@ ggplot2::ggplot(acl_all[find,], aes(x = Year, y = Catch, color = Scenario)) +
   geom_point(aes(shape = Scenario), size = 3, data = subset(acl_all[find,], Year %% 10 == 1)) + #only plot every 10th label
   scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(acl_all$Scenario)), "RdYlBu")) +
   scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
-ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT_ALT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT_relF.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_acl_forREPORT_ALTrelF.png"), width = 10, height = 7)
 
 
 #############
@@ -827,7 +855,10 @@ ggplot(sb_all[find,], aes(x = Year, y = SB*frac_fem, color = Scenario)) +
   geom_point(aes(shape = Scenario), size = 3, data = subset(sb_all[find,], Year %% 10 == 1)) + #only plot every 10th label
   scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu")) +
   scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
-ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT_ALT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT_relF.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_ssb_forREPORT_ALTrelF.png"), width = 10, height = 7)
 
 
 #############
@@ -870,4 +901,7 @@ ggplot(sb_all[find,], aes(x = Year, y = SB, color = Scenario)) +
   geom_point(aes(shape = Scenario), size = 3, data = subset(sb_all[find,], Year %% 10 == 1)) + #only plot every 10th label
   scale_color_manual(values = RColorBrewer::brewer.pal(length(unique(sb_all$Scenario)), "RdYlBu")) +
   scale_shape_manual(values = c(0,1,2,3,4,5,6,8,15,16,17))
-ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT_ALT.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT_relF.png"), width = 10, height = 7)
+# ggsave(file.path(rebuild_dir, "write_up_2023rebuild", "figures", "rebuilding_relative_sb_forREPORT_ALTrelF.png"), width = 10, height = 7)

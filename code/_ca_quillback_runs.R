@@ -2013,3 +2013,397 @@ loc <- grep("# Yrs to define", reb)
 reb[loc+1] <- paste(c(2069:2074), collapse = " ")
 writeLines(reb, file.path(new_dir, "rebuild.dat"))
 
+
+
+#################################################
+#Council requested alternative 2024 catch values
+#################################################
+
+##
+#Update base model again alternative 2024 catch value ---------------------------------------------
+##
+
+#Copy model 1100 and change catches in 2021-2024 to reflect those provided by GMT
+model = "12_0_0_2023update_altCatch"
+old_model = "11_0_0_2023update"
+
+mod <- SS_read(file.path(wd,old_model))
+
+#Make changes to 2024 catch value to be Council's request
+alt_catch <- c(3.82, 2.50)
+mod$fore$ForeCatch[mod$fore$ForeCatch$Year == 2024,]$`Catch or F` <- alt_catch
+
+SS_write(mod, dir = file.path(wd, model), overwrite = TRUE)
+file.copy(from = file.path(wd, old_model, "run_ss.bat"), to = file.path(wd, model, "run_ss.bat"))
+
+
+##
+#Run rebuilder ---------------------------------------------
+##
+
+##
+#Copy model 1200 into 'rebuilder' folder and set up forecast to run rebuilder as in
+#https://docs.google.com/document/d/17hH1CEdombkF33Nw-_BAZLIlSfHWWgfkBSSdFRNTX_s/edit
+##
+
+mod <- SS_read(file.path(wd, model))
+
+mod$fore$Do_West_Coast_gfish_rebuilder_output <- 1
+mod$fore$Ydecl <- 2025
+mod$fore$Yinit <- -1 #(ednyr + 1 = 2021)
+
+SS_write(mod, dir = file.path(wd, "rebuilder", "12_0_0_2023altCatch_rebuilding"), overwrite = TRUE)
+file.copy(from = file.path(wd, model, "run_ss.bat"), 
+          to = file.path(wd, "rebuilder", "12_0_0_2023altCatch_rebuilding", "run_ss.bat"))
+SS_write(mod, dir = file.path(wd, "rebuilder", "12_0_0_2023altCatch_rebuilding", "just_model_files"), overwrite = TRUE)
+#and run this
+
+##
+#Now take model 1200 updated rebuild.dat file and change 2024 catches
+#I confirmed that the steps to get the model 1100 updated rebuild.dat file gives the same model 1200 file (apart from 2024 catch)
+##
+
+reb <- readLines(file.path(wd, "rebuilder", "11_0_0_2023_rebuilding", "just_model_files", "updated rebuild file.dat"),n=-1)
+
+#6. Update 2024 catches Prespecified catches (updated to new 2024 value requested by Council)
+loc <- grep("# catches for years", reb)
+tmp_val <- cbind(2024,sum(alt_catch), deparse.level = 0)
+tmp_val[4,2] <- sum(alt_catch) #set to new 2024 value
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb[loc+4] <- new_val
+
+writeLines(as.character(reb), file.path(wd, "rebuilder", "12_0_0_2023altCatch_rebuilding", "just_model_files", "updated rebuild file.dat"))
+
+##
+#Apply updated rebuild.dat to 1200_2023altCatch folder (copy .exe (December version)). 
+#Can use same states of nature file
+##
+
+dir.create(file.path(wd, "rebuilder", "1200_2023altCatch"))
+file.copy(from = file.path(wd, "rebuilder", "2021 Rebuilder", "December version", "rebuild.exe"),
+          to = file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", "12_0_0_2023altCatch_rebuilding", "just_model_files", "updated rebuild file.dat"),
+          to = file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild_m_2023.SSO"))
+
+
+##
+#Add additional SPR runs and constrain catches by the ABC ---------------------------------------------
+##
+
+#1200b_no_abc_max: Set Constrain_catches_by_ABC to 2 in rebuild.dat file
+new_dir <- file.path(wd, "rebuilder", "1200b_no_abc_max")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.dat"),n=-1)
+loc <- grep("# Constrain catches by the ABC", reb)
+reb[loc+1] <- 2
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+#1201_addedSPRruns: Add additional SPR runs (0.5, 0.55, 0.6, 0.65, 0.7)
+new_dir <- file.path(wd, "rebuilder", "1201_addedSPRruns")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.dat"),n=-1)
+loc <- grep("# Yrs to define T_target", reb)
+reb[loc+1] <- "0.5 0.55 0.6 0.65 0.7"
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+#1201b_no_abc_max: Set Constrain_catches_by_ABC to 2 in rebuild.dat file of the added SPR runs
+new_dir <- file.path(wd, "rebuilder", "1201b_no_abc_max")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1200_2023altCatch", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1201_addedSPRruns", "rebuild.dat"),n=-1)
+loc <- grep("# Constrain catches by the ABC", reb)
+reb[loc+1] <- 2
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+#################################################
+#Redo runs with F allocation for 2021-2024 to approximate the fleet specific catch values for those years
+#Apply the existing 2017-2019 average that originally started in 2021 to start in 2025
+#################################################
+
+#Values for fleet allocation were based on model 1100. Looked at fleet specific catches in results, took
+#the proportion of those that were rec, and then divided that by the desired rec % from the catch values provided by
+#the GMT. Then took the desired rec% and divided it by that ratio to get an adjusted F % to approximate the correct
+#catch %. Did this in 1100_testFleetAllocation
+
+#Percentages of rec for original GMT values were
+relF_adj <- c(0.646, 0.475, 0.266, 0.254)
+
+##
+#Copy the original model 1100 runs and apply the new relF_adj percentages----------------------------------
+##
+
+##
+#Original
+##
+new_dir <- "1110_2023_relF"
+old_dir <- "1100_2023"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+##
+#Original no abc max
+##
+new_dir <- "1110b_no_abc_max_relF"
+old_dir <- "1100b_no_abc_max"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+##
+#Alternative SPR runs
+##
+new_dir <- "1111_addedSPRruns_relF"
+old_dir <- "1101_addedSPRruns"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+##
+#Alternative SPR runs no abc max
+##
+new_dir <- "1111b_no_abc_max_relF"
+old_dir <- "1101b_no_abc_max"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+#Test model run to confirm Tmax year run is similar to SPR = 0.5 run
+#1112b_TmaxRuns_no_abc_max_relF: Set proejction type to year (type = 4) and add years around 2072
+new_dir <- file.path(wd, "rebuilder", "1112b_TmaxRuns_no_abc_max_relF")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1110_2023_relF", "rebuild.dat"),n=-1)
+loc <- grep("# Constrain catches by the ABC", reb)
+reb[loc+1] <- 2
+loc <- grep("# Projection type", reb)
+reb[loc+1] <- 4
+loc <- grep("# Yrs to define", reb)
+reb[loc+1] <- paste(c(2069:2074), collapse = " ")
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+
+
+
+##
+#Copy the model 1200 runs and apply the new relF_adj percentages----------------------------------
+##
+
+#Percentages of rec for original GMT values with updated 2024 request were based on 1200_testproportions
+#using the same approach as for model 1100 runs
+relF_adj <- c(0.646, 0.475, 0.266, 0.339)
+
+
+##
+#Original
+##
+new_dir <- "1210_2023altCatch_relF"
+old_dir <- "1200_2023altCatch"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+##
+#Original no abc max
+##
+new_dir <- "1210b_no_abc_max_relF"
+old_dir <- "1200b_no_abc_max"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+##
+#Alternative SPR runs
+##
+new_dir <- "1211_addedSPRruns_relF"
+old_dir <- "1201_addedSPRruns"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
+
+##
+#Alternative SPR runs no abc max
+##
+new_dir <- "1211b_no_abc_max_relF"
+old_dir <- "1201b_no_abc_max"
+dir.create(file.path(wd, "rebuilder", new_dir))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.exe"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild.dat"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+file.copy(from = file.path(wd, "rebuilder", old_dir, "rebuild_m_2023.SSO"),
+          to = file.path(wd, "rebuilder", new_dir, "rebuild_m_2023.SSO"))
+
+#Update relF values for 2021 and 2024
+reb <- readLines(file.path(wd, "rebuilder", new_dir, "rebuild.dat"),n=-1)
+loc <- grep("# Split of Fs", reb)
+tmp_val <- cbind(2021:2024, 1-relF_adj, relF_adj, deparse.level = 0)
+new_val <- apply(tmp_val, 1, FUN = paste, collapse = " ")
+reb <- append(reb, values = new_val, after = loc)
+
+#Set up future relFs to start in 2025
+tmp_val <- unlist(strsplit(reb[loc+5], split = "  "))
+tmp_val[1] <- 2025
+reb[loc+5] <- paste(tmp_val, collapse = "  ")
+
+writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
+
