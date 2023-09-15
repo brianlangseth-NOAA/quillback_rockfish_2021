@@ -38,18 +38,19 @@ run <- c(
   "1101b_no_abc_max",
   "1102b_TmaxRuns_no_abc_max")
 run_alt <- c(
-  "1100_2023", #same policies as original
-  "1100b_no_abc_max",
-  "1101_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
-  "1101b_no_abc_max",
-  "1102b_TmaxRuns_no_abc_max")
+  "1200_2023altCatch", #same policies as original
+  "1200b_no_abc_max",
+  "1201_addedSPRruns", #SPR at 0.5, 0.55, 0.6, 0.65, 0.7
+  "1201b_no_abc_max")
 
 #Now commented out because sourcing get_values_rebuilder is a different pulled now but above models (in reb) were already saved
 reb <- list()
 reb_alt <- list()
 for (a in 1:length(run)){
   reb[[a]]  <- get_values(rebuild_dir = file.path(rebuild_dir, run[a]))
-  reb_alt[[a]] <- get_values(rebuild_dir = file.path(rebuild_dir, run_alt[a]))
+  if(a <= length(run_alt)){
+    reb_alt[[a]] <- get_values(rebuild_dir = file.path(rebuild_dir, run_alt[a]))
+  }
 }
 save(reb, reb_alt, file = file.path(getwd(), "00mod.Rdata"))
 

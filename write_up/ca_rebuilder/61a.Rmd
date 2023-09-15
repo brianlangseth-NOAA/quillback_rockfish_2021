@@ -1,11 +1,7 @@
-\pagebreak
-
 \setcounter{table}{0}
-\renewcommand{\thetable}{A\roman{table}}
+\renewcommand{\thetable}{B\arabic{table}}
 
 \setcounter{figure}{0}
-\renewcommand{\thefigure}{A\roman{figure}}
-
-\pagebreak
+\renewcommand{\thefigure}{B\arabic{figure}}
 
 

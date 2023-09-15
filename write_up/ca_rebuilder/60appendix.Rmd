@@ -1,15 +1,17 @@
 \clearpage
 # Appendix
 
-## Appendix A: Rebuilder data file.{#append_a}
+## Appendix A: Rebuilder data file {#append_a}
 
 The rebuild.dat file used for the base rebuilding analysis is provided below. Note that to achieve the SPR = 0.5 and SPR = 0.55 strategies, the option "Constrain catches by the ABC" had to be set to 2 (no). 
 
-## Appendix B: Alternative assumption for assumed total removals in 2024.{#append_b}
-
-At its September 2023 meeting, the Council set the value for total removals in 2024 to be `r round(reb_alt[[1]]$acl_matrix[2,2],2)` mt. A second rebuilding analysis was done that was identical to the rebuilding analysis described within the main text of this report with the exception that 2024 removals were set to `r round(reb_alt[[1]]$acl_matrix[2,2],2)` mt instead of `r round(reb[[1]]$acl_matrix[2,2],2)`. Due to the lateness at which the new removal value for 2024 was provided, only the tables and figures from this second analysis are provided. Numbering of tables and figures follow those used in the main text of the report and are preceded by the letter 'A'. 
-
 \clearpage
+
+## Appendix B: Rebuilding results when using a lower value for assumed total removals in 2024 {#append_b}
+
+At its September 2023 meeting, the Council requested a value of `r round(reb_alt[[1]]$acl_matrix[4,2],2)` mt be used for assumed total removals in 2024 instead of `r round(reb[[1]]$acl_matrix[4,2],2)` mt. A second rebuilding analysis was done that was identical in all aspects to the rebuilding analysis described within the main text of this report except that the assumed 2024 removal value was set to `r round(reb_alt[[1]]$acl_matrix[4,2],2)` mt. Due to the timing of the Council's request, the tables and figures from this second rebuilding analysis are added to the report as an appendix.
+
+Rebuilding when assuming removals in 2024 were `r round(reb_alt[[1]]$acl_matrix[4,2],2)` mt resulted in $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$ occurring one year earlier compared to assuming removals in 2024 were `r round(reb[[1]]$acl_matrix[4,2],2)` mt (Table \ref{tab:ref-points-alt}). The increase in estimated ACL in 2025 was at most `r max(round(reb_alt[[2]]$acl_matrix[5,],2) - round(reb[[2]]$acl_matrix[5,],2))` mt across alternative strategies and time to recovery was between zero and one year sooner (Table \ref{tab:reb-options-alt}). 
 
 
 

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.9.6)  11 SEP 2023 13:08
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.9.14)  15 SEP 2023 14:21
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -474,7 +474,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count297
 \calc@Cskip=\skip81
 ) (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/marginnote/marginnote.sty
-Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
+Package: marginnote 2018/08/09 1.4b non floating margin notes for LaTeX
 \c@mn@abspage=\count298
 ) (c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
@@ -881,6 +881,18 @@ LaTeX Warning: Label `tab:ofl-mat' multiply defined.
 
 LaTeX Warning: Label `tab:rel-ssb-mat' multiply defined.
 
+
+LaTeX Warning: Label `tab:prob-mat-alt' multiply defined.
+
+
+LaTeX Warning: Label `tab:acl-mat-alt' multiply defined.
+
+
+LaTeX Warning: Label `tab:ofl-mat-alt' multiply defined.
+
+
+LaTeX Warning: Label `tab:rel-ssb-mat-alt' multiply defined.
+
 )
 \openout1 = _main.aux
 
@@ -1215,12 +1227,12 @@ Package marginnote Info: Using workaround for absolute page number on input line
 [1]
 Package marginnote Info: Using workaround for absolute page number on input line 232.
 [2] [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 355--357
+Underfull \hbox (badness 10000) in paragraph at lines 357--359
 \TU/lmr/m/n/10 analysis-for-quillback-rockfish-sebastes-maliger-in-u-s-waters-off-the-coast-of-california-based-on-the-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--366
+Underfull \hbox (badness 10000) in paragraph at lines 366--368
 \TU/lmr/m/n/10 from []$https://www.pcouncil.org/documents/2022/06/terms-of-reference-for-the-groundfish-rebuilding-
  []
 
@@ -1229,87 +1241,82 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--366
 ] [8
 
 ]
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 419--419
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 421--421
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (5.14807pt too wide) in alignment at lines 416--421
+Overfull \hbox (5.14807pt too wide) in alignment at lines 418--423
  [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 424--424
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 426--426
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (5.14807pt too wide) in alignment at lines 421--426
- [][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (5.14807pt too wide) in alignment at lines 426--428
+Overfull \hbox (5.14807pt too wide) in alignment at lines 423--428
  [][][][][][][][][][][][] 
  []
 
@@ -1319,79 +1326,84 @@ Overfull \hbox (5.14807pt too wide) in alignment at lines 428--430
  []
 
 
-Overfull \hbox (5.14807pt too wide) in alignment at lines 430--441
+Overfull \hbox (5.14807pt too wide) in alignment at lines 430--432
+ [][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.14807pt too wide) in alignment at lines 432--443
  [][][][][][][][][][][][] 
  []
 
 [9
 
 ]
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 457--457
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 459--459
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 464--464
 []|\TU/lmr/m/n/10 SPR= 
  []
 
@@ -1399,241 +1411,241 @@ Overfull \hbox (1.33351pt too wide) in paragraph at lines 462--462
 
 
 ] [11]
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 532--532
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 534--534
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 537--537
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 539--539
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 [12
 
 ] [13]
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 607--607
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 609--609
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 612--612
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 614--614
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 [14
 
 ] [15]
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 682--682
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 684--684
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 
-Overfull \hbox (1.33351pt too wide) in paragraph at lines 687--687
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 []|\TU/lmr/m/n/10 SPR= 
  []
 
 [16
 
 ] [17]
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png, id=309, 722.7pt x 505.89pt>
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png, id=326, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png  used on input line 758.
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png  used on input line 760.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png, id=310, 722.7pt x 505.89pt>
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png, id=327, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png  used on input line 764.
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png  used on input line 766.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png, id=311, 722.7pt x 505.89pt>
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png, id=328, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png  used on input line 770.
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png  used on input line 772.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png, id=312, 722.7pt x 505.89pt>
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png, id=329, 722.7pt x 505.89pt>
 File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png Graphic file (type png)
 <use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png  used on input line 776.
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png  used on input line 778.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
 [18
 
@@ -1641,7 +1653,431 @@ Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2
 <c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png>] [19<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png>] [20<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png>] [21<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png>] [22
 
 
-] 
+]
+warning  (pdf backend): ignoring duplicate destination with the name 'table.1'
+[23
+
+]
+warning  (pdf backend): ignoring duplicate destination with the name 'table.2'
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 854--854
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (5.14807pt too wide) in alignment at lines 851--856
+ [][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 859--859
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (5.14807pt too wide) in alignment at lines 856--861
+ [][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.14807pt too wide) in alignment at lines 861--863
+ [][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.14807pt too wide) in alignment at lines 863--865
+ [][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.14807pt too wide) in alignment at lines 865--876
+ [][][][][][][][][][][][] 
+ []
+
+[24
+
+]
+warning  (pdf backend): ignoring duplicate destination with the name 'table.3'
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 889--889
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 894--894
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+[25
+
+
+] [26]
+warning  (pdf backend): ignoring duplicate destination with the name 'table.4'
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 963--963
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 968--968
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+[27
+
+] [28]
+warning  (pdf backend): ignoring duplicate destination with the name 'table.5'
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1037--1037
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1042--1042
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+[29
+
+] [30]
+warning  (pdf backend): ignoring duplicate destination with the name 'table.6'
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1111--1111
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+
+Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
+[]|\TU/lmr/m/n/10 SPR= 
+ []
+
+[31
+
+] [32]
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png, id=398, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png  used on input line 1186.
+(luatex.def)             Requested size: 469.76045pt x 328.8323pt.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png, id=399, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png  used on input line 1192.
+(luatex.def)             Requested size: 469.76045pt x 328.8323pt.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png, id=400, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png  used on input line 1198.
+(luatex.def)             Requested size: 469.76045pt x 328.8323pt.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png, id=401, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png  used on input line 1204.
+(luatex.def)             Requested size: 469.76045pt x 328.8323pt.
+[33
+
+
+<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png>] [34<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png>] [35<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png>] [36<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png>] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./_main.aux)
  ***********
@@ -1652,23 +2088,23 @@ L3 programming layer <2023-08-29>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 3CF896AA7319901B05657A46003DAFB1;4023.
+(rerunfilecheck)             Checksum: 3ACDEC046FBF0FA5EFA9D2F1AAFFAD6E;4775.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47124 strings out of 477259
+ 47210 strings out of 477259
  244172,1977958 words of node,token memory allocated
  701 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 2 glyph, 13 attribute, 80 glue_spec, 13 attribute_list, 5 write, 1 close, 3 pdf_action nodes
    avail lists: 1:1,2:6267,3:2338,4:70,5:535,6:1149,7:14437,8:244,9:7351,10:20,11:761
- 67327 multiletter control sequences out of 65536+600000
- 68 fonts using 19789991 bytes
+ 67377 multiletter control sequences out of 65536+600000
+ 68 fonts using 19789839 bytes
  117i,11n,128p,2284b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (26 pages, 1698401 bytes).
+Output written on _main.pdf (40 pages, 3272858 bytes).
 
-PDF statistics: 406 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
- 110 named destinations out of 1000 (max. 131072)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 495 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
+ 134 named destinations out of 1000 (max. 131072)
+ 224 words of extra memory for PDF output out of 10000 (max. 100000000)
 
