@@ -33,7 +33,7 @@ row_names = c("SB\\textsubscript{0} (millions of eggs)",
 col_names = c("Quantity", "2021 Assessment Values")
 out = cbind(row_names, quants)
 table_format(x = out,
-             caption = 'Summary of the rebuilding reference points where assumed 2024 total removals were set to 6.23 mt.',
+             caption = 'Summary of the rebuilding reference points where assumed 2024 total removals were set to 6.32 mt.',
              label = 'ref-points-alt',
              align = 'l',
              col_names = col_names,
@@ -91,7 +91,7 @@ col_names = c("Quantity", colnames(quants)[1],
               colnames(quants)[-c(1,2)])
 col_names[9] = "Yr= T\\textsubscript{MID}"
 table_format(x = out,
-             caption = "Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024, where 2024 removals were set to 6.23 mt. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.",
+             caption = "Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024, where 2024 removals were set to 6.32 mt. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.",
              label = "reb-options-alt",
              align = 'l',
              landscape = TRUE,
@@ -118,7 +118,7 @@ out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 
 table_format(x = out3,
-             caption = "Probability of recovery by year for rebuilding strategies where assumed 2024 total removals were set to 6.23 mt. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.",
+             caption = "Probability of recovery by year for rebuilding strategies where assumed 2024 total removals were set to 6.32 mt. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.",
              label = "prob-mat-alt",
              align = 'l',
              digits = 3,
@@ -184,7 +184,7 @@ buffer[,2][1:4] <- 1 #Set first four years to have buffer of 1 because these yea
 out3[,-c(1:2)] <- round(out3[,-c(1:2)]/buffer[,2],2)
 
 table_format(x = out3,
-             caption = "OFLs (mt) by year for rebuilding strategies where assumed 2024 total removals were set to 6.23 mt.",
+             caption = "OFLs (mt) by year for rebuilding strategies where assumed 2024 total removals were set to 6.32 mt.",
              label = "ofl-mat-alt",
              align = 'l',
              digits = 3,
@@ -212,7 +212,7 @@ out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 
 table_format(x = out3,
-             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies where assumed 2024 removals were set to 6.23 mt.",
+             caption = "Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies where assumed 2024 removals were set to 6.32 mt.",
              label = "rel-ssb-mat-alt",
              align = 'l',
              digits = 3,

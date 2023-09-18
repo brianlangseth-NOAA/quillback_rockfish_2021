@@ -4,7 +4,7 @@
 <!-- Main run figures -->
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figures", "rebuilding_probability_forREPORT.png"), 
+filein = file.path(getwd(), "figures", "rebuilding_probability_forREPORT_relF.png"), 
 caption = "Probability of rebuilding by year for the alternative rebuilding strategies",
 label = 'prob-fig',
 alt_caption = "Line plot of probability of recovery by year after 2021 showing 11 lines that represent each rebuilding strategy")
@@ -12,7 +12,7 @@ alt_caption = "Line plot of probability of recovery by year after 2021 showing 1
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figures", "rebuilding_acl_forREPORT.png"), 
+filein = file.path(getwd(), "figures", "rebuilding_acl_forREPORT_relF.png"), 
 caption = "Catches (mt) by year, starting in 2025, for the alternative rebuilding strategies",
 label = 'acl-fig',
 alt_caption = "Line plot of catches by year after 2024 showing 11 lines that represent each rebuilding strategy")
@@ -20,7 +20,7 @@ alt_caption = "Line plot of catches by year after 2024 showing 11 lines that rep
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figures", "rebuilding_relative_sb_forREPORT.png"), 
+filein = file.path(getwd(), "figures", "rebuilding_relative_sb_forREPORT_relF.png"), 
 caption = "Spawning output relative to the management target of 40 percent of unfished spawning output by year, starting in 2025, for the alternative rebuilding strategies",
 label = 'rel-ssb-fig',
 alt_caption = "Line plot of relative spawning output by year after 2024 showing 11 lines that represent each rebuilding strategy")
@@ -28,7 +28,7 @@ alt_caption = "Line plot of relative spawning output by year after 2024 showing 
 
 ```{r, results = 'asis'}
 add_figure(
-filein = file.path(getwd(), "figures", "rebuilding_ssb_forREPORT.png"), 
+filein = file.path(getwd(), "figures", "rebuilding_ssb_forREPORT_relF.png"), 
 caption = "Spawning output by year, starting in 2025, for the alternative rebuilding strategies",
 label = 'ssb-fig',
 alt_caption = "Line plot of spawning output by year after 2024 showing 13 lines that represent each rebuilding strategy")

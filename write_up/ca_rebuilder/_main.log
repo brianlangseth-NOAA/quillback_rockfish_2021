@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.9.14)  15 SEP 2023 14:21
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.9.14)  18 SEP 2023 12:12
  restricted system commands enabled.
 **_main.tex
 (./_main.tex
@@ -1627,30 +1627,30 @@ Overfull \hbox (1.33351pt too wide) in paragraph at lines 689--689
 [16
 
 ] [17]
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png, id=326, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png  used on input line 760.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png, id=326, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png  used on input line 760.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png, id=327, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png  used on input line 766.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png, id=327, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png  used on input line 766.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png, id=328, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png  used on input line 772.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png, id=328, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png  used on input line 772.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png, id=329, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png  used on input line 778.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png, id=329, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png  used on input line 778.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
 [18
 
 
-<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT.png>] [19<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT.png>] [20<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT.png>] [21<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT.png>] [22
+<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png>] [19<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png>] [20<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png>] [21<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png>] [22
 
 
 ]
@@ -2054,30 +2054,30 @@ Overfull \hbox (1.33351pt too wide) in paragraph at lines 1116--1116
 [31
 
 ] [32]
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png, id=398, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png  used on input line 1186.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALTrelF.png, id=398, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALTrelF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALTrelF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALTrelF.png  used on input line 1186.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png, id=399, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png  used on input line 1192.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALTrelF.png, id=399, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALTrelF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALTrelF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALTrelF.png  used on input line 1192.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png, id=400, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png  used on input line 1198.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALTrelF.png, id=400, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALTrelF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALTrelF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALTrelF.png  used on input line 1198.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
-<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png, id=401, 722.7pt x 505.89pt>
-File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png Graphic file (type png)
-<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png>
-Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png  used on input line 1204.
+<C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALTrelF.png, id=401, 722.7pt x 505.89pt>
+File: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALTrelF.png Graphic file (type png)
+<use C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALTrelF.png>
+Package luatex.def Info: C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALTrelF.png  used on input line 1204.
 (luatex.def)             Requested size: 469.76045pt x 328.8323pt.
 [33
 
 
-<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALT.png>] [34<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALT.png>] [35<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALT.png>] [36<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALT.png>] 
+<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALTrelF.png>] [34<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALTrelF.png>] [35<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALTrelF.png>] [36<c:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALTrelF.png>] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./_main.aux)
  ***********
@@ -2098,10 +2098,10 @@ Here is how much of LuaTeX's memory you used:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 2 glyph, 13 attribute, 80 glue_spec, 13 attribute_list, 5 write, 1 close, 3 pdf_action nodes
    avail lists: 1:1,2:6267,3:2338,4:70,5:535,6:1149,7:14437,8:244,9:7351,10:20,11:761
  67377 multiletter control sequences out of 65536+600000
- 68 fonts using 19789839 bytes
+ 68 fonts using 19790067 bytes
  117i,11n,128p,2284b,640s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-bolditalic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf><c:/Users/Brian.Langseth/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on _main.pdf (40 pages, 3272858 bytes).
+Output written on _main.pdf (40 pages, 3268585 bytes).
 
 PDF statistics: 495 PDF objects out of 1000 (max. 8388607)
  410 compressed objects within 5 object streams
