@@ -2407,3 +2407,76 @@ reb[loc+5] <- paste(tmp_val, collapse = "  ")
 
 writeLines(reb, file.path(wd, "rebuilder", new_dir, "rebuild.dat"))
 
+
+#--------------------------------------------------------------------------------------------#
+
+##
+#The following three test runs were done to explore things brought up before 2024 March Council meeting
+##
+
+#Test model run to figure out why time to recovery differs so much between relative biomass (SB/SB40)
+#and probability for the 0.5 and 0.55 SPR policies.
+#1113b_NoStateNature_no_abc_max_relF: Reset states of nature lines
+new_dir <- file.path(wd, "rebuilder", "1113b_NoStateNature_no_abc_max_relF")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1111b_no_abc_max_relF", "rebuild.dat"),n=-1)
+loc <- grep("# Conduct projections", reb)
+reb[loc+1] <- 0
+loc <- grep("# Number of parameter vectors", reb)
+reb[loc+1] <- 1000
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+#Difference in time to rebuilding remains. However, values for SB manually divided by SB40 
+#align with rebuilder output for SB/SB40 when have no alt states. With alt states of nature, 
+#these dont quite align
+
+
+#Test model run to figure out whether the alternative definition for prob rebuilding makes
+#a difference in timing of probability of recovery and relative biomass for 0.5 and 0.55 policies.
+#1113c_NoStateNature_no_abc_max_relF_altProb: Reset states of nature lines
+new_dir <- file.path(wd, "rebuilder", "1113c_NoStateNature_no_abc_max_relF_altProb")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1113b_NoStateNature_no_abc_max_relF", "rebuild.dat"),n=-1)
+loc <- grep("# Defintion of recovery", reb)
+reb[loc+1] <- 1
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+#It does. For this run, the years for rebuilding based on SB/SB40 and probability were the same
+
+
+#Same as above but now base on model with alternative states of nature. 
+#Test model run to figure out whether the alternative definition for prob rebuilding makes
+#a difference in timing of probability of recovery and relative biomass for 0.5 and 0.55 policies.
+#1111c_no_abc_max_relF_altProb: Reset states of nature lines
+new_dir <- file.path(wd, "rebuilder", "1111c_no_abc_max_relF_altProb")
+dir.create(new_dir)
+
+file.copy(from = file.path(wd, "rebuilder", "1100_2023", "rebuild.exe"),
+          to = file.path(new_dir, "rebuild.exe"))
+file.copy(from = file.path(wd, "rebuilder", "rebuild_m_2023.SSO"),
+          to = file.path(new_dir, "rebuild_m_2023.SSO"))
+
+reb <- readLines(file.path(wd, "rebuilder", "1111b_no_abc_max_relF", "rebuild.dat"),n=-1)
+loc <- grep("# Defintion of recovery", reb)
+reb[loc+1] <- 1
+writeLines(reb, file.path(new_dir, "rebuild.dat"))
+#Years for rebuilding based on SB/SB40 and probability are the same. States of nature dont affect this.
+
+#During these explorations I noticed that the histogram of B0 values in the output of Res.csv,
+#which are then plotted, does not capture the range of B0 properly. The upper limit seems to be
+#capped at a specific range from the midpoint, so values beyond that are plotted into the last
+#category instead of at their actual location. This makes it appear a run has fewer modes for B0
+#than is actually the case. This occurred for my base runs, when each state of nature is applied 
+#once with equal probability, and when only the high and low states of nature are applied. 
+#The runs are correct though. I say this because the historgram of Tmin-yinit shows three 
+#distinct modes and these modes dissappear when rebuilder is rerun without the specific states of 
+#nature (whereas the x-values of the histogram of B0 stay the same in some cases), and that the 
+#B0 histogram of a run with just the low and high state of nature doesn't show the correct 
+#upper value of B0 (i.e. the B0 for the low state of nature).
+#--------------------------------------------------------------------------------------------#
