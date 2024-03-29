@@ -182,6 +182,7 @@ out2 = as.data.frame(append(out, list("SPR= .550" = extra[,3]), after = 2))
 out3 = as.data.frame(append(out2, list("SPR= .650" = extra[,5]), after = 4))
 
 #And need to divide ofls (which are actually the ABC) by the buffers (other than the SPR = 0.5 strategy, and first two years across runs)
+#Note that the OFL in 2025 differs across runs due to rounding because for SPR=0.5 just used ACL, whereas for other runs calculated the buffer. The March 2024 council meeting the SSC stated that the OFL is 1.52 (so they rounded up just a bit).
 #Cap buffers to the cat3 buffer (which is what rebuild.exe does too (sigma = 2.0))
 buffer <- PEPtools::get_buffer(2021:reb[[1]]$tmax,1,0.45)
 buffer[which(buffer[,2]<0.778),2] <- 0.778

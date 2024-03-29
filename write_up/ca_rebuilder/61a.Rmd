@@ -1,7 +1,0 @@
-\setcounter{table}{0}
-\renewcommand{\thetable}{B\arabic{table}}
-
-\setcounter{figure}{0}
-\renewcommand{\thefigure}{B\arabic{figure}}
-
-

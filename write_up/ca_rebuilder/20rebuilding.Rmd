@@ -75,7 +75,5 @@ No current rebuilding plan exists for `r spp` in California waters so the altern
  \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle (strategy 6 in TOR).
 \end{itemize}
 
-All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt in 2021, `r round(reb[[1]]$acl_matrix[2,2],2)` mt in 2022, `r round(reb[[1]]$acl_matrix[3,2],2)` mt in 2023, and `r round(reb[[1]]$acl_matrix[4,2],2)` mt in 2024, as recommended by the GMT. Results are described in the section below.
-
-At its September 2023 meeting, the Council requested a value of `r round(reb_alt[[1]]$acl_matrix[4,2],2)` mt be used for assumed total removals in 2024. The above rebuilding strategies were rerun incorporating the newly requested value for assumed total removals in 2024. Tables and figures for this additional analysis are provided in [Appendix B](#append_b). 
+All of the above rebuilding strategies were conducted assuming removals of `r round(reb[[1]]$acl_matrix[1,2],2)` mt in 2021, `r round(reb[[1]]$acl_matrix[2,2],2)` mt in 2022, `r round(reb[[1]]$acl_matrix[3,2],2)` mt in 2023, and `r round(reb[[1]]$acl_matrix[4,2],2)` mt in 2024, as recommended by the GMT.
 

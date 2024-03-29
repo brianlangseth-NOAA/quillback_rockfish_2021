@@ -1,9 +1,9 @@
 ---
-month: "September"
-year: "2023"
+month: "March"
+year: "2024"
 preamble: |
 csl: canadian-journal-of-fisheries-and-aquatic-sciences.csl
-disclaimer: true
+disclaimer: false
 output:
   sa4ss::techreport_pdf:
     default
@@ -45,7 +45,7 @@ bibliography:
 <!--chapter:end:00bibliography.Rmd-->
 
 ---
-title: DRAFT 2023 Rebuilding analysis for quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of California based on the 2021 stock assessment
+title: 2023 Rebuilding analysis for quillback rockfish (_Sebastes maliger_) in U.S. waters off the coast of California based on the 2021 stock assessment
 ---
 
 <!--chapter:end:00title.Rmd-->
@@ -88,10 +88,9 @@ The results of the analysis show that the value for $\text{T}_\text{MIN}$, the m
 
 The 2021 stock assessment of quillback rockfish (_Sebastes maliger_) in California waters estimated that the California population of quillback rockfish in 2021 was below the Minimum Stock Size Threshold (MSST), which is 25$\%$ of unfished spawning output for rockfish stocks [@Langseth_status_2021]. The California population was estimated to have declined below MSST starting in 1992, reached it lowest values in the mid-1990s, increased to near the MSST in the 2000s and early 2010s, and declined in recent years. 
 
-A draft rebuilding analysis was developed in 2021 based on the results of the 2021 assessment [@langseth_rebuild_2022], and was used to inform catch levels (i.e. ACLs) for 2023--2024 using an SPR = 0.55. Subsequently, it was determined that quillback rockfish was defined in the Groundfish Fishery Management Plan (FMP) as a coastwide stock, so quillback rockfish in California waters did not meet the criteria for an overfished declaration and a rebuilding plan was not required. Since the 2021 assessment, Amendment 31 to the FMP was approved by the Pacific Fishery Management Council in June 2023, recommending that quillback rockfish along the U.S. west coast be defined as three separate stocks corresponding to waters off Washington, Oregon, and California [@fed_registry_2023]. Should the recommended change to the FMP be finalized, a determination that the quillback rockfish stock off California is overfished and in need of rebuilding is expected to follow.
+A draft rebuilding analysis was developed in 2021 based on the results of the 2021 assessment [@langseth_rebuild_2022], and was used to inform catch levels (i.e. ACLs) for 2023--2024 using an SPR = 0.55. Subsequently, it was determined that quillback rockfish was defined in the Groundfish Fishery Management Plan (FMP) as a coastwide stock, so quillback rockfish in California waters did not meet the criteria for an overfished declaration and a rebuilding plan was not required. Since the 2021 assessment, Amendment 31 to the FMP was approved by the Pacific Fishery Management Council in June 2023, recommending that quillback rockfish along the U.S. west coast be defined as three separate stocks corresponding to waters off Washington, Oregon, and California [@fed_registry_2023]. The recommended change to the FMP was finalized in September 2023 and the quillback rockfish stock off California was declared overfished in December 2023, necessitating an updated rebuilding analysis. 
 
-Given the assumed levels of depletion for quillback rockfish in California waters and the potential need for rebuilding, a range of alternative rebuilding strategies were examined and are described in this report. This analysis contains updated estimates for removals of quillback rockfish in California waters in 2021--2024, and applies the alternative rebuilding strategies starting in 2025. 
-<!-- The years by which rebuilding occurred ranged from 2045 -- 2072 based on various SPR harvest rates from 0.5 to 1 (no harvest). -->
+Given the assumed levels of depletion for quillback rockfish in California waters and the need for rebuilding, a range of alternative rebuilding strategies were examined and are described in this report. This analysis contains updated estimates for removals of quillback rockfish in California waters in 2021--2024, and applies the alternative rebuilding strategies starting in 2025. 
 
 
 # Overview of the 2021 stock assessment
@@ -188,9 +187,7 @@ No current rebuilding plan exists for quillback rockfish in California waters so
  \item Apply the harvest rate that is estimated to lead to a 50$\%$ probability of recovery by the $\text{T}_\text{MAX}$ from the previous cycle (strategy 6 in TOR).
 \end{itemize}
 
-All of the above rebuilding strategies were conducted assuming removals of 15.58 mt in 2021, 18.11 mt in 2022, 11.12 mt in 2023, and 10.62 mt in 2024, as recommended by the GMT. Results are described in the section below.
-
-At its September 2023 meeting, the Council requested a value of 6.32 mt be used for assumed total removals in 2024. The above rebuilding strategies were rerun incorporating the newly requested value for assumed total removals in 2024. Tables and figures for this additional analysis are provided in [Appendix B](#append_b). 
+All of the above rebuilding strategies were conducted assuming removals of 15.58 mt in 2021, 18.11 mt in 2022, 11.12 mt in 2023, and 10.62 mt in 2024, as recommended by the GMT.
 
 
 <!--chapter:end:20rebuilding.Rmd-->
@@ -207,7 +204,7 @@ A rebuilding strategy is presented below that includes a rebuilding target year 
 
 Summary results from the rebuilding analysis are presented in Table \ref{tab:reb-options}. Within Table \ref{tab:reb-options}, estimated catch values for 2025--2026 from the rebuilding analysis are labeled as ACL values. Detailed results for all runs are presented in Tables \ref{tab:prob-mat}--\ref{tab:rel-ssb-mat} and Figures \ref{fig:prob-fig}--\ref{fig:ssb-fig}. This rebuilding analysis reports results for quillback rockfish in California waters, and catches can be partitioned to the northern (49.6$\%$) and southern (50.4$\%$) management units using the values described in Appendix A of the 2021 stock assessment [@Langseth_status_2021].
 
-The target rebuilding year based on the various rebuilding strategies ranged from 2045 -- 2072 (Table \ref{tab:reb-options}). The probability of rebuilding by year steadily increased across the alternative SPR values with full rebuilding (reaching a probability of greater than 50$\%$) by 2072 when the lowest SPR of 0.50 was applied (Table \ref{tab:prob-mat} and Figure \ref{fig:prob-fig}). Note, however, that this year is beyond the year associated with $\text{T}_\text{MAX}$. The recommended removals in 2025, the first year of rebuilding, ranged between 0 -- 1.51 mt across strategies excluding the no-harvest strategy (Table \ref{tab:acl-mat}). Zero catches were observed for the first two years under the 40-10 strategy because spawning output relative to unfished spawning output was below the 10$\%$ limit through 2026. The recommended removals slowly increased by year during the rebuilding period (Figure \ref{fig:acl-fig}). The estimated overfishing limits (OFLs) for each rebuilding alternative are given in Table \ref{tab:ofl-mat}. The change in spawning output by year relative to the spawning output target, 40$\%$ of unfished, under each of the alternatives are shown by year in Table \ref{tab:rel-ssb-mat} and Figure \ref{fig:rel-ssb-fig}. 
+The target rebuilding year based on the various rebuilding strategies ranged from 2045--2072 (Table \ref{tab:reb-options}). The probability of rebuilding by year steadily increased across the alternative SPR values with full rebuilding (reaching a probability of greater than 50$\%$) by 2072 when the lowest SPR of 0.50 was applied (Table \ref{tab:prob-mat} and Figure \ref{fig:prob-fig}). Note, however, that this year is beyond the year associated with $\text{T}_\text{MAX}$. The recommended removals in 2025, the first year of rebuilding, ranged between 0 -- 1.51 mt across strategies excluding the no-harvest strategy (Table \ref{tab:acl-mat}). Zero catches were observed for the first two years under the 40-10 strategy because spawning output relative to unfished spawning output was below the 10$\%$ limit through 2026. The recommended removals slowly increased by year during the rebuilding period (Figure \ref{fig:acl-fig}). The estimated overfishing limits (OFLs) for each rebuilding alternative are given in Table \ref{tab:ofl-mat}. The change in spawning output by year relative to the spawning output target, 40$\%$ of unfished, under each of the alternatives are shown by year in Table \ref{tab:rel-ssb-mat} and Figure \ref{fig:rel-ssb-fig}. 
 <!-- The harvest rate to obtain a 50% probability of recovery by $\text{T}_\text{MAX}$ corresponds to an SPR that is lower than 0.5, which represents catch that is greater than the OFL, so is not provided in the tables.  -->
 
 <!--chapter:end:30results.Rmd-->
@@ -246,12 +243,12 @@ Thank you to the Groundfish Management Team for providing catch estimates for 20
 \begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}}
-\caption{(\#tab:ref-points)Summary of the rebuilding reference points.}\\
+\caption{\label{tab:ref-points}Summary of the rebuilding reference points.}\\
 \toprule
 Quantity & 2021 Assessment Values\\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:ref-points)Summary of the rebuilding reference points. \textit{(continued)}}\\
+\caption[]{Summary of the rebuilding reference points. (\textit{continued)}}\\
 \toprule
 Quantity & 2021 Assessment Values\\
 \midrule
@@ -286,12 +283,12 @@ Current SPR (2021) & 0.1\\*
 \begin{landscape}\begingroup\fontsize{10}{12}\selectfont
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:reb-options)Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.}\\
+\caption{\label{tab:reb-options}Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.}\\
 \toprule
 Quantity & SPR= .500       & SPR= .550       & SPR= .600       & SPR= .650       & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:reb-options)Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value. \textit{(continued)}}\\
+\caption[]{Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value. (\textit{continued)}}\\
 \toprule
 Quantity & SPR= .500       & SPR= .550       & SPR= .600       & SPR= .650       & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
@@ -323,13 +320,13 @@ Probability of recovery by T\textsubscript{MAX} & 0.494 & 0.694 & 0.809 & 0.878 
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:prob-mat)Probability of recovery by year for rebuilding strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.}\\
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}}
+\caption{\label{tab:prob-mat}Probability of recovery by year for rebuilding strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:prob-mat)Probability of recovery by year for rebuilding strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year. \textit{(continued)}}\\
+\caption[]{Probability of recovery by year for rebuilding strategies. Probabilities represent the proportion of simulations that reach the target biomass by the specified year. (\textit{continued)}}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
@@ -399,13 +396,13 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:acl-mat)Catches (mt) by year for rebuilding strategies. Catches in 2021--2024 for all strategies were set at values recommended by the Groundfish Management Team.}\\
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}}
+\caption{\label{tab:acl-mat}Catches (mt) by year for rebuilding strategies. Catches in 2021--2024 for all strategies were set at values recommended by the Groundfish Management Team.}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:acl-mat)Catches (mt) by year for rebuilding strategies. Catches in 2021--2024 for all strategies were set at values recommended by the Groundfish Management Team. \textit{(continued)}}\\
+\caption[]{Catches (mt) by year for rebuilding strategies. Catches in 2021--2024 for all strategies were set at values recommended by the Groundfish Management Team. (\textit{continued)}}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
@@ -475,13 +472,13 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:ofl-mat)OFLs (mt) by year for rebuilding strategies.}\\
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}}
+\caption{\label{tab:ofl-mat}OFLs (mt) by year for rebuilding strategies.}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:ofl-mat)OFLs (mt) by year for rebuilding strategies. \textit{(continued)}}\\
+\caption[]{OFLs (mt) by year for rebuilding strategies. (\textit{continued)}}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
@@ -551,13 +548,13 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 \begingroup\fontsize{10}{12}\selectfont
 \begingroup\fontsize{10}{12}\selectfont
 
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:rel-ssb-mat)Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies.}\\
+\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}>{\raggedright\arraybackslash}p{0.67cm}}
+\caption{\label{tab:rel-ssb-mat}Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies.}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
 \endfirsthead
-\caption[]{(\#tab:rel-ssb-mat)Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies. \textit{(continued)}}\\
+\caption[]{Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies. (\textit{continued)}}\\
 \toprule
 Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
 \midrule
@@ -630,16 +627,36 @@ Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700    
 
 <!-- Main run figures -->
 
-![Probability of rebuilding by year for the alternative rebuilding strategies.\label{fig:prob-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png){width=100% height=100% alt="Line plot of probability of recovery by year after 2021 showing 11 lines that represent each rebuilding strategy."}
+\begin{figure}
+{\centering
+\includegraphics[alt=Line plot of probability of recovery by year after 2021 showing 11 lines that represent each rebuilding strategy.,width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_relF.png}
+}
+\caption{Probability of rebuilding by year for the alternative rebuilding strategies.\label{fig:prob-fig}}
+\end{figure}
 
 
-![Catches (mt) by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:acl-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png){width=100% height=100% alt="Line plot of catches by year after 2024 showing 11 lines that represent each rebuilding strategy."}
+\begin{figure}
+{\centering
+\includegraphics[alt=Line plot of catches by year after 2024 showing 11 lines that represent each rebuilding strategy.,width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_relF.png}
+}
+\caption{Catches (mt) by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:acl-fig}}
+\end{figure}
 
 
-![Spawning output relative to the management target of 40 percent of unfished spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:rel-ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png){width=100% height=100% alt="Line plot of relative spawning output by year after 2024 showing 11 lines that represent each rebuilding strategy."}
+\begin{figure}
+{\centering
+\includegraphics[alt=Line plot of relative spawning output by year after 2024 showing 11 lines that represent each rebuilding strategy.,width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_relF.png}
+}
+\caption{Spawning output relative to the management target of 40 percent of unfished spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:rel-ssb-fig}}
+\end{figure}
 
 
-![Spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:ssb-fig}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png){width=100% height=100% alt="Line plot of spawning output by year after 2024 showing 13 lines that represent each rebuilding strategy."}
+\begin{figure}
+{\centering
+\includegraphics[alt=Line plot of spawning output by year after 2024 showing 13 lines that represent each rebuilding strategy.,width=1\textwidth,height=1\textheight]{C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_relF.png}
+}
+\caption{Spawning output by year, starting in 2025, for the alternative rebuilding strategies.\label{fig:ssb-fig}}
+\end{figure}
 
 \clearpage
 
@@ -654,425 +671,8 @@ The rebuild.dat file used for the base rebuilding analysis is provided below. No
 
 \clearpage
 
-## Appendix B: Rebuilding results when using a lower value for assumed total removals in 2024 {#append_b}
-
-At its September 2023 meeting, the Council requested a value of 6.32 mt be used for assumed total removals in 2024 instead of 10.62 mt. A second rebuilding analysis was done that was identical in all aspects to the rebuilding analysis described within the main text of this report except that the assumed 2024 removal value was set to 6.32 mt. Due to the timing of the Council's request, the tables and figures from this second rebuilding analysis are added to the report as an appendix.
-
-Rebuilding when assuming removals in 2024 were 6.32 mt resulted in $\text{T}_\text{MIN}$ and $\text{T}_\text{MAX}$ occurring one year earlier compared to assuming removals in 2024 were 10.62 mt (Table \ref{tab:ref-points-alt}). The increase in estimated ACL in 2025 was at most 0.17 mt across alternative strategies and time to recovery was between zero and one year sooner (Table \ref{tab:reb-options-alt}). 
-
 
 
 
 <!--chapter:end:60appendix.Rmd-->
-
-\setcounter{table}{0}
-\renewcommand{\thetable}{B\arabic{table}}
-
-\setcounter{figure}{0}
-\renewcommand{\thefigure}{B\arabic{figure}}
-
-
-
-<!--chapter:end:61a.Rmd-->
-
-### Tables
-
-<!-- ## Rebuilding reference points and summary of alternatives -->
-
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{2cm}}
-\caption{(\#tab:ref-points-alt)Summary of the rebuilding reference points where assumed 2024 total removals were set to 6.32 mt.}\\
-\toprule
-Quantity & 2021 Assessment Values\\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:ref-points-alt)Summary of the rebuilding reference points where assumed 2024 total removals were set to 6.32 mt. \textit{(continued)}}\\
-\toprule
-Quantity & 2021 Assessment Values\\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-SB\textsubscript{0} (millions of eggs) & 55.08\\
-SB\textsubscript{40\%} (millions of eggs) & 22.03\\
-SB\textsubscript{2021} (millions of eggs) & 7.75\\
-Year rebuilding begins & 2025\\
-Current year & 2021\\
-T\textsubscript{MIN} & 2044\\
-Mean generation time (years) & 26\\
-T\textsubscript{MAX} & 2070\\
-T\textsubscript{MID} & 2057\\
-T\textsubscript{F=0} & 2044\\
-T\textsubscript{TARGET} & TBD\\
-SPR\textsubscript{TARGET} & TBD\\
-Current SPR (2021) & 0.1\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
-
-
-<!-- ## Summary of alternatives -->
-
-<!-- Base rebuilder -->
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:reb-options-alt)Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024, where 2024 removals were set to 6.32 mt. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value.}\\
-\toprule
-Quantity & SPR= .500       & SPR= .550       & SPR= .600       & SPR= .650       & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:reb-options-alt)Results of rebuilding strategies based on alternative SPR targets for 50 percent probability of recovery based on the assumed removals for 2021--2024, where 2024 removals were set to 6.32 mt. SPR for the ABC and 40-10 strategies is provided as a dash (-) because these strategies do not have a constant SPR value. \textit{(continued)}}\\
-\toprule
-Quantity & SPR= .500       & SPR= .550       & SPR= .600       & SPR= .650       & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-2021 Assumed Removals (mt) & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58\\
-2022 Assumed Removals (mt) & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11\\
-2023 Assumed Removals (mt) & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12\\
-2024 Assumed Removals (mt) & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32\\
-2025 ACL (mt) & 1.68 & 1.4 & 1.16 & 0.95 & 0.77 & 0.46 & 0.21 & 1.24 & 0 & 0 & 1.44\\
-2026 ACL (mt) & 1.92 & 1.61 & 1.34 & 1.11 & 0.9 & 0.54 & 0.25 & 1.43 & 0 & 0 & 1.64\\
-SPR & 0.5 & 0.55 & 0.6 & 0.65 & 0.7 & 0.8 & 0.9 & 0.58 & 1 & - & -\\
-T\textsubscript{TARGET} & 2070 & 2061 & 2056 & 2052 & 2050 & 2047 & 2045 & 2057 & 2044 & 2055 & 2059\\
-T\textsubscript{MAX} & 2070 & 2070 & 2070 & 2070 & 2070 & 2070 & 2070 & 2070 & 2070 & 2070 & 2070\\
-Probability of recovery by T\textsubscript{MAX} & 0.5 & 0.709 & 0.827 & 0.894 & 0.943 & 0.991 & 0.999 & 0.8 & 0.999 & 0.857 & 0.766\\*
-\end{longtable}
-\endgroup{}
-\end{landscape}
-\endgroup{}
-
-\clearpage
-
-
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:prob-mat-alt)Probability of recovery by year for rebuilding strategies where assumed 2024 total removals were set to 6.32 mt. Probabilities represent the proportion of simulations that reach the target biomass by the specified year.}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:prob-mat-alt)Probability of recovery by year for rebuilding strategies where assumed 2024 total removals were set to 6.32 mt. Probabilities represent the proportion of simulations that reach the target biomass by the specified year. \textit{(continued)}}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-2021 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2022 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2023 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2024 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2025 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2026 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2027 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2028 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2029 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000\\
-2030 & 0.000 & 0.000 & 0.000 & 0.000 & 0.001 & 0.001 & 0.001 & 0.000 & 0.001 & 0.000 & 0.000\\
-2031 & 0.000 & 0.001 & 0.001 & 0.001 & 0.002 & 0.004 & 0.004 & 0.001 & 0.009 & 0.001 & 0.001\\
-2032 & 0.001 & 0.001 & 0.002 & 0.003 & 0.004 & 0.012 & 0.016 & 0.002 & 0.026 & 0.002 & 0.001\\
-2033 & 0.001 & 0.002 & 0.005 & 0.009 & 0.012 & 0.027 & 0.047 & 0.004 & 0.076 & 0.004 & 0.002\\
-2034 & 0.002 & 0.005 & 0.013 & 0.020 & 0.030 & 0.057 & 0.095 & 0.010 & 0.131 & 0.012 & 0.006\\
-2035 & 0.008 & 0.013 & 0.025 & 0.037 & 0.050 & 0.091 & 0.141 & 0.019 & 0.186 & 0.020 & 0.014\\
-2036 & 0.012 & 0.023 & 0.034 & 0.048 & 0.073 & 0.130 & 0.181 & 0.031 & 0.218 & 0.033 & 0.025\\
-2037 & 0.020 & 0.028 & 0.045 & 0.069 & 0.098 & 0.162 & 0.212 & 0.036 & 0.231 & 0.043 & 0.031\\
-2038 & 0.022 & 0.033 & 0.061 & 0.089 & 0.129 & 0.183 & 0.229 & 0.052 & 0.251 & 0.058 & 0.039\\
-2039 & 0.027 & 0.045 & 0.074 & 0.113 & 0.147 & 0.217 & 0.248 & 0.067 & 0.273 & 0.074 & 0.055\\
-2040 & 0.031 & 0.058 & 0.090 & 0.132 & 0.177 & 0.241 & 0.277 & 0.079 & 0.312 & 0.086 & 0.070\\
-2041 & 0.038 & 0.073 & 0.102 & 0.161 & 0.199 & 0.270 & 0.315 & 0.093 & 0.364 & 0.100 & 0.083\\
-2042 & 0.051 & 0.082 & 0.127 & 0.185 & 0.237 & 0.305 & 0.364 & 0.115 & 0.413 & 0.133 & 0.096\\
-2043 & 0.056 & 0.104 & 0.147 & 0.210 & 0.263 & 0.343 & 0.412 & 0.127 & 0.467 & 0.145 & 0.115\\
-2044 & 0.068 & 0.116 & 0.170 & 0.244 & 0.300 & 0.380 & 0.453 & 0.146 & 0.541 & 0.176 & 0.130\\
-2045 & 0.080 & 0.129 & 0.204 & 0.273 & 0.338 & 0.431 & 0.518 & 0.176 & 0.603 & 0.207 & 0.145\\
-2046 & 0.087 & 0.149 & 0.229 & 0.310 & 0.375 & 0.472 & 0.575 & 0.204 & 0.650 & 0.241 & 0.174\\
-2047 & 0.099 & 0.165 & 0.263 & 0.341 & 0.404 & 0.526 & 0.620 & 0.226 & 0.696 & 0.285 & 0.191\\
-2048 & 0.113 & 0.184 & 0.295 & 0.370 & 0.444 & 0.575 & 0.659 & 0.262 & 0.717 & 0.318 & 0.217\\
-2049 & 0.130 & 0.208 & 0.321 & 0.404 & 0.483 & 0.608 & 0.696 & 0.289 & 0.733 & 0.341 & 0.256\\
-2050 & 0.139 & 0.242 & 0.347 & 0.440 & 0.529 & 0.644 & 0.721 & 0.313 & 0.740 & 0.370 & 0.279\\
-2051 & 0.156 & 0.263 & 0.376 & 0.475 & 0.557 & 0.679 & 0.733 & 0.335 & 0.748 & 0.400 & 0.308\\
-2052 & 0.172 & 0.285 & 0.416 & 0.506 & 0.587 & 0.703 & 0.739 & 0.363 & 0.761 & 0.439 & 0.332\\
-2053 & 0.183 & 0.311 & 0.446 & 0.535 & 0.628 & 0.720 & 0.751 & 0.399 & 0.777 & 0.467 & 0.360\\
-2054 & 0.197 & 0.345 & 0.470 & 0.566 & 0.654 & 0.732 & 0.771 & 0.424 & 0.808 & 0.489 & 0.390\\
-2055 & 0.228 & 0.371 & 0.497 & 0.603 & 0.675 & 0.746 & 0.791 & 0.451 & 0.834 & 0.511 & 0.417\\
-2056 & 0.247 & 0.392 & 0.521 & 0.629 & 0.704 & 0.764 & 0.813 & 0.474 & 0.861 & 0.547 & 0.443\\
-2057 & 0.268 & 0.421 & 0.557 & 0.649 & 0.721 & 0.784 & 0.840 & 0.500 & 0.884 & 0.575 & 0.463\\
-2058 & 0.287 & 0.443 & 0.588 & 0.676 & 0.734 & 0.803 & 0.865 & 0.530 & 0.914 & 0.601 & 0.492\\
-2059 & 0.306 & 0.467 & 0.615 & 0.692 & 0.755 & 0.827 & 0.895 & 0.567 & 0.935 & 0.628 & 0.520\\
-2060 & 0.328 & 0.494 & 0.640 & 0.715 & 0.772 & 0.848 & 0.916 & 0.591 & 0.952 & 0.658 & 0.545\\
-2061 & 0.342 & 0.521 & 0.652 & 0.741 & 0.789 & 0.881 & 0.930 & 0.616 & 0.963 & 0.682 & 0.574\\
-2062 & 0.356 & 0.545 & 0.678 & 0.759 & 0.808 & 0.902 & 0.951 & 0.641 & 0.974 & 0.706 & 0.604\\
-2063 & 0.374 & 0.567 & 0.695 & 0.778 & 0.834 & 0.915 & 0.961 & 0.657 & 0.982 & 0.722 & 0.632\\
-2064 & 0.395 & 0.595 & 0.725 & 0.793 & 0.860 & 0.932 & 0.967 & 0.682 & 0.990 & 0.748 & 0.642\\
-2065 & 0.414 & 0.617 & 0.738 & 0.814 & 0.880 & 0.945 & 0.979 & 0.710 & 0.996 & 0.781 & 0.666\\
-2066 & 0.424 & 0.633 & 0.752 & 0.840 & 0.895 & 0.955 & 0.988 & 0.730 & 0.998 & 0.797 & 0.697\\
-2067 & 0.445 & 0.658 & 0.776 & 0.859 & 0.915 & 0.964 & 0.992 & 0.739 & 0.999 & 0.821 & 0.717\\
-2068 & 0.464 & 0.679 & 0.798 & 0.870 & 0.924 & 0.971 & 0.998 & 0.760 & 0.999 & 0.830 & 0.729\\
-2069 & 0.483 & 0.692 & 0.815 & 0.882 & 0.935 & 0.980 & 0.999 & 0.787 & 0.999 & 0.844 & 0.742\\
-2070 & 0.500 & 0.709 & 0.827 & 0.894 & 0.943 & 0.991 & 0.999 & 0.800 & 0.999 & 0.857 & 0.766\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
-
-\clearpage
-
-
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:acl-mat-alt)Catches (mt) by year for rebuilding strategies. Catches in 2021--2023 for all strategies were set at values recommended by the Groundfish Management Team and catches in 2024 were set at the value requested by the Council.}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:acl-mat-alt)Catches (mt) by year for rebuilding strategies. Catches in 2021--2023 for all strategies were set at values recommended by the Groundfish Management Team and catches in 2024 were set at the value requested by the Council. \textit{(continued)}}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-2021 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58 & 15.58\\
-2022 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11 & 18.11\\
-2023 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12 & 11.12\\
-2024 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32 & 6.32\\
-2025 & 1.68 & 1.40 & 1.16 & 0.95 & 0.77 & 0.46 & 0.21 & 1.24 & 0.00 & 0.00 & 1.44\\
-2026 & 1.92 & 1.61 & 1.34 & 1.11 & 0.90 & 0.54 & 0.25 & 1.43 & 0.00 & 0.00 & 1.64\\
-2027 & 2.16 & 1.82 & 1.52 & 1.26 & 1.02 & 0.62 & 0.28 & 1.62 & 0.00 & 0.26 & 1.83\\
-2028 & 2.37 & 2.01 & 1.69 & 1.40 & 1.15 & 0.70 & 0.32 & 1.80 & 0.00 & 0.64 & 2.01\\
-2029 & 2.57 & 2.19 & 1.85 & 1.54 & 1.26 & 0.77 & 0.36 & 1.96 & 0.00 & 0.97 & 2.16\\
-2030 & 2.75 & 2.36 & 2.00 & 1.67 & 1.37 & 0.84 & 0.39 & 2.12 & 0.00 & 1.25 & 2.31\\
-2031 & 2.92 & 2.51 & 2.14 & 1.79 & 1.48 & 0.91 & 0.42 & 2.26 & 0.00 & 1.52 & 2.44\\
-2032 & 3.09 & 2.67 & 2.28 & 1.92 & 1.58 & 0.98 & 0.46 & 2.41 & 0.00 & 1.76 & 2.57\\
-2033 & 3.26 & 2.82 & 2.42 & 2.04 & 1.69 & 1.06 & 0.50 & 2.56 & 0.00 & 2.00 & 2.70\\
-2034 & 3.41 & 2.97 & 2.56 & 2.16 & 1.79 & 1.12 & 0.53 & 2.70 & 0.00 & 2.21 & 2.81\\
-2035 & 3.58 & 3.13 & 2.70 & 2.29 & 1.91 & 1.20 & 0.57 & 2.84 & 0.00 & 2.44 & 2.94\\
-2036 & 3.75 & 3.29 & 2.84 & 2.42 & 2.02 & 1.28 & 0.60 & 2.99 & 0.00 & 2.67 & 3.08\\
-2037 & 3.93 & 3.45 & 2.99 & 2.55 & 2.13 & 1.35 & 0.64 & 3.14 & 0.00 & 2.90 & 3.24\\
-2038 & 4.08 & 3.60 & 3.13 & 2.68 & 2.24 & 1.42 & 0.68 & 3.29 & 0.00 & 3.13 & 3.39\\
-2039 & 4.23 & 3.74 & 3.26 & 2.80 & 2.34 & 1.49 & 0.72 & 3.43 & 0.00 & 3.33 & 3.53\\
-2040 & 4.38 & 3.88 & 3.39 & 2.91 & 2.45 & 1.57 & 0.75 & 3.56 & 0.00 & 3.54 & 3.66\\
-2041 & 4.54 & 4.04 & 3.54 & 3.04 & 2.56 & 1.64 & 0.79 & 3.71 & 0.00 & 3.75 & 3.81\\
-2042 & 4.71 & 4.20 & 3.68 & 3.17 & 2.68 & 1.73 & 0.83 & 3.86 & 0.00 & 3.96 & 3.98\\
-2043 & 4.85 & 4.32 & 3.81 & 3.28 & 2.78 & 1.79 & 0.87 & 3.99 & 0.00 & 4.15 & 4.10\\
-2044 & 5.02 & 4.49 & 3.96 & 3.43 & 2.90 & 1.87 & 0.91 & 4.14 & 0.00 & 4.36 & 4.26\\
-2045 & 5.15 & 4.64 & 4.09 & 3.54 & 3.00 & 1.94 & 0.94 & 4.28 & 0.00 & 4.54 & 4.40\\
-2046 & 5.33 & 4.79 & 4.23 & 3.68 & 3.12 & 2.02 & 0.98 & 4.42 & 0.00 & 4.73 & 4.55\\
-2047 & 5.48 & 4.94 & 4.37 & 3.80 & 3.22 & 2.10 & 1.02 & 4.57 & 0.00 & 4.92 & 4.70\\
-2048 & 5.60 & 5.05 & 4.48 & 3.91 & 3.32 & 2.17 & 1.06 & 4.68 & 0.00 & 5.04 & 4.82\\
-2049 & 5.76 & 5.20 & 4.62 & 4.02 & 3.42 & 2.24 & 1.09 & 4.82 & 0.00 & 5.22 & 4.96\\
-2050 & 5.85 & 5.30 & 4.72 & 4.12 & 3.51 & 2.31 & 1.13 & 4.92 & 0.00 & 5.35 & 5.05\\
-2051 & 5.95 & 5.40 & 4.82 & 4.21 & 3.59 & 2.36 & 1.16 & 5.02 & 0.00 & 5.46 & 5.16\\
-2052 & 6.05 & 5.52 & 4.92 & 4.31 & 3.68 & 2.42 & 1.19 & 5.13 & 0.00 & 5.58 & 5.27\\
-2053 & 6.18 & 5.63 & 5.04 & 4.41 & 3.77 & 2.49 & 1.22 & 5.24 & 0.00 & 5.69 & 5.38\\
-2054 & 6.27 & 5.72 & 5.11 & 4.49 & 3.85 & 2.55 & 1.26 & 5.33 & 0.00 & 5.81 & 5.47\\
-2055 & 6.34 & 5.79 & 5.18 & 4.55 & 3.91 & 2.60 & 1.28 & 5.39 & 0.00 & 5.88 & 5.54\\
-2056 & 6.46 & 5.90 & 5.29 & 4.65 & 3.99 & 2.64 & 1.31 & 5.50 & 0.00 & 5.99 & 5.65\\
-2057 & 6.55 & 5.99 & 5.37 & 4.72 & 4.06 & 2.70 & 1.34 & 5.59 & 0.00 & 6.08 & 5.74\\
-2058 & 6.64 & 6.08 & 5.46 & 4.81 & 4.12 & 2.74 & 1.36 & 5.67 & 0.00 & 6.16 & 5.82\\
-2059 & 6.74 & 6.16 & 5.55 & 4.88 & 4.21 & 2.80 & 1.39 & 5.76 & 0.00 & 6.23 & 5.91\\
-2060 & 6.82 & 6.27 & 5.64 & 4.97 & 4.27 & 2.85 & 1.42 & 5.87 & 0.00 & 6.29 & 6.02\\
-2061 & 6.86 & 6.30 & 5.68 & 5.02 & 4.33 & 2.90 & 1.44 & 5.90 & 0.00 & 6.33 & 6.06\\
-2062 & 6.92 & 6.35 & 5.72 & 5.06 & 4.37 & 2.93 & 1.46 & 5.95 & 0.00 & 6.38 & 6.11\\
-2063 & 7.00 & 6.43 & 5.80 & 5.13 & 4.43 & 2.97 & 1.48 & 6.03 & 0.00 & 6.43 & 6.18\\
-2064 & 7.04 & 6.47 & 5.86 & 5.18 & 4.47 & 3.01 & 1.50 & 6.07 & 0.00 & 6.46 & 6.23\\
-2065 & 7.11 & 6.55 & 5.92 & 5.24 & 4.53 & 3.05 & 1.52 & 6.14 & 0.00 & 6.52 & 6.30\\
-2066 & 7.15 & 6.59 & 5.96 & 5.28 & 4.58 & 3.08 & 1.54 & 6.19 & 0.00 & 6.55 & 6.35\\
-2067 & 7.22 & 6.64 & 6.01 & 5.32 & 4.61 & 3.11 & 1.56 & 6.23 & 0.00 & 6.61 & 6.39\\
-2068 & 7.24 & 6.69 & 6.05 & 5.38 & 4.66 & 3.14 & 1.57 & 6.27 & 0.00 & 6.66 & 6.44\\
-2069 & 7.28 & 6.73 & 6.08 & 5.39 & 4.67 & 3.17 & 1.59 & 6.32 & 0.00 & 6.68 & 6.49\\
-2070 & 7.34 & 6.79 & 6.15 & 5.45 & 4.73 & 3.19 & 1.60 & 6.38 & 0.00 & 6.73 & 6.55\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
-
-\clearpage
-
-
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:ofl-mat-alt)OFLs (mt) by year for rebuilding strategies where assumed 2024 total removals were set to 6.32 mt.}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:ofl-mat-alt)OFLs (mt) by year for rebuilding strategies where assumed 2024 total removals were set to 6.32 mt. \textit{(continued)}}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-2021 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34 & 2.34\\
-2022 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91 & 1.91\\
-2023 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41 & 1.41\\
-2024 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28 & 1.28\\
-2025 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68 & 1.68\\
-2026 & 1.92 & 1.93 & 1.94 & 1.96 & 1.96 & 1.97 & 1.98 & 1.94 & 1.99 & 1.99 & 1.93\\
-2027 & 2.16 & 2.19 & 2.20 & 2.22 & 2.24 & 2.27 & 2.28 & 2.20 & 2.31 & 2.31 & 2.18\\
-2028 & 2.37 & 2.41 & 2.45 & 2.47 & 2.51 & 2.55 & 2.58 & 2.44 & 2.62 & 2.61 & 2.41\\
-2029 & 2.57 & 2.63 & 2.68 & 2.71 & 2.75 & 2.82 & 2.87 & 2.65 & 2.92 & 2.88 & 2.62\\
-2030 & 2.75 & 2.82 & 2.89 & 2.95 & 3.00 & 3.08 & 3.15 & 2.87 & 3.22 & 3.14 & 2.82\\
-2031 & 2.92 & 3.01 & 3.09 & 3.16 & 3.22 & 3.33 & 3.42 & 3.06 & 3.51 & 3.37 & 3.01\\
-2032 & 3.09 & 3.20 & 3.29 & 3.37 & 3.46 & 3.59 & 3.70 & 3.26 & 3.80 & 3.61 & 3.20\\
-2033 & 3.26 & 3.38 & 3.50 & 3.60 & 3.70 & 3.86 & 4.00 & 3.46 & 4.11 & 3.84 & 3.40\\
-2034 & 3.41 & 3.55 & 3.69 & 3.81 & 3.91 & 4.10 & 4.25 & 3.65 & 4.39 & 4.04 & 3.57\\
-2035 & 3.58 & 3.76 & 3.90 & 4.04 & 4.17 & 4.38 & 4.56 & 3.85 & 4.72 & 4.28 & 3.77\\
-2036 & 3.75 & 3.93 & 4.11 & 4.27 & 4.41 & 4.67 & 4.87 & 4.05 & 5.05 & 4.50 & 3.96\\
-2037 & 3.93 & 4.13 & 4.32 & 4.49 & 4.65 & 4.94 & 5.18 & 4.25 & 5.39 & 4.73 & 4.16\\
-2038 & 4.08 & 4.31 & 4.52 & 4.72 & 4.88 & 5.19 & 5.46 & 4.45 & 5.69 & 4.94 & 4.36\\
-2039 & 4.23 & 4.49 & 4.72 & 4.92 & 5.12 & 5.46 & 5.76 & 4.64 & 6.02 & 5.13 & 4.54\\
-2040 & 4.38 & 4.64 & 4.90 & 5.13 & 5.35 & 5.72 & 6.05 & 4.81 & 6.34 & 5.32 & 4.70\\
-2041 & 4.54 & 4.83 & 5.10 & 5.36 & 5.59 & 6.00 & 6.35 & 5.01 & 6.68 & 5.53 & 4.90\\
-2042 & 4.71 & 5.04 & 5.32 & 5.58 & 5.84 & 6.30 & 6.70 & 5.23 & 7.06 & 5.72 & 5.12\\
-2043 & 4.85 & 5.18 & 5.50 & 5.78 & 6.05 & 6.56 & 6.99 & 5.40 & 7.38 & 5.90 & 5.27\\
-2044 & 5.02 & 5.37 & 5.72 & 6.04 & 6.32 & 6.85 & 7.30 & 5.60 & 7.71 & 6.09 & 5.48\\
-2045 & 5.15 & 5.55 & 5.91 & 6.23 & 6.54 & 7.10 & 7.58 & 5.80 & 8.03 & 6.26 & 5.66\\
-2046 & 5.33 & 5.73 & 6.12 & 6.48 & 6.81 & 7.39 & 7.92 & 5.99 & 8.38 & 6.45 & 5.85\\
-2047 & 5.48 & 5.91 & 6.31 & 6.68 & 7.03 & 7.67 & 8.23 & 6.18 & 8.73 & 6.63 & 6.04\\
-2048 & 5.60 & 6.05 & 6.48 & 6.88 & 7.25 & 7.92 & 8.52 & 6.34 & 9.06 & 6.76 & 6.20\\
-2049 & 5.76 & 6.23 & 6.67 & 7.08 & 7.47 & 8.17 & 8.80 & 6.52 & 9.38 & 6.94 & 6.38\\
-2050 & 5.85 & 6.35 & 6.81 & 7.25 & 7.66 & 8.43 & 9.11 & 6.66 & 9.72 & 7.04 & 6.49\\
-2051 & 5.95 & 6.47 & 6.97 & 7.40 & 7.83 & 8.64 & 9.34 & 6.80 & 9.97 & 7.16 & 6.63\\
-2052 & 6.05 & 6.61 & 7.11 & 7.58 & 8.03 & 8.84 & 9.59 & 6.94 & 10.27 & 7.26 & 6.77\\
-2053 & 6.18 & 6.75 & 7.28 & 7.76 & 8.21 & 9.09 & 9.87 & 7.08 & 10.58 & 7.37 & 6.92\\
-2054 & 6.27 & 6.85 & 7.39 & 7.90 & 8.39 & 9.31 & 10.13 & 7.21 & 10.86 & 7.48 & 7.03\\
-2055 & 6.34 & 6.94 & 7.48 & 8.02 & 8.53 & 9.50 & 10.35 & 7.29 & 11.12 & 7.57 & 7.12\\
-2056 & 6.46 & 7.06 & 7.63 & 8.19 & 8.70 & 9.67 & 10.57 & 7.44 & 11.35 & 7.71 & 7.26\\
-2057 & 6.55 & 7.16 & 7.75 & 8.30 & 8.86 & 9.86 & 10.76 & 7.56 & 11.61 & 7.83 & 7.38\\
-2058 & 6.64 & 7.29 & 7.88 & 8.47 & 9.00 & 10.03 & 10.95 & 7.67 & 11.81 & 7.92 & 7.48\\
-2059 & 6.74 & 7.38 & 8.02 & 8.60 & 9.18 & 10.24 & 11.21 & 7.79 & 12.08 & 8.01 & 7.60\\
-2060 & 6.82 & 7.51 & 8.15 & 8.75 & 9.32 & 10.42 & 11.41 & 7.93 & 12.34 & 8.10 & 7.74\\
-2061 & 6.86 & 7.54 & 8.21 & 8.83 & 9.45 & 10.59 & 11.63 & 7.98 & 12.56 & 8.14 & 7.79\\
-2062 & 6.92 & 7.61 & 8.26 & 8.91 & 9.55 & 10.69 & 11.77 & 8.05 & 12.76 & 8.20 & 7.85\\
-2063 & 7.00 & 7.70 & 8.38 & 9.02 & 9.67 & 10.84 & 11.92 & 8.15 & 12.96 & 8.26 & 7.94\\
-2064 & 7.04 & 7.75 & 8.46 & 9.13 & 9.76 & 10.98 & 12.10 & 8.21 & 13.14 & 8.30 & 8.01\\
-2065 & 7.11 & 7.84 & 8.55 & 9.23 & 9.88 & 11.13 & 12.26 & 8.30 & 13.33 & 8.38 & 8.10\\
-2066 & 7.15 & 7.89 & 8.60 & 9.31 & 9.97 & 11.25 & 12.42 & 8.37 & 13.50 & 8.43 & 8.16\\
-2067 & 7.22 & 7.96 & 8.68 & 9.37 & 10.05 & 11.35 & 12.54 & 8.43 & 13.64 & 8.50 & 8.21\\
-2068 & 7.24 & 8.01 & 8.74 & 9.46 & 10.17 & 11.45 & 12.69 & 8.48 & 13.79 & 8.56 & 8.28\\
-2069 & 7.28 & 8.06 & 8.79 & 9.49 & 10.19 & 11.57 & 12.81 & 8.55 & 13.95 & 8.59 & 8.34\\
-2070 & 7.34 & 8.14 & 8.89 & 9.59 & 10.31 & 11.65 & 12.92 & 8.64 & 14.11 & 8.65 & 8.42\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
-
-\clearpage
-
-
-\begingroup\fontsize{10}{12}\selectfont
-\begingroup\fontsize{10}{12}\selectfont
-
-\begin{longtable}[t]{l>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}>{\raggedright\arraybackslash}p{0.92cm}}
-\caption{(\#tab:rel-ssb-mat-alt)Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies where assumed 2024 removals were set to 6.32 mt.}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endfirsthead
-\caption[]{(\#tab:rel-ssb-mat-alt)Spawning output relative to the 40 percent of unfished spawning output target by year for rebuilding strategies where assumed 2024 removals were set to 6.32 mt. \textit{(continued)}}\\
-\toprule
-Year & SPR= .500       & SPR= .550 & SPR= .600       & SPR= .650 & SPR= .700       & SPR= .800       & SPR= .900       & Yr= T\textsubscript{MID} & F=0             & 40-10 rule      & ABC Rule       \\
-\midrule
-\endhead
-
-\endfoot
-\bottomrule
-\endlastfoot
-2021 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35 & 0.35\\
-2022 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29 & 0.29\\
-2023 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22 & 0.22\\
-2024 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19 & 0.19\\
-2025 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20 & 0.20\\
-2026 & 0.23 & 0.23 & 0.23 & 0.23 & 0.23 & 0.23 & 0.23 & 0.23 & 0.24 & 0.24 & 0.23\\
-2027 & 0.26 & 0.26 & 0.26 & 0.27 & 0.27 & 0.27 & 0.28 & 0.26 & 0.28 & 0.28 & 0.26\\
-2028 & 0.29 & 0.30 & 0.30 & 0.30 & 0.31 & 0.31 & 0.32 & 0.30 & 0.32 & 0.32 & 0.30\\
-2029 & 0.32 & 0.33 & 0.33 & 0.34 & 0.34 & 0.35 & 0.36 & 0.33 & 0.36 & 0.36 & 0.33\\
-2030 & 0.34 & 0.35 & 0.36 & 0.37 & 0.38 & 0.39 & 0.40 & 0.36 & 0.41 & 0.40 & 0.35\\
-2031 & 0.37 & 0.38 & 0.39 & 0.40 & 0.41 & 0.42 & 0.44 & 0.39 & 0.45 & 0.43 & 0.38\\
-2032 & 0.39 & 0.40 & 0.42 & 0.43 & 0.44 & 0.46 & 0.47 & 0.41 & 0.49 & 0.46 & 0.41\\
-2033 & 0.41 & 0.43 & 0.45 & 0.46 & 0.47 & 0.49 & 0.51 & 0.44 & 0.53 & 0.49 & 0.43\\
-2034 & 0.44 & 0.46 & 0.47 & 0.49 & 0.50 & 0.53 & 0.55 & 0.47 & 0.57 & 0.52 & 0.46\\
-2035 & 0.46 & 0.48 & 0.50 & 0.52 & 0.54 & 0.56 & 0.59 & 0.49 & 0.61 & 0.55 & 0.48\\
-2036 & 0.48 & 0.51 & 0.53 & 0.55 & 0.57 & 0.60 & 0.63 & 0.52 & 0.66 & 0.58 & 0.51\\
-2037 & 0.50 & 0.53 & 0.56 & 0.58 & 0.60 & 0.64 & 0.67 & 0.55 & 0.70 & 0.61 & 0.54\\
-2038 & 0.53 & 0.56 & 0.58 & 0.61 & 0.64 & 0.68 & 0.72 & 0.58 & 0.75 & 0.64 & 0.56\\
-2039 & 0.55 & 0.58 & 0.61 & 0.64 & 0.67 & 0.72 & 0.76 & 0.60 & 0.79 & 0.67 & 0.59\\
-2040 & 0.57 & 0.60 & 0.64 & 0.67 & 0.70 & 0.75 & 0.80 & 0.63 & 0.84 & 0.70 & 0.61\\
-2041 & 0.59 & 0.63 & 0.66 & 0.70 & 0.73 & 0.79 & 0.84 & 0.65 & 0.88 & 0.72 & 0.64\\
-2042 & 0.61 & 0.65 & 0.69 & 0.73 & 0.76 & 0.83 & 0.88 & 0.68 & 0.93 & 0.75 & 0.66\\
-2043 & 0.63 & 0.68 & 0.72 & 0.76 & 0.80 & 0.87 & 0.93 & 0.71 & 0.98 & 0.77 & 0.69\\
-2044 & 0.65 & 0.70 & 0.75 & 0.79 & 0.83 & 0.90 & 0.97 & 0.73 & 1.03 & 0.80 & 0.71\\
-2045 & 0.67 & 0.72 & 0.77 & 0.82 & 0.87 & 0.94 & 1.01 & 0.76 & 1.07 & 0.82 & 0.74\\
-2046 & 0.69 & 0.74 & 0.80 & 0.85 & 0.89 & 0.98 & 1.05 & 0.78 & 1.12 & 0.84 & 0.76\\
-2047 & 0.71 & 0.77 & 0.82 & 0.88 & 0.93 & 1.02 & 1.10 & 0.81 & 1.17 & 0.87 & 0.78\\
-2048 & 0.73 & 0.79 & 0.85 & 0.91 & 0.96 & 1.06 & 1.14 & 0.83 & 1.22 & 0.89 & 0.81\\
-2049 & 0.74 & 0.81 & 0.87 & 0.93 & 0.99 & 1.09 & 1.18 & 0.85 & 1.26 & 0.91 & 0.83\\
-2050 & 0.76 & 0.83 & 0.90 & 0.96 & 1.02 & 1.13 & 1.22 & 0.87 & 1.31 & 0.93 & 0.85\\
-2051 & 0.77 & 0.85 & 0.92 & 0.98 & 1.04 & 1.16 & 1.26 & 0.89 & 1.35 & 0.94 & 0.87\\
-2052 & 0.79 & 0.86 & 0.93 & 1.00 & 1.07 & 1.19 & 1.29 & 0.91 & 1.39 & 0.96 & 0.89\\
-2053 & 0.80 & 0.88 & 0.95 & 1.02 & 1.09 & 1.21 & 1.33 & 0.93 & 1.43 & 0.97 & 0.90\\
-2054 & 0.81 & 0.89 & 0.97 & 1.05 & 1.12 & 1.24 & 1.36 & 0.95 & 1.47 & 0.98 & 0.92\\
-2055 & 0.83 & 0.91 & 0.99 & 1.07 & 1.14 & 1.27 & 1.40 & 0.96 & 1.51 & 1.00 & 0.94\\
-2056 & 0.84 & 0.92 & 1.01 & 1.09 & 1.16 & 1.30 & 1.43 & 0.98 & 1.55 & 1.01 & 0.95\\
-2057 & 0.85 & 0.94 & 1.02 & 1.10 & 1.18 & 1.33 & 1.46 & 0.99 & 1.58 & 1.03 & 0.97\\
-2058 & 0.86 & 0.95 & 1.04 & 1.12 & 1.20 & 1.35 & 1.49 & 1.01 & 1.61 & 1.04 & 0.98\\
-2059 & 0.88 & 0.97 & 1.06 & 1.14 & 1.22 & 1.37 & 1.51 & 1.03 & 1.64 & 1.05 & 1.00\\
-2060 & 0.89 & 0.98 & 1.07 & 1.16 & 1.24 & 1.40 & 1.55 & 1.04 & 1.68 & 1.07 & 1.01\\
-2061 & 0.90 & 0.99 & 1.09 & 1.18 & 1.26 & 1.42 & 1.58 & 1.05 & 1.71 & 1.07 & 1.03\\
-2062 & 0.91 & 1.00 & 1.10 & 1.19 & 1.28 & 1.45 & 1.60 & 1.07 & 1.74 & 1.09 & 1.04\\
-2063 & 0.91 & 1.01 & 1.11 & 1.20 & 1.29 & 1.47 & 1.62 & 1.08 & 1.77 & 1.09 & 1.05\\
-2064 & 0.92 & 1.02 & 1.12 & 1.22 & 1.31 & 1.48 & 1.65 & 1.09 & 1.80 & 1.10 & 1.06\\
-2065 & 0.93 & 1.04 & 1.14 & 1.23 & 1.33 & 1.50 & 1.67 & 1.10 & 1.82 & 1.11 & 1.07\\
-2066 & 0.94 & 1.05 & 1.14 & 1.24 & 1.34 & 1.52 & 1.69 & 1.11 & 1.85 & 1.12 & 1.08\\
-2067 & 0.95 & 1.05 & 1.15 & 1.25 & 1.35 & 1.53 & 1.71 & 1.12 & 1.87 & 1.13 & 1.09\\
-2068 & 0.95 & 1.06 & 1.17 & 1.26 & 1.36 & 1.55 & 1.73 & 1.13 & 1.89 & 1.14 & 1.10\\
-2069 & 0.96 & 1.07 & 1.18 & 1.28 & 1.38 & 1.57 & 1.74 & 1.14 & 1.91 & 1.14 & 1.11\\
-2070 & 0.97 & 1.08 & 1.18 & 1.29 & 1.39 & 1.58 & 1.77 & 1.15 & 1.94 & 1.15 & 1.12\\*
-\end{longtable}
-\endgroup{}
-\endgroup{}
-
-\clearpage
-
-<!--chapter:end:61appendix_tables.Rmd-->
-
-\clearpage
-### Figures
-
-<!-- Main run figures -->
-
-![Probability of rebuilding by year for the alternative rebuilding strategies where assumed 2024 removals were set to 6.32 mt.\label{fig:prob-fig-alt}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_probability_forREPORT_ALTrelF.png){width=100% height=100% alt="Line plot of probability of recovery by year after 2021 showing 11 lines that represent each rebuilding strategy."}
-
-
-![Catches (mt) by year, starting in 2025, for the alternative rebuilding strategies where assumed 2024 removals were set to 6.32 mt.\label{fig:acl-fig-alt}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_acl_forREPORT_ALTrelF.png){width=100% height=100% alt="Line plot of catches by year after 2024 showing 11 lines that represent each rebuilding strategy."}
-
-
-![Spawning output relative to the management target of 40 percent of unfished spawning output by year, starting in 2025, for the alternative rebuilding strategies where assumed 2024 removals were set to 6.32 mt.\label{fig:rel-ssb-fig-alt}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_relative_sb_forREPORT_ALTrelF.png){width=100% height=100% alt="Line plot of relative spawning output by year after 2024 showing 11 lines that represent each rebuilding strategy."}
-
-
-![Spawning output by year, starting in 2025, for the alternative rebuilding strategies where assumed 2024 removals were set to 6.32 mt.\label{fig:ssb-fig-alt}](C:/Users/Brian.Langseth/Desktop/ca/rebuilder/write_up_2023rebuild/figures/rebuilding_ssb_forREPORT_ALTrelF.png){width=100% height=100% alt="Line plot of spawning output by year after 2024 showing 13 lines that represent each rebuilding strategy."}
-
-\clearpage
-
-<!--chapter:end:62appendix_figures.Rmd-->
 
